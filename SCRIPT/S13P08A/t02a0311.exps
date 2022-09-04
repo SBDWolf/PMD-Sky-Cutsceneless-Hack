@@ -1,0 +1,71 @@
+
+def 0 {
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_S13P07A);
+    back_SetGround(LEVEL_S13P08A);
+    supervision_Acting(0);
+    with (actor ACTOR_NPC_DEMO_HERO) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_DEMO_PARTNER) {
+        SetAnimation(2);
+    }
+    camera2_SetPositionMark(Position<'m0', 20, 15.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (object OBJECT_S13P08A1_370) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_DEMO_HERO) {
+        SetPositionMark(Position<'m1', 19.5, 19.5>);
+    }
+    with (actor ACTOR_NPC_DEMO_PARTNER) {
+        SetPositionMark(Position<'m2', 19.5, 19.5>);
+    }
+    with (actor ACTOR_NPC_DEMO_HERO) {
+        SetPositionOffset(0, 138);
+    }
+    with (actor ACTOR_NPC_DEMO_PARTNER) {
+        SetPositionOffset(0, 90);
+    }
+    with (actor ACTOR_NPC_DEMO_HERO) {
+        MovePositionMark(33152, Position<'m3', 19.5, 19.5>);
+    }
+    with (actor ACTOR_NPC_DEMO_PARTNER) {
+        Move2PositionOffset(33152, 0, -90);
+    }
+    screen2_FadeIn(0, 60);
+    screen_FadeIn(1, 60);
+    with (actor ACTOR_NPC_DEMO_PARTNER) {
+        MovePositionMark(1, Position<'m4', 15, 15.5>);
+    }
+    with (actor ACTOR_NPC_DEMO_PARTNER) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_DEMO_PARTNER);
+    WaitExecuteLives(ACTOR_NPC_DEMO_HERO);
+    Wait(30);
+    with (actor ACTOR_NPC_DEMO_HERO) {
+        Move2PositionMark(32844, Position<'m5', 19.5, 17.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_DEMO_PARTNER) {
+        Move2PositionMark(32844, Position<'m6', 16, 15.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_DEMO_PARTNER);
+    Wait(30);
+    with (performer 3) {
+        SetEffect(652, 3);
+    }
+    with (object OBJECT_S13P08A1_370) {
+        SetAnimation(17);
+    }
+    Wait(45);
+    screen2_WhiteOut(0, 30);
+    screen_WhiteOutAll(1, 30);
+    back2_SetMode(0);
+    screen_WhiteOut(1, 0);
+    screen_FadeInAll(1, 0);
+    end;
+}

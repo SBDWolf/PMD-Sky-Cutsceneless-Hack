@@ -1,0 +1,43 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_D04P12A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FlushOut(1, 0, 6, 0, 0, 0);
+    screen_FadeIn(1, 15);
+    Wait(30);
+    with (actor ACTOR_NPC_DARK_PUKURIN) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_DARK_PUKURIN) {
+        MovePositionMark(33408, Position<'m0', 25.5, 49.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_DARK_PUKURIN);
+    with (actor ACTOR_NPC_DARK_PUKURIN) {
+        SetAnimation(2);
+    }
+    Wait(30);
+    with (actor ACTOR_NPC_DARK_PUKURIN) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_DARK_PUKURIN);
+    Wait(30);
+    with (actor ACTOR_NPC_DARK_PUKURIN) {
+        MovePositionMark(2, Position<'m1', 25.5, 20.5>);
+    }
+    with (performer 0) {
+        MovePositionMark(2, Position<'m2', 25.5, 20.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_DARK_PUKURIN);
+    with (actor ACTOR_NPC_DARK_PUKURIN) {
+        Destroy();
+    }
+    Wait(80);
+    se_Play(5139);
+    screen_WhiteOut(1, 5);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    end;
+}

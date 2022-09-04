@@ -1,0 +1,429 @@
+
+def 0 {
+    sound_Stop();
+    back_SetDungeonBanner(16, 0);
+    screen_FadeIn(1, 16);
+    Wait(60);
+    screen_FadeOut(1, 16);
+    Wait(15);
+    back_SetGround(LEVEL_D10P41A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m0', 38, 28.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m1', 43, 28.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_PLAYER) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We\'ve climbed way up!",
+                french=" On a bien avancé jusqu\'ici!",
+                german=" Wir sind sehr weit nach oben\ngestiegen!",
+                italian=" Sì! Ce l\'abbiamo fatta!",
+                spanish=" Ya casi estamos en la cima.",
+            }
+        case 2:
+            {
+                english=" We\'ve climbed far up!",
+                french=" On a bien avancé jusqu\'ici!",
+                german=" Wir sind ganz nach oben\ngestiegen!",
+                italian=" Siamo arrivati!",
+                spanish=" Ya casi estamos en la cima.",
+            }
+        default:
+            {
+                english=" We\'ve climbed far up!",
+                french=" On a bien avancé jusqu\'ici!",
+                german=" Wir sind ganz nach oben\ngestiegen!",
+                italian=" Ci siamo!",
+                spanish=" Ya casi estamos en la cima.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" This place...[K] It feels...[K] It feels\nstrange somehow...",
+                french=" Cet endroit...[K] j\'ai un\nsentiment...[K] étrange, d\'une certaine\nmanière...",
+                german=" Dieser Ort...[K] Er fühlt sich...[K]\nEr fühlt sich irgendwie seltsam an...",
+                italian=" Questo posto...[K] mmm...[K] mi dà\nuna strana sensazione...",
+                spanish=" Este lugar...[K] resulta...[K]\nresulta un tanto extraño...",
+            }
+        case 2:
+            {
+                english=" This place...[K] It feels...[K] It feels\nstrange somehow...",
+                french=" Cet endroit...[K] j\'ai un\nsentiment...[K] étrange, d\'une certaine\nmanière...",
+                german=" Dieser Ort...[K] Er fühlt sich...[K]\nEr fühlt sich irgendwie seltsam an...",
+                italian=" Questo posto...[K] sembra...[K]\nsembra un po\' strano, non credi?",
+                spanish=" Este lugar...[K] resulta...[K]\nresulta un tanto extraño...",
+            }
+        default:
+            {
+                english=" This place...[K] It feels...[K] It feels\nstrange somehow...",
+                french=" Cet endroit...[K] j\'ai un\nsentiment...[K] étrange, d\'une certaine\nmanière...",
+                german=" Dieser Ort...[K] Er fühlt sich...[K]\nEr fühlt sich irgendwie seltsam an...",
+                italian=" Questo posto...[K] sembra...[K]\nsembra un po\' strano, non credi?",
+                spanish=" Este lugar...[K] resulta...[K]\nresulta un tanto extraño...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" The air is full of tension!",
+                french=" Je sens une énorme tension\ndans l\'air!",
+                german=" Die Luft ist voller Spannung!",
+                italian=" Avverto un bel po\' di tensione\nqui!",
+                spanish=" Se respira tensión en el\nambiente.",
+            }
+        case 2:
+            {
+                english=" The very air is charged\nwith tension!",
+                french=" Je sens une énorme tension\ndans l\'air!",
+                german=" Es liegt eine Spannung in der\nLuft!",
+                italian=" Avverto una forte tensione\nnell\'aria!",
+                spanish=" Se respira tensión en el\nambiente.",
+            }
+        default:
+            {
+                english=" The very air is charged\nwith tension!",
+                french=" Je sens une énorme tension\ndans l\'air!",
+                german=" Es liegt eine Spannung in der\nLuft!",
+                italian=" Avverto una forte tensione\nnell\'aria!",
+                spanish=" Se respira tensión en el\nambiente.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It\'s making my skin crawl...[K]\nall over...",
+                french=" J\'en ai la chair de poule...[K]\ntout partout...",
+                german=" Meine Haut kribbelt...[K]\nÜberall...",
+                italian=" Mmm... Mi stanno venendo i\nbrividi...[K] Ma che...",
+                spanish=" Se me está poniendo la piel\nde gallina.[K] En serio.",
+            }
+        case 2:
+            {
+                english=" It\'s making my skin crawl...[K]\nall over...",
+                french=" J\'en ai la chair de poule...[K]\ntout partout...",
+                german=" Meine Haut kribbelt...[K]\nÜberall...",
+                italian=" Mi vengono...[K] i brividi...",
+                spanish=" Se me está poniendo la piel\nde gallina.[K] En serio.",
+            }
+        default:
+            {
+                english=" It\'s making my skin crawl...[K]\nall over...",
+                french=" J\'en ai la chair de poule...[K]\ntout partout...",
+                german=" Meine Haut kribbelt...[K]\nÜberall...",
+                italian=" Mi vengono...[K] i brividi...",
+                spanish=" Se me está poniendo la piel\nde gallina.[K] En serio.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I feel like I\'m being crushed...[K]\nby a terrible sense of danger...",
+                french=" J\'ai un horrible pressentiment...\ncomme si un terrible danger nous guettait...",
+                german=" Es fühlt sich an, als würde mich\netwas erdrücken...[K] Irgendeine\nschreckliche Gefahr...",
+                italian=" Mi sento schiacciare...[K]\nda un forte senso di pericolo...",
+                spanish=" Tengo una sensación extraña.[K]\nComo si estuviera en peligro.",
+            }
+        case 2:
+            {
+                english=" I feel like I\'m being crushed...[K]\nby a terrible sense of danger...",
+                french=" J\'ai un horrible pressentiment...\ncomme si un terrible danger nous guettait...",
+                german=" Es fühlt sich an, als würde mich\netwas erdrücken...[K] Irgendeine\nschreckliche Gefahr...",
+                italian=" Mi sento schiacciare...[K]\nda un forte senso di pericolo...",
+                spanish=" Tengo una sensación extraña.[K]\nComo si estuviera en peligro.",
+            }
+        default:
+            {
+                english=" I feel like I\'m being crushed...[K]\nby a terrible sense of danger...",
+                french=" J\'ai un horrible pressentiment...\ncomme si un terrible danger nous guettait...",
+                german=" Es fühlt sich an, als würde mich\netwas erdrücken...[K] Irgendeine\nschreckliche Gefahr...",
+                italian=" Mi sento schiacciare...[K]\nda un forte senso di pericolo...",
+                spanish=" Tengo una sensación extraña.[K]\nComo si estuviera en peligro.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    Wait(10);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(30);
+    se_Play(6930);
+    message_ImitationSound({
+        english="GRROOOOOOH...GRROOOOOOH...!",
+        french="GRROOOOOOH... GRROOOOOOH...!",
+        german="GRROOOOOOH... GRROOOOOOH!",
+        italian="GRROOOOOOH... GRROOOOOOH...!",
+        spanish="¡GRRRRRRRR! ¡GRRRRRRRR!",
+    });
+    WaitSe(6930);
+    message_CloseEnforce();
+    se_Play(8968);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Eep!",
+                french=" Brrr!",
+                german=" Argh!",
+                italian=" Ehi!",
+                spanish=" ¡Aaay!",
+            }
+        case 2:
+            {
+                english=" Eep!",
+                french=" Brrr!",
+                german=" Argh!",
+                italian=" Ehi!",
+                spanish=" ¡Aaay!",
+            }
+        default:
+            {
+                english=" Eep!",
+                french=" Brrr!",
+                german=" Argh!",
+                italian=" Ehi!",
+                spanish=" ¡Aaay!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It\'s that sound we heard earlier,\n[hero]!",
+                french=" C\'est le même bruit que\ntout à l\'heure, [hero]!",
+                german=" Das ist das Geräusch von\nvorhin, [hero]!",
+                italian=" È quel suono di prima,\n[hero]!",
+                spanish=" ¡Es el mismo ruido de antes,\n[hero]!",
+            }
+        case 2:
+            {
+                english=" It\'s that sound we heard earlier,\n[hero]!",
+                french=" C\'est le même bruit que\ntout à l\'heure, [hero]!",
+                german=" Das ist das Geräusch von\nvorhin, [hero]!",
+                italian=" È lo stesso suono di prima,\n[hero]!",
+                spanish=" ¡Es el mismo ruido de antes,\n[hero]!",
+            }
+        default:
+            {
+                english=" It\'s that sound we heard earlier,\n[hero]!",
+                french=" C\'est le même bruit que\ntout à l\'heure, [hero]!",
+                german=" Das ist das Geräusch von\nvorhin, [hero]!",
+                italian=" È lo stesso suono di prima,\n[hero]!",
+                spanish=" ¡Es el mismo ruido de antes,\n[hero]!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I knew it![K] It was roaring!",
+                french=" Je le savais![K] C\'est bel et bien\nun rugissement!",
+                german=" Ich wusste es![K] Es war ein\nBrüllen!",
+                italian=" È come dicevo io![K] È un\nruggito!",
+                spanish=" ¡Lo sabía![K] ¡Era un rugido!",
+            }
+        case 2:
+            {
+                english=" Just as I thought![K] It was the\nsound of roaring!",
+                french=" Je le savais![K] C\'est bel et bien\nun rugissement!",
+                german=" Genau, wie ich mir gedacht\nhabe![K] Es war ein lautes Brüllen!",
+                italian=" È proprio come pensavo![K] Si\ntratta di un ruggito!",
+                spanish=" ¡Lo sabía![K]\n¡Lo que oí era un rugido!",
+            }
+        default:
+            {
+                english=" I thought it might...[K]be roaring!\nAnd it is!",
+                french=" Je le savais![K] C\'est bel et bien\nun rugissement!",
+                german=" Ich wusste es.[K] Es war ein\nBrüllen! Ich hatte recht!",
+                italian=" È proprio come pensavo![K] Si\ntratta di un ruggito!",
+                spanish=" Sabía que podía ser un rugido.[K]\n¡Y lo es!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    Wait(10);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(30);
+    se_Play(6930);
+    message_ImitationSound({
+        english="GRROOOOOOH...!",
+        french="GRROOOOOOH...!",
+        german="GRROOOOOOH!",
+        italian="GRROOOOOOH...!",
+        spanish="¡GRRRRRRRRRR!",
+    });
+    WaitSe(6930);
+    message_CloseEnforce();
+    Wait(30);
+    se_Play(6915);
+    camera_SetEffect(2, 2, 33280);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(3);
+    }
+    with (actor ACTOR_PLAYER) {
+        MoveHeight(2, 5);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MoveHeight(2, 5);
+    }
+    Wait(1);
+    with (actor ACTOR_PLAYER) {
+        MoveHeight(2, 0);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MoveHeight(2, 0);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    Wait(15);
+    camera_SetEffect(0, 0, 0);
+    Wait(60);
+    se_Play(6915);
+    camera_SetEffect(2, 2, 33280);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(3);
+    }
+    with (actor ACTOR_PLAYER) {
+        MoveHeight(2, 5);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MoveHeight(2, 5);
+    }
+    Wait(1);
+    with (actor ACTOR_PLAYER) {
+        MoveHeight(2, 0);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MoveHeight(2, 0);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    Wait(15);
+    camera_SetEffect(0, 0, 0);
+    Wait(15);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_STUNNED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" S-s-something is...",
+                french=" Quelque chose...",
+                german=" I-i-irgendetwas...",
+                italian=" Q-Q-Qualcosa...",
+                spanish=" Al... algo se...",
+            }
+        case 2:
+            {
+                english=" S-s-something is...",
+                french=" Quelque chose...",
+                german=" I-i-irgendetwas...",
+                italian=" Q-Q-Qualcosa...",
+                spanish=" Al... algo se...",
+            }
+        default:
+            {
+                english=" S-s-something is...",
+                french=" Quelque chose...",
+                german=" I-i-irgendetwas...",
+                italian=" Q-Q-Qualcosa...",
+                spanish=" Al... algo se...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" ...is...[K]coming!",
+                french=" ... quelque chose...[K] se rapproche!",
+                german=" Irgendetwas[K] kommt auf uns zu!",
+                italian=" ... sta...[K] arrivando!",
+                spanish=" Algo...[K] ¡se acerca!",
+            }
+        case 2:
+            {
+                english=" ...is...[K]coming!",
+                french=" ... quelque chose...[K] se rapproche!",
+                german=" Irgendetwas[K] kommt auf uns zu!",
+                italian=" ... sta...[K] arrivando!",
+                spanish=" Algo...[K] ¡se acerca!",
+            }
+        default:
+            {
+                english=" ...is...[K]coming!",
+                french=" ... quelque chose...[K] se rapproche!",
+                german=" Irgendetwas[K] kommt auf uns zu!",
+                italian=" ... sta...[K] arrivando!",
+                spanish=" Algo...[K] ¡se acerca!",
+            }
+    }
+    message_Close();
+    screen_FadeOut(1, 15);
+    end;
+}

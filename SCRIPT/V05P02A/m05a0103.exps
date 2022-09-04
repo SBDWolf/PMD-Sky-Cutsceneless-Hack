@@ -1,0 +1,29 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_TIME_GEAR_REMIX, 0, 256);
+    back_SetGround(LEVEL_V05P02A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    Wait(60);
+    message_SetActor(ACTOR_NPC_PERAPPU);
+    message_Talk({
+        english=" Dewdrops on leaves won\'t fall...\nThey just hang there, suspended.",
+        french=" Les gouttes de rosée ne tombent\nplus des feuilles... Elles y restent suspendues.",
+        german=" Tautropfen fallen nicht von\nihren Blättern, sondern bleiben einfach wie\nschwerelos hängen.",
+        italian=" Le gocce di rugiada non cadono\ndalle foglie... Rimangono lì, sospese.",
+        spanish=" El rocío ya no cae de las hojas.\nSe queda ahí quieto, suspendido en el aire.",
+    });
+    message_Talk({
+        english=" In [CS:P]Treeshroud Forest[CR], time itself\nhas truly stopped.",
+        french=" Dans la [CS:P]Forêt Linceul[CR],\nle temps s\'est réellement arrêté.",
+        german=" Im [CS:P]Schemengehölz[CR] ist\ntatsächlich die Zeit stehen geblieben.",
+        italian=" Nella [CS:P]Foresta Arcana[CR], il tempo\nsi è completamente fermato.",
+        spanish=" Sí, todo apunta a que el tiempo\nse ha detenido en el [CS:P]Bosque Enraizado[CR].",
+    });
+    message_Close();
+    screen_FadeOut(1, 30);
+    end;
+}

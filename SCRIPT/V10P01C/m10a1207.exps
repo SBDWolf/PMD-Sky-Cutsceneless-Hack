@@ -1,0 +1,50 @@
+
+def 0 {
+    sound_Stop();
+    bgm_PlayFadeIn(BGM_TIME_GEAR, 0, 256);
+    back_SetGround(LEVEL_V10P01C);
+    supervision_Acting(0);
+    with (object OBJECT_V10P01C2_231) {
+        MovePositionOffset(32844, 400, 0);
+    }
+    with (object OBJECT_V10P01C1_225) {
+        MovePositionOffset(32832, -400, 0);
+    }
+    with (object OBJECT_V10P01C1_226) {
+        MovePositionOffset(32857, -400, 0);
+    }
+    with (object OBJECT_V10P01C3_238) {
+        MovePositionOffset(32857, 400, 0);
+    }
+    with (object OBJECT_V10P01C2_232) {
+        MovePositionOffset(32832, -400, 0);
+    }
+    with (object OBJECT_V10P01C2_233) {
+        MovePositionOffset(32844, 400, 0);
+    }
+    with (object OBJECT_V10P01C3_237) {
+        MovePositionOffset(32857, 400, 0);
+    }
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        MovePositionMark(32896, Position<'m0', 55, 19.5>);
+    }
+    screen_FadeIn(1, 30);
+    Wait(180);
+    supervision_Acting(1);
+    with (object OBJECT_V10P01C3_239) {
+        Move2PositionMark(32896, Position<'m1', 43, 4.5>);
+    }
+    Wait(180);
+    supervision_Acting(2);
+    with (object OBJECT_V10P01C1_227) {
+        Move2PositionMark(32896, Position<'m2', 25, 4.5>);
+    }
+    Wait(30);
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 60);
+    WaitBgm(BGM_TIME_GEAR);
+    end;
+}

@@ -1,0 +1,268 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_V15P02A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        MovePositionMark(32896, Position<'m0', 57, 22.5>);
+    }
+    bgm_PlayFadeIn(BGM_TIME_GEAR_REMIX, 0, 256);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetWaitMode(100, 60);
+    message_SetActor(ACTOR_ATTENDANT1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Incredible!",
+                french=" Incroyable!",
+                german=" Unglaublich!",
+                italian=" È fantastico!",
+                spanish=" ¡Increíble!",
+            }
+        case 2:
+            {
+                english=" Incredible!",
+                french=" Incroyable!",
+                german=" Unglaublich!",
+                italian=" È fantastico!",
+                spanish=" ¡Increíble!",
+            }
+        default:
+            {
+                english=" Fantastic!",
+                french=" Incroyable!",
+                german=" Fantastisch!",
+                italian=" È fantastico!",
+                spanish=" ¡Fantástico!",
+            }
+    }
+    message_KeyWait();
+    message_SetWaitMode(150, 45);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Look at all those crystals\nsticking up from the lake.",
+                french=" Regarde un peu tous\nces cristaux!",
+                german=" Sieh dir all die Kristalle an,\ndie aus dem See ragen.",
+                italian=" Guarda tutti quei cristalli che\nspuntano dall\'acqua...",
+                spanish=" Mira todos esos cristales que\nasoman en el lago.",
+            }
+        case 2:
+            {
+                english=" Look at all those crystals\nemerging from the lake\'s surface.",
+                french=" Regarde un peu tous\nces cristaux!",
+                german=" Sieh dir all die Kristalle an,\ndie aus dem See ragen.",
+                italian=" Guarda tutti quei cristalli che\nspuntano dall\'acqua...",
+                spanish=" Mira todos esos cristales que\nasoman sobre la superficie del lago.",
+            }
+        default:
+            {
+                english=" Look at all those crystals\nsticking up from the surface.",
+                french=" Regarde un peu tous\nces cristaux!",
+                german=" Sieh dir all die Kristalle an,\ndie aus dem See ragen.",
+                italian=" Guarda tutti quei cristalli che\nspuntano dall\'acqua...",
+                spanish=" Mira todos esos cristales que\nasoman sobre la superficie del lago.",
+            }
+    }
+    message_KeyWait();
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Is this lake...[K]where [CS:N]Azelf[CR] lives?",
+                french=" Est-ce que c\'est le lac...[K]\nde [CS:N]Créfadet[CR]?",
+                german=" Ist das der See,[K] an dem [CS:N]Tobutz[CR]\nlebt?",
+                italian=" Sarà questo...[K] il lago dove vive\n[CS:N]Azelf[CR]?",
+                spanish=" ¿Será este el lago?[K] ¿Será aquí\ndonde vive [CS:N]Azelf[CR]?",
+            }
+        case 2:
+            {
+                english=" Is this lake...[K]where [CS:N]Azelf[CR] lives?",
+                french=" Est-ce que c\'est le lac...[K]\nde [CS:N]Créfadet[CR]?",
+                german=" Ist das der See,[K] an dem [CS:N]Tobutz[CR]\nlebt?",
+                italian=" Sarà questo...[K] il lago dove vive\n[CS:N]Azelf[CR]?",
+                spanish=" ¿Será este el lago?[K] ¿Será aquí\ndonde vive [CS:N]Azelf[CR]?",
+            }
+        default:
+            {
+                english=" Is this lake...[K]where [CS:N]Azelf[CR] lives?",
+                french=" Est-ce que c\'est le lac...[K]\nde [CS:N]Créfadet[CR]?",
+                german=" Ist das der See,[K] an dem [CS:N]Tobutz[CR]\nlebt?",
+                italian=" Sarà questo...[K] il lago dove vive\n[CS:N]Azelf[CR]?",
+                spanish=" ¿Será este el lago?[K] ¿Será aquí\ndonde vive [CS:N]Azelf[CR]?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetWaitMode(32767, 32767);
+    WaitExecutePerformer(0);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" ............",
+                french=" ............",
+                german=" ............",
+                italian=" ............",
+                spanish=" ...",
+            }
+        case 2:
+            {
+                english=" ............",
+                french=" ............",
+                german=" ............",
+                italian=" ............",
+                spanish=" ...",
+            }
+        default:
+            {
+                english=" ............",
+                french=" ............",
+                german=" ............",
+                italian=" ............",
+                spanish=" ...",
+            }
+    }
+    message_KeyWait();
+    se_Play(8978);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hey, [hero]!",
+                french=" Eh, [hero]!",
+                german=" Hey, [hero]!",
+                italian=" Ehi, [hero]!",
+                spanish=" Oye, [hero].",
+            }
+        case 2:
+            {
+                english=" Hey, [hero]!",
+                french=" Eh, [hero]!",
+                german=" Hey, [hero]!",
+                italian=" Ehi, [hero]!",
+                spanish=" Oye, [hero].",
+            }
+        default:
+            {
+                english=" Oh, [hero]!",
+                french=" Eh, [hero]!",
+                german=" Oh, [hero]!",
+                italian=" Oh, [hero]!",
+                spanish=" Oye, [hero].",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Look over there!",
+                french=" Regarde là-bas!",
+                german=" Sieh mal her!",
+                italian=" Guarda laggiù!",
+                spanish=" ¡Por allí!",
+            }
+        case 2:
+            {
+                english=" Look over there!",
+                french=" Regarde là-bas!",
+                german=" Sieh mal her!",
+                italian=" Guarda laggiù!",
+                spanish=" ¡Por allí!",
+            }
+        default:
+            {
+                english=" Look over there!",
+                french=" Regarde là-bas!",
+                german=" Sieh mal her!",
+                italian=" Guarda laggiù!",
+                spanish=" ¡Por allí!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Look! In the middle of the\nlake...[K] Where it\'s like an island...",
+                french=" Regarde! Au milieu du lac...\n[K]il y a une sorte d\'île...",
+                german=" Sieh nur! In der Mitte des\nSees![K] Da ist eine Art Insel...",
+                italian=" Al centro del lago...[K] c\'è come\nun\'isoletta.",
+                spanish=" ¡Mira! En medio del lago...[K]\nEso que parece una isla...",
+            }
+        case 2:
+            {
+                english=" Look! In the middle of the\nlake...[K] Where it\'s like an island...",
+                french=" Regarde! Au milieu du lac...\n[K]il y a une sorte d\'île...",
+                german=" Sieh nur! In der Mitte des\nSees![K] Da ist eine Art Insel...",
+                italian=" Al centro del lago...[K] c\'è come\nun\'isoletta.",
+                spanish=" ¡Mira! En medio del lago...[K]\nEso que parece una isla...",
+            }
+        default:
+            {
+                english=" Look! In the middle of the\nlake...[K] Where it\'s like an island...",
+                french=" Regarde! Au milieu du lac...\n[K]il y a une sorte d\'île...",
+                german=" Sieh nur! In der Mitte des\nSees![K] Da ist eine Art Insel...",
+                italian=" Al centro del lago...[K] c\'è come\nun\'isoletta.",
+                spanish=" ¡Mira! En medio del lago...[K]\nEso que parece una isla...",
+            }
+    }
+    message_Close();
+    with (performer 0) {
+        MovePositionMark(33408, Position<'m1', 44, 22.5>);
+    }
+    WaitExecutePerformer(0);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" There\'s someone there!",
+                french=" ... et il y a quelqu\'un là-bas!",
+                german=" Da ist jemand!",
+                italian=" Mi sembra di vedere\nqualcuno laggiù!",
+                spanish=" ¡Hay alguien allí!",
+            }
+        case 2:
+            {
+                english=" I think I see someone!",
+                french=" ... et il y a quelqu\'un là-bas!",
+                german=" Ich glaube, ich sehe jemanden!",
+                italian=" Mi sembra di vedere\nqualcuno laggiù!",
+                spanish=" ¡Creo que veo a alguien!",
+            }
+        default:
+            {
+                english=" I think I see someone!",
+                french=" ... et il y a quelqu\'un là-bas!",
+                german=" Ich glaube, ich sehe jemanden!",
+                italian=" Mi sembra di vedere\nqualcuno laggiù!",
+                spanish=" ¡Creo que veo a alguien!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Let\'s go!",
+                french=" Allons-y!",
+                german=" Gehen wir hin!",
+                italian=" Andiamo!",
+                spanish=" ¡Vamos!",
+            }
+        case 2:
+            {
+                english=" Let\'s go!",
+                french=" Allons-y!",
+                german=" Gehen wir hin!",
+                italian=" Andiamo!",
+                spanish=" ¡Vamos!",
+            }
+        default:
+            {
+                english=" Let\'s go!",
+                french=" Allons-y!",
+                german=" Gehen wir hin!",
+                italian=" Andiamo!",
+                spanish=" ¡Vamos!",
+            }
+    }
+    message_Close();
+    screen_FadeOut(1, 30);
+    Wait(30);
+    end;
+}

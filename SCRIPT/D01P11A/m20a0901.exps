@@ -1,0 +1,396 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_D01P11A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    bgm2_PlayFadeIn(BGM_OCEAN1, 0, 256);
+    with (actor ACTOR_PLAYER) {
+        SetPositionMark(Position<'m2', 64, 21.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetPositionMark(Position<'m3', 58, 21.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    screen_FadeIn(1, 60);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_LEFT, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    se_Play(8962);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hm? What\'s up, [hero]?",
+                french=" Hum? Qu\'est-ce qui se passe,\n[hero]?",
+                german=" Hm? Was gibt es, [hero]?",
+                italian=" Eh? Che c\'è, [hero]?",
+                spanish=" ¿Sí? ¿Qué pasa, [hero]?",
+            }
+        case 2:
+            {
+                english=" Hm? What is it, [hero]?",
+                french=" Hum? Qu\'est-ce qui se passe,\n[hero]?",
+                german=" Hm? Was ist los, [hero]?",
+                italian=" Eh? Cosa c\'è, [hero]?",
+                spanish=" ¿Sí? ¿Qué pasa, [hero]?",
+            }
+        default:
+            {
+                english=" Hm? What is it, [hero]?",
+                french=" Hum? Qu\'est-ce qui se passe,\n[hero]?",
+                german=" Hm? Was ist los, [hero]?",
+                italian=" Eh? Cosa c\'è, [hero]?",
+                spanish=" ¿Sí? ¿Qué pasa, [hero]?",
+            }
+    }
+    §label_2;
+    forever {
+        switch ( message_SwitchMenu(0, 1) ) {
+            case menu({
+                english="Let\'s go to Treasure Town!",
+                french="Allons à Bourg-Trésor!",
+                german="Gehen wir nach Schatzstadt!",
+                italian="Andiamo in città!",
+                spanish="¡Vamos a Aldea Tesoro!",
+            }):
+            default:
+                §label_0;
+                CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                se_Play(8974);
+                with (actor ACTOR_ATTENDANT1) {
+                    ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+                }
+                WaitExecuteLives(ACTOR_ATTENDANT1);
+                message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+                message_SwitchTalk ($PARTNER_TALK_KIND) {
+                    case 1:
+                        {
+                            english=" Huh?! You want to go to\nTreasure Town?!",
+                            french=" Hein?! Tu veux qu\'on aille\nà Bourg-Trésor?!",
+                            german=" Wie bitte? Du willst nach\nSchatzstadt gehen?",
+                            italian=" Eh?! Vuoi andare a Borgo \nTesoro?!",
+                            spanish=" ¡¿Qué?!\n¡¿Quieres ir a Aldea Tesoro?!",
+                        }
+                    case 2:
+                        {
+                            english=" What?! You want to go to\nTreasure Town?!",
+                            french=" Hein?! Tu veux qu\'on aille\nà Bourg-Trésor?!",
+                            german=" Was? Du willst nach Schatzstadt\ngehen?",
+                            italian=" Cosa?! Vuoi andare a Borgo \nTesoro?!",
+                            spanish=" ¡¿Qué?!\n¡¿Quieres ir a Aldea Tesoro?!",
+                        }
+                    default:
+                        {
+                            english=" Pardon?! You want to go to\nTreasure Town?!",
+                            french=" Hein?! Tu veux qu\'on aille\nà Bourg-Trésor?!",
+                            german=" Wie bitte? Du willst nach\nSchatzstadt gehen?",
+                            italian=" Scusa?! Vuoi andare a Borgo \nTesoro?!",
+                            spanish=" ¡¿Qué?!\n¡¿Quieres ir a Aldea Tesoro?!",
+                        }
+                }
+                message_SwitchTalk ($PARTNER_TALK_KIND) {
+                    case 1:
+                        {
+                            english=" Wh-why?!",
+                            french=" Mais pourquoi?!",
+                            german=" W-warum?",
+                            italian=" P-Perché?!",
+                            spanish=" Pero, ¿por qué?",
+                        }
+                    case 2:
+                        {
+                            english=" Wh-why?!",
+                            french=" Mais pourquoi?!",
+                            german=" W-warum?",
+                            italian=" P-Perché?!",
+                            spanish=" Pero, ¿por qué?",
+                        }
+                    default:
+                        {
+                            english=" Wh-why?!",
+                            french=" Mais pourquoi?!",
+                            german=" W-warum?",
+                            italian=" P-Perché?!",
+                            spanish=" Pero, ¿por qué?",
+                        }
+                }
+                message_SwitchTalk ($PARTNER_TALK_KIND) {
+                    case 1:
+                        {
+                            english=" We vanished in front of\neveryone, remember?",
+                            french=" On a disparu devant tout le\nmonde, tu te souviens?",
+                            german=" Wir sind vor jedermanns Augen\nverschwunden, erinnerst du dich?",
+                            italian=" Siamo svaniti davanti agli occhi\ndi tutti, ti ricordi?",
+                            spanish=" ¿No recuerdas que nos\nesfumamos delante de todos?",
+                        }
+                    case 2:
+                        {
+                            english=" We disappeared in front of\neveryone, remember?",
+                            french=" On a disparu devant tout le\nmonde, tu te souviens?",
+                            german=" Wir sind vor jedermanns Augen\nverschwunden, erinnerst du dich?",
+                            italian=" Siamo scomparsi davanti agli\nocchi di tutti, ti ricordi?",
+                            spanish=" ¿No recuerdas que nos\nesfumamos delante de todos?",
+                        }
+                    default:
+                        {
+                            english=" We vanished in front of\neveryone, remember?",
+                            french=" On a disparu devant tout le\nmonde, tu te souviens?",
+                            german=" Wir sind vor jedermanns Augen\nverschwunden, erinnerst du dich?",
+                            italian=" Tutti ci hanno visto scomparire,\nti ricordi?",
+                            spanish=" ¿No recuerdas que nos\nesfumamos delante de todos?",
+                        }
+                }
+                message_SwitchTalk ($PARTNER_TALK_KIND) {
+                    case 1:
+                        {
+                            english=" I think if we suddenly showed\nup, everyone\'d be shocked!",
+                            french=" Si on se montrait d\'un seul coup,\nils seraient tous sous le choc!",
+                            german=" Wenn wir plötzlich auftauchen,\nwerden sich alle furchtbar erschrecken!",
+                            italian=" Penso che se ricomparissimo\ncosì all\'improvviso, rimarrebbero tutti \nscioccati!",
+                            spanish=" Si reaparecemos de pronto,\n¡nadie va a entenderlo!",
+                        }
+                    case 2:
+                        {
+                            english=" I think if we suddenly showed\nup, everyone would be shocked!",
+                            french=" Si on se montrait d\'un seul coup,\nils seraient tous sous le choc!",
+                            german=" Wenn wir plötzlich auftauchen,\nwerden sich alle furchtbar erschrecken!",
+                            italian=" Penso che se ricomparissimo\ncosì all\'improvviso, rimarrebbero tutti \nscioccati!",
+                            spanish=" Si reaparecemos de pronto,\n¡nadie va a entenderlo!",
+                        }
+                    default:
+                        {
+                            english=" I think if we suddenly showed\nup, everyone would be shocked!",
+                            french=" Si on se montrait d\'un seul coup,\nils seraient tous sous le choc!",
+                            german=" Wenn wir plötzlich auftauchen,\nwerden sich alle furchtbar erschrecken!",
+                            italian=" Penso che se ricomparissimo\ncosì all\'improvviso, rimarrebbero tutti \nscioccati!",
+                            spanish=" Si reaparecemos de pronto,\n¡nadie va a entenderlo!",
+                        }
+                }
+                message_SwitchTalk ($PARTNER_TALK_KIND) {
+                    case 1:
+                        {
+                            english=" But why Treasure Town?[K]\nWhat are we going to do there?",
+                            french=" Mais pourquoi Bourg-Trésor?[K]\nQu\'est-ce qu\'on va y faire?",
+                            german=" Aber warum Schatzstadt?[K]\nWas haben wir da zu schaffen?",
+                            italian=" Ma perché a Borgo Tesoro?[K]\nCosa ci andiamo a fare?",
+                            spanish=" Y, ¿por qué Aldea Tesoro?[K]\n¿Qué vamos a hacer allí?",
+                        }
+                    case 2:
+                        {
+                            english=" But why do you want to go to\nTreasure Town?[K] What are we going to\ndo there?",
+                            french=" Mais pourquoi Bourg-Trésor?[K]\nQu\'est-ce qu\'on va y faire?",
+                            german=" Aber warum willst du nach\nSchatzstadt gehen?[K] Was sollen wir da tun?",
+                            italian=" Ma perché vuoi andare a Borgo\nTesoro?[K] Cosa ci andiamo a fare?",
+                            spanish=" Y, ¿por qué Aldea Tesoro?[K]\n¿Qué vamos a hacer allí?",
+                        }
+                    default:
+                        {
+                            english=" But why Treasure Town?[K]\nWhat are we going to do there?",
+                            french=" Mais pourquoi Bourg-Trésor?[K]\nQu\'est-ce qu\'on va y faire?",
+                            german=" Aber warum Schatzstadt?[K]\nWas haben wir da zu schaffen?",
+                            italian=" Ma perché a Borgo Tesoro?[K]\nCosa ci andiamo a fare?",
+                            spanish=" Y, ¿por qué Aldea Tesoro?[K]\n¿Qué vamos a hacer allí?",
+                        }
+                }
+                CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                se_Play(8961);
+                with (actor ACTOR_PLAYER) {
+                    SetEffect(EFFECT_SWEAT_DROP, 3);
+                }
+                with (actor ACTOR_PLAYER) {
+                    WaitEffect();
+                }
+                WaitExecuteLives(ACTOR_PLAYER);
+                message_SetFace(ACTOR_PLAYER, FACE_WORRIED, FACE_POS_BOTTOM_R_FACEINW);
+                message_SwitchMonologue ($HERO_TALK_KIND) {
+                    case 4:
+                        {
+                            english="(Th-that\'s true.)",
+                            french="(C\'est... c\'est vrai.)",
+                            german="(D-das stimmt.)",
+                            italian="(È-È vero.)",
+                            spanish="(Es cierto.)",
+                        }
+                    default:
+                        {
+                            english="(Th-that\'s true.)",
+                            french="(C\'est... c\'est vrai.)",
+                            german="(D-das stimmt.)",
+                            italian="(È-È vero.)",
+                            spanish="(Es cierto.)",
+                        }
+                }
+                message_SwitchMonologue ($HERO_TALK_KIND) {
+                    case 4:
+                        {
+                            english="(Come to think of it, there isn\'t much point in\ngoing to Treasure Town.)",
+                            french="(Réflexion faite, il n\'y a pas de raison qu\'on\naille à Bourg-Trésor.)",
+                            german="(Nach längerem Nachdenken ergibt es wirklich\nkeinen Sinn, nach Schatzstadt zu gehen.)",
+                            italian="(Se ci penso, non ha molto senso andare a\nBorgo Tesoro.)",
+                            spanish="(Ahora que lo pienso, no tiene mucho sentido\nir a Aldea Tesoro.)",
+                        }
+                    default:
+                        {
+                            english="(Come to think of it, there isn\'t much point in\ngoing to Treasure Town.)",
+                            french="(Réflexion faite, il n\'y a pas de raison qu\'on\naille à Bourg-Trésor.)",
+                            german="(Nach längerem Nachdenken ergibt es wirklich\nkeinen Sinn, nach Schatzstadt zu gehen.)",
+                            italian="(Se ci penso, non ha molto senso andare a\nBorgo Tesoro.)",
+                            spanish="(Ahora que lo pienso, no tiene mucho sentido\nir a Aldea Tesoro.)",
+                        }
+                }
+                message_SwitchMonologue ($HERO_TALK_KIND) {
+                    case 4:
+                        {
+                            english="(What would we possibly do there?)",
+                            french="(Qu\'est-ce qu\'on pourrait bien y faire?)",
+                            german="(Was sollten wir dort tun?)",
+                            italian="(Cosa potremmo fare là?)",
+                            spanish="(¿Qué íbamos a conseguir allí?)",
+                        }
+                    default:
+                        {
+                            english="(What would we possibly do there?)",
+                            french="(Qu\'est-ce qu\'on pourrait bien y faire?)",
+                            german="(Was sollten wir dort tun?)",
+                            italian="(Cosa potremmo fare là?)",
+                            spanish="(¿Qué íbamos a conseguir allí?)",
+                        }
+                }
+                message_SwitchMonologue ($HERO_TALK_KIND) {
+                    case 4:
+                        {
+                            english="(I flubbed it.[K] I guess that\'s not what I meant.)",
+                            french="(Je dis n\'importe quoi.[K] J\'imagine que ce n\'était\npas ce que je voulais dire.)",
+                            german="(Ich habe es verpatzt.[K] Das war wohl nicht,\nwas ich meinte.)",
+                            italian="(Sorgerebbero dei problemi.[K] Non sarebbe\nun\'idea saggia.)",
+                            spanish="(He metido la pata.[K] Creo que eso no era lo\nque quería decir.)",
+                        }
+                    default:
+                        {
+                            english="(I flubbed it.[K] I guess that\'s not what I meant.)",
+                            french="(Je dis n\'importe quoi.[K] J\'imagine que ce n\'était\npas ce que je voulais dire.)",
+                            german="(Ich habe es verpatzt.[K] Das war wohl nicht,\nwas ich meinte.)",
+                            italian="(Sorgerebbero dei problemi.[K] Non sarebbe\nun\'idea saggia.)",
+                            spanish="(He metido la pata.[K] Creo que eso no era lo\nque quería decir.)",
+                        }
+                }
+                CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                with (actor ACTOR_PLAYER) {
+                    ExecuteCommon(CORO_EXPLANATION_FUNC_SERIES, 0);
+                }
+                WaitExecuteLives(ACTOR_PLAYER);
+                se_Play(8962);
+                with (actor ACTOR_ATTENDANT1) {
+                    SetEffect(EFFECT_QUESTION_MARK, 3);
+                }
+                with (actor ACTOR_ATTENDANT1) {
+                    WaitEffect();
+                }
+                WaitExecuteLives(ACTOR_ATTENDANT1);
+                message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_STANDARD);
+                message_SwitchTalk ($PARTNER_TALK_KIND) {
+                    case 1:
+                        {
+                            english=" Huh? That was a mistake?",
+                            french=" Hein? C\'était une erreur?",
+                            german=" Wie? Das war ein Fehler?",
+                            italian=" Eh? È stato un errore?",
+                            spanish=" ¿Qué? ¿Que te equivocaste?",
+                        }
+                    case 2:
+                        {
+                            english=" What? That was a mistake?",
+                            french=" Hein? C\'était une erreur?",
+                            german=" Was? Das war ein Fehler?",
+                            italian=" Cosa? È stato un errore?",
+                            spanish=" ¿Qué? ¿Que te equivocaste?",
+                        }
+                    default:
+                        {
+                            english=" Pardon? That was a mistake?",
+                            french=" Hein? C\'était une erreur?",
+                            german=" Bitte? Das war ein Fehler?",
+                            italian=" Scusa? È stato un errore?",
+                            spanish=" ¿Qué? ¿Que te equivocaste?",
+                        }
+                }
+                message_SwitchTalk ($PARTNER_TALK_KIND) {
+                    case 1:
+                        {
+                            english=" All right. Then where were you\ngoing to suggest?",
+                            french=" D\'accord. Alors qu\'est-ce que\ntu allais dire?",
+                            german=" Aha... Was wolltest du denn\ngerade vorschlagen?",
+                            italian=" Va bene. Allora dove suggerisci \ndi andare?",
+                            spanish=" Entonces, ¿qué ibas a sugerir?",
+                        }
+                    case 2:
+                        {
+                            english=" OK. Then where were you going\nto suggest?",
+                            french=" D\'accord. Alors qu\'est-ce que\ntu allais dire?",
+                            german=" Okay. Was wolltest du denn dann\nvorschlagen?",
+                            italian=" Ok. Allora dove suggerisci \ndi andare?",
+                            spanish=" Ah. Entonces, ¿qué ibas a\nsugerir?",
+                        }
+                    default:
+                        {
+                            english=" OK. Then where were you going\nto suggest?",
+                            french=" D\'accord. Alors qu\'est-ce que\ntu allais dire?",
+                            german=" Okay. Was wolltest du denn dann\nvorschlagen?",
+                            italian=" Ok. Allora dove suggerisci \ndi andare?",
+                            spanish=" Bueno, entonces, ¿qué ibas a\nsugerir?",
+                        }
+                }
+                continue;  // may be redundant
+            case menu({
+                english="Let\'s go to [CS:N]Wigglytuff[CR]\'s Guild!",
+                french="Allons à la Guilde de [CS:N]Grodoudou[CR]!",
+                german="Auf zur [CS:N]Knuddeluff-Gilde[CR]!",
+                italian="Andiamo alla Gilda!",
+                spanish="¡Vamos al [CS:N]Pokégremio[CR]!",
+            }):
+                break_loop;
+                break;
+        }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    $SCENARIO_MAIN = scn[22, 0];
+    bgm2_FadeOut(120);
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 60);
+    Wait(90);
+    end;
+}

@@ -1,0 +1,70 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_BIPPA);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_NPC_BIPPA, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEINW);
+    message_Talk({
+        english=" Huh?[K] Are you folks all set and\nready for some exploring?",
+        french=" Alors?[K] Z\'avez bien fait\nvos préparatifs? Vous voulez partir en\nmission?",
+        german=" Na?[K] Seid ihr bereit für eine\nGanovenjagd?",
+        italian=" Eh?[K] Tutto pronto?",
+        spanish=" ¿Eh?[K] ¿Ya habéis acabado?",
+    });
+    switch ( message_SwitchMenu(0, 1) ) {
+        case menu({
+            english="Yes",
+            french="Oui",
+            german="Ja",
+            italian="Sì",
+            spanish="Sí",
+        }):
+            §label_0;
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            supervision_ExecuteCommon(CORO_EVENT_M03_05_06);
+            §label_2;
+            CallCommon(CORO_EVENT_END_FREE);
+            with (actor ACTOR_NPC_BIPPA) {
+                SetAnimation(4);
+            }
+            end;
+        case menu({
+            english="No",
+            french="Non",
+            german="Nein",
+            italian="No",
+            spanish="No",
+        }):
+        default:
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            message_Talk({
+                english=" Not yet, huh?",
+                french=" Pas encore?",
+                german=" Noch nicht, wie?",
+                italian=" Non ancora, eh?",
+                spanish=" Aún no, ¿eh?",
+            });
+            message_Talk({
+                english=" Just give me a holler when\nyou\'re all ready to go.",
+                french=" Z\'aurez qu\'à m\'sonner quand\nvous voudrez partir.",
+                german=" Sagt einfach Bescheid, wenn ihr\nbereit seid.",
+                italian=" Fatemi un fischio quando avete \nfinito.",
+                spanish=" Avisadme cuando lo tengáis todo\nlisto para partir.",
+            });
+            message_Talk({
+                english=" Then we\'ll all have a gander at\nthe Outlaw Notice Board and pick out a suitable\noutlaw for you.",
+                french=" On zieutera les Avis\nd\'Recherche et puis on vous choisira\nun p\'tit hors-la-loi.",
+                german=" Dann werfen wir einen Blick auf\ndas Ganoven-Infobrett und suchen euch einen\npassenden Ganoven aus.",
+                italian=" Poi cercheremo nella Bacheca\ndei ricercati la missione più adatta a voi.",
+                spanish=" Entonces le echaremos un ojo a\nlos carteles de \"Se Busca\" y escogeremos\nel malhechor adecuado para vuestro nivel.",
+            });
+            message_Close();
+            with (actor ACTOR_NPC_BIPPA) {
+                Turn2Direction(4, 10, DIR_DOWN);
+            }
+            WaitExecuteLives(ACTOR_NPC_BIPPA);
+            jump @label_2;
+    }
+}

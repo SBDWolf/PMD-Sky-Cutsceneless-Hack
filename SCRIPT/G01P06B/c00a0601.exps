@@ -1,0 +1,195 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_G01P06B);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        MovePositionOffset(32896, -200, 0);
+    }
+    Wait(1);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(64);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(64);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(43);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_EATING, 3);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetEffect(EFFECT_EATING, 3);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetEffect(EFFECT_EATING, 3);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetEffect(EFFECT_EATING, 3);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_EATING, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EATING, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EATING, 3);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetEffect(EFFECT_EATING_SLOW, 3);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetEffect(EFFECT_EATING_SLOW, 3);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetEffect(EFFECT_EATING_SLOW, 3);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetEffect(EFFECT_EATING_SLOW, 3);
+    }
+    switch ( sector() ) {
+        case 1:
+            §label_0;
+            with (actor ACTOR_NPC_PUKURIN) {
+                Destroy();
+            }
+            §label_1;
+            bgm_PlayFadeIn(BGM_EATING, 60, 256);
+            screen_FadeIn(1, 30);
+            message_ImitationSound({
+                english="Crunch-munch! Chew-chew! Snuffle-slurp!\nCrunch-munch! Chew-chew! Snuffle-slurp!",
+                french="Cronch cronch! Miam miam! Slurp slurp!\nCronch cronch! Miam miam! Slurp slurp!",
+                german="Stopf-schling! Schmatz! Schlabber-schlürf!\nStopf-schling! Schmatz! Schlabber-schlürf!",
+                italian="Gnam-gnam! Ingurg-ingurg! Slurp-slurp!\nGnam-gnam! Crunch-crunch! Slurp-slurp!",
+                spanish="¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem!\n¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem!",
+            });
+            message_ImitationSound({
+                english="Crunch-munch! Chew-chew! Snuffle-slurp!\nCrunch-munch! Chew-chew! Snuffle-slurp!",
+                french="Cronch cronch! Miam miam! Slurp slurp!\nCronch cronch! Miam miam! Slurp slurp!",
+                german="Stopf-schling! Schmatz! Schlabber-schlürf!\nStopf-schling! Schmatz! Schlabber-schlürf!",
+                italian="Gnam-gnam! Ingurg-ingurg! Slurp-slurp!\nGnam-gnam! Crunch-crunch! Slurp-slurp!",
+                spanish="¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem!\n¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem!",
+            });
+            message_ImitationSound({
+                english="Crunch-munch! Chew-chew! Snuffle-slurp!\nCrunch-munch! Chew-chew! Snuffle-slurp!",
+                french="Cronch cronch! Miam miam! Slurp slurp!\nCronch cronch! Miam miam! Slurp slurp!",
+                german="Stopf-schling! Schmatz! Schlabber-schlürf!\nStopf-schling! Schmatz! Schlabber-schlürf!",
+                italian="Gnam-gnam! Ingurg-ingurg! Slurp-slurp!\nGnam-gnam! Crunch-crunch! Slurp-slurp!",
+                spanish="¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem!\n¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem!",
+            });
+            message_ImitationSound({
+                english="Crunch-munch! Chew-chew! Snuffle-slurp!\nCrunch-munch! Chew-chew! Snuffle-slurp!",
+                french="Cronch cronch! Miam miam! Slurp slurp!\nCronch cronch! Miam miam! Slurp slurp!",
+                german="Stopf-schling! Schmatz! Schlabber-schlürf!\nStopf-schling! Schmatz! Schlabber-schlürf!",
+                italian="Gnam-gnam! Ingurg-ingurg! Slurp-slurp!\nGnam-gnam! Crunch-crunch! Slurp-slurp!",
+                spanish="¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem!\n¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem!",
+            });
+            message_ImitationSound({
+                english="Crunch-munch! Chew-chew! Snuffle-slurp!\nCrunch-munch! Chew-chew! Snuffle-slurp!",
+                french="Cronch cronch! Miam miam! Slurp slurp!\nCronch cronch! Miam miam! Slurp slurp!",
+                german="Stopf-schling! Schmatz! Schlabber-schlürf!\nStopf-schling! Schmatz! Schlabber-schlürf!",
+                italian="Gnam-gnam! Ingurg-ingurg! Slurp-slurp!\nGnam-gnam! Crunch-crunch! Slurp-slurp!",
+                spanish="¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem!\n¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem!",
+            });
+            message_ImitationSound({
+                english="Crunch-munch! Chew-chew! Snuffle-slurp!\nCrunch-munch! Chew-chew! Snuffle-slurp!",
+                french="Cronch cronch! Miam miam! Slurp slurp!\nCronch cronch! Miam miam! Slurp slurp!",
+                german="Stopf-schling! Schmatz! Schlabber-schlürf!\nStopf-schling! Schmatz! Schlabber-schlürf!",
+                italian="Gnam-gnam! Ingurg-ingurg! Slurp-slurp!\nGnam-gnam! Crunch-crunch! Slurp-slurp!",
+                spanish="¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem!\n¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem!",
+            });
+            message_CloseEnforce();
+            bgm_FadeOut(60);
+            screen_FadeOut(1, 30);
+            WaitBgm(BGM_EATING);
+            Wait(30);
+            if ( scn($SCENARIO_MAIN) == [3, 3] || scn($SCENARIO_MAIN) == [3, 6] ) {
+                supervision_RemoveActing(0);
+                message_ResetActor();
+                message_Talk({
+                    english=" Aaaaah! I\'m done eating! Excellent meal!",
+                    french=" Aaaaah! J\'ai fini de manger! Excellent\nrepas!",
+                    german=" Aaaaah! Ich habe fertig gegessen! Ein\nhervorragendes Mahl!",
+                    italian=" Aaaaah! Che mangiata! Era tutto \nbuonissimo!",
+                    spanish=" ¡Ah! ¡No puedo más! ¡Estaba buenísimo!",
+                });
+                CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                message_Talk({
+                    english=" I\'m stuffed, and now I\'m getting sleepy...",
+                    french=" J\'ai le ventre plein, ça me donne envie de\ndormir...",
+                    german=" Ich bin voll, und jetzt werde ich ganz\nschläfrig.",
+                    italian=" Non ci sta più niente...\nChe sonno adesso!",
+                    spanish=" ¡Cómo me he puesto! Y encima ahora\nme está entrando una modorra...",
+                });
+                CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                message_Talk({
+                    english=" Yep, I\'m off to bed! Good night, gang!",
+                    french=" Ouaip, moi, je vais me coucher! Bonne nuit,\ntout le monde!",
+                    german=" Ja, ich geh dann mal ins Bett! Gute Nacht,\nLeute!",
+                    italian=" Sì, vado a letto! Buonanotte, amici!",
+                    spanish=" ¡Sí! Yo me voy a la cama. ¡Buenas noches!",
+                });
+                CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                message_Talk({
+                    english=" Good night!",
+                    french=" Bonne nuit!",
+                    german=" Gute Nacht!",
+                    italian=" Buonanotte!",
+                    spanish=" ¡Buenas noches!",
+                });
+                message_Close();
+                Wait(30);
+                end;
+            } else {
+                end;
+            }
+            break;
+        default:
+            WaitLockLives(5, ACTOR_NPC_PUKURIN);
+            Unlock(5);
+            jump @label_1;
+    }
+}
+
+def 1 for_actor(ACTOR_NPC_PUKURIN) {
+    SetAnimation(5);
+    SetEffect(EFFECT_APPLE_ON_HEAD, 3);
+    Lock(5);
+    §label_3;
+    forever {
+        Turn2Direction(8, 1, DIR_UP);
+        Wait(20);
+        Turn2Direction(8, 1, DIR_DOWN);
+        Wait(20);
+        continue;  // may be redundant
+    }
+}

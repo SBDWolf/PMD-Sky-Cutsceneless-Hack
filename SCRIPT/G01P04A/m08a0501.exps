@@ -1,0 +1,241 @@
+
+def 0 {
+    switch ( ProcessSpecial(PROCESS_SPECIAL_SET_TEAM_SETUP_HERO_AND_PARTNER_ONLY, 0, 0) ) { }
+    $PERFORMANCE_PROGRESS_LIST[5] = 0;
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_HAPPY, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Good. ♪ You appear to be in full\nreadiness. ♪",
+        french=" Bien. ♪ Vous avez apparemment\nfini vos préparatifs. ♪",
+        german=" Gut. ♪ Ihr scheint vorbereitet\nzu sein. ♪",
+        italian=" Bene. ♪ Sembra tutto \npronto. ♪",
+        spanish=" Estupendo. ♪ Veo que\nya os habéis preparado del todo. ♪",
+    });
+    message_Talk({
+        english=" When the other apprentices\nassemble, I shall commence the briefing.\nUntil then, just wait. ♪",
+        french=" Quand les autres apprentis\nseront là, je commencerai la réunion.\nAttendez ici. ♪",
+        german=" Wenn die anderen Lehrlinge\neintreffen, werde ich die Besprechung\nbeginnen. Wartet bis dahin einfach. ♪",
+        italian=" La riunione inizierà quando\nsaranno arrivati gli altri apprendisti.\nPer il momento, aspettate. ♪",
+        spanish=" Cuando lleguen los demás\naprendices me dirigiré a todos.\nHasta entonces, tendréis que esperar. ♪",
+    });
+    message_Close();
+    bgm_FadeOut(60);
+    screen_FadeOut(1, 30);
+    back_SetGround(LEVEL_G01P04A);
+    supervision_Acting(0);
+    supervision_Acting(1);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    Wait(30);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(2);
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD_REMIX, 0, 256);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" All accounted for, it appears.",
+        french=" On dirait que tout le monde\nest là.",
+        german=" Wie ich sehe, sind nun alle\nstartbereit.",
+        italian=" Siete tutti qui, a quanto sembra.",
+        spanish=" Bueno, parece que ya estamos\ntodos.",
+    });
+    message_Talk({
+        english=" Well then. Let me explain \nabout this expedition. ♪",
+        french=" Bien. Je vais donc vous\nexpliquer le déroulement de l\'expédition. ♪",
+        german=" Nun gut. Lasst mich erklären,\nworum es bei der Expedition geht. ♪",
+        italian=" Bene. Allora lasciate che\nvi spieghi i dettagli di questa spedizione. ♪",
+        spanish=" Ya puedo hablaros de\nla expedición. ♪",
+    });
+    message_Talk({
+        english=" First, the objective: exploration\nof [CS:P]Fogbound Lake[CR].",
+        french=" Premièrement, l\'objectif:\nl\'exploration du [CS:P]Lac des Brumes[CR].",
+        german=" Erstens, das Ziel: Die Erkundung\ndes [CS:P]Nebelsees[CR].",
+        italian=" In primo luogo, l\'obiettivo: \nl\'esplorazione del [CS:P]Lago Foschia[CR].",
+        spanish=" Lo primero, el objetivo.\nExploraremos el [CS:P]Lago Velado[CR].",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8962);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_BOTTOM_R_FACEINW);
+    message_FacePositionOffset(1, 0);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" [CS:P]Fogbound Lake[CR]?",
+                french=" Le [CS:P]Lac des Brumes[CR]?",
+                german=" Der [CS:P]Nebelsee[CR]?",
+                italian=" [CS:P]Lago Foschia[CR]?",
+                spanish=" ¿El [CS:P]Lago Velado[CR]?",
+            }
+        case 2:
+            {
+                english=" [CS:P]Fogbound Lake[CR]?",
+                french=" Le [CS:P]Lac des Brumes[CR]?",
+                german=" Der [CS:P]Nebelsee[CR]?",
+                italian=" [CS:P]Lago Foschia[CR]?",
+                spanish=" ¿El [CS:P]Lago Velado[CR]?",
+            }
+        default:
+            {
+                english=" [CS:P]Fogbound Lake[CR]?",
+                french=" Le [CS:P]Lac des Brumes[CR]?",
+                german=" Der [CS:P]Nebelsee[CR]?",
+                italian=" [CS:P]Lago Foschia[CR]?",
+                spanish=" ¿El [CS:P]Lago Velado[CR]?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_RC_FACER);
+    message_Talk({
+        english=" Correct. It is a lake that is said\nto be located far to the east.",
+        french=" Exact. On raconte que ce lac\nse trouve loin à l\'est.",
+        german=" Richtig. Dieser See soll sehr\nweit im Osten liegen.",
+        italian=" Esatto. È un lago che si\ntrova ad est, lontano da qui.",
+        spanish=" Correcto. Parece ser que es un lago\nque está al este, bastante alejado.",
+    });
+    message_Talk({
+        english=" However, it is perpetually\nenshrouded by a dense fog. As such, its actual\nexistence has never been confirmed...",
+        french=" En outre, il est perpétuellement\nenveloppé dans un brouillard dense. De fait,\nson existence n\'a jamais été confirmée...",
+        german=" Er ist jedoch ständig von einem\ndichten Nebel umhüllt. Daher wurde seine\nExistenz niemals nachgewiesen.",
+        italian=" Tuttavia, è perennemente \navvolto in una fitta nebbia. Per questo motivo,\nla sua esistenza non è mai stata confermata...",
+        spanish=" Según cuentan, está rodeado por una\ndensa niebla casi impenetrable. Por ello, no\nse sabe a ciencia cierta si existe realmente.",
+    });
+    message_Talk({
+        english=" It is merely the foggy mirage of\na spot that lives to this day on rumor alone.",
+        french=" Tel un mirage nimbé de brume,\ncet endroit ne serait donc qu\'une légende.",
+        german=" Er ist lediglich eine nebelhafte\nVorstellung eines Ortes, die sich bis heute\neinzig und allein auf Gerüchte stützt.",
+        italian=" Esistono semplicemente delle\nvoci in merito.",
+        spanish=" Hay quien dice que en el fondo son\nsolo habladurías.",
+    });
+    message_Talk({
+        english=" It is also rumored...",
+        french=" On raconte aussi...",
+        german=" Es gibt da auch ein Gerücht...",
+        italian=" E c\'è di più...",
+        spanish=" Aunque otros aseguran...",
+    });
+    message_Talk({
+        english=" A treasure of exquisite beauty\nis hidden there! ♪",
+        french=" ... qu\'il recèle un trésor d\'une\nindicible beauté! ♪",
+        german=" Man sagt, dort soll ein Schatz\nvon atemberaubender Schönheit versteckt\nsein! ♪",
+        italian=" Si dice anche che il lago\nnasconda un tesoro di una bellezza senza\npari! ♪",
+        spanish=" ¡Que allí se oculta un tesoro\nde exquisita belleza! ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_INSPIRED, FACE_POS_BOTTOM_R_FACEINW);
+    message_FacePositionOffset(1, 0);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Wow! Treasure?! We\'re going\non a treasure hunt!",
+                french=" Wouah! Un trésor?! On part\nà la chasse au trésor!",
+                german=" Wow! Ein Schatz?!? Wir gehen\nauf Schatzjagd!",
+                italian=" Wow! Un tesoro?! Andiamo\na caccia di tesori!",
+                spanish=" ¡Vaya! ¡¿Un tesoro?!\n¡Vamos a buscar un tesoro!",
+            }
+        case 2:
+            {
+                english=" Wow! Treasure?! We\'re going\non a treasure hunt!",
+                french=" Wouah! Un trésor?! On part\nà la chasse au trésor!",
+                german=" Wow! Ein Schatz?!? Wir gehen\nauf Schatzjagd!",
+                italian=" Wow! Un tesoro?! Andiamo\na caccia di tesori!",
+                spanish=" ¡Vaya! ¡¿Un tesoro?!\n¡Vamos a buscar un tesoro!",
+            }
+        default:
+            {
+                english=" Wow! Treasure?! We\'re going\non a treasure hunt!",
+                french=" Wouah! Un trésor?! On part\nà la chasse au trésor!",
+                german=" Wow! Ein Schatz?!? Wir gehen\nauf Schatzjagd!",
+                italian=" Wow! Un tesoro?! Andiamo\na caccia di tesori!",
+                spanish=" ¡Vaya! ¡¿Un tesoro?!\n¡Vamos a buscar un tesoro!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" This is so exciting!",
+                french=" Je brûle d\'impatience!",
+                german=" Das ist ja so aufregend!",
+                italian=" È così emozionante!",
+                spanish=" ¡Qué emocionante!",
+            }
+        case 2:
+            {
+                english=" This is so exciting!",
+                french=" Je brûle d\'impatience!",
+                german=" Das ist ja so aufregend!",
+                italian=" Che emozione!",
+                spanish=" ¡Qué emocionante!",
+            }
+        default:
+            {
+                english=" This is so exciting!",
+                french=" Je brûle d\'impatience!",
+                german=" Das ist ja so aufregend!",
+                italian=" Sono così emozionata!",
+                spanish=" ¡Qué emocionante!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PUKURIN) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_HAPPY, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Yup! It will be fun, fun, fun! ♪",
+        french=" Yep! Ça va être rigolo, rigolo,\nrigolo! ♪",
+        german=" Ja! Es wird ein riesen-, riesen-,\nriesengroßer Spaß! ♪",
+        italian=" Già! Sarà divertentissimo! ♪",
+        spanish=" ¡Sí! ¡Será superdíver!\n¡Chachi, chachi! ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PUKURIN) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    message_SetFace(ACTOR_NPC_SUKATANKU, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_FacePositionOffset(0, -3);
+    message_Talk({
+        english=" (Chaw-haw-haw.)",
+        french=" (Tu l\'as dit, bouffi... Gnark\ngnark gnark!)",
+        german=" (Cha-ha-ha.)",
+        italian=" (Ahr-ahr-ahr.)",
+        spanish=" (Jua, jua, jua.)",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" Everyone, open your Wonder\nMaps, please.",
+        french=" Ouvrez tous votre Carte\nMiracle, s\'il vous plaît.",
+        german=" Macht bitte alle eure\nWunderkarten auf.",
+        italian=" Gente, tirate fuori le vostre\nMappe delle meraviglie, per favore.",
+        spanish=" Abrid todos vuestro Mapa Mágico,\npor favor.",
+    });
+    message_Close();
+    se_Play(6667);
+    screen_FadeOut(1, 15);
+    end;
+}

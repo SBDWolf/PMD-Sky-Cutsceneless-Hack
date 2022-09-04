@@ -1,0 +1,215 @@
+
+def 0 {
+    switch ( sector() ) {
+        case 1:
+            §label_0;
+            supervision_StationCommon(0);
+            if ( $SCENARIO_MAIN_BIT_FLAG[92] ) {
+                switch ( $EXECUTE_SPECIAL_EPISODE_TYPE ) {
+                    case 0:
+                    case 2:
+                        §label_2;
+                        switch ( $EXECUTE_SPECIAL_EPISODE_TYPE ) {
+                            case 0:
+                                supervision_ExecuteStationSub(LEVEL_D01P11A, 'UN01', 0);
+                                §label_6;
+                                switch ( sector() ) {
+                                    case 1:
+                                        end;
+                                    default:
+                                        switch ( $GROUND_GETOUT ) {
+                                            case 225:
+                                                switch ( $EXECUTE_SPECIAL_EPISODE_TYPE ) {
+                                                    case 0:
+                                                        supervision_StationCommon(21);
+                                                        §label_45;
+                                                        debug_Print('SET_BGM');
+                                                        bgm_PlayFadeIn(BGM_OCEAN1, 0, 256);
+                                                        switch ( $GROUND_GETOUT ) {
+                                                            case 59:
+                                                                back2_SetMode(32767);
+                                                                WaitSubScreen();
+                                                                §label_47;
+                                                                JumpCommon(CORO_COMMON_ENTER);
+                                                            default:
+                                                                jump @label_47;
+                                                        }
+                                                        break;
+                                                    case 2:
+                                                        supervision_StationCommon(41);
+                                                        jump @label_45;
+                                                    default:
+                                                        supervision_StationCommon(1);
+                                                        jump @label_45;
+                                                }
+                                                break;
+                                            case 59:
+                                                supervision_StationCommon(2);
+                                                jump @label_45;
+                                            default:
+                                                supervision_StationCommon(3);
+                                                jump @label_45;
+                                        }
+                                        break;
+                                }
+                                break;
+                            case 2:
+                                supervision_ExecuteStationSub(LEVEL_D01P11A, 'UN04', 0);
+                                jump @label_6;
+                            default:
+                                switch ( scn($SCENARIO_MAIN)[0] ) {
+                                    case == 4:
+                                        supervision_ExecuteStationSub(LEVEL_D01P11A, 'UM03', 0);
+                                        jump @label_6;
+                                    case == 5:
+                                        supervision_ExecuteStationSub(LEVEL_D01P11A, 'UM04', 0);
+                                        jump @label_6;
+                                    case == 6:
+                                        supervision_ExecuteStationSub(LEVEL_D01P11A, 'UM05', 0);
+                                        jump @label_6;
+                                    case == 7:
+                                        supervision_ExecuteStationSub(LEVEL_D01P11A, 'UM06', 0);
+                                        jump @label_6;
+                                    case == 8:
+                                        supervision_ExecuteStationSub(LEVEL_D01P11A, 'UM07', 0);
+                                        jump @label_6;
+                                    case == 9:
+                                        supervision_ExecuteStationSub(LEVEL_D01P11A, 'UM08', 0);
+                                        jump @label_6;
+                                    case == 12:
+                                        supervision_ExecuteStationSub(LEVEL_D01P11A, 'UM11', 0);
+                                        jump @label_6;
+                                    case == 13:
+                                        supervision_ExecuteStationSub(LEVEL_D01P11A, 'UM12', 0);
+                                        jump @label_6;
+                                    case == 14:
+                                        supervision_ExecuteStationSub(LEVEL_D01P11A, 'UM13', 0);
+                                        jump @label_6;
+                                    case == 15:
+                                        supervision_ExecuteStationSub(LEVEL_D01P11A, 'UM14', 0);
+                                        jump @label_6;
+                                    case == 16:
+                                        supervision_ExecuteStationSub(LEVEL_D01P11A, 'UM15', 0);
+                                        jump @label_6;
+                                    case == 17:
+                                        supervision_ExecuteStationSub(LEVEL_D01P11A, 'UM16', 0);
+                                        jump @label_6;
+                                    case == 18:
+                                        supervision_ExecuteStationSub(LEVEL_D01P11A, 'UM17', 0);
+                                        jump @label_6;
+                                    case == 19:
+                                        supervision_ExecuteStationSub(LEVEL_D01P11A, 'UM18', 0);
+                                        jump @label_6;
+                                    case == 20:
+                                        supervision_ExecuteStationSub(LEVEL_D01P11A, 'UM19', 0);
+                                        jump @label_6;
+                                    case == 21:
+                                        supervision_ExecuteStationSub(LEVEL_D01P11A, 'UM20', 0);
+                                        jump @label_6;
+                                    case == 22:
+                                        supervision_ExecuteStationSub(LEVEL_D01P11A, 'UM21', 0);
+                                        jump @label_6;
+                                    case == 23:
+                                        supervision_ExecuteStationSub(LEVEL_D01P11A, 'UM22', 0);
+                                        jump @label_6;
+                                    case == 24:
+                                        supervision_ExecuteStationSub(LEVEL_D01P11A, 'UM23', 0);
+                                        jump @label_6;
+                                    case == 25:
+                                        supervision_ExecuteStationSub(LEVEL_D01P11A, 'UM24', 0);
+                                        jump @label_6;
+                                    case == 26:
+                                        supervision_ExecuteStationSub(LEVEL_D01P11A, 'UM25', 0);
+                                        jump @label_6;
+                                    case == 27:
+                                        supervision_ExecuteStationSub(LEVEL_D01P11A, 'UM26', 0);
+                                        jump @label_6;
+                                    case == 29:
+                                        if ( scn($SCENARIO_MAIN) >= [29, 93] ) {
+                                            supervision_ExecuteStationSub(LEVEL_D01P11A, 'US23', 0);
+                                            jump @label_6;
+                                        } elseif ( scn($SCENARIO_MAIN) >= [29, 86] ) {
+                                            supervision_ExecuteStationSub(LEVEL_D01P11A, 'US22', 0);
+                                            jump @label_6;
+                                        } elseif ( scn($SCENARIO_MAIN) >= [29, 77] ) {
+                                            supervision_ExecuteStationSub(LEVEL_D01P11A, 'US21', 0);
+                                            debug_Print('OP');
+                                            jump @label_6;
+                                        } elseif ( scn($SCENARIO_MAIN) >= [29, 68] ) {
+                                            supervision_ExecuteStationSub(LEVEL_D01P11A, 'US20', 0);
+                                            jump @label_6;
+                                        } elseif ( scn($SCENARIO_MAIN) >= [29, 54] ) {
+                                            supervision_ExecuteStationSub(LEVEL_D01P11A, 'US04', 0);
+                                            jump @label_6;
+                                        } elseif ( scn($SCENARIO_MAIN) >= [29, 40] ) {
+                                            supervision_ExecuteStationSub(LEVEL_D01P11A, 'US03', 0);
+                                            jump @label_6;
+                                        } elseif ( scn($SCENARIO_MAIN) >= [29, 32] ) {
+                                            supervision_ExecuteStationSub(LEVEL_D01P11A, 'US02', 0);
+                                            jump @label_6;
+                                        } elseif ( scn($SCENARIO_MAIN) >= [29, 7] ) {
+                                            supervision_ExecuteStationSub(LEVEL_D01P11A, 'US31', 0);
+                                            jump @label_6;
+                                        } elseif ( scn($SCENARIO_MAIN) >= [29, 0] ) {
+                                            §label_38;
+                                            supervision_ExecuteStationSub(LEVEL_D01P11A, 'US01', 0);
+                                            jump @label_6;
+                                        } else {
+                                            jump @label_38;
+                                        }
+                                        break;
+                                    default:
+                                        jump @label_6;
+                                }
+                                break;
+                        }
+                        break;
+                    default:
+                        if ( scn($SCENARIO_MAIN) < [4, 5] || scn($SCENARIO_MAIN) == [29, 43] || scn($SCENARIO_MAIN) == [29, 44] || scn($SCENARIO_MAIN) == [29, 45] || scn($SCENARIO_MAIN) == [29, 46] || scn($SCENARIO_MAIN) == [29, 47] || scn($SCENARIO_MAIN) == [29, 48] || scn($SCENARIO_MAIN) == [29, 49] || scn($SCENARIO_MAIN) == [29, 50] || scn($SCENARIO_MAIN) == [29, 93] || scn($SCENARIO_MAIN) == [29, 94] ) {
+                            jump @label_2;
+                        } else {
+                            switch ( ProcessSpecial(PROCESS_SPECIAL_INIT_RANDOM_NPC_JOBS, 1, 0) ) { }
+                            switch ( ProcessSpecial(PROCESS_SPECIAL_GET_RANDOM_NPC_JOB_STILL_AVAILABLE, 0, 0) ) {
+                                case 0:
+                                    jump @label_2;
+                                default:
+                                    supervision_StationCommon(5);
+                                    jump @label_2;
+                            }
+                        }
+                        break;
+                }
+            } else {
+                jump @label_2;
+            }
+            break;
+        default:
+            screen_FadeOutAll(1, 0);
+            back_SetGround(LEVEL_D01P11A);
+            jump @label_0;
+    }
+}
+
+def 1 for_actor(ACTOR_PLAYER) {
+    SetAnimation(2);
+    WaitFadeIn();
+    end;
+}
+
+def 2 for_actor(ACTOR_ATTENDANT1) {
+    SetAnimation(2);
+    WaitFadeIn();
+    end;
+}
+
+def 3 for_actor(ACTOR_PLAYER_BIPPA) {
+    SetAnimation(2);
+    WaitFadeIn();
+    end;
+}
+
+def 4 for_actor(ACTOR_PLAYER_KIMAWARI) {
+    SetAnimation(2);
+    WaitFadeIn();
+    end;
+}

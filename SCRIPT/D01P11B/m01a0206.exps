@@ -1,0 +1,107 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_ON_THE_BEACH_AT_DUSK, 0, 256);
+    bgm2_PlayFadeIn(BGM_OCEAN1, 0, 256);
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V01P03B);
+    back_SetGround(LEVEL_D01P11B);
+    supervision_Acting(0);
+    camera2_SetPositionMark(Position<'m0', 33, 9.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    supervision_SpecialActing(21, 700, 0);
+    supervision2_SpecialActing(21, 700, 0);
+    with (actor ACTOR_ATTENDANT1) {
+        SetOutputAttribute(2);
+    }
+    screen2_FadeIn(0, 30);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" When the weather\'s good, the\n[CS:N]Krabby[CR] come out at sundown to blow bubbles...",
+                french=" Quand il fait beau, les [CS:N]Krabby[CR]\nsortent au coucher du soleil pour faire\ndes bulles...",
+                german=" Wenn das Wetter schön ist,\nkommen die [CS:N]Krabby[CR] bei Sonnenuntergang\nheraus und pusten Blasen in die Luft...",
+                italian=" Quando c\'è bel tempo, i\n[CS:N]Krabby[CR] escono al tramonto per \nfare le bollicine...",
+                spanish=" Cuando hace buen tiempo, los\n[CS:N]Krabby[CR] salen a la puesta de sol a soplar\npompitas...",
+            }
+        case 2:
+            {
+                english=" When the weather\'s good, the\n[CS:N]Krabby[CR] come out at sundown to blow bubbles...",
+                french=" Quand il fait beau, les [CS:N]Krabby[CR]\nsortent au coucher du soleil pour faire\ndes bulles...",
+                german=" Wenn das Wetter schön ist,\nkommen die [CS:N]Krabby[CR] bei Sonnenuntergang\nheraus und pusten Blasen in die Luft...",
+                italian=" Quando c\'è bel tempo, i\n[CS:N]Krabby[CR] escono al tramonto per \nfare le bollicine...",
+                spanish=" Cuando hace buen tiempo, los\n[CS:N]Krabby[CR] salen con el ocaso para soplar\npompitas...",
+            }
+        default:
+            {
+                english=" When the weather\'s good, the\n[CS:N]Krabby[CR] come out at sundown to blow bubbles...",
+                french=" Quand il fait beau, les [CS:N]Krabby[CR]\nsortent au coucher du soleil pour faire\ndes bulles...",
+                german=" Wenn das Wetter schön ist,\nkommen die [CS:N]Krabby[CR] bei Sonnenuntergang\nheraus und pusten Blasen in die Luft...",
+                italian=" Quando c\'è bel tempo, i\n[CS:N]Krabby[CR] escono al tramonto per \nfare le bollicine...",
+                spanish=" Cuando hace buen tiempo, los\n[CS:N]Krabby[CR] salen con el ocaso para soplar\npompitas...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" All those bubbles, catching the\nsetting sun\'s rays off the waves...",
+                french=" Les rayons du soleil couchant\nfrappent les vagues et toutes ces bulles...",
+                german=" Wie sich die Sonnenstrahlen in\nall diesen Blasen spiegeln...",
+                italian=" Tutte quelle bolle... sono così \nbelle quando riflettono i raggi del sole che \naccarezzano le onde...",
+                spanish=" Me gusta ver cómo las pompas\nreflejan los últimos rayos del sol\nque caen sobre las olas...",
+            }
+        case 2:
+            {
+                english=" All those bubbles, catching the\nsetting sun\'s rays off the waves...",
+                french=" Les rayons du soleil couchant\nfrappent les vagues et toutes ces bulles...",
+                german=" Wie sich die Sonnenstrahlen in\nall diesen Blasen spiegeln...",
+                italian=" Tutte quelle bolle... sono così \nbelle quando riflettono i raggi del sole che \naccarezzano le onde...",
+                spanish=" Me gusta ver cómo todas esas\npompas reflejan los últimos rayos del sol\nque brillan sobre las olas...",
+            }
+        default:
+            {
+                english=" All those bubbles, reflecting the\nsetting sun off the waves...",
+                french=" Les rayons du soleil couchant\nfrappent les vagues et toutes ces bulles...",
+                german=" Wie sich die Sonnenstrahlen in\nall diesen Blasen spiegeln...",
+                italian=" Tutte quelle bolle... sono così \nbelle quando riflettono i raggi del sole che \naccarezzano le onde...",
+                spanish=" Me encanta ver cómo todas esas\npompas reflejan los últimos rayos del sol\nque caen sobre las olas...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It\'s always impressive.",
+                french=" Toutes ces couleurs... Quel\nspectacle magnifique.",
+                german=" Das beeindruckt mich jedes Mal.",
+                italian=" È sempre un panorama \nfavoloso.",
+                spanish=" Siempre me impresiona.",
+            }
+        case 2:
+            {
+                english=" It\'s always beautiful.",
+                french=" Toutes ces couleurs... Quel\nspectacle magnifique.",
+                german=" Es ist immer wunderschön.",
+                italian=" È sempre un panorama \nmagnifico.",
+                spanish=" Siempre me impresiona.",
+            }
+        default:
+            {
+                english=" It\'s always beautiful.",
+                french=" Toutes ces couleurs... Quel\nspectacle magnifique.",
+                german=" Es ist immer wunderschön.",
+                italian=" È sempre un panorama \nincantevole.",
+                spanish=" Me resulta tan hermoso...",
+            }
+    }
+    message_Close();
+    screen2_FadeOut(0, 30);
+    screen_FadeOut(1, 30);
+    back2_SetMode(0);
+    supervision_SpecialActing(3, 0, 0);
+    supervision2_SpecialActing(3, 0, 0);
+    end;
+}

@@ -1,0 +1,180 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_OH_NO, 0, 256);
+    back_SetGround(LEVEL_D17P32A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 15);
+    se_Play(8973);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    message_SetFace(ACTOR_PLAYER, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(This is...)",
+                french="(C\'est...)",
+                german="(Das...)",
+                italian="(Questa...)",
+                spanish="(Esto es...)",
+            }
+        default:
+            {
+                english="(This is...)",
+                french="(C\'est...)",
+                german="(Das...)",
+                italian="(Questa...)",
+                spanish="(Esto es...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(This is what I saw in my vision during that\nDimensional Scream!)",
+                french="(C\'est exactement comme dans la vision que\nj\'ai eue!)",
+                german="(Das habe ich in der Vision gesehen, die mir\nder Dimensionale Schrei eingegeben hat!)",
+                italian="(Questa è la stessa scena che ho visto\ncon lo Squarcio Dimensionale!)",
+                spanish="(¡Esto es lo que vi con la Percepción de\nCronos!)",
+            }
+        default:
+            {
+                english="(This is what I saw in my vision during that\nDimensional Scream!)",
+                french="(C\'est exactement comme dans la vision que\nj\'ai eue!)",
+                german="(Das habe ich in der Vision gesehen, die mir\nder Dimensionale Schrei eingegeben hat!)",
+                italian="(Questa è la stessa scena che ho visto\ncon lo Squarcio Dimensionale!)",
+                spanish="(¡Esto es lo que vi con la Percepción de\nCronos!)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(The vision I saw then...[K] It was an event in\nthe future after all!)",
+                french="(Donc cette vision...[K] concernait bien\nun événement à venir!)",
+                german="(Die Vision, die ich hatte...[K] Das war also doch\nein Ereignis aus der Zukunft!)",
+                italian="(Allora si trattava...[K] di un evento futuro!)",
+                spanish="(Esa visión que tuve...[K] ¡Realmente sucedía\nen el futuro!)",
+            }
+        default:
+            {
+                english="(The vision I saw then...[K] It was an event in\nthe future after all!)",
+                french="(Donc cette vision...[K] concernait bien\nun événement à venir!)",
+                german="(Die Vision, die ich hatte...[K] Das war also doch\nein Ereignis aus der Zukunft!)",
+                italian="(Allora si trattava...[K] di un evento futuro!)",
+                spanish="(Esa visión que tuve...[K] ¡Realmente sucedía\nen el futuro!)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(1, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(1, 10, ACTOR_ATTENDANT1);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Who is that over there? [CS:N]Azelf[CR]?!",
+                french=" C\'est qui ça, là-bas? [CS:N]Créfadet[CR]?!",
+                german=" Wer ist das? [CS:N]Tobutz[CR]?!?",
+                italian=" Chi è quello? È forse [CS:N]Azelf[CR]?!",
+                spanish=" ¿Quién está ahí? ¡¿[CS:N]Azelf[CR]?!",
+            }
+        case 2:
+            {
+                english=" Who is that over there? [CS:N]Azelf[CR]?!",
+                french=" C\'est qui ça, là-bas? [CS:N]Créfadet[CR]?!",
+                german=" Wer ist das? [CS:N]Tobutz[CR]?!?",
+                italian=" Chi è quello? È forse [CS:N]Azelf[CR]?!",
+                spanish=" ¿Quién está ahí? ¡¿[CS:N]Azelf[CR]?!",
+            }
+        default:
+            {
+                english=" Who is that over there? [CS:N]Azelf[CR]?!",
+                french=" C\'est qui ça, là-bas? [CS:N]Créfadet[CR]?!",
+                german=" Wer ist das? [CS:N]Tobutz[CR]?!?",
+                italian=" Chi è quello? È forse [CS:N]Azelf[CR]?!",
+                spanish=" ¿Quién está ahí? ¡¿[CS:N]Azelf[CR]?!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" If it is, [CS:N]Azelf[CR]\'s in trouble!",
+                french=" Si c\'est bien lui, alors il a\ndes ennuis!",
+                german=" Wenn ja, dann steckt [CS:N]Tobutz[CR]\nin Schwierigkeiten!",
+                italian=" Beh, se lo è, [CS:N]Azelf[CR] è nei guai!",
+                spanish=" Si es así, ¡[CS:N]Azelf[CR] está en peligro!",
+            }
+        case 2:
+            {
+                english=" If it is, [CS:N]Azelf[CR]\'s in trouble!",
+                french=" Si c\'est bien lui, alors il a\ndes ennuis!",
+                german=" Wenn ja, dann steckt [CS:N]Tobutz[CR]\nin Schwierigkeiten!",
+                italian=" Se lo è, [CS:N]Azelf[CR] è nei guai!",
+                spanish=" Si es así, ¡[CS:N]Azelf[CR] está en peligro!",
+            }
+        default:
+            {
+                english=" If it is, [CS:N]Azelf[CR]\'s in trouble!",
+                french=" Si c\'est bien lui, alors il a\ndes ennuis!",
+                german=" Wenn ja, dann steckt [CS:N]Tobutz[CR]\nin Schwierigkeiten!",
+                italian=" Se lo è, [CS:N]Azelf[CR] è nei guai!",
+                spanish=" Si es así, ¡[CS:N]Azelf[CR] está en peligro!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Let\'s go help! Hurry!",
+                french=" Allons lui prêter main-forte!",
+                german=" Helfen wir ihm! Schnell!",
+                italian=" Andiamo ad aiutarlo! Presto!",
+                spanish=" ¡Vamos a ayudarle! ¡Rápido!",
+            }
+        case 2:
+            {
+                english=" Let\'s go help! Hurry!",
+                french=" Allons lui prêter main-forte!",
+                german=" Helfen wir ihm! Schnell!",
+                italian=" Andiamo ad aiutarlo! Presto!",
+                spanish=" ¡Vamos a ayudarle! ¡Rápido!",
+            }
+        default:
+            {
+                english=" Let\'s go help! Hurry!",
+                french=" Allons lui prêter main-forte!",
+                german=" Helfen wir ihm! Schnell!",
+                italian=" Andiamo ad aiutarlo! Presto!",
+                spanish=" ¡Vamos a ayudarle! ¡Rápido!",
+            }
+    }
+    message_Close();
+    with (performer 0) {
+        MovePositionOffset(3, 0, -180);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionOffset(2, 0, -180);
+    }
+    Wait(5);
+    with (actor ACTOR_PLAYER) {
+        MovePositionOffset(2, 0, -180);
+    }
+    with (actor ACTOR_UNIT_NPC1) {
+        MovePositionOffset(2, 0, -180);
+    }
+    with (actor ACTOR_UNIT_NPC2) {
+        MovePositionOffset(2, 0, -180);
+    }
+    Wait(10);
+    screen_FadeOut(1, 15);
+    end;
+}

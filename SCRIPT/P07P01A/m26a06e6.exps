@@ -1,0 +1,132 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_MEMORIES_RETURNED, 0, 256);
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V17P01A);
+    back_SetGround(LEVEL_P07P01A);
+    supervision_Acting(0);
+    Wait(1);
+    camera2_SetPositionMark(Position<'m0', 21, 21.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        SetPositionMark(Position<'m1', 22.5, 47.5>);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Destroy();
+    }
+    with (actor ACTOR_PLAYER) {
+        SetPositionMark(Position<'m2', 26, 49.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetDirection(DIR_LEFT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetDirection(DIR_RIGHT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetPositionMark(Position<'m3', 15, 49.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetPositionOffset(28, 0);
+    }
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    screen2_FadeIn(0, 30);
+    screen_FadeIn(1, 30);
+    with (actor ACTOR_PLAYER) {
+        MovePositionOffset(32972, 24, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" [hero].",
+                french=" [hero].",
+                german=" [hero].",
+                italian=" [hero].",
+                spanish=" [hero]...",
+            }
+        case 2:
+            {
+                english=" [hero].",
+                french=" [hero].",
+                german=" [hero].",
+                italian=" [hero].",
+                spanish=" [hero]...",
+            }
+        default:
+            {
+                english=" [hero].",
+                french=" [hero].",
+                german=" [hero].",
+                italian=" [hero].",
+                spanish=" [hero]...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(15);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_DETERMINED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We have to...[K] We have to\nget back!",
+                french=" Il faut...[K] il faut qu\'on rentre!",
+                german=" Wir müssen...[K] Wir müssen\nwieder zurück!",
+                italian=" Dobbiamo...[K] Dobbiamo tornare \nindietro!",
+                spanish=" Tenemos que...[K]\n¡Tenemos que regresar!",
+            }
+        case 2:
+            {
+                english=" We have to...[K] We have to\nget back!",
+                french=" Il faut...[K] il faut qu\'on rentre!",
+                german=" Wir müssen...[K] Wir müssen\nwieder zurück!",
+                italian=" Dobbiamo...[K] Dobbiamo tornare \nindietro!",
+                spanish=" Tenemos que...[K]\n¡Tenemos que regresar!",
+            }
+        default:
+            {
+                english=" We have to...[K] We have to\nget back!",
+                french=" Il faut...[K] il faut qu\'on rentre!",
+                german=" Wir müssen...[K] Wir müssen\nwieder zurück!",
+                italian=" Dobbiamo...[K] Dobbiamo tornare \nindietro!",
+                spanish=" Tenemos que...[K]\n¡Tenemos que regresar!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Back to our own world!",
+                french=" Qu\'on rentre dans notre monde!",
+                german=" Zurück in unsere Zeit!",
+                italian=" Nel nostro mondo!",
+                spanish=" ¡Hay que volver a nuestro\nmundo!",
+            }
+        case 2:
+            {
+                english=" Back to our own world!",
+                french=" Qu\'on rentre dans notre monde!",
+                german=" Zurück in unsere Zeit!",
+                italian=" Nel nostro mondo!",
+                spanish=" ¡Hay que volver a nuestro\nmundo!",
+            }
+        default:
+            {
+                english=" Back to our own world!",
+                french=" Qu\'on rentre dans notre monde!",
+                german=" Zurück in unsere Zeit!",
+                italian=" Nel nostro mondo!",
+                spanish=" ¡Hay que volver a nuestro\nmundo!",
+            }
+    }
+    message_Close();
+    screen2_WhiteOut(0, 30);
+    screen_WhiteOut(1, 30);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    end;
+}

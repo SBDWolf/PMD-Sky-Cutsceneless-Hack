@@ -1,0 +1,75 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_THAT_SHAPE, 0, 256);
+    back_SetGround(LEVEL_D04P31A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    camera_SetEffect(2, 1, 1);
+    switch ( sector() ) {
+        case 0:
+        default:
+            §label_0;
+            screen_FlushOut(1, 0, 8, 0, 0, 0);
+            screen_FadeIn(1, 30);
+            Wait(30);
+            §label_2;
+            with (actor ACTOR_NPC_DARK_PUKURIN) {
+                SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+            }
+            with (actor ACTOR_NPC_DARK_PUKURIN) {
+                WaitEffect();
+            }
+            WaitExecuteLives(ACTOR_NPC_DARK_PUKURIN);
+            with (actor ACTOR_NPC_DARK_PUKURIN) {
+                Turn2Direction(1, 10, DIR_DOWN);
+            }
+            WaitExecuteLives(ACTOR_NPC_DARK_PUKURIN);
+            Wait(30);
+            with (actor ACTOR_NPC_DARK_PUKURIN) {
+                ExecuteCommon(CORO_LOOK_AROUND_FAST_FUNC_SERIES, 0);
+            }
+            WaitExecuteLives(ACTOR_NPC_DARK_PUKURIN);
+            with (actor ACTOR_NPC_DARK_PUKURIN) {
+                Turn2Direction(1, 10, DIR_RIGHT);
+            }
+            WaitExecuteLives(ACTOR_NPC_DARK_PUKURIN);
+            Wait(15);
+            supervision_SpecialActing(7, 0, 0);
+            with (actor ACTOR_NPC_DARK_PUKURIN) {
+                ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+            }
+            WaitExecuteLives(ACTOR_NPC_DARK_PUKURIN);
+            with (actor ACTOR_NPC_DARK_PUKURIN) {
+                SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+            }
+            with (actor ACTOR_NPC_DARK_PUKURIN) {
+                WaitEffect();
+            }
+            WaitExecuteLives(ACTOR_NPC_DARK_PUKURIN);
+            with (actor ACTOR_NPC_DARK_PUKURIN) {
+                MovePositionOffset(2, -40, 0);
+            }
+            WaitExecuteLives(ACTOR_NPC_DARK_PUKURIN);
+            with (actor ACTOR_NPC_DARK_PUKURIN) {
+                SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+            }
+            with (actor ACTOR_NPC_DARK_PUKURIN) {
+                SetAnimation(11);
+            }
+            with (actor ACTOR_NPC_DARK_PUKURIN) {
+                SlidePositionOffset(3, -180, 0);
+            }
+            Wait(30);
+            screen_FadeOut(1, 30);
+            supervision_SpecialActing(3, 0, 0);
+            screen_FlushIn(1, 0, 1, 0, 0, 0);
+            end;
+        case 1:
+            screen_FlushOut(1, 0, 6, 0, 0, 0);
+            screen_FadeIn(1, 30);
+            Wait(30);
+            jump @label_2;
+    }
+}

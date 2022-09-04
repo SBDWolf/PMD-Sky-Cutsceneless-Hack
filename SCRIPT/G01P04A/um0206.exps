@@ -1,0 +1,11 @@
+
+def 0 {
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    supervision_ExecuteCommon(CORO_EVENT_M02_03_04);
+    end;
+}

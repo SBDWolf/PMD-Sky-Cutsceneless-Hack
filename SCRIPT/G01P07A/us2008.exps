@@ -1,0 +1,119 @@
+
+def 0 {
+    if ( scn($SCENARIO_MAIN) >= [29, 94] || scn($SCENARIO_MAIN) >= [29, 93] || scn($SCENARIO_MAIN) >= [29, 92] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_SURIIPU);
+        }
+        message_SetFace(ACTOR_NPC_SURIIPU, FACE_NORMAL, FACE_POS_STANDARD);
+        message_Talk({
+            english=" I knew you could do it,\n[hero] and [partner]!",
+            french=" Je savais que vous en étiez\ncapables, [hero] et [partner]!",
+            german=" Ich wusste, dass ihr es\nschaffen könnt, [hero] und\n[partner]!",
+            italian=" Sapevo che ce l\'avreste fatta,\n[hero] e [partner]!",
+            spanish=" ¡Sabía que podíais hacerlo,\n[hero] y [partner]!",
+        });
+        message_Talk({
+            english=" You two have true courage.",
+            french=" C\'est donc cela, le vrai\ncourage... Il est en vous.",
+            german=" Ihr zwei habt wahren Mut.",
+            italian=" Voi due avete davvero fegato!",
+            spanish=" Sois muy valientes.",
+        });
+        message_Talk({
+            english=" I knew it way back when...[K]\nwhen you caught me as an outlaw.",
+            french=" Je le savais déjà à l\'époque\noù j\'étais hors-la-loi...[K]\nquand vous m\'avez capturé.",
+            german=" Ich wusste das bereits,[K]\nals ihr mich als Ganoven einfingt.",
+            italian=" L\'ho scoperto tempo addietro \nquando...[K] quando ero ricercato e mi avete\ncatturato.",
+            spanish=" Lo supe en cuanto...[K] me\ncapturasteis.",
+        });
+        message_Talk({
+            english=" ...[K]I\'m going to leave soon.[K]\nI\'m going to travel.",
+            french=" ... [K]Je vais partir bientôt.[K]\nPour voyager.",
+            german=" ...[K]Ich werde bald aufbrechen.[K]\nIch werde auf Reisen gehen.",
+            italian=" ...[K] Presto partirò.[K] \nMi metterò in viaggio.",
+            spanish=" Pero...[K] pronto me iré.[K] Pienso\nir a un lugar muy lejano.",
+        });
+        message_Talk({
+            english=" It was awkward when we met\non [CS:P]Mt. Travail[CR]...[K] Next time, I\'d like to meet\nyou with a smile and open arms.",
+            french=" J\'étais sur mes gardes lors de\nnotre rencontre au [CS:P]Mt Labeur[CR]... [K]La prochaine\nfois, je vous accueillerai à bras ouverts.",
+            german=" Unsere Begegnung auf dem\n[CS:P]Mühsalberg[CR] war komisch.[K] Beim nächsten Mal\nmöchte ich euch mit offenen Armen begegnen.",
+            italian=" Il nostro incontro sul [CS:P]Monte[CR]\n[CS:P]Odissea[CR] è stato imbarazzante...[K] Il prossimo \nvorrei che fosse con un sorriso e un abbraccio.",
+            spanish=" Nuestro encuentro en el [CS:P]Monte[CR]\n[CS:P]Tribulaciones[CR] fue un tanto incómodo...[K]\nLa próxima vez será muy distinto.",
+        });
+        message_Close();
+        §label_130;
+        JumpCommon(CORO_END_TALK);
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 91] || scn($SCENARIO_MAIN) >= [29, 90] || scn($SCENARIO_MAIN) >= [29, 89] || scn($SCENARIO_MAIN) >= [29, 88] || scn($SCENARIO_MAIN) >= [29, 87] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_SURIIPU);
+        }
+        message_SetFace(ACTOR_NPC_SURIIPU, FACE_NORMAL, FACE_POS_STANDARD);
+        message_Talk({
+            english=" Don\'t let that [CS:N]Darkrai[CR] beat you!",
+            french=" Ne laissez pas ce [CS:N]Darkrai[CR]\nvous vaincre!",
+            german=" Lasst euch nicht von diesem\n[CS:N]Darkrai[CR] besiegen!",
+            italian=" Non lasciate che [CS:N]Darkrai[CR] abbia\nla meglio!",
+            spanish=" ¡No dejéis que ese [CS:N]Darkrai[CR]\nse salga con la suya!",
+        });
+        message_Close();
+        jump @label_130;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 85] || scn($SCENARIO_MAIN) >= [29, 84] || scn($SCENARIO_MAIN) >= [29, 83] || scn($SCENARIO_MAIN) >= [29, 82] || scn($SCENARIO_MAIN) >= [29, 81] || scn($SCENARIO_MAIN) >= [29, 80] || scn($SCENARIO_MAIN) >= [29, 78] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_SURIIPU);
+        }
+        message_SetFace(ACTOR_NPC_SURIIPU, FACE_NORMAL, FACE_POS_STANDARD);
+        message_Talk({
+            english=" [CS:N]Azurill[CR] hasn\'t awoken from his\nnightmare...",
+            french=" [CS:N]Azurill[CR] ne s\'est toujours pas\nréveillé de son cauchemar...",
+            german=" [CS:N]Azurill[CR] ist noch nicht aus\nseinem Albtraum erwacht.",
+            italian=" [CS:N]Azurill[CR] non si è risvegliato\ndal suo incubo...",
+            spanish=" [CS:N]Azurill[CR] no se ha despertado\nde su pesadilla...",
+        });
+        message_Talk({
+            english=" If there were some way of\nfixing the distortion of space...",
+            french=" S\'il y avait un moyen de\nremédier à la distorsion de l\'espace...",
+            german=" Falls es irgendeinen Weg gäbe,\ndie Raumkrümmung zu korrigieren...",
+            italian=" Se ci fosse un modo per\narrestare la distorsione dello spazio...",
+            spanish=" Si hubiera alguna forma de\narreglar la deformación del espacio...",
+        });
+        message_Close();
+        jump @label_130;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 76] ) {
+        supervision_ExecuteCommon(CORO_EVENT_S20_10);
+        jump @label_130;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 75] ) {
+        supervision_ExecuteCommon(CORO_EVENT_S20_09);
+        jump @label_130;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 73] || scn($SCENARIO_MAIN) >= [29, 72] || scn($SCENARIO_MAIN) >= [29, 71] || scn($SCENARIO_MAIN) >= [29, 70] || scn($SCENARIO_MAIN) >= [29, 69] || scn($SCENARIO_MAIN) >= [29, 67] || scn($SCENARIO_MAIN) >= [29, 56] || scn($SCENARIO_MAIN) >= [29, 55] || scn($SCENARIO_MAIN) >= [29, 54] || scn($SCENARIO_MAIN) >= [29, 53] || scn($SCENARIO_MAIN) >= [29, 52] || scn($SCENARIO_MAIN) >= [29, 50] || scn($SCENARIO_MAIN) >= [29, 49] || scn($SCENARIO_MAIN) >= [29, 48] || scn($SCENARIO_MAIN) >= [29, 47] || scn($SCENARIO_MAIN) >= [29, 46] || scn($SCENARIO_MAIN) >= [29, 45] || scn($SCENARIO_MAIN) >= [29, 44] || scn($SCENARIO_MAIN) >= [29, 43] || scn($SCENARIO_MAIN) >= [29, 42] || scn($SCENARIO_MAIN) >= [29, 41] || scn($SCENARIO_MAIN) >= [29, 40] || scn($SCENARIO_MAIN) >= [29, 39] || scn($SCENARIO_MAIN) >= [29, 33] || scn($SCENARIO_MAIN) >= [29, 32] || scn($SCENARIO_MAIN) >= [29, 31] || scn($SCENARIO_MAIN) >= [29, 30] || scn($SCENARIO_MAIN) >= [29, 29] || scn($SCENARIO_MAIN) >= [29, 28] || scn($SCENARIO_MAIN) >= [29, 27] || scn($SCENARIO_MAIN) >= [29, 26] || scn($SCENARIO_MAIN) >= [29, 25] || scn($SCENARIO_MAIN) >= [29, 24] || scn($SCENARIO_MAIN) >= [29, 23] || scn($SCENARIO_MAIN) >= [29, 22] || scn($SCENARIO_MAIN) >= [29, 21] || scn($SCENARIO_MAIN) >= [29, 20] || scn($SCENARIO_MAIN) >= [29, 19] || scn($SCENARIO_MAIN) >= [29, 18] || scn($SCENARIO_MAIN) >= [29, 17] || scn($SCENARIO_MAIN) >= [29, 16] || scn($SCENARIO_MAIN) >= [29, 15] || scn($SCENARIO_MAIN) >= [29, 14] || scn($SCENARIO_MAIN) >= [29, 13] || scn($SCENARIO_MAIN) >= [29, 12] || scn($SCENARIO_MAIN) >= [29, 11] || scn($SCENARIO_MAIN) >= [29, 10] || scn($SCENARIO_MAIN) >= [29, 8] || scn($SCENARIO_MAIN) >= [29, 6] || scn($SCENARIO_MAIN) >= [29, 5] || scn($SCENARIO_MAIN) >= [29, 4] || scn($SCENARIO_MAIN) >= [29, 3] || scn($SCENARIO_MAIN) >= [29, 2] || scn($SCENARIO_MAIN) >= [29, 1] || scn($SCENARIO_MAIN) >= [25, 4] || scn($SCENARIO_MAIN) >= [25, 3] || scn($SCENARIO_MAIN) >= [25, 2] || scn($SCENARIO_MAIN) >= [25, 2] || scn($SCENARIO_MAIN) >= [25, 1] || scn($SCENARIO_MAIN) >= [24, 1] || scn($SCENARIO_MAIN) >= [24, 1] || scn($SCENARIO_MAIN) >= [23, 3] || scn($SCENARIO_MAIN) >= [23, 2] || scn($SCENARIO_MAIN) >= [23, 1] || scn($SCENARIO_MAIN) >= [22, 3] || scn($SCENARIO_MAIN) >= [22, 2] || scn($SCENARIO_MAIN) >= [21, 2] || scn($SCENARIO_MAIN) >= [21, 1] || scn($SCENARIO_MAIN) >= [20, 4] || scn($SCENARIO_MAIN) >= [20, 3] || scn($SCENARIO_MAIN) >= [20, 2] || scn($SCENARIO_MAIN) >= [20, 1] || scn($SCENARIO_MAIN) >= [17, 3] || scn($SCENARIO_MAIN) >= [17, 1] || scn($SCENARIO_MAIN) >= [16, 2] || scn($SCENARIO_MAIN) >= [16, 0] || scn($SCENARIO_MAIN) >= [15, 4] || scn($SCENARIO_MAIN) >= [15, 1] || scn($SCENARIO_MAIN) >= [14, 5] || scn($SCENARIO_MAIN) >= [14, 4] || scn($SCENARIO_MAIN) >= [14, 2] || scn($SCENARIO_MAIN) >= [14, 1] || scn($SCENARIO_MAIN) >= [13, 2] || scn($SCENARIO_MAIN) >= [13, 1] || scn($SCENARIO_MAIN) >= [12, 4] || scn($SCENARIO_MAIN) >= [12, 3] || scn($SCENARIO_MAIN) >= [12, 1] || scn($SCENARIO_MAIN) >= [10, 2] || scn($SCENARIO_MAIN) >= [10, 1] || scn($SCENARIO_MAIN) >= [9, 5] || scn($SCENARIO_MAIN) >= [9, 4] || scn($SCENARIO_MAIN) >= [9, 2] || scn($SCENARIO_MAIN) >= [9, 1] || scn($SCENARIO_MAIN) >= [8, 7] || scn($SCENARIO_MAIN) >= [8, 6] || scn($SCENARIO_MAIN) >= [8, 5] || scn($SCENARIO_MAIN) >= [8, 3] || scn($SCENARIO_MAIN) >= [8, 2] || scn($SCENARIO_MAIN) >= [8, 1] || scn($SCENARIO_MAIN) >= [7, 6] || scn($SCENARIO_MAIN) >= [7, 3] || scn($SCENARIO_MAIN) >= [7, 2] || scn($SCENARIO_MAIN) >= [7, 1] || scn($SCENARIO_MAIN) >= [6, 5] || scn($SCENARIO_MAIN) >= [6, 1] || scn($SCENARIO_MAIN) >= [5, 5] || scn($SCENARIO_MAIN) >= [4, 7] || scn($SCENARIO_MAIN) >= [4, 5] || scn($SCENARIO_MAIN) >= [4, 3] || scn($SCENARIO_MAIN) >= [4, 2] || scn($SCENARIO_MAIN) >= [4, 1] || scn($SCENARIO_MAIN) >= [4, 0] || scn($SCENARIO_MAIN) >= [3, 1] ) {
+        jump @label_130;
+    } else {
+        jump @label_130;
+    }
+}

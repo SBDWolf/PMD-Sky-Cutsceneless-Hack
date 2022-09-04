@@ -1,0 +1,881 @@
+
+def 0 {
+    sound_Stop();
+    screen_WhiteOutAll(1, 0);
+    Wait(1);
+    screen_FadeIn(1, 0);
+    back_SetGround(LEVEL_D28P44A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_YONOWAARU) {
+        SetAnimation(52);
+    }
+    screen_FadeInAll(1, 30);
+    bgm2_PlayFadeIn(BGM_ANOTHER_STATIC_NOISE, 0, 200);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" GWOH![K] GWWWOOOOHH![K]\nGWWWWWOOOOOOOHHHH!",
+        french=" OH![K] OOOOHH![K] OOOOOOOHHHH!",
+        german=" GWOH![K] GWWWOOOOHH![K]\nGWWWWWOOOOOOOHHHH!",
+        italian=" OOOH![K] OOOOOOOOHH![K]\nOOOOOOOOOOOOOHHHH!",
+        spanish=" ¡OH![K] ¡OOOOOH![K]\n¡OOOOOOOH!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    camera_SetEffect(2, 1, 33024);
+    Wait(15);
+    bgm2_FadeOut(5);
+    se_Play(5126);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    se_Play(5126);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    bgm_PlayFadeIn(BGM_STATIC_NOISE, 0, 256);
+    bgm2_PlayFadeIn(BGM_ANOTHER_STATIC_NOISE, 0, 200);
+    with (actor ACTOR_NPC_YONOWAARU) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_YONOWAARU) {
+        SetAnimation(33);
+    }
+    with (actor ACTOR_NPC_YONOWAARU) {
+        WaitAnimation();
+    }
+    Wait(150);
+    bgm2_FadeOut(5);
+    bgm_FadeOut(5);
+    se_Play(7684);
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU);
+    with (actor ACTOR_NPC_YONOWAARU) {
+        SetAnimation(36);
+    }
+    camera_SetEffect(0, 0, 0);
+    Wait(30);
+    se_Play(8968);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI2) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI3) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI4) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI5) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI6) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    Wait(60);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We...[K]did it...",
+                french=" Nous...[K] nous avons réussi...",
+                german=" Wir...[K] Wir haben es geschafft...",
+                italian=" Ce...[K] l\'abbiamo fatta...",
+                spanish=" Lo hemos...[K] conseguido.",
+            }
+        case 2:
+            {
+                english=" We...[K]did it...",
+                french=" Nous...[K] nous avons réussi...",
+                german=" Wir...[K] Wir haben es geschafft...",
+                italian=" Ce...[K] l\'abbiamo fatta...",
+                spanish=" Lo hemos...[K] conseguido.",
+            }
+        default:
+            {
+                english=" We...[K]did it...",
+                french=" Nous...[K] nous avons réussi...",
+                german=" Wir...[K] Wir haben es geschafft...",
+                italian=" Ce...[K] l\'abbiamo fatta...",
+                spanish=" Lo hemos...[K] conseguido.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" [CS:N]Dusknoir[CR] is...[K]down...",
+        french=" [CS:N]Noctunoir[CR] est...[K] vaincu...",
+        german=" [CS:N]Zwirrfinst[CR] ist...[K] erledigt...",
+        italian=" [CS:N]Dusknoir[CR] è...[K] sconfitto...",
+        spanish=" [CS:N]Dusknoir[CR] ha...[K] caído...",
+    });
+    message_Talk({
+        english=" We\'ve finally beaten [CS:N]Dusknoir[CR]!",
+        french=" Nous avons enfin battu\n[CS:N]Noctunoir[CR]!",
+        german=" Wir haben [CS:N]Zwirrfinst[CR] zu guter\nLetzt besiegt!",
+        italian=" Finalmente abbiamo battuto\n[CS:N]Dusknoir[CR]!",
+        spanish=" ¡Hemos vencido a [CS:N]Dusknoir[CR]!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8968);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI2) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI3) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI4) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI5) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI6) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI6);
+    Wait(30);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    message_SetFace(ACTOR_NPC_YAMIRAMI, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" Wheh... It can\'t be...",
+        french=" Whé... C\'est impossible...",
+        german=" Wäh... Das kann nicht sein...",
+        italian=" Eh-eh... Non può essere...",
+        spanish=" Eje... No puede ser...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YAMIRAMI2) {
+        SetAnimation(9);
+    }
+    message_SetFace(ACTOR_NPC_YAMIRAMI2, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" Wheeh...[K] Lord [CS:N]Dusknoir[CR]...",
+        french=" Whé...[K] Messire [CS:N]Noctunoir[CR]...",
+        german=" Wähäh...[K] Meister [CS:N]Zwirrfinst[CR]...",
+        italian=" Eh-eh-eh...[K] Lord [CS:N]Dusknoir[CR]...",
+        spanish=" Je, je...[K] Poderoso [CS:N]Dusknoir[CR]...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YAMIRAMI2) {
+        SetAnimation(2);
+    }
+    se_Play(8972);
+    with (actor ACTOR_NPC_YAMIRAMI5) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI5) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI5);
+    message_SetFace(ACTOR_NPC_YAMIRAMI5, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEINW);
+    message_Talk({
+        english=" Lord [CS:N]Dusknoir[CR]...[K]was defeated!",
+        french=" Messire [CS:N]Noctunoir[CR]...[K]\na été vaincu!",
+        german=" Meister [CS:N]Zwirrfinst[CR]...[K] wurde\nbesiegt!",
+        italian=" Lord [CS:N]Dusknoir[CR]...[K] è stato\nsconfitto!",
+        spanish=" El poderoso [CS:N]Dusknoir[CR]...[K]\n¡ha sido derrotado!",
+    });
+    with (actor ACTOR_NPC_YAMIRAMI5) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI5);
+    se_Play(8963);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI4) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI5) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI5) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI5);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        Turn2Direction(1, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI3) {
+        Turn2Direction(1, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI2) {
+        Turn2Direction(1, 10, DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI4) {
+        Turn2Direction(1, 10, DIR_UPLEFT);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI5) {
+        Turn2Direction(1, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI6) {
+        Turn2Direction(1, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI6);
+    Wait(30);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        Turn2Direction(1, 10, DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI3) {
+        Turn2Direction(1, 10, DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI2) {
+        Turn2Direction(1, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI4) {
+        Turn2Direction(1, 10, DIR_DOWNLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI6);
+    Wait(45);
+    with (actor ACTOR_NPC_YAMIRAMI4) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (object OBJECT_T01P01A5_194) {
+        SetOutputAttribute(2);
+    }
+    message_SetActor(ACTOR_NPC_YAMIRAMI4);
+    message_Talk({
+        english=" Wheeeeh!",
+        french=" Wheeeeh!",
+        german=" Wähähäh!",
+        italian=" Eeeeeeh!",
+        spanish=" ¡Jeeee, jeeee!",
+    });
+    se_Play(7430);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        MovePositionMark(33408, Position<'m0', 31.5, 18.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_YAMIRAMI2) {
+        MovePositionMark(33408, Position<'m1', 31.5, 18.5>);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI3) {
+        MovePositionMark(33408, Position<'m2', 31.5, 18.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_YAMIRAMI4) {
+        MovePositionMark(33408, Position<'m3', 31.5, 18.5>);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI5) {
+        MovePositionMark(33408, Position<'m4', 31.5, 18.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_YAMIRAMI6) {
+        MovePositionMark(33408, Position<'m5', 31.5, 18.5>);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        Turn2Direction(1, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_YAMIRAMI2) {
+        Turn2Direction(1, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI2) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_YAMIRAMI3) {
+        Turn2Direction(1, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI3) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_YAMIRAMI4) {
+        Turn2Direction(1, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI4) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_YAMIRAMI5) {
+        Turn2Direction(1, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI5) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_YAMIRAMI6) {
+        Turn2Direction(1, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI6) {
+        Destroy();
+    }
+    message_CloseEnforce();
+    Wait(120);
+    with (performer 0) {
+        MovePositionMark(32896, Position<'m6', 31.5, 27.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(32896, Position<'m7', 31.5, 29>);
+    }
+    Wait(10);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(32896, Position<'m8', 27.5, 27.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        MovePositionMark(32896, Position<'m9', 35.5, 27.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    bgm_PlayFadeIn(BGM_HIDDEN_HIGHLAND, 0, 256);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_YONOWAARU);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    Wait(30);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Humph.[K] Your [CS:N]Sableye[CR] ran off.",
+        french=" Pfff![K] Tes sbires [CS:N]Ténéfix[CR]\nont quitté le navire.",
+        german=" Grmpf.[K] Deine [CS:N]Zobiris[CR] sind\nweggelaufen.",
+        italian=" Ehi.[K] I [CS:N]Sableye[CR] sono scappati\nvia.",
+        spanish=" ¡Ja![K] Tus sicarios [CS:N]Sableye[CR]\nhan huido despavoridos.",
+    });
+    message_Talk({
+        english=" You just have no luck attracting\nreliable allies.",
+        french=" On dirait que tu ne peux pas\ncompter sur tes propres alliés.",
+        german=" Du hast einfach kein Glück\ndamit, verlässliche Mitstreiter zu finden.",
+        italian=" Non hai più nessuno dalla tua\nparte.",
+        spanish=" Parece que no se te da bien\nencontrar aliados en los que confiar.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Urgggh...",
+        french=" Argggh...",
+        german=" Urgggh...",
+        italian=" Urgggh...",
+        spanish=" Aaaah...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" [partner].",
+        french=" [partner].",
+        german=" [partner].",
+        italian=" [partner].",
+        spanish=" [partner]...",
+    });
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_JUPUTORU);
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" What is it?",
+                french=" Qu\'est-ce qui se passe?",
+                german=" Was ist los?",
+                italian=" Cosa c\'è?",
+                spanish=" ¿Qué?",
+            }
+        case 2:
+            {
+                english=" What is it?",
+                french=" Qu\'est-ce qui se passe?",
+                german=" Was ist los?",
+                italian=" Cosa c\'è?",
+                spanish=" ¿Qué?",
+            }
+        default:
+            {
+                english=" What is it?",
+                french=" Qu\'est-ce qui se passe?",
+                german=" Was ist los?",
+                italian=" Cosa c\'è?",
+                spanish=" ¿Qué?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Go to the top of the temple.",
+        french=" Va au sommet du temple.",
+        german=" Steig den Tempel ganz hinauf.",
+        italian=" Vai in cima al tempio.",
+        spanish=" Sube al templo.",
+    });
+    message_Talk({
+        english=" Put the Relic Fragment in that\nhollow spot.",
+        french=" Place le Fragment de Relique\ndans la cavité.",
+        german=" Setze das Reliktfragment in\ndiese hohle Stelle ein.",
+        italian=" Inserisci il Frammento Antico \nnell\'incavatura.",
+        spanish=" Introduce la Reliquia de Piedra\nen el hueco.",
+    });
+    message_Talk({
+        english=" I want you to check if the\nRainbow Stoneship actually works.",
+        french=" Assure-toi que le Vaisseau\nArc-en-Ciel fonctionne bien.",
+        german=" Ich will, dass du herausfindest,\nob das Regenbogen-Steinschiff funktioniert.",
+        italian=" Devi controllare se il Vascello\nArcobaleno funziona ancora.",
+        spanish=" Quiero que compruebes si\nla Barca Arcoiris funciona.",
+    });
+    message_Talk({
+        english=" Meanwhile, [hero] and I\nwill keep an eye on [CS:N]Dusknoir[CR] here.",
+        french=" Pendant ce temps, [hero]\net moi, on reste là pour surveiller [CS:N]Noctunoir[CR].",
+        german=" Währenddessen behalten\n[hero] und ich hier [CS:N]Zwirrfinst[CR] im Auge.",
+        italian=" Nel frattempo, [hero] ed\nio terremo d\'occhio [CS:N]Dusknoir[CR].",
+        spanish=" Mientras tanto, [hero] y\nyo vigilaremos a [CS:N]Dusknoir[CR].",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(71);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" All right. I\'ll go do that.",
+                french=" Entendu, j\'y vais.",
+                german=" Alles klar. Das mache ich.",
+                italian=" Va bene. Vado.",
+                spanish=" Vale, ya voy.",
+            }
+        case 2:
+            {
+                english=" OK. I\'ll go do that.",
+                french=" Entendu, j\'y vais.",
+                german=" Okay. Das mache ich.",
+                italian=" Ok. Vado subito.",
+                spanish=" Muy bien. Ahora mismo voy.",
+            }
+        default:
+            {
+                english=" OK. I\'ll go do that.",
+                french=" Entendu, j\'y vais.",
+                german=" Okay. Das mache ich.",
+                italian=" Ok. Vado subito.",
+                spanish=" Muy bien. Ahora mismo voy.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m10', 4.5, 29.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 2, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        Destroy();
+    }
+    Wait(30);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" If the Rainbow Stoneship works,\nwe can go to [CS:P]Temporal Tower[CR].",
+        french=" Si le Vaisseau Arc-en-Ciel\nfonctionne, on pourra aller à la [CS:P]Tour\ndu Temps[CR].",
+        german=" Falls das Regenbogen-Steinschiff\nfunktioniert, können wir zum [CS:P]Zeitturm[CR] gehen.",
+        italian=" Se il Vascello Arcobaleno\nfunziona, potremo andare alla\n[CS:P]Torre del Tempo[CR].",
+        spanish=" Si la Barca Arcoiris funciona,\npodremos ir a la [CS:P]Torre del Tiempo[CR].",
+    });
+    message_Talk({
+        english=" I hope it activates...",
+        french=" J\'espère qu\'il va s\'activer...",
+        german=" Ich hoffe, es klappt...",
+        italian=" Spero che si attivi...",
+        spanish=" Espero que se active...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YONOWAARU) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU);
+    Wait(2);
+    with (actor ACTOR_NPC_YONOWAARU) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU);
+    Wait(2);
+    with (actor ACTOR_NPC_YONOWAARU) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU);
+    Wait(2);
+    with (actor ACTOR_NPC_YONOWAARU) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Urgggh...",
+        french=" Aaargh...",
+        german=" Argggh...",
+        italian=" Urgggh...",
+        spanish=" Grr...",
+    });
+    se_Play(8964);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_YONOWAARU);
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Don\'t move!",
+        french=" Pas un geste!",
+        german=" Nicht bewegen!",
+        italian=" Non ti muovere!",
+        spanish=" ¡No te muevas!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Urgghh...[K] [CS:N]Grovyle[CR]...\n[hero]...",
+        french=" Aaargh...[K] [CS:N]Massko[CR]...\n[hero]...",
+        german=" Argghh...[K] [CS:N]Reptain[CR]...\n[hero]...",
+        italian=" Urgghh...[K] [CS:N]Grovyle[CR]...\n[hero]...",
+        spanish=" Grrr...[K] [CS:N]Grovyle[CR]...\n[hero]...",
+    });
+    message_Talk({
+        english=" Is this really...",
+        french=" Est-ce vraiment...",
+        german=" Ist das wirklich...",
+        italian=" È davvero...",
+        spanish=" ¿Es esto...?",
+    });
+    message_Talk({
+        english=" Is this what you really want?",
+        french=" Est-ce là vraiment ce que vous\nsouhaitez?",
+        german=" Ist das wirklich, was ihr\nwollt?",
+        italian=" È davvero questo che volete?",
+        spanish=" ¿Realmente es esto lo que\nqueréis?",
+    });
+    message_Talk({
+        english=" If history is changed...[K]\nWe Pokémon of the future will disappear...",
+        french=" Si le cours de l\'histoire est\naltéré...[K] nous, les Pokémon du futur, serons\namenés à disparaître...",
+        german=" Wenn die Geschichte verändert\nwird,[K] dann werden wir Pokémon aus der\nZukunft verschwinden...",
+        italian=" Se la storia cambia...[K]\nnoi Pokémon del futuro scompariremo...",
+        spanish=" Si cambiáis la historia...[K]\nlos Pokémon del futuro desapareceremos.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_Stop();
+    se_Play(8968);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    message_SetFace(ACTOR_PLAYER, FACE_SURPRISED, FACE_POS_BOTTOM_L_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Wh-what?)",
+                french="(Hein, quoi?)",
+                german="(W-was?)",
+                italian="(C-Cosa?)",
+                spanish="(¿Cómo dices?)",
+            }
+        default:
+            {
+                english="(Wh-what?)",
+                french="(Hein, quoi?)",
+                german="(W-was?)",
+                italian="(C-Cosa?)",
+                spanish="(¿Cómo dices?)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(If history is changed...[K]Pokémon of the\nfuture will disappear?)",
+                french="(Si on modifie le cours de l\'histoire...[K]\nles Pokémon du futur disparaîtront?)",
+                german="(Wenn die Geschichte verändert wird,[K] dann\nwerden die Pokémon der Zukunft\nverschwinden?)",
+                italian="(Se la storia cambia...[K] i Pokémon del futuro\nscompariranno?)",
+                spanish="(Si la historia cambia...[K] ¿los Pokémon del\nfuturo desaparecerán?)",
+            }
+        default:
+            {
+                english="(If history is changed...[K]Pokémon of the\nfuture will disappear?)",
+                french="(Si on modifie le cours de l\'histoire...[K]\nles Pokémon du futur disparaîtront?)",
+                german="(Wenn die Geschichte verändert wird,[K] dann\nwerden die Pokémon der Zukunft\nverschwinden?)",
+                italian="(Se la storia cambia...[K] i Pokémon del futuro\nscompariranno?)",
+                spanish="(Si la historia cambia...[K] ¿los Pokémon del\nfuturo desaparecerán?)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" It won\'t be just me.",
+        french=" Je ne serai pas le seul dans\nce cas.",
+        german=" Das betrifft nicht nur mich.",
+        italian=" Non solo io.",
+        spanish=" Y no seré solo yo.",
+    });
+    message_Talk({
+        english=" Both of you...[K] [CS:N]Grovyle[CR] and\n[hero] alike...",
+        french=" Vous aussi...[K] [CS:N]Massko[CR] et\n[hero]...",
+        german=" Auch ihr beiden...[K] [CS:N]Reptain[CR] und\n[hero] gleichermaßen...",
+        italian=" Entrambi...[K] sia [CS:N]Grovyle[CR] che\n[hero]...",
+        spanish=" [CS:N]Grovyle[CR], [hero]...[K]\nvosotros dos también...",
+    });
+    message_Talk({
+        english=" Since you come from a future\nthat will cease to exist, you will both\ndisappear too...[K] Is that what you really want?",
+        french=" Puisque vous venez d\'un futur\nqui cessera d\'exister...[K] Est-ce là ce que\nvous voulez?",
+        german=" Da ihr aus einer Zukunft kommt,\ndie nicht mehr existieren wird, werdet auch\nihr verschwinden...[K] Wollt ihr das wirklich?",
+        italian=" Venite da un futuro che cesserà\ndi esistere, quindi scomparirete anche voi...[K]\nÈ quello che volete davvero?",
+        spanish=" Venís de un futuro que\nva a dejar de existir, vosotros también\ndesapareceréis...[K] ¿Es eso lo que queréis?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER, FACE_SURPRISED, FACE_POS_BOTTOM_L_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(If we change history, we\'ll disappear too?!)",
+                french="(Si on change le cours de l\'histoire,\non disparaîtra, nous aussi?!)",
+                german="(Wenn wir die Geschichte verändern,\nverschwinden auch wir?!?)",
+                italian="(Se cambiamo la storia, scompariremo anche\nnoi?!)",
+                spanish="(Si cambiamos la historia, ¡¿también\ndesapareceremos?!)",
+            }
+        default:
+            {
+                english="(If we change history, we\'ll disappear too?!)",
+                french="(Si on change le cours de l\'histoire,\non disparaîtra, nous aussi?!)",
+                german="(Wenn wir die Geschichte verändern,\nverschwinden auch wir?!?)",
+                italian="(Se cambiamo la storia, scompariremo anche\nnoi?!)",
+                spanish="(Si cambiamos la historia, ¡¿también\ndesapareceremos?!)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Is [CS:N]Dusknoir[CR]...)",
+                french="(Est-ce que [CS:N]Noctunoir[CR]...)",
+                german="(Sagt [CS:N]Zwirrfinst[CR] etwa...)",
+                italian="([CS:N]Dusknoir[CR]...)",
+                spanish="(¿Estará [CS:N]Dusknoir[CR] mintiendo?)",
+            }
+        default:
+            {
+                english="(Is [CS:N]Dusknoir[CR]...)",
+                french="(Est-ce que [CS:N]Noctunoir[CR]...)",
+                german="(Sagt [CS:N]Zwirrfinst[CR] etwa...)",
+                italian="([CS:N]Dusknoir[CR]...)",
+                spanish="(¿Estará [CS:N]Dusknoir[CR] mintiendo?)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Is [CS:N]Dusknoir[CR] telling...[K]the truth?)",
+                french="(Est-ce que [CS:N]Noctunoir[CR] dit...[K] vrai?)",
+                german="(Sagt [CS:N]Zwirrfinst[CR] etwa...[K] die Wahrheit?)\n",
+                italian="([CS:N]Dusknoir[CR] starà dicendo...[K] la verità?)",
+                spanish="(¿O será...?[K] ¿O será verdad lo que dice?)",
+            }
+        default:
+            {
+                english="(Is [CS:N]Dusknoir[CR] telling...[K]the truth?)",
+                french="(Est-ce que [CS:N]Noctunoir[CR] dit...[K] vrai?)",
+                german="(Sagt [CS:N]Zwirrfinst[CR] etwa...[K] die Wahrheit?)\n",
+                italian="([CS:N]Dusknoir[CR] starà dicendo...[K] la verità?)",
+                spanish="(¿O será...?[K] ¿O será verdad lo que dice?)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(1, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="([CS:N]Grovyle[CR]!)",
+                french="([CS:N]Massko[CR]!)",
+                german="([CS:N]Reptain[CR]!)",
+                italian="([CS:N]Grovyle[CR]!)",
+                spanish="(¡[CS:N]Grovyle[CR]!)",
+            }
+        default:
+            {
+                english="([CS:N]Grovyle[CR]!)",
+                french="([CS:N]Massko[CR]!)",
+                german="([CS:N]Reptain[CR]!)",
+                italian="([CS:N]Grovyle[CR]!)",
+                spanish="(¡[CS:N]Grovyle[CR]!)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2Direction(8, 10, DIR_DOWNLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    Wait(30);
+    bgm_PlayFadeIn(BGM_TIME_GEAR, 0, 256);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_PAIN, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" ...[K]It\'s true, [hero].",
+        french=" ...[K] C\'est la vérité, [hero].",
+        german=" ...[K]Es stimmt, [hero].",
+        italian=" ...[K] È vero, [hero].",
+        spanish=" Es...[K] Es cierto, [hero].",
+    });
+    message_Talk({
+        english=" If we change history...[K]we will\ndisappear.",
+        french=" Si nous modifions le cours de\nl\'histoire...[K] nous disparaîtrons, toi et moi.",
+        german=" Wenn wir die Geschichte\nverändern,[K] dann werden wir verschwinden.",
+        italian=" Se cambiamo la storia...[K] \nnoi scompariremo.",
+        spanish=" Si cambiamos la historia...[K]\nnosotros desapareceremos.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    message_SetFace(ACTOR_PLAYER, FACE_SURPRISED, FACE_POS_BOTTOM_L_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="([CS:N]G-Grovyle[CR]!)",
+                french="([CS:N]M-Massko[CR]!)",
+                german="([CS:N]R-Reptain[CR]!)",
+                italian="([CS:N]G-Grovyle[CR]!)",
+                spanish="(¡[CS:N]Grovyle[CR]!)",
+            }
+        default:
+            {
+                english="([CS:N]G-Grovyle[CR]!)",
+                french="([CS:N]M-Massko[CR]!)",
+                german="([CS:N]R-Reptain[CR]!)",
+                italian="([CS:N]G-Grovyle[CR]!)",
+                spanish="(¡[CS:N]Grovyle[CR]!)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2Direction(8, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" But...[K]that doesn\'t matter...",
+        french=" Mais...[K] peu importe...",
+        german=" Aber...[K] das macht nichts...",
+        italian=" Ma...[K] non ha importanza...",
+        spanish=" Pero...[K] eso no importa...",
+    });
+    message_Talk({
+        english=" If it means restoring time...[K]\nAnd bringing peace to the world!",
+        french=" Si c\'est la seule manière\nde remettre le temps en marche...[K] et\nde restaurer la paix dans le monde!",
+        german=" Wenn damit die Zeit gerettet\nwird...[K] Und Frieden in die Welt zurückkehrt!",
+        italian=" Perché questo significa\nristabilire il flusso del tempo...[K] e portare la\npace nel mondo!",
+        spanish=" Si significa devolver el tiempo\na la normalidad...[K] ¡y traer la paz al mundo!",
+    });
+    message_Talk({
+        english=" It\'s what I came to the past\nto do...",
+        french=" C\'est dans ce but que je suis\nvenu dans le passé...",
+        german=" Genau deshalb bin ich ja in die\nVergangenheit gereist...",
+        italian=" È per questo che sono venuto nel\npassato...",
+        spanish=" A eso vine... Por eso vine\nal pasado.",
+    });
+    message_Talk({
+        english=" [CS:N]Celebi[CR] too...[K] She helped us,\nknowing that she will disappear if we succeed.",
+        french=" [CS:N]Celebi[CR] aussi...[K] Elle nous a aidés\nen sachant qu\'elle disparaîtrait si\nnous réussissions.",
+        german=" [CS:N]Celebi[CR] auch...[K] Es half uns,\nobwohl es wusste, dass es verschwinden wird,\nfalls wir Erfolg haben.",
+        italian=" Anche [CS:N]Celebi[CR]...[K] Ci ha aiutato,\npur sapendo che se la nostra impresa fosse \nriuscita, sarebbe scomparsa.",
+        spanish=" [CS:N]Celebi[CR] también...[K]\nNos ayudó, sabiendo que desaparecería si\nteníamos éxito en nuestra misión.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8967);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitEffect();
+    }
+    message_SetFace(ACTOR_PLAYER, FACE_SURPRISED, FACE_POS_BOTTOM_L_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Even [CS:N]Celebi[CR]?)",
+                french="(Même [CS:N]Celebi[CR]?)",
+                german="(Sogar [CS:N]Celebi[CR]?)",
+                italian="(Anche [CS:N]Celebi[CR]?)",
+                spanish="(¿Incluso [CS:N]Celebi[CR]?)",
+            }
+        default:
+            {
+                english="(Even [CS:N]Celebi[CR]?)",
+                french="(Même [CS:N]Celebi[CR]?)",
+                german="(Sogar [CS:N]Celebi[CR]?)",
+                italian="(Anche [CS:N]Celebi[CR]?)",
+                spanish="(¿Incluso [CS:N]Celebi[CR]?)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Oh![K] I recall, when we were in the future...)",
+                french="(Oh![K] Je me souviens, quand nous étions\ndans le futur...)",
+                german="(Oh![K] Ich erinnere mich, als wir damals in der\nZukunft waren...)",
+                italian="(Oh![K] Ricordo, quando eravamo nel futuro...)",
+                spanish="(¡Oh![K] Ahora recuerdo que cuando estábamos\nen el futuro...)",
+            }
+        default:
+            {
+                english="(Oh![K] I recall, when we were in the future...)",
+                french="(Oh![K] Je me souviens, quand nous étions\ndans le futur...)",
+                german="(Oh![K] Ich erinnere mich, als wir damals in der\nZukunft waren...)",
+                italian="(Oh![K] Ricordo, quando eravamo nel futuro...)",
+                spanish="(¡Oh![K] Ahora recuerdo que cuando estábamos\nen el futuro...)",
+            }
+    }
+    message_Close();
+    screen_FadeOut(1, 30);
+    end;
+}

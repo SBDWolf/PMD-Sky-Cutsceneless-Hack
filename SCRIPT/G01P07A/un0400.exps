@@ -1,0 +1,9 @@
+
+def 0 {
+    if ( scn($SCENARIO_SIDE) >= [43, 2] ) {
+        §label_0;
+        end;
+    } else {
+        end;
+    }
+}

@@ -1,0 +1,53 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_P10P01A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    Wait(1);
+    with (actor ACTOR_NPC_RAPURASU) {
+        ResetOutputAttribute(256);
+    }
+    with (actor ACTOR_NPC_RAPURASU) {
+        SetEffect(646, 4);
+    }
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    bgm_PlayFadeIn(BGM_TIME_GEAR_REMIX, 0, 256);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_EmptyActor();
+    message_Talk({
+        english="[CN]I met with [CS:N]Lapras[CR] and\n[CN]explained what was happening.",
+        french="[CN]Je suis allé voir [CS:N]Lokhlass[CR]\n[CN]pour l\'avertir de ce qui se passait.",
+        german="[CN]Ich traf mich mit [CS:N]Lapras[CR] und\n[CN]erklärte ihm, was passierte.",
+        italian="[CN]Ho incontrato [CS:N]Lapras[CR] e gli ho\n[CN]spiegato cosa stava succedendo.",
+        spanish="[CN]Me reuní con él y\n[CN]le expliqué lo que ocurría.",
+    });
+    message_Talk({
+        english="[CN]How time was stopping all over\n[CN]and how the world was in peril...",
+        french="[CN]Que le temps s\'arrêtait un peu partout\n[CN]et que le monde était en danger...",
+        german="[CN]Wie die Zeit überall anhielt und\n[CN]dass die Welt in Gefahr war...",
+        italian="[CN]Di come il tempo si stesse fermando\n[CN]in ogni dove e il mondo fosse in pericolo...",
+        spanish="[CN]Cómo el tiempo se estaba deteniendo\n[CN]y el peligro que corría el mundo...",
+    });
+    message_Talk({
+        english="[CN]I also explained how the\n[CN]Time Gears needed to be\n[CN]taken to [CS:P]Temporal Tower[CR]...",
+        french="[CN]Je lui ai aussi raconté qu\'il fallait\n[CN]emporter les Rouages du Temps\n[CN]à la [CS:P]Tour du Temps[CR]...",
+        german="[CN]Ich erklärte ihm auch, dass\n[CN]die Zahnräder der Zeit zum\n[CN][CS:P]Zeitturm[CR] gebracht werden müssten.",
+        italian="[CN]Gli ho anche spiegato perché era\n[CN]necessario portare gli Ingranaggi del\n[CN]Tempo alla [CS:P]Torre del Tempo[CR]...",
+        spanish="[CN]También le expliqué que había que\n[CN]llevar los Engranajes del Tiempo\n[CN]a la [CS:P]Torre del Tiempo[CR]...",
+    });
+    message_Talk({
+        english="[CN]So I asked him to reveal\n[CN]how we could get to\n[CN]the [CS:P]Hidden Land[CR].",
+        french="[CN]Et je lui ai demandé de me révéler\n[CN]le moyen d\'atteindre\n[CN]les [CS:P]Terres Illusoires[CR].",
+        german="[CN]Deshalb bat ich ihn, mir\n[CN]zu verraten, wie man zum\n[CN][CS:P]Verborgenen Land[CR] gelangt.",
+        italian="[CN]Quindi gli ho chiesto di rivelarmi\n[CN]la via per raggiungere la\n[CN][CS:P]Terra Nascosta[CR].",
+        spanish="[CN]Por último, le pregunté\n[CN]cómo se podía llegar\n[CN]a la [CS:P]Tierra Oculta[CR].",
+    });
+    message_Close();
+    screen_FadeOut(1, 30);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    end;
+}

@@ -1,0 +1,304 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_SYMPATHY, 0, 256);
+    back_SetGround(LEVEL_P15P01A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        MovePositionMark(32896, Position<'m0', 35.5, 20.5>);
+    }
+    screen_FadeIn(1, 60);
+    message_Mail({
+        english="[CN]To do that...[K]I\'ve come to\n[CN]the most famous place among explorers...",
+        french="[CN]Et donc...[K] j\'suis venu ici,\n[CN]à l\'endroit l\'plus réputé qui soit parmi\n[CN]les explorateurs...",
+        german="[CN]Dafür...[K] habe ich mich zu dem Ort begeben,\n[CN]der unter Erkundern den besten Ruf genießt...",
+        italian="[CN]Per riuscirci...[K] sono venuto\n[CN]nel posto più conosciuto dagli esploratori...",
+        spanish="[CN]Y para conseguirlo...[K] he venido al lugar\n[CN]más famoso entre los exploradores...",
+    });
+    message_Mail({
+        english="[CN]I\'ve come to train at Guildmaster\n[CN][CS:N]Wigglytuff[CR]\'s Guild! Yup yup!",
+        french="[CN]J\'suis venu m\'entraîner à la Guilde de Maître\n[CN][CS:N]Grodoudou[CR]! Ouaip!",
+        german="[CN]Ich bin zur [CS:N]Knuddeluff-Gilde[CR]\n[CN]des Gildenmeisters gestoßen! Jawollja!",
+        italian="[CN]Sono venuto ad allenarmi alla Gilda\n[CN]di [CS:N]Wigglytuff[CR]! Già, già!",
+        spanish="[CN]He venido a entrenarme al\n[CN][CS:N]Pokégremio de Exploradores[CR]. ¡Sí, señor!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    WaitExecutePerformer(0);
+    Wait(30);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(8, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    Wait(20);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(8, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    Wait(20);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(8, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    Wait(30);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Well, I\'m off!",
+        french=" Bon, j\'me sauve!",
+        german=" Na gut, dann mach ich mich mal\nauf den Weg!",
+        italian=" Beh, io vado!",
+        spanish=" Bueno, me voy.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_BIIDARU) {
+        MovePositionOffset(1, -8, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_BIIDARU);
+    message_SetFace(ACTOR_NPC_BIIDARU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Please say hello to everyone in\nthe guild for me. Yup yup!",
+        french=" Pense à passer l\'bonjour\nd\'la part d\'ta maman à tout ce p\'tit monde\nde la Guilde, pardi!",
+        german=" Bitte grüße mir die\nGildenmitglieder ganz herzlich. Jawollja!",
+        italian=" Porta i miei saluti a tutta\nla Gilda. Già, già!",
+        spanish=" Saluda de mi parte a todo el\n[CS:N]Pokégremio[CR], ¿vale?",
+    });
+    message_Talk({
+        english=" Oh... And be careful!",
+        french=" Oh... et fais attention\nà toi!",
+        german=" Oh... Und pass auf dich auf!",
+        italian=" Oh... E sii prudente!",
+        spanish=" Ah... ¡Y ten cuidado!",
+    });
+    message_Talk({
+        english=" You\'re kind of a big eater...[K]\nDon\'t you go eating anything weird!",
+        french=" T\'es du genre à t\'goinfrer\ntout l\'temps...[K]\nNe va pas nous gober un truc pas net!",
+        german=" Du bist ein kleiner\nVielfraß...[K] Nicht, dass du irgendetwas\nKomisches futterst!",
+        italian=" Sei un tale mangione... [K]\nCerca di non abbuffarti con qualcosa di strano!",
+        spanish=" Tienes un apetito voraz...[K]\n¡No vayas a comerte nada raro!",
+    });
+    message_Talk({
+        english=" Remember...[K] If you get in\ntrouble, you can always come back home to us.",
+        french=" Et souviens-toi...[K]\nAu moindre problème, tu pourras toujours\nrev\'nir vivre ici.",
+        german=" Denk daran...[K] Solltest du in\nSchwierigkeiten geraten, kannst du immer noch\nzu uns zurückkehren.",
+        italian=" Ricorda...[K] Se dovessi\ntrovarti in difficoltà, puoi sempre tornare\nqui a casa da noi.",
+        spanish=" No lo olvides...[K] Si te ves\nen apuros, siempre podrás volver a casa.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SAD, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Sniff... [K]M-Mama...",
+        french=" Snif... [K]M-M\'man...",
+        german=" Schnüff... [K]M-mama...",
+        italian=" Sniff...[K] M-Mamma...",
+        spanish=" Buaaa...[K] Ma... mamá...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_BIPPA_BRO) {
+        MovePositionOffset(1, -4, 4);
+    }
+    WaitExecuteLives(ACTOR_NPC_BIPPA_BRO);
+    message_SetFace(ACTOR_NPC_BIPPA_BRO, FACE_STUNNED, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Do your best, Big Bro!",
+        french=" Fais d\'ton mieux,\nle frangin!",
+        german=" Gib dein Bestes,\ngroßer Bruder!",
+        italian=" Dacci dentro, fratellone!",
+        spanish=" ¡A por todas, hermano!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_BIPPA_SIS) {
+        MovePositionOffset(1, -4, -4);
+    }
+    WaitExecuteLives(ACTOR_NPC_BIPPA_SIS);
+    message_SetFace(ACTOR_NPC_BIPPA_SIS, FACE_HAPPY, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Take care!",
+        french=" Fais attention à toi!",
+        german=" Pass auf dich auf!",
+        italian=" Abbi cura di te!",
+        spanish=" ¡Cuídate mucho!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(8, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    Wait(30);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(8, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    se_Play(8972);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_TEARY_EYED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Sniff... You guys...",
+        french=" Snif... Vous...",
+        german=" Schnüff... Ihr...",
+        italian=" Sniff... Ragazzi...",
+        spanish=" Snif... Familia...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    Wait(20);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetAnimation(29);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetAnimation(2);
+    }
+    Wait(15);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_DETERMINED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" I\'m fine![K]\nDon\'t you worry about me! Yup yup!",
+        french=" Ça roule![K]\nVous faites pas d\'bile pour moi, sapristi!",
+        german=" Es geht schon![K] Macht euch keine\nSorgen! Jawollja!",
+        italian=" È tutto ok! [K]\nNon preoccupatevi per me! Già, già!",
+        spanish=" ¡Estaré bien![K] ¡No os preocupéis!",
+    });
+    message_Talk({
+        english=" When I come home,[K]\nI\'ll be big! I\'ll make you proud of me!",
+        french=" Quand j\'rentrerai,[K]\nj\'serai un vrai héros!\nVous s\'rez fiers de moi!",
+        german=" Wenn ich wiederkomme,[K] werde\nich berühmt sein! Ich werde euch stolz\nmachen!",
+        italian=" Quando tornerò a casa,[K] sarò\ncresciuto! Vi renderò fieri di me!",
+        spanish=" Cuando vuelva a casa...[K] ¡seré grande!\n¡Vais a estar orgullosos de mí!",
+    });
+    message_Talk({
+        english=" Just wait and see!",
+        french=" Un peu d\'patience\net vous verrez!",
+        german=" Wartet nur ab!",
+        italian=" Aspettate e vedrete!",
+        spanish=" ¡Ya lo veréis!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (performer 0) {
+        MovePositionOffset(32896, -64, 0);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        MovePositionOffset(32896, -64, 0);
+    }
+    Wait(15);
+    with (actor ACTOR_NPC_BIPPA_BRO) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_BIPPA_SIS) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    Wait(45);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(4, 1, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    Wait(20);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" By golly, everyone![K]\nI\'m off!",
+        french=" Assez d\'parlotte, cette fois...[K]\nj\'déguerpis!",
+        german=" Donnerwetter, ihr alle![K]\nIch bin dann mal weg!",
+        italian=" Ohibò![K]\nVi saluto!",
+        spanish=" Bueno, gente...[K] ¡Me voy!",
+    });
+    message_Close();
+    with (actor ACTOR_PLAYER_BIPPA) {
+        MovePositionOffset(33075, -160, 0);
+    }
+    Wait(30);
+    with (actor ACTOR_NPC_BIPPA_BRO) {
+        MovePositionOffset(1, -64, 0);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_BIPPA_SIS) {
+        MovePositionOffset(1, -32, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_BIPPA_SIS);
+    with (actor ACTOR_NPC_BIPPA_BRO) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_BIPPA_BRO);
+    with (actor ACTOR_NPC_BIPPA_BRO) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    message_EmptyActor();
+    message_Talk({
+        english="[CS:N]Bidoof\'s Family[CR]: Do your best!",
+        french="[CS:N]Famille de Keunotor[CR]: Fais d\'ton mieux!",
+        german="[CS:N]Familie von Bidiza[CR]: Alles Gute!",
+        italian="[CS:N]Famiglia di Bidoof[CR]: Fai del tuo meglio!",
+        spanish="[CS:N]Familia de Bidoof[CR]: ¡A por todas! ¡Hasta pronto!",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_BIPPA_BRO) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_BIPPA_BRO) {
+        SetAnimation(51);
+    }
+    Wait(7);
+    with (actor ACTOR_NPC_BIPPA_SIS) {
+        SetAnimation(42);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_BIIDARU) {
+        SetAnimation(42);
+    }
+    Wait(120);
+    bgm_FadeOut(120);
+    screen2_FadeOut(0, 60);
+    screen_FadeOut(1, 60);
+    back2_SetMode(0);
+    Wait(90);
+    message_Narration(30, {
+        english="[CN]So I left my hometown...",
+        french="[CN]Alors j\'ai quitté mon p\'tit chez moi...",
+        german="[CN]Also habe ich meinen Heimatort verlassen...",
+        italian="[CN]E così ho lasciato la mia casa...",
+        spanish="[CN]Así que dejé atrás mi hogar...",
+    });
+    message_Narration(30, {
+        english="[CN]And entered the Guildmaster\'s\n[CN]guild as an apprentice.",
+        french="[CN]... pour entrer comme apprenti\n[CN]à la Guilde.",
+        german="[CN]Bin als Lehrling in die Gilde des\n[CN]Gildenmeisters eingetreten.",
+        italian="[CN]... e sono entrato nella Gilda\n[CN]del Capitano come apprendista.",
+        spanish="[CN]Y empecé como aprendiz\n[CN]en el [CS:N]Pokégremio[CR].",
+    });
+    message_Narration(30, {
+        english="[CN]But the training at the guild...\n[CN]For me, was...",
+        french="[CN]Mais voilà, pour moi, l\'entraînement\n[CN]à la Guilde s\'est avéré...",
+        german="[CN]Aber das Training in der Gilde...",
+        italian="[CN]Ma per me l\'allenamento alla Gilda... era...",
+        spanish="[CN]Pero el entrenamiento\n[CN]del [CS:N]Pokégremio[CR] me resultaba...",
+    });
+    message_Narration(30, {
+        english="[CN]More difficult than I thought...",
+        french="[CN]... plus balaise que je l\'pensais...",
+        german="[CN]Es war schwieriger, als ich erwartet hatte...",
+        italian="[CN]Più duro di quanto pensassi...",
+        spanish="[CN]Más difícil de lo que había imaginado...",
+    });
+    message_Close();
+    end;
+}

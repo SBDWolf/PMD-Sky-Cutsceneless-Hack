@@ -1,0 +1,26 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_TIME_GEAR_REMIX, 0, 256);
+    back_SetGround(LEVEL_V03P12A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 15);
+    Wait(30);
+    message_ResetActor();
+    message_Talk({
+        english=" Three more Time Gears remain. I must\nhave them...",
+        french=" Il reste encore trois Rouages du Temps.\nIl me les faut...",
+        german=" Nun bleiben noch drei Zahnräder der Zeit.\nIch muss sie holen.",
+        italian=" Ne rimangono altri tre. Devo averli...",
+        spanish=" Me quedan aún otros tres.\nDebo hacerme con ellos...",
+    });
+    message_Close();
+    bgm_FadeOut(190);
+    Wait(45);
+    screen_FadeOut(1, 90);
+    Wait(60);
+    Wait(60);
+    end;
+}

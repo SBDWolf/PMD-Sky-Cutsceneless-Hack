@@ -1,0 +1,385 @@
+
+def 0 {
+    sound_Stop();
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V24P08A);
+    back_SetGround(LEVEL_P03P02A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    camera2_SetPositionMark(Position<'m0', 19, 15.5>);
+    bgm2_PlayFadeIn(BGM_RAIN2, 120, 190);
+    screen2_FadeIn(0, 60);
+    screen_FadeIn(1, 60);
+    Wait(30);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_LOOK_AROUND_LEFT_FUNC_SERIES, 0);
+    }
+    Wait(12);
+    with (actor ACTOR_PLAYER) {
+        ExecuteCommon(CORO_LOOK_AROUND_RIGHT_FUNC_SERIES, 0);
+    }
+    Wait(7);
+    with (actor ACTOR_NPC_HEIGANI) {
+        ExecuteCommon(CORO_LOOK_AROUND_LEFT_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_HEIGANI, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEOUTW);
+    message_Talk({
+        english=" Hey, hey! The fog is gone!",
+        french=" Eh dis donc! Le brouillard\na disparu!",
+        german=" Hey, hey! Der Nebel ist weg!",
+        italian=" Ehi, ehi! La nebbia è sparita!",
+        spanish=" ¡Oye, oye! ¡La niebla ha\ndesaparecido!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" The sky cleared...",
+                french=" Le ciel est dégagé...",
+                german=" Der Himmel hat aufgeklart...",
+                italian=" Il cielo, si vede il cielo...!",
+                spanish=" El cielo se ha despejado.",
+            }
+        case 2:
+            {
+                english=" The sky cleared...",
+                french=" Le ciel est dégagé...",
+                german=" Der Himmel hat aufgeklart...",
+                italian=" Il cielo, si vede il cielo...!",
+                spanish=" El cielo se ha despejado.",
+            }
+        default:
+            {
+                english=" The sky cleared...",
+                french=" Le ciel est dégagé...",
+                german=" Der Himmel hat aufgeklart...",
+                italian=" Il cielo, si vede il cielo...!",
+                spanish=" El cielo se ha despejado.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" The sunlight\'s harsh!",
+                french=" Le soleil brille fort!",
+                german=" Das Sonnenlicht blendet richtig!",
+                italian=" La luce del sole è abbagliante!",
+                spanish=" El sol brilla con fuerza.",
+            }
+        case 2:
+            {
+                english=" The sunlight\'s harsh!",
+                french=" Le soleil brille fort!",
+                german=" Das Sonnenlicht blendet richtig!",
+                italian=" La luce del sole è abbagliante!",
+                spanish=" El sol brilla con fuerza.",
+            }
+        default:
+            {
+                english=" The sunlight\'s harsh!",
+                french=" Le soleil brille fort!",
+                german=" Das Sonnenlicht blendet richtig!",
+                italian=" La luce del sole è abbagliante!",
+                spanish=" El sol brilla con fuerza.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(73);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitAnimation();
+    }
+    Wait(45);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hey! Look!",
+                french=" Hé! Regardez!",
+                german=" Hey! Sieh nur!",
+                italian=" Ehi! Guardate!",
+                spanish=" ¡Vaya! ¡Mirad!",
+            }
+        case 2:
+            {
+                english=" Hey! Look!",
+                french=" Hé! Regardez!",
+                german=" Hey! Sieh nur!",
+                italian=" Ehi! Guardate!",
+                spanish=" ¡Vaya! ¡Mirad!",
+            }
+        default:
+            {
+                english=" Hey! Look!",
+                french=" Hé! Regardez!",
+                german=" Hey! Sieh nur!",
+                italian=" Ehi! Guardate!",
+                spanish=" ¡Vaya! ¡Mirad!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    Wait(30);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(1, 10, DIR_DOWNLEFT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(30);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(1, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" B-both of you![K] Up! Look up!",
+                french=" Vous deux![K] En l\'air! Regardez\nen l\'air!",
+                german=" I-ihr beide![K] Da oben! Seht!",
+                italian=" Voi due![K] In alto! \nGuardate in alto!",
+                spanish=" ¡Los dos![K] ¡Mirad allí arriba!",
+            }
+        case 2:
+            {
+                english=" B-both of you![K] Up! Look up!",
+                french=" Vous deux![K] En l\'air! Regardez\nen l\'air!",
+                german=" I-ihr beide![K] Da oben! Seht!",
+                italian=" Voi due![K] In alto! \nGuardate in alto!",
+                spanish=" ¡Los dos![K] ¡Mirad allí arriba!",
+            }
+        default:
+            {
+                english=" B-both of you![K] Up! Look up!",
+                french=" Vous deux![K] En l\'air! Regardez\nen l\'air!",
+                german=" I-ihr beide![K] Da oben! Seht!",
+                italian=" Voi due![K] In alto! \nGuardate in alto!",
+                spanish=" ¡Los dos![K] ¡Mirad allí arriba!",
+            }
+    }
+    message_Close();
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    Wait(5);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(30);
+    se_Play(8967);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    message_SetFace(ACTOR_NPC_HEIGANI, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Hey, hey! What is that?!",
+        french=" Eh dis donc! Qu\'est-ce que\nc\'est?!",
+        german=" Hey, hey! Was ist das?!?",
+        italian=" Ehi, ehi! Cos\'è?!",
+        spanish=" ¡Oye, oye! ¡¿Qué es eso?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_PlayFadeIn(BGM_TIME_GEAR_REMIX, 0, 256);
+    Wait(15);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" That\'s what the fog was hiding.",
+                french=" Voilà, c\'était donc ça que\ncachait le brouillard.",
+                german=" Das ist, was der Nebel\nverborgen hat.",
+                italian=" Ecco cosa nascondeva la nebbia.",
+                spanish=" Eso es lo que ocultaba la niebla.",
+            }
+        case 2:
+            {
+                english=" That\'s what the fog was hiding.",
+                french=" Voilà, c\'était donc ça que\ncachait le brouillard.",
+                german=" Das ist, was der Nebel\nverborgen hat.",
+                italian=" Ecco cosa nascondeva la nebbia.",
+                spanish=" Eso es lo que ocultaba la niebla.",
+            }
+        default:
+            {
+                english=" That\'s what the fog was hiding.",
+                french=" Voilà, c\'était donc ça que\ncachait le brouillard.",
+                german=" Das ist, was der Nebel\nverborgen hat.",
+                italian=" Ecco cosa nascondeva la nebbia.",
+                spanish=" Eso es lo que ocultaba la niebla.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" No wonder no one could ever\nfind [CS:P]Fogbound Lake[CR].",
+                french=" Pas étonnant que personne n\'ait\njamais découvert le [CS:P]Lac des Brumes[CR].",
+                german=" Kein Wunder, dass den [CS:P]Nebelsee[CR]\nniemand finden konnte.",
+                italian=" Ecco perché nessuno era mai\nriuscito a trovare il [CS:P]Lago Foschia[CR].",
+                spanish=" No me extraña que nadie pudiera\nencontrar el [CS:P]Lago Velado[CR].",
+            }
+        case 2:
+            {
+                english=" It\'s no wonder [CS:P]Fogbound Lake[CR]\nevaded discovery for all this time.",
+                french=" Pas étonnant que personne n\'ait\njamais découvert le [CS:P]Lac des Brumes[CR].",
+                german=" Kein Wunder, dass der [CS:P]Nebelsee[CR]\nbis jetzt unentdeckt geblieben ist.",
+                italian=" Ecco perché nessuno era mai\nriuscito a trovare il [CS:P]Lago Foschia[CR].",
+                spanish=" No me extraña que nadie pudiera\nencontrar el [CS:P]Lago Velado[CR].",
+            }
+        default:
+            {
+                english=" It\'s no wonder that no one ever\ndiscovered [CS:P]Fogbound Lake[CR].",
+                french=" Pas étonnant que personne n\'ait\njamais découvert le [CS:P]Lac des Brumes[CR].",
+                german=" Kein Wunder, dass den [CS:P]Nebelsee[CR]\nniemand entdeckt hat.",
+                italian=" Ecco perché nessuno era mai\nriuscito a trovare il [CS:P]Lago Foschia[CR].",
+                spanish=" No me extraña que nadie pudiera\nencontrar el [CS:P]Lago Velado[CR].",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We were just wandering around\nin circles ourselves.",
+                french=" Même nous, nous avons tourné\nen rond pendant pas mal de temps.",
+                german=" Wir sind selbst gerade die ganze\nZeit im Kreis gelaufen.",
+                italian=" Anche noi ci stavamo \ngirando attorno.",
+                spanish=" No hemos hecho otra cosa que\nandar en círculo.",
+            }
+        case 2:
+            {
+                english=" We were just wandering around\nin circles too.",
+                french=" Même nous, nous avons tourné\nen rond pendant pas mal de temps.",
+                german=" Wir sind selbst auch die ganze\nZeit im Kreis gelaufen.",
+                italian=" Anche noi ci stavamo \ngirando attorno.",
+                spanish=" No hemos hecho otra cosa que\nandar en círculo.",
+            }
+        default:
+            {
+                english=" We were just wandering around\nin circles ourselves.",
+                french=" Même nous, nous avons tourné\nen rond pendant pas mal de temps.",
+                german=" Wir sind selbst gerade die ganze\nZeit im Kreis gelaufen.",
+                italian=" Anche noi ci stavamo \ngirando attorno.",
+                spanish=" No hemos hecho otra cosa que\nandar en círculo.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_HEIGANI) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    Wait(10);
+    with (actor ACTOR_NPC_HEIGANI) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    message_SetFace(ACTOR_NPC_HEIGANI, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Hey, hey! So you\'re saying...",
+        french=" Eh dis donc! Tu es en train\nde nous dire...",
+        german=" Hey, hey! Du meinst also...",
+        italian=" Ehi, ehi! Quindi stai dicendo...",
+        spanish=" ¡Oye, oye! ¿Quieres decir que...?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_HEIGANI) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    message_Talk({
+        english=" You\'re saying [CS:P]Fogbound Lake[CR] is\nup there? Hey, hey, hey?!",
+        french=" ... que le [CS:P]Lac des Brumes[CR]\nest là-haut? Dis donc!",
+        german=" Du meinst, dass der [CS:P]Nebelsee[CR]\nda oben ist? Hey, hey, hey?!?",
+        italian=" Stai dicendo che quello lassù\nè il [CS:P]Lago Foschia[CR]? \nEhi, ehi, ehi?!",
+        spanish=" ¿Estás diciendo que el [CS:P]Lago[CR]\n[CS:P]Velado[CR] está allí arriba?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Yes, that\'s what I think.",
+                french=" Oui, c\'est ce que je pense.",
+                german=" Ja, das meine ich.",
+                italian=" Sì, penso proprio di sì.",
+                spanish=" Sí, eso es lo que creo.",
+            }
+        case 2:
+            {
+                english=" Yes. That\'s what I think.",
+                french=" Oui, c\'est ce que je pense.",
+                german=" Ja, das meine ich.",
+                italian=" Sì, penso proprio di sì.",
+                spanish=" Sí, eso es lo que creo.",
+            }
+        default:
+            {
+                english=" Yes. That\'s what I think.",
+                french=" Oui, c\'est ce que je pense.",
+                german=" Ja, das meine ich.",
+                italian=" Sì, penso proprio di sì.",
+                spanish=" Sí, eso es lo que creo.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" [CS:P]Fogbound Lake[CR] has to be\nup there!",
+                french=" Le [CS:P]Lac des Brumes[CR] doit être\nlà-haut!",
+                german=" Der [CS:P]Nebelsee[CR] muss da oben sein!",
+                italian=" Il [CS:P]Lago Foschia[CR] dev\'essere \nlassù!",
+                spanish=" ¡El [CS:P]Lago Velado[CR] tiene que estar\nallí arriba!",
+            }
+        case 2:
+            {
+                english=" [CS:P]Fogbound Lake[CR] has to be\nup there!",
+                french=" Le [CS:P]Lac des Brumes[CR] doit être\nlà-haut!",
+                german=" Der [CS:P]Nebelsee[CR] muss da oben sein!",
+                italian=" Il [CS:P]Lago Foschia[CR] dev\'essere \nlassù!",
+                spanish=" ¡El [CS:P]Lago Velado[CR] tiene que estar\nallí arriba!",
+            }
+        default:
+            {
+                english=" [CS:P]Fogbound Lake[CR] has to be\nup there!",
+                french=" Le [CS:P]Lac des Brumes[CR] doit être\nlà-haut!",
+                german=" Der [CS:P]Nebelsee[CR] muss da oben sein!",
+                italian=" Il [CS:P]Lago Foschia[CR] dev\'essere \nlassù!",
+                spanish=" ¡El [CS:P]Lago Velado[CR] tiene que estar\nallí arriba!",
+            }
+    }
+    message_Close();
+    with (performer 0) {
+        MovePositionOffset(33664, 0, -180);
+    }
+    Wait(20);
+    screen2_FadeOut(0, 30);
+    screen_FadeOut(1, 30);
+    back2_SetMode(0);
+    end;
+}
+
+def 1 for_object(OBJECT_P03P01A1_127) {
+    SetOutputAttribute(1024);
+    hold;
+}

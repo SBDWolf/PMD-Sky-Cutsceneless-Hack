@@ -1,0 +1,917 @@
+
+def 0 {
+    back_SetGround(LEVEL_G01P03A);
+    supervision_Acting(0);
+    supervision_LoadStation(LEVEL_G01P03A, 'UM03');
+    supervision_Station(1);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD_REMIX, 0, 256);
+    supervision_Acting(1);
+    Wait(30);
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionMark(1, Position<'m0', 52, 26.5>);
+    }
+    Wait(30);
+    supervision_Acting(2);
+    Wait(30);
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m1', 57.5, 30.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    Wait(30);
+    supervision_Acting(3);
+    Wait(30);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m2', 53.5, 30.5>);
+    }
+    with (performer 0) {
+        MovePositionMark(1, Position<'m3', 55.5, 28.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    WaitExecuteLives(ACTOR_PLAYER);
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    WaitExecutePerformer(0);
+    Wait(30);
+    se_Play(8962);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Huh?",
+                french=" Quoi?",
+                german=" Häh?",
+                italian=" Eh?",
+                spanish=" ¿Eh?",
+            }
+        case 2:
+            {
+                english=" Huh?",
+                french=" Quoi?",
+                german=" Häh?",
+                italian=" Eh?",
+                spanish=" ¿Eh?",
+            }
+        default:
+            {
+                english=" Oh?",
+                french=" Quoi?",
+                german=" Oh?",
+                italian=" Eh?",
+                spanish=" ¿Eh?",
+            }
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEOUTW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Last time we did a job, it was\nfrom the board on the other side...",
+                french=" La dernière fois que nous avons\nfait une mission, elle était affichée sur le\ntableau qui est de l\'autre côté...",
+                german=" Letztes Mal hatten wir einen Job\nvon dem Brett auf der anderen Seite.",
+                italian=" L\'ultima volta che abbiamo fatto\nuna missione, l\'abbiamo scelta dalla Bacheca \ndall\'altra parte...",
+                spanish=" Nuestra misión anterior era del\notro tablón, ¿no?",
+            }
+        case 2:
+            {
+                english=" Last time we did a job, it was\nfrom the board on the other side...",
+                french=" La dernière fois que nous avons\nfait une mission, elle était affichée sur le\ntableau qui est de l\'autre côté...",
+                german=" Letztes Mal hatten wir einen Job\nvon dem Brett auf der anderen Seite.",
+                italian=" L\'ultima volta che abbiamo fatto\nuna missione, l\'abbiamo scelta dalla Bacheca \ndall\'altra parte...",
+                spanish=" Me parece que nuestra misión\nanterior estaba puesta en el otro tablón.",
+            }
+        default:
+            {
+                english=" Last time we did a job, it was\nfrom the board on the other side...",
+                french=" La dernière fois que nous avons\nfait une mission, elle était affichée sur le\ntableau qui est de l\'autre côté...",
+                german=" Letztes Mal hatten wir einen Job\nvon dem Brett auf der anderen Seite.",
+                italian=" L\'ultima volta che abbiamo fatto\nuna missione, l\'abbiamo scelta dalla Bacheca \ndall\'altra parte...",
+                spanish=" Si no recuerdo mal, nuestra\nmisión anterior era del otro tablón.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Correct! ♪",
+        french=" Exact! ♪",
+        german=" Sehr richtig! ♪",
+        italian=" Esatto! ♪",
+        spanish=" ¡Así es! ♪",
+    });
+    message_Close();
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    message_Talk({
+        english=" Today, we\'ll have you do a job\nlisted on this side. ♪",
+        french=" Aujourd\'hui, vous allez faire une\nmission qui se trouve de ce côté. ♪",
+        german=" Heute werdet ihr einen Job von\ndiesem Brett erledigen. ♪",
+        italian=" Oggi, sceglieremo una delle\nmissioni affisse su questa Bacheca. ♪",
+        spanish=" Hoy os encargaréis de una\nde las misiones de este de aquí. ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8962);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" How is this different from the\nboard on the other side?",
+                french=" Quelle est la différence entre\nces missions et celles qui sont affichées de\nl\'autre côté?",
+                german=" Was ist denn an diesem Brett\nanders?",
+                italian=" Che differenza c\'è?",
+                spanish=" ¿Qué diferencia hay entre\nuno y otro?",
+            }
+        case 2:
+            {
+                english=" How is this different from the\nboard on the other side?",
+                french=" Quelle est la différence entre\nces missions et celles qui sont affichées de\nl\'autre côté?",
+                german=" Was ist denn an diesem Brett\nanders?",
+                italian=" Che differenza c\'è?",
+                spanish=" ¿Cuál es la diferencia\ncon el otro tablón?",
+            }
+        default:
+            {
+                english=" How is this different from the\nboard on the other side?",
+                french=" Quelle est la différence entre\nces missions et celles qui sont affichées de\nl\'autre côté?",
+                german=" Was ist denn an diesem Brett\nanders?",
+                italian=" Che differenza c\'è?",
+                spanish=" ¿En qué se diferencia este de\naquel?",
+            }
+    }
+    message_Close();
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 2, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Take a closer look! ♪",
+        french=" Regardez plus attentivement! ♪",
+        german=" Seht genauer hin! ♪",
+        italian=" Guardate meglio! ♪",
+        spanish=" ¡Fijaos bien! ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V03P01A);
+    camera2_SetPositionMark(Position<'m4', 19.5, 16.5>);
+    screen2_FadeIn(1, 15);
+    Wait(30);
+    se_Play(8964);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hey! Check it out, [hero]!",
+                french=" Oh! Regarde, [hero]!",
+                german=" Hey! Sieh dir das an,\n[hero]!",
+                italian=" Ehi! Guarda qui, [hero]!",
+                spanish=" ¡Anda! ¡Mira, [hero]!",
+            }
+        case 2:
+            {
+                english=" Oh, look, [hero]!",
+                french=" Oh! Regarde, [hero]!",
+                german=" Oh, sieh mal, [hero]!",
+                italian=" Oh! Guarda qui, [hero]!",
+                spanish=" ¡Oh! ¡Mira, [hero]!",
+            }
+        default:
+            {
+                english=" Oh! Look at this, [hero]!",
+                french=" Oh! Regarde, [hero]!",
+                german=" Oh! Sieh mal, [hero]!",
+                italian=" Oh! Guarda, [hero]!",
+                spanish=" ¡Vaya! ¡Mira esto, [hero]!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" There are posters up here that\nshow a variety of Pokémon!",
+                french=" Il y a des affiches qui montrent\ndifférents Pokémon!",
+                german=" Da hängen Plakate von lauter\nverschiedenen Pokémon!",
+                italian=" Qui ci sono affisse le immagini\ndi tanti Pokémon diversi!",
+                spanish=" ¡Aquí hay carteles de distintos\nPokémon!",
+            }
+        case 2:
+            {
+                english=" There are posters up here that\nshow a variety of Pokémon!",
+                french=" Il y a des affiches qui montrent\ndifférents Pokémon!",
+                german=" Da hängen Plakate von lauter\nverschiedenen Pokémon!",
+                italian=" Qui ci sono affisse le immagini\ndi tanti Pokémon diversi!",
+                spanish=" ¡Han colgado carteles de\ndistintos Pokémon!",
+            }
+        default:
+            {
+                english=" There are posters up here that\nshow a variety of Pokémon!",
+                french=" Il y a des affiches qui montrent\ndifférents Pokémon!",
+                german=" Da hängen Plakate von lauter\nverschiedenen Pokémon!",
+                italian=" Qui ci sono affisse le immagini\ndi tanti Pokémon diversi!",
+                spanish=" ¡Aquí hay carteles colgados\nde distintos Pokémon!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Wow, they all look pretty cool!\nAre they famous explorers or something?",
+                french=" Waouh, ils ont l\'air cool!\nCe sont des explorateurs célèbres?",
+                german=" Wow, sehen die cool aus!\nSind das berühmte Erkunder oder so?",
+                italian=" Wow, sembrano tutti dei tipi\ngiusti! Sono esploratori famosi o qualcosa\ndel genere?",
+                spanish=" ¡Cómo molan! ¿Son\nexploradores famosos o algo así?",
+            }
+        case 2:
+            {
+                english=" Wow, they all look pretty cool!\nAre they famous explorers?",
+                french=" Waouh, ils ont l\'air cool!\nCe sont des explorateurs célèbres?",
+                german=" Wow, sehen die cool aus!\nSind das berühmte Erkunder?",
+                italian=" Wow, sembrano tutti molto\ninteressanti! Sono esploratori famosi o\nqualcosa del genere?",
+                spanish=" ¡Cómo molan!\n¿Son exploradores famosos?",
+            }
+        default:
+            {
+                english=" Wow, they all look sort of cool!\nAre they famous explorers?",
+                french=" Waouh, ils ont l\'air cool!\nCe sont des explorateurs célèbres?",
+                german=" Wow, die sehen irgendwie cool\naus! Sind das berühmte Erkunder?",
+                italian=" Wow, sembrano tutti Pokémon\ninteressanti! Sono esploratori famosi o\nqualcosa del genere?",
+                spanish=" ¡Cómo molan! ¿Son\nexploradores famosos o algo así?",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Who are these Pokémon, [CS:N]Chatot[CR]?",
+                french=" [CS:N]Pijako[CR], qui sont ces Pokémon?",
+                german=" Was sind das für Pokémon,\n[CS:N]Plaudagei[CR]?",
+                italian=" Chi sono questi Pokémon, \n[CS:N]Chatot[CR]?",
+                spanish=" ¿Quiénes son estos Pokémon,\n[CS:N]Chatot[CR]?",
+            }
+        case 2:
+            {
+                english=" Who are these Pokémon, [CS:N]Chatot[CR]?",
+                french=" [CS:N]Pijako[CR], qui sont ces Pokémon?",
+                german=" Was sind das für Pokémon,\n[CS:N]Plaudagei[CR]?",
+                italian=" Chi sono questi Pokémon, \n[CS:N]Chatot[CR]?",
+                spanish=" ¿Quiénes son estos Pokémon,\n[CS:N]Chatot[CR]?",
+            }
+        default:
+            {
+                english=" Who are these Pokémon, [CS:N]Chatot[CR]?",
+                french=" [CS:N]Pijako[CR], qui sont ces Pokémon?",
+                german=" Was sind das für Pokémon,\n[CS:N]Plaudagei[CR]?",
+                italian=" Chi sono questi Pokémon, \n[CS:N]Chatot[CR]?",
+                spanish=" ¿Quiénes son estos Pokémon,\n[CS:N]Chatot[CR]?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PERAPPU);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" The Pokémon posted here...[K]\nare outlaws.",
+        french=" Les Pokémon affichés ici...[K]\nsont des hors-la-loi.",
+        german=" Die hier abgebildeten\nPokémon...[K] sind Ganoven.",
+        italian=" Questi Pokémon...[K] sono dei\nricercati.",
+        spanish=" Estos Pokémon de aquí...[K]\nson malhechores.",
+    });
+    message_Talk({
+        english=" They\'re all shady characters.\nAnd they\'re wanted for committing crimes.",
+        french=" Ce sont des personnages peu\nrecommandables. Ils sont recherchés pour\nles crimes qu\'ils ont commis.",
+        german=" Das sind alles sehr fragwürdige\nTypen, gesuchte Verbrecher.",
+        italian=" Sono tutti dei tipi loschi. E sono\nricercati perché hanno commesso dei crimini.",
+        spanish=" No son de fiar y se les busca\npor haber cometido delitos.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    screen2_FadeOut(1, 15);
+    back2_SetMode(0);
+    se_Play(8968);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" What?![K] They\'re all wanted by\nthe law?",
+                french=" Quoi?![K] Ce sont tous\ndes hors-la-loi?",
+                german=" Was?!?[K] Sie werden alle als\nVerbrecher gesucht?",
+                italian=" Cosa?![K] Sono ricercati dalla\nlegge?",
+                spanish=" ¡¿Qué?![K]\n¿Todos ellos han violado la ley?",
+            }
+        case 2:
+            {
+                english=" Oh no![K] They\'re outlaws?!",
+                french=" Quoi?![K] Ce sont tous\ndes hors-la-loi?",
+                german=" Oh nein![K] Das sind Verbrecher?!?",
+                italian=" Oh, no![K] Sono ricercati?!",
+                spanish=" ¿De verdad?[K] ¿De verdad son\nbandidos?",
+            }
+        default:
+            {
+                english=" Oh my gosh![K] They\'re wanted\nby the law?",
+                french=" Quoi?![K] Ce sont tous\ndes hors-la-loi?",
+                german=" Auweia![K] Das sind alles\ngesuchte Verbrecher?",
+                italian=" Cosa?![K] Sono ricercati dalla\nlegge?",
+                spanish=" ¿De veras?[K] ¿De verdad, les\nbusca la ley?",
+            }
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_Close();
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 1, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Correct.[K] So there are bounties\non their heads.",
+        french=" Exact.[K] Leur tête est mise\nà prix.",
+        german=" Sehr richtig.[K] Es sind Kopfgelder\nauf sie ausgesetzt.",
+        italian=" Proprio così.[K] C\'è una taglia sulla\ntesta di ognuno di loro.",
+        spanish=" Así es.[K] Y se ofrece\nuna recompensa por su captura.",
+    });
+    message_Talk({
+        english=" In other words, there is a cash\nreward if you capture one.",
+        french=" Cela signifie qu\'une récompense\nest offerte pour la capture de chacun d\'eux.",
+        german=" Anders gesagt, wer einen fängt,\nbekommt zur Belohnung Geld.",
+        italian=" In altre parole, se ne catturate\nuno avete diritto a una ricompensa.",
+        spanish=" En otras palabras, si les\natrapáis, recibiréis dinero.",
+    });
+    message_Talk({
+        english=" There are so many aggressive\nPokémon around these days that everyone\'s\nfinding it hard to keep up with the problem.",
+        french=" Ces temps-ci, la situation\ndevient très difficile à gérer, tellement\nil y a de Pokémon méchants.",
+        german=" Heutzutage treiben sich so viele\nbösartige Pokémon herum, dass wir gar nicht\nmehr hinterherkommen.",
+        italian=" Oggigiorno ci sono così tanti\nPokémon aggressivi in giro che sta\ndiventando difficile tenerli a bada.",
+        spanish=" Hay tantos Pokémon agresivos\nhoy en día, que hace falta toda la ayuda\ndisponible para atajar el problema.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Wait a second! You expect us to\ncatch outlaws?",
+                french=" Hein? Tu es en train de nous\ndire qu\'on doit capturer des hors-la-loi?",
+                german=" Moment mal! Du erwartest von\nuns, dass wir Ganoven fangen?",
+                italian=" Aspetta un attimo! Vuoi che\ncatturiamo dei veri criminali?",
+                spanish=" ¡Un momento!\n¿Pretendes que persigamos maleantes?",
+            }
+        case 2:
+            {
+                english=" Wait! You\'re telling us to go\ncatch these outlaws?",
+                french=" Hein? Tu es en train de nous\ndire qu\'on doit capturer des hors-la-loi?",
+                german=" Warte mal! Heißt das, wir\nsollen diese Ganoven fangen?",
+                italian=" Aspetta un attimo! Vuoi che\ncatturiamo dei veri criminali?",
+                spanish=" ¡Un momento! ¿Y tenemos que\natraparlos nosotros?",
+            }
+        default:
+            {
+                english=" And we\'re supposed to go catch\nthese outlaws?",
+                french=" Hein? Tu es en train de nous\ndire qu\'on doit capturer des hors-la-loi?",
+                german=" Und wir sollen jetzt diese\nGanoven fangen?",
+                italian=" Aspetta un attimo! Vuoi che\ncatturiamo dei veri criminali?",
+                spanish=" ¡¿Cómo?! ¿Nos estás diciendo\nque tenemos que perseguir forajidos?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SHOUTING, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" No way! That\'s not possible!",
+                french=" Tu plaisantes, pas vrai?\nCe n\'est pas possible!",
+                german=" Niemals! Das ist unmöglich!",
+                italian=" No! Non ci credo!",
+                spanish=" ¡Ni hablar! ¡Imposible!\n",
+            }
+        case 2:
+            {
+                english=" You can\'t be serious!\nThat\'s not possible!",
+                french=" Tu plaisantes, pas vrai?\nCe n\'est pas possible!",
+                german=" Das kann nicht dein Ernst sein!\nDas ist unmöglich!",
+                italian=" Non puoi dire sul serio! È\nimpossibile!",
+                spanish=" ¡No lo dirás en serio!\n¡Eso es imposible!\n",
+            }
+        default:
+            {
+                english=" No way! That\'s not possible!",
+                french=" Tu plaisantes, pas vrai?\nCe n\'est pas possible!",
+                german=" Niemals! Das ist unmöglich!",
+                italian=" No, non stai dicendo sul serio,\nvero?",
+                spanish=" ¿Qué dices?\n¡Eso sería imposible!\n",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_HAPPY, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Hee-heeee! ♪[K] Just joking! ♪",
+        french=" Hi hiii! ♪[K] C\'est une blague! ♪",
+        german=" Hihihi! ♪[K] Ich mache nur\nSpaß! ♪",
+        italian=" Eeh-eeeeh! ♪[K] Non\npreoccupatevi! ♪",
+        spanish=" ¡Ji, ji, ji! ♪[K]\n¡Solo bromeaba! ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    Wait(15);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" The bad Pokémon out there come\nin all shades of badness! ♪",
+        french=" On rencontre tous les degrés\nde méchanceté parmi ces Pokémon! ♪",
+        german=" Es gibt da draußen bösartige und\nweniger bösartige Pokémon! ♪",
+        italian=" Ci sono tanti tipi diversi di\nricercato! ♪",
+        spanish=" Hay muchos grados de maldad y\ntipos de Pokémon malvados, claro. ♪",
+    });
+    message_Talk({
+        english=" Some of those Pokémon are\ncompletely wicked, through and through...",
+        french=" Certains de ces Pokémon sont\ncomplètement malfaisants et corrompus\njusqu\'à la moelle...",
+        german=" Einige dieser Pokémon sind von\nGrund auf durch und durch gemein.",
+        italian=" Alcuni di loro sono davvero\npericolosi, cattivi fino al midollo...",
+        spanish=" Algunos de estos Pokémon\nson realmente malignos...",
+    });
+    message_Talk({
+        english=" But there are also bad Pokémon\nwho are merely petty thieves. So you\'ve got\nevil to naughty...and everything in between! ♪",
+        french=" Mais d\'autres ne sont que des\nvoleurs à la petite semaine. Cela peut donc\naller de la petite frappe au grand bandit! ♪",
+        german=" Aber es gibt auch bösartige\nPokémon, die nur harmlose Diebe sind.\nDazwischen gibt es noch viele Abstufungen! ♪",
+        italian=" ... ma ce ne sono altri che sono\nsolamente ladruncoli da strapazzo.\nCe n\'è per tutti i gusti! ♪",
+        spanish=" Pero otros son solo unos\nladronzuelos. Hay de todo: desde verdaderos\nmaleantes hasta Pokémon algo traviesos. ♪",
+    });
+    message_Talk({
+        english=" So I\'m sure we can avoid giving\nyou a job catching a superbad Pokémon...",
+        french=" Je suis sûr qu\'on peut vous\ntrouver une mission pour laquelle vous n\'aurez\npas à capturer un Pokémon super méchant...",
+        german=" Ihr werdet also keines der sehr\nbösartigen Pokémon fangen müssen...",
+        italian=" Quindi sono sicuro che \ntroveremo una missione che non richieda\nla cattura di un Pokémon pericolosissimo...",
+        spanish=" No tenéis que empezar por\nun malo malísimo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_HAPPY, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Hee-heeeee! ♪",
+        french=" Hi hiiiii! ♪",
+        german=" Hihihi! ♪",
+        italian=" Eeh-eeeeeh! ♪",
+        spanish=" ¡Ji, ji, ji! ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" So look over these posters, then\npick a Pokémon that looks weak enough for you\nto bring to justice! ♪",
+        french=" Examinez les affiches et\nchoisissez un Pokémon qui vous semble assez\nfaible pour que vous puissiez le capturer! ♪",
+        german=" Seht euch die Bilder an und\nwählt ein Pokémon, das so schwach aussieht,\ndass ihr es zur Rechenschaft ziehen könnt! ♪",
+        italian=" Date un\'occhiata a questi annunci,\npoi scegliete un Pokémon che vi sembra\nabbastanza innocuo! ♪",
+        spanish=" Mirad los carteles y escoged\nuno lo bastante debilucho como para traerlo\nante la justicia sin demasiados problemas. ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8961);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROP, 3);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Um...[K] You say some are weak...",
+                french=" Hum...[K] Tu dis que certains sont\nfaibles...",
+                german=" Äh...[K] Du sagst also, dass\nmanche schwächer sind.",
+                italian=" Ehm...[K] Dici che alcuni non sono\nmolto forti...",
+                spanish=" Hum...[K] Así que algunos son\ndébiles...",
+            }
+        case 2:
+            {
+                english=" Um...[K] You say some are weak...",
+                french=" Hum...[K] Tu dis que certains sont\nfaibles...",
+                german=" Äh...[K] Du sagst also, dass\nmanche schwächer sind.",
+                italian=" Ehm...[K] Quindi alcuni non\nsono molto forti...",
+                spanish=" Hum...[K] Dices que algunos son\ndébiles...",
+            }
+        default:
+            {
+                english=" Um...[K] You say some are weak...",
+                french=" Hum...[K] Tu dis que certains sont\nfaibles...",
+                german=" Äh...[K] Du sagst also, dass\nmanche schwächer sind.",
+                italian=" Ehm...[K] Dici che alcuni sono\nabbastanza deboli...",
+                spanish=" Vaya...[K] ¿Así que algunos no son\nmuy fuertes?",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" But they\'re still bad Pokémon,\naren\'t they?",
+                french=" Mais ce sont quand même des\nPokémon méchants, c\'est ça?",
+                german=" Aber es sind immer noch\nbösartige Pokémon, oder nicht?",
+                italian=" ... però sono Pokémon di cui non\nci si può fidare, vero?",
+                spanish=" Pero siguen siendo malvados,\n¿no?",
+            }
+        case 2:
+            {
+                english=" But they\'re still bad Pokémon,\naren\'t they?",
+                french=" Mais ce sont quand même des\nPokémon méchants, c\'est ça?",
+                german=" Aber es sind immer noch\nbösartige Pokémon, oder nicht?",
+                italian=" ... però sono dei fuorilegge,\nvero?",
+                spanish=" Aunque siguen siendo malvados,\n¿no?",
+            }
+        default:
+            {
+                english=" They\'re still bad Pokémon,\naren\'t they?",
+                french=" Mais ce sont quand même des\nPokémon méchants, c\'est ça?",
+                german=" Aber es sind immer noch\nbösartige Pokémon, oder nicht?",
+                italian=" ... però sono comunque cattivi,\nvero?",
+                spanish=" Aunque siguen siendo malvados,\n¿no?",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Characters like that weird\nme out!",
+                french=" Des Pokémon aussi dangereux,\nça me fait peur!",
+                german=" Solche Typen finde ich zum\nWeglaufen!",
+                italian=" Tipi del genere mi fanno venire\nla pelle d\'oca!",
+                spanish=" ¡Tratar con individuos así me\npone los pelos de punta!",
+            }
+        case 2:
+            {
+                english=" I\'m scared of dangerous\nPokémon!",
+                french=" Des Pokémon aussi dangereux,\nça me fait peur!",
+                german=" Ich habe Angst vor gefährlichen\nPokémon!",
+                italian=" Tipi del genere mi fanno paura!",
+                spanish=" La verdad es que me asustan\nmucho los Pokémon peligrosos.",
+            }
+        default:
+            {
+                english=" I\'m scared of dangerous\nPokémon!",
+                french=" Des Pokémon aussi dangereux,\nça me fait peur!",
+                german=" Ich habe Angst vor gefährlichen\nPokémon!",
+                italian=" Tipi del genere mi fanno venire\ni brividi!",
+                spanish=" ¡Los Pokémon peligrosos me dan\nmucho miedo!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" It\'s all a part of your training.\nYou\'ll work through it, I\'m sure! ♪",
+        french=" Cela fait partie de votre\nentraînement. Je suis certain que vous\nvous en tirerez très bien! ♪",
+        german=" Alles ist Teil eures Trainings.\nIhr beißt euch schon durch, ganz sicher! ♪",
+        italian=" Fa parte del vostro \naddestramento. Andrà tutto bene,\nne sono certo! ♪",
+        spanish=" Todo es parte de vuestro\nentrenamiento. ¡Estoy seguro de que\nos las arreglaréis muy bien! ♪",
+    });
+    message_Talk({
+        english=" But I suppose you do need to be\nprepared to confront a tough opponent...",
+        french=" Mais, avant d\'affronter des\nadversaires trop coriaces, vous allez avoir\nbesoin qu\'on vous entraîne correctement...",
+        german=" Aber ich nehme an, dass ihr auf\neinen schwierigen Gegner gefasst sein müsst.",
+        italian=" È necessario che abbiate\nl\'equipaggiamento adatto per affrontare\nanche avversari tosti...",
+        spanish=" Pero supongo que tendréis que\nprepararos bien antes de enfrentaros a\nun contrincante difícil.",
+    });
+    message_Talk({
+        english=" So I\'ll have someone give you a\ntour of the facilities.",
+        french=" Quelqu\'un va donc vous faire\nvisiter nos installations.",
+        german=" Also werde ich jemanden bitten,\neuch erst einmal herumzuführen.",
+        italian=" Dirò a qualcuno di mostrarvi\ni negozi in città.",
+        spanish=" Así que tendré que pedirle a\nalguien que os muestre las inmediaciones.\n",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 1, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" Hey! [CS:N]Bidoof[CR]![K] [CS:N]Bidoof[CR]?!",
+        french=" Hé! [CS:N]Keunotor[CR]![K] [CS:N]Keunotor[CR]?!",
+        german=" Hey! [CS:N]Bidiza[CR]![K] [CS:N]Bidiza[CR]?!?",
+        italian=" Ehi! [CS:N]Bidoof[CR]![K] [CS:N]Bidoof[CR]?!",
+        spanish=" ¡Eh! ¡[CS:N]Bidoof[CR]![K] ¡[CS:N]Bidoof[CR]!",
+    });
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetActor(ACTOR_NPC_BIPPA);
+    message_Talk({
+        english=" Yup yup!",
+        french=" Ouaip! Me v\'là, pour sûr!",
+        german=" Jawollja!",
+        italian=" Già, già!",
+        spanish=" ¡Sí, señor!",
+    });
+    message_Close();
+    supervision_Acting(4);
+    with (actor ACTOR_NPC_BIPPA) {
+        SetOutputAttribute(8);
+    }
+    Wait(20);
+    with (actor ACTOR_NPC_BIPPA) {
+        Move2PositionMark(1, Position<'m5', 45.5, 26.5>);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        Move2PositionMark(1, Position<'m6', 48, 26.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_BIPPA);
+    with (actor ACTOR_NPC_BIPPA) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PERAPPU);
+    }
+    WaitExecuteLives(ACTOR_NPC_BIPPA);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_BIPPA);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_BIPPA);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        WaitEffect();
+    }
+    message_SetFace(ACTOR_NPC_BIPPA, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" Huff-puff-huff...[K] You called?",
+        french=" Pfiou...[K] Tu m\'as appelé?",
+        german=" Schnauf-prust-schnauf...[K] Du hast\nmich gerufen?",
+        italian=" Puff-puff-puff...[K] Mi hai \nchiamato?",
+        spanish=" Uf, uf...[K] ¿Me ha llamado alguien?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" Ah, [CS:N]Bidoof[CR]! ♪",
+        french=" Ah, [CS:N]Keunotor[CR]! ♪",
+        german=" Ah, [CS:N]Bidiza[CR]! ♪",
+        italian=" Ah, [CS:N]Bidoof[CR]! ♪",
+        spanish=" ¡Ah, [CS:N]Bidoof[CR]! ♪",
+    });
+    message_Talk({
+        english=" These are the new recruits that\njust joined us.",
+        french=" Voici les deux nouvelles recrues\nqui viennent de nous rejoindre.",
+        german=" Hier sind die neuen Rekruten, die\nuns beigetreten sind.",
+        italian=" Queste sono due reclute che si\nsono appena unite alla Gilda.",
+        spanish=" Estos Pokémon se acaban de unir\na nosotros.",
+    });
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    message_Talk({
+        english=" Take them and show them around\nthe town. ♪",
+        french=" Fais leur visiter le bourg. ♪",
+        german=" Nimm sie mit und führe sie\ndurch die Stadt. ♪",
+        italian=" Portale a fare un giro in\ncittà. ♪",
+        spanish=" Enséñales los alrededores y\nla aldea. ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_BIPPA) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_BIPPA);
+    message_SetFace(ACTOR_NPC_BIPPA, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" Yes sirree! By golly, I\'ll do just\nthat! Yup yup!",
+        french=" Ouaip! Pas d\'problème, pour\nsûr! Sapristi, c\'est parti!",
+        german=" Donnerwetter! Menschenskind,\ndas werde ich! Jawollja!",
+        italian=" Sissignore! Ohibò, lo farò!\nGià, già!",
+        spanish=" ¡Sí, señor! ¡Eso haré!",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" This is [CS:N]Bidoof[CR]. He\'s one of your\nfellow apprentices.",
+        french=" C\'est [CS:N]Keunotor[CR]. C\'est\nun apprenti ici, tout comme vous.",
+        german=" Das ist [CS:N]Bidiza[CR]. Er ist auch ein\nGildenlehrling.",
+        italian=" Questo è [CS:N]Bidoof[CR]. È uno degli\naltri apprendisti.",
+        spanish=" Este es [CS:N]Bidoof[CR]. Es otro aprendiz.",
+    });
+    message_Talk({
+        english=" I want you to pay attention to\nwhat [CS:N]Bidoof[CR] has to say and follow his orders.",
+        french=" Ecoutez bien tout ce que vous dit\n[CS:N]Keunotor[CR] et suivez ses instructions.",
+        german=" Ich möchte, dass ihr [CS:N]Bidiza[CR]\nzuhört und seinen Anweisungen folgt.",
+        italian=" Voglio che facciate attenzione a \nquanto vi dice [CS:N]Bidoof[CR] e che seguiate i suoi\nordini.",
+        spanish=" Quiero que prestéis atención a lo\nque os diga [CS:N]Bidoof[CR], ¡y que sigáis sus órdenes!",
+    });
+    message_Talk({
+        english=" Off you go! ♪",
+        french=" Allez-y! ♪",
+        german=" Und nun, geht! ♪",
+        italian=" Potete andare! ♪",
+        spanish=" Hala, ¡andando! ♪",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2Direction(32, 1, DIR_UPLEFT);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        Move2PositionMark(1, Position<'m7', 49, 28.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Move2PositionMark(1, Position<'m8', 45.5, 28.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionMark(1, Position<'m9', 45.5, 22.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Destroy();
+    }
+    Wait(60);
+    se_Play(8972);
+    with (actor ACTOR_NPC_BIPPA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        WaitEffect();
+    }
+    message_SetFace(ACTOR_NPC_BIPPA, FACE_TEARY_EYED, FACE_POS_TOP_LC_FACEOUTW);
+    message_Talk({
+        english=" Aw, shucks, I\'m overjoyed!",
+        french=" Ouah, sapristi, j\'suis hyper\ncontent! J\'me roule par terre!",
+        german=" Mannomann, bin ich glücklich!",
+        italian=" Ohibò, sono stracontento!",
+        spanish=" Oh, vaya, ¡qué alegría!",
+    });
+    WaitExecuteLives(ACTOR_NPC_BIPPA);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_BOTTOM_C_FACEL);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Why\'s that?",
+                french=" Pourquoi?",
+                german=" Warum denn?",
+                italian=" Come mai?",
+                spanish=" ¿Y eso?",
+            }
+        case 2:
+            {
+                english=" Why\'s that?",
+                french=" Pourquoi?",
+                german=" Warum denn?",
+                italian=" Come mai?",
+                spanish=" ¿Y eso por qué?",
+            }
+        default:
+            {
+                english=" Why\'s that?",
+                french=" Pourquoi?",
+                german=" Warum denn?",
+                italian=" Come mai?",
+                spanish=" ¿Y eso por qué?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    WaitExecuteLives(ACTOR_NPC_BIPPA);
+    message_SetFace(ACTOR_NPC_BIPPA, FACE_TEARY_EYED, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" I\'m glad to have members junior\nto me! I\'m almost overcome right now...[K]\nI might just blubber with happiness!",
+        french=" Ça m\'fait plaisir d\'plus être\nl\'bleu! J\'suis vraiment hyper content...[K]\nJ\'crois que j\'vais chialer d\'bonheur!",
+        german=" Ich bin so froh, dass ich jetzt\nnicht mehr der Neuling bin![K]\nIch könnte vor Freude platzen!",
+        italian=" Sono felice che ci siano dei\nprincipianti... più principianti di me! Sono così\nemozionato...[K] Sto per piangere dalla gioia!",
+        spanish=" ¡Ya no soy el último aprendiz!\n¡Qué feliz que me siento![K] ¡Hacía tiempo\nque no estaba así de contento!",
+    });
+    message_Talk({
+        english=" Before you all signed on, I was\nthe most recent rookie...",
+        french=" Avant qu\'vous arriviez, c\'était\nmoi l\'dernier arrivé parmi les recrues...",
+        german=" Bevor ihr euch eingeschrieben\nhabt, war ich der neueste Lehrling.",
+        italian=" Prima che voi entraste nella \nGilda, io ero l\'ultimo arrivato...",
+        spanish=" Antes de que llegaseis,\nyo era el novato del [CS:N]Pokégremio[CR].",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_BIPPA) {
+        SetAnimation(23);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        WaitAnimation();
+    }
+    message_Talk({
+        english=" Sniffle...",
+        french=" Snif...",
+        german=" Schnief...",
+        italian=" Sniff...",
+        spanish=" Snif...",
+    });
+    with (actor ACTOR_NPC_BIPPA) {
+        SetAnimation(2);
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    WaitExecuteLives(ACTOR_NPC_BIPPA);
+    message_SetFace(ACTOR_NPC_BIPPA, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" Well, I\'d best show you around.\nCome with me, please.",
+        french=" Ben j\'vais vous faire visiter\nalors. Vous me suivez?",
+        german=" Na ja, ich führe euch am besten\nherum. Kommt bitte mit mir.",
+        italian=" Beh, sarà meglio che vi mostri\nun po\' in giro. Venite con me.",
+        spanish=" Bueno, os voy a enseñar\ntodo esto. Acompañadme, por favor.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_BIPPA) {
+        Move2PositionMark(1, Position<'m10', 45.5, 26.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_ATTENDANT1) {
+        Move2PositionOffset(1, -32, 0);
+    }
+    with (actor ACTOR_PLAYER) {
+        Move2PositionOffset(1, -64, 0);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        MovePositionMark(1, Position<'m11', 45.5, 22.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Move2PositionMark(1, Position<'m12', 45.5, 26.5>);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        Destroy();
+    }
+    with (actor ACTOR_PLAYER) {
+        Move2PositionMark(1, Position<'m13', 45.5, 26.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m14', 45.5, 22.5>);
+    }
+    screen_FadeOut(1, 30);
+    end;
+}

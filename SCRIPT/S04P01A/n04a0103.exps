@@ -1,0 +1,20 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_GUILDMASTER_WIGGLYTUFF, 0, 256);
+    back_SetSpecialEpisodeBanner(3, {
+        english="Today\'s \"Oh My Gosh\"",
+        french="\"Ben mince alors!\"",
+        german="Das [F:S2]Auweia[F:E2] des Tages",
+        italian="Una giornata da shock",
+        spanish="¡O sea, pero qué fuerte!",
+    });
+    screen_FadeIn(1, 0);
+    Wait(160);
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 45);
+    Wait(15);
+    Wait(30);
+    WaitBgm(BGM_GUILDMASTER_WIGGLYTUFF);
+    Wait(30);
+    end;
+}

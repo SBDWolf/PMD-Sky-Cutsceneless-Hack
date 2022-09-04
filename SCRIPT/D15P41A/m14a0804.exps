@@ -1,0 +1,191 @@
+
+def 0 {
+    back_SetGround(LEVEL_D15P41A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    camera_SetEffect(2, 1, 33024);
+    bgm_PlayFadeIn(BGM_EARTHQUAKE3, 30, 256);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    se_Play(8967);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_UNIT_NPC1) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_UNIT_NPC2) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_TOP_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Waah! What\'s going on?",
+                french=" Ouaaah! Qu\'est-ce qui se passe?",
+                german=" Waah! Was geschieht?",
+                italian=" Aaah! C-Che sta succedendo?",
+                spanish=" ¿Eh? ¿Qué ocurre?",
+            }
+        case 2:
+            {
+                english=" Waah! What\'s happening?",
+                french=" Ouaaah! Qu\'est-ce qui se passe?",
+                german=" Waah! Was geschieht?",
+                italian=" Aaah! C-Che sta succedendo?",
+                spanish=" ¿Eh? ¿Qué ocurre?",
+            }
+        default:
+            {
+                english=" Waah! What\'s happening?",
+                french=" Ouaaah! Qu\'est-ce qui se passe?",
+                german=" Waah! Was geschieht?",
+                italian=" Aaah! C-Che sta succedendo?",
+                spanish=" ¿Eh? ¿Qué ocurre?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_EMURITTO, FACE_PAIN, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" It\'s happening because the thief\ntook the Time Gear!",
+        french=" C\'est à cause de ce voleur\nqui a pris le Rouage du Temps!",
+        german=" Ich kann dir zumindest sagen,\nwarum es geschieht. Und zwar, weil der Dieb\ndas Zahnrad der Zeit mitgenommen hat!",
+        italian=" L\'Ingranaggio del Tempo è stato\nrubato!",
+        spanish=" El robo del Engranaje del Tiempo\nha desencadenado esta reacción.",
+    });
+    message_Talk({
+        english=" So time in this whole area...",
+        french=" A cause de lui, dans toute\nla région, le temps...",
+        german=" Deshalb wird die Zeit in dieser\nGegend...",
+        italian=" Ora che non c\'è più...",
+        spanish=" Y ahora, el tiempo de toda\nesta zona...",
+    });
+    message_Talk({
+        english=" Time will stop all around the\n[CS:P]Underground Lake[CR]!",
+        french=" Le temps va s\'arrêter partout\nautour du [CS:P]Lac Souterrain[CR]!",
+        german=" Die Zeit wird überall um den\n[CS:P]Untergrundsee[CR] herum stehenbleiben!",
+        italian=" ... il tempo si fermerà, qui al\n[CS:P]Lago Sotterraneo[CR]!",
+        spanish=" ¡El tiempo se detendrá en\nlas inmediaciones del [CS:P]Lago Subterráneo[CR]!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8968);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_UNIT_NPC1) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_UNIT_NPC2) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_TOP_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" What?!",
+                french=" Quoi?!",
+                german=" Was?!?",
+                italian=" Cosa?!",
+                spanish=" ¡¿Qué?!",
+            }
+        case 2:
+            {
+                english=" What?!",
+                french=" Quoi?!",
+                german=" Was?!?",
+                italian=" Cosa?!",
+                spanish=" ¡¿Qué?!",
+            }
+        default:
+            {
+                english=" Excuse me?!",
+                french=" Quoi?!",
+                german=" Wie bitte?!?",
+                italian=" Cosa?!",
+                spanish=" ¡¿Qué?!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_EMURITTO, FACE_PAIN, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" If we don\'t hurry, we\'ll be\ntrapped in time!",
+        french=" Il faut faire vite, sinon le piège\ntemporel va se refermer sur nous!",
+        german=" Wenn wir uns nicht beeilen,\nwerden wir in der Zeit gefangen sein!",
+        italian=" Se non ci sbrighiamo, resteremo\nintrappolati!",
+        spanish=" Si no nos damos prisa, ¡nos\nveremos atrapados en el tiempo!",
+    });
+    message_Talk({
+        english=" Hurry! Run with all your might!",
+        french=" Vite! Courez aussi vite\nque vous pouvez!",
+        german=" Schnell! Rennt, so schnell ihr\nkönnt!",
+        italian=" Sbrigatevi! Correte più che\npotete!",
+        spanish=" ¡Rápido! ¡Corred con todas\nvuestras fuerzas!",
+    });
+    message_Close();
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(8, 10, DIR_DOWN);
+    }
+    Wait(5);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(8, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_EMURITTO) {
+        Turn2Direction(8, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionOffset(32896, 0, 160);
+    }
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionOffset(32896, 0, 160);
+    }
+    Wait(30);
+    with (actor ACTOR_NPC_EMURITTO) {
+        MovePositionOffset(32896, 0, 160);
+    }
+    with (actor ACTOR_UNIT_NPC1) {
+        MovePositionOffset(32896, 0, 160);
+    }
+    Wait(5);
+    with (actor ACTOR_UNIT_NPC2) {
+        MovePositionOffset(32896, 0, 160);
+    }
+    Wait(45);
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 60);
+    WaitBgm(BGM_EARTHQUAKE3);
+    camera_SetEffect(0, 0, 0);
+    worldmap_SetMode(3);
+    worldmap_SetLevel(3);
+    back2_SetMode(3);
+    WaitSubScreen();
+    worldmap_ChangeLevel(4);
+    worldmap_SetCamera(22);
+    WaitSubScreen();
+    message_Mail({
+        english="[CN]The clouds lifted over\n[CN][CS:P]Quicksand Cave[CR] and the\n[CN]vicinities of the [CS:P]Arid Area[CR]!",
+        french="[CN]Les nuages se sont dissipés au-dessus\n[CN]de la [CS:P]Grotte Sables Mouvants[CR] et dans\n[CN]les environs de la [CS:P]Région Aride[CR]!",
+        german="[CN]Die Wolken über der [CS:P]Treibsandhöhle[CR]\n[CN]und dem [CS:P]Trockengebiet[CR] haben sich verzogen!",
+        italian="[CN]Le nuvole si sollevano dalla\n[CN][CS:P]Grotta delle Sabbie Mobili[CR]\n[CN]e da tutta la [CS:P]Zona Arida[CR]!",
+        spanish="[CN]¡Las nubes que cubrían la [CS:P]Cueva Arenas[CR]\n[CN]y las inmediaciones de la [CS:P]zona árida[CR]\n[CN]se disiparon!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    screen2_FadeOut(1, 15);
+    back2_SetMode(0);
+    switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+    $SCENARIO_MAIN_BIT_FLAG[8] = 1;
+    $COMPULSORY_SAVE_POINT = 12;
+    CallCommon(CORO_HANYOU_SAVE_FUNC);
+    end;
+}

@@ -1,0 +1,85 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_TIME_RESTORED, 0, 256);
+    back_SetGround(LEVEL_P04P01C);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 60);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_CHIRIIN, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Oh, my! So shimmering!",
+        french=" Oh là là, c\'est éblouissant!",
+        german=" Ooooh! Wie er schimmert!",
+        italian=" Oh, wow! Guardate come brilla!",
+        spanish=" ¡Vaya! ¡Qué brillo!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_BIPPA, FACE_SIGH, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Yup yup! Some kind of pretty!",
+        french=" Ouaip ouaip! C\'est vachement\nbeau, pour sûr!",
+        german=" Jawollja! Das hat was!",
+        italian=" Già, già! È proprio bello!",
+        spanish=" ¡Sí, señor! ¡Sí que es bonito!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_YUKUSHII, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Yes, the lake geyser erupts\nevery now and then.",
+        french=" Oui, le geyser du lac jaillit\nde temps à autre.",
+        german=" Ja, der Geysir in dem See bricht\nhin und wieder aus.",
+        italian=" Sì, il geyser del lago talvolta\nsi attiva.",
+        spanish=" Sí, el géiser del lago entra en erupción\nde vez en cuando.",
+    });
+    message_Talk({
+        english=" It sends up water, just like a\nfountain...",
+        french=" Il envoie une colonne d\'eau\nen l\'air, comme une fontaine...",
+        german=" Er sprudelt Wasser nach oben,\nwie ein Springbrunnen...",
+        italian=" Emette acqua verso il cielo,\ncome in un sogno...",
+        spanish=" El agua brota como si fuera una fuente.",
+    });
+    message_Talk({
+        english=" And the Time Gear sends up\nillumination from below...",
+        french=" Et la lumière vient du Rouage\ndu Temps, au fond du lac...",
+        german=" Und das Zahnrad der Zeit\nstrahlt von unten herauf.",
+        italian=" ... mentre l\'Ingranaggio del\nTempo emette dal basso la sua luce...",
+        spanish=" Y el Engranaje del Tiempo la ilumina\ndesde abajo...",
+    });
+    message_Talk({
+        english=" While many [CS:N]Illumise[CR] and [CS:N]Volbeat[CR]\nglow upon the fountain of water...",
+        french=" Pendant que les [CS:N]Lumivole[CR]\net les [CS:N]Muciole[CR] volètent autour\ndu geyser en l\'illuminant...",
+        german=" Und gleichzeitig leuchten zahllose\n[CS:N]Illumise[CR] und [CS:N]Volbeat[CR]\nauf der Wasserfontäne...",
+        italian=" ... e gli [CS:N]Illumise[CR] e i [CS:N]Volbeat[CR]\nbrillano nei pressi della colonna d\'acqua...",
+        spanish=" Mientras decenas de [CS:N]Illumise[CR]\ny [CS:N]Volbeat[CR] resplandecen sobre la fuente...",
+    });
+    message_Talk({
+        english=" In harmony, they are the very\nvision of beauty!",
+        french=" Tout cela réuni, c\'est la beauté\nà l\'état pur!",
+        german=" In ihrer Harmonie sind sie die\nEssenz der Schönheit!",
+        italian=" In questa armonia risiede una\nbellezza senza pari!",
+        spanish=" En conjunto, es un cuadro inolvidable;\nlleno de armonía.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" The treasure!",
+        french=" Le trésor!",
+        german=" Der Schatz!",
+        italian=" Il tesoro!",
+        spanish=" ¡Eso es el tesoro!",
+    });
+    message_Talk({
+        english=" The treasure...[K]must be the view\nof [CS:P]Fogbound Lake[CR]!",
+        french=" Le trésor...[K] ça doit être\nle spectacle du [CS:P]Lac des Brumes[CR]!",
+        german=" Der Schatz...[K] Der Anblick des\n[CS:P]Nebelsees[CR] muss der Schatz sein!",
+        italian=" Il tesoro...[K] dev\'essere questa\nvista sul [CS:P]Lago Foschia[CR]!",
+        spanish=" El tesoro...[K] ¡ha de ser esta vista\ndel [CS:P]Lago Velado[CR]!",
+    });
+    message_Close();
+    screen_FadeOut(1, 60);
+    end;
+}

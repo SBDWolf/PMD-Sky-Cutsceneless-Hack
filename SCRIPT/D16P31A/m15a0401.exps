@@ -1,0 +1,377 @@
+
+def 0 {
+    sound_Stop();
+    back_SetDungeonBanner(24, 0);
+    screen_FadeIn(1, 16);
+    Wait(60);
+    screen_FadeOut(1, 16);
+    Wait(15);
+    $SCENARIO_MAIN = scn[16, 2];
+    back_SetGround(LEVEL_D16P31A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (object OBJECT_D16P31A3_41) {
+        SetAnimation(10);
+    }
+    with (object OBJECT_D16P31A4_43) {
+        SetAnimation(10);
+    }
+    with (object OBJECT_D16P31A6_51) {
+        SetAnimation(10);
+    }
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_IN_THE_DEPTHS_OF_THE_PIT, 0, 256);
+    Wait(10);
+    with (actor ACTOR_ATTENDANT1) {
+        Move2PositionMark(1, Position<'m0', 35.5, 46.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m1', 39.5, 46.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_UNIT_NPC1) {
+        MovePositionMark(1, Position<'m2', 36.5, 51.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_UNIT_NPC2) {
+        MovePositionMark(1, Position<'m3', 40, 51.5>);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    Wait(10);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Is this...[K]the deepest part of the\ncaverns?",
+                french=" Est-ce que c\'est...[K] le fond\nde la caverne?",
+                german=" Ist das[K] der tiefste Punkt der\nHöhle?",
+                italian=" Siamo...[K] arrivati in fondo?",
+                spanish=" ¿Esto es...?[K] ¿Hemos llegado ya\na la parte más profunda de la cueva?",
+            }
+        case 2:
+            {
+                english=" Is this...[K]the deepest part of\nthe caverns?",
+                french=" Est-ce que c\'est...[K] le fond\nde la caverne?",
+                german=" Ist das[K] der tiefste Punkt der\nHöhle?",
+                italian=" Siamo...[K] arrivati in fondo?",
+                spanish=" ¿Esto es...?[K] ¿Hemos llegado ya\na la parte más profunda de la cueva?",
+            }
+        default:
+            {
+                english=" Is this...[K]the deepest part of\nthe caverns?",
+                french=" Est-ce que c\'est...[K] le fond\nde la caverne?",
+                german=" Ist das[K] der tiefste Punkt der\nHöhle?",
+                italian=" Da qui...[K] non si può più\nproseguire?",
+                spanish=" ¿Esto es...?[K] ¿Hemos llegado ya\na la parte más profunda de la cueva?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    Wait(10);
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    se_Play(8978);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hey, [hero]! Over there!",
+                french=" Regarde, [hero]! Là-bas!",
+                german=" Hey, [hero]! Da!",
+                italian=" Ehi, [hero]! Guarda!",
+                spanish=" ¡Mira allí, [hero]!",
+            }
+        case 2:
+            {
+                english=" Hey, [hero]! Over there!",
+                french=" Regarde, [hero]! Là-bas!",
+                german=" Hey, [hero]! Da!",
+                italian=" Ehi, [hero]! Guarda!",
+                spanish=" ¡Mira allí, [hero]!",
+            }
+        default:
+            {
+                english=" Oh, [hero]! Over there!",
+                french=" Regarde, [hero]! Là-bas!",
+                german=" Hey, [hero]! Da!",
+                italian=" Ehi, [hero]! Guarda!",
+                spanish=" ¡Mira allí, [hero]!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Move2PositionMark(1, Position<'m4', 35.5, 28.5>);
+    }
+    with (performer 0) {
+        MovePositionMark(1, Position<'m5', 37.5, 28.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m6', 39.5, 28.5>);
+    }
+    with (actor ACTOR_UNIT_NPC1) {
+        MovePositionMark(1, Position<'m7', 36.5, 36.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_UNIT_NPC2) {
+        MovePositionMark(1, Position<'m8', 40.5, 36.5>);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Check out these three giant\ncrystals!",
+                french=" Regarde un peu ces trois\ncristaux! Ils sont énormes!",
+                german=" Sieh dir die drei riesigen\nKristalle an!",
+                italian=" Questi cristalli sono giganteschi!",
+                spanish=" Fíjate en esos cristales gigantes.",
+            }
+        case 2:
+            {
+                english=" Look at these three crystals!\nThey\'re huge!",
+                french=" Regarde un peu ces trois\ncristaux! Ils sont énormes!",
+                german=" Sieh dir die drei Kristalle an!\nDie sind ja riesig!",
+                italian=" Questi cristalli sono giganteschi!",
+                spanish=" Mira esos cristales gigantes.\n¡Son enormes!",
+            }
+        default:
+            {
+                english=" Look at these three giant\ncrystals!",
+                french=" Regarde un peu ces trois\ncristaux! Ils sont énormes!",
+                german=" Sieh dir die drei riesigen\nKristalle an!",
+                italian=" Questi cristalli sono giganteschi!",
+                spanish=" Mira esos cristales gigantes.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" They\'re in different colors too.",
+                french=" Et ils sont de couleurs\ndifférentes.",
+                german=" Sie haben unterschiedliche\nFarben.",
+                italian=" E ognuno è di un diverso colore.",
+                spanish=" Cada uno es de un color.",
+            }
+        case 2:
+            {
+                english=" They\'re in different colors too.",
+                french=" Et ils sont de couleurs\ndifférentes.",
+                german=" Sie haben unterschiedliche\nFarben.",
+                italian=" E ognuno è di un diverso colore.",
+                spanish=" Cada uno es de un color.",
+            }
+        default:
+            {
+                english=" They\'re in different colors too.",
+                french=" Et ils sont de couleurs\ndifférentes.",
+                german=" Sie haben unterschiedliche\nFarben.",
+                italian=" E ognuno è di un diverso colore.",
+                spanish=" Cada uno es de un color.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" They obviously stand out from\nthe other crystals.",
+                french=" Aucun doute, ils se distinguent\ndes autres cristaux.",
+                german=" Das sind offensichtlich\nbesondere Kristalle.",
+                italian=" Sono davvero differenti da tutti\ngli altri cristalli.",
+                spanish=" Destacan claramente entre\nlos demás cristales.",
+            }
+        case 2:
+            {
+                english=" Clearly, they stand out from\nthe other crystals.",
+                french=" Aucun doute, ils se distinguent\ndes autres cristaux.",
+                german=" Das sind eindeutig besondere\nKristalle.",
+                italian=" Sono davvero differenti da tutti\ngli altri cristalli.",
+                spanish=" Destacan claramente entre\nlos demás cristales.",
+            }
+        default:
+            {
+                english=" It\'s obvious that they\'re not\nlike any of the other crystals.",
+                french=" Aucun doute, ils se distinguent\ndes autres cristaux.",
+                german=" Das sind offenbar ganz\nbesondere Kristalle.",
+                italian=" Sono davvero differenti da tutti\ngli altri cristalli.",
+                spanish=" Destacan claramente entre\nlos demás cristales.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" On the way here, we didn\'t see\nanything out of the ordinary...",
+                french=" En venant ici, on n\'a rien vu qui\nsortait de l\'ordinaire...",
+                german=" Auf dem Weg hierher haben wir\nnichts Außergewöhnliches gesehen.",
+                italian=" Lungo la strada che abbiamo\npercorso per arrivare fino a qui, non\nabbiamo visto niente di strano...",
+                spanish=" En todo el trayecto no hemos\nvisto nada fuera de lo normal.",
+            }
+        case 2:
+            {
+                english=" On the way here, we didn\'t see\nanything out of the ordinary...",
+                french=" En venant ici, on n\'a rien vu qui\nsortait de l\'ordinaire...",
+                german=" Auf dem Weg hierher haben wir\nnichts Außergewöhnliches gesehen.",
+                italian=" Lungo la strada che abbiamo\npercorso per arrivare fino a qui, non\nabbiamo visto niente di strano...",
+                spanish=" En todo el trayecto no hemos\nvisto nada fuera de lo normal.",
+            }
+        default:
+            {
+                english=" On the way here, we didn\'t see\nanything out of the ordinary...",
+                french=" En venant ici, on n\'a rien vu qui\nsortait de l\'ordinaire...",
+                german=" Auf dem Weg hierher haben wir\nnichts Außergewöhnliches gesehen.",
+                italian=" Lungo la strada che abbiamo\npercorso per arrivare fino a qui, non\nabbiamo visto niente di strano...",
+                spanish=" En todo el trayecto no hemos\nvisto nada fuera de lo normal.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    Wait(10);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" So I think these three crystals\nare the key, [hero]!",
+                french=" J\'ai bien l\'impression que la clé\ndu mystère réside dans ces trois cristaux,\n[hero]!",
+                german=" Also müssten diese drei\nKristalle der Schlüssel sein, [hero]!",
+                italian=" La soluzione del mistero\ndev\'essere in questi tre cristalli, [hero]!",
+                spanish=" Así que creo que estos tres\ncristales han de ser la clave, [hero].",
+            }
+        case 2:
+            {
+                english=" So I think these three crystals\nare clues, [hero]!",
+                french=" J\'ai bien l\'impression que la clé\ndu mystère réside dans ces trois cristaux,\n[hero]!",
+                german=" Also sind diese drei Kristalle\nbestimmt ein Hinweis, [hero]!",
+                italian=" La soluzione del mistero\ndev\'essere in questi tre cristalli, [hero]!",
+                spanish=" Así que creo que estos tres\ncristales han de ser la clave, [hero].",
+            }
+        default:
+            {
+                english=" So these three crystals must be\nclues, [hero]!",
+                french=" J\'ai bien l\'impression que la clé\ndu mystère réside dans ces trois cristaux,\n[hero]!",
+                german=" Also sind diese drei Kristalle\nsicher ein Hinweis, [hero]!",
+                italian=" La soluzione del mistero\ndev\'essere in questi tre cristalli, [hero]!",
+                spanish=" Así que creo que estos tres\ncristales han de ser la clave, [hero].",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I bet they hold the secret!",
+                french=" Ils doivent cacher un secret!",
+                german=" Wetten, dass sie irgendein\nGeheimnis bergen?",
+                italian=" Sono sicuro che il segreto è\nproprio qui!",
+                spanish=" ¡Sé que ocultan algún secreto!",
+            }
+        case 2:
+            {
+                english=" They must be keeping a secret!",
+                french=" Ils doivent cacher un secret!",
+                german=" Sie bergen sicher irgendein\nGeheimnis!",
+                italian=" Sono sicuro che il segreto è\nproprio qui!",
+                spanish=" ¡Sé que ocultan algún secreto!",
+            }
+        default:
+            {
+                english=" They must be keeping a secret!",
+                french=" Ils doivent cacher un secret!",
+                german=" Sie bergen sicher irgendein\nGeheimnis!",
+                italian=" Sono sicura che il segreto è\nproprio qui!",
+                spanish=" ¡Sé que ocultan algún secreto!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(It makes sense!)",
+                french="(Ça expliquerait tout!)",
+                german="(Das klingt logisch!)",
+                italian="(Forse ha ragione!)",
+                spanish="(¡Tiene sentido!)",
+            }
+        default:
+            {
+                english="(It makes sense!)",
+                french="(Ça expliquerait tout!)",
+                german="(Das klingt logisch!)",
+                italian="(Forse ha ragione!)",
+                spanish="(¡Tiene sentido!)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(I feel the same way!)",
+                french="(J\'ai la même impression!)",
+                german="(Ich habe dasselbe Gefühl!)",
+                italian="(Anch\'io la penso così!)",
+                spanish="(Yo tengo la misma impresión.)",
+            }
+        default:
+            {
+                english="(I feel the same way!)",
+                french="(J\'ai la même impression!)",
+                german="(Ich habe dasselbe Gefühl!)",
+                italian="(Anch\'io la penso così!)",
+                spanish="(Yo tengo la misma impresión.)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(On the journey to [CS:P]Fogbound Lake[CR], where we\nmet [CS:N]Uxie[CR]...)",
+                french="(Pendant l\'expédition au [CS:P]Lac des Brumes[CR],\noù on a rencontré [CS:N]Créhelf[CR]...)",
+                german="(Auf der Reise zum [CS:P]Nebelsee[CR], wo wir [CS:N]Selfe[CR]\ntrafen...)",
+                italian="(Nella nostra avventura al [CS:P]Lago Foschia[CR], dove\nabbiamo incontrato [CS:N]Uxie[CR]...)",
+                spanish="(Cuando fuimos al [CS:P]Lago Velado[CR], antes de\nllegar hasta [CS:N]Uxie[CR]...)",
+            }
+        default:
+            {
+                english="(On the journey to [CS:P]Fogbound Lake[CR], where we\nmet [CS:N]Uxie[CR]...)",
+                french="(Pendant l\'expédition au [CS:P]Lac des Brumes[CR],\noù on a rencontré [CS:N]Créhelf[CR]...)",
+                german="(Auf der Reise zum [CS:P]Nebelsee[CR], wo wir [CS:N]Selfe[CR]\ntrafen...)",
+                italian="(Nella nostra avventura al [CS:P]Lago Foschia[CR], dove\nabbiamo incontrato [CS:N]Uxie[CR]...)",
+                spanish="(Cuando fuimos al [CS:P]Lago Velado[CR], antes de\nllegar hasta [CS:N]Uxie[CR]...)",
+            }
+    }
+    message_Close();
+    screen_FadeOut(1, 30);
+    end;
+}

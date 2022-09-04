@@ -1,0 +1,171 @@
+
+def 0 {
+    sound_Stop();
+    se_Play(5123);
+    WaitSe(5123);
+    message_SetFace(ACTOR_NPC_CHIRIIN, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Everyone![K] Thanks for\nwaiting! ♪",
+        french=" Ah, vous voilà tous![K] Merci\nde votre patience! ♪",
+        german=" Alle mal herhören![K]\nVielen Dank für eure Geduld! ♪",
+        italian=" Ehi, gente![K] Grazie di aver\naspettato! ♪",
+        spanish=" ¡Hola a todos![K] ¡Gracias por\nesperar! ♪",
+    });
+    message_Close();
+    back_SetGround(LEVEL_G01P04A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    Wait(1);
+    WaitLockLives(5, ACTOR_NPC_GUREGGURU);
+    screen_FadeIn(1, 30);
+    with (actor ACTOR_NPC_CHIRIIN) {
+        MovePositionMark(1, Position<'m0', 22, 35.5>);
+    }
+    Wait(40);
+    se_Play(8978);
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_LEFT, 3);
+    }
+    Wait(10);
+    Unlock(5);
+    Wait(5);
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    Unlock(7);
+    Wait(10);
+    Unlock(9);
+    Wait(10);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_LEFT, 3);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_CHIRIIN);
+    message_Talk({
+        english=" I finished making dinner! ♪",
+        french=" J\'ai fini de préparer le\ndîner! ♪",
+        german=" Ich bin mit den\nEssensvorbereitungen fertig! ♪",
+        italian=" Tutto pronto in cucina! ♪",
+        spanish=" ¡La cena está lista! ♪",
+    });
+    message_Talk({
+        english=" Come on! Dinner\'s on! ♪",
+        french=" C\'est bon! Le repas est\nservi! ♪",
+        german=" Alle herkommen! Essenszeit! ♪",
+        italian=" Forza! La cena è pronta! ♪",
+        spanish=" ¡Venga! ¡A cenar! ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5138);
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetAnimation(4);
+    }
+    Unlock(6);
+    Unlock(8);
+    Unlock(10);
+    supervision_Acting(1);
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetAnimation(24);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        MovePositionOffset(33408, -88, 0);
+    }
+    message_EmptyActor();
+    message_Talk({
+        english="[CS:N]Everyone[CR]: YEAH!",
+        french="[CS:N]Tous[CR]: A L\'ATTAQUE!",
+        german="[CS:N]Alle[CR]: JUCHHU!",
+        italian="[CS:N]Tutti[CR]: SÌ!",
+        spanish="[CS:N]Todos[CR]: ¡SÍ!",
+    });
+    message_Close();
+    se_FadeOut(5138, 30);
+    screen_FadeOut(1, 30);
+    end;
+}
+
+def 1 for_actor(ACTOR_NPC_GUREGGURU) {
+    SetAnimation(2);
+    Lock(5);
+    Turn2Direction(4, 10, DIR_DOWNLEFT);
+    Lock(6);
+    §label_0;
+    forever {
+        SetAnimation(17);
+        WaitAnimation();
+        SetAnimation(2);
+        continue;  // may be redundant
+    }
+}
+
+def 2 for_actor(ACTOR_NPC_DOGOOMU) {
+    SetAnimation(2);
+    Lock(7);
+    SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    Turn2Direction(1, 10, DIR_LEFT);
+    Lock(8);
+    SetEffect(EFFECT_JOYOUS, 3);
+    §label_1;
+    forever {
+        SetAnimation(19);
+        WaitAnimation();
+        SetAnimation(2);
+        continue;  // may be redundant
+    }
+}
+
+def 3 for_actor(ACTOR_PLAYER_BIPPA) {
+    SetAnimation(2);
+    Lock(9);
+    SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    Turn2Direction(1, 10, DIR_LEFT);
+    Lock(10);
+    §label_2;
+    forever {
+        SetAnimation(3);
+        MoveHeight(2, 10);
+        Wait(1);
+        MoveHeight(2, 0);
+        Wait(2);
+        MoveHeight(2, 10);
+        Wait(1);
+        MoveHeight(2, 0);
+        Wait(15);
+        SetAnimation(2);
+        continue;  // may be redundant
+    }
+}

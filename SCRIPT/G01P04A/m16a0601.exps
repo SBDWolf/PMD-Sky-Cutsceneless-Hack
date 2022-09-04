@@ -1,0 +1,516 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
+    back_SetGround(LEVEL_G01P04A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" Ahem...[K] About the attempt to\ncapture [CS:N]Grovyle[CR]...",
+        french=" Hum...[K] En ce qui concerne\nla capture de [CS:N]Massko[CR]...",
+        german=" Ähem...[K] Was die versuchte\nFestnahme von [CS:N]Reptain[CR] angeht...",
+        italian=" Ahem...[K] A proposito del piano\nper acciuffare [CS:N]Grovyle[CR]...",
+        spanish=" Ejem...[K] Con respecto al plan de\ncaptura de [CS:N]Grovyle[CR]...",
+    });
+    message_Talk({
+        english=" We have yet to receive word\nthat [CS:N]Grovyle[CR] has been captured.",
+        french=" Aucune nouvelle ne nous est\nencore parvenue.",
+        german=" Wir warten noch auf die\nInformation, ob [CS:N]Reptain[CR] gefasst wurde.",
+        italian=" Stiamo ancora aspettando di\nricevere notizie della sua cattura.",
+        spanish=" Aún no sabemos si [CS:N]Grovyle[CR]\nha sido capturado.",
+    });
+    message_Talk({
+        english=" I understand that you are all\nitching for something to happen! But consider\nthis a test of your patience!",
+        french=" Je sais bien que vous avez tous\nhâte qu\'il se passe quelque chose! Mais\nconsidérez ça comme une épreuve de patience!",
+        german=" Ich verstehe, dass ihr es kaum\nerwarten könnt, bis endlich etwas passiert!\nAber seht es als Geduldstest an!",
+        italian=" Attendiamo con ansia! Speriamo\nche succeda presto qualcosa.",
+        spanish=" Entiendo que todos estáis\nansiosos de que ocurra algo, pero podemos\nconsiderar esto como una prueba de paciencia.",
+    });
+    message_Talk({
+        english=" Because we ask you to carry on\nwith your usual work! ♪",
+        french=" En attendant, poursuivez\nvos tâches quotidiennes! ♪",
+        german=" Denn wir möchten, dass ihr\nweiterhin eurer gewohnten Arbeit nachgeht! ♪",
+        italian=" Vi prego di continuare il vostro\nlavoro come al solito.",
+        spanish=" Por tanto, os pedimos que sigáis\ncon vuestro trabajo de siempre. ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_FadeOut(30);
+    se_Play(7182);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    Wait(55);
+    message_Talk({
+        english=" Oh! What\'s that siren?!",
+        french=" Oh! Quelle est cette sirène?!",
+        german=" Oh! Was ist das für eine\nSirene?!?",
+        italian=" Oh! Cos\'è questa sirena?!",
+        spanish=" ¡¿Qué es esa sirena?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (performer 0) {
+        MovePositionMark(2, Position<'m0', 30, 31.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_PUKURIN) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2Direction(4, 2, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (performer 0) {
+        MovePositionMark(2, Position<'m1', 30, 38.5>);
+    }
+    WaitExecutePerformer(0);
+    Wait(15);
+    with (actor ACTOR_NPC_DIGUDA) {
+        Turn2Direction(4, 2, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_DIGUDA);
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    message_SetFace(ACTOR_NPC_DIGUDA, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Deputy [CS:N]Magnemite[CR] is here!",
+        french=" Le shérif adjoint [CS:N]Magnéti[CR]\nest ici!",
+        german=" Wachtmeister [CS:N]Magnetilo[CR] ist da!",
+        italian=" L\'agente [CS:N]Magnemite[CR] è qui!",
+        spanish=" ¡El ayudante [CS:N]Magnemite[CR]\nha llegado!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_DIGUDA);
+    message_SetActor(ACTOR_NPC_KOIRU);
+    message_Talk({
+        english=" Zzzt! This is a message from\nOfficer [CS:N]Magnezone[CR]. Zzzt!",
+        french=" Zzzt! Ceci est un message\ndu shérif [CS:N]Magnézone[CR]. Zzzt!",
+        german=" Zzzt! Dies ist eine Nachricht von\nOberwachtmeister [CS:N]Magnezone[CR]. Zzzt!",
+        italian=" Zzzt! Questo è un messaggio del\nCommissario [CS:N]Magnezone[CR]. Zzzt!",
+        spanish=" ¡Bzz! Este es un mensaje del\nagente [CS:N]Magnezone[CR]. ¡Bzz!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (performer 0) {
+        MovePositionMark(2, Position<'m2', 30, 31.5>);
+    }
+    with (performer 0) {
+        MovePositionMark(2, Position<'m3', 52.5, 31.5>);
+    }
+    message_Talk({
+        english=" Zzzt! We are pleased to deliver\nthis report! Zzzt!",
+        french=" Zzzt! Nous sommes enchantés\nde faire ce rapport! Zzzt!",
+        german=" Zzzt! Wir freuen uns, diese\nNachricht überbringen zu können! Zzzt!",
+        italian=" Zzzt! Siamo lieti di annunciare\nquanto segue! Zzzt!",
+        spanish=" ¡Bzz! ¡Nos complace comunicar\nesta noticia! ¡Bzz!",
+    });
+    message_Talk({
+        english=" Zzzt! [CS:N]Grovyle[CR] has finally been\ncaptured! Zzzt!",
+        french=" Zzzt! [CS:N]Massko[CR] a enfin\nété appréhendé! Zzzt!",
+        german=" Zzzt! [CS:N]Reptain[CR] wurde endlich\ngefasst! Zzzt!",
+        italian=" Zzzt! [CS:N]Grovyle[CR] è stato finalmente\narrestato! Zzzt!",
+        spanish=" ¡Bzz! ¡[CS:N]Grovyle[CR] ha sido capturado\npor fin! ¡Bzz!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    WaitExecutePerformer(0);
+    se_Play(8967);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_NORMAL, FACE_POS_BOTTOM_R_CENTER);
+    message_FacePositionOffset(-1, 0);
+    message_Talk({
+        english=" Whoa! At LAST!",
+        french=" Waouh! ENFIN!",
+        german=" Boah! ENDLICH!",
+        italian=" Wow! Finalmente!",
+        spanish=" ¡Vaya! ¡Por fin!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_BIPPA) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_BIPPA);
+    message_SetFace(ACTOR_NPC_BIPPA, FACE_NORMAL, FACE_POS_BOTTOM_C_FACEL);
+    message_Talk({
+        english=" By gosh! [CS:N]Grovyle[CR]\'s been caught!",
+        french=" Sapristi! On a attrapé [CS:N]Massko[CR]!",
+        german=" Donnerwetter! [CS:N]Reptain[CR] wurde\ngeschnappt!",
+        italian=" Ohibò! Hanno preso [CS:N]Grovyle[CR]!",
+        spanish=" ¡Bien! ¡[CS:N]Grovyle[CR] ha sido\ncapturado!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_KIMAWARI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_KIMAWARI);
+    message_SetFace(ACTOR_NPC_KIMAWARI, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(-1, 2);
+    message_Talk({
+        english=" Oh my gosh! They did it! Yippee!",
+        french=" Ben mince alors! Il a réussi!\nYoupiii!",
+        german=" Auweia! Er hat es geschafft!\nJuchhu!",
+        italian=" Shock! Ce l\'hanno fatta! Yuppi!",
+        spanish=" ¡Superguay! ¡Lo lograron!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetActor(ACTOR_NPC_KOIRU);
+    message_Talk({
+        english=" Zzzt! There\'s more! Zzzt!",
+        french=" Zzzt! Ce n\'est pas tout! Zzzt!",
+        german=" Zzzt! Das ist nicht alles! Zzzt!",
+        italian=" Zzzt! C\'è dell\'altro! Zzzt!",
+        spanish=" ¡Bzz! ¡Aún hay más! ¡Bzz!",
+    });
+    message_Talk({
+        english=" Zzzt! [CS:N]Grovyle[CR] was captured\nby the great [CS:N]Dusknoir[CR]. Zzzt!",
+        french=" Zzzt! C\'est le grand [CS:N]Noctunoir[CR]\nqui a mis la main sur [CS:N]Massko[CR]. Zzzt!",
+        german=" Zzzt! [CS:N]Reptain[CR] wurde von\ndem großen [CS:N]Zwirrfinst[CR] gefasst. Zzzt!",
+        italian=" Zzzt! [CS:N]Grovyle[CR] è stato catturato\ndal grande [CS:N]Dusknoir[CR]. Zzzt!",
+        spanish=" ¡Bzz! [CS:N]Grovyle[CR] ha sido capturado\npor el gran [CS:N]Dusknoir[CR]. ¡Bzz!",
+    });
+    message_Talk({
+        english=" Zzzt! He has informed us that he\nwill return to the future with [CS:N]Grovyle[CR]! Zzzt!",
+        french=" Zzzt! Il nous a informés\nde son intention de l\'emmener\ndans le futur avec lui! Zzzt!",
+        german=" Zzzt! Wie er uns mitgeteilt hat,\nwird er mit [CS:N]Reptain[CR] in die Zukunft\nzurückkehren! Zzzt!",
+        italian=" Zzzt! Ci ha informato che è sua\nintenzione ritornare nel futuro e portare\n[CS:N]Grovyle[CR] con sé! Zzzt!",
+        spanish=" ¡Bzz! ¡Nos ha informado de que\nregresará al futuro con [CS:N]Grovyle[CR]! ¡Bzz!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8968);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    Wait(5);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    WaitExecuteLives(ACTOR_NPC_BIPPA);
+    message_SetFace(ACTOR_NPC_CHIRIIN, FACE_NORMAL, FACE_POS_TOP_LC_FACEOUTW);
+    message_FacePositionOffset(2, 2);
+    message_Talk({
+        english=" [CS:N]Dusknoir[CR] is...",
+        french=" [CS:N]Noctunoir[CR] va...",
+        german=" [CS:N]Zwirrfinst[CR]...",
+        italian=" [CS:N]Dusknoir[CR] intende...",
+        spanish=" [CS:N]Dusknoir[CR] se va...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_BOTTOM_R_FACEINW);
+    message_FacePositionOffset(1, 0);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Going home?",
+                french=" ... repartir?",
+                german=" Er geht nach Hause?",
+                italian=" ... tornare indietro?",
+                spanish=" ¿A casa?",
+            }
+        case 2:
+            {
+                english=" Going home?",
+                french=" ... repartir?",
+                german=" Er geht nach Hause?",
+                italian=" ... tornare indietro?",
+                spanish=" ¿A casa?",
+            }
+        default:
+            {
+                english=" Going home?",
+                french=" ... repartir?",
+                german=" Er geht nach Hause?",
+                italian=" ... tornare indietro?",
+                spanish=" ¿A casa?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_NORMAL, FACE_POS_BOTTOM_R_CENTER);
+    message_FacePositionOffset(-1, 0);
+    message_Talk({
+        english=" Going back to the future...?",
+        french=" Repartir dans le futur...?",
+        german=" Er geht wieder in die Zukunft?",
+        italian=" Vuole tornare nel futuro...?",
+        spanish=" ¿De vuelta al futuro?",
+    });
+    message_Talk({
+        english=" How do you...go back?",
+        french=" Et comment on fait ça...?",
+        german=" Wie soll das denn gehen?",
+        italian=" E come... Come intende fare?",
+        spanish=" ¿Y cómo hará para volver?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetActor(ACTOR_NPC_KOIRU);
+    message_Talk({
+        english=" Zzzt! I do not claim to\nunderstand the process. Zzzt!",
+        french=" Zzzt! Je ne prétends pas\ncomprendre le protocole à suivre. Zzzt!",
+        german=" Zzzt! Ich habe nicht behauptet,\ndass ich das weiß. Zzzt!",
+        italian=" Zzzt! Non sono a conoscenza di\ntutti i dettagli di quest\'operazione. Zzzt!",
+        spanish=" ¡Bzz! Yo no es que entienda tan\ncomplejo proceso. ¡Bzz!",
+    });
+    message_Talk({
+        english=" Zzzt! But I have heard they will\nbe going through a tunnel. Zzzt! He called it a\ndimensional hole. Zzzt!",
+        french=" Zzzt! Mais il paraît qu\'ils vont\nemprunter une sorte de tunnel. Le gouffre\ndimensionnel, selon ses propres termes. Zzzt!",
+        german=" Zzzt! Aber wie ich gehört habe,\nwerden sie durch einen Tunnel reisen. Zzzt!\nEr nannte es ein dimensionales Loch. Zzzt!",
+        italian=" Zzzt! Ma ho sentito dire che\nattraverseranno un tunnel. Zzzt! Ha parlato di\nun cosiddetto tunnel dimensionale. Zzzt!",
+        spanish=" ¡Bzz! Pero he oído decir que van\na cruzar un túnel. ¡Bzz! Dijo que se trataba de\nun \"agujero dimensional\". ¡Bzz!",
+    });
+    message_Talk({
+        english=" Zzzt! He opened a dimensional\nhole in the town\'s main square, I am told. Zzzt!",
+        french=" Zzzt! A ce qu\'on dit, il a ouvert\nun gouffre dimensionnel sur la place principale\ndu bourg. Zzzt!",
+        german=" Zzzt! Soweit ich weiß, hat er\nauf dem Hauptplatz der Stadt ein\ndimensionales Loch geöffnet. Zzzt!",
+        italian=" Zzzt! Mi è stato detto che ha\nattivato un tunnel dimensionale nella piazza\nprincipale della città. Zzzt!",
+        spanish=" Me han dicho que ha abierto...\n¡Bzz! Un agujero dimensional en la plaza\ndel pueblo. ¡Bzz!",
+    });
+    message_Talk({
+        english=" Zzzt! [CS:N]Dusknoir[CR] told us that he\nwishes to say good-bye before he leaves. Zzzt!",
+        french=" Zzzt! [CS:N]Noctunoir[CR] veut vous dire\nau revoir avant de partir. Zzzt!",
+        german=" Zzzt! [CS:N]Zwirrfinst[CR] sagte, dass\ner sich gerne verabschieden würde, bevor er\ngeht. Zzzt!",
+        italian=" Zzzt! [CS:N]Dusknoir[CR] ha espresso il\ndesiderio di salutare tutti prima di andarsene.\nZzzt!",
+        spanish=" ¡Bzz! [CS:N]Dusknoir[CR] nos ha dicho\nque quería despedirse antes de su marcha.\n¡Bzz!",
+    });
+    message_Talk({
+        english=" Zzzt! Therefore, he hopes that\nyou will come see him for the last time at\nTreasure Town\'s square. Zzzt!",
+        french=" Zzzt! C\'est pourquoi il espère\nque vous viendrez le voir une dernière fois\nsur la grand-place de Bourg-Trésor. Zzzt!",
+        german=" Zzzt! Deshalb hofft er, dass ihr\nzum Platz von Schatzstadt kommen werdet,\num ihn ein letztes Mal zu sehen. Zzzt!",
+        italian=" Zzzt! Si augura di trovarvi tutti\nnella piazza di Borgo Tesoro per un ultimo\nsaluto. Zzzt!",
+        spanish=" ¡Bzz! Por eso, espera que\nvayáis a verle una última vez a la plaza\nde Aldea Tesoro. ¡Bzz!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PUKURIN) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_GUREGGURU) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_DAGUTORIO);
+    with (actor ACTOR_NPC_HEIGANI) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    message_SetFace(ACTOR_NPC_HEIGANI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Hey, hey! Well, what are we\ndoing here?!",
+        french=" Eh dis donc, mais qu\'est-ce\nqu\'on attend?!",
+        german=" Hey, hey! Na, worauf warten\nwir dann noch?!?",
+        italian=" Ehi, ehi! Cosa stiamo\naspettando?",
+        spanish=" ¡Oye, oye! Entonces, ¿qué\nestamos haciendo aquí?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_FacePositionOffset(1, 0);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Come on, hurry! We have to go\nto Treasure Town!",
+                french=" Allez, on se dépêche!\nTous à Bourg-Trésor!",
+                german=" Kommt schon, schnell! Wir\nmüssen nach Schatzstadt!",
+                italian=" Coraggio, gente! Tutti a Borgo\nTesoro!",
+                spanish=" ¡Vamos, rápido! ¡Tenemos que\nir a Aldea Tesoro!",
+            }
+        case 2:
+            {
+                english=" Let\'s hurry! We have to go to\nTreasure Town!",
+                french=" Allez, on se dépêche!\nTous à Bourg-Trésor!",
+                german=" Beeilung! Wir müssen nach\nSchatzstadt!",
+                italian=" Sbrighiamoci! Corriamo tutti a\nBorgo Tesoro!",
+                spanish=" ¡Vamos, rápido! ¡Tenemos que\nir a Aldea Tesoro!",
+            }
+        default:
+            {
+                english=" Let\'s hurry! We have to go to\nTreasure Town!",
+                french=" Allez, on se dépêche!\nTous à Bourg-Trésor!",
+                german=" Beeilung! Wir müssen nach\nSchatzstadt!",
+                italian=" Sbrighiamoci! Corriamo tutti a\nBorgo Tesoro!",
+                spanish=" ¡Vamos, rápido! ¡Tenemos que\nir a Aldea Tesoro!",
+            }
+    }
+    message_Close();
+    se_Play(6422);
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetAnimation(25);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        MovePositionMark(33075, Position<'m4', 40.5, 23.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_CHIRIIN) {
+        MovePositionMark(33075, Position<'m5', 40.5, 23.5>);
+    }
+    with (actor ACTOR_NPC_PUKURIN) {
+        MovePositionOffset(1, -80, 0);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        MovePositionMark(33075, Position<'m6', 40.5, 23.5>);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Move2PositionOffset(1, -32, -16);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_BIPPA) {
+        Move2PositionMark(33075, Position<'m7', 40.5, 23.5>);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Move2PositionOffset(33075, -32, 0);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionOffset(33075, -80, 0);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionOffset(33075, -80, -24);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionOffset(33075, -80, -24);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Move2PositionMark(33075, Position<'m8', 40.5, 23.5>);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        MovePositionMark(1, Position<'m9', 40.5, 23.5>);
+    }
+    screen_FadeOut(0, 30);
+    with (actor ACTOR_NPC_GUREGGURU) {
+        MovePositionMark(33075, Position<'m10', 40.5, 16.5>);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        MovePositionMark(33075, Position<'m11', 40.5, 16.5>);
+    }
+    WaitScreenFade();
+    end;
+}

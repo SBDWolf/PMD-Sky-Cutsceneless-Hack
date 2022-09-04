@@ -1,0 +1,101 @@
+
+def 0 {
+    CallCommon(CORO_FADE_OUT_ALL_BEFORE);
+    back_SetGround(LEVEL_P03P01A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    screen_FadeInAll(1, 30);
+    Wait(30);
+    with (object OBJECT_P03P01A1_127) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_P03P01A1_127) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_P03P01A1_127);
+    camera_SetEffect(2, 1, 33024);
+    Wait(15);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    Wait(5);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_BOTTOM_R_CENTER);
+    message_FacePositionOffset(-4, -2);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Wa-waah! Watch out! Everyone,\nget back!",
+                french=" Wouah! Attention! Reculez!",
+                german=" Waaaah! Passt auf!\nGeht alle zurück!",
+                italian=" Wa-waah! A-Attenti! \nState indietro!",
+                spanish=" ¿Quéee? ¡Cuidado!\n¡Apartaos todos!",
+            }
+        case 2:
+            {
+                english=" Wa-waah! Watch out! Step back,\neveryone!",
+                french=" Wouah! Attention! Reculez!",
+                german=" Waaaah! Passt auf!\nGeht in Deckung!",
+                italian=" Wa-waah! A-Attenti! \nState indietro!",
+                spanish=" ¿Quéee? ¡Cuidado!\n¡Hay que retroceder!",
+            }
+        default:
+            {
+                english=" Wa-waah! Watch out! Everyone,\nwe have to get back!",
+                french=" Wouah! Attention! Reculez!",
+                german=" Waaaah! Passt auf!\nWir müssen zurückgehen!",
+                italian=" Wa-waah! A-Attenti! \nState indietro!",
+                spanish=" ¿Quéee? ¡Cuidado!\n¡Atrás!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (performer 0) {
+        MovePositionOffset(1, 0, 200);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionOffset(1, 0, 200);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionOffset(1, 0, 200);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        MovePositionOffset(1, 0, 200);
+    }
+    with (object OBJECT_P03P01A1_127) {
+        SetAnimation(19);
+    }
+    with (object OBJECT_P03P01A1_127) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_P03P01A1_127);
+    Wait(80);
+    screen_WhiteOutAll(1, 30);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    screen_WhiteOut(1, 0);
+    screen_FadeInAll(1, 0);
+    end;
+}
+
+def 1 for_object(OBJECT_P03P01A1_127) {
+    SetOutputAttribute(1024);
+    hold;
+}

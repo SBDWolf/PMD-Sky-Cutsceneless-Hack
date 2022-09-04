@@ -1,0 +1,122 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_TIME_GEAR_REMIX, 0, 256);
+    back_SetGround(LEVEL_V03P09A);
+    supervision_Acting(0);
+    camera_SetPositionMark(Position<'m0', 19.5, 17.5>);
+    back_SetEffect(5, 0);
+    back_SetBackEffect(2);
+    CallCommon(CORO_FADE_OUT_ALL_BEFORE);
+    screen_FadeInAll(1, 60);
+    Wait(30);
+    message_SetActor(ACTOR_ATTENDANT1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" At the center of such places...",
+                french=" Au cœur de ces lieux...",
+                german=" Im Zentrum solcher Orte...",
+                italian=" Al centro di luoghi del genere...",
+                spanish=" En el centro de esos lugares...",
+            }
+        case 2:
+            {
+                english=" At the center of such places...",
+                french=" Au cœur de ces lieux...",
+                german=" Im Zentrum solcher Orte...",
+                italian=" Al centro di luoghi del genere...",
+                spanish=" En el centro de esos lugares...",
+            }
+        default:
+            {
+                english=" At the center of such places...",
+                french=" Au cœur de ces lieux...",
+                german=" Im Zentrum solcher Orte...",
+                italian=" Al centro di luoghi del genere...",
+                spanish=" En el centro de esos lugares...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" is what\'s known as a Time Gear.",
+                french=" ... se trouvent ce qu\'on appelle\nles Rouages du Temps.",
+                german=" Dort ist ein sogenanntes Zahnrad\nder Zeit versteckt.",
+                italian=" ... si trova un oggetto chiamato \nIngranaggio del Tempo.",
+                spanish=" Hay un Engranaje del Tiempo.",
+            }
+        case 2:
+            {
+                english=" is what\'s known as a Time Gear.",
+                french=" ... se trouvent ce qu\'on appelle\nles Rouages du Temps.",
+                german=" Dort ist ein sogenanntes Zahnrad\nder Zeit versteckt.",
+                italian=" ... si trova un oggetto chiamato \nIngranaggio del Tempo.",
+                spanish=" Hay un Engranaje del Tiempo.",
+            }
+        default:
+            {
+                english=" is what\'s known as a Time Gear.",
+                french=" ... se trouvent ce qu\'on appelle\nles Rouages du Temps.",
+                german=" Dort ist ein sogenanntes Zahnrad\nder Zeit versteckt.",
+                italian=" ... si trova un oggetto chiamato \nIngranaggio del Tempo.",
+                spanish=" Hay un Engranaje del Tiempo.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Time Gears serve a very\nimportant function.",
+                french=" Les Rouages du Temps jouent un\nrôle très important.",
+                german=" Zahnräder der Zeit erfüllen\neine sehr wichtige Funktion.",
+                italian=" Gli Ingranaggi del Tempo\nhanno una funzione molto importante.",
+                spanish=" Los Engranajes del Tiempo\ncumplen una función muy importante.",
+            }
+        case 2:
+            {
+                english=" Time Gears serve a very\nimportant function.",
+                french=" Les Rouages du Temps jouent un\nrôle très important.",
+                german=" Zahnräder der Zeit erfüllen\neine sehr wichtige Funktion.",
+                italian=" Gli Ingranaggi del Tempo\nhanno una funzione molto importante.",
+                spanish=" Los Engranajes del Tiempo\ncumplen una función muy importante.",
+            }
+        default:
+            {
+                english=" Time Gears serve a very\nimportant function.",
+                french=" Les Rouages du Temps jouent un\nrôle très important.",
+                german=" Zahnräder der Zeit erfüllen\neine sehr wichtige Funktion.",
+                italian=" Gli Ingranaggi del Tempo\nhanno una funzione molto importante.",
+                spanish=" Los Engranajes del Tiempo\ncumplen una función muy importante.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Each one protects time and keeps\ntime flowing properly in its region.",
+                french=" Chacun d\'eux protège le temps\net lui permet de s\'écouler normalement dans\nla région où il se trouve.",
+                german=" Jedes Zahnrad schützt die Zeit\nin der jeweiligen Region und sorgt dafür, dass\nsie richtig fließt.",
+                italian=" Ognuno di loro protegge il tempo\ne lo fa scorrere correttamente nella regione\ncircostante.",
+                spanish=" Protegen el tiempo y permiten\nque siga fluyendo en cada región.",
+            }
+        case 2:
+            {
+                english=" Each one protects time and keeps\ntime flowing properly in its region.",
+                french=" Chacun d\'eux protège le temps\net lui permet de s\'écouler normalement dans\nla région où il se trouve.",
+                german=" Jedes Zahnrad schützt die Zeit\nin der jeweiligen Region und sorgt dafür, dass\nsie richtig fließt.",
+                italian=" Ognuno di loro protegge il tempo\ne lo fa scorrere correttamente nella regione\ncircostante.",
+                spanish=" Protegen el tiempo y permiten\nque siga fluyendo en cada región.",
+            }
+        default:
+            {
+                english=" Each one protects time and keeps\ntime flowing properly in its region.",
+                french=" Chacun d\'eux protège le temps\net lui permet de s\'écouler normalement dans\nla région où il se trouve.",
+                german=" Jedes Zahnrad schützt die Zeit\nin der jeweiligen Region und sorgt dafür, dass\nsie richtig fließt.",
+                italian=" Ognuno di loro protegge il tempo\ne lo fa scorrere correttamente nella regione\ncircostante.",
+                spanish=" Protegen el tiempo y permiten\nque siga fluyendo en cada región.",
+            }
+    }
+    message_Close();
+    Wait(30);
+    screen_FadeOutAll(1, 30);
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    end;
+}

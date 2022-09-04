@@ -1,0 +1,609 @@
+
+def 0 {
+    sound_Stop();
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V24P08A);
+    back_SetGround(LEVEL_P03P02A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    camera2_SetPositionMark(Position<'m0', 19, 15.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen2_FadeIn(0, 30);
+    bgm_PlayFadeIn(BGM_RAIN2, 90, 190);
+    screen_FadeIn(1, 30);
+    Wait(60);
+    with (actor ACTOR_NPC_HEIGANI) {
+        MovePositionMark(33075, Position<'m1', 47, 59.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    with (actor ACTOR_NPC_HEIGANI) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    Wait(15);
+    with (actor ACTOR_NPC_HEIGANI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    message_SetFace(ACTOR_NPC_HEIGANI, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Hey, hey, hey![K] Check this out,\neveryone!",
+        french=" Eh dis donc![K] Regardez ça, vous\nautres!",
+        german=" Hey, hey, hey![K] Seht mal alle her!",
+        italian=" Ehi, ehi, ehi![K] Guardate qui!",
+        spanish=" ¡Mirad![K] ¡Venid todos a ver esto!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(6916);
+    with (actor ACTOR_NPC_KIMAWARI) {
+        MovePositionMark(1, Position<'m2', 52, 58.5>);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionMark(1, Position<'m3', 43, 58.5>);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        MovePositionMark(1, Position<'m4', 53, 64>);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        MovePositionMark(1, Position<'m5', 41.5, 61.5>);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        MovePositionMark(1, Position<'m6', 44, 65>);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        MovePositionMark(1, Position<'m7', 50, 62>);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        MovePositionMark(1, Position<'m8', 45, 62.5>);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        MovePositionMark(1, Position<'m9', 49.5, 65.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_KIMAWARI);
+    se_FadeOut(6916, 60);
+    WaitExecuteLives(ACTOR_NPC_GUREGGURU);
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    Wait(15);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    Wait(15);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" This is it?[K] The Groudon statue?",
+        french=" C\'est donc ça?[K] La statue\nde Groudon?",
+        german=" Ist sie das?[K] Die Statue von\nGroudon?",
+        italian=" E questa cos\'è?[K] Una statua di\nGroudon?",
+        spanish=" ¿Esto?[K] ¿La estatua de Groudon?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    Wait(30);
+    se_Play(8963);
+    with (actor ACTOR_NPC_KIMAWARI) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_KIMAWARI);
+    Wait(15);
+    message_SetFace(ACTOR_NPC_KIMAWARI, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" Oh! But there\'s no one else here!",
+        french=" Oh! Mais il n\'y a personne!",
+        german=" Oh! Aber es ist niemand hier!",
+        italian=" Oh! Ma non c\'è nient\'altro qui!",
+        spanish=" ¡Oh! ¡Pero si aquí no hay nadie\nmás!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" Are you really sure that you saw\nthe Guildmaster, [CS:N]Corphish[CR]?",
+        french=" Es-tu bien sûr d\'avoir vu\nle Maître de la Guilde, [CS:N]Ecrapince[CR]?",
+        german=" Bist du dir sicher, dass du den\nGildenmeister gesehen hast, [CS:N]Krebscorps[CR]?",
+        italian=" Sei sicuro di aver visto il\nCapitano, [CS:N]Corphish[CR]?",
+        spanish=" ¿Seguro que has visto al Gran\nBluff, [CS:N]Corphish[CR]?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_HEIGANI);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_HEIGANI);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_HEIGANI);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_HEIGANI);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_HEIGANI);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_HEIGANI);
+    }
+    WaitExecuteLives(ACTOR_NPC_GUREGGURU);
+    with (actor ACTOR_NPC_HEIGANI) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    Wait(15);
+    with (actor ACTOR_NPC_HEIGANI) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    message_SetFace(ACTOR_NPC_HEIGANI, FACE_NORMAL, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" Sure, I\'m sure!",
+        french=" Bien sûr que j\'en suis sûr!",
+        german=" Sicher bin ich mir sicher!",
+        italian=" Sicuro che sono sicuro!",
+        spanish=" ¡Seguro, seguro!",
+    });
+    message_Talk({
+        english=" I saw him when I was scuttling\nback to base camp.",
+        french=" Je l\'ai croisé en revenant au\ncamp de base.",
+        german=" Ich habe ihn gesehen, als ich\nauf dem Weg zurück zum Basislager war.",
+        italian=" L\'ho visto mentre stavo\ntornando verso il Campo Base.",
+        spanish=" Le vi cuando volvía\nal campamento base.",
+    });
+    message_Talk({
+        english=" The Guildmaster dashed past, all\nwilly-nilly, in hot pursuit of a Perfect Apple!",
+        french=" Le Maître de la Guilde est passé\nà côté de moi en vitesse, tout excité,\nà la poursuite d\'une Pomme Parfaite!",
+        german=" Der Gildenmeister hetzte auf der\nJagd nach einem Perfekten Apfel vorbei!",
+        italian=" Il Capitano è schizzato alla\nvelocità della luce alla ricerca di una Mela\nPerfetta!",
+        spanish=" ¡El Gran Bluff corría enloquecido\ntras una Manzana Perfecta!",
+    });
+    message_Talk({
+        english=" I gave him a shout and a wave,\nbut he seemed too occupied to holler back.",
+        french=" Je l\'ai salué et lui ai fait signe,\nmais il avait l\'air trop occupé pour répondre.",
+        german=" Ich habe gerufen und gewinkt,\naber er war anscheinend zu abgelenkt und hat\nnicht reagiert.",
+        italian=" L\'ho chiamato ad alta voce! Mi\nsono sbracciato! Tutto inutile... Sembrava\ntroppo indaffarato per rispondermi!",
+        spanish=" Intenté atraer su atención,\npero parecía estar demasiado ocupado\npara darse por aludido.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_HEIGANI) {
+        Turn2Direction(4, 2, DIR_DOWNRIGHT);
+    }
+    Wait(30);
+    with (actor ACTOR_NPC_HEIGANI) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    Wait(30);
+    with (actor ACTOR_NPC_HEIGANI) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    message_Talk({
+        english=" But I\'d guess that [hero]\'s\nteam went ahead.",
+        french=" Mais je pense que l\'équipe\nde [hero] est partie la première.",
+        german=" Aber ich würde sagen, dass\ndas Team von [hero] vorgegangen ist.",
+        italian=" Ma immagino che la squadra di\n[hero] sia andata avanti.",
+        spanish=" Doy por hecho que el equipo\nde [hero] siguió adelante.",
+    });
+    message_Talk({
+        english=" So I\'d bet that the Guildmaster\nwent up after them, don\'t you think?",
+        french=" Alors je dirais que le Maître\nde la Guilde a voulu les suivre, vous croyez\npas?",
+        german=" Bestimmt ist der Gildenmeister\nihnen nachgegangen, glaubst du nicht auch?",
+        italian=" Scommetterei che il Capitano li\nstia raggiungendo ormai, non credete?",
+        spanish=" Supongo que el Gran Bluff iría\ntras ellos, ¿no creéis?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(6935);
+    camera_SetEffect(2, 1, 1);
+    Wait(15);
+    camera_SetEffect(0, 0, 0);
+    Wait(60);
+    se_Play(6935);
+    camera_SetEffect(2, 1, 1);
+    Wait(15);
+    camera_SetEffect(0, 0, 0);
+    Wait(15);
+    se_Play(8962);
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_DIGUDA);
+    message_SetFace(ACTOR_NPC_DIGUDA, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Hmm?[K] The ground...",
+        french=" Hum?[K] La terre...",
+        german=" Hmm?[K] Der Boden...",
+        italian=" Che succede?[K] La terra...",
+        spanish=" ¿Eh?[K] La tierra...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_BIPPA) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_BIPPA);
+    Wait(15);
+    message_SetFace(ACTOR_NPC_BIPPA, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Uh-what...? It\'s shaking!",
+        french=" Heiiin, quoi...? Elle tremble!",
+        german=" Zum Kuckuck? Er bebt!",
+        italian=" ... sta... sta... sta tremando!",
+        spanish=" ¿Qué...? ¡Está temblando!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(15);
+    se_Play(6934);
+    message_ImitationSound({
+        english="GRROOOOOOH...!",
+        french="GRROOOOOOH...!",
+        german="GRROOOOOOH!",
+        italian="GRROOOOOOH...!",
+        spanish="¡GRRRRRRRRRR!",
+    });
+    WaitSe(6934);
+    message_CloseEnforce();
+    se_Play(8967);
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_BIPPA);
+    message_SetFace(ACTOR_NPC_CHIRIIN, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" What...[K]whatever could that be?!",
+        french=" Que...[K] qu\'est-ce que ça peut bien\nêtre?!",
+        german=" Was...[K] Was ist das bloß?!?",
+        italian=" Cosa...[K] Cos\'era quello?!",
+        spanish=" ¿Qué?[K] ¿Qué será eso?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEINW);
+    message_Talk({
+        english=" What an uproar![K] Is it maybe...?",
+        french=" Mais quel BOUCAN![K]\nSe pourrait-il...?",
+        german=" Was für ein Lärm![K] Ist das\nvielleicht...",
+        italian=" Che boato![K] Cosa potrebbe mai...",
+        spanish=" ¡Vaya estruendo![K]\n¿Tal vez será...?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_HEIGANI) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    Wait(15);
+    with (actor ACTOR_NPC_HEIGANI) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    message_SetFace(ACTOR_NPC_HEIGANI, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Something is going on up there!",
+        french=" Il se passe quelque chose\nlà-haut!",
+        german=" Irgendetwas geht da oben vor!",
+        italian=" Sta succedendo qualcosa laggiù!",
+        spanish=" ¡Algo pasa allí arriba!",
+    });
+    message_Talk({
+        english=" Let\'s head up! Hurry!",
+        french=" Allons voir! Vite!",
+        german=" Laufen wir hoch! Schnell!",
+        italian=" Presto! Muoviamoci!",
+        spanish=" ¡Rápido, subamos ahora mismo!",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_KIMAWARI) {
+        MovePositionOffset(33075, 120, 0);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        MovePositionOffset(33075, 120, 0);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        MovePositionOffset(33075, 120, -16);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_HEIGANI) {
+        MovePositionOffset(33075, 160, 0);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        MovePositionOffset(33075, 160, 0);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        MovePositionOffset(33075, 120, 0);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionOffset(33075, 200, 0);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_DIGUDA) {
+        MovePositionOffset(1, 56, 0);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        MovePositionOffset(32972, 76, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_DIGUDA);
+    se_Play(8964);
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_RIGHT, 3);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_DIGUDA);
+    message_SetFace(ACTOR_NPC_DIGUDA, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Hmm?",
+        french=" Hum?",
+        german=" Hmm?",
+        italian=" Mmm?",
+        spanish=" ¿Qué?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    WaitExecuteLives(ACTOR_NPC_DAGUTORIO);
+    with (actor ACTOR_NPC_DIGUDA) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_DAGUTORIO);
+    }
+    WaitExecuteLives(ACTOR_NPC_DIGUDA);
+    message_Talk({
+        english=" Hey, Dad! Did you hear something\nright over there?",
+        french=" Père! Tu as entendu quelque\nchose par là?",
+        german=" Hey, Papa! Hast du das da\ndrüben gehört?",
+        italian=" Ehi, papà![K] Non hai sentito\nniente tu?",
+        spanish=" ¡Eh, papá! ¿Tú has oído algo?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DIGUDA) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_DIGUDA);
+    message_SetFace(ACTOR_NPC_DIGUDA, FACE_NORMAL, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" Like moaning and groaning?",
+        french=" Comme des râles\net des grognements?",
+        german=" So ein Ächzen und Stöhnen?",
+        italian=" Come una specie di lamento?",
+        spanish=" ¿Como quejidos y gemidos?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_DIGUDA);
+    }
+    WaitExecuteLives(ACTOR_NPC_DAGUTORIO);
+    message_SetFace(ACTOR_NPC_DAGUTORIO, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Oh, you just imagined it![K]\nNow, let\'s hurry!",
+        french=" Ton imagination te joue\ndes tours, voilà tout![K] Allez, dépêchons!",
+        german=" Oh, das hast du dir eingebildet![K]\nBeeilen wir uns jetzt!",
+        italian=" Te lo devi essere immaginato![K]\nAndiamo, dai!",
+        spanish=" ¡Te lo habrás imaginado![K]\n¡Démonos prisa!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DIGUDA) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_DAGUTORIO);
+    }
+    WaitExecuteLives(ACTOR_NPC_DIGUDA);
+    message_SetFace(ACTOR_NPC_DIGUDA, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Yep!",
+        french=" Ouaip!",
+        german=" Jep!",
+        italian=" Ok!",
+        spanish=" ¡Sí!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        MovePositionOffset(1, 150, -24);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        MovePositionOffset(33075, 160, -16);
+    }
+    WaitExecuteLives(ACTOR_NPC_DIGUDA);
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        Destroy();
+    }
+    Wait(60);
+    supervision_Acting(1);
+    Wait(1);
+    with (actor ACTOR_NPC_SUKATANKU) {
+        SetAnimation(24);
+    }
+    with (actor ACTOR_NPC_ZUBATTO) {
+        SetAnimation(24);
+    }
+    with (actor ACTOR_NPC_DOGAASU) {
+        SetAnimation(24);
+    }
+    with (performer 0) {
+        MovePositionMark(1, Position<'m10', 19.5, 63.5>);
+    }
+    WaitExecutePerformer(0);
+    Wait(45);
+    with (actor ACTOR_NPC_ZUBATTO) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_ZUBATTO);
+    Wait(2);
+    with (actor ACTOR_NPC_ZUBATTO) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    message_SetFace(ACTOR_NPC_ZUBATTO, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Ouchee-wow-wow!",
+        french=" Ouille! Aïe aïe aïe!",
+        german=" Auauauauuuutsch!",
+        italian=" Ahi ahi ahi!",
+        spanish=" ¡Ay, ay, ay!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DOGAASU) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGAASU);
+    Wait(2);
+    with (actor ACTOR_NPC_DOGAASU) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    message_SetFace(ACTOR_NPC_DOGAASU, FACE_NORMAL, FACE_POS_BOTTOM_L_CENTER);
+    message_FacePositionOffset(-2, 0);
+    message_Talk({
+        english=" I\'m d-d-[K]deflated! I can\'t move!",
+        french=" Je suis tout d-d-[K]dégonflé!\nJe peux plus bouger!",
+        german=" Ich bin ganz a-a-[K]ausgelaugt!\nIch kann mich nicht bewegen!",
+        italian=" Sono...[K] distrutto! Non riesco a\nmuovermi!",
+        spanish=" Estoy des...[K] ¡desinflado!\n¡No puedo ni moverme!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_SUKATANKU) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_SUKATANKU);
+    Wait(2);
+    with (actor ACTOR_NPC_SUKATANKU) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    message_SetFace(ACTOR_NPC_SUKATANKU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Hork-ork-[K]how did that happen?",
+        french=" Kof kof! [K]Comment ça a pu\nse produire?",
+        german=" W-wa...[K] Wie ist das passiert?",
+        italian=" Argh![K] Come è potuto\nsuccedere?",
+        spanish=" Ay, ay...[K] ¿Cómo ha podido pasar?",
+    });
+    message_Talk({
+        english=" How did [CS:N]Wigglytuff[CR] shrug off\nour noxious-gas special like it was nothing?",
+        french=" Comment [CS:N]Grodoudou[CR] a-t-il fait\npour ignorer notre double attaque au gaz\nnauséabond comme si de rien n\'était?",
+        german=" Wie hat [CS:N]Knuddeluff[CR] unsere\ngiftige Gas-Spezial-Kombo so leicht\nabgeschüttelt?",
+        italian=" Come ha fatto [CS:N]Wigglytuff[CR] a\ndifendersi dal nostro micidiale gas puzzolente?",
+        spanish=" ¿Cómo ha podido evitar\n[CS:N]Wigglytuff[CR] nuestro gas nocivo como\nsi no fuera nada?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_ZUBATTO, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" And h-h-how did [CS:N]Wigglytuff[CR]\nstrike back at us...",
+        french=" Et comment est-ce qu\'il a fait\npour riposter comme ça...",
+        german=" Und w-w-wie hat [CS:N]Knuddeluff[CR]\nzurückgeschlagen?",
+        italian=" E soprattutto, come ha fatto a\ndarcene così tante dopo...?",
+        spanish=" Y encima, ¿cómo ha podido\ncontraatacar?",
+    });
+    message_Talk({
+        english=" It\'s un-[K]believable...",
+        french=" C\'est carrément...[K] incroyable...",
+        german=" Es ist un-[K]glaublich...",
+        italian=" È...[K] davvero incredibile...",
+        spanish=" Es sencillamente...[K] increíble...",
+    });
+    message_KeyWait();
+    with (actor ACTOR_NPC_ZUBATTO) {
+        SlidePositionOffset(2, 3, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_ZUBATTO);
+    Wait(1);
+    with (actor ACTOR_NPC_ZUBATTO) {
+        SlidePositionOffset(2, -3, 0);
+    }
+    message_Talk({
+        english=" Ack...",
+        french=" Argh...",
+        german=" Argh...",
+        italian=" Bleah...",
+        spanish=" Ay...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DOGAASU) {
+        SlidePositionOffset(2, 3, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGAASU);
+    Wait(1);
+    with (actor ACTOR_NPC_DOGAASU) {
+        SlidePositionOffset(2, -3, 0);
+    }
+    message_SetFace(ACTOR_NPC_DOGAASU, FACE_NORMAL, FACE_POS_BOTTOM_L_CENTER);
+    message_FacePositionOffset(-2, 0);
+    message_Talk({
+        english=" Erk...",
+        french=" Ergh...",
+        german=" Urgh...",
+        italian=" Sob...",
+        spanish=" Hey...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_SUKATANKU) {
+        SlidePositionOffset(2, 3, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_SUKATANKU);
+    Wait(1);
+    with (actor ACTOR_NPC_SUKATANKU) {
+        SlidePositionOffset(2, -3, 0);
+    }
+    message_SetFace(ACTOR_NPC_SUKATANKU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Ork...",
+        french=" Orgh...",
+        german=" Orgh...",
+        italian=" Argh...",
+        spanish=" Huy...",
+    });
+    message_Close();
+    bgm_FadeOut(120);
+    screen2_FadeOut(0, 60);
+    screen_FadeOut(1, 60);
+    back2_SetMode(0);
+    WaitBgm(BGM_RAIN2);
+    end;
+}
+
+def 1 for_object(OBJECT_P03P01A1_127) {
+    SetOutputAttribute(1024);
+    hold;
+}

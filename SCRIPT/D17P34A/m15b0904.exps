@@ -1,0 +1,81 @@
+
+def 0 {
+    back_SetGround(LEVEL_D17P34A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_AGUNOMU) {
+        SetDirection(DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_AGUNOMU) {
+        SetAnimation(42);
+    }
+    switch ( sector() ) {
+        case 0:
+        default:
+            §label_0;
+            screen_FadeIn(1, 30);
+            bgm_PlayFadeIn(BGM_OH_NO, 0, 256);
+            Wait(30);
+            §label_2;
+            message_SetFaceOnly(ACTOR_NPC_AGUNOMU, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+            message_Talk({
+                english=" Ugh...[K]urgh...",
+                french=" Argh...[K] argh...",
+                german=" Ugh...[K] Urgh...",
+                italian=" Ugh...[K] Urgh...",
+                spanish=" ¡Ay!...[K] Uf...",
+            });
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+            message_Talk({
+                english=" Now I\'ll take it![K] The Time Gear!",
+                french=" Et maintenant il est à moi.[K]\nLe Rouage du Temps est à moi.",
+                german=" Jetzt habe ich es![K] Das Zahnrad\nder Zeit!",
+                italian=" Quello lo prendo io![K] \nL\'Ingranaggio del Tempo!",
+                spanish=" ¡Ahora voy a llevármelo![K]\n¡Me iré con el Engranaje del Tiempo!",
+            });
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            with (actor ACTOR_NPC_JUPUTORU) {
+                MovePositionMark(32972, Position<'m0', 46, 27.5>);
+            }
+            with (actor ACTOR_NPC_JUPUTORU) {
+                MovePositionMark(32972, Position<'m1', 46, 24.5>);
+            }
+            with (actor ACTOR_NPC_JUPUTORU) {
+                MovePositionMark(32972, Position<'m2', 43.5, 17.5>);
+            }
+            message_SetFaceOnly(ACTOR_NPC_AGUNOMU, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+            message_Talk({
+                english=" No...[K]you can\'t take it...[K] Never...",
+                french=" Non...[K] tu ne l\'auras pas...[K] Jamais...",
+                german=" Nein...[K] Du kannst es nicht nehmen.[K]\nNiemals...",
+                italian=" No...[K] non ti permetterò...[K] mai...",
+                spanish=" No...[K] No puedes llevártelo...[K] Jamás...",
+            });
+            message_Close();
+            switch ( sector() ) {
+                case 0:
+                default:
+                    with (performer 0) {
+                        MovePositionOffset(3, 0, 180);
+                    }
+                    Wait(15);
+                    screen_FadeOut(1, 15);
+                    §label_5;
+                    end;
+                case 1:
+                    se_Play(5139);
+                    screen_WhiteOut(1, 5);
+                    screen_FlushIn(1, 0, 1, 0, 0, 0);
+                    jump @label_5;
+            }
+            break;
+        case 1:
+            screen_FlushOut(1, 0, 6, 0, 0, 0);
+            screen_FadeIn(1, 5);
+            Wait(30);
+            jump @label_2;
+    }
+}

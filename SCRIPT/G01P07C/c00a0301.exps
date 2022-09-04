@@ -1,0 +1,96 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_G01P07C);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_GOODNIGHT, 0, 256);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We should get some sleep too.",
+                french=" On devrait dormir un peu.",
+                german=" Wir sollten auch etwas schlafen.",
+                italian=" Dovremmo andare a\ndormire.",
+                spanish=" Será mejor que nos durmamos.",
+            }
+        case 2:
+            {
+                english=" We should get some sleep too.",
+                french=" On devrait dormir un peu.",
+                german=" Wir sollten auch etwas schlafen.",
+                italian=" Dovremmo andare a\ndormire.",
+                spanish=" Será mejor que descansemos.",
+            }
+        default:
+            {
+                english=" We should get some sleep too.",
+                french=" On devrait dormir un peu.",
+                german=" Wir sollten auch etwas schlafen.",
+                italian=" Dovremmo andare a\ndormire.",
+                spanish=" Será mejor que nos durmamos.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Let\'s make tomorrow another\ngood day, [hero]!",
+                french=" Partons du bon pied demain\nmatin, [hero]!",
+                german=" Machen wir aus dem morgigen\nTag wieder einen guten Tag, [hero]!",
+                italian=" Domani dobbiamo mettercela\ntutta, [hero]!",
+                spanish=" ¡Hay que recuperar fuerzas\npara mañana, [hero]!",
+            }
+        case 2:
+            {
+                english=" Let\'s make tomorrow another\ngood day, [hero]!",
+                french=" Partons du bon pied demain\nmatin, [hero]!",
+                german=" Machen wir aus dem morgigen\nTag wieder einen guten Tag, [hero]!",
+                italian=" Domani dobbiamo mettercela\ntutta, [hero]!",
+                spanish=" ¡Hay que recuperar fuerzas\npara mañana, [hero]!",
+            }
+        default:
+            {
+                english=" Let\'s make tomorrow another\ngood day, [hero]!",
+                french=" Partons du bon pied demain\nmatin, [hero]!",
+                german=" Machen wir aus dem morgigen\nTag wieder einen guten Tag, [hero]!",
+                italian=" Domani dobbiamo mettercela\ntutta, [hero]!",
+                spanish=" ¡Hay que recuperar fuerzas\npara mañana, [hero]!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" All right, good night.",
+                french=" Allez, bonne nuit.",
+                german=" In Ordnung, gute Nacht.",
+                italian=" Buonanotte.",
+                spanish=" Hala, buenas noches.",
+            }
+        case 2:
+            {
+                english=" OK, good night.",
+                french=" Allez, bonne nuit.",
+                german=" Okay, gute Nacht.",
+                italian=" Ok, buonanotte.",
+                spanish=" Venga, buenas noches.",
+            }
+        default:
+            {
+                english=" OK, good night.",
+                french=" Allez, bonne nuit.",
+                german=" Okay, gute Nacht.",
+                italian=" Buonanotte.",
+                spanish=" Vale, buenas noches.",
+            }
+    }
+    message_Close();
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 60);
+    WaitBgm(BGM_GOODNIGHT);
+    end;
+}

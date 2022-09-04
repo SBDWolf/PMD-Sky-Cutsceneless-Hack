@@ -1,0 +1,98 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_HIDDEN_HIGHLAND, 0, 256);
+    screen_WhiteOutAll(1, 0);
+    Wait(1);
+    screen_FadeIn(1, 0);
+    back_SetGround(LEVEL_T01P02A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    back_SetWeather(9);
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    screen_FadeInAll(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" My partner here just happened\nto see it in a dream.",
+                french=" En fait, mon acolyte l\'a\nsimplement vu en rêve.",
+                german=" Mein Partner hat es zufällig in\neinem Traum gesehen.",
+                italian=" Il mio amico Pokémon ha avuto\nuna visione.",
+                spanish=" Mi acompañante lo vio en\nun sueño.",
+            }
+        case 2:
+            {
+                english=" My partner here just happened\nto see it in a dream.",
+                french=" En fait, mon acolyte l\'a\nsimplement vu en rêve.",
+                german=" Mein Partner hat es zufällig in\neinem Traum gesehen.",
+                italian=" Il mio amico Pokémon ha avuto\nuna visione.",
+                spanish=" Mi acompañante lo vio en\nun sueño.",
+            }
+        default:
+            {
+                english=" My partner here just happened\nto see it in a dream.",
+                french=" En fait, mon acolyte l\'a\nsimplement vu en rêve.",
+                german=" Mein Partner hat es zufällig in\neinem Traum gesehen.",
+                italian=" Il mio amico Pokémon ha avuto\nuna visione.",
+                spanish=" Mi acompañante lo vio en\nun sueño.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YONOWAARU) {
+        SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_LEFT, 3);
+    }
+    with (actor ACTOR_NPC_YONOWAARU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Excuse me?[K] A dream, you say?",
+        french=" Excusez-moi?[K] En rêve,\ndites-vous?",
+        german=" Wie bitte?[K] In einem Traum,\nsagst du?",
+        italian=" Mmm...[K] Visione, dici?",
+        spanish=" ¿Cómo dices?[K] ¿En un sueño?",
+    });
+    message_Talk({
+        english=" By dream, what do you mean?",
+        french=" Qu\'entendez-vous par \"rêve\"?",
+        german=" Was meinst du mit Traum?",
+        italian=" Che tipo di visione?",
+        spanish=" ¿Qué quieres decir con eso\nde un sueño?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    back_SetBackEffect(4);
+    Wait(30);
+    message_EmptyActor();
+    message_Talk({
+        english="[CN]When they mentioned the Dimensional\n[CN]Scream, I was skeptical at first...",
+        french="[CN]Lorsqu\'ils ont évoqué le Cri Dimensionnel\n[CN]pour la première fois, j\'étais sceptique...",
+        german="[CN]Als sie den Dimensionalen Schrei erwähnten,\n[CN]war ich noch skeptisch...",
+        italian="[CN]Quando per la prima volta mi parlarono dello\n[CN]Squarcio Dimensionale, ero molto scettico...",
+        spanish="[CN]Cuando hablaron de la Percepción de Cronos,\n[CN]al principio fui escéptico.",
+    });
+    message_Talk({
+        english="[CN]But then an idea began to\n[CN]take shape in my mind...",
+        french="[CN]Mais ensuite une idée a pris\n[CN]forme dans mon esprit...",
+        german="[CN]Aber dann fing eine Idee an,\n[CN]in meinem Kopf Gestalt anzunehmen...",
+        italian="[CN]Ma poi... mi venne un\'idea...",
+        spanish="[CN]Pero luego empecé a darle\n[CN]vueltas a la cabeza...",
+    });
+    message_Talk({
+        english="[CN]And...",
+        french="[CN]Et...",
+        german="[CN]Und...",
+        italian="[CN]... e...",
+        spanish="[CN]Y...",
+    });
+    message_Close();
+    screen_WhiteOutAll(1, 30);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    screen_WhiteOut(1, 0);
+    screen_FadeInAll(1, 0);
+    end;
+}

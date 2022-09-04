@@ -1,0 +1,408 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
+    back_SetGround(LEVEL_G01P04A);
+    supervision_Acting(0);
+    supervision_Acting(1);
+    supervision_Acting(2);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" Ahem![K] And that brings us back\nto today...",
+        french=" Hum![K] Et ça nous ramène\nà aujourd\'hui...",
+        german=" Ähem![K] Und da sind wir wieder...",
+        italian=" Ahem![K] E così, siamo di nuovo\nqui.",
+        spanish=" ¡Ejem![K] Reconsideremos\nla situación actual...",
+    });
+    message_Talk({
+        english=" Presently, the great [CS:N]Dusknoir[CR]\nand I are working out a new strategy.",
+        french=" En ce moment, [CS:N]Noctunoir[CR]\net moi-même mettons au point une nouvelle\nstratégie.",
+        german=" Im Moment arbeiten der große\n[CS:N]Zwirrfinst[CR] und ich an einer Lösung\ndes Problems.",
+        italian=" Al momento, il grande [CS:N]Dusknoir[CR]\ned io stiamo elaborando un nuovo piano da\nseguire.",
+        spanish=" Actualmente, [CS:N]Dusknoir[CR] y yo\nestamos elaborando una nueva\nestrategia.",
+    });
+    message_Talk({
+        english=" While we develop this strategy...",
+        french=" Pendant ce temps...",
+        german=" Wir entwickeln unsere\nneue Strategie...",
+        italian=" Nel frattempo...",
+        spanish=" Mientras trabajamos en ello...",
+    });
+    message_Talk({
+        english=" We ask you to search for the\nTime Gears on your own initiative.",
+        french=" Nous vous prions de bien vouloir\ncontinuer à chercher les Rouages du Temps\nde votre côté.",
+        german=" Und bis wir sie entwickelt\nhaben, möchten wir, dass ihr auf eigene Faust\nnach den Zahnrädern der Zeit sucht.",
+        italian=" ... vi preghiamo di continuare le\nricerche degli Ingranaggi del Tempo per conto\nvostro.",
+        spanish=" Será mejor que busquéis los\nEngranajes del Tiempo por vuestra\ncuenta.",
+    });
+    message_Talk({
+        english=" That is all.",
+        french=" C\'est tout.",
+        german=" Das ist alles.",
+        italian=" Per ora è tutto.",
+        spanish=" Eso es todo.",
+    });
+    message_Talk({
+        english=" All right, everyone! Work hard\nagain today! ♪",
+        french=" Très bien, tout le monde!\nTravaillez dur! ♪",
+        german=" In Ordnung, Pokémon! Heute\nheißt es wieder hart arbeiten! ♪",
+        italian=" D\'accordo, gente? Diamo il\nmeglio anche oggi.",
+        spanish=" Muy bien, ¡y ahora todos a\ntrabajar como un día normal! ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetAnimation(23);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetAnimation(23);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetAnimation(23);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetAnimation(23);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetAnimation(24);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(23);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetAnimation(23);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetAnimation(25);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(66);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(66);
+    }
+    message_EmptyActor();
+    message_Talk({
+        english="[CS:N]Everyone[CR]: HOORAY!",
+        french="[CS:N]Tous[CR]: HOURRA!",
+        german="[CS:N]Alle[CR]: HURRA!",
+        italian="[CS:N]Tutti[CR]: SÌÌÌÌÌ!",
+        spanish="[CS:N]Todos[CR]: ¡HURRA!",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (performer 0) {
+        MovePositionLives(1, 0);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetAnimation(25);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetAnimation(24);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        Destroy();
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(8, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(8, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_NPC_PUKURIN) {
+        MovePositionMark(1, Position<'m0', 52.5, 22.5>);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        MovePositionMark(33075, Position<'m1', 28, 31.5>);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        MovePositionMark(33075, Position<'m2', 40.5, 23.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_HEIGANI) {
+        MovePositionMark(33075, Position<'m3', 40.5, 23.5>);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        MovePositionMark(33075, Position<'m4', 30, 34>);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        Move2PositionMark(33075, Position<'m5', 40.5, 23.5>);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Move2PositionOffset(33075, -32, 0);
+    }
+    with (actor ACTOR_NPC_PUKURIN) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Move2PositionMark(33075, Position<'m6', 40.5, 23.5>);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        MovePositionMark(33075, Position<'m7', 40.5, 16.5>);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        MovePositionMark(33075, Position<'m8', 40.5, 16.5>);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        MovePositionMark(33075, Position<'m9', 40.5, 16.5>);
+    }
+    with (actor ACTOR_NPC_YONOWAARU) {
+        MovePositionMark(1, Position<'m10', 54, 30>);
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_YONOWAARU) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    supervision_RemoveActing(1);
+    Wait(30);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" They said to go search on our\nown today, [hero].",
+                french=" On nous a dit de poursuivre\nles recherches aujourd\'hui, [hero].",
+                german=" Wir sollen heute auf eigene\nFaust suchen, [hero].",
+                italian=" Così oggi dobbiamo continuare\nle ricerche per conto nostro, giusto\n[hero]?",
+                spanish=" Nos han dicho que busquemos\npor nuestra cuenta, [hero].",
+            }
+        case 2:
+            {
+                english=" We\'re supposed to search on our\nown today, [hero].",
+                french=" On nous a dit de poursuivre\nles recherches aujourd\'hui, [hero].",
+                german=" Wir sollen heute auf eigene\nFaust suchen, [hero].",
+                italian=" Oggi dobbiamo continuare le\nricerche per conto nostro, [hero].",
+                spanish=" Hoy tenemos que buscar por\nnuestra cuenta, [hero].",
+            }
+        default:
+            {
+                english=" We\'re supposed to go search on\nour own today, [hero].",
+                french=" On nous a dit de poursuivre\nles recherches aujourd\'hui, [hero].",
+                german=" Wir sollen heute auf eigene\nFaust suchen, [hero].",
+                italian=" Oggi dobbiamo continuare le\nricerche per conto nostro, [hero].",
+                spanish=" Hoy tenemos que buscar por\nnuestra cuenta, [hero].",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Well, where should we go?",
+                french=" Bon, où est-ce qu\'on va?",
+                german=" Okay, wo sollen wir suchen?",
+                italian=" Ma dove possiamo andare?",
+                spanish=" Bueno, ¿adónde vamos?",
+            }
+        case 2:
+            {
+                english=" Where should we go?",
+                french=" Bon, où est-ce qu\'on va?",
+                german=" Wo sollen wir suchen?",
+                italian=" Secondo te, dove dovremmo\nandare?",
+                spanish=" ¿Adónde vamos?",
+            }
+        default:
+            {
+                english=" So where should we go?",
+                french=" Bon, où est-ce qu\'on va?",
+                german=" Wo sollen wir denn suchen?",
+                italian=" Secondo te, dove dovremmo\nandare?",
+                spanish=" Entonces, ¿adónde vamos?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    message_SetFace(ACTOR_PLAYER, FACE_WORRIED, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Hmmm, I wonder...?)",
+                french="(Hum, bonne question...)",
+                german="(Hmm, ich frage mich...)",
+                italian="(Mmm, chissà...)",
+                spanish="(Buena pregunta.)",
+            }
+        default:
+            {
+                english="(Hmmm, I wonder...?)",
+                french="(Hum, bonne question...)",
+                german="(Hmm, ich frage mich...)",
+                italian="(Mmm, chissà...)",
+                spanish="(Buena pregunta.)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(We can search all we want, but we don\'t\nhave a clue...)",
+                french="(On peut s\'amuser à chercher partout, on n\'a\naucun indice...)",
+                german="(Wir können zwar suchen, aber wir haben\nkeinen Schimmer, wo...)",
+                italian="(Possiamo anche cercare tutto il giorno, ma\nsenza nemmeno un indizio...)",
+                spanish="(Podemos buscar todo lo que queramos,\npero no tenemos ninguna pista.)",
+            }
+        default:
+            {
+                english="(We can search all we want, but we don\'t\nhave a clue...)",
+                french="(On peut s\'amuser à chercher partout, on n\'a\naucun indice...)",
+                german="(Wir können zwar suchen, aber wir haben\nkeinen Schimmer, wo...)",
+                italian="(Possiamo anche cercare tutto il giorno, ma\nsenza nemmeno un indizio...)",
+                spanish="(Podemos buscar todo lo que queramos,\npero no tenemos ninguna pista.)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8964);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    message_SetFace(ACTOR_PLAYER, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Oh![K] Wait a second!)",
+                french="(Oh![K] Une seconde!)",
+                german="(Oh![K] Moment mal!)",
+                italian="(Ehi![K] Aspetta un momento!)",
+                spanish="(¡Oh![K] ¡Espera un momento!)",
+            }
+        default:
+            {
+                english="(Oh![K] Wait a second!)",
+                french="(Oh![K] Une seconde!)",
+                german="(Oh![K] Moment mal!)",
+                italian="(Ehi![K] Aspetta un momento!)",
+                spanish="(¡Oh![K] ¡Espera un momento!)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Yesterday...when we were out there...)",
+                french="(Hier... quand on était là-bas...)",
+                german="(Gestern... Als wir da draußen waren...)",
+                italian="(Ieri... mentre eravamo...)",
+                spanish="(Ayer, cuando estuvimos en el [CS:P]Desierto[CR]\n[CS:P]Norte[CR]...)",
+            }
+        default:
+            {
+                english="(Yesterday...when we were out there...)",
+                french="(Hier... quand on était là-bas...)",
+                german="(Gestern... Als wir da draußen waren...)",
+                italian="(Ieri... mentre eravamo...)",
+                spanish="(Ayer, cuando estuvimos en el [CS:P]Desierto[CR]\n[CS:P]Norte[CR]...)",
+            }
+    }
+    message_Close();
+    bgm_FadeOut(60);
+    screen_FadeOut(1, 30);
+    end;
+}

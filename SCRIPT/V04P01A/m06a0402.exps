@@ -1,0 +1,239 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD_REMIX, 0, 256);
+    back_SetGround(LEVEL_V04P01A);
+    supervision_Acting(0);
+    Wait(1);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_PLAYER) {
+        ResetOutputAttribute(256);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ResetOutputAttribute(256);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        ResetOutputAttribute(256);
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetActor(ACTOR_NPC_DOGOOMU);
+    message_Talk({
+        english=" You two go through this tunnel\nuntil you pop out at the sentry post.",
+        french=" Vous passez par le tunnel jusqu\'à\nce que vous arriviez au poste de guet.",
+        german=" Ihr geht durch diesen Tunnel, bis\nihr beim Wachposten ankommt.",
+        italian=" Dovete attraversare questo \ntunnel finché non sbucate sotto il posto di \nguardia.",
+        spanish=" Tenéis que cruzar este túnel y\nsituaros bajo el puesto vigía.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(2, Position<'m0', 17.5, 39.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(2, Position<'m1', 17.5, 39.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(2, Position<'m2', 17.5, 46.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(2, Position<'m3', 17.5, 46.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(2, Position<'m4', 7.5, 46.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(2, Position<'m5', 7.5, 46.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(2, Position<'m6', 7.5, 28.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(2, Position<'m7', 7.5, 28.5>);
+    }
+    with (performer 0) {
+        Move2PositionMark(2, Position<'m8', 19.5, 28.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    WaitExecutePerformer(0);
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(2, Position<'m9', 20, 28.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(2, Position<'m10', 18, 28.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(1, 10, DIR_UP);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(1, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_Talk({
+        english=" From the sentry post, inspect\nthe footprints of visitors, identify them, then\ninform me.",
+        french=" Du poste de guet, vous\nexaminez les empreintes des visiteurs, vous\nles identifiez puis vous m\'informez.",
+        german=" Vom Wachposten aus inspiziert\nihr die Fußabdrücke der Besucher, identifiziert\nsie und informiert mich.",
+        italian=" Dal posto di guardia, ispezionate\nle zampe dei visitatori, identificatele e\npoi fatemi rapporto.",
+        spanish=" Desde el puesto vigía, tenéis\nque identificar a cada visitante por sus\nhuellas y luego informarme.",
+    });
+    supervision_Acting(1);
+    Wait(1);
+    with (actor ACTOR_NPC_BIPPA) {
+        ResetOutputAttribute(256);
+    }
+    Wait(30);
+    with (performer 0) {
+        MovePositionOffset(33075, 0, -96);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        MovePositionMark(1, Position<'m11', 19, 14>);
+    }
+    WaitExecuteLives(ACTOR_NPC_BIPPA);
+    WaitExecutePerformer(0);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(60);
+    with (performer 0) {
+        MovePositionMark(33408, Position<'m12', 19.5, 28.5>);
+    }
+    Wait(30);
+    WaitExecutePerformer(0);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    Wait(5);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(60);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    Wait(5);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        ExecuteCommon(CORO_EXPLANATION_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_EXPLANATION_FUNC_SERIES, 0);
+    }
+    Wait(20);
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2Direction(1, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    with (performer 0) {
+        MovePositionMark(33408, Position<'m13', 19.5, 40.5>);
+    }
+    WaitExecutePerformer(0);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2Direction(1, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_LEFT, 3);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        WaitEffect();
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2Direction(1, 10, DIR_RIGHT);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    message_Talk({
+        english=" I will then decide if the\nPokémon is suspicious or not. If it passes\nmuster, I will open the gate.",
+        french=" Je déciderai alors si le Pokémon\nest suspect ou non. S\'il ne l\'est pas, j\'ouvrirai\nla porte.",
+        german=" Ich entscheide dann, ob das\nPokémon verdächtig ist oder nicht. Wenn alles\nin Ordnung ist, öffne ich das Tor.",
+        italian=" Poi io decido se il Pokémon\nè sospetto o no. Se supera l\'ispezione, apro la\nporta.",
+        spanish=" Entonces yo decido si se trata\nde un Pokémon sospechoso o no, y le abro\nla puerta.",
+    });
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(8, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(8, 10, DIR_DOWN);
+    }
+    with (performer 0) {
+        MovePositionMark(33408, Position<'m14', 19.5, 28.5>);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        MovePositionMark(33408, Position<'m15', 31.5, 39.5>);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        MovePositionMark(33408, Position<'m16', 31.5, 18.5>);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Destroy();
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    WaitExecutePerformer(0);
+    Wait(60);
+    with (actor ACTOR_NPC_BIPPA) {
+        SetPositionMark(Position<'m17', 31.5, 18.5>);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SlidePositionMark(1, Position<'m18', 31.5, 27.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_BIPPA);
+    with (actor ACTOR_NPC_BIPPA) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2Direction(8, 10, DIR_RIGHT);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        MovePositionMark(33408, Position<'m19', 38, 27.5>);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        Destroy();
+    }
+    message_Talk({
+        english=" And I\'ll let that cleared Pokémon\ninto the guild.[K] That\'s the gist of it.",
+        french=" Et je laisserai ce Pokémon\nentrer dans la Guilde.[K] Voilà.",
+        german=" Dann lasse ich das Pokémon in\ndie Gilde.[K] Jetzt wisst ihr Bescheid.",
+        italian=" E faccio entrare quel Pokémon\nnella Gilda.[K] Questo è il succo della cosa.",
+        spanish=" Y así se decide quién puede\nentrar en el [CS:N]Pokégremio[CR] y quién no.[K]\nNo hay mucho más que explicar.",
+    });
+    message_Close();
+    screen_FadeOut(1, 30);
+    end;
+}

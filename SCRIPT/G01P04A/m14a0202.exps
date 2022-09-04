@@ -1,0 +1,423 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
+    back_SetGround(LEVEL_G01P04A);
+    supervision_StationCommon(0);
+    supervision_StationCommon(99);
+    supervision_LoadStation(LEVEL_G01P04A, 'UM14');
+    supervision_Station(2);
+    supervision_Acting(0);
+    supervision_Acting(1);
+    supervision_Acting(2);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_YONOWAARU) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_YONOWAARU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetAnimation(2);
+    }
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" I\'m sorry.",
+        french=" Toutes mes excuses.",
+        german=" Es tut mir leid.",
+        italian=" Sono davvero spiacente.",
+        spanish=" Lo siento.",
+    });
+    message_Talk({
+        english=" We are considering the possible\nplaces where Time Gears may be hidden.",
+        french=" Nous réfléchissons à la cachette\npotentielle des Rouages du Temps.",
+        german=" Wir ziehen die möglichen\nVerstecke der Zahnräder der Zeit in Betracht.",
+        italian=" Stiamo prendendo in\nconsiderazione tutti i luoghi dove potrebbero\ntrovarsi degli Ingranaggi del Tempo.",
+        spanish=" Estamos considerando todos\nlos lugares posibles en los que podrían\nestar los Engranajes del Tiempo.",
+    });
+    message_Talk({
+        english=" But we haven\'t been able to\nnarrow our choices to any sites that appear\ntruly promising.",
+        french=" Mais nous avons été incapables\nd\'arrêter notre choix sur des endroits\nvraiment prometteurs.",
+        german=" Aber wir konnten uns bisher\nauf keinen wirklich vielversprechenden\nStandort festlegen.",
+        italian=" Purtroppo però, finora non\nsiamo riusciti a concludere nulla.",
+        spanish=" Pero no hemos podido encontrar\nningún sitio que sea realmente prometedor.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionMark(32972, Position<'m0', 57, 27.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    Wait(15);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" Sorry, but that\'s where we are\nat now.",
+        french=" Navré, mais nous ne sommes\npas plus avancés pour l\'instant.",
+        german=" Es tut mir leid, aber so stehen\ndie Dinge.",
+        italian=" Mi dispiace, per ora è tutto.",
+        spanish=" Por desgracia, esa es la situación\nactual.",
+    });
+    message_Talk({
+        english=" We ask you to search for the\nTime Gears on your own initiative.",
+        french=" Continuez les recherches\nde votre côté, s\'il vous plaît.",
+        german=" Wir bitten euch, auf eigene\nFaust nach den Zahnrädern der Zeit zu suchen.",
+        italian=" Vi preghiamo di continuare le\nricerche per conto vostro.",
+        spanish=" Tenemos que pediros que sigáis\nbuscando los Engranajes del Tiempo donde\nconsideréis oportuno.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" I sincerely apologize.",
+        french=" Veuillez agréer mes excuses\nles plus sincères.",
+        german=" Ich bitte aufrichtig um\nEntschuldigung.",
+        italian=" Chiedo ancora perdono.",
+        spanish=" Mis más sinceras disculpas.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" All right, everyone! Do your\nbest, as always! ♪",
+        french=" Très bien, tout le monde! Faites\nde votre mieux, comme à l\'accoutumée! ♪",
+        german=" In Ordnung, Pokémon! Gebt euer\nBestes, wie immer! ♪",
+        italian=" Coraggio, gente! Date del vostro\nmeglio, come sempre!\n",
+        spanish=" ¡Muy bien! Ahora, ¡esforcémonos\ntanto como siempre! ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    Wait(1);
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetAnimation(23);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetAnimation(23);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetAnimation(23);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetAnimation(23);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetAnimation(24);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(23);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetAnimation(23);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetAnimation(25);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(66);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(66);
+    }
+    message_EmptyActor();
+    message_Talk({
+        english="[CS:N]Everyone[CR]: HOORAY!",
+        french="[CS:N]Tous[CR]: HOURRA!",
+        german="[CS:N]Alle[CR]: HURRA!",
+        italian="[CS:N]Tutti[CR]: SÌÌÌÌÌÌÌ!",
+        spanish="[CS:N]Todos[CR]: ¡HURRA!",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (performer 0) {
+        MovePositionLives(1, 0);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetAnimation(25);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetAnimation(24);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        Destroy();
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(8, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(8, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_NPC_PUKURIN) {
+        MovePositionMark(1, Position<'m1', 52.5, 22.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_YONOWAARU) {
+        MovePositionMark(1, Position<'m2', 54, 30>);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        MovePositionMark(33075, Position<'m3', 28, 31.5>);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        MovePositionMark(33075, Position<'m4', 40.5, 23.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_HEIGANI) {
+        MovePositionMark(33075, Position<'m5', 40.5, 23.5>);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        MovePositionMark(33075, Position<'m6', 30, 34>);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        Move2PositionMark(33075, Position<'m7', 40.5, 23.5>);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Move2PositionOffset(33075, -32, 0);
+    }
+    with (actor ACTOR_NPC_PUKURIN) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Move2PositionMark(33075, Position<'m8', 40.5, 23.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_YONOWAARU) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        MovePositionMark(33075, Position<'m9', 40.5, 16.5>);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        MovePositionMark(33075, Position<'m10', 40.5, 16.5>);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        MovePositionMark(33075, Position<'m11', 40.5, 16.5>);
+    }
+    supervision_RemoveActing(1);
+    Wait(30);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    if ( scn($SCENARIO_MAIN) >= [15, 1] ) {
+        §label_0;
+        message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" We should go back to\n[CS:P]Quicksand Cave[CR], [hero].",
+                    french=" On devrait retourner à la [CS:P]Grotte\nSables Mouvants[CR], [hero].",
+                    german=" Wir sollten uns wieder auf den\nWeg zur [CS:P]Treibsandhöhle[CR] machen, [hero].",
+                    italian=" Dovremmo tornare alla [CS:P]Grotta[CR]\n[CS:P]delle Sabbie Mobili[CR], non credi, [hero]?",
+                    spanish=" [hero], deberíamos volver\na la [CS:P]Cueva Arenas[CR].",
+                }
+            case 2:
+                {
+                    english=" We should go back to\n[CS:P]Quicksand Cave[CR], [hero].",
+                    french=" On devrait retourner à la [CS:P]Grotte\nSables Mouvants[CR], [hero].",
+                    german=" Wir sollten zurück zur\n[CS:P]Treibsandhöhle[CR] gehen, [hero].",
+                    italian=" Torniamo alla [CS:P]Grotta delle Sabbie[CR]\n[CS:P]Mobili[CR], [hero].",
+                    spanish=" Deberíamos volver\na la [CS:P]Cueva Arenas[CR], [hero].",
+                }
+            default:
+                {
+                    english=" Let\'s go back to [CS:P]Quicksand Cave[CR],\n[hero].",
+                    french=" On devrait retourner à la [CS:P]Grotte\nSables Mouvants[CR], [hero].",
+                    german=" Wir sollten zurück zur\n[CS:P]Treibsandhöhle[CR] gehen, [hero].",
+                    italian=" Torniamo alla [CS:P]Grotta delle Sabbie[CR]\n[CS:P]Mobili[CR], [hero].",
+                    spanish=" Deberíamos volver\na la [CS:P]Cueva Arenas[CR], [hero].",
+                }
+        }
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" Let\'s search [CS:P]Quicksand Cave[CR]\ncarefully.",
+                    french=" Passons la [CS:P]Grotte Sables\nMouvants[CR] au peigne fin.",
+                    german=" Lass uns die [CS:P]Treibsandhöhle[CR]\ngründlich durchsuchen.",
+                    italian=" Dobbiamo setacciare la [CS:P]Grotta[CR]\n[CS:P]delle Sabbie Mobili[CR].",
+                    spanish=" Busquemos en la [CS:P]Cueva Arenas[CR]\nminuciosamente.",
+                }
+            case 2:
+                {
+                    english=" Let\'s search [CS:P]Quicksand Cave[CR]\nthoroughly.",
+                    french=" Passons la [CS:P]Grotte Sables\nMouvants[CR] au peigne fin.",
+                    german=" Lass uns die [CS:P]Treibsandhöhle[CR]\ngründlich durchsuchen.",
+                    italian=" Esploriamo la [CS:P]Grotta[CR]\n[CS:P]delle Sabbie Mobili[CR] da cima a fondo.",
+                    spanish=" Busquemos en la [CS:P]Cueva Arenas[CR]\nminuciosamente.",
+                }
+            default:
+                {
+                    english=" We should search [CS:P]Quicksand\nCave[CR] carefully.",
+                    french=" Passons la [CS:P]Grotte Sables\nMouvants[CR] au peigne fin.",
+                    german=" Wir sollten die [CS:P]Treibsandhöhle[CR]\ngründlich durchsuchen.",
+                    italian=" Esploriamo la [CS:P]Grotta[CR]\n[CS:P]delle Sabbie Mobili[CR] da cima a fondo.",
+                    spanish=" Busquemos en la [CS:P]Cueva Arenas[CR]\nminuciosamente.",
+                }
+        }
+        message_Close();
+        with (actor ACTOR_NPC_PERAPPU) {
+            SetEffect(EFFECT_NONE, 3);
+        }
+        §label_1;
+        end;
+    } else {
+        message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" We should head back to\n[CS:P]Quicksand Desert[CR], [hero].",
+                    french=" On devrait retourner au [CS:P]Désert\nSables Mouvants[CR], [hero].",
+                    german=" Wir sollten uns wieder auf den\nWeg zur [CS:P]Mahlsandwüste[CR] machen, [hero].",
+                    italian=" Allora, [hero], si torna al\n[CS:P]Deserto delle Sabbie Mobili[CR]?",
+                    spanish=" [hero], deberíamos volver\na las [CS:P]Arenas Movedizas[CR].",
+                }
+            case 2:
+                {
+                    english=" We should go back to\n[CS:P]Quicksand Desert[CR], [hero].",
+                    french=" On devrait retourner au [CS:P]Désert\nSables Mouvants[CR], [hero].",
+                    german=" Wir sollten zurück zur\n[CS:P]Mahlsandwüste[CR] gehen, [hero].",
+                    italian=" Torniamo al [CS:P]Deserto delle Sabbie[CR]\n[CS:P]Mobili[CR], [hero].",
+                    spanish=" [hero], deberíamos volver\na las [CS:P]Arenas Movedizas[CR].",
+                }
+            default:
+                {
+                    english=" We should return to\n[CS:P]Quicksand Desert[CR], [hero].",
+                    french=" On devrait retourner au [CS:P]Désert\nSables Mouvants[CR], [hero].",
+                    german=" Wir sollten zurück zur\n[CS:P]Mahlsandwüste[CR] gehen, [hero].",
+                    italian=" Torniamo al [CS:P]Deserto delle Sabbie[CR]\n[CS:P]Mobili[CR], [hero].",
+                    spanish=" [hero], deberíamos volver\na las [CS:P]Arenas Movedizas[CR].",
+                }
+        }
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" Let\'s search [CS:P]Quicksand Desert[CR]\ncarefully.",
+                    french=" Passons le [CS:P]Désert Sables\nMouvants[CR] au peigne fin.",
+                    german=" Lass uns die [CS:P]Mahlsandwüste[CR]\ngründlich durchsuchen.",
+                    italian=" Dobbiamo setacciare il [CS:P]Deserto[CR]\n[CS:P]delle Sabbie Mobili[CR].",
+                    spanish=" Vamos a escudriñar cada rincón\nde las [CS:P]Arenas Movedizas[CR].",
+                }
+            case 2:
+                {
+                    english=" Let\'s search [CS:P]Quicksand Desert[CR]\nthoroughly.",
+                    french=" Passons le [CS:P]Désert Sables\nMouvants[CR] au peigne fin.",
+                    german=" Lass uns die [CS:P]Mahlsandwüste[CR]\ngründlich durchsuchen.",
+                    italian=" Mi raccomando, questa volta\ndobbiamo ispezionarlo per bene il [CS:P]Deserto delle[CR]\n[CS:P]Sabbie Mobili[CR]. Andiamo su!",
+                    spanish=" Vamos a escudriñar cada rincón\nde las [CS:P]Arenas Movedizas[CR].",
+                }
+            default:
+                {
+                    english=" We should search [CS:P]Quicksand\nDesert[CR] carefully.",
+                    french=" Passons le [CS:P]Désert Sables\nMouvants[CR] au peigne fin.",
+                    german=" Wir sollten die [CS:P]Mahlsandwüste[CR]\ngründlich durchsuchen.",
+                    italian=" Mi raccomando, questa volta\ndobbiamo ispezionarlo per bene il [CS:P]Deserto delle[CR]\n[CS:P]Sabbie Mobili[CR]. Andiamo su!",
+                    spanish=" Vamos a escudriñar cada rincón\nde las [CS:P]Arenas Movedizas[CR].",
+                }
+        }
+        message_Close();
+        with (actor ACTOR_NPC_PERAPPU) {
+            SetEffect(EFFECT_NONE, 3);
+        }
+        jump @label_1;
+    }
+}

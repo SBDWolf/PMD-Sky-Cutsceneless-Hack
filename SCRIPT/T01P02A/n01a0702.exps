@@ -1,0 +1,124 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_I_SAW_SOMETHING_AGAIN, 0, 256);
+    back_SetGround(LEVEL_T01P02A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    Wait(1);
+    with (actor ACTOR_NPC_KAKUREON1) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_KAKUREON2) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_KAKUREON1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_KAKUREON2) {
+        SetAnimation(2);
+    }
+    with (performer 0) {
+        SetPositionMark(Position<'m0', 53, 24.5>);
+    }
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SetPositionMark(Position<'m1', 53, 26.5>);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetPositionMark(Position<'m2', 53, 24>);
+    }
+    with (actor ACTOR_NPC_KAKUREON1) {
+        SetDirection(DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_KAKUREON2) {
+        SetDirection(DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetDirection(DIR_DOWN);
+    }
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    CallCommon(CORO_FADE_OUT_ALL_BEFORE);
+    screen_FadeInAll(1, 30);
+    Wait(30);
+    message_SetFaceOnly(ACTOR_NPC_YUKIKABURI, FACE_PAIN, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Excuse me! [K]H-hold this!",
+        french=" Excuse-moi! [K]T-tiens ça!",
+        german=" Entschuldige![K] N-nimm das bitte!",
+        italian=" Scusami![K] P-Prendi questo!",
+        spanish=" ¡Disculpa![K] ¡Sujétame esto!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_Mail({
+        english="[CN][CS:Y]Bidoof[CR] received something\n[CN]from the strange Pokémon.",
+        french="[CN]Un étrange Pokémon\n[CN]donne quelque chose à [CS:Y]Keunotor[CR].",
+        german="[CN][CS:Y]Bidiza[CR] erhielt etwas von\n[CN]dem sonderbaren Pokémon.",
+        italian="[CN][CS:Y]Bidoof[CR] riceve qualcosa\n[CN]da uno strano Pokémon.",
+        spanish="[CN][CS:Y]Bidoof[CR] ha recibido algo\n[CN]del Pokémon desconocido.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SAD, FACE_POS_TOP_C_FACER);
+    message_FacePositionOffset(0, 2);
+    message_Talk({
+        english=" Huh...[K] Golly, what is this?",
+        french=" Hein...[K] Sapristi, c\'est quoi, ça?",
+        german=" Nanu![K]\nDonnerwetter, was ist los?",
+        italian=" Uh...[K] Ohibò, cos\'è questo?",
+        spanish=" ¿Eh?...[K] Caramba, ¿qué es esto?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        Turn2Direction(1, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    Wait(15);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    Wait(15);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        MovePositionOffset(33408, -200, 0);
+    }
+    Wait(20);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_KAKUREON2) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_NPC_KAKUREON1) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SAD, FACE_POS_TOP_C_FACEL);
+    message_FacePositionOffset(0, 2);
+    message_Talk({
+        english=" Hey! [K]You...[K]wait!",
+        french=" Hé! [K]Toi...[K] attends un peu!",
+        german=" Hey! [K]Du...[K] Warte!",
+        italian=" Ehi![K] Tu...[K] Aspetta!",
+        spanish=" ¡Eh![K] ¡Tú!...[K] ¡Espera!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        Destroy();
+    }
+    screen_FadeOutAll(1, 90);
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    end;
+}

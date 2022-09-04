@@ -1,0 +1,188 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_MAIN = scn[29, 60];
+    back_SetGround(LEVEL_D32P12A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    supervision_Acting(1);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_IN_THE_DEPTHS_OF_THE_PIT, 0, 256);
+    with (actor ACTOR_PLAYER_APPOINT) {
+        MovePositionMark(1, Position<'m0', 28.5, 33.5>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        MovePositionMark(1, Position<'m1', 31.5, 35>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        MovePositionMark(1, Position<'m2', 25.5, 35>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC3) {
+        MovePositionMark(1, Position<'m3', 28.5, 35.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_APPOINT);
+    Wait(30);
+    message_ResetActor();
+    message_Talk({
+        english=" That was good work!",
+        french=" Bon travail!",
+        german=" Das war gute Arbeit!",
+        italian=" Ottimo lavoro!",
+        spanish=" ¡Buen trabajo!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8964);
+    with (actor ACTOR_PLAYER_APPOINT) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ADVENTURE_NPC3) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER_APPOINT) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_APPOINT);
+    with (performer 0) {
+        MovePositionOffset(1, 0, 24);
+    }
+    with (actor ACTOR_PLAYER_APPOINT) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    Wait(5);
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_ADVENTURE_NPC3) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_APPOINT);
+    with (actor ACTOR_NPC_MIMIROPPU) {
+        MovePositionMark(1, Position<'m4', 28.5, 39.5>);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        MovePositionMark(1, Position<'m5', 31.5, 39.5>);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        MovePositionMark(1, Position<'m6', 25.5, 39.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_CHAAREMU);
+    message_SetFace(ACTOR_NPC_MIMIROPPU, FACE_NORMAL, FACE_POS_BOTTOM_R_CENTER);
+    message_Talk({
+        english=" You handled that battle with\nsuperb aplomb.",
+        french=" Vous avez mené la bataille avec\nun bel aplomb.",
+        german=" Ihr habt diesen Kampf mit\ngroßer Souveränität gemeistert.",
+        italian=" Avete affrontato la lotta con\nun aplomb super.",
+        spanish=" Habéis librado la batalla\ncon gran aplomo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_CHAAREMU);
+    message_SetFace(ACTOR_NPC_CHAAREMU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" You\'re going to make us look bad\nif we don\'t pick up the pace!",
+        french=" Nous allons perdre de notre\nsuperbe si nous ne nous élevons pas à votre\nniveau!",
+        german=" Ihr lasst uns schlecht aussehen,\nwenn wir das Tempo nicht anziehen!",
+        italian=" Faremo una brutta figura se\nnon ci diamo una mossa!",
+        spanish=" ¡Nos haréis quedar mal\ncomo no pillemos el ritmo!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    message_SetFace(ACTOR_NPC_SAANAITO, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Tee-hee! This has become\nunusually exciting for me!",
+        french=" Hi hi! Ça devient bien plus\npalpitant que ce que je croyais.",
+        german=" Hihi! Das ist ungewöhnlich\naufregend für mich geworden!",
+        italian=" Eeh-eeh! Le cose si stanno\nfacendo più emozionanti del solito!",
+        spanish=" ¡Ji, ji! ¡Esto está siendo\nmuy emocionante!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    message_SetFace(ACTOR_NPC_MIMIROPPU, FACE_NORMAL, FACE_POS_BOTTOM_R_CENTER);
+    message_Talk({
+        english=" But we\'ll beat you to solving the\nnext mystery!",
+        french=" Mais à la prochaine énigme,\nc\'est nous qui vous coifferons au poteau!",
+        german=" Aber beim Lösen des nächsten\nRätsels schlagen wir euch!",
+        italian=" Ma vi batteremo nel\nrisolvere il prossimo mistero!",
+        spanish=" ¡Pero nosotras resolveremos\nel próximo misterio!",
+    });
+    message_Talk({
+        english=" We\'re off!",
+        french=" Nous partons!",
+        german=" Sind schon weg!",
+        italian=" Andiamo!",
+        spanish=" ¡Vamos allá!",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_CHAAREMU) {
+        MovePositionOffset(1, -24, -24);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_SAANAITO) {
+        MovePositionOffset(1, 24, -24);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_MIMIROPPU) {
+        Move2PositionOffset(1, 48, -24);
+    }
+    Wait(10);
+    with (actor ACTOR_PLAYER_APPOINT) {
+        Turn2Direction(16, 10, DIR_UP);
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        Turn2Direction(16, 2, DIR_UP);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        Turn2Direction(16, 10, DIR_UP);
+    }
+    with (actor ACTOR_ADVENTURE_NPC3) {
+        Turn2Direction(16, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        MovePositionMark(1, Position<'m7', 22.5, 28.5>);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        MovePositionMark(1, Position<'m8', 34.5, 28.5>);
+    }
+    with (actor ACTOR_NPC_MIMIROPPU) {
+        MovePositionMark(1, Position<'m9', 34.5, 28.5>);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        MovePositionMark(1, Position<'m10', 28.5, 22.5>);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        MovePositionMark(1, Position<'m11', 28.5, 22.5>);
+    }
+    with (actor ACTOR_NPC_MIMIROPPU) {
+        MovePositionMark(1, Position<'m12', 28.5, 22.5>);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        MovePositionMark(1, Position<'m13', 28.5, 15.5>);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        MovePositionMark(1, Position<'m14', 28.5, 15.5>);
+    }
+    with (actor ACTOR_NPC_MIMIROPPU) {
+        MovePositionMark(1, Position<'m15', 28.5, 15.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_MIMIROPPU);
+    supervision_RemoveActing(1);
+    end;
+}

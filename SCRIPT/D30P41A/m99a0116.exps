@@ -1,0 +1,177 @@
+
+def 0 {
+    sound_Stop();
+    back_SetDungeonBanner(43, 0);
+    screen_FadeIn(1, 16);
+    Wait(60);
+    screen_FadeOut(1, 16);
+    Wait(15);
+    back_SetGround(LEVEL_D30P41A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_TEMPORAL_PINNACLE, 0, 256);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m0', 32.5, 37.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m1', 36.5, 37.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(15);
+    message_SetFace(ACTOR_NPC_DIARUGA, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" I AM [CS:N]DIALGA[CR]![K] THE PROTECTOR\nOF [CS:P]TEMPORAL TOWER[CR]!",
+        french=" MON NOM EST [CS:N]DIALGA[CR]![K]\nJE SUIS LE GARDIEN DE LA [CS:P]TOUR DU TEMPS[CR]!",
+        german=" ICH BIN [CS:N]DIALGA[CR]![K] \nDER BESCHÜTZER DES [CS:P]ZEITTURMS[CR]!",
+        italian=" IO SONO [CS:N]DIALGA[CR]![K]\nIL PROTETTORE DELLA [CS:P]TORRE DEL TEMPO[CR]!",
+        spanish=" ¡SOY [CS:N]DIALGA[CR]![K] ¡EL PROTECTOR\nDE LA [CS:P]TORRE DEL TIEMPO[CR]!",
+    });
+    message_Talk({
+        english=" AH, YOU TWO! IT\'S BEEN A\nLONG TIME!",
+        french=" AH, VOUS DEUX! CELA FAISAIT\nBIEN LONGTEMPS!",
+        german=" AH, IHR ZWEI! ES IST LANGE\nHER!",
+        italian=" AH, VOI DUE! È PASSATO TANTO\nTEMPO!",
+        spanish=" ¡AH! ¡HA PASADO MUCHO\nTIEMPO!",
+    });
+    message_Talk({
+        english=" BUT...[K]THERE CAN BE BUT ONE\nREASON YOU ARE COMPELLED TO RETURN HERE.",
+        french=" MAIS...[K] IL NE PEUT Y AVOIR\nQU\'UNE RAISON A VOTRE RETOUR ICI.",
+        german=" ABER...[K] NUR EIN EINZIGER GRUND\nKANN EUCH ZUR RÜCKKEHR BEWOGEN HABEN.",
+        italian=" MA...[K] NON PUÒ ESSERCI CHE \nUNA RAGIONE, SE SIETE DI NUOVO QUI.",
+        spanish=" PERO...[K] SOLO PUEDE HABER\nUN MOTIVO PARA ESTA VISITA.",
+    });
+    message_Talk({
+        english=" AND THAT IS TO...[K] CHALLENGE\nME TO A BATTLE!",
+        french=" ET C\'EST...[K] POUR ME DEFIER!",
+        german=" UND DER IST,[K] MICH ZU EINEM\nKAMPF HERAUSZUFORDERN!",
+        italian=" E LA RAGIONE È...[K] UNA SFIDA!",
+        spanish=" SIN DUDA...[K] ¡ESTO ES UN RETO!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DIARUGA) {
+        SetAnimation(19);
+    }
+    with (actor ACTOR_NPC_DIARUGA) {
+        WaitAnimation();
+    }
+    camera_SetEffect(2, 1, 33024);
+    se_Play(6930);
+    message_Talk({
+        english=" GRRR-OOOOOO...OOOOOH!",
+        french=" GRRR-OOOOOO... OOOOOH!",
+        german=" GRRR-OOOOOO...OOOOOH!",
+        italian=" GRRR-OOOOOO... OOOOOH!",
+        spanish=" ¡GRRRRRRR! ¡GRRRRRRR!",
+    });
+    WaitExecuteLives(ACTOR_NPC_DARK_DIARUGA);
+    WaitSe(6930);
+    message_CloseEnforce();
+    camera_SetEffect(0, 0, 0);
+    with (actor ACTOR_NPC_DIARUGA) {
+        SetAnimation(2);
+    }
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    message_Talk({
+        english=" SO BE IT!",
+        french=" SOIT!",
+        german=" SO SOLL ES SEIN!",
+        italian=" E SIA!",
+        spanish=" ¡PUES QUE ASÍ SEA!",
+    });
+    message_Talk({
+        english=" YOUR CHALLENGE...[K]I ACCEPT!",
+        french=" VOTRE DEFI...[K] JE LE RELEVE!",
+        german=" EURE HERAUSFORDERUNG...[K]\nICH NEHME SIE AN!",
+        italian=" LA VOSTRA SFIDA...[K] \nÈ ACCETTATA!",
+        spanish=" ACEPTO...[K] EL DESAFÍO.",
+    });
+    message_Talk({
+        english=" HOWEVER!",
+        french=" POURTANT!",
+        german=" ALLERDINGS...",
+        italian=" AD OGNI MODO...",
+        spanish=" ¡SIN EMBARGO...!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    message_SetFace(ACTOR_NPC_DIARUGA, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" IF YOU FAIL TO MUSTER ALL\nYOUR POWER AND SKILL...",
+        french=" SI VOUS ECHOUEZ A\nRASSEMBLER TOUTES VOS FORCES ET VOTRE\nHABILETE...",
+        german=" WENN IHR ES NICHT SCHAFFT,\nMIT ALL EURER KRAFT UND GESCHICKLICHKEIT\nAUFZUWARTEN...",
+        italian=" SE NON FARETE APPELLO A \nTUTTA LA VOSTRA FORZA E ALLE VOSTRE\nABILITÀ...",
+        spanish=" PARA VENCERME HACE FALTA\nMUCHA FUERZA Y HABILIDAD...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    message_SetFace(ACTOR_NPC_DIARUGA, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" THERE WILL BE NO VICTORY\nFOR YOU!",
+        french=" LA VICTOIRE SERA A MOI!",
+        german=" DANN WIRD ES KEINEN SIEG\nFÜR EUCH GEBEN!",
+        italian=" NON VINCERETE MAI!",
+        spanish=" ¡LA VICTORIA SERÁ MÍA!\n",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    WaitSe(5143);
+    with (actor ACTOR_NPC_DIARUGA) {
+        SetAnimation(19);
+    }
+    with (actor ACTOR_NPC_DIARUGA) {
+        WaitAnimation();
+    }
+    camera_SetEffect(2, 1, 33024);
+    se_Play(6930);
+    message_SetFace(ACTOR_NPC_DIARUGA, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" GRRR-OOOOOO!",
+        french=" GRRR-OOOOOO!",
+        german=" GRRR-OOOOOO!",
+        italian=" GRRR-OOOOOO!",
+        spanish=" ¡GRRRRRRR! ¡GRRRRRRR!",
+    });
+    WaitSe(6930);
+    message_CloseEnforce();
+    camera_SetEffect(0, 0, 0);
+    bgm_Stop();
+    se_Play(5140);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    WaitSe(5140);
+    CallCommon(CORO_BOSS_WIPE_FUNC);
+    end;
+}

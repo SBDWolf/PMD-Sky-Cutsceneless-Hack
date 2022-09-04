@@ -1,0 +1,20 @@
+
+def 0 {
+    CallCommon(CORO_FADE_OUT_ALL_BEFORE);
+    back_SetGround(LEVEL_V14P03A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    supervision_SpecialActing(17, 0, 0);
+    se_Play(7174);
+    screen_FadeInAll(1, 15);
+    with (performer 0) {
+        MovePositionMark(4, Position<'m0', 16, 18.5>);
+    }
+    WaitExecutePerformer(0);
+    screen_FadeOutAll(1, 0);
+    supervision_SpecialActing(3, 0, 0);
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    end;
+}

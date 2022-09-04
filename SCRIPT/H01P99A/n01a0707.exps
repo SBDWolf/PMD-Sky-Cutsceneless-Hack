@@ -1,0 +1,377 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_AIR_OF_UNEASE, 0, 256);
+    back_SetGround(LEVEL_H01P99A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    screen_FadeIn(1, 30);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        ExecuteCommon(CORO_LOOK_AROUND_DOWN_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    Wait(15);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        Move2PositionOffset(33152, -16, 16);
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    Wait(5);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        ExecuteCommon(CORO_LOOK_AROUND_RIGHT_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        Turn2Direction(1, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    se_Play(8967);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    with (actor ACTOR_NPC_TATSUBEI) {
+        MovePositionMark(3, Position<'m0', 42, 21.5>);
+    }
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        MovePositionMark(33075, Position<'m1', 42, 23.5>);
+    }
+    Wait(15);
+    with (actor ACTOR_NPC_GURAIGAA) {
+        MovePositionMark(33408, Position<'m2', 46, 23.5>);
+    }
+    with (actor ACTOR_NPC_TATSUBEI) {
+        Turn2Direction(1, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_TATSUBEI);
+    se_Play(8972);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SetAnimation(4);
+    }
+    message_SetFace(ACTOR_NPC_TATSUBEI, FACE_NORMAL, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" Ha![K] Finally caught you!",
+        french=" Ah, ah![K] Fini de courir, mon gars!",
+        german=" Ha![K] Endlich haben wir dich!",
+        italian=" Ah![K] Finalmente ti abbiamo\ncatturato!",
+        spanish=" ¡Ja![K] ¡Ya eres nuestro!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_GURAIGAA, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" You really ran for it!\nGwah ha ha!",
+        french=" Tu cours plus vite que ma\ngrand-mère, ma parole!\nOuarf arf arf!",
+        german=" Hast dich ganz schön beeilt!\nGwahaha!",
+        italian=" Ci hai fatto fare una bella\nsudata! Muah ah ah!",
+        spanish=" ¡Y eso que corrías como loco!\n¡Jua, ja, ja!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        ExecuteCommon(CORO_HEAD_SHAKE_FUNC_SERIES, 0);
+    }
+    message_SetFace(ACTOR_NPC_YUKIKABURI, FACE_PAIN, FACE_POS_BOTTOM_L_FACEOUTW);
+    message_Talk({
+        english=" Ow-ow![K] Let go of me!",
+        french=" Aïe! Ouille![K] Laissez-moi partir!",
+        german=" Au-au![K] Lasst mich in Ruhe!",
+        italian=" Ahi-ahi![K] Lasciatemi andare!",
+        spanish=" ¡Ay, ay![K] ¡Dejadme!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        Turn2DirectionLives(1, 10, ACTOR_NPC_TATSUBEI);
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SetAnimation(2);
+    }
+    message_SetFace(ACTOR_NPC_TATSUBEI, FACE_NORMAL, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" Nope.[K] You know what we\'re\nlooking for...",
+        french=" Négatif.[K]\nTu sais ce qu\'on cherche...",
+        german=" Vergiss es.[K] Du weißt, wonach\nwir suchen...",
+        italian=" No![K] Lo sai cosa stiamo\ncercando...",
+        spanish=" Ni hablar.[K] Ya sabes qué es\nlo que queremos...",
+    });
+    message_Talk({
+        english=" You of all people should know!",
+        french=" S\'il y en a un qui doit le savoir,\nc\'est bien toi!",
+        german=" Gerade du solltest das wissen!",
+        italian=" Dovresti saperlo bene!",
+        spanish=" ¡Precisamente tú deberías saberlo!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_GURAIGAA) {
+        MovePositionOffset(1, -8, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_GURAIGAA);
+    Wait(15);
+    se_Play(8968);
+    with (actor ACTOR_NPC_GURAIGAA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_GURAIGAA) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_GURAIGAA);
+    message_SetFace(ACTOR_NPC_GURAIGAA, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Not here![K] The map\'s not here!",
+        french=" La carte![K] Je la trouve pas!",
+        german=" Nicht hier![K] Die Karte ist\nnicht hier!",
+        italian=" Non è qui![K] La mappa non è qui!",
+        spanish=" ¡No está aquí![K] ¡El mapa no está aquí!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_GURAIGAA) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_GURAIGAA);
+    message_SetFace(ACTOR_NPC_GURAIGAA, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" [CS:N]Bagon[CR]![K] He doesn\'t have the map!",
+        french=" [CS:N]Draby[CR]![K] Il a pas la carte!",
+        german=" [CS:N]Kindwurm[CR]![K] Er hat die Karte\nnicht!",
+        italian=" [CS:N]Bagon[CR]![K] Non ha la mappa!",
+        spanish=" ¡[CS:N]Bagon[CR]![K] ¡Que no tiene el mapa!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8968);
+    with (actor ACTOR_NPC_TATSUBEI) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_TATSUBEI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_TATSUBEI);
+    with (actor ACTOR_NPC_TATSUBEI) {
+        Turn2Direction(1, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_TATSUBEI);
+    message_SetFace(ACTOR_NPC_TATSUBEI, FACE_SURPRISED, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" WHAAAAT?!",
+        french=" QUOIIIII?!",
+        german=" WAAAAS?!?",
+        italian=" COOOSAAA?!",
+        spanish=" ¡¿Quéeee?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_TATSUBEI) {
+        Turn2DirectionLives(1, 10, ACTOR_NPC_YUKIKABURI);
+    }
+    WaitExecuteLives(ACTOR_NPC_TATSUBEI);
+    with (actor ACTOR_NPC_GURAIGAA) {
+        Turn2DirectionLives(1, 10, ACTOR_NPC_YUKIKABURI);
+    }
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    message_SetFace(ACTOR_NPC_TATSUBEI, FACE_NORMAL, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" Y-YOU![K] Where\'d you stash it?!",
+        french=" M-misérable![K]\nOù l\'as-tu planquée?!",
+        german=" D-du![K] Wo hast du sie\nversteckt?!?",
+        italian=" T-TU![K] Dove l\'hai nascosta?!",
+        spanish=" ¡Oye![K] ¡¿Dónde lo has escondido?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SetAnimation(3);
+    }
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    Wait(1);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SetAnimation(2);
+    }
+    message_SetFace(ACTOR_NPC_YUKIKABURI, FACE_PAIN, FACE_POS_STANDARD);
+    message_Talk({
+        english=" I...[K] I don\'t know...",
+        french=" Je...[K] je ne me souviens pas...",
+        german=" Ich...[K] Ich weiß nicht...",
+        italian=" Io...[K] non lo so...",
+        spanish=" No...[K] No lo sé...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8971);
+    with (actor ACTOR_NPC_GURAIGAA) {
+        SetEffect(EFFECT_ANGRY, 3);
+    }
+    message_SetFace(ACTOR_NPC_GURAIGAA, FACE_ANGRY, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" LIAR!",
+        french=" MENTEUR!",
+        german=" LÜGNER!",
+        italian=" NON MENTIRE!",
+        spanish=" ¡Mentira!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_GURAIGAA) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_GURAIGAA) {
+        SetAnimation(22);
+    }
+    with (actor ACTOR_NPC_GURAIGAA) {
+        WaitAnimation();
+    }
+    se_Play(5121);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SetDirection(DIR_LEFT);
+    }
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SetAnimation(22);
+    }
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SlidePositionOffset(33408, -40, 0);
+    }
+    with (actor ACTOR_NPC_TATSUBEI) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_GURAIGAA);
+    with (actor ACTOR_NPC_GURAIGAA) {
+        SetAnimation(2);
+    }
+    message_SetFace(ACTOR_NPC_YUKIKABURI, FACE_PAIN, FACE_POS_BOTTOM_L_FACEOUTW);
+    message_Talk({
+        english=" OUCH!",
+        french=" AOUAH!",
+        german=" AUTSCH!",
+        italian=" AHIA!",
+        spanish=" ¡Ay!",
+    });
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    message_SetFace(ACTOR_NPC_YUKIKABURI, FACE_PAIN, FACE_POS_BOTTOM_L_FACEOUTW);
+    message_Talk({
+        english=" Ooooh...[K] No matter what...",
+        french=" Ouuuuuh...[K] Je m\'en fiche...",
+        german=" Ooooh...[K] Egal, was ihr...",
+        italian=" Oooh...[K] Non importa...",
+        spanish=" Aaaaay...[K] Qué dolooor...",
+    });
+    message_Talk({
+        english=" No matter what you do...[K] I\'m not\ntelling you.",
+        french=" Tapez-moi, si ça vous chante...[K]\nMais je ne vous dirai rien!",
+        german=" Egal, was ihr auch macht...[K]\nIch werde euch nichts verraten.",
+        italian=" Non importa cosa mi farete...[K]\nNon ve lo dirò mai.",
+        spanish=" Da igual lo que hagáis...[K] No os lo\npienso decir.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8971);
+    with (actor ACTOR_NPC_TATSUBEI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    message_SetFace(ACTOR_NPC_TATSUBEI, FACE_NORMAL, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" ARGH!",
+        french=" Malédiction!",
+        german=" ARGH!",
+        italian=" ARGH!",
+        spanish=" ¡Córcholis!",
+    });
+    WaitExecuteLives(ACTOR_NPC_TATSUBEI);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_TATSUBEI) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_TATSUBEI);
+    with (actor ACTOR_NPC_GURAIGAA) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    message_SetFace(ACTOR_NPC_TATSUBEI, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" He has to have stashed it around\nhere somewhere![K] Look for it!",
+        french=" Il a dû la planquer quelque part\npar ici![K] Cherche-la!",
+        german=" Er muss sie hier irgendwo\nversteckt haben![K] Suchen wir sie!",
+        italian=" Deve averla nascosta qui\nda qualche parte![K] Cerchiamola!",
+        spanish=" ¡Tiene que haberlo escondido\nen alguna parte![K] ¡Busca!",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_GURAIGAA) {
+        MovePositionOffset(1, 36, -24);
+    }
+    Wait(15);
+    with (actor ACTOR_NPC_TATSUBEI) {
+        MovePositionOffset(1, -16, -16);
+    }
+    WaitExecuteLives(ACTOR_NPC_GURAIGAA);
+    with (actor ACTOR_NPC_GURAIGAA) {
+        ExecuteCommon(CORO_LOOK_AROUND_DOWN_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_TATSUBEI);
+    with (actor ACTOR_NPC_TATSUBEI) {
+        ExecuteCommon(CORO_LOOK_AROUND_RIGHT_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_GURAIGAA);
+    with (actor ACTOR_NPC_GURAIGAA) {
+        MovePositionOffset(1, 0, -16);
+    }
+    Wait(15);
+    WaitExecuteLives(ACTOR_NPC_TATSUBEI);
+    with (actor ACTOR_NPC_TATSUBEI) {
+        MovePositionOffset(1, 0, 16);
+    }
+    WaitExecuteLives(ACTOR_NPC_GURAIGAA);
+    with (actor ACTOR_NPC_GURAIGAA) {
+        ExecuteCommon(CORO_LOOK_AROUND_RIGHT_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_TATSUBEI);
+    with (actor ACTOR_NPC_TATSUBEI) {
+        ExecuteCommon(CORO_LOOK_AROUND_DOWN_FUNC_SERIES, 0);
+    }
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 60);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    end;
+}

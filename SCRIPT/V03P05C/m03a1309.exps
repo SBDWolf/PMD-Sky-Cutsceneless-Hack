@@ -1,0 +1,27 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_TIME_GEAR_REMIX, 0, 256);
+    back_SetGround(LEVEL_V03P05C);
+    supervision_Acting(0);
+    camera_SetPositionMark(Position<'m0', 17.5, 17.5>);
+    with (performer 3) {
+        SetEffect(EFFECT_VERY_HEAVY_RAIN, 3);
+    }
+    bgm2_PlayFadeIn(BGM_STORM, 60, 256);
+    screen_FadeIn(1, 30);
+    Wait(60);
+    se_Play(6401);
+    with (object OBJECT_V01P07B1_207) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_V01P07B1_207) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_V01P07B1_207);
+    Wait(60);
+    screen_FadeOut(1, 15);
+    with (performer 3) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    end;
+}

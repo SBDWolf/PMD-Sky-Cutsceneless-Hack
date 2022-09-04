@@ -1,0 +1,467 @@
+
+def 0 {
+    sound_Stop();
+    if ( not debug ) {
+        §label_0;
+        sound_Stop();
+        $SCENARIO_SIDE = scn[45, 1];
+        back2_SetMode(4);
+        back2_SetGround(LEVEL_V02P06A);
+        camera2_SetPositionMark(Position<'m0', 19.5, 15.5>);
+        screen2_FadeIn(1, 60);
+        Wait(150);
+        screen2_FadeOut(1, 60);
+        back2_SetMode(0);
+        Wait(30);
+        message_Narration(30, {
+            english="[CN]One evening...",
+            french="[CN]Un soir...",
+            german="[CN]Eines Abends...",
+            italian="[CN]Una notte...",
+            spanish="[CN]Una noche...",
+        });
+        message_Close();
+        end;
+    } else {
+        message_Notice({
+            english="[M:D2][CS:C]Start from where?[CR]",
+            french="[M:D2][CS:C]Start from where?[CR]",
+            german="[M:D2][CS:C]Start from where?[CR]",
+            italian="[M:D2][CS:C]Start from where?[CR]",
+            spanish="[M:D2][CS:C]Start from where?[CR]",
+        });
+        switch ( message_SwitchMenu(0, 1) ) {
+            case menu({
+                english="[M:D2]Beginning",
+                french="[M:D2]Beginning",
+                german="[M:D2]Beginning",
+                italian="[M:D2]Beginning",
+                spanish="[M:D2]Beginning",
+            }):
+            default:
+                message_Close();
+                jump @label_0;
+            case menu({
+                english="[M:D2]SouthernJungle",
+                french="[M:D2]SouthernJungle",
+                german="[M:D2]SouthernJungle",
+                italian="[M:D2]SouthernJungle",
+                spanish="[M:D2]SouthernJungle",
+            }):
+                message_Close();
+                $SIDE06_ROOM[0] = 0;
+                $SIDE06_ROOM[1] = 0;
+                $SIDE06_ROOM[2] = 0;
+                $SCENARIO_SIDE = scn[45, 1];
+                main_EnterGround(LEVEL_D54P11A, 30);
+                hold;
+            case menu({
+                english="[M:D2]SouthernJungle2ndTry",
+                french="[M:D2]SouthernJungle2ndTry",
+                german="[M:D2]SouthernJungle2ndTry",
+                italian="[M:D2]SouthernJungle2ndTry",
+                spanish="[M:D2]SouthernJungle2ndTry",
+            }):
+                message_Close();
+                $SIDE06_ROOM[0] = 0;
+                $SIDE06_ROOM[1] = 0;
+                $SIDE06_ROOM[2] = 0;
+                $SCENARIO_SIDE = scn[45, 2];
+                main_EnterGround(LEVEL_D54P11A, 30);
+                hold;
+            case menu({
+                english="[M:D2]BoulderQuarry",
+                french="[M:D2]BoulderQuarry",
+                german="[M:D2]BoulderQuarry",
+                italian="[M:D2]BoulderQuarry",
+                spanish="[M:D2]BoulderQuarry",
+            }):
+                message_Close();
+                $SIDE06_ROOM[0] = 0;
+                $SIDE06_ROOM[1] = 0;
+                $SIDE06_ROOM[2] = 0;
+                $SCENARIO_SIDE = scn[45, 3];
+                main_EnterGround(LEVEL_D55P11A, 30);
+                hold;
+            case menu({
+                english="[M:D2]BoulderQuarry2ndTry",
+                french="[M:D2]BoulderQuarry2ndTry",
+                german="[M:D2]BoulderQuarry2ndTry",
+                italian="[M:D2]BoulderQuarry2ndTry",
+                spanish="[M:D2]BoulderQuarry2ndTry",
+            }):
+                message_Close();
+                $SIDE06_ROOM[0] = 0;
+                $SIDE06_ROOM[1] = 0;
+                $SIDE06_ROOM[2] = 0;
+                $SCENARIO_SIDE = scn[45, 4];
+                main_EnterGround(LEVEL_D55P11A, 30);
+                hold;
+            case menu({
+                english="[M:D2]BoulderQuarryMidpoint",
+                french="[M:D2]BoulderQuarryMidpoint",
+                german="[M:D2]BoulderQuarryMidpoint",
+                italian="[M:D2]BoulderQuarryMidpoint",
+                spanish="[M:D2]BoulderQuarryMidpoint",
+            }):
+                message_Close();
+                $SIDE06_ROOM[0] = 0;
+                $SIDE06_ROOM[1] = 0;
+                $SIDE06_ROOM[2] = 0;
+                $SCENARIO_SIDE = scn[45, 5];
+                main_EnterGround(LEVEL_D55P21A, 30);
+                hold;
+            case menu({
+                english="[M:D2]DeepBoulderQuarry2ndTry",
+                french="[M:D2]DeepBoulderQuarry2ndTry",
+                german="[M:D2]DeepBoulderQuarry2ndTry",
+                italian="[M:D2]DeepBoulderQuarry2ndTry",
+                spanish="[M:D2]DeepBoulderQuarry2ndTry",
+            }):
+                message_Close();
+                $SIDE06_ROOM[0] = 0;
+                $SIDE06_ROOM[1] = 0;
+                $SIDE06_ROOM[2] = 0;
+                $SCENARIO_SIDE = scn[45, 6];
+                main_EnterGround(LEVEL_D55P21A, 30);
+                hold;
+            case menu({
+                english="[M:D2]BoulderQuarryBoss2ndTry",
+                french="[M:D2]BoulderQuarryBoss2ndTry",
+                german="[M:D2]BoulderQuarryBoss2ndTry",
+                italian="[M:D2]BoulderQuarryBoss2ndTry",
+                spanish="[M:D2]BoulderQuarryBoss2ndTry",
+            }):
+                message_Close();
+                $SIDE06_ROOM[0] = 0;
+                $SIDE06_ROOM[1] = 0;
+                $SIDE06_ROOM[2] = 0;
+                $SCENARIO_SIDE = scn[45, 7];
+                main_EnterGround(LEVEL_D55P11A, 30);
+                hold;
+            case menu({
+                english="[M:D2]DeepBoulderQuarryBoss2ndTry",
+                french="[M:D2]DeepBoulderQuarryBoss2ndTry",
+                german="[M:D2]DeepBoulderQuarryBoss2ndTry",
+                italian="[M:D2]DeepBoulderQuarryBoss2ndTry",
+                spanish="[M:D2]DeepBoulderQuarryBoss2ndTry",
+            }):
+                message_Close();
+                $SIDE06_ROOM[0] = 0;
+                $SIDE06_ROOM[1] = 0;
+                $SIDE06_ROOM[2] = 0;
+                $SCENARIO_SIDE = scn[45, 7];
+                main_EnterGround(LEVEL_D55P21A, 30);
+                hold;
+            case menu({
+                english="[M:D2]IllusionStoneChamber",
+                french="[M:D2]IllusionStoneChamber",
+                german="[M:D2]IllusionStoneChamber",
+                italian="[M:D2]IllusionStoneChamber",
+                spanish="[M:D2]IllusionStoneChamber",
+            }):
+                message_Close();
+                $SIDE06_ROOM[0] = 0;
+                $SIDE06_ROOM[1] = 0;
+                $SIDE06_ROOM[2] = 0;
+                $SCENARIO_SIDE = scn[45, 7];
+                main_EnterGround(LEVEL_D56P11A, 30);
+                hold;
+            case menu({
+                english="[M:D2]IllusionStoneChamberAllClear",
+                french="[M:D2]IllusionStoneChamberAllClear",
+                german="[M:D2]IllusionStoneChamberAllClear",
+                italian="[M:D2]IllusionStoneChamberAllClear",
+                spanish="[M:D2]IllusionStoneChamberAllClear",
+            }):
+                message_Close();
+                $SIDE06_ROOM[0] = 1;
+                $SIDE06_ROOM[1] = 1;
+                $SIDE06_ROOM[2] = 0;
+                $SCENARIO_SIDE = scn[45, 9];
+                main_EnterGround(LEVEL_D56P11A, 30);
+                hold;
+            case menu({
+                english="[M:D2]LimestoneCavern2ndTry",
+                french="[M:D2]LimestoneCavern2ndTry",
+                german="[M:D2]LimestoneCavern2ndTry",
+                italian="[M:D2]LimestoneCavern2ndTry",
+                spanish="[M:D2]LimestoneCavern2ndTry",
+            }):
+                message_Close();
+                $SCENARIO_SIDE = scn[45, 10];
+                main_EnterGround(LEVEL_D56P11A, 30);
+                hold;
+            case menu({
+                english="[M:D2]LimestoneCavernMidpoint",
+                french="[M:D2]LimestoneCavernMidpoint",
+                german="[M:D2]LimestoneCavernMidpoint",
+                italian="[M:D2]LimestoneCavernMidpoint",
+                spanish="[M:D2]LimestoneCavernMidpoint",
+            }):
+                message_Close();
+                $SCENARIO_SIDE = scn[45, 11];
+                main_EnterGround(LEVEL_D56P21A, 30);
+                hold;
+            case menu({
+                english="[M:D2]DeepLimestoneCavern2ndTry",
+                french="[M:D2]DeepLimestoneCavern2ndTry",
+                german="[M:D2]DeepLimestoneCavern2ndTry",
+                italian="[M:D2]DeepLimestoneCavern2ndTry",
+                spanish="[M:D2]DeepLimestoneCavern2ndTry",
+            }):
+                message_Close();
+                $SCENARIO_SIDE = scn[45, 12];
+                main_EnterGround(LEVEL_D56P21A, 30);
+                hold;
+            case menu({
+                english="[M:D2]LimestoneCavernDepths2ndTry",
+                french="[M:D2]LimestoneCavernDepths2ndTry",
+                german="[M:D2]LimestoneCavernDepths2ndTry",
+                italian="[M:D2]LimestoneCavernDepths2ndTry",
+                spanish="[M:D2]LimestoneCavernDepths2ndTry",
+            }):
+                message_Close();
+                $SCENARIO_SIDE = scn[45, 13];
+                main_EnterGround(LEVEL_D56P21A, 30);
+                hold;
+            case menu({
+                english="[M:D2]DeepLimestoneCavernBoss2ndTry",
+                french="[M:D2]DeepLimestoneCavernBoss2ndTry",
+                german="[M:D2]DeepLimestoneCavernBoss2ndTry",
+                italian="[M:D2]DeepLimestoneCavernBoss2ndTry",
+                spanish="[M:D2]DeepLimestoneCavernBoss2ndTry",
+            }):
+                message_Close();
+                $SCENARIO_SIDE = scn[45, 13];
+                main_EnterGround(LEVEL_D56P21A, 30);
+                hold;
+            case menu({
+                english="[M:D2]LimestoneCavernBoss2ndTry",
+                french="[M:D2]LimestoneCavernBoss2ndTry",
+                german="[M:D2]LimestoneCavernBoss2ndTry",
+                italian="[M:D2]LimestoneCavernBoss2ndTry",
+                spanish="[M:D2]LimestoneCavernBoss2ndTry",
+            }):
+                message_Close();
+                $SCENARIO_SIDE = scn[45, 13];
+                main_EnterGround(LEVEL_D56P11A, 30);
+                hold;
+            case menu({
+                english="[M:D2]TALK-N06-01",
+                french="[M:D2]TALK-N06-01",
+                german="[M:D2]TALK-N06-01",
+                italian="[M:D2]TALK-N06-01",
+                spanish="[M:D2]TALK-N06-01",
+            }):
+                $SCENARIO_SIDE = scn[45, 1];
+                message_Close();
+                main_EnterGround(LEVEL_D54P11A, 30);
+                hold;
+            case menu({
+                english="[M:D2]TALK-N06-02",
+                french="[M:D2]TALK-N06-02",
+                german="[M:D2]TALK-N06-02",
+                italian="[M:D2]TALK-N06-02",
+                spanish="[M:D2]TALK-N06-02",
+            }):
+                $SCENARIO_SIDE = scn[45, 2];
+                message_Close();
+                main_EnterGround(LEVEL_D54P11A, 30);
+                hold;
+            case menu({
+                english="[M:D2]TALK-N06-03",
+                french="[M:D2]TALK-N06-03",
+                german="[M:D2]TALK-N06-03",
+                italian="[M:D2]TALK-N06-03",
+                spanish="[M:D2]TALK-N06-03",
+            }):
+                $SCENARIO_SIDE = scn[45, 3];
+                message_Close();
+                main_EnterGround(LEVEL_D55P11A, 30);
+                hold;
+            case menu({
+                english="[M:D2]TALK-N06-04",
+                french="[M:D2]TALK-N06-04",
+                german="[M:D2]TALK-N06-04",
+                italian="[M:D2]TALK-N06-04",
+                spanish="[M:D2]TALK-N06-04",
+            }):
+                $SCENARIO_SIDE = scn[45, 4];
+                message_Close();
+                main_EnterGround(LEVEL_D55P11A, 30);
+                hold;
+            case menu({
+                english="[M:D2]TALK-N06-05",
+                french="[M:D2]TALK-N06-05",
+                german="[M:D2]TALK-N06-05",
+                italian="[M:D2]TALK-N06-05",
+                spanish="[M:D2]TALK-N06-05",
+            }):
+                $SCENARIO_SIDE = scn[45, 5];
+                message_Close();
+                main_EnterDungeon(150, 30);
+                switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                main_EnterGround(LEVEL_D55P21A, 30);
+                hold;
+            case menu({
+                english="[M:D2]TALK-N06-06",
+                french="[M:D2]TALK-N06-06",
+                german="[M:D2]TALK-N06-06",
+                italian="[M:D2]TALK-N06-06",
+                spanish="[M:D2]TALK-N06-06",
+            }):
+                $SCENARIO_SIDE = scn[45, 6];
+                message_Close();
+                main_EnterDungeon(150, 30);
+                switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                main_EnterGround(LEVEL_D55P21A, 30);
+                hold;
+            case menu({
+                english="[M:D2]TALK-N06-07",
+                french="[M:D2]TALK-N06-07",
+                german="[M:D2]TALK-N06-07",
+                italian="[M:D2]TALK-N06-07",
+                spanish="[M:D2]TALK-N06-07",
+            }):
+                $SCENARIO_SIDE = scn[45, 7];
+                message_Close();
+                main_EnterDungeon(150, 30);
+                switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                main_EnterGround(LEVEL_D55P21A, 30);
+                hold;
+            case menu({
+                english="[M:D2]TALK-N06-08",
+                french="[M:D2]TALK-N06-08",
+                german="[M:D2]TALK-N06-08",
+                italian="[M:D2]TALK-N06-08",
+                spanish="[M:D2]TALK-N06-08",
+            }):
+                $SCENARIO_SIDE = scn[45, 7];
+                message_Close();
+                main_EnterGround(LEVEL_D56P11A, 30);
+                hold;
+            case menu({
+                english="[M:D2]TALK-N06-09",
+                french="[M:D2]TALK-N06-09",
+                german="[M:D2]TALK-N06-09",
+                italian="[M:D2]TALK-N06-09",
+                spanish="[M:D2]TALK-N06-09",
+            }):
+                $SCENARIO_SIDE = scn[45, 8];
+                message_Close();
+                main_EnterGround(LEVEL_D56P11A, 30);
+                hold;
+            case menu({
+                english="[M:D2]TALK-N06-10",
+                french="[M:D2]TALK-N06-10",
+                german="[M:D2]TALK-N06-10",
+                italian="[M:D2]TALK-N06-10",
+                spanish="[M:D2]TALK-N06-10",
+            }):
+                $SCENARIO_SIDE = scn[45, 8];
+                $SIDE06_ROOM[0] = 1;
+                message_Close();
+                main_EnterGround(LEVEL_D56P11A, 30);
+                hold;
+            case menu({
+                english="[M:D2]TALK-N06-11",
+                french="[M:D2]TALK-N06-11",
+                german="[M:D2]TALK-N06-11",
+                italian="[M:D2]TALK-N06-11",
+                spanish="[M:D2]TALK-N06-11",
+            }):
+                $SCENARIO_SIDE = scn[45, 8];
+                $SIDE06_ROOM[2] = 1;
+                message_Close();
+                main_EnterGround(LEVEL_D56P11A, 30);
+                hold;
+            case menu({
+                english="[M:D2]TALK-N06-12",
+                french="[M:D2]TALK-N06-12",
+                german="[M:D2]TALK-N06-12",
+                italian="[M:D2]TALK-N06-12",
+                spanish="[M:D2]TALK-N06-12",
+            }):
+                $SCENARIO_SIDE = scn[45, 8];
+                $SIDE06_ROOM[1] = 1;
+                message_Close();
+                main_EnterGround(LEVEL_D56P11A, 30);
+                hold;
+            case menu({
+                english="[M:D2]TALK-N06-13",
+                french="[M:D2]TALK-N06-13",
+                german="[M:D2]TALK-N06-13",
+                italian="[M:D2]TALK-N06-13",
+                spanish="[M:D2]TALK-N06-13",
+            }):
+                $SCENARIO_SIDE = scn[45, 8];
+                $SIDE06_ROOM[2] = 1;
+                message_Close();
+                main_EnterGround(LEVEL_D56P11A, 30);
+                hold;
+            case menu({
+                english="[M:D2]TALK-N06-14",
+                french="[M:D2]TALK-N06-14",
+                german="[M:D2]TALK-N06-14",
+                italian="[M:D2]TALK-N06-14",
+                spanish="[M:D2]TALK-N06-14",
+            }):
+                $SIDE06_ROOM[0] = 1;
+                $SIDE06_ROOM[1] = 1;
+                $SIDE06_ROOM[2] = 0;
+                $SCENARIO_SIDE = scn[45, 9];
+                message_Close();
+                main_EnterGround(LEVEL_D56P11A, 30);
+                hold;
+            case menu({
+                english="[M:D2]TALK-N06-15",
+                french="[M:D2]TALK-N06-15",
+                german="[M:D2]TALK-N06-15",
+                italian="[M:D2]TALK-N06-15",
+                spanish="[M:D2]TALK-N06-15",
+            }):
+                $SCENARIO_SIDE = scn[45, 10];
+                message_Close();
+                main_EnterGround(LEVEL_D56P11A, 30);
+                hold;
+            case menu({
+                english="[M:D2]TALK-N06-16",
+                french="[M:D2]TALK-N06-16",
+                german="[M:D2]TALK-N06-16",
+                italian="[M:D2]TALK-N06-16",
+                spanish="[M:D2]TALK-N06-16",
+            }):
+                $SCENARIO_SIDE = scn[45, 11];
+                message_Close();
+                main_EnterDungeon(155, 30);
+                switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                main_EnterGround(LEVEL_D56P21A, 30);
+                hold;
+            case menu({
+                english="[M:D2]TALK-N06-17",
+                french="[M:D2]TALK-N06-17",
+                german="[M:D2]TALK-N06-17",
+                italian="[M:D2]TALK-N06-17",
+                spanish="[M:D2]TALK-N06-17",
+            }):
+                $SCENARIO_SIDE = scn[45, 13];
+                message_Close();
+                main_EnterDungeon(155, 30);
+                switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                main_EnterGround(LEVEL_D56P21A, 30);
+                hold;
+            case menu({
+                english="[M:D2]TALK-N06-18",
+                french="[M:D2]TALK-N06-18",
+                german="[M:D2]TALK-N06-18",
+                italian="[M:D2]TALK-N06-18",
+                spanish="[M:D2]TALK-N06-18",
+            }):
+                $SCENARIO_SIDE = scn[45, 13];
+                message_Close();
+                main_EnterGround(LEVEL_D56P11A, 30);
+                hold;
+        }
+    }
+}

@@ -1,0 +1,62 @@
+
+def 0 {
+    switch ( ProcessSpecial(23, 0, 0) ) { }
+    back2_SetMode(5);
+    back_SetGround(LEVEL_S13P02A);
+    supervision_Acting(0);
+    with (object OBJECT_S13P02A1_353) {
+        SetOutputAttribute(8);
+    }
+    with (object OBJECT_S13P02A1_353) {
+        SetOutputAttribute(1024);
+    }
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        SetPosition(177, 296);
+    }
+    bgm_PlayFadeIn(BGM_POKEMON_EXPLORATION_TEAM_THEME, 0, 256);
+    screen2_FadeIn(0, 15);
+    screen_FadeIn(1, 15);
+    Wait(15);
+    screen2_WhiteOut(0, 15);
+    Wait(15);
+    screen2_FadeIn(0, 15);
+    Wait(25);
+    with (performer 0) {
+        MovePosition(32896, 177, 448);
+    }
+    with (object OBJECT_S13P02A1_353) {
+        SetAnimation(18);
+    }
+    Wait(52);
+    with (object OBJECT_S13P02A1_353) {
+        SetAnimation(3);
+    }
+    Wait(150);
+    Wait(110);
+    screen2_FadeOut(0, 60);
+    screen_FadeOut(1, 60);
+    back2_SetMode(0);
+    end;
+}
+
+def 1 for_object(OBJECT_S13P02A2_354) {
+    SetOutputAttribute(1024);
+    SetAnimation(9);
+    Wait(214);
+    SetAnimation(17);
+    end;
+}
+
+def 2 for_object(OBJECT_S13P02A3_564) {
+    SetOutputAttribute(1024);
+    SetOutputAttribute(128);
+    SetAnimation(9);
+    Wait(214);
+    Wait(76);
+    ResetOutputAttribute(128);
+    SetAnimation(17);
+    end;
+}

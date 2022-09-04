@@ -1,0 +1,28 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_MAIN = scn[13, 4];
+    back_SetGround(LEVEL_D12P41A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    supervision_Acting(1);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    WaitSe(5143);
+    CallCommon(CORO_BOSS_WIPE_FUNC);
+    main_EnterDungeon(19, 30);
+    main_EnterDungeon(-1, 30);
+    hold;
+    end;
+}

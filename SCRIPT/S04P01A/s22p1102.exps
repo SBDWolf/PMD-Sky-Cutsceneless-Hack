@@ -1,0 +1,104 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_S04P01A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    bgm_PlayFadeIn(BGM_STORM, 160, 256);
+    screen_FadeIn(1, 15);
+    se_Play(6401);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(30);
+    message_ResetActor();
+    message_Talk({
+        english=" Whoa! Wh-wh-whoa...!",
+        french=" Wouaaah! Aaah...!",
+        german=" Boah! B-b-boah!",
+        italian=" Wow! Wo-wo-wow...!",
+        spanish=" ¡Cuidado! ¡Mucho cuidado!",
+    });
+    message_Talk({
+        english=" Are...[K] Are you OK?!",
+        french=" Ça...[K] ça va?!",
+        german=" Bist...[K] Bist du in Ordnung?!?",
+        italian=" Stai...[K] Stai bene?!",
+        spanish=" ¿Estás...?[K] ¿Estás bien?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(6401);
+    screen_WhiteOut(1, 3);
+    Wait(2);
+    screen_FadeIn(1, 3);
+    Wait(30);
+    message_Talk({
+        english=" No![K] Don\'t let go!",
+        french=" Non![K] Tiens bon!",
+        german=" Nein![K] Nicht aufgeben!",
+        italian=" No![K] Non mollare!",
+        spanish=" ¡No![K] ¡No te sueltes!",
+    });
+    message_Talk({
+        english=" Just a little longer...[K] Come on! Hang on!",
+        french=" Allez, encore un effort...[K] Allez!\nTiens le coup!",
+        german=" Nur noch ein bisschen...[K] Komm schon!\nHalte durch!",
+        italian=" Ancora un po\'...[K] Forza! Devi farcela!",
+        spanish=" Solo un poco más...[K] ¡Vamos! ¡Aguanta!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(6401);
+    screen_WhiteOut(1, 3);
+    Wait(2);
+    screen_FadeIn(1, 3);
+    Wait(30);
+    message_Talk({
+        english=" N-n-no![K] I can\'t...[K]hold on...!",
+        french=" N-non![K] Je ne peux pas...[K] continuer...!",
+        german=" N-n-nein![K] Ich kann...[K] nicht mehr!",
+        italian=" N-N-No![K] Non ce la...[K] faccio...!",
+        spanish=" ¡No![K] No puedo...[K]\n¡No puedo sujetarme!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(6402);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(5);
+    se_Play(6402);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(30);
+    se_Play(6401);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(5);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(20);
+    se_Play(6403);
+    message_Talk({
+        english=" Waaaaaah!",
+        french=" Wouaaah!",
+        german=" Uaaaaaah!",
+        italian=" Waaaaaah!",
+        spanish=" ¡Aaaaaah!",
+    });
+    bgm_FadeOut(120);
+    screen_WhiteOutAll(1, 90);
+    message_CloseEnforce();
+    Wait(60);
+    screen_FadeInAll(1, 30);
+    screen_FadeOut(1, 0);
+    WaitBgm(BGM_STORM);
+    end;
+}

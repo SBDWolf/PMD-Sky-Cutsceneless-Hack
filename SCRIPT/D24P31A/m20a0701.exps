@@ -1,0 +1,47 @@
+
+def 0 {
+    sound_Stop();
+    back_SetDungeonBanner(34, 0);
+    screen_FadeIn(1, 16);
+    Wait(60);
+    screen_FadeOut(1, 16);
+    Wait(15);
+    back_SetGround(LEVEL_D24P31B);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        MovePositionMark(33152, Position<'m0', 32, 28.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(33152, Position<'m1', 30, 32.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(33152, Position<'m2', 34, 32.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    se_Play(8968);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Wh-what is this?!",
+        french=" Que... qu\'est-ce que c\'est?!",
+        german=" W-was ist das?!?",
+        italian=" C-Cosa?!",
+        spanish=" ¿Qué...? ¡¿Qué es esto?!",
+    });
+    message_Close();
+    screen_FadeOut(1, 30);
+    end;
+}

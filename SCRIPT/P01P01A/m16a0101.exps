@@ -1,0 +1,6 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_MAIN = scn[17, 1];
+    end;
+}

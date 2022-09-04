@@ -1,0 +1,25 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
+    $SCENARIO_MAIN = scn[7, 1];
+    back_SetGround(LEVEL_G01P04A);
+    supervision_Acting(0);
+    supervision_Acting(1);
+    supervision_LoadStation(LEVEL_G01P04A, 'UM06');
+    supervision_Station(2);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    message_Close();
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetPositionInitial();
+    }
+    end;
+}

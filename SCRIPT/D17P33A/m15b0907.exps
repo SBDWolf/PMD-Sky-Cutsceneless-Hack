@@ -1,0 +1,67 @@
+
+def 0 {
+    back_SetGround(LEVEL_D17P33A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    Wait(1);
+    with (performer 0) {
+        MovePositionMark(33152, Position<'m0', 28.5, 30.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(33152, Position<'m1', 26, 28.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(33152, Position<'m2', 31, 30.5>);
+    }
+    with (actor ACTOR_UNIT_NPC1) {
+        MovePositionMark(33152, Position<'m3', 27.5, 34.5>);
+    }
+    with (actor ACTOR_UNIT_NPC2) {
+        MovePositionMark(33152, Position<'m4', 32, 35.5>);
+    }
+    screen_FadeIn(1, 30);
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    bgm2_PlayFadeIn(BGM_EARTHQUAKE3, 0, 190);
+    camera_SetEffect(2, 33280, 33280);
+    se_Play(8973);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Whoa! Tremors?!",
+                french=" Ouaaah! Le sol tremble?!",
+                german=" Boah! Ein Beben?!?",
+                italian=" Waaah! Un terremoto!",
+                spanish=" ¿Qué pasa? El suelo está\ntemblando.",
+            }
+        case 2:
+            {
+                english=" Waaah! Tremors?!",
+                french=" Ouaaah! Le sol tremble?!",
+                german=" Waaah! Ein Beben?!?",
+                italian=" Aaaah! Un terremoto!",
+                spanish=" ¿Qué pasa? El suelo está\ntemblando.",
+            }
+        default:
+            {
+                english=" Waaah! Tremors!",
+                french=" Ouaaah! Le sol tremble?!",
+                german=" Waaah! Ein Beben?!?",
+                italian=" Aaaah! Un terremoto!",
+                spanish=" ¿Qué pasa? El suelo está\ntemblando.",
+            }
+    }
+    message_Close();
+    screen_FadeOut(1, 15);
+    camera_SetEffect(0, 0, 0);
+    end;
+}

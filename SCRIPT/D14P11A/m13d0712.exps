@@ -1,0 +1,70 @@
+
+def 0 {
+    back_SetGround(LEVEL_D14P11A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_PLAYER, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(This feeling...)",
+                french="(Cette sensation...)",
+                german="(Dieses Gefühl...)",
+                italian="(Questa sensazione...)",
+                spanish="(Esa sensación...)",
+            }
+        default:
+            {
+                english="(This feeling...)",
+                french="(Cette sensation...)",
+                german="(Dieses Gefühl...)",
+                italian="(Questa sensazione...)",
+                spanish="(Esa sensación...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(It\'s like the one I got at [CS:P]Fogbound Lake[CR]...)",
+                french="(J\'ai ressenti la même chose au [CS:P]Lac\ndes Brumes[CR]...)",
+                german="(Dasselbe hatte ich am [CS:P]Nebelsee[CR].)",
+                italian="(È davvero come quella che ho avuto al [CS:P]Lago[CR]\n[CS:P]Foschia[CR]...)",
+                spanish="(Es como la que tuve en el [CS:P]Lago Velado[CR].)",
+            }
+        default:
+            {
+                english="(It\'s like the one I got at [CS:P]Fogbound Lake[CR]...)",
+                french="(J\'ai ressenti la même chose au [CS:P]Lac\ndes Brumes[CR]...)",
+                german="(Dasselbe hatte ich am [CS:P]Nebelsee[CR].)",
+                italian="(È davvero come quella che ho avuto al [CS:P]Lago[CR]\n[CS:P]Foschia[CR]...)",
+                spanish="(Es como la que tuve en el [CS:P]Lago Velado[CR].)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(I...[K]I know this place!)",
+                french="(Je...[K] je connais cet endroit!)",
+                german="(Ich...[K] Ich kenne diesen Ort!)",
+                italian="(Io...[K] sono già stato qui!)",
+                spanish="(Yo...[K] ¡conozco este lugar!)",
+            }
+        default:
+            {
+                english="(I...[K]I know this place!)",
+                french="(Je...[K] je connais cet endroit!)",
+                german="(Ich...[K] Ich kenne diesen Ort!)",
+                italian="(Io...[K] sono già stata qui!)",
+                spanish="(Yo...[K] ¡conozco este lugar!)",
+            }
+    }
+    message_Close();
+    screen_FadeOut(1, 30);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    end;
+}

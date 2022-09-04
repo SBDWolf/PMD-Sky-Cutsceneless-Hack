@@ -1,0 +1,174 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_TIME_GEAR_REMIX, 0, 256);
+    back_SetGround(LEVEL_G01P04C);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_KIMAWARI, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" So...[K]what happened?",
+        french=" Et ensuite...[K] qu\'est-ce qui s\'est\npassé?",
+        german=" Und...[K] Was geschah dann?",
+        italian=" E poi...[K] cosa è successo?",
+        spanish=" Entonces...[K] ¿Qué ocurrió?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" [CS:N]Lapras[CR] revealed it to me.",
+        french=" [CS:N]Lokhlass[CR] m\'a révélé le secret.",
+        german=" [CS:N]Lapras[CR] offenbarte es mir.",
+        italian=" [CS:N]Lapras[CR] me l\'ha rivelata.",
+        spanish=" [CS:N]Lapras[CR] me lo reveló.",
+    });
+    message_Talk({
+        english=" He said that the Relic Fragment\nchooses who will go to the [CS:P]Hidden Land[CR].",
+        french=" Il m\'a dit que le Fragment\nde Relique choisissait le Pokémon qui aurait\nle droit d\'aller dans les [CS:P]Terres Illusoires[CR].",
+        german=" Er sagte, das Reliktfragment\nwähle denjenigen aus, der zum\n[CS:P]Verborgenen Land[CR] gehen wird.",
+        italian=" Ha detto che è il Frammento\nAntico stesso a scegliere chi può andare nella\n[CS:P]Terra Nascosta[CR].",
+        spanish=" Dijo que la Reliquia de Piedra es\nla que escoge quién puede tener acceso a la\n[CS:P]Tierra Oculta[CR].",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8968);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    Wait(30);
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetAnimation(4);
+    }
+    message_SetFace(ACTOR_NPC_DAGUTORIO, FACE_NORMAL, FACE_POS_BOTTOM_L_CENTER);
+    message_Talk({
+        english=" The Relic Fragment itself does\nthat?!",
+        french=" C\'est le Fragment de Relique\nlui-même qui choisit?!",
+        german=" Das Reliktfragment selbst tut\ndas?!?",
+        italian=" Lo sceglie il Frammento Antico?!",
+        spanish=" ¡¿La Reliquia de Piedra puede\nhacer algo así?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetAnimation(2);
+    }
+    message_SetFace(ACTOR_NPC_CHIRIIN, FACE_NORMAL, FACE_POS_BOTTOM_C_FACER);
+    message_Talk({
+        english=" It chooses. On its own?",
+        french=" Il choisit... tout seul?",
+        german=" Es wählt aus. Von selbst?",
+        italian=" Lo sceglie da solo?",
+        spanish=" ¿Escoger por sí misma?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Yep. Apparently so! ♪",
+        french=" Oui, apparemment! ♪",
+        german=" Jep. Anscheinend ist es so! ♪",
+        italian=" Già. Pare sia così! ♪",
+        spanish=" Pues parece ser que sí. ♪",
+    });
+    message_Talk({
+        english=" And the Relic Fragment chose\n[partner].",
+        french=" Et c\'est sur [partner] que\nle choix du Fragment de Relique s\'est porté.",
+        german=" Und das Reliktfragment wählte\n[partner] aus.",
+        italian=" E il Frammento Antico ha scelto\n[partner].",
+        spanish=" Y la Reliquia de Piedra escogió\na [partner].",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_HEIGANI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    message_SetFace(ACTOR_NPC_HEIGANI, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEINW);
+    message_Talk({
+        english=" Hey! Why did the Relic Fragment\nchoose [partner]?",
+        french=" Eh dis donc, pourquoi\n[partner]?",
+        german=" Hey! Warum hat das\nReliktfragment [partner] ausgewählt?",
+        italian=" Ehi! Perché il Frammento Antico\nha scelto [partner]?",
+        spanish=" ¡Oye! ¿Por qué lo elegiría?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" I don\'t really know.",
+        french=" Je ne sais pas trop.",
+        german=" Ich weiß es nicht wirklich.",
+        italian=" Non lo so davvero.",
+        spanish=" Lo cierto es que no lo sé.",
+    });
+    message_Talk({
+        english=" I think [CS:N]Dialga[CR] wants to prevent\nthose with bad intentions in their hearts from\nentering [CS:P]Temporal Tower[CR].",
+        french=" Je pense que [CS:N]Dialga[CR] veut\nempêcher les individus mal intentionnés\nd\'accéder à la [CS:P]Tour du Temps[CR].",
+        german=" Ich glaube, [CS:N]Dialga[CR] möchte\ndiejenigen vom Eindringen in den [CS:P]Zeitturm[CR]\nabhalten, die böse Absichten im Herzen tragen.",
+        italian=" Penso che [CS:N]Dialga[CR] voglia evitare\nche qualcuno che coltiva cattive intenzioni \npossa entrare nella [CS:P]Torre del Tempo[CR].",
+        spanish=" Creo que [CS:N]Dialga[CR] quiere evitar\nque aquellos con malas intenciones puedan\nentrar en la [CS:P]Torre del Tiempo[CR].",
+    });
+    message_Talk({
+        english=" That\'s why the important thing\nis the purity of heart.",
+        french=" La qualité déterminante\nest donc un cœur pur.",
+        german=" Darum ist das wichtigste\nKriterium die Herzensgüte.",
+        italian=" Perciò la cosa più importante è\navere un cuore puro.",
+        spanish=" Por eso la pureza de corazón\nes lo importante.",
+    });
+    message_Talk({
+        english=" So [partner]\'s heart must\nhave resonated with the Relic Fragment.",
+        french=" Et le cœur de [partner] a dû\nrépondre aux attentes du Fragment de Relique.",
+        german=" Und deswegen muss das Herz\nvon [partner] auf einer Wellenlänge\nmit dem Reliktfragment gelegen haben.",
+        italian=" Dunque il Frammento Antico deve\naver sentito le vibrazioni del cuore di\n[partner].",
+        spanish=" La Reliquia de Piedra debió de\nver algo así en el interior de [partner].",
+    });
+    message_Talk({
+        english=" Anyway, we can do no more\nto help.",
+        french=" Bref, tout cela n\'est plus\nen notre pouvoir.",
+        german=" Wir können nicht mehr tun, um\nzu helfen.",
+        italian=" Comunque, non possiamo più\nessere d\'aiuto.",
+        spanish=" En cualquier caso, nuestro papel\nse acaba aquí.",
+    });
+    message_Talk({
+        english=" From now on...[K]this burden\nbelongs to [partner] and [hero]...",
+        french=" Désormais...[K] ce sont\n[partner] et [hero] qui doivent\nporter ce fardeau...",
+        german=" Von jetzt an...[K] ruht diese Bürde\nauf den Schultern von [partner] und\n[hero]...",
+        italian=" D\'ora in poi...[K] questo peso\nricade sulle spalle di [partner] e\n[hero]...",
+        spanish=" De ahora en adelante...[K] esta\ncarga le corresponde a [partner] y\na [hero]...",
+    });
+    message_Talk({
+        english=" It\'s Team [team:]\'s weight\nto bear now.",
+        french=" C\'est à l\'Equipe [team:]\nde jouer maintenant.",
+        german=" Dieses Päckchen muss jetzt\nTeam [team:] tragen.",
+        italian=" Ora sarà il Team [team:]\na portare questo fardello.",
+        spanish=" Todo está en manos del [CS:X]Equipo[CR]\n[team:].",
+    });
+    message_Talk({
+        english=" It\'s entirely up to them to get to\nthe [CS:P]Hidden Land[CR].[K] It falls to them to stop the\ndestruction of time...",
+        french=" A elle de rallier les [CS:P]Terres\nIllusoires[CR].[K] A elle aussi de mettre un terme\nà la destruction du temps...",
+        german=" Es liegt ganz an ihnen, zum\n[CS:P]Verborgenen Land[CR] zu gelangen.[K] Sie sind es, die\ndie Zerstörung der Zeit aufhalten müssen...",
+        italian=" Solo loro potranno raggiungere\nla [CS:P]Terra Nascosta[CR].[K] Toccherà a loro evitare\nla distruzione del tempo...",
+        spanish=" Tendrán que encontrar la forma\nde llegar a la [CS:P]Tierra Oculta[CR] y...[K] de evitar\nla destrucción del tiempo.",
+    });
+    message_Close();
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 90);
+    Wait(60);
+    $SCENARIO_MAIN_BIT_FLAG[8] = 1;
+    $COMPULSORY_SAVE_POINT = 19;
+    CallCommon(CORO_HANYOU_SAVE_FUNC);
+    end;
+}

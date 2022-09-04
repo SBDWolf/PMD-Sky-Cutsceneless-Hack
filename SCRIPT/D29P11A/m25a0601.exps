@@ -1,0 +1,136 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_TEMPORAL_TOWER, 0, 256);
+    if ( scn($SCENARIO_MAIN) >= [26, 3] ) {
+        §label_0;
+        with (actor ACTOR_PLAYER) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+        }
+        WaitExecuteLives(ACTOR_ATTENDANT1);
+        with (actor ACTOR_PLAYER) {
+            Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+        }
+        message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" You ready, [hero]?",
+                    french=" On y va, [hero]?",
+                    german=" Bereit, [hero]?",
+                    italian=" È tutto pronto, [hero]?",
+                    spanish=" ¿Continuamos, [hero]?",
+                }
+            case 2:
+                {
+                    english=" Are you ready, [hero]?",
+                    french=" On y va, [hero]?",
+                    german=" Bist du bereit, [hero]?",
+                    italian=" È tutto pronto, [hero]?",
+                    spanish=" ¿Continuamos, [hero]?",
+                }
+            default:
+                {
+                    english=" Ready, [hero]?",
+                    french=" On y va, [hero]?",
+                    german=" Bereit, [hero]?",
+                    italian=" È tutto pronto, [hero]?",
+                    spanish=" ¿Continuamos, [hero]?",
+                }
+        }
+        switch ( message_SwitchMenu(0, 1) ) {
+            case menu({
+                english="Yes",
+                french="Oui",
+                german="Ja",
+                italian="Sì",
+                spanish="Sí",
+            }):
+            default:
+                CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                with (actor ACTOR_PLAYER) {
+                    Turn2Direction(4, 10, DIR_UP);
+                }
+                with (actor ACTOR_ATTENDANT1) {
+                    Turn2Direction(4, 10, DIR_UP);
+                }
+                WaitExecuteLives(ACTOR_ATTENDANT1);
+                screen_FadeOut(1, 30);
+                main_EnterDungeon(41, 0);
+                switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                main_EnterDungeon(-1, 0);
+                hold;
+                end;
+            case menu({
+                english="No",
+                french="Non",
+                german="Nein",
+                italian="No",
+                spanish="No",
+            }):
+                CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                message_SwitchTalk ($PARTNER_TALK_KIND) {
+                    case 1:
+                        {
+                            english=" Oh, all right.",
+                            french=" D\'accord.",
+                            german=" Oh, alles klar.",
+                            italian=" Ah, va bene.",
+                            spanish=" Bueno, vale.",
+                        }
+                    case 2:
+                        {
+                            english=" Oh, OK.",
+                            french=" D\'accord.",
+                            german=" Oh, okay.",
+                            italian=" Ah, ok.",
+                            spanish=" Bueno, vale.",
+                        }
+                    default:
+                        {
+                            english=" Oh, OK.",
+                            french=" D\'accord.",
+                            german=" Oh, okay.",
+                            italian=" Oh, ok.",
+                            spanish=" Bueno, vale.",
+                        }
+                }
+                message_SwitchTalk ($PARTNER_TALK_KIND) {
+                    case 1:
+                        {
+                            english=" We\'ll go when you\'re ready.",
+                            french=" On partira quand tu auras fini\nde te préparer.",
+                            german=" Wir gehen, wenn du bereit bist.",
+                            italian=" Quando è tutto pronto, andiamo.",
+                            spanish=" Seguiremos cuando quieras.",
+                        }
+                    case 2:
+                        {
+                            english=" We\'ll go when you\'re ready.",
+                            french=" On partira quand tu auras fini\nde te préparer.",
+                            german=" Wir gehen, wenn du bereit bist.",
+                            italian=" Quando è tutto pronto, andiamo.",
+                            spanish=" Seguiremos cuando quieras.",
+                        }
+                    default:
+                        {
+                            english=" We\'ll go when you\'re ready.",
+                            french=" On partira quand tu auras fini\nde te préparer.",
+                            german=" Wir gehen, wenn du bereit bist.",
+                            italian=" Quando è tutto pronto, andiamo.",
+                            spanish=" Seguiremos cuando quieras.",
+                        }
+                }
+                message_Close();
+                end;
+        }
+    } else {
+        $SCENARIO_MAIN = scn[26, 3];
+        jump @label_0;
+    }
+}

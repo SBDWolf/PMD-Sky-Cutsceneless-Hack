@@ -1,0 +1,492 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD_REMIX, 0, 256);
+    back_SetGround(LEVEL_G01P06A);
+    supervision_Acting(0);
+    supervision_Acting(1);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (object OBJECT_P03P02A1_128) {
+        SetAnimation(9);
+    }
+    bgm2_PlayFadeIn(BGM_EATING, 0, 256);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_EATING, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetAnimation(42);
+    }
+    screen_FadeIn(1, 30);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SIGH, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" Crunch munch! Chomp chomp!",
+        french=" Cronch miam! Cronch slurp!",
+        german=" Stopf-schling! Schmatz!",
+        italian=" Gnam-gnam! Crunch-crunch!",
+        spanish=" ¡Ñam, ñam! ¡Glup, glup!",
+    });
+    message_Talk({
+        english=" I wonder what this is![K]\nIt\'s so yummy! Chomp chomp!",
+        french=" J\'me demande c\'que c\'est![K]\nC\'est bien fameux! Cronch miam!",
+        german=" Was ist das bloß?!?[K]\nSooo lecker!!! Schmatz! Schmatz!",
+        italian=" Chissà che cos\'è![K]\nÈ deliziosa! Gnam-gnam!",
+        spanish=" ¡No sé qué será esto![K]\n¡Pero está de rechupete! ¡Ñam, ñam!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    supervision_Acting(2);
+    Wait(1);
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionMark(1, Position<'m0', 31, 29.5>);
+    }
+    message_SetActor(ACTOR_NPC_PERAPPU);
+    message_Talk({
+        english=" Oh? [CS:Y]Bidoof[CR]?[K]\nWhat are you doing here?",
+        french=" Oh? [CS:Y]Keunotor[CR]?[K]\nQu\'est-ce que tu fais là?",
+        german=" Häh? [CS:Y]Bidiza[CR]?[K] Was machst du\ndenn hier?",
+        italian=" Oh? [CS:Y]Bidoof[CR]?[K]\nChe stai facendo qui?",
+        spanish=" Anda, [CS:Y]Bidoof[CR].[K] ¿Qué haces aquí?",
+    });
+    bgm2_FadeOut(15);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetAnimation(2);
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    se_Play(8962);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SIGH, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" Huh?",
+        french=" Hé?",
+        german=" Hmmm?",
+        italian=" Uh?",
+        spanish=" ¿Eh?",
+    });
+    message_Close();
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    Wait(15);
+    se_Play(8969);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionMark(33408, Position<'m1', 26, 29.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_SURPRISED, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" Oh...[K] That!?",
+        french=" Mais c\'est...[K] Oh!",
+        german=" Oh...[K] Das?!?",
+        italian=" Oh...[K] Quella!?",
+        spanish=" Espera...[K] ¿¡Qué es eso!?",
+    });
+    message_Talk({
+        english=" That is...[K]\nThe Guildmaster\'s important...",
+        french=" C\'est...[K] la précieuse...",
+        german=" Das ist...[K] Der für den\nGildenmeister so wichtige...",
+        italian=" Quella è...[K]\nLa preziosissima...",
+        spanish=" No será...[K] esa fruta que\nel Gran Bluff adora...",
+    });
+    message_KeyWait();
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        WaitEffect();
+    }
+    message_Talk({
+        english=" P-Perfect Apple!?",
+        french=" ... P-Pomme Parfaite\nde notre Maître!?",
+        german=" P-perfekte Apfel?!?",
+        italian=" ... Mela Perfetta del Capitano?!",
+        spanish=" ¿¡Una... Manzana Perfecta!?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Huh? Perfect Apple? Golly, is\nthat what this thing here\'s called?",
+        french=" Hé? Pomme Parfaite, que tu\ndis? Pardi, c\'est comme ça qu\'on appelle ça?",
+        german=" Echt? Perfekter Apfel?\nDonnerwetter, so nennt man das also?",
+        italian=" Uh? Mela Perfetta? Ohibò,\nè così che si chiama questa cosa?",
+        spanish=" ¿Eh? ¿Manzana Perfecta?\nCaramba, ¿así es como se llama?",
+    });
+    message_Talk({
+        english=" It\'s so tasty and impressive.\nYup yup.",
+        french=" J\'trouve ça épatant et\nvachement bon, pardi!",
+        german=" So eindrucksvoll und lecker!\nJawollja.",
+        italian=" È così profumata e gustosa.\nGià già.",
+        spanish=" Pues está de vicio.\nPara chuparse los dedos... ¡Sí, señor!",
+    });
+    message_Close();
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    Wait(15);
+    bgm2_PlayFadeIn(BGM_EATING, 0, 256);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_EATING, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SIGH, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" Crunch munch! Chomp chomp![K]\nBurp...",
+        french=" Cronch miam! Cronch slurp![K]\nBurp!",
+        german=" Stopf-schling! Schmatz![K] Rülps...",
+        italian=" Gnam-gnam! Crunch-crunch![K]\nBurp...",
+        spanish=" ¡Ñam, ñam! ¡Glup, glup![K]\nAh, qué rica estaba...",
+    });
+    bgm2_FadeOut(15);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetAnimation(2);
+    }
+    supervision_RemoveActing(1);
+    message_Close();
+    Wait(15);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    Wait(20);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_HAPPY, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Thanks for the grub!",
+        french=" Je m\'suis régalé!",
+        german=" Endlich was im Magen!",
+        italian=" Grazie, era tutto buonissimo!",
+        spanish=" ¡Gracias por el tentempié!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_SURPRISED, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" W-wait...[K]did you seriously eat\nall of them?",
+        french=" A-attends...[K]\nTu... tu ne les as tout de même pas\ntoutes mangées?",
+        german=" W-warte...[K] Hast du wirklich\ngerade alle aufgegessen?",
+        italian=" A-Aspetta...[K] Vuoi dirmi che\nle hai mangiate tutte?",
+        spanish=" E... espera...[K] ¿En serio\nte las has comido todas?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_HAPPY, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Yup yup!",
+        french=" Ben... si!",
+        german=" Jawollja!",
+        italian=" Già, già!",
+        spanish=" ¡Sí, señor!",
+    });
+    message_KeyWait();
+    se_Play(8964);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Oh! Sorry![K]\nDid you want one too, [CS:N]Chatot[CR]?",
+        french=" Oh! J\'suis confus![K]\nToi aussi, t\'en voulais, [CS:N]Pijako[CR]?",
+        german=" Oh! Entschuldige![K] Wolltest du\nauch einen, [CS:N]Plaudagei[CR]?",
+        italian=" Oh! Scusami! [K]\nNe volevi una anche tu, [CS:N]Chatot[CR]?",
+        spanish=" ¡Huy, perdón![K] ¿Tú también querías\nuna, [CS:N]Chatot[CR]?",
+    });
+    message_Talk({
+        english=" If you would have told me,\nI would have left you one...",
+        french=" Si j\'avais su, j\'t\'en aurais\nlaissé une...",
+        german=" Wenn du etwas gesagt hättest,\nhätte ich dir einen übriggelassen...",
+        italian=" Se me l\'avessi detto, te ne avrei\ntenuta una da parte...",
+        spanish=" Jo, si me lo llegas a decir antes,\nte habría dejado una...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8968);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetDirection(DIR_LEFT);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(33);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SlidePositionOffset(2, 8, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_SURPRISED, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" What...[K]what did you do...",
+        french=" Qu\'est-ce...[K] qu\'est-ce que...",
+        german=" Was...[K] Was hast du getan...",
+        italian=" Cosa...[K] Cosa hai fatto...",
+        spanish=" Qué...[K] ¿Qué es lo que has hecho?...",
+    });
+    message_KeyWait();
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(20);
+    }
+    message_Talk({
+        english=" WHAT DID YOU DO?!",
+        french=" QU\'EST-CE QUE TU AS FAIT?!",
+        german=" WAS HAST DU GETAN?!?",
+        italian=" COSA HAI FATTO?!",
+        spanish=" ¡¿Pero qué has hecho?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8968);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SURPRISED, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Eeeeeeeek!?",
+        french=" Aaaarrrrgh!",
+        german=" Ieeeeeeek?!?",
+        italian=" Aaaaaaaah!!!",
+        spanish=" ¡Aaaaaaaaay!",
+    });
+    message_Talk({
+        english=" Uh-oh! Was it...[K]\nGolly, did I do something wrong...",
+        french=" Oh-oh! C\'était...[K]\nSapristi, j\'ai fait un truc qui fallait pas...?",
+        german=" Uh-oh! Was ist denn nur...[K]\nDonnerwetter, hab ich etwas falsch gemacht?",
+        italian=" Uh oh! Ma...[K]\nOhibò, ho fatto qualcosa di male...?",
+        spanish=" Caramba... ¿Qué pasa...?[K]\nSerá que he hecho algo malo...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8971);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_ANGRY, 3);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_ANGRY, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" More than wrong!!",
+        french=" Ah, ça tu peux le dire!",
+        german=" Mehr als nur falsch!!!",
+        italian=" Peggio!!!",
+        spanish=" ¡\"Malo\" se queda corto!",
+    });
+    message_KeyWait();
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_PAIN, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" If his favorite Perfect Apples\nare all gone...",
+        french=" S\'il apprend que toutes ses\nPommes Parfaites ont disparu...",
+        german=" Wenn seine Perfekten Äpfel\nalle weg sind...",
+        italian=" Se ti sei sbafato tutte\nle sue Mele Perfette...",
+        spanish=" Si no queda ninguna de sus\nManzanas Perfectas...",
+    });
+    message_Talk({
+        english=" The Guildmaster...[K]\nThe Guildmaster!!",
+        french=" Le Maître va...[K]\nLe Maître!!",
+        german=" Dann wird der Gildenmeister...[K]\nDer Gildenmeister!!!",
+        italian=" Il Capitano...[K]\nIl Capitano!!!",
+        spanish=" El Gran Bluff...[K] ¡El Gran Bluff!",
+    });
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_SURPRISED, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" ...[K]Oh no...[K]\nOOOOOOH NOOOOOOO!!",
+        french=" ...[K] Oh non...[K]\nOOOOOOH NOOOOOOON!!",
+        german=" ...[K]Oh nein...[K]\nOOOOOOH NEIIIIIIN!!!",
+        italian=" ...[K] Oh no...[K]\nOOOOOOH NOOOOOO!!!",
+        spanish=" No...[K] Oh, no...[K] ¡No quiero ni pensarlooo!",
+    });
+    se_Play(5122);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(20);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionOffset(3, 32, 0, -64, 0, 64, 0, -32, 0);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8971);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_ANGRY, 3);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_ANGRY, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" It will be horrific!",
+        french=" Ça va être affreux!",
+        german=" Wie entsetzlich!",
+        italian=" Sarà terribile!",
+        spanish=" ¡Va a ser espeluznante!",
+    });
+    message_Talk({
+        english=" As punishment, you\'ll go without\ndinner![K] Got it?!",
+        french=" Comme punition, tu seras privé\nde dîner![K] Compris?!",
+        german=" Als Bestrafung gibt es für dich\nheute kein Essen![K] Verstanden?!?",
+        italian=" Per punizione, salterai la cena![K]\nHai capito?!",
+        spanish=" Como castigo, te quedas sin\ncenar.[K] ¡¿Lo has entendido?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8968);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SURPRISED, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" B-but!",
+        french=" M-mais!",
+        german=" A-aber!",
+        italian=" M-Ma...",
+        spanish=" Pe... pero...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitEffect();
+    }
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SPECIAL2, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" Sniff...[K] Golly, I didn\'t mean it...",
+        french=" Snif...[K] Pour sûr, j\'pensais\npas à mal...",
+        german=" Schnüff...[K] Menschenskind,\nich hab\'s doch nicht so gemeint...",
+        italian=" Sniff...[K] Ohibò, non volevo...",
+        spanish=" Buaa...[K] Vaya, pero si ha sido\nsin querer...",
+    });
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(30);
+    message_Mail({
+        english="[CN]Sniff...[K]\n[CN]My hunger just gets me into trouble...",
+        french="[CN]Snif...[K] C\'était encore la faute de mon\n[CN]estomac, il en fait qu\'à sa tête...",
+        german="[CN]Schnüff...[K] Mein Appetit bringt mich\n[CN]immer wieder in Schwierigkeiten...",
+        italian="[CN]Sniff...[K] Per colpa del mio stomaco\n[CN]finisco sempre nei guai...",
+        spanish="[CN]Jo...[K]\n[CN]Mi apetito siempre me mete en líos...",
+    });
+    message_Mail({
+        english="[CN]And I couldn\'t eat my favorite meal\n[CN]of the day...",
+        french="[CN]Résultat, j\'ai pu dire adieu au plat du jour,\n[CN]mon préféré par-d\'ssus l\'marché...",
+        german="[CN]Und jetzt konnte ich nicht mal\n[CN]meine Lieblingsmahlzeit essen...",
+        italian="[CN]E così non ho potuto nemmeno\n[CN]mangiare il mio piatto preferito...",
+        spanish="[CN]Y no pude degustar mi\n[CN]comida preferida del día...",
+    });
+    message_Mail({
+        english="[CN]Sniff...",
+        french="[CN]Snif...",
+        german="[CN]Schnief...",
+        italian="[CN]Sniff...",
+        spanish="[CN]Buaa...",
+    });
+    message_Close();
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 60);
+    Wait(90);
+    bgm_PlayFadeIn(BGM_GOODNIGHT, 0, 256);
+    message_Narration(30, {
+        english="[CN]Golly, I thought I was doing my best...",
+        french="[CN]Pardi, dès qu\'je pense faire tout bon...",
+        german="[CN]Donnerwetter, ich wollte doch\n[CN]immer mein Bestes geben...",
+        italian="[CN]Ohibò, cerco sempre di dare il meglio...",
+        spanish="[CN]Caramba, yo que creía\n[CN]que lo estaba haciendo bien...",
+    });
+    message_Narration(30, {
+        english="[CN]But I always mess things up,\n[CN]every time...",
+        french="[CN]... Paf! J\'fais une nouvelle bourde,\n[CN]ça rate jamais...",
+        german="[CN]Aber ich vermassele es immer...\n[CN]Jedes Mal...",
+        italian="[CN]Ma non faccio che rovinare tutto,\n[CN]ogni volta...",
+        spanish="[CN]Pero siempre la fastidio,\n[CN]sin excepción...",
+    });
+    message_Narration(30, {
+        english="[CN]I guess I just don\'t have what it\n[CN]takes to be an explorer...",
+        french="[CN]Faut croire qu\'j\'ai pas la trempe\n[CN]d\'un explorateur...",
+        german="[CN]Anscheinend fehlt mir einfach etwas,\n[CN]um ein richtiger Erkunder zu sein...",
+        italian="[CN]Forse non ho le capacità\n[CN]per diventare un esploratore...",
+        spanish="[CN]Supongo que no tengo lo que hay que tener\n[CN]para ser explorador...",
+    });
+    message_Narration(30, {
+        english="[CN]I\'ll never be the best explorer...\n[CN]I just can\'t do it...",
+        french="[CN]Je s\'rai jamais le meilleur explorateur\n[CN]au monde... J\'peux pas...",
+        german="[CN]Ich werde nie der beste Erkunder sein...\n[CN]Ich schaffe es einfach nicht...",
+        italian="[CN]Non diventerò mai il migliore esploratore\n[CN]del mondo. Non ho la stoffa...",
+        spanish="[CN]Nunca voy a ser el mejor explorador.\n[CN]Es demasiado difícil...",
+    });
+    message_Narration(30, {
+        english="[CN]I was really beginning to think that...",
+        french="[CN]Du moins, c\'est vraiment ce que\n[CN]je commençais à me dire...",
+        german="[CN]Ich fing wirklich an, so zu denken...",
+        italian="[CN]Avevo davvero cominciato a pensarlo...",
+        spanish="[CN]Estaba empezando a darme por vencido...",
+    });
+    message_Narration(30, {
+        english="[CN]But...then...",
+        french="[CN]Puis... un jour...",
+        german="[CN]Aber... dann...",
+        italian="[CN]Quando...",
+        spanish="[CN]Pero... justo entonces...",
+    });
+    message_Narration(30, {
+        english="[CN]...That...\n[CN]...That happened...",
+        french="[CN]... l\'impossible...\n[CN]s\'est produit...",
+        german="[CN]...Dann passierte...\n[CN]...Dann passierte Folgendes...",
+        italian="[CN]... è successa...\n[CN]... una cosa...",
+        spanish="[CN]Sucedió aquello...",
+    });
+    message_Close();
+    bgm_FadeOut(120);
+    WaitBgm(BGM_GOODNIGHT);
+    end;
+}

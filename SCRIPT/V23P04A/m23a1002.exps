@@ -1,0 +1,67 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_OCEAN1, 0, 256);
+    back_SetGround(LEVEL_V23P04A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    Wait(60);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_INSPIRED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" The cave\'s mouth opens up to\nthe sea!",
+                french=" La caverne donne sur la mer!",
+                german=" Der Höhlenausgang öffnet sich\nzum Meer hinaus!",
+                italian=" La grotta si apre sul mare!",
+                spanish=" ¡La boca de la cueva se abre\nhacia el mar!",
+            }
+        case 2:
+            {
+                english=" The cave\'s mouth opens wide to\nthe sea!",
+                french=" La caverne donne sur la mer!",
+                german=" Der Höhlenausgang öffnet sich\nweit zum Meer hinaus!",
+                italian=" La grotta si apre sul mare!",
+                spanish=" ¡La boca de la cueva se abre\nhacia el mar!",
+            }
+        default:
+            {
+                english=" The cave\'s mouth opens wide to\nthe sea!",
+                french=" La caverne donne sur la mer!",
+                german=" Der Höhlenausgang öffnet sich\nweit zum Meer hinaus!",
+                italian=" La grotta si apre sul mare!",
+                spanish=" ¡La boca de la cueva se abre\nhacia el mar!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We couldn\'t see it because it\'s\nin the shadows outside.",
+                french=" On ne peut pas voir la sortie\nde l\'extérieur parce qu\'elle est cachée\ndans l\'ombre.",
+                german=" Von außen konnten wir ihn nicht\nsehen, weil er im Schatten liegt.",
+                italian=" Da fuori non si vede perché\nrimane nell\'ombra.",
+                spanish=" No podíamos verla desde\nel exterior porque está oscura.",
+            }
+        case 2:
+            {
+                english=" We couldn\'t see it from outside\nbecause it\'s in the shadows.",
+                french=" On ne peut pas voir la sortie\nde l\'extérieur parce qu\'elle est cachée\ndans l\'ombre.",
+                german=" Von außen konnten wir ihn nicht\nsehen, weil er im Schatten liegt.",
+                italian=" Da fuori non si vede perché\nrimane nell\'ombra.",
+                spanish=" No podíamos verla desde\nel exterior porque está oscura.",
+            }
+        default:
+            {
+                english=" We couldn\'t see it from outside\nbecause it\'s in the shadows.",
+                french=" On ne peut pas voir la sortie\nde l\'extérieur parce qu\'elle est cachée\ndans l\'ombre.",
+                german=" Von außen konnten wir ihn nicht\nsehen, weil er im Schatten liegt.",
+                italian=" Da fuori non si vede perché\nrimane nell\'ombra.",
+                spanish=" No podíamos verla desde\nel exterior porque está oscura.",
+            }
+    }
+    message_Close();
+    screen_FadeOut(1, 30);
+    end;
+}

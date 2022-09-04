@@ -1,0 +1,28 @@
+
+def 0 {
+    back2_SetMode(6);
+    back_SetGround(LEVEL_S13P03A);
+    supervision_Acting(0);
+    with (object OBJECT_S13P03A2_366) {
+        SetOutputAttribute(1024);
+    }
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    back_SetBackScrollSpeed(32648, 32762);
+    WaitBgmSignal();
+    screen2_FadeIn(0, 15);
+    screen_FadeIn(1, 15);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m0', 18.5, 47.5>);
+    }
+    Wait(127);
+    with (object OBJECT_S13P03A1_355) {
+        Move2PositionOffset(2, -1000, 0);
+    }
+    Wait(86);
+    screen2_FadeOut(0, 60);
+    screen_FadeOut(1, 60);
+    back2_SetMode(0);
+    end;
+}

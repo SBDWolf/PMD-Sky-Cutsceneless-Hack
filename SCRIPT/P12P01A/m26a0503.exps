@@ -1,0 +1,204 @@
+
+def 0 {
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V26P04A);
+    back_SetGround(LEVEL_P12P01A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    camera2_SetPositionMark(Position<'m0', 18.5, 17.5>);
+    back_SetBackScrollSpeed(0, 33536);
+    back2_SetBackScrollSpeed(0, 34406);
+    with (object OBJECT_V26P04A1_339) {
+        SetOutputAttribute(8);
+    }
+    with (object OBJECT_V26P04A1_339) {
+        MovePositionOffset(32785, 0, -800);
+    }
+    with (object OBJECT_V26P04A2_342) {
+        SetOutputAttribute(4);
+    }
+    with (object OBJECT_V26P04A2_342) {
+        SetOutputAttribute(8);
+    }
+    with (object OBJECT_V26P04A2_342) {
+        MovePositionOffset(32798, 0, -800);
+    }
+    WaitBgmSignal();
+    screen2_FadeIn(0, 30);
+    screen_FadeIn(1, 30);
+    Wait(120);
+    message_SetWaitMode(210, 90);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" [CS:P]Temporal Tower[CR] is...[K]getting\nfarther and farther away...",
+                french=" La [CS:P]Tour du Temps[CR]...[K] elle\ns\'éloigne de plus en plus...",
+                german=" Der [CS:P]Zeitturm[CR].[K] Er rückt in immer\nweitere Ferne...",
+                italian=" La [CS:P]Torre del Tempo[CR] è...[K] sempre\npiù lontana...",
+                spanish=" La [CS:P]Torre del Tiempo[CR]...[K] está\ncada vez más lejos.",
+            }
+        case 2:
+            {
+                english=" [CS:P]Temporal Tower[CR] is...[K]getting\nfarther and farther away...",
+                french=" La [CS:P]Tour du Temps[CR]...[K] elle\ns\'éloigne de plus en plus...",
+                german=" Der [CS:P]Zeitturm[CR].[K] Er rückt in immer\nweitere Ferne...",
+                italian=" La [CS:P]Torre del Tempo[CR] è...[K] sempre\npiù lontana...",
+                spanish=" La [CS:P]Torre del Tiempo[CR]...[K] está\ncada vez más lejos.",
+            }
+        default:
+            {
+                english=" [CS:P]Temporal Tower[CR] is...[K]getting\nfarther and farther away...",
+                french=" La [CS:P]Tour du Temps[CR]...[K] elle\ns\'éloigne de plus en plus...",
+                german=" Der [CS:P]Zeitturm[CR].[K] Er rückt in immer\nweitere Ferne...",
+                italian=" La [CS:P]Torre del Tempo[CR] è...[K] sempre\npiù lontana...",
+                spanish=" La [CS:P]Torre del Tiempo[CR]...[K] está\ncada vez más lejos.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(45);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_TEARY_EYED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" .....................",
+                french=" .....................",
+                german=" .....................",
+                italian=" .....................",
+                spanish=" ...",
+            }
+        case 2:
+            {
+                english=" .....................",
+                french=" .....................",
+                german=" .....................",
+                italian=" .....................",
+                spanish=" ...",
+            }
+        default:
+            {
+                english=" .....................",
+                french=" .....................",
+                german=" .....................",
+                italian=" .....................",
+                spanish=" ...",
+            }
+    }
+    message_KeyWait();
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" And [hero]...[K] I\'m getting \nfarther away from [hero]...",
+                french=" Et [hero]...[K] Je m\'éloigne\nde plus en plus de [hero]...",
+                german=" Und auch [hero]...[K]\n[hero] entfernt sich immer weiter von\nmir...",
+                italian=" E [hero]...[K] Io sono\nsempre più lontano da [hero]...",
+                spanish=" Y también [hero]...[K]\nMe voy alejando más de [hero]...",
+            }
+        case 2:
+            {
+                english=" And [hero]...[K] I\'m getting \nfarther away from [hero]...",
+                french=" Et [hero]...[K] Je m\'éloigne\nde plus en plus de [hero]...",
+                german=" Und auch [hero]...[K]\n[hero] entfernt sich immer weiter von\nmir...",
+                italian=" E [hero]...[K] Io sono\nsempre più lontano da [hero]...",
+                spanish=" Y también [hero]...[K]\nMe voy alejando más de [hero]...",
+            }
+        default:
+            {
+                english=" And [hero]...[K] I\'m getting \nfarther away from [hero]...",
+                french=" Et [hero]...[K] Je m\'éloigne\nde plus en plus de [hero]...",
+                german=" Und auch [hero]...[K]\n[hero] entfernt sich immer weiter von\nmir...",
+                italian=" E [hero]...[K] Io sono\nsempre più lontana da [hero]...",
+                spanish=" Y también [hero]...[K]\nMe voy alejando más de [hero]...",
+            }
+    }
+    message_KeyWait();
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Oh, [hero]...",
+                french=" Oh, [hero]...",
+                german=" Oh, [hero]...",
+                italian=" Oh, [hero]...",
+                spanish=" Oh, [hero]...",
+            }
+        case 2:
+            {
+                english=" Oh, [hero]...",
+                french=" Oh, [hero]...",
+                german=" Oh, [hero]...",
+                italian=" Oh, [hero]...",
+                spanish=" Oh, [hero]...",
+            }
+        default:
+            {
+                english=" Oh, [hero]...",
+                french=" Oh, [hero]...",
+                german=" Oh, [hero]...",
+                italian=" Oh, [hero]...",
+                spanish=" Oh, [hero]...",
+            }
+    }
+    message_Close();
+    Wait(90);
+    bgm_FadeOut(240);
+    screen2_FadeOut(0, 160);
+    screen_FadeOut(1, 160);
+    back2_SetMode(0);
+    message_SetWaitMode(32767, 32767);
+    WaitBgm(BGM_FARTHER_AWAY);
+    bgm_PlayFadeIn(BGM_A_WISH_FOR_PEACE, 0, 180);
+    message_Narration(30, {
+        english="[CN]And so, [hero]\n[CN]and [partner]...",
+        french="[CN]C\'est ainsi que\n[CN][hero] et [partner]...",
+        german="[CN]Und so waren [hero]\n[CN]und [partner]",
+        italian="[CN]E così, [hero]\n[CN]e [partner]...",
+        spanish="[CN]Y así, [hero] y\n[CN][partner]...",
+    });
+    message_Narration(30, {
+        english="[CN]finally succeeded in their mission...",
+        french="[CN]... achevèrent enfin leur mission...",
+        german="[CN]schließlich erfolgreich mit ihrer Mission.",
+        italian="[CN]alla fine hanno portato a termine\n[CN]la loro missione...",
+        spanish="[CN]finalmente cumplieron su misión...",
+    });
+    message_Narration(30, {
+        english="[CN]and saved the world from disaster.",
+        french="[CN]... et sauvèrent le monde du désastre.",
+        german="[CN]Sie retteten die Welt vor der Katastrophe.",
+        italian="[CN]... e hanno salvato il mondo\n[CN]da una catastrofe certa.",
+        spanish="[CN]y salvaron al mundo del desastre.",
+    });
+    message_Narration(30, {
+        english="[CN][partner] departed from\n[CN][CS:P]Temporal Tower[CR]...",
+        french="[CN][partner] quitta\n[CN]la [CS:P]Tour du Temps[CR]...",
+        german="[CN][partner] verlässt den\n[CN][CS:P]Zeitturm[CR],",
+        italian="[CN][partner] si lascia alle spalle la\n[CN][CS:P]Torre del Tempo[CR]...",
+        spanish="[CN][partner] se marchó\n[CN]de la [CS:P]Torre del Tiempo[CR]...",
+    });
+    message_Narration(30, {
+        english="[CN]traveled across the\n[CN]ravaged [CS:P]Hidden Land[CR]...",
+        french="[CN]... traversa la contrée dévastée\n[CN]des [CS:P]Terres Illusoires[CR]...",
+        german="[CN]reist durch das\n[CN]verwüstete [CS:P]Verborgene Land[CR],",
+        italian="[CN]... attraversa la devastata\n[CN][CS:P]Terra Nascosta[CR]...",
+        spanish="[CN]viajó por la devastada\n[CN][CS:P]Tierra Oculta[CR]...",
+    });
+    message_Narration(30, {
+        english="[CN]rode [CS:N]Lapras[CR] across the sea...",
+        french="[CN]... franchit la mer sur le dos de [CS:N]Lokhlass[CR]...",
+        german="[CN]reitet auf [CS:N]Lapras[CR] über das Meer,",
+        italian="[CN]... solca il mare in groppa a [CS:N]Lapras[CR]...",
+        spanish="[CN]montó sobre [CS:N]Lapras[CR] para cruzar el mar...",
+    });
+    message_Narration(30, {
+        english="[CN]and safely returned\n[CN]to Treasure Town.",
+        french="[CN]... et regagna enfin\n[CN]Bourg-Trésor.",
+        german="[CN]und kehrt wohlbehalten nach\n[CN]Schatzstadt zurück.",
+        italian="[CN]e torna in salute \n[CN]a Borgo Tesoro.",
+        spanish="[CN]y volvió sin percances\n[CN]a Aldea Tesoro.",
+    });
+    message_Close();
+    Wait(60);
+    end;
+}

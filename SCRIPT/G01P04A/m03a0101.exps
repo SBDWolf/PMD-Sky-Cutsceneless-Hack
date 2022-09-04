@@ -1,0 +1,32 @@
+
+def 0 {
+    $SCENARIO_MAIN = scn[4, 1];
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER) {
+        camera_SetMyPosition();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PERAPPU);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PERAPPU);
+    }
+    
+    bgm_FadeOut(60);
+    screen_FadeOut(1, 30);
+    WaitBgm(BGM_WIGGLYTUFFS_GUILD);
+    end;
+}

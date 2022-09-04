@@ -1,0 +1,127 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_S04P01A);
+    screen_FadeIn(1, 0);
+    switch ( scn($SCENARIO_MAIN)[0] ) {
+        case == 25:
+        case == 26:
+            §label_0;
+            message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                case 1:
+                    {
+                        english=" Urk! We didn\'t do well on that.",
+                        french=" Argh! On n\'a pas vraiment\nassuré sur ce coup-là...",
+                        german=" Urgs! Dabei haben wir uns aber\nnicht gut angestellt.",
+                        italian=" Uff! Non ce l\'abbiamo fatta.",
+                        spanish=" ¡Uf! Hemos metido la pata.",
+                    }
+                case 2:
+                    {
+                        english=" Urk! That\'s how not to do it.",
+                        french=" Argh! On n\'a pas vraiment\nassuré sur ce coup-là...",
+                        german=" Urgs! So sollte man das wohl\nnicht machen.",
+                        italian=" Uff! Ci è andata male.",
+                        spanish=" ¡Uf! Hoy no ha habido suerte.",
+                    }
+                default:
+                    {
+                        english=" Urk! That didn\'t work.",
+                        french=" Argh! On n\'a pas vraiment\nassuré sur ce coup-là...",
+                        german=" Urgs! Das hat nicht funktioniert.",
+                        italian=" Uff! Così non va bene",
+                        spanish=" ¡Uf! Esta vez no hubo manera.",
+                    }
+            }
+            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                case 1:
+                    {
+                        english=" Hmm... This is demanding.[K]\nLet\'s go back for now.",
+                        french=" Ce n\'est vraiment pas facile...[K]\nTant pis, on réessaiera une autre fois.",
+                        german=" Hmm, das ist ziemlich\nfordernd.[K] Gehen wir fürs Erste zurück.",
+                        italian=" Mmm... È molto impegnativo.[K]\nPer ora torniamo indietro.",
+                        spanish=" Hum... Esto parece difícil.[K]\n¿Por qué no volvemos?",
+                    }
+                case 2:
+                    {
+                        english=" Hmm... This is challenging.[K]\nLet\'s go back for now.",
+                        french=" Ce n\'est vraiment pas facile...[K]\nTant pis, on réessaiera une autre fois.",
+                        german=" Hmm, das ist eine richtige\nHerausforderung.[K] Gehen wir fürs Erste\nzurück.",
+                        italian=" Mmm... È molto impegnativo.[K]\nPer ora torniamo indietro.",
+                        spanish=" Hum... La cosa está complicada.[K]\n¿Por qué no volvemos?",
+                    }
+                default:
+                    {
+                        english=" Hmm... This is kind of hard.[K]\nLet\'s go back for now.",
+                        french=" Ce n\'est vraiment pas facile...[K]\nTant pis, on réessaiera une autre fois.",
+                        german=" Hmm, das ist ziemlich\nschwierig.[K] Gehen wir fürs Erste zurück.",
+                        italian=" Mmm... È molto difficile.[K]\nPer ora torniamo indietro.",
+                        spanish=" Hum... Es bastante duro.[K]\n¿Por qué no volvemos?",
+                    }
+            }
+            message_KeyWait();
+            §label_1;
+            screen_FadeOutAll(1, 60);
+            message_CloseEnforce();
+            Wait(60);
+            CallCommon(CORO_FADE_OUT_ALL_AFTER);
+            end;
+        default:
+            message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                case 1:
+                    {
+                        english=" Ugh! Well, that went badly.",
+                        french=" Argh! Ben ça s\'est mal passé!",
+                        german=" Umpf! Nun, das ist wohl\nschiefgegangen.",
+                        italian=" Uh! Beh, è andata male.",
+                        spanish=" ¡Uf! Hoy nos hemos lucido...",
+                    }
+                case 2:
+                    {
+                        english=" Ugh! That didn\'t go well.",
+                        french=" Argh! Ben ça s\'est mal passé!",
+                        german=" Umpf! Nun, das ist wohl nicht\ngutgegangen.",
+                        italian=" Uh! Non è andata molto bene.",
+                        spanish=" ¡Uf! No se nos ha dado muy bien.",
+                    }
+                default:
+                    {
+                        english=" Ugh! Well that wasn\'t so good.",
+                        french=" Argh! Ben ça s\'est mal passé!",
+                        german=" Umpf! Nun, das war wohl nicht\nso gut.",
+                        italian=" Uh! Beh, non è andata molto \nbene.",
+                        spanish=" ¡Uf! Podría haber estado mejor.",
+                    }
+            }
+            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                case 1:
+                    {
+                        english=" It\'s harder than I thought...[K]\nLet\'s try this another time.",
+                        french=" C\'est plus dur que je croyais...[K]\nOn retentera notre chance une autre fois.",
+                        german=" Es ist schwieriger, als ich\nangenommen hatte.[K] Versuchen wir es\nzu einer anderen Zeit noch einmal.",
+                        italian=" È più difficile di quel che \npensavo...[K] Ci proveremo un\'altra volta.",
+                        spanish=" Ha sido más difícil de lo que\ncreía...[K] Tendremos que probar otra vez.",
+                    }
+                case 2:
+                    {
+                        english=" It\'s harder than I thought...[K]\nLet\'s call it a day.",
+                        french=" C\'est plus dur que je croyais...[K]\nOn retentera notre chance une autre fois.",
+                        german=" Es ist schwieriger, als ich\nangenommen hatte.[K] Lassen wir es gut sein für\nheute.",
+                        italian=" È più difficile di quel che \npensavo...[K] Basta così, per oggi.",
+                        spanish=" Ha sido más difícil de lo que\ncreía...[K] Y, por hoy, ha sido suficiente.",
+                    }
+                default:
+                    {
+                        english=" It\'s harder than I thought...[K]\nLet\'s go home for the day.",
+                        french=" C\'est plus dur que je croyais...[K]\nOn retentera notre chance une autre fois.",
+                        german=" Es ist schwieriger, als ich\nangenommen hatte.[K] Gehen wir für heute nach\nHause.",
+                        italian=" È più difficile di quel che \npensavo...[K] Basta così, per oggi.",
+                        spanish=" Ha sido más difícil de lo que\ncreía...[K] Más vale que descansemos por hoy.",
+                    }
+            }
+            message_KeyWait();
+            jump @label_1;
+    }
+}

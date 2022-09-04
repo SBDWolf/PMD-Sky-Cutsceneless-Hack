@@ -1,0 +1,13 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_TIME_RESTORED, 0, 160);
+    back_SetGround(LEVEL_V26P03A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 60);
+    Wait(210);
+    screen_FadeOut(1, 60);
+    end;
+}

@@ -1,0 +1,425 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_P01P04A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_TOGEPII) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_BARIYAADO) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_OKUTAN) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_SUTORAIKU) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_JIGUZAGUMA) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_SANDOPAN) {
+        SetAnimation(4);
+    }
+    se_Play(6669);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m0', 46, 36.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m1', 41.5, 36.5>);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Wow, there\'s quite a crowd.",
+                french=" Oh, une foule s\'est rassemblée.",
+                german=" Wow, ganz schön viel los.",
+                italian=" Wow, c\'è una bella folla.",
+                spanish=" Caray, qué gentío.",
+            }
+        case 2:
+            {
+                english=" Wow, there\'s a crowd.",
+                french=" Oh, une foule s\'est rassemblée.",
+                german=" Wow, ganz schön viel los.",
+                italian=" Wow, che folla.",
+                spanish=" Caramba, cuánta gente.",
+            }
+        default:
+            {
+                english=" Wow, there\'s a crowd.",
+                french=" Oh, une foule s\'est rassemblée.",
+                german=" Wow, ganz schön viel los.",
+                italian=" Wow, che folla.",
+                spanish=" Vaya, qué gentío.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m2', 43.5, 27.5>);
+    }
+    Wait(7);
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m3', 46, 29>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Move2PositionMark(1, Position<'m4', 41.5, 29>);
+    }
+    Wait(30);
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    Wait(30);
+    with (actor ACTOR_NPC_PATCHIIRU) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_PATCHIIRU);
+    with (actor ACTOR_NPC_PATCHIIRU) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    message_SetFace(ACTOR_NPC_PATCHIIRU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(-1, -1);
+    message_Talk({
+        english=" May I have everyone\'s attention,\nplease! First of all, I\'d like to thank you for\ntaking time out of your busy schedules!",
+        french=" Mes amis, votre attention,\ns\'il vous plaît! Tout d\'abord, merci à tous\nd\'avoir pris un peu de votre temps pour venir.",
+        german=" Ich grüße euch alle zusammen!\nErst einmal danke, dass ihr euch Zeit\nfür diese Ansprache genommen habt!",
+        italian=" Posso avere la vostra attenzione\nper favore? Innanzitutto vi ringrazio di\nessere qui nonostante i vostri impegni!",
+        spanish=" ¡Atención! ¡Atención, por favor!\nEn primer lugar, muchas gracias a todos por\nsacar tiempo de vuestras apretadas agendas.",
+    });
+    se_FadeOut(6669, 90);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PATCHIIRU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_TOGEPII) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_BARIYAADO) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_OKUTAN) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_SUTORAIKU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_JIGUZAGUMA) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_PACHIRISU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_SANDOPAN) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_PACHIRISU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_NYOROTONO) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_HERAKUROSU) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_PACHIRISU) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_JIGUZAGUMA) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_BARIYAADO) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    Wait(6);
+    with (actor ACTOR_NPC_NYOROTONO) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    with (actor ACTOR_NPC_OKUTAN) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_TOGEPII) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_SANDOPAN) {
+        MovePositionMark(1, Position<'m5', 34, 24>);
+    }
+    with (actor ACTOR_NPC_ZANGUUSU) {
+        MovePositionMark(1, Position<'m6', 31.5, 26.5>);
+    }
+    with (actor ACTOR_NPC_SUTORAIKU) {
+        MovePositionMark(1, Position<'m7', 37.5, 31.5>, Position<'m8', 34, 29>);
+    }
+    with (actor ACTOR_NPC_REDIBA) {
+        MovePositionMark(1, Position<'m9', 50.5, 30>);
+    }
+    with (actor ACTOR_NPC_TOGEPII) {
+        MovePositionMark(1, Position<'m10', 54.5, 26.5>);
+    }
+    with (actor ACTOR_NPC_REDIBA) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    with (actor ACTOR_NPC_TOGEPII) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    with (actor ACTOR_NPC_SANDOPAN) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_ZANGUUSU) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_SUTORAIKU) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_JIGUZAGUMA) {
+        MovePositionOffset(1, 0, -8);
+    }
+    Wait(30);
+    message_SetFace(ACTOR_NPC_PATCHIIRU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(-1, -1);
+    message_Talk({
+        english=" Today I would like to give you\nsome wonderful news of hopes\nand dreams!",
+        french=" Aujourd\'hui, j\'aimerais vous\nannoncer une excellente nouvelle, vos rêves\npourraient bien se réaliser.",
+        german=" Heute möchte ich euch einige\nwundervolle Neuigkeiten über das Hoffen und\nTräumen mitteilen.",
+        italian=" Oggi vorrei darvi delle notizie\nmeravigliose, ricche di sogni e di speranze!",
+        spanish=" Hoy me gustaría daros una\nnoticia tan maravillosa que espero\nque os parezca de ensueño.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5138);
+    with (actor ACTOR_NPC_PACHIRISU) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    with (actor ACTOR_NPC_BARIYAADO) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    with (actor ACTOR_NPC_TOGEPII) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    with (actor ACTOR_NPC_HERAKUROSU) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_NYOROTONO) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    Wait(60);
+    Wait(60);
+    with (actor ACTOR_NPC_PACHIRISU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_BARIYAADO) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_TOGEPII) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    se_FadeOut(5138, 30);
+    Wait(30);
+    bgm_PlayFadeIn(BGM_SPINDAS_CAFE, 0, 256);
+    message_SetFace(ACTOR_NPC_PATCHIIRU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(-1, -1);
+    message_Talk({
+        english=" Ahem.",
+        french=" Ahem...",
+        german=" Ähem.",
+        italian=" Ehm.",
+        spanish=" Ejem.",
+    });
+    message_Talk({
+        english=" Thanks to your kind patronage,\nthis café has been quite popular...",
+        french=" Grâce à votre soutien,\nla renommée de ce café ne cesse de grandir...",
+        german=" Dank eurer regen Unterstützung\nläuft dieses Café recht erfolgreich...",
+        italian=" Grazie al vostro sostegno,\nil caffè è diventato piuttosto famoso...",
+        spanish=" Gracias a vuestras repetidas\nvisitas, esta cafetería se ha hecho\nbastante famosa...",
+    });
+    message_Talk({
+        english=" We\'ve been fortunate to have so\nmany wonderful customers!",
+        french=" Quelle chance nous avons d\'avoir\npu accueillir tant de clients merveilleux!",
+        german=" Wir dürfen uns über eine aktive\nKundschaft freuen!",
+        italian=" Siamo fortunati ad avere\ndei clienti fantastici come voi!",
+        spanish=" ¡Somos de lo más afortunados\nal tener tantos clientes maravillosos!",
+    });
+    message_Talk({
+        english=" This shop\'s pride and joy, the\nRecycle Shop, is fully operational and has\ncollected many items.",
+        french=" La fierté de ce magasin, la\nBourse d\'Echange, tourne à plein régime et a\ndéjà amassé un nombre conséquent d\'objets.",
+        german=" Und der Stolz dieses Cafés, der\nWiederverwertungsladen, ist nun bereit und\nhat dank euch bereits viele Items auf Lager.",
+        italian=" Il Centro Riciclo, orgoglio e gioia\ndi questo locale, è pienamente operativo e\nha raccolto molti strumenti.",
+        spanish=" La joya de este establecimiento,\nel Reciclaje Explorador, se encuentra\ntotalmente operativa y reúne muchos objetos.",
+    });
+    message_Talk({
+        english=" We would like to thank you for\nyour kind patronage...",
+        french=" Nous aimerions vous exprimer\nnotre reconnaissance pour votre\naimable soutien...",
+        german=" Wir möchten euch für eure\nUnterstützung ganz herzlich danken...",
+        italian=" Vorremmo esprimere la nostra\ngratitudine nei vostri confronti...",
+        spanish=" Nos gustaría daros las gracias\npor seguir visitándonos...",
+    });
+    message_SetFace(ACTOR_NPC_PATCHIIRU, FACE_JOYOUS, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(-1, -1);
+    message_Talk({
+        english=" By opening a new service!",
+        french=" ... en inaugurant un\nnouveau service!",
+        german=" Und zwar, indem wir ab sofort\neinen neuen Service anbieten!",
+        italian=" ... inaugurando un nuovo\nservizio!",
+        spanish=" ¡Inaugurando un nuevo servicio!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PATCHIIRU) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_PATCHIIRU);
+    with (actor ACTOR_NPC_PATCHIIRU) {
+        SetAnimation(26);
+    }
+    with (actor ACTOR_NPC_PATCHIIRU) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_PATCHIIRU);
+    with (actor ACTOR_NPC_PATCHIIRU) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    message_SetFace(ACTOR_NPC_PATCHIIRU, FACE_SHOUTING, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(-1, -1);
+    message_Talk({
+        english=" We\'re calling it Project P!",
+        french=" Nous l\'avons appelé\nle \"Projet P\"!",
+        german=" Wir nennen ihn [F:S2]Projekt P[F:E2]!",
+        italian=" Si chiamerà Progetto P!",
+        spanish=" Lo llamamos \"Proyecto P\".",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PATCHIIRU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    se_Play(7944);
+    with (actor ACTOR_NPC_SOONANO) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    with (performer 3) {
+        SetEffect(EFFECT_CONFETTI, 3);
+    }
+    with (performer 3) {
+        WaitEffect();
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_SOONANSU) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    with (performer 4) {
+        SetEffect(EFFECT_CONFETTI, 3);
+    }
+    with (performer 4) {
+        WaitEffect();
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_SOONANO) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    with (performer 5) {
+        SetEffect(EFFECT_CONFETTI, 3);
+    }
+    with (performer 5) {
+        WaitEffect();
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_SOONANSU) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    with (performer 6) {
+        SetEffect(EFFECT_CONFETTI, 3);
+    }
+    with (performer 6) {
+        WaitEffect();
+    }
+    Wait(10);
+    WaitExecutePerformer(6);
+    Wait(30);
+    se_FadeOut(7944, 60);
+    Wait(60);
+    se_Play(8962);
+    with (actor ACTOR_NPC_BARIYAADO) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_BARIYAADO) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_BARIYAADO);
+    message_SetFace(ACTOR_NPC_BARIYAADO, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(3, 3);
+    message_Talk({
+        english=" Project P?",
+        french=" Le \"Projet P\"?",
+        german=" Projekt P?",
+        italian=" Progetto P?",
+        spanish=" ¿Proyecto P?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_OKUTAN, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_FacePositionOffset(1, -2);
+    message_Talk({
+        english=" What\'s that?",
+        french=" Qu\'est-ce que c\'est?",
+        german=" Was ist das?",
+        italian=" E cos\'è?",
+        spanish=" ¿Y eso qué es?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PATCHIIRU) {
+        SetAnimation(2);
+    }
+    Wait(15);
+    message_SetFace(ACTOR_NPC_PATCHIIRU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(-1, -1);
+    message_Talk({
+        english=" This project aims to use the\nitems gathered at the Recycle Shop in order to\nexplore unexplored places.",
+        french=" Ce projet vise à utiliser les\nobjets accumulés à la Bourse d\'Echange pour\npermettre d\'explorer de nouveaux territoires.",
+        german=" Dieses Projekt soll die Items\ndes Wiederverwertungsladens dazu verwenden,\nbisher unerforschte Gebiete zu erkunden.",
+        italian=" Lo scopo di questo progetto\nconsiste nell\'usare gli strumenti raccolti al\nCentro Riciclo per esplorare luoghi sconosciuti.",
+        spanish=" Este proyecto pretende usar\nlos objetos recopilados en el Reciclaje\nExplorador para llegar a lugares inexplorados.",
+    });
+    message_Talk({
+        english=" Allow me to explain.",
+        french=" Je vous explique...",
+        german=" Lasst es mich erklären.",
+        italian=" Mi spiego meglio.",
+        spanish=" Permitidme que lo explique.",
+    });
+    message_Close();
+    screen_FadeOut(1, 30);
+    end;
+}
+
+def 1 for_actor(ACTOR_NPC_NYOROTONO) {
+    SetAnimation(2);
+    Wait(30);
+    §label_0;
+    forever {
+        SetEffect(EFFECT_LAUGHING, 3);
+        WaitRandom(60, 90);
+        SetEffect(EFFECT_NONE, 3);
+        WaitRandom(60, 180);
+        continue;  // may be redundant
+    }
+}
+
+def 2 for_actor(ACTOR_NPC_PACHIRISU) {
+    §label_1;
+    SetAnimation(4);
+    SetEffect(EFFECT_JOYOUS, 3);
+    WaitRandom(60, 90);
+    SetEffect(EFFECT_NONE, 3);
+    SetAnimation(2);
+    WaitRandom(90, 180);
+    jump @label_1;
+}

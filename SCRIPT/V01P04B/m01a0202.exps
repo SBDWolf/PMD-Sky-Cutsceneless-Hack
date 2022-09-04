@@ -1,0 +1,12 @@
+
+def 0 {
+    bgm2_PlayFadeIn(BGM_OCEAN1, 0, 256);
+    back_SetGround(LEVEL_V01P04B);
+    supervision_Acting(0);
+    supervision_SpecialActing(4, 32764, 8);
+    screen_FadeIn(1, 30);
+    Wait(150);
+    screen_FadeOut(1, 30);
+    supervision_SpecialActing(3, 0, 0);
+    end;
+}

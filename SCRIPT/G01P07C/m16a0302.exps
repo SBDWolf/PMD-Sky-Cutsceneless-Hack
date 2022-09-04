@@ -1,0 +1,508 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_MAIN = scn[17, 2];
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V02P06A);
+    camera2_SetPositionMark(Position<'m0', 19.5, 15.5>);
+    screen2_FadeIn(1, 60);
+    Wait(150);
+    screen2_FadeOut(1, 60);
+    back2_SetMode(0);
+    back_SetGround(LEVEL_G01P07C);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    Wait(1);
+    with (actor ACTOR_PLAYER) {
+        SetDirection(DIR_RIGHT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetDirection(DIR_LEFT);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(76);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(76);
+    }
+    screen_FadeChange(1, 60, 0, 192);
+    bgm_PlayFadeIn(BGM_GOODNIGHT, 0, 256);
+    Wait(30);
+    message_SetActor(ACTOR_ATTENDANT1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" ...............",
+                french=" ...............",
+                german=" ...............",
+                italian=" ...............",
+                spanish=" ...",
+            }
+        case 2:
+            {
+                english=" ...............",
+                french=" ...............",
+                german=" ...............",
+                italian=" ...............",
+                spanish=" ...",
+            }
+        default:
+            {
+                english=" ...............",
+                french=" ...............",
+                german=" ...............",
+                italian=" ...............",
+                spanish=" ...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" ...........................",
+                french=" ...........................",
+                german=" ...........................",
+                italian=" ...........................",
+                spanish=" ... ...",
+            }
+        case 2:
+            {
+                english=" ...........................",
+                french=" ...........................",
+                german=" ...........................",
+                italian=" ...........................",
+                spanish=" ... ...",
+            }
+        default:
+            {
+                english=" ...........................",
+                french=" ...........................",
+                german=" ...........................",
+                italian=" ...........................",
+                spanish=" ... ...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Are you still awake,\n[hero]?",
+                french=" Tu dors, [hero]?",
+                german=" Bist du noch wach,\n[hero]?",
+                italian=" Non riesci a dormire,\n[hero]?",
+                spanish=" ¿Te has dormido ya,\n[hero]?",
+            }
+        case 2:
+            {
+                english=" Are you still awake,\n[hero]?",
+                french=" Tu dors, [hero]?",
+                german=" Bist du noch wach,\n[hero]?",
+                italian=" Non riesci a dormire,\n[hero]?",
+                spanish=" ¿Te has dormido ya,\n[hero]?",
+            }
+        default:
+            {
+                english=" Are you still awake,\n[hero]?",
+                french=" Tu dors, [hero]?",
+                german=" Bist du noch wach,\n[hero]?",
+                italian=" Non riesci a dormire,\n[hero]?",
+                spanish=" ¿Te has dormido ya,\n[hero]?",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I have to admit that today was\nfull of surprises.",
+                french=" Il faut admettre que cette\njournée a été riche en surprises.",
+                german=" Ich muss schon sagen, heute\ngab es viele Überraschungen.",
+                italian=" In effetti, la giornata di oggi è\nstata davvero piena di sorprese.",
+                spanish=" Tengo que admitir que ha sido\nun día cargado de sorpresas.",
+            }
+        case 2:
+            {
+                english=" I have to admit that today was\nfull of surprises.",
+                french=" Il faut admettre que cette\njournée a été riche en surprises.",
+                german=" Ich muss schon sagen, heute\ngab es viele Überraschungen.",
+                italian=" In effetti, la giornata di oggi è\nstata davvero piena di sorprese.",
+                spanish=" Tengo que admitir que ha sido\nun día cargado de sorpresas.",
+            }
+        default:
+            {
+                english=" I have to admit that today was\nfull of surprises.",
+                french=" Il faut admettre que cette\njournée a été riche en surprises.",
+                german=" Ich muss schon sagen, heute\ngab es viele Überraschungen.",
+                italian=" In effetti, la giornata di oggi è\nstata davvero piena di sorprese.",
+                spanish=" Tengo que admitir que ha sido\nun día cargado de sorpresas.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" The great [CS:N]Dusknoir[CR]\'s talk about\nbeing from the future...",
+                french=" Le grand [CS:N]Noctunoir[CR] qui vient\ndu futur...",
+                german=" Als der große [CS:N]Zwirrfinst[CR] sagte,\ndass er aus der Zukunft kommt...",
+                italian=" Il signor [CS:N]Dusknoir[CR] ha rivelato di\nvenire dal futuro...",
+                spanish=" El gran [CS:N]Dusknoir[CR] nos ha contado\nque viene del futuro...",
+            }
+        case 2:
+            {
+                english=" The great [CS:N]Dusknoir[CR]\'s talk about\ncoming from the future...",
+                french=" Le grand [CS:N]Noctunoir[CR] qui vient\ndu futur...",
+                german=" Als der große [CS:N]Zwirrfinst[CR] sagte,\ndass er aus der Zukunft kommt...",
+                italian=" Il signor [CS:N]Dusknoir[CR] ha rivelato di\nvenire dal futuro...",
+                spanish=" El gran [CS:N]Dusknoir[CR] nos ha contado\nque viene del futuro...",
+            }
+        default:
+            {
+                english=" The great [CS:N]Dusknoir[CR]\'s talk about\ncoming from the future...",
+                french=" Le grand [CS:N]Noctunoir[CR] qui vient\ndu futur...",
+                german=" Als der große [CS:N]Zwirrfinst[CR] sagte,\ndass er aus der Zukunft kommt...",
+                italian=" Il signor [CS:N]Dusknoir[CR] ha rivelato di\nvenire dal futuro...",
+                spanish=" El gran [CS:N]Dusknoir[CR] nos ha contado\nque viene del futuro...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" That was mind blowing.",
+                french=" Quelle révélation\népoustouflante!",
+                german=" Das war total irre.",
+                italian=" Roba da non credere!",
+                spanish=" Ha sido alucinante.",
+            }
+        case 2:
+            {
+                english=" That was mind boggling.",
+                french=" Quelle révélation\népoustouflante!",
+                german=" Das war total irre.",
+                italian=" Che cosa incredibile!",
+                spanish=" Ha sido alucinante.",
+            }
+        default:
+            {
+                english=" That was mind blowing.",
+                french=" Quelle révélation\népoustouflante!",
+                german=" Das war total irre.",
+                italian=" Che cosa incredibile!",
+                spanish=" Ha sido alucinante.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" [CS:N]Dusknoir[CR] chased [CS:N]Grovyle[CR] from\nthe future to our world.",
+                french=" [CS:N]Noctunoir[CR] a poursuivi [CS:N]Massko[CR]\njusqu\'à notre monde.",
+                german=" [CS:N]Zwirrfinst[CR] hat [CS:N]Reptain[CR] aus der\nZukunft bis in unsere Welt gejagt.",
+                italian=" [CS:N]Dusknoir[CR] è partito addirittura\ndal futuro per inseguire [CS:N]Grovyle[CR].",
+                spanish=" [CS:N]Dusknoir[CR] ha venido del futuro\npara perseguir a [CS:N]Grovyle[CR].",
+            }
+        case 2:
+            {
+                english=" [CS:N]Dusknoir[CR] pursued [CS:N]Grovyle[CR] from\nthe future to our world.",
+                french=" [CS:N]Noctunoir[CR] a poursuivi [CS:N]Massko[CR]\njusqu\'à notre monde.",
+                german=" [CS:N]Zwirrfinst[CR] hat [CS:N]Reptain[CR] aus der\nZukunft bis in unsere Welt verfolgt.",
+                italian=" [CS:N]Dusknoir[CR] è partito addirittura\ndal futuro per inseguire [CS:N]Grovyle[CR].",
+                spanish=" [CS:N]Dusknoir[CR] ha venido del futuro\npara perseguir a [CS:N]Grovyle[CR].",
+            }
+        default:
+            {
+                english=" [CS:N]Dusknoir[CR] tracked [CS:N]Grovyle[CR] from\nthe future to our world.",
+                french=" [CS:N]Noctunoir[CR] a poursuivi [CS:N]Massko[CR]\njusqu\'à notre monde.",
+                german=" [CS:N]Zwirrfinst[CR] hat [CS:N]Reptain[CR] aus der\nZukunft bis in unsere Welt verfolgt.",
+                italian=" [CS:N]Dusknoir[CR] è partito addirittura\ndal futuro per inseguire [CS:N]Grovyle[CR].",
+                spanish=" [CS:N]Dusknoir[CR] ha venido del futuro\npara perseguir a [CS:N]Grovyle[CR].",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" He came to catch that wicked\n[CS:N]Grovyle[CR].",
+                french=" Il est venu ici exprès pour\nl\'appréhender...",
+                german=" Er ist gekommen, um diesen\nhinterhältigen [CS:N]Reptain[CR] zu schnappen.",
+                italian=" E adesso si trova qui.",
+                spanish=" Está aquí para atrapar a ese\nmalvado [CS:N]Grovyle[CR].",
+            }
+        case 2:
+            {
+                english=" He came to apprehend that\nwicked [CS:N]Grovyle[CR].",
+                french=" Il est venu ici exprès pour\nl\'appréhender...",
+                german=" Er ist gekommen, um diesen\nhinterhältigen [CS:N]Reptain[CR] zu fangen.",
+                italian=" E adesso si trova qui.",
+                spanish=" Está aquí para atrapar a ese\nmalvado [CS:N]Grovyle[CR].",
+            }
+        default:
+            {
+                english=" He came to catch that wicked\n[CS:N]Grovyle[CR].",
+                french=" Il est venu ici exprès pour\nl\'appréhender...",
+                german=" Er ist gekommen, um diesen\nhinterhältigen [CS:N]Reptain[CR] zu schnappen.",
+                italian=" E adesso si trova qui.",
+                spanish=" Está aquí para atrapar a ese\nmalvado [CS:N]Grovyle[CR].",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" And to take him back to\nthe future.",
+                french=" ... et le ramener avec lui\ndans le futur.",
+                german=" Um ihn dann mit zurück in die\nZukunft zu nehmen.",
+                italian=" Vuole acciuffarlo e riportarlo\ncon sé nel futuro.",
+                spanish=" Y llevarle de vuelta al futuro.",
+            }
+        case 2:
+            {
+                english=" And to take him back to\nthe future.",
+                french=" ... et le ramener avec lui\ndans le futur.",
+                german=" Um ihn dann mit zurück in die\nZukunft zu nehmen.",
+                italian=" Vuole acciuffarlo e riportarlo\ncon sé nel futuro.",
+                spanish=" Y llevarle de vuelta al futuro.",
+            }
+        default:
+            {
+                english=" And to take him back to\nthe future.",
+                french=" ... et le ramener avec lui\ndans le futur.",
+                german=" Um ihn dann mit zurück in die\nZukunft zu nehmen.",
+                italian=" Vuole acciuffarlo e riportarlo\ncon sé nel futuro.",
+                spanish=" Y llevarle de vuelta al futuro.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" That\'s why the job of capturing\n[CS:N]Grovyle[CR] belongs to him.",
+                french=" La capture de [CS:N]Massko[CR]\nest donc une mission qui lui revient de droit.",
+                german=" Darum ist es sein Job,\n[CS:N]Reptain[CR] zu fangen.",
+                italian=" Per questo dobbiamo lasciare\nche sia lui ad occuparsi di [CS:N]Grovyle[CR].",
+                spanish=" Por eso es su responsabilidad\ncapturar a [CS:N]Grovyle[CR].",
+            }
+        case 2:
+            {
+                english=" That\'s why the job of capturing\n[CS:N]Grovyle[CR] is his responsibility.",
+                french=" La capture de [CS:N]Massko[CR]\nest donc une mission qui lui revient de droit.",
+                german=" Darum ist er dafür\nverantwortlich, dass [CS:N]Reptain[CR] geschnappt wird.",
+                italian=" Per questo dobbiamo lasciare\nche sia lui ad occuparsi di [CS:N]Grovyle[CR].",
+                spanish=" Por eso es su responsabilidad\ncapturar a [CS:N]Grovyle[CR].",
+            }
+        default:
+            {
+                english=" That\'s why the job of capturing\n[CS:N]Grovyle[CR] falls to him.",
+                french=" La capture de [CS:N]Massko[CR]\nest donc une mission qui lui revient de droit.",
+                german=" Darum ist es sein Job,\n[CS:N]Reptain[CR] zu fangen.",
+                italian=" Per questo dobbiamo lasciare\nche sia lui ad occuparsi di [CS:N]Grovyle[CR].",
+                spanish=" Por eso es su responsabilidad\ncapturar a [CS:N]Grovyle[CR].",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We have to trust [CS:N]Dusknoir[CR]\nabout this.",
+                french=" Il faut faire confiance à\n[CS:N]Noctunoir[CR] dans cette affaire.",
+                german=" Wir müssen [CS:N]Zwirrfinst[CR]\nvertrauen.",
+                italian=" Dobbiamo fidarci di [CS:N]Dusknoir[CR].",
+                spanish=" Tendremos que confiar en\n[CS:N]Dusknoir[CR].",
+            }
+        case 2:
+            {
+                english=" We have to trust [CS:N]Dusknoir[CR]\nabout this.",
+                french=" Il faut faire confiance à\n[CS:N]Noctunoir[CR] dans cette affaire.",
+                german=" Wir müssen [CS:N]Zwirrfinst[CR]\nvertrauen.",
+                italian=" Dobbiamo fidarci di [CS:N]Dusknoir[CR].",
+                spanish=" Tendremos que confiar en\n[CS:N]Dusknoir[CR].",
+            }
+        default:
+            {
+                english=" We have to trust [CS:N]Dusknoir[CR]\nabout this.",
+                french=" Il faut faire confiance à\n[CS:N]Noctunoir[CR] dans cette affaire.",
+                german=" Wir müssen [CS:N]Zwirrfinst[CR]\nvertrauen.",
+                italian=" Dobbiamo fidarci di [CS:N]Dusknoir[CR].",
+                spanish=" Tendremos que confiar en\n[CS:N]Dusknoir[CR].",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Well, sure, I\'d love it if we\ncould capture [CS:N]Grovyle[CR] ourselves.",
+                french=" Bien sûr, j\'adorerais\nqu\'on capture [CS:N]Massko[CR] nous-mêmes.",
+                german=" Tja, natürlich würde ich [CS:N]Reptain[CR]\nliebend gerne selbst fangen.",
+                italian=" Beh, certo! Se fossimo noi ad\narrestare [CS:N]Grovyle[CR] sarebbe mitico!",
+                spanish=" La verdad es que me encantaría\nque participásemos en la captura de [CS:N]Grovyle[CR].",
+            }
+        case 2:
+            {
+                english=" To be honest, I would like to\ncapture [CS:N]Grovyle[CR] ourselves.",
+                french=" Bien sûr, j\'adorerais\nqu\'on capture [CS:N]Massko[CR] nous-mêmes.",
+                german=" Um ehrlich zu sein, ich würde\n[CS:N]Reptain[CR] zwar gerne selbst fangen.",
+                italian=" Devo ammettere che sarebbe\nfantastico se fossimo noi a consegnare\n[CS:N]Grovyle[CR] alla giustizia.",
+                spanish=" La verdad es que me encantaría\nque participásemos en la captura de [CS:N]Grovyle[CR].",
+            }
+        default:
+            {
+                english=" I admit, it would be great if we\ncould capture [CS:N]Grovyle[CR] ourselves.",
+                french=" Bien sûr, j\'adorerais\nqu\'on capture [CS:N]Massko[CR] nous-mêmes.",
+                german=" Zugegeben, es wäre toll, wenn\nwir [CS:N]Reptain[CR] selbst fangen könnten.",
+                italian=" Devo ammettere che sarebbe\nfantastico se fossimo noi a consegnare\n[CS:N]Grovyle[CR] alla giustizia.",
+                spanish=" Admito que me encantaría\nque participásemos en la captura de [CS:N]Grovyle[CR].",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" But I\'m not good enough for the\njob yet.",
+                french=" Mais je ne suis pas encore\nde taille à remplir une telle mission.",
+                german=" Aber dafür bin ich noch nicht\ngut genug.",
+                italian=" Ma non sono ancora pronto per\nuna missione del genere...",
+                spanish=" Pero aún no estoy a la altura\nde esa misión.",
+            }
+        case 2:
+            {
+                english=" But I\'m not up to the task yet.",
+                french=" Mais je ne suis pas encore\nde taille à remplir une telle mission.",
+                german=" Aber der Aufgabe bin ich noch\nnicht gewachsen.",
+                italian=" Ma non sono ancora pronto per\nuna missione del genere...",
+                spanish=" Pero aún no estoy a la altura\nde esa misión.",
+            }
+        default:
+            {
+                english=" But I\'m not skilled enough yet.",
+                french=" Mais je ne suis pas encore\nde taille à remplir une telle mission.",
+                german=" Aber meine Fähigkeiten sind\nnoch nicht gut genug.",
+                italian=" Ma non sono ancora pronta per\nuna missione del genere...",
+                spanish=" Pero aún no estoy a la altura\nde esa misión.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We have to depend on [CS:N]Dusknoir[CR]\nafter all.",
+                french=" Il faut nous reposer sur\n[CS:N]Noctunoir[CR], nous n\'avons pas le choix.",
+                german=" Letztendlich bleibt uns nichts\nanderes übrig, als uns auf [CS:N]Zwirrfinst[CR] zu\nverlassen.",
+                italian=" È tutto nelle mani del signor\n[CS:N]Dusknoir[CR].",
+                spanish=" No nos queda más remedio que\ndepender de [CS:N]Dusknoir[CR].",
+            }
+        case 2:
+            {
+                english=" We don\'t have any choice but to\ndepend on [CS:N]Dusknoir[CR] after all.",
+                french=" Il faut nous reposer sur\n[CS:N]Noctunoir[CR], nous n\'avons pas le choix.",
+                german=" Letztendlich müssen wir uns\nauf [CS:N]Zwirrfinst[CR] verlassen.",
+                italian=" È tutto nelle mani del signor\n[CS:N]Dusknoir[CR].",
+                spanish=" No nos queda más remedio que\ndepender de [CS:N]Dusknoir[CR].",
+            }
+        default:
+            {
+                english=" We have to depend on [CS:N]Dusknoir[CR]\nafter all.",
+                french=" Il faut nous reposer sur\n[CS:N]Noctunoir[CR], nous n\'avons pas le choix.",
+                german=" Letztendlich müssen wir uns\nauf [CS:N]Zwirrfinst[CR] verlassen.",
+                italian=" È tutto nelle mani del signor\n[CS:N]Dusknoir[CR].",
+                spanish=" No nos queda más remedio que\ndepender de [CS:N]Dusknoir[CR].",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" ...[K][hero]?[K]\nI guess you\'re asleep...",
+                french=" ...[K] [hero]?[K]\nTu dors sûrement déjà...",
+                german=" ...[K][hero]?[K]\nDu schläfst wohl schon...",
+                italian=" ...[K] [hero]?[K]\nBeh, direi che finalmente hai preso sonno...",
+                spanish=" Oye...[K] ¿[hero]?[K]\nSupongo que ya te has dormido...",
+            }
+        case 2:
+            {
+                english=" ...[K][hero]?[K]\nI guess you\'re asleep...",
+                french=" ...[K] [hero]?[K]\nTu dors sûrement déjà...",
+                german=" ...[K][hero]?[K]\nDu schläfst wohl schon...",
+                italian=" ...[K] [hero]?[K]\nBeh, direi che finalmente hai preso sonno...",
+                spanish=" Oye...[K] ¿[hero]?[K]\nSupongo que ya te has dormido...",
+            }
+        default:
+            {
+                english=" ...[K][hero]?[K]\nI guess you\'re asleep...",
+                french=" ...[K] [hero]?[K]\nTu dors sûrement déjà...",
+                german=" ...[K][hero]?[K]\nDu schläfst wohl schon...",
+                italian=" ...[K] [hero]?[K]\nBeh, direi che finalmente hai preso sonno...",
+                spanish=" Oye...[K] ¿[hero]?[K]\nSupongo que ya te has dormido...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I\'d better get to sleep too.",
+                french=" Je ferais mieux de dormir,\nmoi aussi.",
+                german=" Ich sollte besser auch schlafen.",
+                italian=" Sarà meglio che riposi un po\'\nanch\'io.",
+                spanish=" Será mejor que duerma yo\ntambién.",
+            }
+        case 2:
+            {
+                english=" I\'d better get to sleep too.",
+                french=" Je ferais mieux de dormir,\nmoi aussi.",
+                german=" Ich sollte besser auch schlafen.",
+                italian=" Sarà meglio che riposi un po\'\nanch\'io.",
+                spanish=" Será mejor que duerma yo\ntambién.",
+            }
+        default:
+            {
+                english=" I\'d better get to sleep too.",
+                french=" Je ferais mieux de dormir,\nmoi aussi.",
+                german=" Ich sollte besser auch schlafen.",
+                italian=" Sarà meglio che riposi un po\'\nanch\'io.",
+                spanish=" Será mejor que duerma yo\ntambién.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It\'d be great if [CS:N]Grovyle[CR] gets\ncaught soon...",
+                french=" J\'espère que [CS:N]Massko[CR] sera vite\nsous les verrous...",
+                german=" Es wäre toll, wenn [CS:N]Reptain[CR] bald\ngeschnappt wird...",
+                italian=" Speriamo che [CS:N]Grovyle[CR] venga\ncatturato presto...",
+                spanish=" Esperemos que atrapen pronto\na [CS:N]Grovyle[CR]...",
+            }
+        case 2:
+            {
+                english=" It would be great if [CS:N]Grovyle[CR]\ngets caught soon...",
+                french=" J\'espère que [CS:N]Massko[CR] sera vite\nsous les verrous...",
+                german=" Es wäre toll, wenn [CS:N]Reptain[CR] bald\ngeschnappt wird...",
+                italian=" Speriamo che [CS:N]Grovyle[CR] venga\ncatturato presto...",
+                spanish=" Esperemos que atrapen pronto\na [CS:N]Grovyle[CR]...",
+            }
+        default:
+            {
+                english=" I hope [CS:N]Grovyle[CR] gets caught\nsoon...",
+                french=" J\'espère que [CS:N]Massko[CR] sera vite\nsous les verrous...",
+                german=" Ich hoffe, [CS:N]Reptain[CR] wird bald\ngeschnappt...",
+                italian=" Speriamo che [CS:N]Grovyle[CR] venga\ncatturato presto...",
+                spanish=" Esperemos que atrapen pronto\na [CS:N]Grovyle[CR]...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Good night, [hero].",
+                french=" Bonne nuit, [hero].",
+                german=" Gute Nacht, [hero].",
+                italian=" Buonanotte, [hero].",
+                spanish=" Buenas noches, [hero].",
+            }
+        case 2:
+            {
+                english=" Good night, [hero].",
+                french=" Bonne nuit, [hero].",
+                german=" Gute Nacht, [hero].",
+                italian=" Buonanotte, [hero].",
+                spanish=" Buenas noches, [hero].",
+            }
+        default:
+            {
+                english=" Good night, [hero].",
+                french=" Bonne nuit, [hero].",
+                german=" Gute Nacht, [hero].",
+                italian=" Buonanotte, [hero].",
+                spanish=" Buenas noches, [hero].",
+            }
+    }
+    message_Close();
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 90);
+    WaitBgm(BGM_GOODNIGHT);
+    Wait(30);
+    end;
+}

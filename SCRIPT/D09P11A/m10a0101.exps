@@ -1,0 +1,39 @@
+
+def 0 {
+    sound_Stop();
+    dungeon_mode(14) = DMODE_OPEN;
+    $SCENARIO_MAIN = scn[11, 1];
+    back_SetGround(LEVEL_D09P11A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        SetPositionMark(Position<'m6', 31.5, 31.5>);
+    }
+    WaitExecutePerformer(0);
+    with (actor ACTOR_PLAYER) {
+        SetPositionMark(Position<'m2', 33.5, 31.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetPositionMark(Position<'m3', 30, 31.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    WaitExecutePerformer(0);
+    Wait(30);
+    with (actor ACTOR_ATTENDANT1) {
+        SetDirection(DIR_UP);
+        //Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        //Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+        SetDirection(DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_STEAM_CAVE, 0, 256);
+    end;
+}

@@ -1,0 +1,25 @@
+
+def 0 {
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_S13P04A);
+    back_SetGround(LEVEL_S13P04B);
+    supervision_Acting(0);
+    camera2_SetPositionMark(Position<'m0', 16.5, 13.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        MovePositionMark(32844, Position<'m1', 29, 13.5>);
+    }
+    camera2_MovePositionMark(32844, Position<'m2', 29, 13.5>);
+    back_SetBackScrollSpeed(1, 0);
+    back2_SetBackScrollSpeed(1, 0);
+    WaitBgmSignal();
+    screen2_FadeIn(0, 15);
+    screen_FadeIn(1, 15);
+    Wait(315);
+    screen2_FadeOut(0, 60);
+    screen_FadeOut(1, 60);
+    back2_SetMode(0);
+    end;
+}

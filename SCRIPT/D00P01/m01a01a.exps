@@ -1,0 +1,16 @@
+
+def 0 {
+    back_SetGround(LEVEL_D00P01);
+    screen_FadeIn(1, 30);
+    message_Notice({
+        english="Set Dungeon Background Display Test",
+        french="Set Dungeon Background Display Test",
+        german="Set Dungeon Background Display Test",
+        italian="Set Dungeon Background Display Test",
+        spanish="Set Dungeon Background Display Test",
+    });
+    message_Close();
+    screen_FadeOut(1, 30);
+    supervision_ExecuteStation(LEVEL_T00P01, 'M01A01', 0);
+    hold;
+}

@@ -1,0 +1,55 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_MAIN = scn[4, 6];
+    back_SetGround(LEVEL_D03P41A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    supervision_Acting(1);
+    screen_FadeIn(1, 30);
+    bgm_Stop();
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    WaitSe(5143);
+    CallCommon(CORO_BOSS_WIPE_FUNC);
+    $SCENARIO_MAIN = scn[4, 6];
+    main_EnterDungeon(5, 30);
+    main_EnterDungeon(-1, 30);
+    hold;
+    end;
+}
+
+def 1 for_actor(ACTOR_ATTENDANT1) {
+    SetAnimation(2);
+    Lock(5);
+    MovePositionMark(1, Position<'m10', 41, 40.5>);
+    Lock(6);
+    SetAnimation(3);
+    §label_1;
+    forever {
+        SlidePositionOffset(1, 1, 0);
+        Wait(1);
+        SlidePositionOffset(1, -1, 0);
+        Wait(1);
+        switch ( $EVENT_LOCAL ) {
+            case 1:
+                break_loop;
+                break;
+            default:
+                continue;  // may be redundant
+        }
+    }
+    §label_0;
+    SetAnimation(2);
+    Lock(7);
+    hold;
+}

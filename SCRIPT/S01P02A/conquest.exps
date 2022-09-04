@@ -1,0 +1,72 @@
+
+def 0 {
+    $SCENARIO_MAIN_BIT_FLAG[40] = 0;
+    debug_Print('CONQUEST_S01P02A');
+    back_SetGround(LEVEL_S01P02A);
+    switch ( message_Menu(MENU_DUNGEON_EXPLORATION_RESULTS) ) { }
+    switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+    bgm_PlayFadeIn(BGM_PELIPPER_ISLAND, 0, 256);
+    bgm2_PlayFadeIn(BGM_OCEAN1, 0, 128);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    switch ( message_Menu(36) ) { }
+    message_SetFace(ACTOR_NPC_PERIPPAA2, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    Wait(10);
+    message_Talk({
+        english=" Oh, yes.[K] Don\'t forget to send an\n[CS:E]A-OK Mail[CR] to the friend you rescued!",
+        french=" Ah, oui![K] N\'oubliez pas d\'envoyer\nune [CS:E]Lettre O.K.[CR] à la personne que vous avez\nsecourue!",
+        german=" Oh ja.[K] Vergiss nicht, dem von\ndir befreiten Freund einen [CS:E]Okay-Brief[CR]\nzu senden!",
+        italian=" Oh, sì.[K] Non dimenticarti di\ninviare l\'[CS:E]E-mail di OK[CR] a chi hai soccorso.",
+        spanish=" Ah, por cierto...[K] No os olvidéis\nde enviar una [CS:E]carta de misión cumplida[CR] al\namigo que hayas rescatado.",
+    });
+    message_Talk({
+        english=" You can send your [CS:E]A-OK Mail[CR]\nfrom within Friend Rescue on the Top Menu.",
+        french=" Vous pouvez envoyer votre\n[CS:E]Lettre O.K.[CR] en sélectionnant Sauvetage Ami\nà partir du menu principal.",
+        german=" Du kannst deinen [CS:E]Okay-Brief[CR]\nüber FREUNDRETTUNG im Hauptmenü senden.",
+        italian=" Puoi inviare l\'[CS:E]E-mail di OK[CR]\nscegliendo Pronto Intervento nel menu\nprincipale.",
+        spanish=" Se puede enviar desde el menú\nque aparece al seleccionar la opción Rescate\nde amigos en el menú principal.",
+    });
+    message_Close();
+    Unlock(3);
+    WaitExecuteLives(ACTOR_PLAYER);
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    WaitExecuteLives(ACTOR_NPC_PERIPPAA1);
+    supervision_ExecuteStationCommon(LEVEL_S01P02A, 1);
+    hold;
+}
+
+def 1 for_actor(ACTOR_PLAYER) {
+    SetPositionInitial();
+    SetAnimation(2);
+    Lock(3);
+    SetFunctionAttribute(2);
+    hold;
+}
+
+def 2 for_actor(ACTOR_ATTENDANT1) {
+    SetPositionInitial();
+    SetAnimation(2);
+    Lock(3);
+    SetFunctionAttribute(2);
+    hold;
+}
+
+def 3 for_actor(ACTOR_NPC_PERIPPAA1) {
+    SetPositionInitial();
+    SetAnimation(2);
+    Lock(3);
+    hold;
+}
+
+def 4 for_actor(ACTOR_NPC_CHIRIIN) {
+    if ( scn($SCENARIO_MAIN) >= [6, 3] ) {
+        §label_0;
+        end;
+    } else {
+        Destroy();
+    }
+}

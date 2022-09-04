@@ -1,0 +1,581 @@
+
+def 0 {
+    sound_Stop();
+    if ( $SCENARIO_MAIN_BIT_FLAG[8] ) {
+        §label_0;
+        $SCENARIO_MAIN_BIT_FLAG[8] = 0;
+        Wait(30);
+        me_Play(7);
+        message_Explanation({
+            english="[CN]Exploration Team\n[CN]Quick Tip[W:30]",
+            french="[CN]Petit conseil à l\'attention\n[CN]des équipes d\'exploration[W:30]",
+            german="[CN]Tipp für\n[CN]Erkundungsteams[W:30]",
+            italian="[CN]Consiglio rapido\n[CN]per le squadre d\'esplorazione.[W:30]",
+            spanish="[CN]Consejo para\n[CN]equipos de exploración:[W:30]",
+        });
+        CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+        message_Explanation({
+            english="[CN]You can save a record of your progress\n[CN]by climbing onto your bed from now on.",
+            french="[CN]A présent, vous pouvez sauvegarder votre\n[CN]progression en allant sur votre lit.",
+            german="[CN]Du kannst deinen Spielstand ab jetzt speichern,\n[CN]indem du dich zu deinem Bett begibst.",
+            italian="[CN]D\'ora in poi puoi salvare i tuoi progressi\n[CN]salendo sul letto.",
+            spanish="[CN]Desde ahora puedes guardar la partida\n[CN]metiéndote en la cama.",
+        });
+        message_Explanation({
+            english="[CN]So whenever you want to save your\n[CN]progress, just climb onto your bed.",
+            french="[CN]Donc quand vous voulez sauvegarder votre\n[CN]partie, il vous suffit d\'aller sur votre lit.",
+            german="[CN]Willst du also deinen Spielstand speichern,\n[CN]gehe einfach zu deinem Bett.",
+            italian="[CN]Quindi, quando vuoi salvare i tuoi progressi,\n[CN]sali sul letto.",
+            spanish="[CN]Por tanto, cuando quieras guardar tu avance\n[CN]solo tienes que dirigirte a la cama.",
+        });
+        message_Close();
+        Wait(60);
+        end;
+    } else {
+        back2_SetMode(4);
+        back2_SetGround(LEVEL_V02P06A);
+        camera2_SetPositionMark(Position<'m0', 19.5, 15.5>);
+        screen2_FadeIn(1, 60);
+        Wait(150);
+        screen2_FadeOut(1, 60);
+        back2_SetMode(0);
+        back_SetGround(LEVEL_G01P07C);
+        supervision_Acting(0);
+        with (performer 0) {
+            camera_SetMyself();
+        }
+        with (actor ACTOR_PLAYER) {
+            SetAnimation(76);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(76);
+        }
+        screen_FadeChange(1, 60, 0, 192);
+        bgm_PlayFadeIn(BGM_GOODNIGHT, 0, 256);
+        Wait(30);
+        message_SetActor(ACTOR_ATTENDANT1);
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" ...",
+                    french=" ...",
+                    german=" ...",
+                    italian=" ...",
+                    spanish=" ...",
+                }
+            case 2:
+                {
+                    english=" ...",
+                    french=" ...",
+                    german=" ...",
+                    italian=" ...",
+                    spanish=" ...",
+                }
+            default:
+                {
+                    english=" ...",
+                    french=" ...",
+                    german=" ...",
+                    italian=" ...",
+                    spanish=" ...",
+                }
+        }
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" ......",
+                    french=" ......",
+                    german=" ......",
+                    italian=" ...",
+                    spanish=" ...",
+                }
+            case 2:
+                {
+                    english=" ......",
+                    french=" ......",
+                    german=" ......",
+                    italian=" ...",
+                    spanish=" ...",
+                }
+            default:
+                {
+                    english=" ......",
+                    french=" ......",
+                    german=" ......",
+                    italian=" ...",
+                    spanish=" ...",
+                }
+        }
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" Hey, are you still awake,\n[hero]?",
+                    french=" Dis, tu dors, [hero]?",
+                    german=" Hey, bist du noch wach,\n[hero]?",
+                    italian=" Ehi, stai già dormendo,\n[hero]?",
+                    spanish=" Todavía no te has dormido,\n¿verdad, [hero]?",
+                }
+            case 2:
+                {
+                    english=" Oh, are you still awake,\n[hero]?",
+                    french=" Dis, tu dors, [hero]?",
+                    german=" Oh, bist du noch wach,\n[hero]?",
+                    italian=" Oh, non dormi ancora,\n[hero]?",
+                    spanish=" Todavía no te has dormido,\n¿verdad, [hero]?",
+                }
+            default:
+                {
+                    english=" Say, are you still awake,\n[hero]?",
+                    french=" Dis, tu dors, [hero]?",
+                    german=" Sag, [hero], bist du noch\nwach?",
+                    italian=" Ehi, non dormi ancora,\n[hero]?",
+                    spanish=" Yo aún sigo despierta.\nY tú también, ¿verdad, [hero]?",
+                }
+        }
+        CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" My heart\'s been pounding over\nevery little thing today...",
+                    french=" Mon cœur a battu la chamade\ntoute la journée...",
+                    german=" Ich hatte heute die ganze Zeit\nHerzrasen...",
+                    italian=" Oggi ci sono stati tanti momenti\nemozionanti per me...",
+                    spanish=" Llevo todo el día con el corazón\nlatiéndome a cien por hora con todo esto...",
+                }
+            case 2:
+                {
+                    english=" My heart\'s been racing all\nday today over every little thing...",
+                    french=" Mon cœur a battu la chamade\ntoute la journée...",
+                    german=" Ich hatte heute die ganze Zeit\nHerzrasen...",
+                    italian=" Oggi ci sono stati tanti momenti\nemozionanti per me...",
+                    spanish=" Hoy ha sido un día lleno de\nemociones, la verdad...",
+                }
+            default:
+                {
+                    english=" My heart\'s been racing all day...",
+                    french=" Mon cœur a battu la chamade\ntoute la journée...",
+                    german=" Ich hatte den ganzen Tag\nHerzrasen...",
+                    italian=" Oggi ci sono stati tanti momenti\nemozionanti per me...",
+                    spanish=" La verdad es que ha sido un día\nincreíble. Aún me palpita el corazón...",
+                }
+        }
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" But I\'m glad I finally worked up\nthe courage to come here.",
+                    french=" Je suis heureux d\'avoir enfin\npris mon courage à deux mains pour venir ici.",
+                    german=" Aber ich bin froh, dass ich\nendlich den Mut hatte, hierherzukommen.",
+                    italian=" Ma sono contento di aver \nfinalmente trovato il coraggio di venire qui.",
+                    spanish=" Pero me alegro de haber reunido\nel valor para venir aquí.",
+                }
+            case 2:
+                {
+                    english=" But I\'m glad I finally made\nmyself come here.",
+                    french=" Je suis heureux d\'avoir enfin\npris mon courage à deux mains pour venir ici.",
+                    german=" Aber ich bin froh, dass ich\nmich endlich hergetraut habe.",
+                    italian=" Ma sono contento di aver \nfinalmente trovato il coraggio di venire qui.",
+                    spanish=" Pero me alegro de haberme\natrevido a venir aquí.",
+                }
+            default:
+                {
+                    english=" But I\'m glad I finally forced\nmyself to come here.",
+                    french=" Je suis heureuse d\'avoir enfin\npris mon courage à deux mains pour venir ici.",
+                    german=" Aber ich bin froh, dass ich mich\nendlich überwunden habe, herzukommen.",
+                    italian=" Ma sono contenta di aver \nfinalmente trovato il coraggio di venire qui.",
+                    spanish=" Pero estoy contenta por haberme\natrevido a venir.",
+                }
+        }
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" I thought [CS:N]Wigglytuff[CR] would be\na lot scarier, but he seems pretty nice.",
+                    french=" Je pensais que [CS:N]Grodoudou[CR] serait\nplus effrayant, mais il a l\'air plutôt gentil.",
+                    german=" Ich habe mir [CS:N]Knuddeluff[CR] viel\ngruseliger vorgestellt. Er scheint ganz nett zu\nsein.",
+                    italian=" Pensavo che [CS:N]Wigglytuff[CR] fosse\npiù spaventoso, ma in realtà sembra molto\ngentile.",
+                    spanish=" Creía que [CS:N]Wigglytuff[CR] impondría\nmucho más respeto, pero parece muy\nsimpático.",
+                }
+            case 2:
+                {
+                    english=" I thought [CS:N]Wigglytuff[CR] would be\nscary, but he seems pretty friendly.",
+                    french=" Je pensais que [CS:N]Grodoudou[CR] serait\nplus effrayant, mais il a l\'air plutôt gentil.",
+                    german=" Ich habe mir [CS:N]Knuddeluff[CR] voll\ngruselig vorgestellt, aber er scheint sehr\nfreundlich zu sein.",
+                    italian=" Pensavo che [CS:N]Wigglytuff[CR] fosse\npiù spaventoso, ma in realtà sembra molto\ngentile.",
+                    spanish=" Esperaba que [CS:N]Wigglytuff[CR] me\nasustase, pero la verdad es que parece\nmuy simpático.",
+                }
+            default:
+                {
+                    english=" I thought [CS:N]Wigglytuff[CR] would be\nkind of scary, but he was pretty nice.",
+                    french=" Je pensais que [CS:N]Grodoudou[CR] serait\nplus effrayant, mais il a l\'air plutôt gentil.",
+                    german=" Ich habe mir [CS:N]Knuddeluff[CR]\nirgendwie gruselig vorgestellt, aber er war\nrichtig nett.",
+                    italian=" Pensavo che [CS:N]Wigglytuff[CR] fosse\npiù spaventoso, ma in realtà sembra molto\ngentile.",
+                    spanish=" Tenía miedo de [CS:N]Wigglytuff[CR], pero\nal final ha resultado ser la mar de simpático.",
+                }
+        }
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" Even though tomorrow has all\nsorts of new stuff in store for us, I\'m not\nscared at all!",
+                    french=" Même si la journée de demain\nnous réserve plein de surprises, je n\'ai pas\ntrop peur!",
+                    german=" Morgen erwartet uns zwar eine\nMenge Neues, aber ich habe überhaupt keine\nAngst!",
+                    italian=" Anche se domani dovremo \nconfrontarci con delle nuove sfide, non ho per\nniente paura!",
+                    spanish=" Aunque mañana será un día\nrepleto de cosas nuevas, ¡ya no tengo miedo!",
+                }
+            case 2:
+                {
+                    english=" We\'re going to experience all\nsorts of things starting tomorrow, but I\'m not\nvery scared.",
+                    french=" Même si la journée de demain\nnous réserve plein de surprises, je n\'ai pas\ntrop peur!",
+                    german=" Ab morgen kommt so einiges auf\nuns zu, aber ich habe kaum Angst.",
+                    italian=" Anche se domani dovremo \naffrontare delle nuove sfide, non ho affatto\npaura!",
+                    spanish=" Mañana será un día repleto\nde novedades, pero ya no estoy tan asustado.",
+                }
+            default:
+                {
+                    english=" We\'ll experience all sorts of\nnew stuff starting tomorrow, but I\'m not\nvery frightened.",
+                    french=" Même si la journée de demain\nnous réserve plein de surprises, je n\'ai pas\ntrop peur!",
+                    german=" Morgen erwartet uns zwar eine\nMenge Neues, aber ich habe keine große Angst.",
+                    italian=" Anche se domani dovremo \naffrontare delle nuove sfide, non sono affatto\nspaventata!",
+                    spanish=" Mañana será un día lleno\nde sorpresas, pero ya no estoy asustada.",
+                }
+        }
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" Actually, I\'m excited about the\nnew adventures we\'ll face!",
+                    french=" Au contraire, je suis carrément\nimpatient de commencer à vivre toutes ces\naventures!",
+                    german=" Eigentlich bin ich sogar gespannt\nauf unsere neuen Abenteuer!",
+                    italian=" A dire il vero, non vedo l\'ora di \nscoprire quali nuove avventure ci attendono!",
+                    spanish=" En realidad, ¡me muero\nde ganas por saber lo que nos espera!",
+                }
+            case 2:
+                {
+                    english=" In fact, it\'s the other way\naround. I\'m super excited about the adventures\nwe\'ll face!",
+                    french=" Au contraire, je suis carrément\nimpatient de commencer à vivre toutes ces\naventures!",
+                    german=" Im Gegenteil! Ich bin total\ngespannt auf neue Abenteuer!",
+                    italian=" A dire il vero, non vedo l\'ora di \nscoprire quali nuove avventure ci attendono!",
+                    spanish=" ¡La verdad es que estoy\nansioso por ver qué aventuras nos esperan!",
+                }
+            default:
+                {
+                    english=" Actually, I can\'t wait to find\nout what new adventures are in store for us!",
+                    french=" Au contraire, je suis carrément\nimpatiente de commencer à vivre toutes ces\naventures!",
+                    german=" Eigentlich kann ich es kaum\nerwarten, neue Abenteuer zu erleben!",
+                    italian=" A dire il vero, non vedo l\'ora di \nscoprire quali nuove avventure ci attendono!",
+                    spanish=" ¡Lo cierto es que tengo muchas\nganas de ver qué aventuras nos esperan!",
+                }
+        }
+        CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" Yawn... I\'m getting sleepy...",
+                    french=" Mouaaaaaaaaah... Je commence\nà avoir sommeil...",
+                    german=" Gähn... Ich bin ganz schläfrig...",
+                    italian=" Yawn... Che sonno...",
+                    spanish=" ¡Uaaa! ¡Qué sueño!",
+                }
+            case 2:
+                {
+                    english=" I\'m feeling a little sleepy...",
+                    french=" Mouaaaaaaaaah... Je commence\nà avoir sommeil...",
+                    german=" Langsam werde ich müde...",
+                    italian=" Yawn... Che sonno...",
+                    spanish=" Ya tengo un poco de sueño...",
+                }
+            default:
+                {
+                    english=" I\'m getting a little sleepy...",
+                    french=" Mouaaaaaaaaah... Je commence\nà avoir sommeil...",
+                    german=" So langsam bin ich müde...",
+                    italian=" Yawn... Che sonno...",
+                    spanish=" Me parece que me está entrando\nsueño...",
+                }
+        }
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" Let\'s do our best tomorrow.",
+                    french=" Faisons de notre mieux, demain!",
+                    german=" Geben wir morgen unser Bestes.",
+                    italian=" Facciamo del nostro meglio \ndomani.",
+                    spanish=" Mañana tenemos que\nesforzarnos.",
+                }
+            case 2:
+                {
+                    english=" Let\'s give it our all tomorrow.",
+                    french=" Faisons de notre mieux, demain!",
+                    german=" Geben wir morgen unser\nAllerbestes.",
+                    italian=" Facciamo del nostro meglio \ndomani.",
+                    spanish=" Mañana debemos esforzarnos.",
+                }
+            default:
+                {
+                    english=" Let\'s give it our all tomorrow.",
+                    french=" Faisons de notre mieux, demain!",
+                    german=" Geben wir morgen unser\nAllerbestes.",
+                    italian=" Facciamo del nostro meglio \ndomani.",
+                    spanish=" ¡Mañana debemos hacerlo\nlo mejor que podamos!",
+                }
+        }
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" All right then. Good night,\n[hero]...",
+                    french=" Bonne nuit, [hero]...",
+                    german=" In Ordnung. Gute Nacht,\n[hero].",
+                    italian=" Va bene. Buona notte,\n[hero]...",
+                    spanish=" Bueno, [hero]...\nBuenas noches.",
+                }
+            case 2:
+                {
+                    english=" OK, [hero]. Good night.",
+                    french=" Bonne nuit, [hero]...",
+                    german=" Okay, [hero]. Gute Nacht.",
+                    italian=" Va bene. Buona notte,\n[hero]...",
+                    spanish=" Bueno, [hero].\nHasta mañana.",
+                }
+            default:
+                {
+                    english=" OK, [hero]. Sleep tight.",
+                    french=" Bonne nuit, [hero]...",
+                    german=" Okay, [hero]. Schlaf gut.",
+                    italian=" Va bene. Buona notte,\n[hero]...",
+                    spanish=" Bueno, [hero]...\nQue duermas bien.",
+                }
+        }
+        CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(62);
+        }
+        Wait(90);
+        bgm_FadeOut(120);
+        message_EmptyActor();
+        message_SwitchMonologue ($HERO_TALK_KIND) {
+            case 4:
+                {
+                    english="(Um...)",
+                    french="(Hum...)",
+                    german="(Ähm...)",
+                    italian="(Uhm...)",
+                    spanish="(Hum...)",
+                }
+            default:
+                {
+                    english="(Um...)",
+                    french="(Hum...)",
+                    german="(Ähm...)",
+                    italian="(Uhm...)",
+                    spanish="(Hum...)",
+                }
+        }
+        message_SwitchMonologue ($HERO_TALK_KIND) {
+            case 4:
+                {
+                    english="(Now I\'m suddenly apprenticing at the guild...)",
+                    french="(Me voici devenu apprenti de la Guilde...)",
+                    german="(Auf einmal bin ich Lehrling in der Gilde...)",
+                    italian="(Adesso che sono all\'improvviso diventato un \napprendista alla Gilda...)",
+                    spanish="(Parece que he acabado de aprendiz en este\n[CS:N]Pokégremio[CR]...)",
+                }
+            default:
+                {
+                    english="(Now I\'m suddenly apprenticing at the guild...)",
+                    french="(Me voici devenue apprentie de la Guilde...)",
+                    german="(Auf einmal bin ich Lehrling in der Gilde...)",
+                    italian="(Adesso che sono all\'improvviso diventata  \nun\'apprendista alla Gilda...)",
+                    spanish="(No sé cómo, pero he acabado como aprendiz\nen este [CS:N]Pokégremio[CR]...)",
+                }
+        }
+        message_SwitchMonologue ($HERO_TALK_KIND) {
+            case 4:
+                {
+                    english="(I gotta admit, it\'s pretty exciting to be in an\nexploration team.)",
+                    french="(Je dois bien admettre que c\'est assez\npassionnant de faire partie d\'une équipe\nd\'exploration.)",
+                    german="(Ich muss zugeben, dass es ziemlich aufregend\nist, in einem Erkundungsteam zu sein.)",
+                    italian="(... devo ammettere che è molto emozionante\nfare parte di una squadra d\'esplorazione.)",
+                    spanish="(Aunque he de admitir que la idea de estar\nen un equipo explorador es emocionante.)",
+                }
+            default:
+                {
+                    english="(I gotta admit, it\'s pretty exciting to be in an\nexploration team.)",
+                    french="(Je dois bien admettre que c\'est assez\npassionnant de faire partie d\'une équipe\nd\'exploration.)",
+                    german="(Ich muss zugeben, dass es ziemlich aufregend\nist, in einem Erkundungsteam zu sein.)",
+                    italian="(... devo ammettere che è molto emozionante\nfare parte di una squadra d\'esplorazione.)",
+                    spanish="(Aunque he de admitir que la idea de estar\nen un equipo explorador es emocionante.)",
+                }
+        }
+        message_SwitchMonologue ($HERO_TALK_KIND) {
+            case 4:
+                {
+                    english="(And it\'s fun to be friends with\n[partner]...)",
+                    french="(Et puis, c\'est amusant d\'être l\'ami de\n[partner]...)",
+                    german="(Und ich habe viel Spaß mit [partner].)",
+                    italian="(Ed è bello essere amico di [partner]...)",
+                    spanish="(Y es divertido ser amigo de [partner]...)",
+                }
+            default:
+                {
+                    english="(And it\'s fun to be friends with\n[partner]...)",
+                    french="(Et puis, c\'est amusant d\'être l\'amie de\n[partner]...)",
+                    german="(Und ich habe viel Spaß mit [partner].)",
+                    italian="(Ed è bello essere amica di [partner]...)",
+                    spanish="(Y es divertido ser amiga de [partner]...)",
+                }
+        }
+        message_SwitchMonologue ($HERO_TALK_KIND) {
+            case 4:
+                {
+                    english="(But first things first...)",
+                    french="(Mais commençons par le commencement...)",
+                    german="(Aber noch wichtiger ist...)",
+                    italian="(Ma devo ancora trovare una risposta alle mie\ndomande...)",
+                    spanish="(Pero lo primero es lo primero...)",
+                }
+            default:
+                {
+                    english="(But first things first...)",
+                    french="(Mais commençons par le commencement...)",
+                    german="(Aber noch wichtiger ist...)",
+                    italian="(Ma devo ancora trovare una risposta alle mie\ndomande...)",
+                    spanish="(Pero lo primero es lo primero...)",
+                }
+        }
+        message_SwitchMonologue ($HERO_TALK_KIND) {
+            case 4:
+                {
+                    english="(Who am I?)",
+                    french="(Qui suis-je?)",
+                    german="(Wer bin ich?)",
+                    italian="(Chi sono?)",
+                    spanish="(¿Quién soy?)",
+                }
+            default:
+                {
+                    english="(Who am I?)",
+                    french="(Qui suis-je?)",
+                    german="(Wer bin ich?)",
+                    italian="(Chi sono?)",
+                    spanish="(¿Quién soy?)",
+                }
+        }
+        message_SwitchMonologue ($HERO_TALK_KIND) {
+            case 4:
+                {
+                    english="(How did I turn into a Pokémon?)",
+                    french="(Comment me suis-je transformé en\nPokémon?)",
+                    german="(Wie bin ich zu einem Pokémon geworden?)",
+                    italian="(Come ho fatto a trasformarmi in un \nPokémon?)",
+                    spanish="(¿Cómo he acabado convertido en un\nPokémon?)",
+                }
+            default:
+                {
+                    english="(How did I turn into a Pokémon?)",
+                    french="(Comment me suis-je transformée en\nPokémon?)",
+                    german="(Wie bin ich zu einem Pokémon geworden?)",
+                    italian="(Come ho fatto a trasformarmi in un \nPokémon?)",
+                    spanish="(¿Cómo he acabado convertida en un\nPokémon?)",
+                }
+        }
+        message_SwitchMonologue ($HERO_TALK_KIND) {
+            case 4:
+                {
+                    english="(How did I end up unconscious on that beach?)",
+                    french="(Comment ai-je atterri sur cette plage?\nPourquoi étais-je inconscient?)",
+                    german="(Wieso lag ich bewusstlos am Strand?)",
+                    italian="(Come ho fatto a finire svenuto su \nquella spiaggia?)",
+                    spanish="(¿Por qué estaba inconsciente en aquella\nplaya?)",
+                }
+            default:
+                {
+                    english="(How did I end up unconscious on that beach?)",
+                    french="(Comment ai-je atterri sur cette plage?\nPourquoi étais-je inconsciente?)",
+                    german="(Wieso lag ich bewusstlos am Strand?)",
+                    italian="(Come ho fatto a finire svenuta su \nquella spiaggia?)",
+                    spanish="(¿Por qué estaba inconsciente en aquella\nplaya?)",
+                }
+        }
+        message_SwitchMonologue ($HERO_TALK_KIND) {
+            case 4:
+                {
+                    english="(I\'m feeling sleepy too...)",
+                    french="(Moi aussi je suis fatigué...)",
+                    german="(Ich bin auch müde.)",
+                    italian="(Anch\'io ho sonno...)",
+                    spanish="(Me está entrando sueño a mí también...)",
+                }
+            default:
+                {
+                    english="(I\'m feeling sleepy too...)",
+                    french="(Moi aussi je suis fatiguée...)",
+                    german="(Ich bin auch müde.)",
+                    italian="(Anch\'io ho sonno...)",
+                    spanish="(Me está entrando sueño a mí también...)",
+                }
+        }
+        message_SwitchMonologue ($HERO_TALK_KIND) {
+            case 4:
+                {
+                    english="(Well, thinking about it won\'t help right now.\nI\'d better focus on the guild\'s work for now...)",
+                    french="(Mais cela ne sert à rien de réfléchir à tout\nça pour le moment. Je ferais mieux de\nme concentrer sur le travail à la Guilde...)",
+                    german="(Tja, es bringt jetzt nichts, darüber\nnachzudenken. Ich konzentriere mich fürs\nErste besser auf die Arbeit in der Gilde.)",
+                    italian="(Beh, pensarci non serve a niente ora.\nFarò meglio a concentrarmi sui miei compiti \nqui alla Gilda, per il momento...)",
+                    spanish="(Pensar en ello no me servirá de nada ahora.\nSerá mejor que me centre en el [CS:N]Pokégremio[CR].)",
+                }
+            default:
+                {
+                    english="(Well, thinking about it won\'t help right now.\nI\'d better focus on the guild\'s work for now...)",
+                    french="(Mais cela ne sert à rien de réfléchir à tout\nça pour le moment. Je ferais mieux de\nme concentrer sur le travail à la Guilde...)",
+                    german="(Tja, es bringt jetzt nichts, darüber\nnachzudenken. Ich konzentriere mich fürs\nErste besser auf die Arbeit in der Gilde.)",
+                    italian="(Beh, pensarci non serve a niente ora.\nFarò meglio a concentrarmi sui miei compiti \nqui alla Gilda, per il momento...)",
+                    spanish="(Pensar en ello no me servirá de nada ahora.\nSerá mejor que me centre en el [CS:N]Pokégremio[CR].)",
+                }
+        }
+        message_SwitchMonologue ($HERO_TALK_KIND) {
+            case 4:
+                {
+                    english="(If I do that, well, everything should become\nclear eventually...)",
+                    french="(Peut-être que de cette façon, les choses\nvont se clarifier...)",
+                    german="(Wenn ich das tue, sollte sich alles\nirgendwann aufklären.)",
+                    italian="(In questo modo, forse prima o poi le cose\nsi chiariranno...)",
+                    spanish="(Creo que si lo hago, todo acabará por\naclararse tarde o temprano...)",
+                }
+            default:
+                {
+                    english="(If I do that, well, everything should become\nclear eventually...)",
+                    french="(Peut-être que de cette façon, les choses\nvont se clarifier...)",
+                    german="(Wenn ich das tue, sollte sich alles\nirgendwann aufklären.)",
+                    italian="(In questo modo, forse prima o poi le cose\nsi chiariranno...)",
+                    spanish="(Creo que si lo hago, todo acabará por\naclararse tarde o temprano...)",
+                }
+        }
+        message_SwitchMonologue ($HERO_TALK_KIND) {
+            case 4:
+                {
+                    english="(I\'ll surely get to the bottom of this in time.)",
+                    french="(Je découvrirai sûrement le fin mot de\nl\'histoire en temps voulu.)",
+                    german="(Mit der Zeit komme ich den Dingen sicher auf\nden Grund.)",
+                    italian="(Andrò al fondo della questione quando sarà \nil momento.)",
+                    spanish="(Sin duda acabaré llegando al fondo de todo\nesto.)",
+                }
+            default:
+                {
+                    english="(I\'ll surely get to the bottom of this in time.)",
+                    french="(Je découvrirai sûrement le fin mot de\nl\'histoire en temps voulu.)",
+                    german="(Mit der Zeit komme ich den Dingen sicher auf\nden Grund.)",
+                    italian="(Andrò al fondo della questione quando sarà \nil momento.)",
+                    spanish="(Sé que acabaré descubriendo lo que pasa...)",
+                }
+        }
+        message_Close();
+        Wait(30);
+        with (actor ACTOR_PLAYER) {
+            SetAnimation(62);
+        }
+        Wait(120);
+        screen_FadeOut(1, 120);
+        Wait(60);
+        $SCENARIO_MAIN_BIT_FLAG[8] = 1;
+        $COMPULSORY_SAVE_POINT = 1;
+        CallCommon(CORO_HANYOU_SAVE_FUNC);
+        jump @label_0;
+    }
+}

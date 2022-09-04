@@ -1,0 +1,291 @@
+
+def 0 {
+    if ( scn($SCENARIO_MAIN) >= [29, 94] ) {
+        §label_0;
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_RURIRI);
+        }
+        message_SetFace(ACTOR_NPC_RURIRI, FACE_NORMAL, FACE_POS_STANDARD);
+        message_Talk({
+            english=" Mr. [CS:N]Drowzee[CR] told me to tell you,\n\"Take care and thanks,\" [hero] and\n[partner].",
+            french=" Monsieur [CS:N]Soporifik[CR] m\'a dit\nde vous dire: \"Faites attention à vous et\nmerci, [hero] et [partner].\"",
+            german=" Herr [CS:N]Traumato[CR] bat mich, euch\nseinen Dank auszurichten, und ihr sollt auf euch\naufpassen, [hero] und [partner].",
+            italian=" Il signor [CS:N]Drowzee[CR] mi ha detto\ndi dirvi: \"In gamba e grazie\", [hero] e\n[partner].",
+            spanish=" El señor [CS:N]Drowzee[CR] me pidió que\nos diera las gracias y que os deseara\nlo mejor de su parte.",
+        });
+        message_Close();
+        §label_130;
+        JumpCommon(CORO_END_TALK);
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 93] || scn($SCENARIO_MAIN) >= [29, 92] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_RURIRI);
+        }
+        message_SetFace(ACTOR_NPC_RURIRI, FACE_JOYOUS, FACE_POS_STANDARD);
+        message_Talk({
+            english=" Thank you, [hero] and\n[partner]!",
+            french=" Merci, [hero]\net [partner]!",
+            german=" Danke, [hero] und\n[partner]!",
+            italian=" Grazie, [hero] e\n[partner]!",
+            spanish=" ¡Gracias, [hero] y\n[partner]!",
+        });
+        message_Close();
+        jump @label_130;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 91] || scn($SCENARIO_MAIN) >= [29, 90] || scn($SCENARIO_MAIN) >= [29, 89] || scn($SCENARIO_MAIN) >= [29, 88] || scn($SCENARIO_MAIN) >= [29, 87] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_RURIRI);
+        }
+        message_SetFace(ACTOR_NPC_RURIRI, FACE_NORMAL, FACE_POS_STANDARD);
+        message_Talk({
+            english=" Go, go, go, [hero] and\n[partner]!",
+            french=" Foncez, foncez, [partner]\net [hero]!",
+            german=" Los, los, los, [partner] und\n[hero]!",
+            italian=" Forza, forza, forza, \n[hero] e [partner]!",
+            spanish=" ¡Adelante, [partner] y\n[hero]!",
+        });
+        message_Close();
+        jump @label_130;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 85] || scn($SCENARIO_MAIN) >= [29, 84] || scn($SCENARIO_MAIN) >= [29, 83] || scn($SCENARIO_MAIN) >= [29, 82] || scn($SCENARIO_MAIN) >= [29, 81] || scn($SCENARIO_MAIN) >= [29, 80] || scn($SCENARIO_MAIN) >= [29, 78] || scn($SCENARIO_MAIN) >= [29, 76] || scn($SCENARIO_MAIN) >= [29, 75] || scn($SCENARIO_MAIN) >= [29, 73] || scn($SCENARIO_MAIN) >= [29, 72] ) {
+        with (actor ACTOR_PLAYER) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_RURIRI);
+        }
+        message_SetFace(ACTOR_NPC_RURIRI, FACE_PAIN, FACE_POS_STANDARD);
+        message_Talk({
+            english=" Urf...[K] Urrrrrfff...",
+            french=" Pff...[K] Pff...",
+            german=" Urf...[K] Urrrrrfff...",
+            italian=" Uff...[K] Ufffffff...",
+            spanish=" Ay...[K] Aaay...",
+        });
+        message_Close();
+        message_Close();
+        supervision_Suspend(-2);
+        end;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 71] || scn($SCENARIO_MAIN) >= [29, 70] || scn($SCENARIO_MAIN) >= [29, 69] || scn($SCENARIO_MAIN) >= [29, 67] || scn($SCENARIO_MAIN) >= [29, 56] || scn($SCENARIO_MAIN) >= [29, 55] || scn($SCENARIO_MAIN) >= [29, 54] || scn($SCENARIO_MAIN) >= [29, 53] || scn($SCENARIO_MAIN) >= [29, 52] || scn($SCENARIO_MAIN) >= [29, 50] || scn($SCENARIO_MAIN) >= [29, 49] || scn($SCENARIO_MAIN) >= [29, 48] || scn($SCENARIO_MAIN) >= [29, 47] || scn($SCENARIO_MAIN) >= [29, 46] || scn($SCENARIO_MAIN) >= [29, 45] || scn($SCENARIO_MAIN) >= [29, 44] || scn($SCENARIO_MAIN) >= [29, 43] || scn($SCENARIO_MAIN) >= [29, 42] || scn($SCENARIO_MAIN) >= [29, 41] || scn($SCENARIO_MAIN) >= [29, 40] || scn($SCENARIO_MAIN) >= [29, 39] || scn($SCENARIO_MAIN) >= [29, 33] || scn($SCENARIO_MAIN) >= [29, 32] || scn($SCENARIO_MAIN) >= [29, 31] || scn($SCENARIO_MAIN) >= [29, 30] || scn($SCENARIO_MAIN) >= [29, 29] || scn($SCENARIO_MAIN) >= [29, 28] || scn($SCENARIO_MAIN) >= [29, 27] || scn($SCENARIO_MAIN) >= [29, 26] || scn($SCENARIO_MAIN) >= [29, 25] || scn($SCENARIO_MAIN) >= [29, 24] || scn($SCENARIO_MAIN) >= [29, 23] || scn($SCENARIO_MAIN) >= [29, 22] || scn($SCENARIO_MAIN) >= [29, 21] || scn($SCENARIO_MAIN) >= [29, 20] || scn($SCENARIO_MAIN) >= [29, 19] || scn($SCENARIO_MAIN) >= [29, 18] || scn($SCENARIO_MAIN) >= [29, 17] || scn($SCENARIO_MAIN) >= [29, 16] || scn($SCENARIO_MAIN) >= [29, 15] || scn($SCENARIO_MAIN) >= [29, 14] || scn($SCENARIO_MAIN) >= [29, 13] || scn($SCENARIO_MAIN) >= [29, 12] || scn($SCENARIO_MAIN) >= [29, 11] || scn($SCENARIO_MAIN) >= [29, 10] || scn($SCENARIO_MAIN) >= [29, 8] || scn($SCENARIO_MAIN) >= [29, 6] || scn($SCENARIO_MAIN) >= [29, 5] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_RURIRI);
+        }
+        message_SetFace(ACTOR_NPC_RURIRI, FACE_JOYOUS, FACE_POS_STANDARD);
+        message_Talk({
+            english=" Congratulations, [partner]\nand [hero]!",
+            french=" Félicitations, [partner]\net [hero]!",
+            german=" Glückwunsch, [partner]\nund [hero]!",
+            italian=" Congratulazioni, [partner]\ne [hero]!",
+            spanish=" ¡Enhorabuena, [partner] y\n[hero]!",
+        });
+        message_Close();
+        jump @label_130;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 4] || scn($SCENARIO_MAIN) >= [29, 3] || scn($SCENARIO_MAIN) >= [29, 2] || scn($SCENARIO_MAIN) >= [29, 1] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_RURIRI);
+        }
+        message_SetFace(ACTOR_NPC_RURIRI, FACE_NORMAL, FACE_POS_STANDARD);
+        message_Talk({
+            english=" Good morning! [partner] and\n[hero]!",
+            french=" Bonjour, [partner]\net [hero]!",
+            german=" Guten Morgen, [partner] und\n[hero]!",
+            italian=" Buongiorno! [partner] e\n[hero]!",
+            spanish=" ¡Buenos días! ¡[partner] y\n[hero]!",
+        });
+        message_Close();
+        jump @label_130;
+    } elseif ( scn($SCENARIO_MAIN) >= [25, 4] || scn($SCENARIO_MAIN) >= [25, 3] || scn($SCENARIO_MAIN) >= [25, 2] || scn($SCENARIO_MAIN) >= [25, 2] || scn($SCENARIO_MAIN) >= [25, 1] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_RURIRI);
+        }
+        message_SetFace(ACTOR_NPC_RURIRI, FACE_NORMAL, FACE_POS_STANDARD);
+        message_Talk({
+            english=" Go, go, go, [partner] and\n[hero]!",
+            french=" Foncez, foncez, [partner]\net [hero]!",
+            german=" Los, los, los, [partner] und\n[hero]!",
+            italian=" Forza, forza, forza,\n[partner] e [hero]!",
+            spanish=" ¡Adelante, [partner] y\n[hero]!",
+        });
+        message_Close();
+        jump @label_130;
+    } elseif ( scn($SCENARIO_MAIN) >= [24, 1] || scn($SCENARIO_MAIN) >= [24, 1] || scn($SCENARIO_MAIN) >= [23, 3] || scn($SCENARIO_MAIN) >= [23, 2] || scn($SCENARIO_MAIN) >= [23, 1] || scn($SCENARIO_MAIN) >= [22, 3] || scn($SCENARIO_MAIN) >= [22, 2] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_RURIRI);
+        }
+        message_SetFace(ACTOR_NPC_RURIRI, FACE_NORMAL, FACE_POS_STANDARD);
+        message_Talk({
+            english=" Welcome back, [partner] and\n[hero]!",
+            french=" Content de vous revoir,\n[partner] et [hero]!",
+            german=" Willkommen zurück,\n[partner] und [hero]!",
+            italian=" Che bello rivedervi,\n[partner] e [hero]!",
+            spanish=" ¡Os doy la bienvenida,\n[partner] y [hero]!",
+        });
+        message_Close();
+        jump @label_130;
+    } elseif ( scn($SCENARIO_MAIN) >= [21, 2] || scn($SCENARIO_MAIN) >= [21, 1] || scn($SCENARIO_MAIN) >= [20, 4] || scn($SCENARIO_MAIN) >= [20, 3] || scn($SCENARIO_MAIN) >= [20, 2] || scn($SCENARIO_MAIN) >= [20, 1] || scn($SCENARIO_MAIN) >= [17, 3] || scn($SCENARIO_MAIN) >= [17, 1] || scn($SCENARIO_MAIN) >= [16, 2] || scn($SCENARIO_MAIN) >= [16, 0] || scn($SCENARIO_MAIN) >= [15, 4] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_RURIRI);
+        }
+        message_SetFace(ACTOR_NPC_RURIRI, FACE_NORMAL, FACE_POS_STANDARD);
+        message_Talk({
+            english=" Yay! Good luck, [hero] and\n[partner]!",
+            french=" Youhou! Bonne chance,\n[hero] et [partner]!",
+            german=" Hurra! Viel Glück, [hero]\nund [partner]!",
+            italian=" Sì! Buona fortuna,\n[hero] e [partner]!",
+            spanish=" ¡Sí! ¡Buena suerte, [hero]\ny [partner]!",
+        });
+        message_Close();
+        jump @label_130;
+    } elseif ( scn($SCENARIO_MAIN) >= [15, 1] || scn($SCENARIO_MAIN) >= [14, 5] || scn($SCENARIO_MAIN) >= [14, 4] || scn($SCENARIO_MAIN) >= [14, 2] || scn($SCENARIO_MAIN) >= [14, 1] || scn($SCENARIO_MAIN) >= [13, 2] || scn($SCENARIO_MAIN) >= [13, 1] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_RURIRI);
+        }
+        message_SetFace(ACTOR_NPC_RURIRI, FACE_NORMAL, FACE_POS_STANDARD);
+        message_Talk({
+            english=" Please help us, Team\n[team:]!",
+            french=" S\'il vous plaît, aidez-nous,\nEquipe [team:]!",
+            german=" Bitte helft uns, Team\n[team:]!",
+            italian=" Per favore aiutateci, Team\n[team:]!",
+            spanish=" ¡Ayudadnos, [CS:X]Equipo[CR] [team:]!",
+        });
+        jump @label_130;
+    } elseif ( scn($SCENARIO_MAIN) >= [12, 4] || scn($SCENARIO_MAIN) >= [12, 3] || scn($SCENARIO_MAIN) >= [12, 1] || scn($SCENARIO_MAIN) >= [10, 2] || scn($SCENARIO_MAIN) >= [10, 1] || scn($SCENARIO_MAIN) >= [9, 5] || scn($SCENARIO_MAIN) >= [9, 4] || scn($SCENARIO_MAIN) >= [9, 2] || scn($SCENARIO_MAIN) >= [9, 1] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_RURIRI);
+        }
+        message_SetFace(ACTOR_NPC_RURIRI, FACE_JOYOUS, FACE_POS_STANDARD);
+        message_Talk({
+            english=" Oh, [hero] and\n[partner]!",
+            french=" Hé, [hero] et\n[partner]!",
+            german=" Oh, [hero] und\n[partner]!",
+            italian=" Oh, [hero] e\n[partner]!",
+            spanish=" Oh, ¡[hero] y\n[partner]!",
+        });
+        message_Talk({
+            english=" I hope you get lots of treasure!",
+            french=" J\'espère que vous découvrirez\nplein de trésors!",
+            german=" Ich hoffe, dass ihr reichlich\nSchätze erbeutet!",
+            italian=" Spero che troverete tanti tesori!",
+            spanish=" ¡Espero que encontréis miles de\ntesoros!",
+        });
+        message_Close();
+        jump @label_130;
+    } elseif ( scn($SCENARIO_MAIN) >= [8, 7] || scn($SCENARIO_MAIN) >= [8, 6] || scn($SCENARIO_MAIN) >= [8, 5] || scn($SCENARIO_MAIN) >= [8, 3] || scn($SCENARIO_MAIN) >= [8, 2] || scn($SCENARIO_MAIN) >= [8, 1] || scn($SCENARIO_MAIN) >= [7, 6] || scn($SCENARIO_MAIN) >= [7, 3] || scn($SCENARIO_MAIN) >= [7, 2] || scn($SCENARIO_MAIN) >= [7, 1] || scn($SCENARIO_MAIN) >= [6, 5] || scn($SCENARIO_MAIN) >= [6, 1] || scn($SCENARIO_MAIN) >= [5, 5] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_RURIRI);
+        }
+        message_SetFace(ACTOR_NPC_RURIRI, FACE_JOYOUS, FACE_POS_STANDARD);
+        message_Talk({
+            english=" Thank you, [hero] and\n[partner]!",
+            french=" Merci, [hero] et\n[partner]!",
+            german=" Danke, [hero] und\n[partner]!",
+            italian=" Grazie, [hero] e\n[partner]!",
+            spanish=" ¡Gracias, [hero] y\n[partner]!",
+        });
+        message_Close();
+        jump @label_130;
+    } elseif ( scn($SCENARIO_MAIN) >= [4, 7] || scn($SCENARIO_MAIN) >= [4, 5] || scn($SCENARIO_MAIN) >= [4, 3] || scn($SCENARIO_MAIN) >= [4, 2] || scn($SCENARIO_MAIN) >= [4, 1] || scn($SCENARIO_MAIN) >= [4, 0] || scn($SCENARIO_MAIN) >= [3, 1] ) {
+        jump @label_130;
+    } else {
+        jump @label_130;
+    }
+}

@@ -1,0 +1,132 @@
+
+def 0 {
+    sound_Stop();
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V17P01A);
+    back_SetGround(LEVEL_V17P03A);
+    supervision_Acting(0);
+    camera2_SetPositionMark(Position<'m0', 17, 15.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        MovePositionMark(32832, Position<'m1', 29, 19.5>);
+    }
+    back_SetBackScrollSpeed(2, 0);
+    bgm_PlayFadeIn(BGM_PLANETS_PARALYSIS, 0, 256);
+    screen2_FadeIn(0, 60);
+    screen_FadeIn(1, 60);
+    WaitExecutePerformer(0);
+    back_SetBackScrollSpeed(0, 0);
+    Wait(30);
+    message_SetActor(ACTOR_ATTENDANT1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" This is...[K]our world?[K]\nIn the future?",
+                french=" C\'est...[K] notre monde?[K]\nDans le futur?",
+                german=" Ist das...[K] unsere Welt?[K]\nIn der Zukunft?",
+                italian=" Questo è...[K] il nostro mondo?[K]\nNel futuro?",
+                spanish=" Este es...[K] ¿nuestro mundo?[K]\n¿Así es en el futuro?",
+            }
+        case 2:
+            {
+                english=" This is...[K]our world?[K]\nIn the future?",
+                french=" C\'est...[K] notre monde?[K]\nDans le futur?",
+                german=" Ist das...[K] unsere Welt?[K]\nIn der Zukunft?",
+                italian=" Questo è...[K] il nostro mondo?[K]\nNel futuro?",
+                spanish=" Este es...[K] ¿nuestro mundo?[K]\n¿Así es en el futuro?",
+            }
+        default:
+            {
+                english=" This is...[K]our world?[K]\nIn the future?",
+                french=" C\'est...[K] notre monde?[K]\nDans le futur?",
+                german=" Ist das...[K] unsere Welt?[K]\nIn der Zukunft?",
+                italian=" Questo è...[K] il nostro mondo?[K]\nNel futuro?",
+                spanish=" Este es...[K] ¿nuestro mundo?[K]\n¿Así es en el futuro?",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Those boulders are floating![K]\nThis is really a strange place...",
+                french=" Ces pierres flottent\nlittéralement dans les airs![K] Décidément,\ncet endroit est très étrange...",
+                german=" Die Felsen schweben![K]\nDas ist wirklich ein merkwürdiger Ort...",
+                italian=" Quei massi stanno galleggiando![K]\nÈ davvero un posto strano...",
+                spanish=" ¡Esas piedras están flotando![K]\nEste lugar es muy extraño.",
+            }
+        case 2:
+            {
+                english=" Those boulders are floating![K]\nThis is really a strange place...",
+                french=" Ces pierres flottent\nlittéralement dans les airs![K] Décidément,\ncet endroit est très étrange...",
+                german=" Die Felsen schweben![K]\nDas ist wirklich ein merkwürdiger Ort...",
+                italian=" Quei massi stanno galleggiando![K]\nÈ davvero un posto strano...",
+                spanish=" ¡Esas piedras están flotando![K]\nEste lugar es muy extraño.",
+            }
+        default:
+            {
+                english=" Those boulders are floating![K]\nThis is really a strange place...",
+                french=" Ces pierres flottent\nlittéralement dans les airs![K] Décidément,\ncet endroit est très étrange...",
+                german=" Die Felsen schweben![K]\nDas ist wirklich ein merkwürdiger Ort...",
+                italian=" Quei massi stanno galleggiando![K]\nÈ davvero un posto strano...",
+                spanish=" ¡Esas piedras están flotando![K]\nEste lugar es muy extraño.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" And it\'s horribly dark...",
+                french=" Et il fait horriblement sombre...",
+                german=" Und es ist schrecklich dunkel.",
+                italian=" Ed è terribilmente buio...",
+                spanish=" Y está horriblemente oscuro.",
+            }
+        case 2:
+            {
+                english=" And it\'s horribly dark...",
+                french=" Et il fait horriblement sombre...",
+                german=" Und es ist schrecklich dunkel.",
+                italian=" Ed è terribilmente buio...",
+                spanish=" Y está horriblemente oscuro.",
+            }
+        default:
+            {
+                english=" And it\'s horribly dark...",
+                french=" Et il fait horriblement sombre...",
+                german=" Und es ist schrecklich dunkel.",
+                italian=" Ed è terribilmente buio...",
+                spanish=" Y está horriblemente oscuro.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Not even the wind blows...",
+                french=" Pas même un courant d\'air...",
+                german=" Es weht nicht einmal der Wind.",
+                italian=" Non c\'è nemmeno un filo di\nvento...",
+                spanish=" Ni siquiera sopla el viento...",
+            }
+        case 2:
+            {
+                english=" Not even the wind blows...",
+                french=" Pas même un courant d\'air...",
+                german=" Es weht nicht einmal der Wind.",
+                italian=" Non c\'è nemmeno un filo di\nvento...",
+                spanish=" Ni siquiera sopla el viento...",
+            }
+        default:
+            {
+                english=" Not even the wind blows...",
+                french=" Pas même un courant d\'air...",
+                german=" Es weht nicht einmal der Wind.",
+                italian=" Non c\'è nemmeno un filo di\nvento...",
+                spanish=" Ni siquiera sopla el viento...",
+            }
+    }
+    message_Close();
+    screen2_FadeOut(0, 30);
+    screen_FadeOut(1, 30);
+    back2_SetMode(0);
+    end;
+}

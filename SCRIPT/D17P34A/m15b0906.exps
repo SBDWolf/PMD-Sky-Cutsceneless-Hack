@@ -1,0 +1,171 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_OH_NO, 0, 256);
+    back_SetGround(LEVEL_D17P34A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_AGUNOMU) {
+        SetDirection(DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_AGUNOMU) {
+        SetAnimation(42);
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Now, sunk down there...[K] That is\nthe Time Gear, isn\'t it!",
+        french=" Alors, il est là, sous les eaux...[K]\nMon Rouage du Temps.",
+        german=" Hier unten im See...[K] Hier liegt\ndas Zahnrad der Zeit, nicht wahr?",
+        italian=" Quello laggiù...[K] è l\'Ingranaggio\ndel Tempo, non è vero?",
+        spanish=" Eso que está hundido ahí...[K]\nEs el Engranaje del Tiempo, ¿verdad?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_AGUNOMU);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    message_Talk({
+        english=" Fine, then. [CS:N]Azelf[CR], wasn\'t it?",
+        french=" Soit. [CS:N]Créfadet[CR], c\'est bien ça?",
+        german=" Na gut. [CS:N]Tobutz[CR] ist dein Name,\nrichtig?",
+        italian=" Bene. Allora, [CS:N]Azelf[CR], ti chiami\ncosì, giusto?",
+        spanish=" Estupendo.\nTe llamabas [CS:N]Azelf[CR], ¿no?",
+    });
+    message_Talk({
+        english=" I must apologize. But I must\ntake that Time Gear.",
+        french=" Toutes mes excuses, mais\nje dois te prendre le Rouage du Temps.",
+        german=" Entschuldige bitte, aber ich muss\ndieses Zahnrad der Zeit mitnehmen.",
+        italian=" Ti chiedo scusa, ma devo\nprendermi l\'Ingranaggio del Tempo.",
+        spanish=" Debo disculparme. Pero tengo\nque llevarme ese Engranaje del Tiempo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2Direction(4, 2, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_AGUNOMU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Ugh...[K]w-wait...",
+        french=" Argh...[K] attends...",
+        german=" Ugh...[K] W-warte...",
+        italian=" Argh...[K] A-Aspetta...",
+        spanish=" ¡Ay![K] Espera.",
+    });
+    message_Talk({
+        english=" Hold it... [CS:N]Grovyle[CR]...",
+        french=" Attends... [CS:N]Massko[CR]...",
+        german=" Warte... [CS:N]Reptain[CR]...",
+        italian=" Non muoverti... [CS:N]Grovyle[CR]...",
+        spanish=" Espera... [CS:N]Grovyle[CR].",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" ..................",
+        french=" ..................",
+        german=" ..................",
+        italian=" ..................",
+        spanish=" ...",
+    });
+    message_Talk({
+        english=" You know...[K]my name?",
+        french=" Tu connais...[K] mon nom?",
+        german=" Du kennst...[K] meinen Namen?",
+        italian=" Conosci...[K] il mio nome?",
+        spanish=" ¿Cómo sabes...?[K] ¿Cómo sabes\nmi nombre?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_AGUNOMU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" [CS:N]Grovyle[CR] the thief...",
+        french=" [CS:N]Massko[CR] le voleur...",
+        german=" Der Dieb [CS:N]Reptain[CR]...",
+        italian=" [CS:N]Grovyle[CR] il ladro...",
+        spanish=" [CS:N]Grovyle[CR], el ladrón...",
+    });
+    message_Talk({
+        english=" I heard from [CS:N]Uxie[CR] and [CS:N]Mesprit[CR]\nthat you were coming.",
+        french=" [CS:N]Créhelf[CR] et [CS:N]Créfollet[CR]\nm\'ont informé de ta venue.",
+        german=" [CS:N]Selfe[CR] und [CS:N]Vesprit[CR] haben mir\ngesagt, dass du kommen würdest.",
+        italian=" [CS:N]Uxie[CR] e [CS:N]Mesprit[CR] mi avevano\nannunciato il tuo arrivo.",
+        spanish=" [CS:N]Uxie[CR] y [CS:N]Mesprit[CR] me dijeron\nque vendrías.",
+    });
+    message_Talk({
+        english=" It would have been better if I\njust knocked you out directly...",
+        french=" J\'aurais préféré te mettre K.O.\nd\'entrée...",
+        german=" Es wäre besser gewesen, ich\nhätte dich sofort angegriffen und aus dem\nWeg geräumt...",
+        italian=" Avrei preferito non ricorrere a\nquesto.",
+        spanish=" Tendría que haberte atacado\nen cuanto llegaste aquí...",
+    });
+    message_Talk({
+        english=" But I also thought that I could\npossibly lose...",
+        french=" Mais j\'ai aussi envisagé le cas\noù je perdrais...",
+        german=" Aber ich habe befürchtet, dass\nich vielleicht verlieren könnte...",
+        italian=" Ma avendo considerato la\npossibilità di perdere contro di te...",
+        spanish=" Pero me di cuenta de que podría\nperder la pelea...",
+    });
+    message_Talk({
+        english=" So I set up a fail-safe system.",
+        french=" Alors j\'ai mis au point\nun système infaillible.",
+        german=" Also habe ich einen\nnarrensicheren Plan ausgetüftelt.",
+        italian=" ... ho escogitato un piano \nd\'emergenza.",
+        spanish=" Así que preparé un mecanismo\nde defensa.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_FadeOut(10);
+    se_Play(8968);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2DirectionLives(1, 10, ACTOR_NPC_AGUNOMU);
+    }
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" What?!",
+        french=" Quoi?!",
+        german=" Was?!?",
+        italian=" Cosa?!",
+        spanish=" ¡¿Qué?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_AGUNOMU) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_AGUNOMU) {
+        SetAnimation(2);
+    }
+    Wait(45);
+    se_Play(7178);
+    with (actor ACTOR_NPC_AGUNOMU) {
+        SetAnimation(23);
+    }
+    with (actor ACTOR_NPC_AGUNOMU) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_AGUNOMU);
+    WaitSe(7178);
+    bgm2_PlayFadeIn(BGM_EARTHQUAKE2, 0, 256);
+    camera_SetEffect(2, 1, 33024);
+    Wait(30);
+    message_Talk({
+        english=" What did you do?!",
+        french=" Qu\'est-ce que tu as fait?!",
+        german=" Was hast du gemacht?!?",
+        italian=" Cos\'hai fatto!?",
+        spanish=" ¡¿Qué has hecho?!",
+    });
+    message_Close();
+    with (performer 0) {
+        MovePositionOffset(3, 0, 180);
+    }
+    Wait(15);
+    bgm2_FadeOut(30);
+    screen_FadeOut(1, 15);
+    camera_SetEffect(0, 0, 0);
+    end;
+}

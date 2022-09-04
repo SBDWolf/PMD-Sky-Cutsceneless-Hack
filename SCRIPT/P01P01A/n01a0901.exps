@@ -1,0 +1,8 @@
+
+def 0 {
+    $SCENARIO_SIDE = scn[40, 3];
+    bgm_FadeOut(60);
+    switch ( main_EnterAdventure(250, 30) ) { }
+    hold;
+    end;
+}

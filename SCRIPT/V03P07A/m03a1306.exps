@@ -1,0 +1,45 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_TIME_GEAR_REMIX, 0, 256);
+    back_SetGround(LEVEL_V03P07A);
+    supervision_Acting(0);
+    camera_SetPositionMark(Position<'m0', 19.5, 17.5>);
+    with (object OBJECT_V03P06A2_216) {
+        SetAnimation(3);
+    }
+    with (object OBJECT_V03P06A1_212) {
+        SetAnimation(3);
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetActor(ACTOR_ATTENDANT1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Or at a lake in an underground\ncavern...",
+                french=" ... ou au milieu d\'un lac\ndans une grotte souterraine...",
+                german=" Oder bei einem See in einer\nunterirdischen Höhle...",
+                italian=" ... o in un lago di una caverna \nsotterranea...",
+                spanish=" O en el lago de una caverna\nsubterránea...",
+            }
+        case 2:
+            {
+                english=" Or at a lake in an underground\ncavern...",
+                french=" ... ou au milieu d\'un lac\ndans une grotte souterraine...",
+                german=" Oder bei einem See in einer\nunterirdischen Höhle...",
+                italian=" ... o in un lago di una caverna \nsotterranea...",
+                spanish=" O en el lago de una caverna\nsubterránea...",
+            }
+        default:
+            {
+                english=" Or at a lake in an underground\ncavern...",
+                french=" ... ou au milieu d\'un lac\ndans une grotte souterraine...",
+                german=" Oder bei einem See in einer\nunterirdischen Höhle...",
+                italian=" ... o in un lago di una caverna \nsotterranea...",
+                spanish=" O en el lago de una caverna\nsubterránea...",
+            }
+    }
+    message_Close();
+    screen_FadeOut(1, 30);
+    end;
+}

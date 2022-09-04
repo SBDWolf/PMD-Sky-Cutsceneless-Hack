@@ -1,0 +1,219 @@
+
+def 0 {
+    back_SetGround(LEVEL_P02P01A);
+    switch ( sector() ) {
+        case 0:
+        default:
+            §label_0;
+            bgm_PlayFadeIn(BGM_HEARTWARMING, 0, 256);
+            supervision_Acting(8);
+            supervision_Acting(0);
+            with (performer 0) {
+                camera_SetMyself();
+            }
+            Wait(1);
+            with (actor ACTOR_PLAYER) {
+                ResetOutputAttribute(256);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                ResetOutputAttribute(256);
+            }
+            with (actor ACTOR_NPC_HIMEGUMA) {
+                ResetOutputAttribute(256);
+            }
+            with (actor ACTOR_NPC_RINGUMA) {
+                ResetOutputAttribute(256);
+            }
+            with (actor ACTOR_NPC_YARUKIMONO) {
+                ResetOutputAttribute(256);
+            }
+            with (actor ACTOR_NPC_MANKII) {
+                ResetOutputAttribute(256);
+            }
+            with (actor ACTOR_NPC_OKORIZARU) {
+                ResetOutputAttribute(256);
+            }
+            with (actor ACTOR_PLAYER) {
+                SetEffect(EFFECT_STUCK_IN_YELLOW_WATER, 4);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                SetEffect(EFFECT_STUCK_IN_YELLOW_WATER, 4);
+            }
+            with (actor ACTOR_NPC_HIMEGUMA) {
+                SetEffect(EFFECT_STUCK_IN_YELLOW_WATER, 4);
+            }
+            with (actor ACTOR_NPC_RINGUMA) {
+                SetEffect(EFFECT_STUCK_IN_YELLOW_WATER_DEEP, 4);
+            }
+            with (actor ACTOR_NPC_YARUKIMONO) {
+                SetEffect(EFFECT_STUCK_IN_YELLOW_WATER_MEDIUM, 4);
+            }
+            with (actor ACTOR_NPC_MANKII) {
+                SetEffect(EFFECT_STUCK_IN_YELLOW_WATER_MEDIUM2, 4);
+            }
+            with (actor ACTOR_NPC_OKORIZARU) {
+                SetEffect(EFFECT_STUCK_IN_YELLOW_WATER_DEEP2, 4);
+            }
+            screen_FadeIn(1, 30);
+            Wait(30);
+            se_Play(8973);
+            with (actor ACTOR_NPC_KOOTASU) {
+                SetEffect(EFFECT_SHOCKED, 3);
+            }
+            with (actor ACTOR_NPC_KOOTASU) {
+                WaitEffect();
+            }
+            WaitExecuteLives(ACTOR_NPC_KOOTASU);
+            §label_2;
+            message_SetFace(ACTOR_NPC_KOOTASU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+            message_Talk({
+                english=" My goodness! It was the water\nthat carried you all this way?",
+                french=" Saperlotte! C\'est à cause du\ncourant que vous vous retrouvez ici?",
+                german=" Meine Güte! Ihr wurdet vom\nWasser hierher getragen?",
+                italian=" Cielo! È stata l\'acqua a farvi\narrivare fin qui?",
+                spanish=" ¿Que os ha traído el agua?\n¡Asombroso!",
+            });
+            message_Talk({
+                english=" What a long journey that must\nhave been![K] Let the Hot Spring wash away your\nfatigue before you make your way home.",
+                french=" En voilà un voyage pas banal,\ndites-moi![K] Laissez la Source Chaude\neffacer votre fatigue avant de rentrer.",
+                german=" Was für eine lange Reise![K] Lasst\ndie Heiße Quelle eure Müdigkeit wegwaschen,\nbevor ihr euch auf den Heimweg macht.",
+                italian=" Dev\'essere stato un viaggio\nmolto lungo![K] Lasciate che la Sorgente Termale\nvi allevii la stanchezza, prima di andare.",
+                spanish=" ¡Ha debido de ser un viaje\nlarguísimo![K] ¿Por qué no descansáis\nen la Terma antes de volver a casa?",
+            });
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            with (actor ACTOR_ATTENDANT1) {
+                SetAnimation(71);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                WaitAnimation();
+            }
+            WaitExecuteLives(ACTOR_ATTENDANT1);
+            with (actor ACTOR_ATTENDANT1) {
+                SetAnimation(2);
+            }
+            message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                case 1:
+                    {
+                        english=" Good idea. We\'ll do that. Thanks,\neveryone!",
+                        french=" Bonne idée. Merci à vous tous!",
+                        german=" Gute Idee. Das machen wir.\nVielen Dank euch allen!",
+                        italian=" Ottima idea. Lo faremo. Grazie\na tutti voi!",
+                        spanish=" Buena idea. Eso haremos.\n¡Gracias a todos!",
+                    }
+                case 2:
+                    {
+                        english=" Good idea. We\'ll do that. Thanks,\neveryone!",
+                        french=" Bonne idée. Merci à vous tous!",
+                        german=" Gute Idee. Das machen wir.\nVielen Dank euch allen!",
+                        italian=" Ottima idea. Lo faremo. Grazie\na tutti voi!",
+                        spanish=" Buena idea. Eso haremos.\n¡Gracias a todos!",
+                    }
+                default:
+                    {
+                        english=" Good idea. We\'ll do that. Thanks,\neveryone!",
+                        french=" Bonne idée. Merci à vous tous!",
+                        german=" Gute Idee. Das machen wir.\nVielen Dank euch allen!",
+                        italian=" Ottima idea. Lo faremo. Grazie\na tutti voi!",
+                        spanish=" Buena idea. Eso haremos.\n¡Gracias a todos!",
+                    }
+            }
+            message_Close();
+            with (actor ACTOR_ATTENDANT1) {
+                Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+            }
+            WaitExecuteLives(ACTOR_ATTENDANT1);
+            with (actor ACTOR_PLAYER) {
+                Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+            }
+            Wait(20);
+            with (actor ACTOR_NPC_HIMEGUMA) {
+                Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+            }
+            Wait(10);
+            with (actor ACTOR_NPC_MANKII) {
+                Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+            }
+            with (actor ACTOR_NPC_KOOTASU) {
+                SetEffect(EFFECT_LAUGHING, 3);
+            }
+            Wait(60);
+            switch ( sector() ) {
+                case 0:
+                default:
+                    bgm_FadeOut(120);
+                    screen_FadeOut(1, 90);
+                    Wait(60);
+                    switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+                    $SCENARIO_MAIN_BIT_FLAG[8] = 1;
+                    $COMPULSORY_SAVE_POINT = 3;
+                    CallCommon(CORO_HANYOU_SAVE_FUNC);
+                    §label_5;
+                    end;
+                case 1:
+                    screen_FadeOut(1, 30);
+                    screen_FlushIn(1, 0, 1, 0, 0, 0);
+                    jump @label_5;
+            }
+            break;
+        case 1:
+            screen_FlushOut(1, 0, 8, 0, 0, 0);
+            supervision_Acting(0);
+            with (performer 0) {
+                camera_SetMyself();
+            }
+            Wait(1);
+            with (actor ACTOR_PLAYER) {
+                ResetOutputAttribute(256);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                ResetOutputAttribute(256);
+            }
+            with (actor ACTOR_NPC_HIMEGUMA) {
+                ResetOutputAttribute(256);
+            }
+            with (actor ACTOR_NPC_RINGUMA) {
+                ResetOutputAttribute(256);
+            }
+            with (actor ACTOR_NPC_YARUKIMONO) {
+                ResetOutputAttribute(256);
+            }
+            with (actor ACTOR_NPC_MANKII) {
+                ResetOutputAttribute(256);
+            }
+            with (actor ACTOR_NPC_OKORIZARU) {
+                ResetOutputAttribute(256);
+            }
+            with (actor ACTOR_PLAYER) {
+                SetEffect(EFFECT_STUCK_IN_YELLOW_WATER, 4);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                SetEffect(EFFECT_STUCK_IN_YELLOW_WATER, 4);
+            }
+            with (actor ACTOR_NPC_HIMEGUMA) {
+                SetEffect(EFFECT_STUCK_IN_YELLOW_WATER, 4);
+            }
+            with (actor ACTOR_NPC_RINGUMA) {
+                SetEffect(EFFECT_STUCK_IN_YELLOW_WATER_DEEP, 4);
+            }
+            with (actor ACTOR_NPC_YARUKIMONO) {
+                SetEffect(EFFECT_STUCK_IN_YELLOW_WATER_MEDIUM, 4);
+            }
+            with (actor ACTOR_NPC_MANKII) {
+                SetEffect(EFFECT_STUCK_IN_YELLOW_WATER_MEDIUM2, 4);
+            }
+            with (actor ACTOR_NPC_OKORIZARU) {
+                SetEffect(EFFECT_STUCK_IN_YELLOW_WATER_DEEP2, 4);
+            }
+            screen_FadeIn(1, 30);
+            Wait(30);
+            with (actor ACTOR_NPC_KOOTASU) {
+                SetEffect(EFFECT_SHOCKED, 3);
+            }
+            with (actor ACTOR_NPC_KOOTASU) {
+                WaitEffect();
+            }
+            WaitExecuteLives(ACTOR_NPC_KOOTASU);
+            jump @label_2;
+    }
+}

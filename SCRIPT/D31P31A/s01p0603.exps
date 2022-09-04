@@ -1,0 +1,51 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_GUILDMASTER_WIGGLYTUFF, 0, 256);
+    back_SetGround(LEVEL_D31P31A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    se_Play(8972);
+    with (actor ACTOR_NPC_BIPPA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_BIPPA);
+    message_SetFace(ACTOR_NPC_BIPPA, FACE_SAD, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" B-but I thought it\'d be too dark\ndown there for you all, so I opened it up.",
+        french=" Bah, j\'pensais qu\'il f\'sait\ntrop noir et qu\'vous alliez vous marcher sur\nles pieds! Alors j\'me suis dit, j\'vais ouvrir!",
+        german=" I-ich dachte, es sei zu dunkel\nfür euch alle da unten, also habe ich sie\naufgemacht.",
+        italian=" M-Ma pensavo che qui dentro\nfosse troppo buio per voi, quindi ho aperto.",
+        spanish=" Pe... pensaba que estaría muy\noscuro ahí abajo... por eso...",
+    });
+    message_Talk({
+        english=" M-maybe I did something I\nshouldn\'t have...?",
+        french=" Pourquoi... j\'aurais pas dû?\nJ\'ai fait une gaffe?",
+        german=" V-vielleicht hätte ich das nicht\ntun sollen?",
+        italian=" F-Forse ho commesso\nun errore... Ohibò...",
+        spanish=" ¿Qui... quizás no debería\nhaber...?",
+    });
+    message_Talk({
+        english=" Uh, helping out with the\ngraduation exam and all...",
+        french=" Vous savez, vous filer un coup\nd\'main pour l\'examen et tout ça...",
+        german=" Ähm, die ganze Sache mit dem\nAushelfen bei der Abschlussprüfung und so...",
+        italian=" Eh, dare una mano con\nl\'esame e tutto il resto...",
+        spanish=" Esto de colaborar en el gran reto\ndel [CS:N]Pokégremio[CR]...",
+    });
+    message_Talk({
+        english=" This is all so new to me, I don\'t\nhave the foggiest idea about what I should\nbe doing...",
+        french=" ... j\'l\'avais jamais fait, moi.\nJ\'capte rien du tout à c\'que j\'dois faire...",
+        german=" Das ist alles so neu für mich.\nIch habe nicht den leisesten Schimmer, was\nich hier machen soll...",
+        italian=" È tutto così nuovo per me,\nnon ho la più pallida idea di cosa dovrei fare...",
+        spanish=" Es toda una novedad para mí, y\nno tengo ni idea de qué debo hacer...",
+    });
+    message_Close();
+    screen_FadeOut(1, 30);
+    end;
+}

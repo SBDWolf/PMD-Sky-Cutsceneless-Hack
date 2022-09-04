@@ -1,0 +1,35 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_D24P11A);
+    bgm_PlayFadeIn(BGM_TREESHROUD_FOREST, 0, 256);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    Wait(1);
+    supervision_LoadStation(LEVEL_D24P11A, 'UM20');
+    supervision_Station(1);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetAnimation(2);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetPositionMark(Position<'m0', 32.5, 23.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetPositionMark(Position<'m1', 30.5, 27.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetPositionMark(Position<'m2', 34.5, 27.5>);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetDirection(DIR_DOWN);
+    }
+    screen_FadeIn(1, 30);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetPositionInitial();
+    }
+    end;
+}

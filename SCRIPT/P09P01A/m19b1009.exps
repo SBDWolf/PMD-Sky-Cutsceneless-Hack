@@ -1,0 +1,451 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_P09P01A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 3) {
+        SetEffect(640, 3);
+    }
+    screen_FadeIn(1, 15);
+    with (object OBJECT_P09P01A1_141) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_P09P01A1_141) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_P09P01A1_141);
+    with (object OBJECT_P09P01A1_141) {
+        SetAnimation(3);
+    }
+    se_Play(8968);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_SEREBII) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    bgm_PlayFadeIn(BGM_OH_NO, 0, 256);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_BOTTOM_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Ack! Our time-traveling path has\nbeen shattered!",
+                french=" Aïe! Notre passage dans\nle temps a volé en éclats!",
+                german=" Argh! Unser Zeitreise-Pfad\nwurde zersplittert.",
+                italian=" Ah! Il nostro varco temporale\nè stato distrutto!",
+                spanish=" ¡Aaah! ¡Han destruido la vía\npor la que viajábamos en el tiempo!",
+            }
+        case 2:
+            {
+                english=" Ack! Our time-traveling path has\nbeen shattered!",
+                french=" Aïe! Notre passage dans\nle temps a volé en éclats!",
+                german=" Argh! Unser Zeitreise-Pfad\nwurde zersplittert.",
+                italian=" Ah! Il nostro varco temporale\nè stato distrutto!",
+                spanish=" ¡Aaah! ¡Han destruido la vía\npor la que viajábamos en el tiempo!",
+            }
+        default:
+            {
+                english=" Ack! Our time-traveling path has\nbeen shattered!",
+                french=" Aïe! Notre passage dans\nle temps a volé en éclats!",
+                german=" Argh! Unser Zeitreise-Pfad\nwurde zersplittert.",
+                italian=" Ah! Il nostro varco temporale\nè stato distrutto!",
+                spanish=" ¡Aaah! ¡Han destruido la vía\npor la que viajábamos en el tiempo!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (performer 0) {
+        MovePositionMark(2, Position<'m0', 37.5, 45.5>);
+    }
+    with (actor ACTOR_NPC_YONOWAARU) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI2) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI3) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI4) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI5) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI6) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI6);
+    WaitExecutePerformer(0);
+    se_Play(8967);
+    with (actor ACTOR_NPC_YONOWAARU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_YONOWAARU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" There they are!",
+        french=" Les voilà!",
+        german=" Da sind sie!",
+        italian=" Eccoli!",
+        spanish=" ¡Ahí están!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (performer 0) {
+        MovePositionMark(2, Position<'m1', 37.5, 34.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_SEREBII) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecutePerformer(0);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_BOTTOM_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We got so close to the Passage\nof Time!",
+                french=" On y était presque! On a presque\natteint le Couloir du Temps!",
+                german=" Wir sind so nahe an den\nZeittunnel gekommen!",
+                italian=" Siamo molto vicini al Portale \ndel Tempo!",
+                spanish=" ¡Estábamos ya tan cerca del\npasaje!",
+            }
+        case 2:
+            {
+                english=" We almost made it to the\nPassage of Time!",
+                french=" On y était presque! On a presque\natteint le Couloir du Temps!",
+                german=" Wir haben es fast bis zum\nZeittunnel geschafft!",
+                italian=" Siamo quasi al Portale del\nTempo!",
+                spanish=" ¡Estábamos ya tan cerca del\npasaje!",
+            }
+        default:
+            {
+                english=" We got so close to the Passage\nof Time!",
+                french=" On y était presque! On a presque\natteint le Couloir du Temps!",
+                german=" Wir sind so nahe an den\nZeittunnel gekommen!",
+                italian=" Siamo quasi al Portale del\nTempo!",
+                spanish=" ¡Estábamos ya tan cerca del\npasaje!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_SEREBII) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_SEREBII);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    message_SetFace(ACTOR_NPC_SEREBII, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Dive in now! You can make it!",
+        french=" Foncez maintenant! Vous pouvez\ny arriver!",
+        german=" Springt jetzt rein! Ihr könnt es\nschaffen!",
+        italian=" Tuffatevi! Ce la potete fare!",
+        spanish=" ¡Saltad dentro! ¡Aún podéis\nllegar!",
+    });
+    message_Talk({
+        english=" Now! Into the Passage of Time!",
+        french=" Plongez dans le Couloir\ndu Temps! Vite!",
+        german=" Jetzt! In den Zeittunnel!",
+        italian=" Ora! Nel Portale del Tempo!",
+        spanish=" ¡Ahora! ¡Al Pasaje del Tiempo!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_BOTTOM_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Wh-what about you, [CS:N]Celebi[CR]?!",
+                french=" Et... et toi, [CS:N]Celebi[CR]?!",
+                german=" W-was ist mit dir, [CS:N]Celebi[CR]?!?",
+                italian=" C-Che ne sarà di te, [CS:N]Celebi[CR]?!",
+                spanish=" ¡¿Y qué pasará contigo, [CS:N]Celebi[CR]?!",
+            }
+        case 2:
+            {
+                english=" Wh-what about you, [CS:N]Celebi[CR]?!",
+                french=" Et... et toi, [CS:N]Celebi[CR]?!",
+                german=" W-was ist mit dir, [CS:N]Celebi[CR]?!?",
+                italian=" C-Che ne sarà di te, [CS:N]Celebi[CR]?!",
+                spanish=" ¡¿Y qué pasará contigo, [CS:N]Celebi[CR]?!",
+            }
+        default:
+            {
+                english=" Wh-what about you, [CS:N]Celebi[CR]?!",
+                french=" Et... et toi, [CS:N]Celebi[CR]?!",
+                german=" W-was ist mit dir, [CS:N]Celebi[CR]?!?",
+                italian=" C-Che ne sarà di te, [CS:N]Celebi[CR]?!",
+                spanish=" ¡¿Y qué pasará contigo, [CS:N]Celebi[CR]?!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SEREBII, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Don\'t fret over me![K] I told you I\ncan\'t be caught!",
+        french=" Ne vous en faites pas pour moi!\nJe vous ai déjà dit qu\'on ne pouvait pas me\ncapturer!",
+        german=" Kümmert euch nicht um mich![K]\nIch sagte euch doch bereits, ich kann nicht\ngefangen werden!",
+        italian=" Non preoccupatevi per me![K] \nVi ho detto che non posso essere catturata!",
+        spanish=" ¡No os inquietéis![K]\n¡Ya os dije que nadie puede capturarme!",
+    });
+    message_Talk({
+        english=" Stop the planet\'s paralysis...[K]\nChange history!",
+        french=" Empêchez la Paralysie de la\nPlanète...[K] Modifiez le cours de l\'histoire!",
+        german=" Stoppt die Lähmung des\nPlaneten...[K] Verändert die Geschichte!",
+        italian=" Fermate la paralisi del\npianeta...[K] Cambiate la storia!",
+        spanish=" Detened la parálisis del planeta...[K]\n¡Cambiad la historia!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Thanks!",
+        french=" Merci!",
+        german=" Danke!",
+        italian=" Grazie!",
+        spanish=" ¡Gracias!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_BOTTOM_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Thanks, [CS:N]Celebi[CR]!",
+                french=" Merci, [CS:N]Celebi[CR]!",
+                german=" Danke, [CS:N]Celebi[CR]!",
+                italian=" Grazie, [CS:N]Celebi[CR]!",
+                spanish=" ¡Gracias, [CS:N]Celebi[CR]!",
+            }
+        case 2:
+            {
+                english=" Thank you, [CS:N]Celebi[CR]!",
+                french=" Merci, [CS:N]Celebi[CR]!",
+                german=" Danke, [CS:N]Celebi[CR]!",
+                italian=" Grazie, [CS:N]Celebi[CR]!",
+                spanish=" ¡Gracias, [CS:N]Celebi[CR]!",
+            }
+        default:
+            {
+                english=" Thank you, [CS:N]Celebi[CR]!",
+                french=" Merci, [CS:N]Celebi[CR]!",
+                german=" Danke, [CS:N]Celebi[CR]!",
+                italian=" Grazie, [CS:N]Celebi[CR]!",
+                spanish=" ¡Gracias, [CS:N]Celebi[CR]!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" You\'re not getting away!",
+        french=" Vous ne m\'échapperez pas!",
+        german=" Ihr kommt nicht davon!",
+        italian=" Non riuscirete a scappare!",
+        spanish=" ¡No escaparéis!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m2', 37.5, 37.5>);
+    }
+    with (actor ACTOR_NPC_YONOWAARU) {
+        Move2PositionMark(1, Position<'m3', 37.5, 39.5>);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        Move2PositionMark(33075, Position<'m4', 33.5, 35.5>);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI2) {
+        Move2PositionMark(33075, Position<'m5', 41.5, 35.5>);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI3) {
+        Move2PositionMark(33075, Position<'m6', 31.5, 37.5>);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI4) {
+        Move2PositionMark(33075, Position<'m7', 43.5, 37.5>);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI5) {
+        Move2PositionMark(33075, Position<'m8', 31.5, 40.5>);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI6) {
+        Move2PositionMark(33075, Position<'m9', 43.5, 40.5>);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        MovePositionMark(1, Position<'m10', 37.5, 28.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m11', 37.5, 28.5>);
+    }
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m12', 37.5, 28.5>);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetAnimation(30);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Destroy();
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(77);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        Destroy();
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(77);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetDirection(DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI2) {
+        SetDirection(DIR_UPLEFT);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI3) {
+        SetDirection(DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI4) {
+        SetDirection(DIR_UPLEFT);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI5) {
+        SetDirection(DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI6) {
+        SetDirection(DIR_UPLEFT);
+    }
+    with (actor ACTOR_NPC_SEREBII) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_SEREBII);
+    bgm_FadeOut(30);
+    se_Play(7435);
+    supervision_Acting(1);
+    Wait(10);
+    screen_WhiteOutAll(1, 15);
+    WaitSe(7435);
+    with (actor ACTOR_NPC_SEREBII) {
+        Destroy();
+    }
+    supervision_RemoveActing(1);
+    with (object OBJECT_P09P01A1_141) {
+        Destroy();
+    }
+    with (performer 3) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (performer 4) {
+        SetEffect(651, 3);
+    }
+    se_Play(7439);
+    Wait(80);
+    screen_FadeInAll(1, 15);
+    WaitSe(7439);
+    bgm_PlayFadeIn(BGM_ANOTHER_STATIC_NOISE, 0, 256);
+    Wait(30);
+    se_Play(8967);
+    with (actor ACTOR_NPC_YONOWAARU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI2) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI3) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI4) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI5) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI6) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_YONOWAARU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU);
+    Wait(70);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Gah...",
+        french=" Argh...",
+        german=" Pah...",
+        italian=" Ah...",
+        spanish=" ¡Ah!",
+    });
+    message_Close();
+    Wait(60);
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 90);
+    WaitBgm(BGM_ANOTHER_STATIC_NOISE);
+    end;
+}

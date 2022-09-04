@@ -1,0 +1,193 @@
+
+def 0 {
+    switch ( sector() ) {
+        case 0:
+        default:
+            §label_0;
+            bgm2_PlayFadeIn(BGM_ON_THE_BEACH_AT_DUSK, 0, 256);
+            §label_2;
+            back_SetGround(LEVEL_D10P41A);
+            supervision_StationCommon(0);
+            supervision_Acting(0);
+            with (performer 0) {
+                camera_SetMyself();
+            }
+            screen_FlushOut(1, 0, 8, 0, 0, 0);
+            screen_FadeIn(1, 30);
+            with (actor ACTOR_NPC_GURAADON) {
+                MovePositionOffset(32844, 0, 12);
+            }
+            camera_SetEffect(2, 2, 33536);
+            Wait(15);
+            camera_SetEffect(0, 0, 0);
+            Wait(15);
+            camera_SetEffect(2, 2, 33536);
+            Wait(15);
+            camera_SetEffect(0, 0, 0);
+            WaitExecuteLives(ACTOR_NPC_GURAADON);
+            Wait(45);
+            with (actor ACTOR_PLAYER) {
+                SetEffect(EFFECT_SHOCKED, 3);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+            }
+            camera_SetEffect(2, 1, 33024);
+            with (actor ACTOR_NPC_GURAADON) {
+                SetAnimation(9);
+            }
+            message_SetFace(ACTOR_NPC_GURAADON, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+            message_Talk({
+                english=" GRR...GRR...OOOOOOOOOH!",
+                french=" GRROOOOOOH!",
+                german=" GRR...GRR...OOOOOOOOOH!",
+                italian=" GRR... GRR... OOOOOOOOOH!",
+                spanish=" ¡GRRRRRRRR!",
+            });
+            Wait(90);
+            message_CloseEnforce();
+            camera_SetEffect(0, 0, 0);
+            with (actor ACTOR_NPC_GURAADON) {
+                SetAnimation(2);
+            }
+            Wait(15);
+            with (actor ACTOR_ATTENDANT1) {
+                SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+            }
+            WaitExecuteLives(ACTOR_ATTENDANT1);
+            message_SetFace(ACTOR_ATTENDANT1, FACE_STUNNED, FACE_POS_STANDARD);
+            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                case 1:
+                    {
+                        english=" Urk... Scary stuff!",
+                        french=" Argh... j\'ai peur!",
+                        german=" Urk... Echt unheimlich!",
+                        italian=" Mmm... Brutta storia!",
+                        spanish=" ¡Ay, qué miedo!",
+                    }
+                case 2:
+                    {
+                        english=" Urk... This is scary...",
+                        french=" Argh... j\'ai peur!",
+                        german=" Urk... Das ist unheimlich...",
+                        italian=" Oh oh! Siamo nei guai!",
+                        spanish=" ¡Ay, qué miedo!",
+                    }
+                default:
+                    {
+                        english=" Urk... I\'m scared!",
+                        french=" Argh... j\'ai peur!",
+                        german=" Urk... Ich habe Angst!",
+                        italian=" Aah... Ho paura!",
+                        spanish=" ¡Ay, estoy asustada!",
+                    }
+            }
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            Wait(20);
+            message_SetFace(ACTOR_ATTENDANT1, FACE_DETERMINED, FACE_POS_STANDARD);
+            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                case 1:
+                    {
+                        english=" But we gotta be brave!",
+                        french=" Mais nous devons faire preuve\nde courage!",
+                        german=" Aber wir müssen mutig sein!",
+                        italian=" Ma non dobbiamo farci\nintimorire!",
+                        spanish=" ¡Pero debemos ser valientes!",
+                    }
+                case 2:
+                    {
+                        english=" But we need to be brave!",
+                        french=" Mais nous devons faire preuve\nde courage!",
+                        german=" Aber wir müssen mutig sein!",
+                        italian=" Però è proprio questo il\nmomento in cui bisogna tirare fuori il coraggio!",
+                        spanish=" ¡Pero debemos ser valientes!",
+                    }
+                default:
+                    {
+                        english=" But it\'s time to be brave!",
+                        french=" Mais nous devons faire preuve\nde courage!",
+                        german=" Aber es ist Zeit, all unseren Mut\nzusammenzunehmen!",
+                        italian=" Ma devo essere forte!",
+                        spanish=" ¡Pero debemos ser valientes!",
+                    }
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+            }
+            WaitExecuteLives(ACTOR_ATTENDANT1);
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            with (actor ACTOR_ATTENDANT1) {
+                ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+            }
+            WaitExecuteLives(ACTOR_ATTENDANT1);
+            message_SetFace(ACTOR_ATTENDANT1, FACE_DETERMINED, FACE_POS_STANDARD);
+            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                case 1:
+                    {
+                        english=" And I gotta face up to this!",
+                        french=" Et je dois faire face!",
+                        german=" Ich muss mich dieser Sache\nstellen!",
+                        italian=" Possiamo farcela!",
+                        spanish=" ¡Tengo que sobreponerme!",
+                    }
+                case 2:
+                    {
+                        english=" And I need to face up to this!",
+                        french=" Et je dois faire face!",
+                        german=" Ich muss mich dieser Sache\nstellen!",
+                        italian=" Dobbiamo affrontarlo!",
+                        spanish=" ¡Tengo que sobreponerme!",
+                    }
+                default:
+                    {
+                        english=" And I need to stand up to this!",
+                        french=" Et je dois faire face!",
+                        german=" Ich muss mich dieser Sache\nstellen!",
+                        italian=" Posso farcela! Possiamo\nfarcela!",
+                        spanish=" ¡Tengo que sobreponerme!",
+                    }
+            }
+            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                case 1:
+                    {
+                        english=" No stopping now, [hero]!",
+                        french=" Hors de question de baisser\nles bras maintenant, [hero]!",
+                        german=" Es gibt jetzt kein Zurück,\n[hero]!",
+                        italian=" Da qui non si torna indietro,\n[hero]!",
+                        spanish=" ¡No podemos rendirnos ahora,\n[hero]!",
+                    }
+                case 2:
+                    {
+                        english=" There\'s no giving up now,\n[hero]!",
+                        french=" Hors de question de baisser\nles bras maintenant, [hero]!",
+                        german=" Wir können jetzt nicht aufgeben,\n[hero]!",
+                        italian=" [hero]! Non possiamo\narrenderci proprio ora!",
+                        spanish=" ¡Ahora no podemos volvernos\natrás, [hero]!",
+                    }
+                default:
+                    {
+                        english=" We can\'t just run away now,\n[hero]!",
+                        french=" Hors de question de baisser\nles bras maintenant, [hero]!",
+                        german=" Wir können jetzt nicht\nweglaufen, [hero]!",
+                        italian=" Insieme ce la possiamo fare,\n[hero]!",
+                        spanish=" ¡No podemos salir corriendo,\n[hero]!",
+                    }
+            }
+            message_Close();
+            switch ( sector() ) {
+                case 0:
+                default:
+                    screen_FadeOut(1, 30);
+                    §label_5;
+                    screen_FlushIn(1, 0, 1, 0, 0, 0);
+                    end;
+                case 1:
+                    screen_WhiteOut(1, 30);
+                    jump @label_5;
+            }
+            break;
+        case 1:
+            bgm_PlayFadeIn(BGM_MEMORIES_RETURNED, 0, 256);
+            jump @label_2;
+    }
+}

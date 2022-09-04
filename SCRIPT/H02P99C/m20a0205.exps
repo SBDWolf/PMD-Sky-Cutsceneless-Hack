@@ -1,0 +1,871 @@
+
+def 0 {
+    sound_Stop();
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V02P06A);
+    camera2_SetPositionMark(Position<'m0', 19.5, 17.5>);
+    screen2_FadeIn(1, 60);
+    Wait(150);
+    screen2_FadeOut(1, 60);
+    back2_SetMode(0);
+    back_SetGround(LEVEL_H02P99C);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 60);
+    bgm_PlayFadeIn(BGM_FIRE_CRACKLING, 90, 256);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" But [hero]...",
+        french=" Mais, [hero]...",
+        german=" Aber [hero]...",
+        italian=" Ma, [hero]...",
+        spanish=" Vaya, [hero]...",
+    });
+    message_Talk({
+        english=" I never expected you to be\nthat very same [hero]...",
+        french=" Jamais je n\'aurais imaginé que\ntu étais vraiment [hero]...",
+        german=" Ich habe niemals erwartet, dass\ndu wirklich [hero] bist...",
+        italian=" Non mi aspettavo che fossi \ndavvero [hero]...",
+        spanish=" Nunca me habría imaginado que\ntú fueras [hero], precisamente.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(..................)",
+                french="(..................)",
+                german="(..................)",
+                italian="(..................)",
+                spanish="(...)",
+            }
+        default:
+            {
+                english="(..................)",
+                french="(..................)",
+                german="(..................)",
+                italian="(..................)",
+                spanish="(...)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" [CS:N]Grovyle[CR], can you tell us more\nabout that?",
+                french=" [CS:N]Massko[CR], est-ce que tu peux\nnous en dire plus à ce sujet?",
+                german=" [CS:N]Reptain[CR], kannst du uns mehr\ndarüber erzählen?",
+                italian=" [CS:N]Grovyle[CR], perché non ci racconti\ndi più?",
+                spanish=" [CS:N]Grovyle[CR], sigue contándonos...",
+            }
+        case 2:
+            {
+                english=" [CS:N]Grovyle[CR], can you tell us more\nabout that?",
+                french=" [CS:N]Massko[CR], est-ce que tu peux\nnous en dire plus à ce sujet?",
+                german=" [CS:N]Reptain[CR], kannst du uns mehr\ndarüber erzählen?",
+                italian=" [CS:N]Grovyle[CR], perché non ci racconti\ndi più?",
+                spanish=" [CS:N]Grovyle[CR], sigue contándonos...",
+            }
+        default:
+            {
+                english=" [CS:N]Grovyle[CR], can you tell us more\nabout that?",
+                french=" [CS:N]Massko[CR], est-ce que tu peux\nnous en dire plus à ce sujet?",
+                german=" [CS:N]Reptain[CR], kannst du uns mehr\ndarüber erzählen?",
+                italian=" [CS:N]Grovyle[CR], perché non ci racconti\ndi più?",
+                spanish=" [CS:N]Grovyle[CR], sigue contándonos...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Yes, [hero] and I...",
+        french=" Oui, [hero] et moi...",
+        german=" Ja, [hero] und ich...",
+        italian=" Sì, [hero] ed io...",
+        spanish=" De acuerdo. El caso es que\n[hero] y yo...",
+    });
+    message_Talk({
+        english=" We were jointly investigating\nthe planet\'s paralysis.",
+        french=" On enquêtait tous les deux\nsur la Paralysie de la Planète.",
+        german=" Wir haben zusammen die\nLähmung des Planeten untersucht.",
+        italian=" Beh, noi indagavamo\ninsieme sulla paralisi del pianeta.",
+        spanish=" Estábamos investigando juntos\nla parálisis del planeta.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" A Pokémon and a human...[K]\npaired together?",
+                french=" Un Pokémon et un être\nhumain...[K] associés?",
+                german=" Ein Pokémon und ein Mensch...[K]\nZusammen als Team?",
+                italian=" Un Pokémon e un\nessere umano...[K] in coppia?",
+                spanish=" Eso sí que es increíble...[K]\nHumanos y Pokémon trabajando juntos\npara evitar la parálisis del planeta.",
+            }
+        case 2:
+            {
+                english=" A Pokémon and a human...[K]\npaired together?",
+                french=" Un Pokémon et un être\nhumain...[K] associés?",
+                german=" Ein Pokémon und ein Mensch...[K]\nZusammen als Team?",
+                italian=" Un Pokémon e un\nessere umano...[K] in coppia?",
+                spanish=" Eso sí que es increíble...[K]\nHumanos y Pokémon trabajando juntos\npara evitar la parálisis del planeta.",
+            }
+        default:
+            {
+                english=" A Pokémon and a human...[K]\npaired together?",
+                french=" Un Pokémon et un être\nhumain...[K] associés?",
+                german=" Ein Pokémon und ein Mensch...[K]\nZusammen als Team?",
+                italian=" Un Pokémon e un\nessere umano...[K] in coppia?",
+                spanish=" Eso sí que es increíble...[K]\nHumanos y Pokémon trabajando juntos\npara evitar la parálisis del planeta.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Yeah.",
+        french=" Ouais.",
+        german=" Ja doch.",
+        italian=" Sì.",
+        spanish=" Así es.",
+    });
+    message_Talk({
+        english=" And [hero] had...or has...\na special ability like no other.",
+        french=" Et [hero] avait... ou a...\nun pouvoir spécial à nul autre pareil.",
+        german=" Und [hero] hatte, oder\nhat, eine spezielle Fähigkeit, die niemand\nsonst besitzt.",
+        italian=" E [hero] aveva... oppure \nha... un\'abilità unica.",
+        spanish=" Y [hero] tenía, o tiene,\nuna habilidad especial, ciertamente única.",
+    });
+    message_Talk({
+        english=" We relied on that special ability\nto investigate the planet\'s paralysis.",
+        french=" Et on s\'est servis de ce pouvoir\npour enquêter sur la Paralysie de la Planète.",
+        german=" Wir haben uns auf diese\nFähigkeit verlassen, um die Lähmung\ndes Planeten zu untersuchen.",
+        italian=" Facevamo affidamento su questa\nabilità per scoprire qualcosa sulle cause della\nparalisi del pianeta.",
+        spanish=" Empleamos esa habilidad especial\npara investigar la parálisis del planeta.",
+    });
+    message_Talk({
+        english=" It played a vital part.",
+        french=" Cela a joué un rôle crucial.",
+        german=" Sie spielte eine wichtige Rolle.",
+        italian=" Ha giocato una parte \nfondamentale.",
+        spanish=" Desempeñó un papel esencial.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" By special ability...[K]you mean the\nDimensional Scream, don\'t you?",
+                french=" Quand tu dis pouvoir spécial...[K]\ntu parles du Cri Dimensionnel, pas vrai?",
+                german=" Wenn du von einer\nbesonderen Fähigkeit sprichst...[K] Meinst du\ndamit etwa den Dimensionalen Schrei?",
+                italian=" Quando dici abilità...[K] intendi lo\nSquarcio Dimensionale, vero?",
+                spanish=" Supongo que te refieres...[K]\na la Percepción de Cronos, ¿verdad?",
+            }
+        case 2:
+            {
+                english=" By special ability...[K]you mean the\nDimensional Scream, don\'t you?",
+                french=" Quand tu dis pouvoir spécial...[K]\ntu parles du Cri Dimensionnel, pas vrai?",
+                german=" Wenn du von einer\nbesonderen Fähigkeit sprichst...[K] Meinst du\ndamit etwa den Dimensionalen Schrei?",
+                italian=" Quando dici abilità...[K] intendi lo\nSquarcio Dimensionale, vero?",
+                spanish=" Supongo que te refieres...[K]\na la Percepción de Cronos, ¿verdad?",
+            }
+        default:
+            {
+                english=" By special ability...[K]you mean the\nDimensional Scream, don\'t you?",
+                french=" Quand tu dis pouvoir spécial...[K]\ntu parles du Cri Dimensionnel, pas vrai?",
+                german=" Wenn du von einer\nbesonderen Fähigkeit sprichst...[K] Meinst du\ndamit etwa den Dimensionalen Schrei?",
+                italian=" Quando dici abilità...[K] intendi lo\nSquarcio Dimensionale, vero?",
+                spanish=" Supongo que te refieres...[K]\na la Percepción de Cronos, ¿verdad?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Exactly.",
+        french=" Exact.",
+        german=" Exakt.",
+        italian=" Esattamente.",
+        spanish=" Exacto.",
+    });
+    message_Talk({
+        english=" But the Dimensional Scream has\na drawback.",
+        french=" Mais le Cri Dimensionnel a\nun inconvénient.",
+        german=" Aber der Dimensionale Schrei hat\neinen Nachteil.",
+        italian=" Tuttavia, usufruire di questa\nabilità non è così semplice.",
+        spanish=" Pero la Percepción de Cronos\ntiene un inconveniente.",
+    });
+    message_Talk({
+        english=" The Dimensional Scream requires\nthe presence of a trusted Pokémon partner.",
+        french=" Il requiert la présence d\'un ou\nd\'une partenaire Pokémon en qui avoir\ntoute confiance.",
+        german=" Der Dimensionale Schrei\nverlangt die Anwesenheit eines Partners,\ndem man vertraut.",
+        italian=" Lo Squarcio Dimensionale \nrichiede la presenza di un fidato compagno\nPokémon.",
+        spanish=" Solo funciona si está presente\nun compañero Pokémon en el que confíes.",
+    });
+    message_Talk({
+        english=" Without that partner, the ability\ncannot be triggered.",
+        french=" Sans ce Pokémon, le pouvoir\nne marche pas.",
+        german=" Ohne diesen Partner kann diese\nFähigkeit nicht ausgelöst werden.",
+        italian=" Senza un compagno, questa \nabilità non può essere utilizzata.",
+        spanish=" Su presencia es indispensable\npara poder activar la habilidad.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" A trusted...[K]partner...",
+                french=" Un partenaire...[K] en qui\navoir toute confiance...",
+                german=" Ein Partner,[K]\ndem man vertraut.",
+                italian=" Un fidato...[K] compagno...",
+                spanish=" Un compañero...[K] en el que\nconfíes...",
+            }
+        case 2:
+            {
+                english=" A trusted...[K]partner...",
+                french=" Un partenaire...[K] en qui\navoir toute confiance...",
+                german=" Ein Partner,[K]\ndem man vertraut.",
+                italian=" Un fidato...[K] compagno...",
+                spanish=" Un compañero...[K] en el que\nconfíes...",
+            }
+        default:
+            {
+                english=" A trusted...[K]partner...",
+                french=" Un partenaire...[K] en qui\navoir toute confiance...",
+                german=" Ein Partner,[K]\ndem man vertraut.",
+                italian=" Un fidato...[K] compagno...",
+                spanish=" Un compañero...[K] en el que\nconfíes...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" That\'s why we worked together.",
+        french=" C\'est pour ça qu\'on s\'est\nassociés.",
+        german=" Darum arbeiteten wir zusammen.",
+        italian=" È per questo che lavoravamo\nassieme.",
+        spanish=" Por eso trabajamos juntos.",
+    });
+    message_Talk({
+        english=" The Dimensional Scream is set\noff by triggers tied to places where the Time\nGears are hidden.",
+        french=" Le Cri Dimensionnel est\ndéclenché par des dispositifs situés aux\nemplacements des Rouages du Temps.",
+        german=" Der Dimensionale Schrei wird\ndurch Dinge ausgelöst, die eine Verbindung zu\nden Verstecken der Zahnräder der Zeit haben.",
+        italian=" Lo Squarcio Dimensionale si \nverifica in prossimità dei luoghi in cui sono\nnascosti gli Ingranaggi del Tempo.",
+        spanish=" La Percepción de Cronos se\nactiva con objetos relacionados con el lugar\ndonde se ubican los Engranajes del Tiempo.",
+    });
+    message_Talk({
+        english=" We needed to find out where the\nTime Gears were in the past.",
+        french=" Il fallait qu\'on sache où trouver\nles Rouages du Temps dans le passé.",
+        german=" Wir mussten herausfinden, wo\nsich die Zahnräder der Zeit in der\nVergangenheit befanden.",
+        italian=" Dovevamo scoprire dov\'erano\ngli Ingranaggi del Tempo nel passato.",
+        spanish=" Necesitábamos saber dónde\nestaban los Engranajes del Tiempo en\nel pasado.",
+    });
+    message_Talk({
+        english=" We needed the Dimensional\nScream to accomplish that.",
+        french=" Et pour ce faire, on avait besoin\ndu Cri Dimensionnel.",
+        german=" Das konnten wir nur mithilfe des\nDimensionalen Schreis.",
+        italian=" Per scoprirlo avevamo bisogno \ndello Squarcio Dimensionale.",
+        spanish=" Y la Percepción de Cronos era\nimprescindible para ello.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" W-wait! Hold on a second!",
+                french=" Attends une minute!",
+                german=" W-warte! Eine Sekunde mal!",
+                italian=" A-Aspetta! Aspetta un secondo!",
+                spanish=" ¡Oye, espera un segundo!",
+            }
+        case 2:
+            {
+                english=" W-wait a second!",
+                french=" Attends une minute!",
+                german=" W-warte mal eine Sekunde!",
+                italian=" A-Aspetta un secondo!",
+                spanish=" ¡Oye, espera un segundo!",
+            }
+        default:
+            {
+                english=" W-wait! Wait a second!",
+                french=" Attends une minute!",
+                german=" W-warte! Eine Sekunde!",
+                italian=" A-Aspetta un secondo!",
+                spanish=" ¡Oye, espera un segundo!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" You said that the Dimensional\nScream needs a trusted partner nearby.",
+                french=" Tu dis qu\'il faut un partenaire\nen qui avoir confiance pour que le Cri\nDimensionnel fonctionne.",
+                german=" Du sagtest, der Dimensionale\nSchrei funktioniere nur mit einem Partner in\nder Nähe, dem man vertraut.",
+                italian=" Hai detto che lo Squarcio \nDimensionale funziona solo con la presenza\ndi un compagno Pokémon fidato.",
+                spanish=" Has dicho que la Percepción de\nCronos requiere la presencia de un Pokémon\nen el que se confíe.",
+            }
+        case 2:
+            {
+                english=" You said that there has to be a\ntrusted partner nearby for the Dimensional\nScream to work.",
+                french=" Tu dis qu\'il faut un partenaire\nen qui avoir confiance pour que le Cri\nDimensionnel fonctionne.",
+                german=" Du sagtest, dass man für den\nDimensionalen Schrei einen Partner dabei\nhaben muss, dem man vertraut.",
+                italian=" Hai detto che lo Squarcio \nDimensionale funziona solo con la presenza\ndi un compagno Pokémon fidato.",
+                spanish=" Has dicho que la Percepción de\nCronos requiere la presencia de un Pokémon\nen el que se confíe.",
+            }
+        default:
+            {
+                english=" You said that the Dimensional\nScream needs a trusted partner nearby.",
+                french=" Tu dis qu\'il faut un partenaire\nen qui avoir confiance pour que le Cri\nDimensionnel fonctionne.",
+                german=" Du sagtest, der Dimensionale\nSchrei funktioniere nur mit einem Partner in\nder Nähe, dem man vertraut.",
+                italian=" Hai detto che lo Squarcio \nDimensionale funziona solo con la presenza\ndi un compagno Pokémon fidato.",
+                spanish=" Has dicho que la Percepción de\nCronos requiere la presencia de un Pokémon\nen el que se confíe.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" But the Dimensional Scream was\ngoing off not long after we met!",
+                french=" Mais il s\'est déclenché très\npeu de temps après notre rencontre!",
+                german=" Aber der Dimensionale Schrei\nkam schon, als wir uns erst seit Kurzem\nkannten!",
+                italian=" Ma lo Squarcio Dimensionale si\nè verificato poco dopo il nostro incontro!",
+                spanish=" Pero empezó al poco de que\n[hero] y yo nos conociéramos.",
+            }
+        case 2:
+            {
+                english=" But the Dimensional Scream was\nbeing triggered not long after we met!",
+                french=" Mais il s\'est déclenché très\npeu de temps après notre rencontre!",
+                german=" Aber der Dimensionale Schrei\nkam schon, als wir uns erst seit Kurzem\nkannten!",
+                italian=" Ma lo Squarcio Dimensionale si\nè verificato poco dopo il nostro incontro!",
+                spanish=" Pero empezó al poco de que\n[hero] y yo nos conociéramos.",
+            }
+        default:
+            {
+                english=" But the Dimensional Scream was\nbeing triggered not long after we met!",
+                french=" Mais il s\'est déclenché très\npeu de temps après notre rencontre!",
+                german=" Aber der Dimensionale Schrei\nkam schon, als wir uns erst seit Kurzem\nkannten!",
+                italian=" Ma lo Squarcio Dimensionale si\nè verificato poco dopo il nostro incontro!",
+                spanish=" Pero empezó al poco de que\n[hero] y yo nos conociéramos.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Your point?",
+        french=" Où est-ce que tu veux en venir?",
+        german=" Ja. Und?",
+        italian=" E quindi?",
+        spanish=" ¿Y qué?",
+    });
+    message_Talk({
+        english=" Doesn\'t that show you how much\nyou two trusted each other from the start?",
+        french=" Ça prouve à quel point vous\nvous êtes fait confiance dès le départ, non?",
+        german=" Zeigt das denn nicht, wie groß\ndas Vertrauen zwischen euch von Anfang an\nwar?",
+        italian=" Ciò dimostra che fra voi due\nsi è creato un rapporto di fiducia fin\ndall\'inizio.",
+        spanish=" ¿No es evidente que hubo\nuna gran confianza desde el principio?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_STUNNED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Urk![K] When you put it like that...",
+                french=" Ah![K] Dit comme ça...",
+                german=" Umpf![K] Wenn du es so\nausdrückst...",
+                italian=" Oh![K] Se la metti così...",
+                spanish=" ¡Vaya![K] Dicho así...",
+            }
+        case 2:
+            {
+                english=" Urk![K] When you put it like that...",
+                french=" Ah![K] Dit comme ça...",
+                german=" Umpf![K] Wenn du es so\nausdrückst...",
+                italian=" Oh![K] Se la metti così...",
+                spanish=" ¡Vaya![K] Dicho así...",
+            }
+        default:
+            {
+                english=" Urk![K] When you put it like that...",
+                french=" Ah![K] Dit comme ça...",
+                german=" Umpf![K] Wenn du es so\nausdrückst...",
+                italian=" Oh![K] Se la metti così...",
+                spanish=" ¡Vaya![K] Dicho así...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    Wait(20);
+    se_Play(8961);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROP, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I mean...it\'s a bit embarrassing.",
+                french=" C\'est... c\'est un peu\nembarrassant.",
+                german=" Ich meine... Das macht mich ein\nbisschen verlegen.",
+                italian=" Voglio dire... È un po\'\nimbarazzante.",
+                spanish=" Me da un poco de vergüenza.",
+            }
+        case 2:
+            {
+                english=" It\'s a little embarrassing!",
+                french=" C\'est... c\'est un peu\nembarrassant.",
+                german=" Das macht mich ein bisschen\nverlegen!",
+                italian=" È un po\' imbarazzante.",
+                spanish=" Me da un poco de vergüenza.",
+            }
+        default:
+            {
+                english=" I mean...it\'s a bit embarrassing.",
+                french=" C\'est... c\'est un peu\nembarrassant.",
+                german=" Ich meine... Das macht mich ein\nbisschen verlegen.",
+                italian=" Voglio dire... È un po\'\nimbarazzante.",
+                spanish=" Me da un poco de vergüenza.",
+            }
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" In addition, [hero]\ndeveloped amnesia...",
+        french=" En plus, [hero] souffre\nd\'amnésie...",
+        german=" Dazu hat [hero]\nnoch einen Gedächtnisverlust erlitten...",
+        italian=" In più, [hero] ha perso la\nmemoria...",
+        spanish=" Además, [hero] sufrió\namnesia...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_JUPUTORU);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    message_Talk({
+        english=" Upon meeting you, [partner],\nyour partner had someone to turn to.",
+        french=" [hero] a donc trouvé\nquelqu\'un vers qui se tourner\nlors de votre rencontre, [partner].",
+        german=" Du, [partner], warst von\nAnfang an für deinen Partner da.",
+        italian=" Conoscendoti, [partner],\nha avuto qualcuno su cui fare affidamento.",
+        spanish=" Al conocerte, [partner],\nencontró a alguien digno de confianza.",
+    });
+    message_Talk({
+        english=" Perhaps [hero] grew to\ntrust you very quickly because of that.",
+        french=" Peut-être que c\'est à cause de\nça que [hero] t\'a tout de suite accordé\nsa confiance.",
+        german=" Vielleicht wuchs das Vertrauen\nvon [hero] in dich deshalb so schnell.",
+        italian=" Forse [hero] ha acquisito \nfiducia in te molto velocemente per questo \nmotivo.",
+        spanish=" Sin duda, [hero] se dio\ncuenta muy pronto.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8964);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_RIGHT, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Oh![K] There\'s one other thing that\nI don\'t understand.",
+                french=" Oh![K] Il y a autre chose que\nje n\'arrive pas à comprendre.",
+                german=" Oh![K] Es gibt da noch etwas, das\nich nicht verstehe.",
+                italian=" Ah![K] C\'è un\'altra cosa che non \ncapisco.",
+                spanish=" ¡Ah![K] Hay otra cosa que no\ncomprendo.",
+            }
+        case 2:
+            {
+                english=" Oh![K] There\'s another thing I don\'t\nunderstand.",
+                french=" Oh![K] Il y a autre chose que\nje n\'arrive pas à comprendre.",
+                german=" Oh![K] Es gibt da noch etwas, das\nich nicht verstehe.",
+                italian=" Ah![K] C\'è un\'altra cosa che non \ncapisco.",
+                spanish=" ¡Ah![K] Hay otra cosa que no\ncomprendo.",
+            }
+        default:
+            {
+                english=" Oh![K] There\'s another thing I don\'t\nunderstand.",
+                french=" Oh![K] Il y a autre chose que\nje n\'arrive pas à comprendre.",
+                german=" Oh![K] Es gibt da noch etwas, das\nich nicht verstehe.",
+                italian=" Ah![K] C\'è un\'altra cosa che non \ncapisco.",
+                spanish=" ¡Ah![K] Hay otra cosa que no\ncomprendo.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Does the Dimensional Scream go\noff in relation to only Time Gears?",
+                french=" Le déclenchement du Cri\nDimensionnel est lié uniquement aux Rouages\ndu Temps?",
+                german=" Wird der Dimensionale Schrei\nnur in Verbindung mit den Zahnrädern der Zeit\nausgelöst?",
+                italian=" Lo Squarcio Dimensionale è\nsempre causato dagli Ingranaggi del\nTempo?",
+                spanish=" ¿Dices que la Percepción\nde Cronos solo aparece en relación\ncon los Engranajes del Tiempo?",
+            }
+        case 2:
+            {
+                english=" Is the Dimensional Scream\ntriggered in response to only Time Gears?",
+                french=" Le déclenchement du Cri\nDimensionnel est lié uniquement aux Rouages\ndu Temps?",
+                german=" Wird der Dimensionale Schrei\nnur in Verbindung mit den Zahnrädern der Zeit\nausgelöst?",
+                italian=" Lo Squarcio Dimensionale è\nsempre causato dagli Ingranaggi del\nTempo?",
+                spanish=" ¿Dices que la Percepción\nde Cronos solo aparece en relación\ncon los Engranajes del Tiempo?",
+            }
+        default:
+            {
+                english=" Does the Dimensional Scream go\noff in response to only Time Gears?",
+                french=" Le déclenchement du Cri\nDimensionnel est lié uniquement aux Rouages\ndu Temps?",
+                german=" Wird der Dimensionale Schrei\nnur in Verbindung mit den Zahnrädern der Zeit\nausgelöst?",
+                italian=" Lo Squarcio Dimensionale è\nsempre causato dagli Ingranaggi del\nTempo?",
+                spanish=" ¿Dices que la Percepción\nde Cronos solo aparece en relación\ncon los Engranajes del Tiempo?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Right.[K] The opposite is also true.\nThe Dimensional Scream is not triggered in\nplaces that aren\'t connected to Time Gears.",
+        french=" En effet.[K] L\'inverse est aussi\nvrai: le Cri Dimensionnel ne marche pas dans\nun lieu sans lien avec un Rouage du Temps.",
+        german=" Richtig.[K] Dementsprechend wird\nder Dimensionale Schrei nicht an Orten ohne\nVerbindung zu Zahnrädern der Zeit ausgelöst.",
+        italian=" È così.[K] Di conseguenza, lo\nSquarcio Dimensionale non si verifica in posti\nnon connessi con gli Ingranaggi del Tempo.",
+        spanish=" Así es.[K] No se activa en ningún\notro lugar.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hmm...[K]really?",
+                french=" Hmm...[K] tu en es sûr?",
+                german=" Hmm...[K] Wirklich?",
+                italian=" Mmm...[K] Davvero?",
+                spanish=" Hum...[K] ¿En serio?",
+            }
+        case 2:
+            {
+                english=" Hmm...[K]really?",
+                french=" Hmm...[K] tu en es sûr?",
+                german=" Hmm...[K] Wirklich?",
+                italian=" Mmm...[K] Davvero?",
+                spanish=" Hum...[K] ¿En serio?",
+            }
+        default:
+            {
+                english=" Hmm...[K]really?",
+                french=" Hmm...[K] tu en es sûr?",
+                german=" Hmm...[K] Wirklich?",
+                italian=" Mmm...[K] Davvero?",
+                spanish=" Hum...[K] ¿En serio?",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I don\'t remember it that way...",
+                french=" Je ne me rappelle pas que\nça se soit passé comme ça...",
+                german=" So habe ich das nicht in\nErinnerung.",
+                italian=" Non mi pare che sia andata\ncosì...",
+                spanish=" Pues eso no me encaja...",
+            }
+        case 2:
+            {
+                english=" That\'s not how I remember it...",
+                french=" Je ne me rappelle pas que\nça se soit passé comme ça...",
+                german=" So habe ich das nicht in\nErinnerung.",
+                italian=" Non mi sembra sia andata\nproprio così...",
+                spanish=" Pues eso no me encaja...",
+            }
+        default:
+            {
+                english=" That\'s not how I remember it...",
+                french=" Je ne me rappelle pas que\nça se soit passé comme ça...",
+                german=" So habe ich das nicht in\nErinnerung.",
+                italian=" Non mi sembra sia andata\nproprio così...",
+                spanish=" Pues eso no me encaja...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hey, [hero].",
+                french=" Dis, [hero].",
+                german=" Hey, [hero].",
+                italian=" Ehi, [hero].",
+                spanish=" Oye, [hero]...",
+            }
+        case 2:
+            {
+                english=" Listen, [hero].",
+                french=" Dis, [hero].",
+                german=" Hör mal, [hero].",
+                italian=" Ascolta, [hero].",
+                spanish=" Oye, [hero]...",
+            }
+        default:
+            {
+                english=" Say, [hero].",
+                french=" Dis, [hero].",
+                german=" Sag mal, [hero].",
+                italian=" Senti, [hero].",
+                spanish=" Oye, [hero]...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Do you remember that time it\nwent off near [CS:N]Drowzee[CR]?[K] And during our first\nexploration?[K] And there were other times too!",
+                french=" Tu te rappelles quand ça s\'est\nproduit avec [CS:N]Soporifik[CR]?[K] Et pendant notre\npremière exploration?[K] Et il y en a eu d\'autres!",
+                german=" Erinnerst du dich, dass er auch\nvon [CS:N]Traumato[CR] ausgelöst wurde?[K] Und bei\nder ersten Erkundung? [K]Und es gab andere Male!",
+                italian=" Ti ricordi quella volta con \n[CS:N]Drowzee[CR]?[K] E durante la nostra prima \nesplorazione?[K] E anche altre volte!",
+                spanish=" ¿Recuerdas la visión que tuviste\nsobre [CS:N]Drowzee[CR]?[K] ¿Y la de nuestra primera\nexploración?[K] ¡Y yo diría que hubo alguna más!",
+            }
+        case 2:
+            {
+                english=" Do you remember that time it\nwent off near [CS:N]Drowzee[CR]?[K] And during our first\nexploration?[K] And there were other times too!",
+                french=" Tu te rappelles quand ça s\'est\nproduit avec [CS:N]Soporifik[CR]?[K] Et pendant notre\npremière exploration?[K] Et il y en a eu d\'autres!",
+                german=" Erinnerst du dich, dass er auch\nvon [CS:N]Traumato[CR] ausgelöst wurde?[K] Und bei\nder ersten Erkundung? [K]Und es gab andere Male!",
+                italian=" Ti ricordi quella volta con \n[CS:N]Drowzee[CR]?[K] E durante la nostra prima \nesplorazione?[K] E anche altre volte!",
+                spanish=" ¿Recuerdas la visión que tuviste\nsobre [CS:N]Drowzee[CR]?[K] ¿Y la de nuestra primera\nexploración?[K] ¡Y yo diría que hubo alguna más!",
+            }
+        default:
+            {
+                english=" Do you remember that time it\nwent off near [CS:N]Drowzee[CR]?[K] And during our first\nexploration?[K] And there were other times too!",
+                french=" Tu te rappelles quand ça s\'est\nproduit avec [CS:N]Soporifik[CR]?[K] Et pendant notre\npremière exploration?[K] Et il y en a eu d\'autres!",
+                german=" Erinnerst du dich, dass er auch\nvon [CS:N]Traumato[CR] ausgelöst wurde?[K] Und bei\nder ersten Erkundung? [K]Und es gab andere Male!",
+                italian=" Ti ricordi quella volta con \n[CS:N]Drowzee[CR]?[K] E durante la nostra prima \nesplorazione?[K] E anche altre volte!",
+                spanish=" ¿Recuerdas la visión que tuviste\nsobre [CS:N]Drowzee[CR]?[K] ¿Y la de nuestra primera\nexploración?[K] ¡Y yo diría que hubo alguna más!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We went to places that seem to\nhave nothing to do with Time Gears.",
+                french=" On a visité des endroits sans\naucun lien avec les Rouages du Temps.",
+                german=" Wir sind an Orten gewesen, die\nnichts mit den Zahnrädern der Zeit zu tun zu\nhaben schienen.",
+                italian=" Siamo stati in luoghi che \nnon avevano nulla a che fare con\ngli Ingranaggi del Tempo.",
+                spanish=" Estuvimos en algunos sitios que\nno tenían nada que ver con los Engranajes\ndel Tiempo.",
+            }
+        case 2:
+            {
+                english=" We went to places that seem to\nhave nothing to do with Time Gears.",
+                french=" On a visité des endroits sans\naucun lien avec les Rouages du Temps.",
+                german=" Wir sind an Orten gewesen, die\nnichts mit den Zahnrädern der Zeit zu tun zu\nhaben schienen.",
+                italian=" Siamo stati in luoghi che \nnon avevano nulla a che fare con\ngli Ingranaggi del Tempo.",
+                spanish=" Estuvimos en algunos sitios que\nno tenían nada que ver con los Engranajes\ndel Tiempo.",
+            }
+        default:
+            {
+                english=" We went to places that seem to\nhave nothing to do with Time Gears.",
+                french=" On a visité des endroits sans\naucun lien avec les Rouages du Temps.",
+                german=" Wir sind an Orten gewesen, die\nnichts mit den Zahnrädern der Zeit zu tun zu\nhaben schienen.",
+                italian=" Siamo stati in luoghi che \nnon avevano nulla a che fare con\ngli Ingranaggi del Tempo.",
+                spanish=" Estuvimos en algunos sitios que\nno tenían nada que ver con los Engranajes\ndel Tiempo.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" But even in places like that,\nthe Dimensional Scream went off, right?",
+                french=" Mais même dans ces\nendroits-là, le Cri Dimensionnel s\'est\ndéclenché, non?",
+                german=" Aber auch an solchen Orten ging\nder Dimensionale Schrei los, richtig?",
+                italian=" Ma lo Squarcio Dimensionale si è\nverificato anche lì, vero?",
+                spanish=" Y aun así, la Percepción de\nCronos se activó, ¿verdad?",
+            }
+        case 2:
+            {
+                english=" But even in places like that,\nthe Dimensional Scream was triggered\nsometimes, wasn\'t it?",
+                french=" Mais même dans ces\nendroits-là, le Cri Dimensionnel s\'est\ndéclenché, non?",
+                german=" Aber auch an solchen Orten\nwurde der Dimensionale Schrei manchmal\nausgelöst, oder nicht?",
+                italian=" Ma lo Squarcio Dimensionale \nqualche volta si è innescato anche in quei posti,\nvero?",
+                spanish=" Y aun así, la Percepción de\nCronos se activó, ¿verdad?",
+            }
+        default:
+            {
+                english=" But even in places like that,\nthe Dimensional Scream went off sometimes,\ndidn\'t it?",
+                french=" Mais même dans ces\nendroits-là, le Cri Dimensionnel s\'est\ndéclenché, non?",
+                german=" Aber auch an solchen Orten ging\nder Dimensionale Schrei manchmal los, oder?",
+                italian=" Ma lo Squarcio Dimensionale \nqualche volta si è verificato anche in quei\nposti, vero?",
+                spanish=" Y aun así, la Percepción de\nCronos se activó, ¿verdad?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2Direction(1, 10, DIR_UPLEFT);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(1, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(71);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    Wait(30);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(1, 10, DIR_DOWNRIGHT);
+    }
+    Wait(5);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(1, 10, ACTOR_NPC_JUPUTORU);
+    }
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Are you sure?[K] But that never\nhappened in the future.",
+        french=" C\'est vrai?[K] Ça n\'est jamais\narrivé dans le futur.",
+        german=" Bist du sicher?[K] Aber das ist\nniemals in der Zukunft geschehen.",
+        italian=" Davvero?[K] Nel futuro non è\nmai successo.",
+        spanish=" ¿Seguro?[K] En el futuro eso no\nocurrió nunca.",
+    });
+    message_Talk({
+        english=" The Dimensional Scream was\nnever triggered by places that had no tie to\nTime Gears whatsoever.",
+        french=" Jamais le Cri Dimensionnel ne\ns\'est déclenché dans des endroits sans lien\navec les Rouages du Temps.",
+        german=" Der Dimensionale Schrei wurde\nsicher niemals an Orten ausgelöst, die nicht in\nVerbindung zu den Zahnrädern der Zeit stehen.",
+        italian=" Lo Squarcio Dimensionale non si\nè mai verificato in posti che non avevano \nalcun legame con gli Ingranaggi del Tempo.",
+        spanish=" Nunca se activó en lugares que\nno tenían relación con los engranajes.",
+    });
+    message_Talk({
+        english=" ...[K]Well, if that\'s true, I don\'t\nknow why it would work differently here.",
+        french=" ...[K] Eh bien, si c\'est vrai,\nje ne vois pas pourquoi ce ne serait pas le cas\nici aussi.",
+        german=" ...[K]Nun, wenn das stimmt, kann\nich mir nicht erklären, warum er hier anders\nfunktionieren sollte.",
+        italian=" ...[K] Beh, se è così, non so\nperché qui funzioni in un altro modo.",
+        spanish=" No...[K] No entiendo por qué iba a\nser distinto aquí.",
+    });
+    message_Talk({
+        english=" Perhaps things are just different\nin this world.",
+        french=" Peut-être que les choses sont\ntout simplement différentes dans ce monde.",
+        german=" Vielleicht sind die Dinge in dieser\nWelt einfach anders.",
+        italian=" Forse è solo che le cose in\nquesto tempo sono differenti.",
+        spanish=" Bueno, tal vez las cosas sean\ndiferentes en este mundo.",
+    });
+    message_Talk({
+        english=" Perhaps the nature of the\nDimensional Scream is altered in the past.",
+        french=" Peut-être que la nature du Cri\nDimensionnel a été modifiée dans le passé.",
+        german=" Vielleicht funktioniert der\nDimensionale Schrei in der Vergangenheit\neinfach anders.",
+        italian=" Forse la natura dello Squarcio\nDimensionale nel passato è alterata.",
+        spanish=" Tal vez la naturaleza de la\nPercepción de Cronos se altera en el pasado.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(So in the future, the Dimensional Scream\ndoesn\'t work in places that have no connection\nto Time Gears?)",
+                french="(Donc, dans le futur, le Cri Dimensionnel\nne marche pas dans les endroits qui n\'ont aucun\nlien avec les Rouages du Temps?)",
+                german="(In der Zukunft funktioniert der Dimensionale\nSchrei also nicht an Orten, die nicht in\nVerbindung zu Zahnrädern der Zeit stehen?)",
+                italian="(Quindi nel futuro, lo Squarcio Dimensionale \nnon si verifica in luoghi che non sono legati\nagli Ingranaggi del Tempo?)",
+                spanish="(Entonces, ¿en el futuro la Percepción de\nCronos no funciona en los lugares que no están\nrelacionados con los Engranajes del Tiempo?)",
+            }
+        default:
+            {
+                english="(So in the future, the Dimensional Scream\ndoesn\'t work in places that have no connection\nto Time Gears?)",
+                french="(Donc, dans le futur, le Cri Dimensionnel\nne marche pas dans les endroits qui n\'ont aucun\nlien avec les Rouages du Temps?)",
+                german="(In der Zukunft funktioniert der Dimensionale\nSchrei also nicht an Orten, die nicht in\nVerbindung zu Zahnrädern der Zeit stehen?)",
+                italian="(Quindi nel futuro, lo Squarcio Dimensionale \nnon si verifica in luoghi che non sono legati\nagli Ingranaggi del Tempo?)",
+                spanish="(Entonces, ¿en el futuro la Percepción de\nCronos no funciona en los lugares que no están\nrelacionados con los Engranajes del Tiempo?)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Oh![K] That explains it!)",
+                french="(Oh![K] Ça explique tout!)",
+                german="(Oh![K] Das erklärt es!)",
+                italian="(Oh![K] Questo spiega tutto!)",
+                spanish="(¡Oh![K] ¡Eso lo explica todo!)",
+            }
+        default:
+            {
+                english="(Oh![K] That explains it!)",
+                french="(Oh![K] Ça explique tout!)",
+                german="(Oh![K] Das erklärt es!)",
+                italian="(Oh![K] Questo spiega tutto!)",
+                spanish="(¡Oh![K] ¡Eso lo explica todo!)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Maybe that\'s why...that time...)",
+                french="(C\'est peut-être pour ça que... cette fois-là...)",
+                german="(Vielleicht erklärt das wirklich dieses\neine Mal...)",
+                italian="(Forse è per questo che... quella volta...)",
+                spanish="(Tal vez por eso... aquella vez...)",
+            }
+        default:
+            {
+                english="(Maybe that\'s why...that time...)",
+                french="(C\'est peut-être pour ça que... cette fois-là...)",
+                german="(Vielleicht erklärt das wirklich dieses\neine Mal...)",
+                italian="(Forse è per questo che... quella volta...)",
+                spanish="(Tal vez por eso... aquella vez...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(when we were in the future...)",
+                french="(... quand on était dans le futur...)",
+                german="(Als wir in der Zukunft waren...)",
+                italian="(Quando eravamo nel futuro...)",
+                spanish="(Cuando estábamos en el futuro...)",
+            }
+        default:
+            {
+                english="(when we were in the future...)",
+                french="(... quand on était dans le futur...)",
+                german="(Als wir in der Zukunft waren...)",
+                italian="(Quando eravamo nel futuro...)",
+                spanish="(Cuando estábamos en el futuro...)",
+            }
+    }
+    message_Close();
+    bgm_FadeOut(30);
+    screen_FadeOut(1, 30);
+    WaitBgm(BGM_FIRE_CRACKLING);
+    end;
+}

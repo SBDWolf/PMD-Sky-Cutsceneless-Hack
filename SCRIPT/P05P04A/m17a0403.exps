@@ -1,0 +1,209 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_PLANETS_PARALYSIS, 0, 256);
+    back_SetGround(LEVEL_P05P04A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It\'s as if...[K]all movement...",
+                french=" Comme si...[K] tout mouvement...",
+                german=" Es ist, als ob...[K] alle Bewegung...",
+                italian=" È come se...[K] tutti\ni movimenti...",
+                spanish=" Es como si...[K] todo\nel movimiento...",
+            }
+        case 2:
+            {
+                english=" It\'s as if...[K]all movement...",
+                french=" Comme si...[K] tout mouvement...",
+                german=" Es ist, als ob...[K] alle Bewegung...",
+                italian=" È come se...[K] tutti\ni movimenti...",
+                spanish=" Es como si...[K] todo\nel movimiento...",
+            }
+        default:
+            {
+                english=" It\'s as if...[K]all movement...",
+                french=" Comme si...[K] tout mouvement...",
+                german=" Es ist, als ob...[K] alle Bewegung...",
+                italian=" È come se...[K] tutti\ni movimenti...",
+                spanish=" Es como si...[K] todo\nel movimiento...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It\'s as if everything\'s stopped.",
+                french=" Comme si tout s\'était arrêté.",
+                german=" Es ist, als sei alles erstarrt.",
+                italian=" È come se tutto fosse immobile.",
+                spanish=" Como si todo se hubiera\ndetenido.",
+            }
+        case 2:
+            {
+                english=" It\'s as if everything\'s stopped.",
+                french=" Comme si tout s\'était arrêté.",
+                german=" Es ist, als sei alles erstarrt.",
+                italian=" È come se tutto fosse immobile.",
+                spanish=" Como si todo se hubiera\ndetenido.",
+            }
+        default:
+            {
+                english=" It\'s as if everything\'s stopped.",
+                french=" Comme si tout s\'était arrêté.",
+                german=" Es ist, als sei alles erstarrt.",
+                italian=" È come se tutto fosse immobile.",
+                spanish=" Como si todo se hubiera\ndetenido.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Exactly.",
+        french=" Précisément.",
+        german=" Genau.",
+        italian=" Esattamente.",
+        spanish=" Exactamente.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8978);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    Wait(5);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_JUPUTORU);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" What?!",
+                french=" Pardon?!",
+                german=" Was?!?",
+                italian=" Cosa?!",
+                spanish=" ¡¿Qué?!",
+            }
+        case 2:
+            {
+                english=" What?!",
+                french=" Pardon?!",
+                german=" Was?!?",
+                italian=" Cosa?!",
+                spanish=" ¡¿Qué?!",
+            }
+        default:
+            {
+                english=" Pardon?!",
+                french=" Pardon?!",
+                german=" Wie?!?",
+                italian=" Scusa?!",
+                spanish=" ¡¿Qué?!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_EmptyActor();
+    message_Talk({
+        english=" Wheh-heh-heh!",
+        french=" Whé hé hé!",
+        german=" Wähähäh!",
+        italian=" Meh-eh-eh-eh!",
+        spanish=" ¡Je, je, je, je!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8974);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(1, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2Direction(1, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(1, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_BOTTOM_L_FACEOUTW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Wah! I hear those [CS:N]Sableye[CR]!",
+                french=" Ouah! Les [CS:N]Ténéfix[CR]!\nJe les entends d\'ici!",
+                german=" Wah! Ich höre die [CS:N]Zobiris[CR]!",
+                italian=" Aah! Sento quei [CS:N]Sableye[CR]!",
+                spanish=" ¡Aah! ¡Oigo venir a esos\n[CS:N]Sableye[CR]!",
+            }
+        case 2:
+            {
+                english=" Wah! I hear those [CS:N]Sableye[CR]!",
+                french=" Ouah! Les [CS:N]Ténéfix[CR]!\nJe les entends d\'ici!",
+                german=" Wah! Ich höre die [CS:N]Zobiris[CR]!",
+                italian=" Aah! Sento quei [CS:N]Sableye[CR]!",
+                spanish=" ¡Aah! ¡Oigo venir a esos\n[CS:N]Sableye[CR]!",
+            }
+        default:
+            {
+                english=" Wah! I hear those [CS:N]Sableye[CR]!",
+                french=" Ouah! Les [CS:N]Ténéfix[CR]!\nJe les entends d\'ici!",
+                german=" Wah! Ich höre die [CS:N]Zobiris[CR]!",
+                italian=" Aah! Sento quei [CS:N]Sableye[CR]!",
+                spanish=" ¡Aah! ¡Oigo venir a esos\n[CS:N]Sableye[CR]!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" We have to keep running!",
+        french=" Il faut qu\'on continue à courir!",
+        german=" Wir müssen weiterlaufen!",
+        italian=" Dobbiamo continuare a correre!",
+        spanish=" ¡Tenemos que seguir corriendo!",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_JUPUTORU) {
+        MovePositionOffset(33152, 160, 0);
+    }
+    Wait(5);
+    with (actor ACTOR_PLAYER) {
+        MovePositionOffset(33152, 160, 0);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionOffset(33152, 160, 0);
+    }
+    Wait(30);
+    bgm_FadeOut(180);
+    screen_FadeOut(1, 60);
+    WaitBgm(BGM_PLANETS_PARALYSIS);
+    end;
+}

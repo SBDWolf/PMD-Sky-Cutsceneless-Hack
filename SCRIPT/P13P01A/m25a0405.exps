@@ -1,0 +1,197 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_TIME_GEAR_REMIX, 0, 256);
+    back_SetGround(LEVEL_P13P01A);
+    back_SetBackScrollSpeed(-1280, 32768);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(5);
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEOUTW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It\'s not far now, [hero].",
+                french=" Ce n\'est plus très loin,\n[hero].",
+                german=" Es ist nicht mehr weit,\n[hero].",
+                italian=" Non manca più molto,\n[hero].",
+                spanish=" Enseguida llegaremos,\n[hero].",
+            }
+        case 2:
+            {
+                english=" We\'re nearly there,\n[hero].",
+                french=" Ce n\'est plus très loin,\n[hero].",
+                german=" Wir sind fast da, [hero].",
+                italian=" Ci siamo quasi, [hero].",
+                spanish=" Ya casi estamos, [hero].",
+            }
+        default:
+            {
+                english=" We\'re getting close,\n[hero].",
+                french=" Ce n\'est plus très loin,\n[hero].",
+                german=" Wir kommen näher,\n[hero].",
+                italian=" Ci stiamo avvicinando,\n[hero].",
+                spanish=" Nos estamos acercando,\n[hero].",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" There\'s no turning back now.",
+                french=" Plus question de rebrousser\nchemin.",
+                german=" Jetzt gibt es kein Zurück mehr.",
+                italian=" Dobbiamo mettercela tutta.",
+                spanish=" Ya no hay marcha atrás.",
+            }
+        case 2:
+            {
+                english=" There\'s no turning back now.",
+                french=" Plus question de rebrousser\nchemin.",
+                german=" Jetzt gibt es kein Zurück mehr.",
+                italian=" Dobbiamo mettercela tutta.",
+                spanish=" Ya no hay marcha atrás.",
+            }
+        default:
+            {
+                english=" There\'s no turning back now.",
+                french=" Plus question de rebrousser\nchemin.",
+                german=" Jetzt gibt es kein Zurück mehr.",
+                italian=" Dobbiamo mettercela tutta.",
+                spanish=" Ya no hay marcha atrás.",
+            }
+    }
+    message_Close();
+    Wait(90);
+    back_SetBackScrollSpeed(-32768, 32768);
+    se_Play(8964);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    Wait(10);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_LEFT, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEOUTW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hey! Up there...",
+                french=" Eh, regarde là-haut...",
+                german=" Hey! Da oben...",
+                italian=" Ehi! Lassù...",
+                spanish=" Fíjate allí arriba.",
+            }
+        case 2:
+            {
+                english=" Hey! Up there...",
+                french=" Eh, regarde là-haut...",
+                german=" Hey! Da oben...",
+                italian=" Ehi! Lassù...",
+                spanish=" Fíjate allí arriba.",
+            }
+        default:
+            {
+                english=" Oh! Up there...",
+                french=" Eh, regarde là-haut...",
+                german=" Oh! Da oben...",
+                italian=" Ehi! Lassù...",
+                spanish=" Fíjate allí arriba.",
+            }
+    }
+    message_Close();
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V25P02A);
+    camera2_SetPositionMark(Position<'m0', 20, 12.5>);
+    screen2_FadeIn(1, 15);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEOUTW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" The top of [CS:P]Temporal Tower[CR] is\nglowing red...[K] What\'s that about?",
+                french=" Il y a un halo rouge au sommet\nde la [CS:P]Tour du Temps[CR]...[K] Qu\'est-ce que c\'est?",
+                german=" Die Spitze des [CS:P]Zeitturms[CR]\nglüht rot...[K] Was hat das zu bedeuten?",
+                italian=" La cima della [CS:P]Torre del Tempo[CR] \nemette una luce rossa...[K] Di cosa si tratta?",
+                spanish=" La parte superior de la [CS:P]Torre[CR]\n[CS:P]del Tiempo[CR] tiene un extraño brillo rojizo...[K]\n¿Por qué será?",
+            }
+        case 2:
+            {
+                english=" The top of [CS:P]Temporal Tower[CR] is\nglowing red...[K] What could that be?",
+                french=" Il y a un halo rouge au sommet\nde la [CS:P]Tour du Temps[CR]...[K] Qu\'est-ce que c\'est?",
+                german=" Die Spitze des [CS:P]Zeitturms[CR]\nglüht rot...[K] Was könnte das sein?",
+                italian=" La cima della [CS:P]Torre del Tempo[CR] \nemette una luce rossa...[K] Cosa potrebbe\nessere?",
+                spanish=" La parte superior de la [CS:P]Torre[CR]\n[CS:P]del Tiempo[CR] tiene un extraño brillo rojizo...[K]\n¿Por qué será?",
+            }
+        default:
+            {
+                english=" The top of [CS:P]Temporal Tower[CR] is\nglowing red...[K] Why is that?",
+                french=" Il y a un halo rouge au sommet\nde la [CS:P]Tour du Temps[CR]...[K] Qu\'est-ce que c\'est?",
+                german=" Die Spitze des [CS:P]Zeitturms[CR]\nglüht rot...[K] Warum nur?",
+                italian=" La cima della [CS:P]Torre del Tempo[CR] \nemette una luce rossa...[K] Come mai?",
+                spanish=" La parte superior de la [CS:P]Torre[CR]\n[CS:P]del Tiempo[CR] tiene un extraño brillo rojizo...[K]\n¿Por qué será?",
+            }
+    }
+    message_Close();
+    screen2_FadeOut(1, 15);
+    back2_SetMode(0);
+    Wait(30);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(1, 1, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_DETERMINED, FACE_POS_BOTTOM_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Let\'s move it!",
+                french=" Dépêchons-nous!",
+                german=" Setzen wir uns in Bewegung!",
+                italian=" Muoviamoci!",
+                spanish=" ¡Adelante!",
+            }
+        case 2:
+            {
+                english=" Let\'s hustle!",
+                french=" Dépêchons-nous!",
+                german=" Machen wir Dampf!",
+                italian=" Sbrighiamoci!",
+                spanish=" ¡Adelante!",
+            }
+        default:
+            {
+                english=" Let\'s hurry!",
+                french=" Dépêchons-nous!",
+                german=" Beeilen wir uns!",
+                italian=" Presto!",
+                spanish=" ¡Adelante!",
+            }
+    }
+    message_Close();
+    with (actor ACTOR_ATTENDANT1) {
+        Move2PositionOffset(33152, -120, -20);
+    }
+    with (actor ACTOR_PLAYER) {
+        Move2PositionOffset(33152, -120, -20);
+    }
+    Wait(30);
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 60);
+    Wait(30);
+    WaitBgm(BGM_TIME_GEAR_REMIX);
+    end;
+}

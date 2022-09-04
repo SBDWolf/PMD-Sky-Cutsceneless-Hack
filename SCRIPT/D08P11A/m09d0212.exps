@@ -1,0 +1,170 @@
+
+def 0 {
+    CallCommon(CORO_FADE_OUT_ALL_BEFORE);
+    back_SetGround(LEVEL_D08P11A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    screen_FadeInAll(1, 30);
+    Wait(30);
+    message_SetActor(ACTOR_ATTENDANT1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Huh? What is this?",
+                french=" Hein? Qu\'est-ce que c\'est?",
+                german=" Huch? Was ist das?",
+                italian=" Eh? E questa cos\'è?",
+                spanish=" ¿Eh? ¿Qué es esto?",
+            }
+        case 2:
+            {
+                english=" Huh? What is this?",
+                french=" Hein? Qu\'est-ce que c\'est?",
+                german=" Huch? Was ist das?",
+                italian=" Eh? E questa cos\'è?",
+                spanish=" ¿Eh? ¿Qué es esto?",
+            }
+        default:
+            {
+                english=" Huh? What is this?",
+                french=" Hein? Qu\'est-ce que c\'est?",
+                german=" Huch? Was ist das?",
+                italian=" Eh? E questa cos\'è?",
+                spanish=" ¿Eh? ¿Qué es esto?",
+            }
+    }
+    message_Close();
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(15);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m0', 37.5, 16.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m1', 37.5, 16.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_TOP_C_FACEL);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It looks like some kind of stone,\nI guess.",
+                french=" On dirait une sorte de pierre.",
+                german=" Sieht aus wie eine Art Stein,\nwürde ich sagen.",
+                italian=" Sembra una pietra.",
+                spanish=" Parece algún tipo de piedra.",
+            }
+        case 2:
+            {
+                english=" It looks like some kind of stone,\nI guess.",
+                french=" On dirait une sorte de pierre.",
+                german=" Sieht aus wie eine Art Stein,\nwürde ich sagen.",
+                italian=" Sembra una pietra.",
+                spanish=" Parece algún tipo de piedra.",
+            }
+        default:
+            {
+                english=" It looks like some kind of stone,\nI guess.",
+                french=" On dirait une sorte de pierre.",
+                german=" Sieht aus wie eine Art Stein,\nwürde ich sagen.",
+                italian=" Sembra una pietra.",
+                spanish=" Supongo que es algún tipo de\npiedra.",
+            }
+    }
+    message_KeyWait();
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It\'s red and pretty. It\'s kind of\nlike a gem, actually.",
+                french=" Elle est rouge, et plutôt jolie\navec ça. En fait, c\'est une sorte de gemme.",
+                german=" Er ist rot und wunderschön.\nEs ist eher eine Art Edelstein.",
+                italian=" È rossa e graziosa. Assomiglia \npiù a una gemma.",
+                spanish=" Es roja y hermosa. Más bien\ndebe de ser una piedra preciosa.",
+            }
+        case 2:
+            {
+                english=" It\'s red and pretty. It\'s kind of\nlike a gem, actually.",
+                french=" Elle est rouge, et plutôt jolie\navec ça. En fait, c\'est une sorte de gemme.",
+                german=" Er ist rot und wunderschön.\nEs ist eher eine Art Edelstein.",
+                italian=" È rossa e graziosa. Assomiglia \npiù a una gemma.",
+                spanish=" Es roja y hermosa. Más bien\ndebe de ser una piedra preciosa.",
+            }
+        default:
+            {
+                english=" It\'s red and pretty. It\'s kind of\nlike a gem, actually.",
+                french=" Elle est rouge, et plutôt jolie\navec ça. En fait, c\'est une sorte de gemme.",
+                german=" Er ist rot und wunderschön.\nEs ist eher eine Art Edelstein.",
+                italian=" È rossa e graziosa. Assomiglia \npiù a una gemma.",
+                spanish=" Es roja y hermosa. Más bien\ndebe de ser una piedra preciosa.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionOffset(1, -16, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (object OBJECT_D08P11A1_23) {
+        Destroy();
+    }
+    message_Mail({
+        english="[CN][partner] picked\n[CN]up the red stone.",
+        french="[CN][partner] ramasse\n[CN]la pierre rouge.",
+        german="[CN][partner] hebt\n[CN]den roten Stein auf.",
+        italian="[CN][partner] raccoglie\n[CN]la pietra rossa.",
+        spanish="[CN][partner] cogió\n[CN]la piedra roja.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hey! This stone feels warm!",
+                french=" Hé! Cette pierre est chaude!",
+                german=" Hey! Der Stein ist ganz warm!",
+                italian=" Ehi! Questa pietra è calda!",
+                spanish=" ¡Oye! ¡Esta piedra está caliente!",
+            }
+        case 2:
+            {
+                english=" Wow! This stone feels warm!",
+                french=" Hé! Cette pierre est chaude!",
+                german=" Wow! Der Stein ist ganz warm!",
+                italian=" Ehi! Questa pietra è calda!",
+                spanish=" ¡Vaya! ¡Esta piedra está caliente\nal tacto!",
+            }
+        default:
+            {
+                english=" Wow! It feels warm!",
+                french=" Hé! Cette pierre est chaude!",
+                german=" Wow! Er fühlt sich warm an!",
+                italian=" Ehi! Questa pietra è calda!",
+                spanish=" ¡Vaya! ¡Está caliente!",
+            }
+    }
+    message_Close();
+    screen_FadeOutAll(1, 30);
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    end;
+}

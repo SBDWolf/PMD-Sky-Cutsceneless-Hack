@@ -1,0 +1,121 @@
+
+def 0 {
+    switch ( sector() ) {
+        case 1:
+            §label_0;
+            supervision_StationCommon(0);
+            switch ( $EXECUTE_SPECIAL_EPISODE_TYPE ) {
+                case 0:
+                    supervision_ExecuteStationSub(LEVEL_G01P07A, 'UN01', 0);
+                    §label_4;
+                    if ( $SCENARIO_MAIN_BIT_FLAG[7] ) {
+                        $SCENARIO_MAIN_BIT_FLAG[7] = 0;
+                        supervision_StationCommon(2);
+                        §label_18;
+                        debug_Print('SET_BGM');
+                        bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
+                        JumpCommon(CORO_COMMON_ENTER);
+                    } else {
+                        switch ( sector() ) {
+                            case 1:
+                                end;
+                            default:
+                                switch ( $EXECUTE_SPECIAL_EPISODE_TYPE ) {
+                                    case 0:
+                                        supervision_StationCommon(21);
+                                        jump @label_18;
+                                    case 2:
+                                        supervision_StationCommon(41);
+                                        jump @label_18;
+                                    default:
+                                        supervision_StationCommon(1);
+                                        jump @label_18;
+                                }
+                                break;
+                        }
+                    }
+                    break;
+                case 2:
+                    supervision_ExecuteStationSub(LEVEL_G01P07A, 'UN04', 0);
+                    jump @label_4;
+                default:
+                    if ( scn($SCENARIO_MAIN) >= [29, 5] ) {
+                        §label_5;
+                        switch ( scn($SCENARIO_MAIN)[0] ) {
+                            case == 29:
+                                if ( scn($SCENARIO_MAIN) >= [29, 93] ) {
+                                    supervision_ExecuteStationSub(LEVEL_G01P07A, 'US23', 0);
+                                    jump @label_4;
+                                } elseif ( scn($SCENARIO_MAIN) >= [29, 86] ) {
+                                    supervision_ExecuteStationSub(LEVEL_G01P07A, 'US22', 0);
+                                    jump @label_4;
+                                } elseif ( scn($SCENARIO_MAIN) >= [29, 77] ) {
+                                    supervision_ExecuteStationSub(LEVEL_G01P07A, 'US21', 0);
+                                    jump @label_4;
+                                } elseif ( scn($SCENARIO_MAIN) >= [29, 68] ) {
+                                    supervision_ExecuteStationSub(LEVEL_G01P07A, 'US20', 0);
+                                    jump @label_4;
+                                } elseif ( scn($SCENARIO_MAIN) >= [29, 54] ) {
+                                    supervision_ExecuteStationSub(LEVEL_G01P07A, 'US04', 0);
+                                    jump @label_4;
+                                } elseif ( scn($SCENARIO_MAIN) >= [29, 40] ) {
+                                    supervision_ExecuteStationSub(LEVEL_G01P07A, 'US03', 0);
+                                    jump @label_4;
+                                } elseif ( scn($SCENARIO_MAIN) >= [29, 32] ) {
+                                    supervision_ExecuteStationSub(LEVEL_G01P07A, 'US02', 0);
+                                    jump @label_4;
+                                } elseif ( scn($SCENARIO_MAIN) >= [29, 7] ) {
+                                    supervision_ExecuteStationSub(LEVEL_G01P07A, 'US31', 0);
+                                    jump @label_4;
+                                } elseif ( scn($SCENARIO_MAIN) >= [29, 0] ) {
+                                    §label_15;
+                                    supervision_ExecuteStationSub(LEVEL_G01P07A, 'US01', 0);
+                                    jump @label_4;
+                                } else {
+                                    jump @label_15;
+                                }
+                                break;
+                            default:
+                                jump @label_4;
+                        }
+                    } else {
+                        supervision_StationCommon(5);
+                        jump @label_5;
+                    }
+                    break;
+            }
+            break;
+        default:
+            screen_FadeOutAll(1, 0);
+            back_SetGround(LEVEL_G01P07A);
+            jump @label_0;
+    }
+}
+
+def 1 for_actor(ACTOR_PLAYER) {
+    SetAnimation(2);
+    WaitScreenFade();
+    WaitScreenFadeAll();
+    end;
+}
+
+def 2 for_actor(ACTOR_ATTENDANT1) {
+    SetAnimation(2);
+    WaitScreenFade();
+    WaitScreenFadeAll();
+    end;
+}
+
+def 3 for_actor(ACTOR_PLAYER_BIPPA) {
+    SetAnimation(2);
+    WaitScreenFade();
+    WaitScreenFadeAll();
+    end;
+}
+
+def 4 for_actor(ACTOR_PLAYER_KIMAWARI) {
+    SetAnimation(2);
+    WaitScreenFade();
+    WaitScreenFadeAll();
+    end;
+}

@@ -1,0 +1,267 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_S04P01A);
+    screen_FadeIn(1, 0);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Ugh! We blew that attempt!",
+                french=" Argh! Ça s\'est mal fini!",
+                german=" Uff! Das war nichts!",
+                italian=" Uff! Abbiamo fallito!",
+                spanish=" ¡Ay! ¡La hemos pifiado!",
+            }
+        case 2:
+            {
+                english=" Ugh! We didn\'t make it.",
+                french=" Argh! Ça s\'est mal fini!",
+                german=" Uff! Wir haben es nicht\ngeschafft.",
+                italian=" Uff! Non ce l\'abbiamo fatta.",
+                spanish=" ¡Vaya! ¡Otra vez hemos fallado!",
+            }
+        default:
+            {
+                english=" Ugh! That ended badly.",
+                french=" Argh! Ça s\'est mal fini!",
+                german=" Uff! Das endete schlimm.",
+                italian=" Uff! È andata male.",
+                spanish=" ¡No lo hemos logrado esta vez!",
+            }
+    }
+    message_KeyWait();
+    screen_FadeOutAll(1, 60);
+    message_CloseEnforce();
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    back_SetGround(LEVEL_D24P11A);
+    supervision_LoadStation(LEVEL_D24P11A, 'UM20');
+    supervision_Station(2);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    Wait(1);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_TREESHROUD_FOREST, 0, 256);
+    Wait(30);
+    WaitLockLives(5, ACTOR_PLAYER);
+    Unlock(5);
+    Wait(15);
+    Unlock(7);
+    Wait(15);
+    Unlock(9);
+    Lock(3);
+    Wait(15);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Ugh...we were careless.",
+                french=" Argh... on aurait dû être plus\nprudents.",
+                german=" Uff... Wir waren zu\nunvorsichtig.",
+                italian=" Oh... Non abbiamo fatto \nabbastanza attenzione.",
+                spanish=" Ay... Nos hemos descuidado.",
+            }
+        case 2:
+            {
+                english=" Ugh...we were caught being\ncareless.",
+                french=" Argh... on aurait dû être plus\nprudents.",
+                german=" Uff... Wir sind auf dem falschen\nFuß erwischt worden.",
+                italian=" Oh... Non abbiamo fatto \nabbastanza attenzione.",
+                spanish=" Ay... Nos han cogido\ndesprevenidos.",
+            }
+        default:
+            {
+                english=" Ugh...we should have been\nmore careful.",
+                french=" Argh... on aurait dû faire preuve\nde plus de prudence.",
+                german=" Uff... Wir hätten vorsichtiger\nsein sollen.",
+                italian=" Oh... Avremmo dovuto fare più \nattenzione.",
+                spanish=" Ay... Tendríamos que haber\ntenido más cuidado.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" This is pretty rough going...",
+                french=" C\'est plus dur que je le croyais...",
+                german=" Das ist eine ziemlich raue\nGangart hier...",
+                italian=" È piuttosto difficile...",
+                spanish=" Es una ruta complicada...",
+            }
+        case 2:
+            {
+                english=" This isn\'t quite so easy...",
+                french=" C\'est plus dur que je le croyais...",
+                german=" Das ist nicht ganz so einfach...",
+                italian=" Non è molto facile...",
+                spanish=" Esto no es tan fácil...",
+            }
+        default:
+            {
+                english=" It\'s harder than I thought...",
+                french=" C\'est plus dur que je le croyais...",
+                german=" Das ist schwerer, als ich\ndachte...",
+                italian=" È più difficile di quel che\npensassi...",
+                spanish=" Es más difícil de lo que me\nesperaba...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_JUPUTORU);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_JUPUTORU);
+    }
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" I thought so.",
+        french=" C\'est bien ce que je pensais.",
+        german=" Das dachte ich mir.",
+        italian=" È come pensavo.",
+        spanish=" Lo sabía.",
+    });
+    message_Talk({
+        english=" This place does feel different\ncompared to my last time through.",
+        french=" Cet endroit a bel et bien changé\ndepuis la dernière fois que j\'y suis venu.",
+        german=" Dieser Ort fühlte sich anders an,\nals ich das letzte Mal hier durchgegangen bin.",
+        italian=" Questo posto è diverso\ndall\'ultima volta.",
+        spanish=" Notaba algo distinto a la última\nvez que estuve aquí.",
+    });
+    message_Talk({
+        english=" The Pokémon here weren\'t so\nsavage before.",
+        french=" Les Pokémon qui y vivent\nn\'étaient pas aussi féroces avant.",
+        german=" Die Pokémon hier waren damals\nnicht ganz so wild.",
+        italian=" Prima i Pokémon non erano \ncosì feroci da queste parti.",
+        spanish=" Los Pokémon de esta zona\nno solían ser tan feroces.",
+    });
+    message_Talk({
+        english=" There may be something taking\nplace here...",
+        french=" Il doit sûrement se passer\nquelque chose ici...",
+        german=" Irgendetwas geht hier vor sich...",
+        italian=" Dev\'essere successo qualcosa.",
+        spanish=" Tiene que estar pasando algo\nen este lugar...",
+    });
+    message_Talk({
+        english=" ...somewhere in its depths.",
+        french=" ... au cœur de cette forêt.",
+        german=" Irgendwo in den Tiefen...",
+        italian=" Da qualche parte, nel cuore\ndella foresta...",
+        spanish=" En algún rincón...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Ugh! We should pick up the\npace then.",
+                french=" Argh! On ferait mieux de\nse dépêcher alors.",
+                german=" Uff! Dann sollten wir einen\nSchritt zulegen.",
+                italian=" Eh! Dovremmo aumentare \nil passo allora.",
+                spanish=" ¡Entonces tendremos que ir más\nrápido!",
+            }
+        case 2:
+            {
+                english=" Ugh! We\'d better hurry up then.",
+                french=" Argh! On ferait mieux de\nse dépêcher alors.",
+                german=" Uff! Dann beeilen wir uns\nbesser.",
+                italian=" Oh! Dobbiamo cercare di fare\npiù in fretta allora.",
+                spanish=" ¡Entonces tendremos que ir más\nrápido!",
+            }
+        default:
+            {
+                english=" Ugh! We\'d better hurry then.",
+                french=" Argh! On ferait mieux de\nse dépêcher alors.",
+                german=" Uff! Dann beeilen wir uns\nbesser.",
+                italian=" Oh! Dobbiamo cercare di fare\npiù in fretta.",
+                spanish=" ¡Entonces tendremos que ir más\nrápido!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" When you\'re ready, we have to\ngo back into the forest, [hero].",
+                french=" On repart dans la forêt quand\ntu veux, [hero].",
+                german=" Wenn du bereit bist, sollten wir\nwieder zurück in den Wald gehen,\n[hero].",
+                italian=" Quando siamo pronti, dobbiamo\ntornare nella foresta, [hero].",
+                spanish=" Cuando estés a punto, tenemos\nque seguir internándonos en el bosque,\n[hero].",
+            }
+        case 2:
+            {
+                english=" When you\'re ready, let\'s go back\ninto the forest, [hero].",
+                french=" On repart dans la forêt quand\ntu veux, [hero].",
+                german=" Wenn du bereit bist, dann lass\nuns wieder in den Wald gehen, [hero].",
+                italian=" Quando siamo pronti, torniamo\nnella foresta, [hero].",
+                spanish=" Cuando estés a punto, tenemos\nque seguir internándonos en el bosque,\n[hero].",
+            }
+        default:
+            {
+                english=" When you\'re ready, let\'s go back\ninto the forest, [hero].",
+                french=" On repart dans la forêt quand\ntu veux, [hero].",
+                german=" Wenn du bereit bist, dann lass\nuns wieder in den Wald gehen, [hero].",
+                italian=" Quando è tutto pronto, torniamo\nnella foresta, [hero].",
+                spanish=" Cuando estés a punto, tenemos\nque seguir internándonos en el bosque,\n[hero].",
+            }
+    }
+    message_Close();
+    end;
+}
+
+def 1 for_actor(ACTOR_PLAYER) {
+    SetDirection(DIR_RIGHT);
+    SetAnimation(76);
+    Lock(5);
+    CallCommon(CORO_WAKEUP_FUNC);
+    CallCommon(CORO_LOOK_AROUND_DOWN_FUNC);
+    Lock(6);
+    hold;
+}
+
+def 2 for_actor(ACTOR_ATTENDANT1) {
+    SetDirection(DIR_LEFT);
+    SetAnimation(76);
+    Lock(7);
+    CallCommon(CORO_WAKEUP_FUNC);
+    CallCommon(CORO_LOOK_AROUND_FUNC);
+    Unlock(3);
+    Lock(8);
+    hold;
+}
+
+def 3 for_actor(ACTOR_NPC_JUPUTORU) {
+    SetAnimation(29);
+    Lock(9);
+    SetAnimation(31);
+    WaitAnimation();
+    SetAnimation(2);
+    CallCommon(CORO_LOOK_AROUND_LEFT_FUNC);
+    Lock(10);
+    hold;
+}

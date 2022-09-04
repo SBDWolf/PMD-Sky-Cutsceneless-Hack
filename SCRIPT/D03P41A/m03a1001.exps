@@ -1,0 +1,193 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_MAIN = scn[4, 7];
+    $REQUEST_CLEAR_COUNT = 0;
+    back_SetGround(LEVEL_D03P41A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_SURIIPU) {
+        SetAnimation(14);
+    }
+    with (actor ACTOR_NPC_RURIRI) {
+        SetAnimation(9);
+    }
+    screen_FadeIn(1, 30);
+    message_SetFace(ACTOR_NPC_SURIIPU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Rrrrawrrr!",
+        french=" Aaaaargh!",
+        german=" Rrrrooaarrr!",
+        italian=" Rrrrawrrr!",
+        spanish=" ¡Grr!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(6417);
+    with (actor ACTOR_NPC_SURIIPU) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_SURIIPU) {
+        SetAnimation(23);
+    }
+    with (actor ACTOR_NPC_SURIIPU) {
+        WaitAnimation();
+    }
+    Wait(90);
+    bgm_PlayFadeIn(BGM_IN_THE_DEPTHS_OF_THE_PIT, 0, 256);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m0', 43.5, 20.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m1', 46, 22.5>);
+    }
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m2', 41, 22.5>);
+    }
+    Wait(60);
+    se_Play(8978);
+    with (actor ACTOR_NPC_RURIRI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_RURIRI) {
+        SetAnimation(2);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We came to rescue you.",
+                french=" On vient pour te sauver.",
+                german=" Wir sind gekommen, um dich zu\nretten.",
+                italian=" Siamo qui per salvarti.",
+                spanish=" Hemos venido a rescatarte.",
+            }
+        case 2:
+            {
+                english=" We came to rescue you.",
+                french=" On vient pour te sauver.",
+                german=" Wir sind gekommen, um dich zu\nretten.",
+                italian=" Siamo qui per salvarti.",
+                spanish=" Hemos venido a rescatarte.",
+            }
+        default:
+            {
+                english=" We\'re here to rescue you.",
+                french=" On vient pour te sauver.",
+                german=" Wir sind gekommen, um dich zu\nretten.",
+                italian=" Siamo qui per salvarti.",
+                spanish=" Hemos venido a rescatarte.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Are you all right? You\'re not\nhurt, are you?",
+                french=" Tout va bien? Tu n\'es pas\nblessé?",
+                german=" Alles okay? Du bist nicht\nverletzt, oder?",
+                italian=" Stai bene? Non sei ferito, vero?",
+                spanish=" ¿Estás bien? ¿Te ha hecho\ndaño?",
+            }
+        case 2:
+            {
+                english=" Are you all right? You\'re not\nhurt, are you?",
+                french=" Tout va bien? Tu n\'es pas\nblessé?",
+                german=" Bist du in Ordnung? Du bist nicht\nverletzt, oder?",
+                italian=" Stai bene? Non sei ferito, vero?",
+                spanish=" ¿Estás bien? ¿Estás herido?",
+            }
+        default:
+            {
+                english=" Are you OK? You\'re not hurt,\nare you?",
+                french=" Tout va bien? Tu n\'es pas\nblessé?",
+                german=" Alles in Ordnung? Du bist nicht\nverletzt, oder?",
+                italian=" Stai bene? Non sei ferito, vero?",
+                spanish=" ¿Estás bien? No te ha\nhecho daño, ¿no?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_RURIRI) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_RURIRI);
+    message_SetFace(ACTOR_NPC_RURIRI, FACE_NORMAL, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" I\'m OK.",
+        french=" Ça va.",
+        german=" Es geht mir gut.",
+        italian=" Sto bene.",
+        spanish=" Estoy bien.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_HAPPY, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Awesome! That\'s a big relief!",
+                french=" Tant mieux! Quel soulagement!",
+                german=" Wie schön! Da sind wir\nerleichtert!",
+                italian=" Meno male! Che sollievo!",
+                spanish=" ¡Genial! ¡Qué alivio!",
+            }
+        case 2:
+            {
+                english=" Great! What a relief!",
+                french=" Tant mieux! Quel soulagement!",
+                german=" Gut! Da sind wir erleichtert!",
+                italian=" Meno male! Che sollievo!",
+                spanish=" ¡Estupendo! ¡Qué alivio!",
+            }
+        default:
+            {
+                english=" Great! What a relief!",
+                french=" Tant mieux! Quel soulagement!",
+                german=" Gut! Da sind wir erleichtert!",
+                italian=" Meno male! Che sollievo!",
+                spanish=" ¡Menos mal! ¡Qué alivio!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Your big brother\'s waiting.\nLet\'s get you home!",
+                french=" Ton grand frère t\'attend.\nRentrons à la maison!",
+                german=" Dein großer Bruder wartet auf\ndich. Gehen wir nach Hause!",
+                italian=" Tuo fratello ci aspetta.\nAndiamo a casa!",
+                spanish=" Tu hermano mayor te espera.\n¡Volvamos a casa!",
+            }
+        case 2:
+            {
+                english=" Your big brother is waiting.\nLet\'s go home!",
+                french=" Ton grand frère t\'attend.\nRentrons à la maison!",
+                german=" Dein großer Bruder wartet auf\ndich. Gehen wir nach Hause!",
+                italian=" Tuo fratello ci aspetta.\nAndiamo a casa!",
+                spanish=" Tu hermano mayor te espera.\n¡Volvamos a casa!",
+            }
+        default:
+            {
+                english=" Your big brother\'s waiting.\nLet\'s go home!",
+                french=" Ton grand frère t\'attend.\nRentrons à la maison!",
+                german=" Dein großer Bruder wartet auf\ndich. Gehen wir nach Hause!",
+                italian=" Tuo fratello ci aspetta.\nAndiamo a casa!",
+                spanish=" Tu hermano mayor te espera.\n¡Volvamos a casa!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_RURIRI, FACE_NORMAL, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" OK.",
+        french=" D\'accord.",
+        german=" Okay.",
+        italian=" Ok.",
+        spanish=" Vale.",
+    });
+    message_Close();
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 60);
+    WaitBgm(BGM_IN_THE_DEPTHS_OF_THE_PIT);
+    switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+    end;
+}

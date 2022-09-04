@@ -1,0 +1,199 @@
+
+def 0 {
+    screen2_WhiteOut(0, 0);
+    screen_WhiteOut(1, 0);
+    back_SetGround(LEVEL_V03P07A);
+    supervision_Acting(0);
+    switch ( $LANGUAGE_TYPE ) {
+        case 2:
+            §label_0;
+            supervision_Acting(2);
+            §label_4;
+            with (object OBJECT_V03P06A2_216) {
+                SetAnimation(3);
+            }
+            with (object OBJECT_V03P06A1_212) {
+                SetAnimation(3);
+            }
+            with (performer 0) {
+                camera_SetMyself();
+            }
+            back2_SetMode(4);
+            switch ( $LANGUAGE_TYPE ) {
+                case 2:
+                    back2_SetGround(LEVEL_S13P01A2);
+                    §label_9;
+                    camera2_SetPositionMark(Position<'m0', 16, 13.5>);
+                    WaitBgmSignal();
+                    back2_SetBackEffect(3);
+                    screen2_FadeIn(0, 15);
+                    screen_FadeIn(0, 15);
+                    Wait(40);
+                    supervision_Acting(8);
+                    if ( variation ) {
+                        switch ( $LANGUAGE_TYPE ) {
+                            case 2:
+                                supervision_Acting(22);
+                                §label_21;
+                                Wait(60);
+                                switch ( $LANGUAGE_TYPE ) {
+                                    case 2:
+                                        supervision_Acting(12);
+                                        with (object OBJECT_S05P02B2_171) {
+                                            SetAnimation(2);
+                                        }
+                                        §label_15;
+                                        $EVENT_LOCAL = 1;
+                                        switch ( ProcessSpecial(22, 1, 0) ) { }
+                                        Wait(2000);
+                                        bgm_FadeOut(60);
+                                        screen2_FadeOut(0, 60);
+                                        screen_FadeOut(1, 60);
+                                        back2_SetMode(0);
+                                        end;
+                                    case 3:
+                                        supervision_Acting(13);
+                                        with (object OBJECT_S05P02C2_172) {
+                                            SetAnimation(2);
+                                        }
+                                        jump @label_15;
+                                    case 4:
+                                        supervision_Acting(14);
+                                        with (object OBJECT_S05P02D2_173) {
+                                            SetAnimation(2);
+                                        }
+                                        jump @label_15;
+                                    case 5:
+                                        supervision_Acting(15);
+                                        with (object OBJECT_S05P02E2_174) {
+                                            SetAnimation(2);
+                                        }
+                                        jump @label_15;
+                                    default:
+                                        supervision_Acting(11);
+                                        with (object OBJECT_S05P02A2_170) {
+                                            SetAnimation(2);
+                                        }
+                                        jump @label_15;
+                                }
+                                break;
+                            case 3:
+                                supervision_Acting(23);
+                                jump @label_21;
+                            case 4:
+                                supervision_Acting(24);
+                                jump @label_21;
+                            case 5:
+                                supervision_Acting(25);
+                                jump @label_21;
+                            default:
+                                supervision_Acting(21);
+                                jump @label_21;
+                        }
+                    } else {
+                        jump @label_21;
+                    }
+                    break;
+                case 3:
+                    back2_SetGround(LEVEL_S13P01A3);
+                    jump @label_9;
+                case 4:
+                    back2_SetGround(LEVEL_S13P01A4);
+                    jump @label_9;
+                case 5:
+                    back2_SetGround(LEVEL_S13P01A5);
+                    jump @label_9;
+                default:
+                    back2_SetGround(LEVEL_S13P01A);
+                    jump @label_9;
+            }
+            break;
+        case 3:
+            supervision_Acting(3);
+            jump @label_4;
+        case 4:
+            supervision_Acting(4);
+            jump @label_4;
+        case 5:
+            supervision_Acting(5);
+            jump @label_4;
+        default:
+            supervision_Acting(1);
+            jump @label_4;
+    }
+}
+
+def 1 for_object(OBJECT_S13P01A1_352) {
+    SetOutputAttribute(8);
+    Wait(1);
+    SetAnimation(17);
+    WaitAnimation();
+    WaitExecuteObject(OBJECT_S13P01A1_352);
+    Destroy();
+}
+
+def 2 for_object(65535) {
+    SetOutputAttribute(8);
+    Wait(1);
+    SetAnimation(17);
+    WaitAnimation();
+    WaitExecuteObject(OBJECT_S13P01A1_352);
+    Destroy();
+}
+
+def 3 for_object(65535) {
+    SetOutputAttribute(8);
+    Wait(1);
+    SetAnimation(17);
+    WaitAnimation();
+    WaitExecuteObject(OBJECT_S13P01A1_352);
+    Destroy();
+}
+
+def 4 for_object(65535) {
+    SetOutputAttribute(8);
+    Wait(1);
+    SetAnimation(17);
+    WaitAnimation();
+    WaitExecuteObject(OBJECT_S13P01A1_352);
+    Destroy();
+}
+
+def 5 for_object(65535) {
+    SetOutputAttribute(8);
+    Wait(1);
+    SetAnimation(17);
+    WaitAnimation();
+    WaitExecuteObject(OBJECT_S13P01A1_352);
+    Destroy();
+}
+
+def 6 for_object(OBJECT_S05P02A1_165) {
+    SetOutputAttribute(8);
+    SetOutputAttribute(4);
+    end;
+}
+
+def 7 for_object(OBJECT_S05P02B1_166) {
+    SetOutputAttribute(8);
+    SetOutputAttribute(4);
+    end;
+}
+
+def 8 for_object(OBJECT_S05P02C1_167) {
+    SetOutputAttribute(8);
+    SetOutputAttribute(4);
+    end;
+}
+
+def 9 for_object(OBJECT_S05P02D1_168) {
+    SetOutputAttribute(8);
+    SetOutputAttribute(4);
+    end;
+}
+
+def 10 for_object(OBJECT_S05P02E1_169) {
+    SetOutputAttribute(8);
+    SetOutputAttribute(4);
+    end;
+}

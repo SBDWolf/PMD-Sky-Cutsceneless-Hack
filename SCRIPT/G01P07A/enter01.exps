@@ -1,0 +1,288 @@
+
+def 0 {
+    if ( $SCENARIO_MAIN_BIT_FLAG[1] ) {
+        §label_0;
+        debug_Print('CHOUREI');
+        $SCENARIO_MAIN_BIT_FLAG[1] = 0;
+        switch ( scn($SCENARIO_MAIN)[0] ) {
+            case == 3:
+                screen_FadeOut(0, 30);
+                supervision_ExecuteCommon(CORO_EVENT_M02_07B);
+                §label_3;
+                switch ( scn($SCENARIO_MAIN)[1] ) {
+                    case >= 5:
+                        switch ( scn($SCENARIO_MAIN)[1] ) {
+                            case == 7:
+                                §label_18;
+                                debug_Print('HANYOU_CHOUREI');
+                                screen_FadeOut(0, 30);
+                                switch ( scn($SCENARIO_MAIN)[0] ) {
+                                    case == 8:
+                                        §label_45;
+                                        supervision_ExecuteCommon(CORO_EVENT_HA_CHO_DO);
+                                        §label_1;
+                                        main_EnterGround(LEVEL_G01P08A, 30);
+                                        hold;
+                                    default:
+                                        supervision_ExecuteCommon(CORO_EVENT_HA_CHO);
+                                        jump @label_45;
+                                }
+                                break;
+                            default:
+                                screen_FadeOut(0, 30);
+                                supervision_ExecuteCommon(CORO_EVENT_M03_07B);
+                                §label_4;
+                                switch ( scn($SCENARIO_MAIN)[1] ) {
+                                    case == 0:
+                                        screen_FadeOut(0, 30);
+                                        supervision_ExecuteCommon(CORO_EVENT_M04_01);
+                                        §label_5;
+                                        switch ( scn($SCENARIO_MAIN)[1] ) {
+                                            case == 0:
+                                                screen_FadeOut(0, 30);
+                                                supervision_ExecuteCommon(CORO_EVENT_M05_01_02);
+                                                §label_6;
+                                                switch ( scn($SCENARIO_MAIN)[1] ) {
+                                                    case == 0:
+                                                        screen_FadeOut(0, 30);
+                                                        supervision_ExecuteCommon(CORO_EVENT_M06_01);
+                                                        §label_25;
+                                                        screen_FadeOut(0, 30);
+                                                        message_Close();
+                                                        debug_Print('IRAIWOKONASU');
+                                                        supervision_ExecuteCommon(CORO_EVENT_M06_03);
+                                                        §label_24;
+                                                        screen_FadeOut(0, 30);
+                                                        supervision_ExecuteCommon(CORO_EVENT_M06_04);
+                                                        §label_23;
+                                                        screen_FadeOut(0, 30);
+                                                        supervision_ExecuteCommon(CORO_EVENT_M06_05);
+                                                        §label_7;
+                                                        debug_Print('MAIN07_CHOUREI');
+                                                        switch ( scn($SCENARIO_MAIN)[1] ) {
+                                                            case == 0:
+                                                                debug_Print('MAIN07_SEKAIICHI');
+                                                                screen_FadeOut(0, 30);
+                                                                supervision_ExecuteCommon(CORO_EVENT_M07_03);
+                                                                §label_27;
+                                                                debug_Print('MAIN07_PERAPPUNOKOGOTO');
+                                                                screen_FadeOut(0, 30);
+                                                                supervision_ExecuteCommon(CORO_EVENT_M07_14);
+                                                                §label_28;
+                                                                debug_Print('LABEL_MAIN07_MOUSUGUENSEI');
+                                                                screen_FadeOut(0, 30);
+                                                                supervision_ExecuteCommon(CORO_EVENT_M07_13);
+                                                                §label_8;
+                                                                debug_Print('MAIN08_CHOUREI');
+                                                                switch ( scn($SCENARIO_MAIN)[1] ) {
+                                                                    case == 0:
+                                                                        debug_Print('LABEL_MAIN07_MOUSUGUENSEI');
+                                                                        screen_FadeOut(0, 30);
+                                                                        supervision_ExecuteCommon(CORO_EVENT_M08_03);
+                                                                        §label_9;
+                                                                        debug_Print('MAIN11_CHOUREI');
+                                                                        switch ( scn($SCENARIO_MAIN)[1] ) {
+                                                                            case == 0:
+                                                                                screen_FadeOut(0, 30);
+                                                                                supervision_ExecuteCommon(CORO_EVENT_M11_02);
+                                                                                §label_31;
+                                                                                screen_FadeOut(0, 30);
+                                                                                supervision_ExecuteCommon(CORO_EVENT_M11_04);
+                                                                                §label_10;
+                                                                                debug_Print('MAIN12_CHOUREI');
+                                                                                switch ( scn($SCENARIO_MAIN)[1] ) {
+                                                                                    case == 0:
+                                                                                        §label_32;
+                                                                                        screen_FadeOut(0, 30);
+                                                                                        supervision_ExecuteCommon(CORO_EVENT_M12_01);
+                                                                                        §label_33;
+                                                                                        screen_FadeOut(0, 30);
+                                                                                        supervision_ExecuteCommon(CORO_EVENT_M12_03B);
+                                                                                        §label_11;
+                                                                                        debug_Print('MAIN13_CHOUREI');
+                                                                                        switch ( scn($SCENARIO_MAIN)[1] ) {
+                                                                                            case == 2:
+                                                                                                $SCENARIO_MAIN = scn[14, 3];
+                                                                                                jump @label_18;
+                                                                                            case == 4:
+                                                                                                screen_FadeOut(0, 30);
+                                                                                                supervision_ExecuteCommon(CORO_EVENT_M13_05B);
+                                                                                                §label_36;
+                                                                                                screen_FadeOut(0, 30);
+                                                                                                supervision_ExecuteCommon(CORO_EVENT_M13_09);
+                                                                                                §label_12;
+                                                                                                debug_Print('MAIN14_CHOUREI');
+                                                                                                switch ( scn($SCENARIO_MAIN)[1] ) {
+                                                                                                    case == 0:
+                                                                                                    case == 1:
+                                                                                                    case == 2:
+                                                                                                    case == 3:
+                                                                                                        §label_37;
+                                                                                                        screen_FadeOut(0, 30);
+                                                                                                        supervision_ExecuteCommon(CORO_EVENT_M14_02B);
+                                                                                                        §label_38;
+                                                                                                        $SCENARIO_MAIN = scn[16, 0];
+                                                                                                        jump @label_18;
+                                                                                                    case == 4:
+                                                                                                        jump @label_38;
+                                                                                                    default:
+                                                                                                        jump @label_18;
+                                                                                                }
+                                                                                                break;
+                                                                                            case == 5:
+                                                                                                jump @label_36;
+                                                                                            case == 6:
+                                                                                                jump @label_37;
+                                                                                            default:
+                                                                                                jump @label_18;
+                                                                                        }
+                                                                                        break;
+                                                                                    case == 2:
+                                                                                    case == 3:
+                                                                                    case == 4:
+                                                                                        jump @label_33;
+                                                                                    default:
+                                                                                        jump @label_18;
+                                                                                }
+                                                                                break;
+                                                                            case == 2:
+                                                                                jump @label_31;
+                                                                            case == 0:
+                                                                                jump @label_32;
+                                                                            default:
+                                                                                jump @label_18;
+                                                                        }
+                                                                        break;
+                                                                    default:
+                                                                        jump @label_18;
+                                                                }
+                                                                break;
+                                                            case == 1:
+                                                            case == 2:
+                                                                jump @label_27;
+                                                            case == 3:
+                                                                jump @label_28;
+                                                            default:
+                                                                jump @label_18;
+                                                        }
+                                                        break;
+                                                    case == 5:
+                                                        jump @label_23;
+                                                    default:
+                                                        switch ( $REQUEST_CLEAR_COUNT ) {
+                                                            case >= 1:
+                                                                jump @label_24;
+                                                            default:
+                                                                jump @label_25;
+                                                        }
+                                                        break;
+                                                }
+                                                break;
+                                            default:
+                                                jump @label_18;
+                                        }
+                                        break;
+                                    default:
+                                        jump @label_18;
+                                }
+                                break;
+                        }
+                        break;
+                    default:
+                        jump @label_18;
+                }
+                break;
+            case == 4:
+                jump @label_3;
+            case == 5:
+                jump @label_4;
+            case == 6:
+                jump @label_5;
+            case == 7:
+                jump @label_6;
+            case == 8:
+                jump @label_7;
+            case == 9:
+                jump @label_8;
+            case == 12:
+                jump @label_9;
+            case == 13:
+                jump @label_10;
+            case == 14:
+                jump @label_11;
+            case == 15:
+                jump @label_12;
+            case == 17:
+                debug_Print('MAIN16_CHOUREI');
+                switch ( scn($SCENARIO_MAIN)[1] ) {
+                    case == 2:
+                        screen_FadeOut(0, 30);
+                        supervision_ExecuteCommon(CORO_EVENT_M16_04);
+                        §label_40;
+                        screen_FadeOut(0, 30);
+                        supervision_ExecuteCommon(CORO_EVENT_M16_06_07);
+                        §label_14;
+                        debug_Print('MAIN21_CHOUREI');
+                        switch ( scn($SCENARIO_MAIN)[1] ) {
+                            case == 1:
+                                screen_FadeOut(0, 30);
+                                supervision_ExecuteCommon(CORO_EVENT_M21_04);
+                                §label_42;
+                                screen_FadeOut(0, 30);
+                                supervision_ExecuteCommon(CORO_EVENT_M21_05);
+                                §label_15;
+                                debug_Print('MAIN22_CHOUREI');
+                                switch ( scn($SCENARIO_MAIN)[1] ) {
+                                    case == 0:
+                                        screen_FadeOut(0, 30);
+                                        supervision_ExecuteCommon(CORO_EVENT_M22_01_02);
+                                        §label_16;
+                                        debug_Print('MAIN23_CHOUREI');
+                                        switch ( scn($SCENARIO_MAIN)[1] ) {
+                                            case == 0:
+                                                screen_FadeOut(0, 30);
+                                                supervision_ExecuteCommon(CORO_EVENT_M23_01_02);
+                                                §label_17;
+                                                debug_Print('SUB01_CHOUREI');
+                                                screen_FadeOut(0, 30);
+                                                supervision_ExecuteCommon(CORO_EVENT_S01_12);
+                                                jump @label_18;
+                                            default:
+                                                jump @label_18;
+                                        }
+                                        break;
+                                    default:
+                                        jump @label_18;
+                                }
+                                break;
+                            case == 2:
+                                jump @label_42;
+                            default:
+                                jump @label_18;
+                        }
+                        break;
+                    case == 4:
+                        jump @label_40;
+                    default:
+                        jump @label_18;
+                }
+                break;
+            case == 22:
+                jump @label_14;
+            case == 23:
+                jump @label_15;
+            case == 24:
+                jump @label_16;
+            case == 29:
+                jump @label_17;
+            default:
+                jump @label_18;
+        }
+    } else {
+        jump @label_1;
+    }
+}
+
+def 1 for_actor(ACTOR_PLAYER) {
+    hold;
+}

@@ -1,0 +1,335 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_G01P03A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 15);
+    Wait(30);
+    message_SetFace(ACTOR_PLAYER, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Both of these events...)",
+                french="(Tout cela...)",
+                german="(Beide Ereignisse...)",
+                italian="(Entrambi gli eventi...)",
+                spanish="(Esos dos acontecimientos...)",
+            }
+        default:
+            {
+                english="(Both of these events...)",
+                french="(Tout cela...)",
+                german="(Beide Ereignisse...)",
+                italian="(Entrambi gli eventi...)",
+                spanish="(Esos dos acontecimientos...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(They took place in the future!)",
+                french="(... appartenait au futur!)",
+                german="(Sie fanden in der Zukunft statt!)",
+                italian="(Sono successi nel futuro!)",
+                spanish="(¡Ocurrían en el futuro!)",
+            }
+        default:
+            {
+                english="(They took place in the future!)",
+                french="(... appartenait au futur!)",
+                german="(Sie fanden in der Zukunft statt!)",
+                italian="(Sono successi nel futuro!)",
+                spanish="(¡Ocurrían en el futuro!)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Why was I able to see something like that?)",
+                french="(Comment ai-je pu voir ça?)",
+                german="(Wieso konnte ich so etwas sehen?)",
+                italian="(Perché sono riuscito a vedere una cosa del\ngenere?)",
+                spanish="(¿Por qué pude ver algo así?)",
+            }
+        default:
+            {
+                english="(Why was I able to see something like that?)",
+                french="(Comment ai-je pu voir ça?)",
+                german="(Wieso konnte ich so etwas sehen?)",
+                italian="(Perché sono riuscita a vedere una cosa del\ngenere?)",
+                spanish="(¿Por qué pude ver algo así?)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(What was that dream about?)",
+                french="(Que signifie ce rêve?)",
+                german="(Was war das für ein Traum?)",
+                italian="(Come si spiega quel sogno?)",
+                spanish="(¿A qué se debió aquel sueño?)",
+            }
+        default:
+            {
+                english="(What was that dream about?)",
+                french="(Que signifie ce rêve?)",
+                german="(Was war das für ein Traum?)",
+                italian="(Come si spiega quel sogno?)",
+                spanish="(¿A qué se debió aquel sueño?)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8720);
+    WaitSe(8720);
+    se_Play(8978);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Whoops! My stomach growled!",
+                french=" Oups! J\'ai l\'estomac qui\ngargouille!",
+                german=" Huch! Mein Magen hat geknurrt!",
+                italian=" Oops! La mia pancia ha \nbrontolato!",
+                spanish=" ¡Vaya! ¡Me rugen las tripas!",
+            }
+        case 2:
+            {
+                english=" Oh! My stomach growled!",
+                french=" Oups! J\'ai l\'estomac qui\ngargouille!",
+                german=" Oh! Mein Magen hat geknurrt!",
+                italian=" Oops! La mia pancia ha \nbrontolato!",
+                spanish=" ¡Vaya! ¡Me ruge el estómago!",
+            }
+        default:
+            {
+                english=" Uh-oh! My stomach growled!",
+                french=" Oups! J\'ai l\'estomac qui\ngargouille!",
+                german=" Oh-oh! Mein Magen hat geknurrt!",
+                italian=" Oops! La mia pancia ha \nbrontolato!",
+                spanish=" ¡Vaya! ¡Me ruge el estómago!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8720);
+    WaitSe(8720);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    bgm_PlayFadeIn(BGM_HEARTWARMING, 0, 256);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_JOYOUS, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Ha ha ha! Your stomach growled\ntoo, [hero]!",
+                french=" Ha ha ha! Toi aussi,\n[hero]!",
+                german=" Hahaha! Dein Magen hat auch\ngeknurrt, [hero]!",
+                italian=" Ah ah ah! Anche la tua pancia ha\nborbottato, [hero]!",
+                spanish=" ¡Ja, ja, ja! ¡Y a ti también,\n[hero]!",
+            }
+        case 2:
+            {
+                english=" Ha ha ha! Your stomach growled\ntoo, [hero]!",
+                french=" Ha ha ha! Toi aussi,\n[hero]!",
+                german=" Hahaha! Dein Magen hat auch\ngeknurrt, [hero]!",
+                italian=" Ah ah ah! Anche la tua pancia ha\nborbottato, [hero]!",
+                spanish=" ¡Ja, ja, ja! ¡Y a ti también,\n[hero]!",
+            }
+        default:
+            {
+                english=" Ha ha ha! Your stomach growled\ntoo, [hero]!",
+                french=" Ha ha ha! Toi aussi,\n[hero]!",
+                german=" Hahaha! Dein Magen hat auch\ngeknurrt, [hero]!",
+                italian=" Ah ah ah! Anche la tua pancia ha\nborbottato, [hero]!",
+                spanish=" ¡Ja, ja, ja! ¡Y a ti también,\n[hero]!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I guess we must be starved!",
+                french=" Nos estomacs doivent crier\nfamine!",
+                german=" Wir sind wohl am Verhungern!",
+                italian=" Abbiamo una fame da leoni!",
+                spanish=" ¡Supongo que tenemos un\nhambre atroz!",
+            }
+        case 2:
+            {
+                english=" We must have worked up a\nbig appetite!",
+                french=" Nos estomacs doivent crier\nfamine!",
+                german=" Wir haben wohl einen ziemlichen\nKohldampf!",
+                italian=" Abbiamo una fame da lupi!",
+                spanish=" ¡Supongo que tenemos un\nhambre atroz!",
+            }
+        default:
+            {
+                english=" I guess we must be famished!",
+                french=" Nos estomacs doivent crier\nfamine!",
+                german=" Wir sind wohl schon ganz\nausgehungert!",
+                italian=" Che fame ci è venuta!",
+                spanish=" ¡Supongo que tenemos un\nhambre atroz!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We were so focused on rescuing\n[CS:N]Azurill[CR] that I didn\'t notice at all!",
+                french=" On était si absorbés par\nle sauvetage d\'[CS:N]Azurill[CR] que je ne m\'en étais\npas rendu compte!",
+                german=" Wir waren so auf die Rettung\nvon [CS:N]Azurill[CR] konzentriert, dass wir es gar nicht\ngemerkt haben!",
+                italian=" Eravamo così impegnati a \nsalvare [CS:N]Azurill[CR] che non me ne ero affatto \naccorto!",
+                spanish=" ¡Como solo pensábamos en\nrescatar a [CS:N]Azurill[CR], no nos hemos dado\ncuenta hasta ahora!",
+            }
+        case 2:
+            {
+                english=" We were so focused on rescuing\n[CS:N]Azurill[CR] that I didn\'t notice at all!",
+                french=" On était si absorbés par\nle sauvetage d\'[CS:N]Azurill[CR] que je ne m\'en étais\npas rendu compte!",
+                german=" Wir waren so auf die Rettung\nvon [CS:N]Azurill[CR] konzentriert, dass wir es gar nicht\ngemerkt haben!",
+                italian=" Eravamo così impegnati a \nsalvare [CS:N]Azurill[CR] che non me ne ero affatto \naccorto!",
+                spanish=" ¡Como solo pensábamos en\nrescatar a [CS:N]Azurill[CR], no nos hemos dado\ncuenta hasta ahora!",
+            }
+        default:
+            {
+                english=" We were so focused on rescuing\n[CS:N]Azurill[CR] that I didn\'t notice at all!",
+                french=" Le sauvetage d\'[CS:N]Azurill[CR] a\ntellement monopolisé notre attention\nque je n\'avais même pas remarqué!",
+                german=" Wir waren so auf die Rettung\nvon [CS:N]Azurill[CR] konzentriert, dass wir es gar nicht\ngemerkt haben!",
+                italian=" Abbiamo pensato così tanto a \ncome salvare [CS:N]Azurill[CR] che non me ne ero \naffatto accorta!",
+                spanish=" ¡Como solo pensábamos en\nrescatar a [CS:N]Azurill[CR], no nos hemos dado\ncuenta hasta ahora!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    se_Play(8720);
+    WaitSe(8720);
+    se_Play(8720);
+    WaitSe(8720);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    Wait(5);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" But now I\'m even hungrier!",
+                french=" Mais maintenant, j\'ai encore plus\nfaim!",
+                german=" Aber jetzt habe ich umso\nmehr Hunger!",
+                italian=" Ma adesso ho ancora più fame!",
+                spanish=" ¡Y me está entrando aún más\nhambre!",
+            }
+        case 2:
+            {
+                english=" But now I\'m even hungrier!",
+                french=" Mais maintenant, j\'ai encore plus\nfaim!",
+                german=" Aber jetzt habe ich umso\nmehr Hunger!",
+                italian=" Ma adesso ho ancora più fame!",
+                spanish=" ¡Y me está entrando aún más\nhambre!",
+            }
+        default:
+            {
+                english=" But now I\'m even hungrier!",
+                french=" Mais maintenant, j\'ai encore plus\nfaim!",
+                german=" Aber jetzt habe ich umso\nmehr Hunger!",
+                italian=" Ma adesso ho ancora più fame!",
+                spanish=" ¡Y me está entrando aún más\nhambre!",
+            }
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_HAPPY, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Let\'s go get dinner,\n[hero]!",
+                french=" Allez, on va manger,\n[hero]!",
+                german=" Gehen wir zum Abendessen,\n[hero]!",
+                italian=" Andiamo a mangiare,\n[hero]!",
+                spanish=" ¡Vamos a cenar, [hero]!",
+            }
+        case 2:
+            {
+                english=" Come on, let\'s go get dinner,\n[hero]!",
+                french=" Allez, on va manger,\n[hero]!",
+                german=" Komm, gehen wir zum\nAbendessen, [hero]!",
+                italian=" Andiamo a mangiare,\n[hero]!",
+                spanish=" ¡Vamos a cenar, [hero]!",
+            }
+        default:
+            {
+                english=" Come on, let\'s go get dinner,\n[hero]!",
+                french=" Allez, on va manger,\n[hero]!",
+                german=" Komm, gehen wir zum\nAbendessen, [hero]!",
+                italian=" Andiamo a mangiare,\n[hero]!",
+                spanish=" ¡Vamos a cenar, [hero]!",
+            }
+    }
+    message_Close();
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    Wait(20);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(33152, Position<'m0', 45.5, 29.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(33152, Position<'m1', 45.5, 29.5>);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(33152, Position<'m2', 45.5, 22.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(33152, Position<'m3', 45.5, 22.5>);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        Destroy();
+    }
+    bgm_FadeOut(120);
+    screen_FadeOut(0, 60);
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        Destroy();
+    }
+    WaitBgm(BGM_HEARTWARMING);
+    end;
+}

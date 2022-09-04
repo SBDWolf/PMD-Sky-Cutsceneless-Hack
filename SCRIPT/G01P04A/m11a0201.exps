@@ -1,0 +1,50 @@
+
+def 0 {
+    $SCENARIO_MAIN_BIT_FLAG[1] = 0;
+    back_SetGround(LEVEL_G01P04A);
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
+    $SCENARIO_MAIN = scn[12, 1];
+    supervision_LoadStation(LEVEL_G01P04A, 'UM11');
+    supervision_Station(2);
+    supervision_StationCommon(0);
+    supervision_StationCommon(99);
+    supervision_Acting(0);
+    supervision_RemoveActing(1);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetPositionMark(Position<'m20', 27, 38.5>);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetPositionMark(Position<'m21', 57, 27.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetPositionMark(Position<'m22', 42, 28.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetPositionMark(Position<'m23', 38, 28.5>);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetDirection(DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetAnimation(4);
+    }
+    camera_SetDefault();
+    Wait(45);
+    screen_FadeIn(1, 30);
+    end;
+}

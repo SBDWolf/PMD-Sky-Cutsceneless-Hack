@@ -1,0 +1,787 @@
+
+def 0 {
+    sound_Stop();
+    Wait(60);
+    message_SetFace(ACTOR_NPC_CHIRIIN, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Oh![K] Are you awake?",
+        french=" Oh![K] Vous avez enfin repris\nconnaissance?",
+        german=" Oh![K] Bist du wach?",
+        italian=" Oh![K] Come vi sentite?",
+        spanish=" ¡Vaya![K] ¿Os habéis despertado?",
+    });
+    message_Close();
+    back_SetGround(LEVEL_G01P07A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(76);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(76);
+    }
+    screen_FadeIn(1, 30);
+    Wait(60);
+    with (actor ACTOR_ATTENDANT1) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(2);
+    with (actor ACTOR_ATTENDANT1) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(2);
+    with (actor ACTOR_ATTENDANT1) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(2);
+    with (actor ACTOR_ATTENDANT1) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(30);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(63);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitAnimation();
+    }
+    Wait(60);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(63);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    Wait(30);
+    se_Play(8963);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    Wait(10);
+    with (actor ACTOR_PLAYER) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Wh-where...?",
+                french=" Où... où...?",
+                german=" W-wo?",
+                italian=" D-Dove...?",
+                spanish=" ¿Dónde?",
+            }
+        case 2:
+            {
+                english=" Wh-where...?",
+                french=" Où... où...?",
+                german=" W-wo?",
+                italian=" D-Dove...?",
+                spanish=" ¿Dónde?",
+            }
+        default:
+            {
+                english=" Wh-where...?",
+                french=" Où... où...?",
+                german=" W-wo?",
+                italian=" D-Dove...?",
+                spanish=" ¿Dónde?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_CHIRIIN) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER_BIPPA);
+    }
+    message_SetFace(ACTOR_NPC_CHIRIIN, FACE_NORMAL, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" You\'re in your room at the guild.",
+        french=" Vous êtes dans votre dortoir\nà la Guilde.",
+        german=" Ihr seid in eurem Crewraum in\nder Gilde.",
+        italian=" Nella vostra stanza. Siete di\nnuovo alla Gilda.",
+        spanish=" Estáis en vuestra habitación\ndel [CS:N]Pokégremio[CR].",
+    });
+    message_Talk({
+        english=" You were both hurt. You\'ve been\nsleeping all this time.",
+        french=" Vous étiez en piteux état.\nCela fait pas mal de temps que vous dormez.",
+        german=" Ihr wart beide verletzt. Ihr habt\ndie ganze Zeit geschlafen.",
+        italian=" Ce l\'avete fatta per miracolo.\nAvete dormito per un sacco di tempo.",
+        spanish=" Acabasteis muy mal.\nLleváis durmiendo todo este tiempo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8967);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(1, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Are you all right, [hero]?",
+                french=" Tu vas bien, [hero]?",
+                german=" Geht es dir gut, [hero]?",
+                italian=" Come ti senti, [hero]?",
+                spanish=" ¿Estás bien, [hero]?",
+            }
+        case 2:
+            {
+                english=" Are you all right, [hero]?",
+                french=" Tu vas bien, [hero]?",
+                german=" Geht es dir gut, [hero]?",
+                italian=" Come ti senti, [hero]?",
+                spanish=" ¿Estás bien, [hero]?",
+            }
+        default:
+            {
+                english=" Are you all right, [hero]?",
+                french=" Tu vas bien, [hero]?",
+                german=" Geht es dir gut, [hero]?",
+                italian=" Come ti senti, [hero]?",
+                spanish=" ¿Estás bien, [hero]?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(71);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROP_SLOW, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SIGH, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Whew! Am I glad!",
+                french=" Ouf! Soulagé de l\'entendre!",
+                german=" Puh! Zum Glück!",
+                italian=" Fiuu! Meno male!",
+                spanish=" ¡Menos mal! ¡Cómo me alegro!",
+            }
+        case 2:
+            {
+                english=" Whew! Am I glad to hear it!",
+                french=" Ouf! Soulagé de l\'entendre!",
+                german=" Puh! Bin ich froh!",
+                italian=" Fiuu! Sono contento di sentirlo!",
+                spanish=" ¡Menos mal! ¡Cómo me alegro!",
+            }
+        default:
+            {
+                english=" Whew! Am I glad to hear it!",
+                french=" Ouf! Soulagée de l\'entendre!",
+                german=" Puh! Bin ich froh!",
+                italian=" Fiuu! Sono contenta di sentirlo!",
+                spanish=" ¡Menos mal! ¡Cómo me alegro!",
+            }
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_KeyWait();
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I remember fainting at\n[CS:P]Shining Lake[CR]...",
+                french=" Je me rappelle m\'être évanoui\nau [CS:P]Lac Cristal[CR]...",
+                german=" Ich weiß noch, dass ich am\n[CS:P]Kristallsee[CR] ohnmächtig wurde...",
+                italian=" Ricordo che abbiamo perso i\nsensi al [CS:P]Lago di Cristallo[CR]...",
+                spanish=" Recuerdo haberme debilitado\nen el [CS:P]Lago Cristal[CR].",
+            }
+        case 2:
+            {
+                english=" I remember passing out at\n[CS:P]Shining Lake[CR]...",
+                french=" Je me rappelle m\'être évanoui\nau [CS:P]Lac Cristal[CR]...",
+                german=" Ich weiß noch, dass ich am\n[CS:P]Kristallsee[CR] ohnmächtig wurde...",
+                italian=" Ricordo che abbiamo perso i\nsensi al [CS:P]Lago di Cristallo[CR]...",
+                spanish=" Recuerdo haberme debilitado\nen el [CS:P]Lago Cristal[CR].",
+            }
+        default:
+            {
+                english=" I remember passing out at\n[CS:P]Shining Lake[CR]...",
+                french=" Je me rappelle m\'être évanouie\nau [CS:P]Lac Cristal[CR]...",
+                german=" Ich weiß noch, dass ich am\n[CS:P]Kristallsee[CR] ohnmächtig wurde...",
+                italian=" Ricordo che abbiamo perso i\nsensi al [CS:P]Lago di Cristallo[CR]...",
+                spanish=" Recuerdo haberme debilitado\nen el [CS:P]Lago Cristal[CR].",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(8, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It seems like I can speak again...",
+                french=" Tiens, on dirait que j\'ai retrouvé\nla parole...",
+                german=" Anscheinend kann ich wieder\nsprechen...",
+                italian=" Adesso riesco di nuovo a\nparlare...",
+                spanish=" Parece que ya he recuperado\nel habla.",
+            }
+        case 2:
+            {
+                english=" It seems like I can speak again...",
+                french=" Tiens, on dirait que j\'ai retrouvé\nla parole...",
+                german=" Anscheinend kann ich wieder\nsprechen...",
+                italian=" Adesso riesco di nuovo a\nparlare...",
+                spanish=" Parece que ya he recuperado\nel habla.",
+            }
+        default:
+            {
+                english=" It seems like I can speak again...",
+                french=" Tiens, on dirait que j\'ai retrouvé\nla parole...",
+                german=" Anscheinend kann ich wieder\nsprechen...",
+                italian=" Adesso riesco di nuovo a\nparlare...",
+                spanish=" Parece que ya he recuperado\nel habla.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8967);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(20);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(1, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Oh yeah! What about [CS:N]Azelf[CR]?!",
+                french=" Au fait, et [CS:N]Créfadet[CR]?!",
+                german=" Ach ja! Was ist mit [CS:N]Tobutz[CR]?!?",
+                italian=" Aspetta! Che ne è stato di\n[CS:N]Azelf[CR]?!",
+                spanish=" ¡Se me olvidaba!\n¿Qué ha pasado con [CS:N]Azelf[CR]?",
+            }
+        case 2:
+            {
+                english=" Oh! What about [CS:N]Azelf[CR]?!",
+                french=" Au fait, et [CS:N]Créfadet[CR]?!",
+                german=" Oh! Was ist mit [CS:N]Tobutz[CR]?!?",
+                italian=" Un momento! Come sta [CS:N]Azelf[CR]?",
+                spanish=" ¡Se me olvidaba!\n¿Qué ha pasado con [CS:N]Azelf[CR]?",
+            }
+        default:
+            {
+                english=" Oh, that\'s right! What happened\nto [CS:N]Azelf[CR]?!",
+                french=" Au fait, et [CS:N]Créfadet[CR]?!",
+                german=" Ach ja! Was ist mit [CS:N]Tobutz[CR]?!?",
+                italian=" Un momento! Come sta [CS:N]Azelf[CR]?",
+                spanish=" ¡Ah, es verdad!\n¿Qué ha pasado con [CS:N]Azelf[CR]?",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Is [CS:N]Azelf[CR] all right?",
+                french=" Est-ce qu\'il va bien?",
+                german=" Geht es [CS:N]Tobutz[CR] gut?",
+                italian=" Sta bene?",
+                spanish=" ¿Está bien [CS:N]Azelf[CR]?",
+            }
+        case 2:
+            {
+                english=" Is [CS:N]Azelf[CR] OK?",
+                french=" Est-ce qu\'il va bien?",
+                german=" Geht es [CS:N]Tobutz[CR] gut?",
+                italian=" Qualcuno ha notizie di [CS:N]Azelf[CR]?",
+                spanish=" ¿Está bien [CS:N]Azelf[CR]?",
+            }
+        default:
+            {
+                english=" Is [CS:N]Azelf[CR] OK?",
+                french=" Est-ce qu\'il va bien?",
+                german=" Geht es [CS:N]Tobutz[CR] gut?",
+                italian=" Qualcuno ha notizie di [CS:N]Azelf[CR]?",
+                spanish=" ¿Está bien [CS:N]Azelf[CR]?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(1, 10, DIR_UPLEFT);
+    }
+    message_SetFace(ACTOR_NPC_CHIRIIN, FACE_NORMAL, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" He\'s fine.",
+        french=" Oui, il va bien.",
+        german=" Es geht ihm gut.",
+        italian=" Sì, sta bene.",
+        spanish=" No os preocupéis.",
+    });
+    message_Talk({
+        english=" [partner], compared to you\ntwo, his injuries weren\'t that severe.",
+        french=" [partner], comparées\naux vôtres, ses blessures étaient\nsuperficielles.",
+        german=" [partner], im Vergleich zu\neuch war es nicht schwer verletzt.",
+        italian=" Non era messo male come voi,\n[partner].",
+        spanish=" [partner], comparado con las\nvuestras, sus heridas no eran tan serias.",
+    });
+    message_Talk({
+        english=" He regained consciousness\nearlier. He\'s in the guild now.",
+        french=" Il est revenu à lui il y a\nun moment. Il est à la Guilde\nen ce moment même.",
+        german=" Es ist früher wieder zu sich\ngekommen und ist jetzt in der Gilde.",
+        italian=" Si è risvegliato poco fa. Si\ntrova qui alla Gilda.",
+        spanish=" Recuperó la consciencia hace\nun rato. Ahora está en el [CS:N]Pokégremio[CR].",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Oh, that\'s great!",
+                french=" Excellente nouvelle!",
+                german=" Oh, großartig!",
+                italian=" Meno male!",
+                spanish=" ¡Vaya, me alegro!",
+            }
+        case 2:
+            {
+                english=" Oh, excellent!",
+                french=" Excellente nouvelle!",
+                german=" Oh, das ist gut!",
+                italian=" Bene!",
+                spanish=" ¡Excelente!",
+            }
+        default:
+            {
+                english=" Oh, I\'m glad to hear that!",
+                french=" Excellente nouvelle!",
+                german=" Oh, da bin ich erleichtert!",
+                italian=" Bene!",
+                spanish=" ¡Me alegra saberlo!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_CHIRIIN, FACE_NORMAL, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" I\'m glad you\'re OK too,\n[partner] and [hero]!",
+        french=" Je suis contente que vous alliez\nbien, [partner] et [hero]!",
+        german=" Ich bin froh, dass es euch auch\ngut geht, [partner] und [hero]!",
+        italian=" [partner]! [hero]!\nSiamo stati in pensiero per voi.\nPer fortuna adesso state bene!",
+        spanish=" Me alegro de que también\nestéis bien, [partner] y [hero].",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_CHIRIIN) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_CHIRIIN);
+    message_Talk({
+        english=" I should let the guild know\nyou\'re awake.",
+        french=" Je vais prévenir tout le monde\nque vous avez repris connaissance.",
+        german=" Ich sollte den anderen sagen,\ndass ihr wach seid.",
+        italian=" Devo farlo sapere a tutti.",
+        spanish=" Voy a decirles a los demás\nque os habéis despertado.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_CHIRIIN) {
+        Turn2Direction(1, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_CHIRIIN);
+    se_Play(5123);
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetAnimation(24);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_CHIRIIN);
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetAnimation(2);
+    }
+    WaitSe(5123);
+    with (actor ACTOR_NPC_CHIRIIN) {
+        Turn2Direction(1, 10, DIR_DOWNLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_CHIRIIN);
+    message_SetFace(ACTOR_NPC_CHIRIIN, FACE_NORMAL, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" Everyone! They\'re awake!",
+        french=" Eh tout le monde! Ces deux-là\nont repris connaissance!",
+        german=" Leute! Sie sind wach!",
+        italian=" Ehi gente! Hanno ripreso i sensi!",
+        spanish=" ¡Atención!\n¡Ya se han despertado!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(6916);
+    camera_SetEffect(2, 1, 33024);
+    supervision_Acting(1);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        MovePositionMark(33408, Position<'m0', 16, 22.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        MovePositionMark(2, Position<'m1', 16, 22.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_KIMAWARI) {
+        MovePositionMark(2, Position<'m2', 16, 22.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_HEIGANI) {
+        MovePositionMark(2, Position<'m3', 16, 22.5>);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        MovePositionMark(33408, Position<'m4', 22, 22.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SlidePositionMark(33408, Position<'m5', 26, 22.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(33152, Position<'m6', 26, 25>);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        MovePositionMark(2, Position<'m7', 22, 25.5>);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        MovePositionMark(2, Position<'m8', 19, 20.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        MovePositionMark(2, Position<'m9', 19, 22.5>);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    Wait(15);
+    camera_SetEffect(0, 0, 0);
+    se_Stop(6916);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    se_Play(6414);
+    supervision_Acting(2);
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetAnimation(23);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        MovePositionMark(2, Position<'m10', 16, 22.5>);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_DIGUDA);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    se_Play(6414);
+    supervision_Acting(3);
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetAnimation(24);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_DAGUTORIO);
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD_REMIX, 0, 256);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_NORMAL, FACE_POS_BOTTOM_C_FACER);
+    message_FacePositionOffset(0, -2);
+    message_Talk({
+        english=" R-really?! AWESOME!",
+        french=" Vraiment?! SUPER!",
+        german=" W-wirklich?!? WUNDERBAR!",
+        italian=" S-Sul serio?! GRANDE!",
+        spanish=" ¡¿En... en serio?! ¡Genial!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    message_SetFace(ACTOR_NPC_KIMAWARI, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Oh my gosh! That\'s wonderful\nnews!",
+        french=" Ben mince alors! Excellente\nnouvelle!",
+        german=" Auweia! Das sind wunderbare\nNeuigkeiten!",
+        italian=" Shock! Che bella notizia!",
+        spanish=" ¡Es una noticia superestupenda!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    se_Play(8972);
+    with (actor ACTOR_NPC_BIPPA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_BIPPA);
+    message_SetFace(ACTOR_NPC_BIPPA, FACE_NORMAL, FACE_POS_BOTTOM_L_CENTER);
+    message_Talk({
+        english=" Oof! I\'m mighty glad!",
+        french=" Pfiou! J\'suis hyper content!",
+        german=" Uff! Bin ich froh!",
+        italian=" Ooh! È fantastico, sissignore!",
+        spanish=" ¡Uf! Me alegro, menos mal.",
+    });
+    message_Talk({
+        english=" If anything would\'ve happened\nto you all...",
+        french=" S\'il vous était arrivé quoi\nqu\'ce soit...",
+        german=" Wenn euch etwas zugestoßen\nwäre...",
+        italian=" Se vi fosse mai successo\nqualcosa...",
+        spanish=" Si os hubiera pasado algo malo...",
+    });
+    message_SetFace(ACTOR_NPC_BIPPA, FACE_TEARY_EYED, FACE_POS_BOTTOM_L_CENTER);
+    message_Talk({
+        english=" I\'d...[K] I\'d...[K] Oof...",
+        french=" Je...[K] je...[K] Pfiou...",
+        german=" Ich...[K] Ich wäre...[K] Uff...",
+        italian=" Io...[K] Io...[K] Ohibò...",
+        spanish=" Yo...[K] Yo...[K] Uf...",
+    });
+    with (actor ACTOR_NPC_BIPPA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_BIPPA);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_HAPPY, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Oh, come on, you guys. Don\'t get\nso emotional over this.",
+                french=" Oh, allez les gars, vous n\'allez\npas pleurer quand même.",
+                german=" Ach, kommt schon, Leute. Macht\neuch keine Sorgen!",
+                italian=" Eddai, gente. Cerchiamo di non\nfare gli sdolcinati, adesso!",
+                spanish=" Venga, chicos... No os pongáis\ntan sentimentales por esto.",
+            }
+        case 2:
+            {
+                english=" You guys are getting so\nemotional about this!",
+                french=" Oh, allez les gars, vous n\'allez\npas pleurer quand même.",
+                german=" Ihr habt euch ja wirklich Sorgen\ngemacht!",
+                italian=" Grazie ragazzi, ma vi prego,\nnon esagerate!",
+                spanish=" ¡Tampoco es para tanto!",
+            }
+        default:
+            {
+                english=" You guys are getting so\nemotional about this!",
+                french=" Oh, allez les gars, vous n\'allez\npas pleurer quand même.",
+                german=" Ihr habt euch ja wirklich Sorgen\ngemacht!",
+                italian=" Grazie ragazzi, ma vi prego,\nnon esagerate!",
+                spanish=" ¡Tampoco es para tanto!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_FadeOut(30);
+    se_Play(8978);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Oh! That\'s right!",
+                french=" Oh, j\'ai failli oublier!",
+                german=" Da fällt mir etwas ein!",
+                italian=" Oh! Aspetta, ora che ci penso...",
+                spanish=" ¡Ah! ¡Es verdad!",
+            }
+        case 2:
+            {
+                english=" Oh! That\'s right!",
+                french=" Oh, j\'ai failli oublier!",
+                german=" Da fällt mir etwas ein!",
+                italian=" Oh! Aspetta, ora che ci penso...",
+                spanish=" ¡Ah! ¡Es verdad!",
+            }
+        default:
+            {
+                english=" Oh! That\'s right!",
+                french=" Oh, j\'ai failli oublier!",
+                german=" Da fällt mir etwas ein!",
+                italian=" Oh! Aspetta, ora che ci penso...",
+                spanish=" ¡Ah! ¡Es verdad!",
+            }
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetAnimation(2);
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" There\'s something that I need to\ntell everyone!",
+                french=" J\'ai quelque chose à vous dire!",
+                german=" Ich muss euch etwas sagen!",
+                italian=" C\'è qualcosa che devo dirvi!",
+                spanish=" Hay algo que tengo que contaros\na todos.",
+            }
+        case 2:
+            {
+                english=" There\'s something that I need to\nshare with everyone!",
+                french=" J\'ai quelque chose à vous dire!",
+                german=" Ich muss euch etwas sagen!",
+                italian=" C\'è qualcosa che devo dirvi!",
+                spanish=" Hay algo que tengo que contaros\na todos.",
+            }
+        default:
+            {
+                english=" There\'s something that I need to\ntell everyone!",
+                french=" J\'ai quelque chose à vous dire!",
+                german=" Ich muss euch etwas sagen!",
+                italian=" C\'è qualcosa che devo dirvi!",
+                spanish=" Hay algo que tengo que contaros\na todos.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8962);
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    message_SetFace(ACTOR_NPC_HEIGANI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Hey, hey...?",
+        french=" Eh dis donc, ben dis donc...",
+        german=" Hey, hey?",
+        italian=" Ehi, ehi...?",
+        spanish=" ¡Oye, oye!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_KIMAWARI, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" And what would that be?",
+        french=" Qu\'y a-t-il?",
+        german=" Und was wäre das?",
+        italian=" Shock! Cosa sarà mai?",
+        spanish=" ¿Y de qué se trata?",
+    });
+    message_Close();
+    screen_FadeOut(1, 60);
+    end;
+}

@@ -1,0 +1,128 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_CHASM_CAVE, 0, 256);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Are you all ready, [hero]?",
+                french=" C\'est bon, [hero]?",
+                german=" Bist du fertig, [hero]?",
+                italian=" È tutto pronto, [hero]?",
+                spanish=" ¿Todo listo, [hero]?",
+            }
+        case 2:
+            {
+                english=" Are you ready, [hero]?",
+                french=" C\'est bon, [hero]?",
+                german=" Bist du fertig, [hero]?",
+                italian=" È tutto pronto, [hero]?",
+                spanish=" ¿Todo listo, [hero]?",
+            }
+        default:
+            {
+                english=" Are you ready, [hero]?",
+                french=" C\'est bon, [hero]?",
+                german=" Bist du fertig, [hero]?",
+                italian=" È tutto pronto, [hero]?",
+                spanish=" ¿Todo listo, [hero]?",
+            }
+    }
+    switch ( message_SwitchMenu(0, 1) ) {
+        case menu({
+            english="All set!",
+            french="On y va!",
+            german="Alles klar!",
+            italian="Tutto pronto!",
+            spanish="¡Ya estoy!",
+        }):
+        default:
+            §label_0;
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            with (actor ACTOR_PLAYER) {
+                Turn2Direction(4, 10, DIR_UP);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                Turn2Direction(4, 10, DIR_UP);
+            }
+            main_EnterDungeon(27, 30);
+            switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+            main_EnterDungeon(-1, 30);
+            hold;
+        case menu({
+            english="Not yet...",
+            french="Pas encore...",
+            german="Noch nicht...",
+            italian="Non ancora...",
+            spanish="Aún no...",
+        }):
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                case 1:
+                    {
+                        english=" We\'ll go when you\'re ready.",
+                        french=" Préviens-moi quand on peut\ny aller.",
+                        german=" Wir gehen, wenn du fertig bist.",
+                        italian=" Quando siamo pronti partiamo.",
+                        spanish=" Nos iremos cuando tú digas.",
+                    }
+                case 2:
+                    {
+                        english=" Let\'s go when you\'re ready.",
+                        french=" Préviens-moi quand on peut\ny aller.",
+                        german=" Gehen wir, wenn du fertig bist.",
+                        italian=" Quando siamo pronti andiamo.",
+                        spanish=" Nos iremos cuando tú digas.",
+                    }
+                default:
+                    {
+                        english=" Let\'s go when you\'re ready.",
+                        french=" Préviens-moi quand on peut\ny aller.",
+                        german=" Gehen wir, wenn du fertig bist.",
+                        italian=" Quando è tutto pronto andiamo.",
+                        spanish=" Nos iremos cuando tú digas.",
+                    }
+            }
+            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                case 1:
+                    {
+                        english=" Let\'s get moving before those\n[CS:N]Sableye[CR] come.",
+                        french=" Partons d\'ici avant que\nles [CS:N]Ténéfix[CR] n\'arrivent.",
+                        german=" Hauen wir ab, bevor diese\n[CS:N]Zobiris[CR] kommen.",
+                        italian=" Muoviamoci prima che arrivino\ni [CS:N]Sableye[CR].",
+                        spanish=" Vámonos antes de que lleguen\nesos [CS:N]Sableye[CR].",
+                    }
+                case 2:
+                    {
+                        english=" Let\'s go before those [CS:N]Sableye[CR]\nget here.",
+                        french=" Partons d\'ici avant que\nles [CS:N]Ténéfix[CR] n\'arrivent.",
+                        german=" Verschwinden wir, bevor diese\n[CS:N]Zobiris[CR] da sind.",
+                        italian=" Andiamo prima che i [CS:N]Sableye[CR] \nci raggiungano.",
+                        spanish=" Vámonos antes de que lleguen\nesos [CS:N]Sableye[CR].",
+                    }
+                default:
+                    {
+                        english=" We should get going before\nthose [CS:N]Sableye[CR] come.",
+                        french=" Partons d\'ici avant que\nles [CS:N]Ténéfix[CR] n\'arrivent.",
+                        german=" Wir sollten verschwinden, bevor\ndiese [CS:N]Zobiris[CR] kommen.",
+                        italian=" Dobbiamo andarcene prima che \narrivino quei [CS:N]Sableye[CR].",
+                        spanish=" Vámonos antes de que lleguen\nesos [CS:N]Sableye[CR].",
+                    }
+            }
+            message_Close();
+            end;
+    }
+}

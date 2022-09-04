@@ -1,0 +1,274 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_G01P07C);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_GOODNIGHT, 0, 256);
+    Wait(30);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Sigh... [CS:N]Skuntank[CR] and his\nsidekicks really stuck it to us again...",
+                french=" Pff... [CS:N]Moufflair[CR] et ses acolytes\nse sont bien amusés... et encore une fois\nà nos dépens...",
+                german=" Seufz... [CS:N]Skuntank[CR] und seine\nAnhängsel haben uns wieder schlecht aussehen\nlassen.",
+                italian=" Sigh... [CS:N]Skuntank[CR] e i suoi\nscagnozzi ce l\'hanno fatta di nuovo.",
+                spanish=" Vaya... [CS:N]Skuntank[CR] y sus\ncompinches nos la han vuelto a jugar...",
+            }
+        case 2:
+            {
+                english=" Sigh... [CS:N]Skuntank[CR]\'s team showed\nus up over and over again...",
+                french=" Pff... [CS:N]Moufflair[CR] et ses acolytes\nse sont bien amusés... et encore une fois\nà nos dépens...",
+                german=" Seufz... [CS:N]Skuntank[CR] und sein Team\nhaben uns mal wieder reingelegt.",
+                italian=" Sigh... [CS:N]Skuntank[CR] e i suoi\nscagnozzi ce l\'hanno fatta di nuovo.",
+                spanish=" Vaya... El equipo de [CS:N]Skuntank[CR]\nnos la ha vuelto a jugar...",
+            }
+        default:
+            {
+                english=" Sigh... [CS:N]Skuntank[CR]\'s team bested us\nagain, didn\'t they...",
+                french=" Pff... [CS:N]Moufflair[CR] et ses acolytes\nse sont bien amusés... et encore une fois\nà nos dépens...",
+                german=" Seufz... [CS:N]Skuntank[CR] und sein Team\nhaben uns mal wieder übers Ohr gehauen.",
+                italian=" Sigh... [CS:N]Skuntank[CR] e i suoi\nscagnozzi ce l\'hanno fatta di nuovo.",
+                spanish=" Vaya... El equipo de [CS:N]Skuntank[CR]\nnos la ha vuelto a jugar...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We\'re lucky that [CS:N]Wigglytuff[CR]\ndidn\'t blow up at us.",
+                french=" Quelle chance que [CS:N]Grodoudou[CR]\nn\'ait pas explosé devant nous.",
+                german=" Zum Glück hat [CS:N]Knuddeluff[CR] uns\nnicht die Leviten gelesen.",
+                italian=" Meno male che [CS:N]Wigglytuff[CR]\nnon ci è scoppiato addosso.",
+                spanish=" Ha sido una suerte que\n[CS:N]Wigglytuff[CR] no acabase estallando.",
+            }
+        case 2:
+            {
+                english=" It\'s great that [CS:N]Wigglytuff[CR] didn\'t\nblow up at us.",
+                french=" Quelle chance que [CS:N]Grodoudou[CR]\nn\'ait pas explosé devant nous.",
+                german=" Zum Glück hat [CS:N]Knuddeluff[CR] uns\nnicht die Leviten gelesen.",
+                italian=" Meno male che [CS:N]Wigglytuff[CR]\nnon se l\'è presa con noi.",
+                spanish=" Ha sido una suerte que\n[CS:N]Wigglytuff[CR] no acabase estallando.",
+            }
+        default:
+            {
+                english=" It\'s good that [CS:N]Wigglytuff[CR] didn\'t\nblow up at us.",
+                french=" Quelle chance que [CS:N]Grodoudou[CR]\nn\'ait pas explosé devant nous.",
+                german=" Zum Glück hat [CS:N]Knuddeluff[CR] uns\nnicht die Leviten gelesen.",
+                italian=" Meno male che [CS:N]Wigglytuff[CR]\nnon se l\'è presa con noi.",
+                spanish=" Ha sido una suerte que\n[CS:N]Wigglytuff[CR] no acabase estallando.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Urf... But we didn\'t get to eat\ndinner after all...",
+                french=" Arf... Mais on n\'a même pas\neu le droit de dîner ce soir...",
+                german=" Urf... Aber wir haben trotzdem\nkein Abendessen bekommen...",
+                italian=" Urf... Ma in ogni caso abbiamo\nsaltato la cena...",
+                spanish=" Uf... Pero, al final, no hemos\ncenado.",
+            }
+        case 2:
+            {
+                english=" Urf... But we didn\'t get to eat\ndinner after all...",
+                french=" Arf... Mais on n\'a même pas\neu le droit de dîner ce soir...",
+                german=" Urf... Aber wir haben trotzdem\nkein Abendessen bekommen...",
+                italian=" Urf... Ma in ogni caso abbiamo\nsaltato la cena...",
+                spanish=" Uf... Pero, al final, no hemos\ncenado.",
+            }
+        default:
+            {
+                english=" Urf... But we didn\'t get to eat\ndinner after all...",
+                french=" Arf... Mais on n\'a même pas\neu le droit de dîner ce soir...",
+                german=" Urf... Aber wir haben trotzdem\nkein Abendessen bekommen...",
+                italian=" Urf... Ma in ogni caso abbiamo\nsaltato la cena...",
+                spanish=" Uf... Pero, al final, no hemos\ncenado.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I\'m just starving now...",
+                french=" Je meurs de faim...",
+                german=" Ich bin am Verhungern.",
+                italian=" Adesso ho proprio fame...",
+                spanish=" Me estoy muriendo de hambre...",
+            }
+        case 2:
+            {
+                english=" I feel horribly hungry...",
+                french=" Je meurs de faim...",
+                german=" Ich habe fürchterlichen Hunger.",
+                italian=" Adesso sono proprio affamato...",
+                spanish=" Estoy hambriento...",
+            }
+        default:
+            {
+                english=" I\'m famished...",
+                french=" Je meurs de faim...",
+                german=" Ich verhungere...",
+                italian=" Adesso sono proprio affamata...",
+                spanish=" Estoy muerta de hambre...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Sorry, I know you\'re hungry too,\n[hero].",
+                french=" Pardon, je sais que toi aussi tu\nas faim, [hero].",
+                german=" Tut mir leid, ich weiß, du hast\nauch Hunger, [hero].",
+                italian=" Scusa, so che anche tu hai fame,\n[hero].",
+                spanish=" Perdona... Ya sé que tú también\ntienes hambre, [hero].",
+            }
+        case 2:
+            {
+                english=" Sorry, I know you\'re hungry too,\n[hero].",
+                french=" Pardon, je sais que toi aussi tu\nas faim, [hero].",
+                german=" Tut mir leid, ich weiß, du hast\nauch Hunger, [hero].",
+                italian=" Scusa, so che anche tu hai fame,\n[hero].",
+                spanish=" Perdona... Ya sé que tú también\ntienes hambre, [hero].",
+            }
+        default:
+            {
+                english=" Sorry, I know you\'re hungry too,\n[hero].",
+                french=" Pardon, je sais que toi aussi tu\nas faim, [hero].",
+                german=" Tut mir leid, ich weiß, du hast\nauch Hunger, [hero].",
+                italian=" Scusa, so che anche tu hai fame,\n[hero].",
+                spanish=" Perdona... Ya sé que tú también\ntienes hambre, [hero].",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Staying up doesn\'t make it\nbetter. Let\'s get some sleep.",
+                french=" Rester debout ne va pas\narranger les choses. Allons nous coucher.",
+                german=" Es wird nicht besser, wenn wir\nwach bleiben. Lass uns schlafen.",
+                italian=" Stare in piedi non migliorerà le \ncose. Andiamo a dormire.",
+                spanish=" Quedarnos despiertos no va\na solucionar nada. Durmamos un poco.",
+            }
+        case 2:
+            {
+                english=" Staying awake like this doesn\'t\nmake it better. Let\'s get some sleep.",
+                french=" Rester debout ne va pas\narranger les choses. Allons nous coucher.",
+                german=" Wenn wir wach bleiben, wird es\nauch nicht besser. Lass uns schlafen.",
+                italian=" Stare in piedi non migliorerà le \ncose. Andiamo a dormire.",
+                spanish=" Quedarnos despiertos no va\na solucionar nada. Durmamos un poco.",
+            }
+        default:
+            {
+                english=" Staying awake doesn\'t help.\nLet\'s get some sleep.",
+                french=" Rester debout ne va pas\narranger les choses. Allons nous coucher.",
+                german=" Es bringt auch nichts, wenn wir\nwach bleiben. Lass uns schlafen.",
+                italian=" Stare in piedi non migliorerà le \ncose. Andiamo a dormire.",
+                spanish=" Quedarnos sin dormir no va\na solucionar nada. Descansemos mejor.",
+            }
+    }
+    message_Close();
+    Wait(45);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(76);
+    }
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Good night, [hero].",
+                french=" Bonne nuit, [hero].",
+                german=" Gute Nacht, [hero].",
+                italian=" Buonanotte, [hero].",
+                spanish=" Buenas noches, [hero].",
+            }
+        case 2:
+            {
+                english=" Good night, [hero].",
+                french=" Bonne nuit, [hero].",
+                german=" Gute Nacht, [hero].",
+                italian=" Buonanotte, [hero].",
+                spanish=" Buenas noches, [hero].",
+            }
+        default:
+            {
+                english=" Good night, [hero].",
+                french=" Bonne nuit, [hero].",
+                german=" Gute Nacht, [hero].",
+                italian=" Buonanotte, [hero].",
+                spanish=" Buenas noches, [hero].",
+            }
+    }
+    message_Close();
+    Wait(45);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(20);
+    with (actor ACTOR_PLAYER) {
+        SetDirection(DIR_RIGHT);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(76);
+    }
+    Wait(50);
+    screen_FadeChange(1, 60, 255, 192);
+    message_SetActor(ACTOR_ATTENDANT1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Let\'s keep at it tomorrow.",
+                french=" Nous ferons mieux demain.",
+                german=" Morgen geht es weiter.",
+                italian=" Continuiamo a fare del nostro\nmeglio, domani.",
+                spanish=" Mañana más.",
+            }
+        case 2:
+            {
+                english=" Let\'s keep at it tomorrow.",
+                french=" Nous ferons mieux demain.",
+                german=" Morgen geht es weiter.",
+                italian=" Continuiamo a fare del nostro\nmeglio, domani.",
+                spanish=" Mañana más.",
+            }
+        default:
+            {
+                english=" Let\'s keep at it tomorrow.",
+                french=" Nous ferons mieux demain.",
+                german=" Morgen geht es weiter.",
+                italian=" Continuiamo a fare del nostro\nmeglio, domani.",
+                spanish=" Mañana más.",
+            }
+    }
+    message_Close();
+    Wait(30);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(62);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(62);
+    }
+    Wait(120);
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 90);
+    Wait(60);
+    end;
+}

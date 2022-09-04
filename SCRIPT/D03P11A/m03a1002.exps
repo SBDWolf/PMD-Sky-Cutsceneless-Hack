@@ -1,0 +1,520 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_D03P11A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_JIBAKOIRU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" ZZZT! I am [CS:N]Magnezone[CR], the\nprimary officer in this region! ZZZT!",
+        french=" ZZZT! Je suis [CS:N]Magnézone[CR],\nle shérif de la région! ZZZT!",
+        german=" ZZZT! Ich bin [CS:N]Magnezone[CR], der\nOberwachtmeister der Gegend! ZZZT!",
+        italian=" ZZZT! Sono [CS:N]Magnezone[CR],\nil Commissario di questa regione! ZZZT!",
+        spanish=" ¡Bzz! ¡Soy [CS:N]Magnezone[CR], el\nrepresentante de la ley en esta región! ¡Bzz!",
+    });
+    message_Talk({
+        english=" ZZZT! Thanks to you...",
+        french=" ZZZT! Grâce à vous...",
+        german=" ZZZT! Vielen Dank!",
+        italian=" ZZZT! Grazie a voi...",
+        spanish=" ¡Bzz! Gracias a vuestro equipo...",
+    });
+    message_Talk({
+        english=" We have been able to arrest a\nwanted outlaw! ZZZT!",
+        french=" Nous avons pu arrêter un\ncriminel recherché! ZZZT!",
+        german=" Dank euch konnten wir einen\ngesuchten Verbrecher fassen! ZZZT!",
+        italian=" Siamo riusciti ad arrestare un\nricercato! ZZZT!",
+        spanish=" ¡Hemos podido arrestar\na un peligroso malhechor! ¡Bzz!",
+    });
+    message_Talk({
+        english=" ZZZT! We owe you great thanks\nfor your cooperation! ZZZT!",
+        french=" ZZZT! Merci beaucoup de votre\ncoopération! ZZZT!",
+        german=" ZZZT! Wir sind euch für eure\nMitarbeit zu großem Dank verpflichtet! ZZZT!",
+        italian=" ZZZT! Grazie mille per la vostra\ncollaborazione! ZZZT!",
+        spanish=" ¡Bzz! ¡Estamos muy agradecidos\npor vuestra colaboración! ¡Bzz!",
+    });
+    message_Close();
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(6418);
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    with (actor ACTOR_NPC_KOIRU) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    with (actor ACTOR_NPC_KOIRU2) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        SetAnimation(22);
+    }
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_KOIRU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_KOIRU2) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    Wait(20);
+    message_Talk({
+        english=" ZZZT! We will send the reward\nto your guild. Thank you again! ZZZT!",
+        french=" ZZZT! Nous remettrons la\nrécompense à votre Guilde. Merci\nencore! ZZZT!",
+        german=" ZZZT! Wir lassen die Belohnung\neurer Gilde zukommen. Nochmals danke! ZZZT!",
+        italian=" ZZZT! Manderemo la ricompensa\nalla Gilda. Grazie ancora! ZZZT!",
+        spanish=" ¡Bzz! Enviaremos la recompensa\na vuestro [CS:N]Pokégremio[CR].\n¡Muchísimas gracias por todo! ¡Bzz!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_SURIIPU);
+    }
+    WaitExecuteLives(ACTOR_NPC_JIBAKOIRU);
+    message_Talk({
+        english=" ZZZT! Now come with us! ZZZT!",
+        french=" ZZZT! Viens avec nous! ZZZT!",
+        german=" ZZZT! Jetzt komm mit! ZZZT!",
+        italian=" ZZZT! Adesso vieni\ncon noi! ZZZT!",
+        spanish=" ¡Bzz! Ahora, ¡ven con nosotros!\n¡Bzz!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8961);
+    with (actor ACTOR_NPC_SURIIPU) {
+        SetEffect(EFFECT_SWEAT_DROP, 3);
+    }
+    with (actor ACTOR_NPC_SURIIPU) {
+        WaitEffect();
+    }
+    message_SetFace(ACTOR_NPC_SURIIPU, FACE_SIGH, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Awww...",
+        french=" Aïe...",
+        german=" Grmpf...",
+        italian=" Awww...",
+        spanish=" ¡Ay!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        MovePositionOffset(1, 200, 0);
+    }
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_RURIRI) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_KOIRU) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    with (actor ACTOR_NPC_SURIIPU) {
+        MovePositionOffset(1, 16, 16);
+    }
+    with (actor ACTOR_NPC_KOIRU2) {
+        MovePositionOffset(1, 32, 32);
+    }
+    WaitExecuteLives(ACTOR_NPC_SURIIPU);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_SURIIPU) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_KOIRU2);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(16, 10, DIR_RIGHT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(16, 10, DIR_RIGHT);
+    }
+    with (actor ACTOR_NPC_RURIRI) {
+        Turn2Direction(16, 10, DIR_RIGHT);
+    }
+    with (actor ACTOR_NPC_KOIRU) {
+        MovePositionOffset(1, 200, 0);
+    }
+    with (actor ACTOR_NPC_SURIIPU) {
+        MovePositionOffset(1, 200, 0);
+    }
+    with (actor ACTOR_NPC_KOIRU2) {
+        MovePositionOffset(1, 200, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_KOIRU2);
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_SURIIPU) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_KOIRU) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_KOIRU2) {
+        Destroy();
+    }
+    supervision_Acting(1);
+    message_SetActor(ACTOR_NPC_MARIRU);
+    message_Talk({
+        english=" [CS:N]Azurill[CR]!",
+        french=" [CS:N]Azurill[CR]!",
+        german=" [CS:N]Azurill[CR]!",
+        italian=" [CS:N]Azurill[CR]!",
+        spanish=" ¡[CS:N]Azurill[CR]!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8978);
+    with (actor ACTOR_NPC_RURIRI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_RURIRI) {
+        WaitEffect();
+    }
+    with (actor ACTOR_NPC_RURIRI) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_MARIRU);
+    }
+    WaitExecuteLives(ACTOR_NPC_RURIRI);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_MARIRU);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_MARIRU);
+    }
+    with (performer 0) {
+        MovePositionOffset(33152, 0, 80);
+    }
+    WaitExecutePerformer(0);
+    Wait(30);
+    with (actor ACTOR_NPC_RURIRI) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_RURIRI);
+    message_SetFace(ACTOR_NPC_RURIRI, FACE_TEARY_EYED, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" [CS:N]Marill[CR]!",
+        french=" [CS:N]Marill[CR]!",
+        german=" [CS:N]Marill[CR]!",
+        italian=" [CS:N]Marill[CR]!",
+        spanish=" ¡[CS:N]Marill[CR]!",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_MARIRU) {
+        MovePositionMark(33152, Position<'m0', 34.5, 36.5>);
+    }
+    with (actor ACTOR_NPC_RURIRI) {
+        MovePositionMark(33152, Position<'m1', 34.5, 34.5>);
+    }
+    with (performer 0) {
+        MovePositionMark(1, Position<'m2', 35, 34.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_MARIRU);
+    WaitExecutePerformer(0);
+    bgm_PlayFadeIn(BGM_HEARTWARMING, 0, 256);
+    with (actor ACTOR_NPC_RURIRI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_RURIRI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_RURIRI);
+    message_SetFace(ACTOR_NPC_RURIRI, FACE_SIGH, FACE_POS_BOTTOM_R_CENTER);
+    message_FacePositionOffset(-1, -2);
+    message_Talk({
+        english=" Waaaaah!",
+        french=" Ouiiin!",
+        german=" Waaaaah!",
+        italian=" Waaaaah!",
+        spanish=" ¡Buaaa!",
+    });
+    message_Talk({
+        english=" [CS:N]Marill[CR]![K] It was so scary!",
+        french=" [CS:N]Marill[CR]![K] J\'ai eu si peur!",
+        german=" [CS:N]Marill[CR]![K] Ich hatte solche Angst!",
+        italian=" [CS:N]Marill[CR]![K] Ho avuto tanta paura!",
+        spanish=" ¡[CS:N]Marill[CR]![K]\n¡Qué miedo he pasado!",
+    });
+    with (actor ACTOR_NPC_RURIRI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_MARIRU, FACE_SIGH, FACE_POS_BOTTOM_L_FACEINW);
+    message_Talk({
+        english=" You OK, [CS:N]Azurill[CR]?[K] Are you hurt?",
+        french=" Ça va, [CS:N]Azurill[CR]?[K] Tu es blessé?",
+        german=" Alles okay, [CS:N]Azurill[CR]?[K] Bist du\nverletzt?",
+        italian=" Stai bene, [CS:N]Azurill[CR]?[K] Sei ferito?",
+        spanish=" ¿Estás bien, [CS:N]Azurill[CR]?[K]\n¿No te has hecho daño?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionOffset(1, 0, 8);
+    }
+    Wait(15);
+    with (actor ACTOR_PLAYER) {
+        MovePositionOffset(1, 0, 8);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" He\'s fine. The little guy\'s not\nhurt at all.",
+                french=" Il va bien. Le petit bonhomme\nest sain et sauf.",
+                german=" Es geht ihm gut. Der kleine Kerl\nist nicht verletzt.",
+                italian=" Sta bene. Non ha neanche un \ngraffio.",
+                spanish=" Está bien. No tiene ni un\nrasguño.",
+            }
+        case 2:
+            {
+                english=" He\'s fine. The little guy hasn\'t\nbeen harmed in any way.",
+                french=" Il va bien. Le petit bonhomme\nest sain et sauf.",
+                german=" Es geht ihm gut. Der kleine Kerl\nist unversehrt.",
+                italian=" Sta bene. Non ha neanche un \ngraffio.",
+                spanish=" Está bien. No tiene ni un\nrasguño.",
+            }
+        default:
+            {
+                english=" He\'s fine. The little guy\'s not\nhurt in any way.",
+                french=" Il va bien. Le petit bonhomme\nest sain et sauf.",
+                german=" Es geht ihm gut. Der kleine Kerl\nist unversehrt.",
+                italian=" Sta bene. Non ha neanche un \ngraffio.",
+                spanish=" Está bien. No tiene ni un\nrasguño.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_MARIRU) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_MARIRU);
+    message_SetFace(ACTOR_NPC_MARIRU, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEINW);
+    message_Talk({
+        english=" Really?",
+        french=" Vraiment?",
+        german=" Wirklich?",
+        italian=" Davvero?",
+        spanish=" ¿De verdad?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_MARIRU, FACE_TEARY_EYED, FACE_POS_BOTTOM_L_FACEINW);
+    message_Talk({
+        english=" That\'s a relief!",
+        french=" Ouf, je suis soulagé!",
+        german=" Ich bin so erleichtert!",
+        italian=" Per fortuna!",
+        spanish=" ¡Menos mal!",
+    });
+    message_KeyWait();
+    with (actor ACTOR_NPC_MARIRU) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    message_Talk({
+        english=" Oh, [CS:N]Azurill[CR]...[K][CS:N]Azurill[CR]...",
+        french=" Oh, [CS:N]Azurill[CR]... [K][CS:N]Azurill[CR]...",
+        german=" Oh, [CS:N]Azurill[CR]...[K] [CS:N]Azurill[CR]...",
+        italian=" Oh, [CS:N]Azurill[CR]...[K] [CS:N]Azurill[CR]...",
+        spanish=" [CS:N]Azurill[CR]. [K]¡[CS:N]Azurill[CR]!",
+    });
+    Wait(10);
+    with (actor ACTOR_NPC_RURIRI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(20);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_HAPPY, FACE_POS_TOP_L_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I\'m really glad for you guys.",
+                french=" Je suis content pour vous.",
+                german=" Ich freue mich wirklich für\neuch zwei.",
+                italian=" Sono davvero felice per voi.",
+                spanish=" Me alegro mucho por vosotros.",
+            }
+        case 2:
+            {
+                english=" I\'m glad you kids are happy!",
+                french=" Je suis content pour vous.",
+                german=" Ich freue mich so für euch!",
+                italian=" Sono davvero felice per voi.",
+                spanish=" Me alegro mucho por los dos.",
+            }
+        default:
+            {
+                english=" I\'m truly happy for you two!",
+                french=" Je suis contente pour vous.",
+                german=" Ich freue mich wirklich für\neuch beide!",
+                italian=" Sono davvero felice per voi.",
+                spanish=" ¡Me alegro mucho por ambos!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_MARIRU) {
+        MovePositionOffset(1, -16, -16);
+    }
+    with (actor ACTOR_NPC_RURIRI) {
+        MovePositionOffset(1, 16, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_MARIRU);
+    with (actor ACTOR_NPC_MARIRU) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_RURIRI);
+    with (actor ACTOR_NPC_RURIRI) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_RURIRI);
+    message_SetFace(ACTOR_NPC_MARIRU, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEINW);
+    message_Talk({
+        english=" You did this all for us,\n[partner] and [hero].",
+        french=" Vous avez fait tout ça pour\nnous, [partner] et [hero].",
+        german=" Ihr habt das nur für uns getan,\n[partner] und [hero].",
+        italian=" Avete fatto tutto questo solo per\nnoi, [partner] e [hero].",
+        spanish=" [partner] y [hero],\nno tenemos palabras.",
+    });
+    message_Talk({
+        english=" We won\'t forget what you did\nfor us.[K] Thank you so much.",
+        french=" Nous n\'oublierons jamais votre\ngentillesse. Merci beaucoup.",
+        german=" Wir werden das niemals\nvergessen.[K] Vielen, vielen Dank.",
+        italian=" Non lo dimenticheremo.[K] \nGrazie mille.",
+        spanish=" No olvidaremos lo que habéis\nhecho por nosotros.[K] Muchísimas gracias.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_MARIRU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_RURIRI);
+    }
+    WaitExecuteLives(ACTOR_NPC_MARIRU);
+    with (actor ACTOR_NPC_RURIRI) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_MARIRU);
+    }
+    message_Talk({
+        english=" Come on, [CS:N]Azurill[CR]. You too.",
+        french=" Allez, [CS:N]Azurill[CR]. Toi aussi.",
+        german=" Komm schon, [CS:N]Azurill[CR]. Jetzt du.",
+        italian=" Forza, [CS:N]Azurill[CR]. Ringrazia anche\ntu.",
+        spanish=" Venga, [CS:N]Azurill[CR]. Díselo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_RURIRI) {
+        SetAnimation(23);
+    }
+    with (actor ACTOR_NPC_RURIRI) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_NPC_RURIRI) {
+        SetAnimation(2);
+    }
+    message_SetFace(ACTOR_NPC_RURIRI, FACE_TEARY_EYED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Yup...",
+        french=" Ouais...",
+        german=" Ja...",
+        italian=" Sì...",
+        spanish=" Sí.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_RURIRI) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_RURIRI);
+    with (actor ACTOR_NPC_MARIRU) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    message_SetFace(ACTOR_NPC_RURIRI, FACE_TEARY_EYED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Thank you very much![K] Thank you\nfor rescuing me!",
+        french=" Merci mille fois![K] Merci de\nm\'avoir sauvé!",
+        german=" Vielen, vielen Dank![K] Danke, dass\nihr mich gerettet habt!",
+        italian=" Grazie![K] Grazie per\navermi salvato!",
+        spanish=" ¡Muchísimas gracias![K]\n¡Gracias por rescatarme!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_MARIRU, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEINW);
+    message_Talk({
+        english=" Really...[K] Really, thank you!",
+        french=" Vraiment...[K] merci!",
+        german=" Wirklich![K] Vielen, vielen Dank!",
+        italian=" Davvero...[K] Grazie di cuore!",
+        spanish=" De verdad...[K] ¡Muchas gracias!",
+    });
+    message_Close();
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 90);
+    WaitBgm(BGM_HEARTWARMING);
+    Wait(60);
+    me_Play(7);
+    message_Explanation({
+        english="[CN]The Exploration Team Federation\n[CN]has sent a message...[W:30]",
+        french="[CN]La Fédération des Equipes d\'Exploration\n[CN]a envoyé un message...[W:30]",
+        german="[CN]Der Erkundungsteamverband\n[CN]hat eine Nachricht geschickt.[W:30]",
+        italian="[CN]Arriva un messaggio della Federazione\n[CN]Squadre d\'Esplorazione![W:30]",
+        spanish="[CN]La Federación de Exploradores\n[CN]ha enviado un mensaje...[W:30]",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    me_Play(1);
+    message_Explanation({
+        english="[CN][hero]\'s team was rewarded\n[CN]with an enlarged Treasure Bag![W:100]",
+        french="[CN]L\'équipe de [hero] est récompensée\n[CN]par un Sac à Trésor plus grand![W:100]",
+        german="[CN]Das Team von [hero] erhält zur\n[CN]Belohnung einen größeren Schatzbeutel![W:100]",
+        italian="[CN]La squadra di [hero] riceve in premio\n[CN]una Sacca dei tesori più capiente![W:100]",
+        spanish="[CN]¡El equipo de [hero] fue recompensado\n[CN]con una Bolsa mayor![W:100]",
+    });
+    message_Explanation({
+        english="[CN]You can now carry more\n[CN]items than you could before!",
+        french="[CN]Dorénavant, vous pourrez\n[CN]transporter plus d\'objets!",
+        german="[CN]Du kannst jetzt mehr\n[CN]Items als bisher tragen!",
+        italian="[CN]Adesso potrete trasportare molti più\n[CN]strumenti di prima!",
+        spanish="[CN]¡Ahora puedes llevar\n[CN]más objetos que antes!",
+    });
+    message_Explanation({
+        english="[CN]Wait...[K]\n[CN]There\'s one more message.",
+        french="[CN]Tiens...[K]\n[CN]Il y a un autre message.",
+        german="[CN]Augenblick...[K]\n[CN]Da ist noch eine Nachricht.",
+        italian="[CN]Un momento...[K]\n[CN]C\'è un altro messaggio.",
+        spanish="[CN]Espera...[K]\n[CN]Hay un mensaje más.",
+    });
+    message_Close();
+    back_SetGround(LEVEL_P15P01A);
+    supervision_Acting(10);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    back_SetBackEffect(4);
+    screen_FadeIn(1, 15);
+    Wait(30);
+    me_Play(5);
+    message_Mail({
+        english="[CN]The Special Episode\n[CN]\"Bidoof\'s Wish\"\n[CN]has been unlocked![W:90]",
+        french="[CN]L\'Episode Spécial\n[CN]\"Le vœu de Keunotor\"\n[CN]est maintenant disponible![W:90]",
+        german="[CN]Die Bonusepisode\n[CN][F:S2]Der Wunsch von Bidiza[F:E2]\n[CN]wurde freigeschaltet![W:90]",
+        italian="[CN]L\'episodio speciale\n[CN]\"Il desiderio di Bidoof\"\n[CN]è ora disponibile![W:90]",
+        spanish="[CN]Se ha desbloqueado\n[CN]el capítulo especial\n[CN]\"El deseo de Bidoof\".[W:90]",
+    });
+    message_Mail({
+        english="[CN]To play a Special Episode,\n[CN]select it from the Episode List\n[CN]on the Top Menu.",
+        french="[CN]Pour jouer à un Episode Spécial,\n[CN]sélectionnez-le dans la Liste des épisodes\n[CN]à partir du menu principal.",
+        german="[CN]Um eine Bonusepisode zu spielen,\n[CN]wähle sie in der Episodenliste\n[CN]im Hauptmenü aus.",
+        italian="[CN]Per giocare a un episodio speciale,\n[CN]selezionalo dalla lista episodi\n[CN]nel menu principale.",
+        spanish="[CN]Para jugar a un capítulo especial,\n[CN]elígelo en la lista de capítulos\n[CN]del menú principal.",
+    });
+    message_Mail({
+        english="[CN]If you would like to play the Special Episode,\n[CN]save your adventure progress, and\n[CN]return to the Top Menu.",
+        french="[CN]Si vous souhaitez jouer à cet Episode Spécial,\n[CN]sauvegardez d\'abord votre aventure\n[CN]puis retournez au menu principal.",
+        german="[CN]Wenn du eine Bonusepisode spielen\n[CN]möchtest, speichere deinen Spielstand\n[CN]und kehre zum Hauptmenü zurück.",
+        italian="[CN]Se vuoi giocare all\'episodio speciale,\n[CN]salva i progressi della tua avventura\n[CN]e torna al menu principale.",
+        spanish="[CN]Si quieres jugar al capítulo especial,\n[CN]guarda tu progreso y\n[CN]vuelve al menú principal.",
+    });
+    message_Close();
+    screen_FadeOut(1, 30);
+    back_SetBackEffect(5);
+    Wait(30);
+    end;
+}

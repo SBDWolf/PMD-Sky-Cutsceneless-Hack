@@ -1,0 +1,120 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_TIME_RESTORED, 0, 200);
+    back_SetGround(LEVEL_V26P03A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    Wait(60);
+    message_SetActor(ACTOR_ATTENDANT1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It\'s [CS:P]Temporal Tower[CR].[K] It looks\npretty beaten up...",
+                french=" Et voilà la [CS:P]Tour du Temps[CR].[K]\nElle est en très mauvais état...",
+                german=" Das ist der [CS:P]Zeitturm[CR].[K] Er sieht\nganz schön ramponiert aus...",
+                italian=" La [CS:P]Torre del Tempo[CR]...[K] \nè piuttosto malconcia...",
+                spanish=" La [CS:P]Torre del Tiempo[CR]...[K] se ve\nmuy dañada.",
+            }
+        case 2:
+            {
+                english=" It\'s [CS:P]Temporal Tower[CR].[K] It seems\nto be badly damaged...",
+                french=" Et voilà la [CS:P]Tour du Temps[CR].[K]\nElle est en très mauvais état...",
+                german=" Das ist der [CS:P]Zeitturm[CR].[K] Er sieht\nziemlich beschädigt aus...",
+                italian=" La [CS:P]Torre del Tempo[CR]...[K] \nè molto danneggiata...",
+                spanish=" La [CS:P]Torre del Tiempo[CR]...[K] se ve\nmuy dañada.",
+            }
+        default:
+            {
+                english=" It\'s [CS:P]Temporal Tower[CR].[K]\nIt\'s wrecked all over...",
+                french=" Et voilà la [CS:P]Tour du Temps[CR].[K]\nElle est en très mauvais état...",
+                german=" Das ist der [CS:P]Zeitturm[CR].[K] Er sieht\nziemlich ruiniert aus...",
+                italian=" La [CS:P]Torre del Tempo[CR]...[K] \nè mezza distrutta...",
+                spanish=" La [CS:P]Torre del Tiempo[CR]...[K] se ve\nmuy dañada.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" But...[K]it\'s still standing!",
+                french=" Mais...[K] elle tient toujours debout!",
+                german=" Aber[K] er steht noch!",
+                italian=" Ma...[K] è ancora in piedi!",
+                spanish=" Pero...[K] ¡aún sigue en pie!",
+            }
+        case 2:
+            {
+                english=" But...[K]it\'s still standing!",
+                french=" Mais...[K] elle tient toujours debout!",
+                german=" Aber[K] er steht noch!",
+                italian=" Ma...[K] è ancora in piedi!",
+                spanish=" Pero...[K] ¡aún sigue en pie!",
+            }
+        default:
+            {
+                english=" But...[K]it\'s still standing!",
+                french=" Mais...[K] elle tient toujours debout!",
+                german=" Aber[K] er steht noch!",
+                italian=" Ma...[K] è ancora in piedi!",
+                spanish=" Pero...[K] ¡aún sigue en pie!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" [CS:P]Temporal Tower[CR] didn\'t\nfall apart...",
+                french=" La [CS:P]Tour du Temps[CR] ne s\'est pas\neffondrée...",
+                german=" Der [CS:P]Zeitturm[CR] ist nicht\neingestürzt...",
+                italian=" La [CS:P]Torre del Tempo[CR] non è\ncrollata...",
+                spanish=" No se ha derrumbado.",
+            }
+        case 2:
+            {
+                english=" [CS:P]Temporal Tower[CR] didn\'t\ncollapse...",
+                french=" La [CS:P]Tour du Temps[CR] ne s\'est pas\neffondrée...",
+                german=" Der [CS:P]Zeitturm[CR] ist nicht\nkollabiert...",
+                italian=" La [CS:P]Torre del Tempo[CR] non è\ncrollata...",
+                spanish=" No se ha derrumbado.",
+            }
+        default:
+            {
+                english=" [CS:P]Temporal Tower[CR] didn\'t\nbreak apart...",
+                french=" La [CS:P]Tour du Temps[CR] ne s\'est pas\neffondrée...",
+                german=" Der [CS:P]Zeitturm[CR] ist nicht\nauseinandergebrochen...",
+                italian=" La [CS:P]Torre del Tempo[CR] non è\ncrollata...",
+                spanish=" No se ha derrumbado.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It survived!",
+                french=" Elle a résisté!",
+                german=" Er hat es überstanden!",
+                italian=" Ha resistito!",
+                spanish=" ¡Sigue aquí!",
+            }
+        case 2:
+            {
+                english=" It survived!",
+                french=" Elle a résisté!",
+                german=" Er hat es überstanden!",
+                italian=" Ha resistito!",
+                spanish=" ¡Sigue aquí!",
+            }
+        default:
+            {
+                english=" It survived!",
+                french=" Elle a résisté!",
+                german=" Er hat es überstanden!",
+                italian=" Ha resistito!",
+                spanish=" ¡Sigue aquí!",
+            }
+    }
+    message_Close();
+    screen_WhiteOut(1, 60);
+    Wait(30);
+    end;
+}

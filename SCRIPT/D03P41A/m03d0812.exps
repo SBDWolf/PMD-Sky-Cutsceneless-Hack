@@ -1,0 +1,56 @@
+
+def 0 {
+    back_SetGround(LEVEL_D03P41A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    switch ( sector() ) {
+        case 0:
+        default:
+            §label_0;
+            screen_FlushOut(1, 0, 8, 0, 0, 0);
+            screen_FadeIn(1, 15);
+            Wait(30);
+            §label_2;
+            message_SetFace(ACTOR_NPC_SURIIPU, FACE_NORMAL, FACE_POS_STANDARD);
+            message_Talk({
+                english=" If you keep being difficult, it\nwill mean big trouble for you!",
+                french=" Si tu continues à faire des\ncaprices, tu vas avoir de gros ennuis!",
+                german=" Du bringst dich in\nSchwierigkeiten, wenn du nicht tust, was\nich sage!",
+                italian=" Se non fai quello che ti\nchiedo...[K] te ne pentirai!",
+                spanish=" Si no haces lo que te pido...[K]\nTendrás serios problemas.",
+            });
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            with (actor ACTOR_NPC_RURIRI) {
+                SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+            }
+            message_SetFace(ACTOR_NPC_RURIRI, FACE_TEARY_EYED, FACE_POS_TOP_C_FACEL);
+            message_Talk({
+                english=" H-h-h...HELP!",
+                french=" A... A L\'AIDE!",
+                german=" H-h-h...HILFE!",
+                italian=" A-A-A... Aiuto!",
+                spanish=" ¡So... socorro!",
+            });
+            message_Close();
+            switch ( sector() ) {
+                case 0:
+                default:
+                    screen_FadeOut(1, 15);
+                    §label_5;
+                    screen_FlushIn(1, 0, 1, 0, 0, 0);
+                    end;
+                case 1:
+                    se_Play(5139);
+                    screen_WhiteOut(1, 5);
+                    jump @label_5;
+            }
+            break;
+        case 1:
+            screen_FlushOut(1, 0, 6, 0, 0, 0);
+            screen_FadeIn(1, 5);
+            Wait(30);
+            jump @label_2;
+    }
+}

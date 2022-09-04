@@ -1,0 +1,28 @@
+
+def 0 {
+    back_SetGround(LEVEL_G01P04A);
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
+    supervision_LoadStation(LEVEL_G01P04A, 'UM13');
+    supervision_Station(6);
+    supervision_Acting(0);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_YONOWAARU) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_YONOWAARU) {
+        SetAnimation(2);
+    }
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    Wait(1);
+    screen_FadeIn(1, 30);
+    dungeon_mode(21) = DMODE_OPEN;
+    $SCENARIO_MAIN = scn[14, 6];
+    end;
+}

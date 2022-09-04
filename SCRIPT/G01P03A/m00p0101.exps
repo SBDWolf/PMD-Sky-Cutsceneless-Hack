@@ -1,0 +1,22 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
+    $SCENARIO_MAIN = scn[6, 3];
+    back_SetGround(LEVEL_G01P03A);
+    supervision_LoadStation(LEVEL_G01P03A, 'UM05');
+    supervision_Station(7);
+    supervision_Acting(0);
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetAnimation(2);
+    }
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    $PERFORMANCE_PROGRESS_LIST[5] = 1;
+    $PERFORMANCE_PROGRESS_LIST[29] = 1;
+    end;
+}

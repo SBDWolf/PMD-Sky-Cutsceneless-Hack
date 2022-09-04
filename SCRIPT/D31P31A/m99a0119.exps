@@ -1,0 +1,74 @@
+
+def 0 {
+    sound_Stop();
+    back_SetDungeonBanner(45, 0);
+    screen_FadeIn(1, 16);
+    Wait(60);
+    screen_FadeOut(1, 16);
+    Wait(15);
+    back_SetGround(LEVEL_D31P31A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_IN_THE_DEPTHS_OF_THE_PIT, 0, 256);
+    with (actor ACTOR_PLAYER_APPOINT) {
+        MovePositionMark(1, Position<'m0', 28.5, 37.5>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        MovePositionMark(1, Position<'m1', 31.5, 39.5>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        MovePositionMark(1, Position<'m2', 25.5, 39.5>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC3) {
+        MovePositionMark(1, Position<'m3', 28.5, 41.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_APPOINT);
+    Wait(15);
+    with (actor ACTOR_PLAYER_APPOINT) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    Wait(12);
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        ExecuteCommon(CORO_LOOK_AROUND_LEFT_FUNC_SERIES, 0);
+    }
+    Wait(4);
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        ExecuteCommon(CORO_LOOK_AROUND_DOWN_FUNC_SERIES, 0);
+    }
+    Wait(7);
+    with (actor ACTOR_ADVENTURE_NPC3) {
+        ExecuteCommon(CORO_LOOK_AROUND_RIGHT_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_APPOINT);
+    Wait(15);
+    message_Mail({
+        english="[CN]This appears to be the end of the dungeon.",
+        french="[CN]C\'est la fin du donjon.",
+        german="[CN]Dies scheint das Ende des Dungeons zu sein.",
+        italian="[CN]Questa sembra essere la fine del dungeon.",
+        spanish="[CN]Parece que este territorio se acaba aquí.",
+    });
+    message_Mail({
+        english="[CN]It\'s impossible to go any farther.[K]\n[CN]Let\'s go back to Treasure Town.",
+        french="[CN]Impossible d\'aller plus loin.[K]\n[CN]Retournons à Bourg-Trésor.",
+        german="[CN]Es ist unmöglich weiterzugehen.[K]\n[CN]Gehen wir zurück nach Schatzstadt.",
+        italian="[CN]È impossibile proseguire.[K]\n[CN]Torniamo a Borgo Tesoro.",
+        spanish="[CN]Es imposible ir más lejos.[K]\n[CN]Volvamos a Aldea Tesoro.",
+    });
+    message_Close();
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 60);
+    WaitBgm(BGM_IN_THE_DEPTHS_OF_THE_PIT);
+    message_Explanation({
+        english="[CN][player] cleared [CS:P]Mystifying Forest[CR]\n[CN]in admirable fashion!",
+        french="[CN][player] a brillamment terminé\n[CN]la [CS:P]Forêt Trompeuse[CR]!\n",
+        german="[CN][player] meisterte den [CS:P]Verwirrwald[CR]\n[CN]auf beeindruckende Weise!",
+        italian="[CN][player] ha completato la\n[CN][CS:P]Foresta Inganno[CR] in modo eccellente!",
+        spanish="[CN]¡[player] logró atravesar\n[CN]el [CS:P]Bosque Misterio[CR]!",
+    });
+    message_Close();
+    end;
+}

@@ -1,0 +1,65 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_RISING_FEAR, 0, 256);
+    back_SetGround(LEVEL_D42P41A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    message_SetFace(ACTOR_NPC_YUKIKABURI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Your money...[K]we\'re taking it!",
+        french=" ... ton argent...[K]\nc\'est le nôtre, maintenant!",
+        german=" Dein Geld...[K] Das nehmen wir!",
+        italian=" ... ma i tuoi soldi...[K] finiranno\nnelle nostre tasche!",
+        spanish=" Bueno, ese dinero que tenías...[K]\n¡Ya nos lo estás dando!",
+    });
+    message_Close();
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    WaitSe(5143);
+    message_SetFace(ACTOR_NPC_YUKIKABURI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Prepare yourself!",
+        french=" En garde!",
+        german=" Mach dich bereit!",
+        italian=" Preparati!",
+        spanish=" ¡Venga, afloja la cartera!",
+    });
+    message_Close();
+    se_Play(8972);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SPECIAL2, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Eeeeeeeeeek!!",
+        french=" Aaaaarrrgh!!",
+        german=" Ieeeeeeeek!!!",
+        italian=" Aaaaaaah!!!",
+        spanish=" ¡¡Aaaaay!!",
+    });
+    message_Close();
+    CallCommon(CORO_BOSS_WIPE_FUNC);
+    main_EnterDungeon(125, 30);
+    main_EnterDungeon(-1, 30);
+    hold;
+    end;
+}

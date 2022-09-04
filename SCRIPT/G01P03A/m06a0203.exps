@@ -1,0 +1,43 @@
+
+def 0 {
+    //sound_Stop();
+    $SCENARIO_MAIN = scn[7, 2];
+    $REQUEST_CLEAR_COUNT = 0;
+    back_SetGround(LEVEL_G01P03A);
+    supervision_Acting(0);
+    supervision_LoadStation(LEVEL_G01P03A, 'UM06');
+    supervision_Station(3);
+    supervision_Acting(10);
+    with (actor ACTOR_NPC_BIPPA) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetAnimation(2);
+    }
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetAnimation(4);
+    }
+    screen_FadeIn(1, 30);
+    end;
+}

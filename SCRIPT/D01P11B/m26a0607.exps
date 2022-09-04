@@ -1,0 +1,254 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_ON_THE_BEACH_AT_DUSK_SHORTENED, 0, 200);
+    bgm2_PlayFadeIn(BGM_OCEAN1, 0, 160);
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V01P03B);
+    back_SetGround(LEVEL_D01P11B);
+    supervision_Acting(0);
+    camera2_SetPositionMark(Position<'m0', 33, 9.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    supervision_SpecialActing(21, 600, 0);
+    supervision2_SpecialActing(21, 600, 0);
+    with (actor ACTOR_ATTENDANT1) {
+        SetOutputAttribute(2);
+    }
+    screen2_FadeIn(0, 30);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I haven\'t seen this for a long\ntime. It\'s just as beautiful as I remember.",
+                french=" Je n\'avais pas vu ça depuis\nlongtemps. C\'est aussi beau que dans\nmes souvenirs.",
+                german=" Ich habe das so lange nicht\ngesehen. Es ist immer noch so schön wie in\nmeiner Erinnerung.",
+                italian=" Non lo vedevo da un sacco di\ntempo. È sempre bello come ricordavo.",
+                spanish=" Hacía mucho que no veía la\npuesta de sol. Es tan hermosa como la\nrecordaba.",
+            }
+        case 2:
+            {
+                english=" I haven\'t seen this for a long\ntime. It\'s as beautiful as I remember.",
+                french=" Je n\'avais pas vu ça depuis\nlongtemps. C\'est aussi beau que dans\nmes souvenirs.",
+                german=" Ich habe das so lange nicht\ngesehen. Es ist immer noch so schön wie in\nmeiner Erinnerung.",
+                italian=" Non lo vedevo da un sacco di\ntempo. È sempre bello come ricordavo.",
+                spanish=" Hacía mucho que no veía la\npuesta de sol. Es tan hermosa como la\nrecordaba.",
+            }
+        default:
+            {
+                english=" I haven\'t seen this for a long\ntime. It\'s as pretty as I remember.",
+                french=" Je n\'avais pas vu ça depuis\nlongtemps. C\'est aussi beau que dans\nmes souvenirs.",
+                german=" Ich habe das so lange nicht\ngesehen. Es ist immer noch so schön wie in\nmeiner Erinnerung.",
+                italian=" Non lo vedevo da un sacco di\ntempo. È sempre bello come ricordavo.",
+                spanish=" Hacía mucho que no veía la\npuesta de sol. Es tan hermosa como la\nrecordaba.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I\'ve been too busy to come and\nsee it.",
+                french=" Ces derniers temps, j\'étais trop\noccupé pour venir voir ça.",
+                german=" Ich war einfach zu beschäftigt,\num herzukommen und es mir anzusehen.",
+                italian=" Avevo troppe cose da fare per\nvenire qui.",
+                spanish=" He estado tan ocupado que no\nhe tenido tiempo para venir a contemplarla.",
+            }
+        case 2:
+            {
+                english=" I\'ve just been too busy to come\nand see it.",
+                french=" Ces derniers temps, j\'étais trop\noccupé pour venir voir ça.",
+                german=" Ich war einfach zu beschäftigt,\num herzukommen und es mir anzusehen.",
+                italian=" Ero troppo impegnato per venire\na vederlo.",
+                spanish=" He estado tan ocupado que no\nhe tenido tiempo para venir a contemplarla.",
+            }
+        default:
+            {
+                english=" I\'ve been too busy to come and\nsee it.",
+                french=" Ces derniers temps, j\'étais trop\noccupée pour venir voir ça.",
+                german=" Ich war einfach zu beschäftigt,\num herzukommen und es mir anzusehen.",
+                italian=" Ero troppo impegnata per venire\na vederlo.",
+                spanish=" He estado tan ocupada que no\nhe tenido tiempo para venir a contemplarla.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" But I\'ve missed this...[K]\nfantastic sight.",
+                french=" Mais ça m\'a beaucoup manqué...[K]\nC\'est un spectacle féerique.",
+                german=" Aber ich habe es vermisst...[K]\nEin fantastischer Anblick.",
+                italian=" Ma mi è mancata...[K] questa \nsplendida vista.",
+                spanish=" Pero echaba de menos...[K] esta\nfantástica vista.",
+            }
+        case 2:
+            {
+                english=" But I\'ve missed this...[K]\nfantastic sight.",
+                french=" Mais ça m\'a beaucoup manqué...[K]\nC\'est un spectacle féerique.",
+                german=" Aber ich habe es vermisst...[K]\nEin fantastischer Anblick.",
+                italian=" Ma mi è mancata...[K] questa \nsplendida vista.",
+                spanish=" Pero echaba de menos...[K] esta\nfantástica vista.",
+            }
+        default:
+            {
+                english=" But I\'ve missed this...[K]\nfantastic sight.",
+                french=" Mais ça m\'a beaucoup manqué...[K]\nC\'est un spectacle féerique.",
+                german=" Aber ich habe es vermisst...[K]\nEin fantastischer Anblick.",
+                italian=" Ma mi è mancata...[K] questa \nsplendida vista.",
+                spanish=" Pero echaba de menos...[K] esta\nfantástica vista.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_FadeOut(210);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" ..................",
+                french=" ..................",
+                german=" ..................",
+                italian=" ..................",
+                spanish=" ...",
+            }
+        case 2:
+            {
+                english=" ..................",
+                french=" ..................",
+                german=" ..................",
+                italian=" ..................",
+                spanish=" ...",
+            }
+        default:
+            {
+                english=" ..................",
+                french=" ..................",
+                german=" ..................",
+                italian=" ..................",
+                spanish=" ...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" When was the last time I saw\nthis, anyway?",
+                french=" Je me demande à quand remonte\nla dernière fois que je l\'ai vu...",
+                german=" Wann habe ich das überhaupt\nzuletzt gesehen?",
+                italian=" Quand\'è stata l\'ultima volta,\ncomunque?",
+                spanish=" ¿Cuándo fue la última vez\nque disfruté de esta vista?",
+            }
+        case 2:
+            {
+                english=" I wonder when it was when I\nlast saw this...",
+                french=" Je me demande à quand remonte\nla dernière fois que je l\'ai vu...",
+                german=" Ich frage mich, wann ich das\nzuletzt gesehen habe...",
+                italian=" Chissà quand\'è stata l\'ultima \nvolta...",
+                spanish=" ¿Cuándo fue la última vez\nque disfruté de esta vista?",
+            }
+        default:
+            {
+                english=" When was the last time I saw\nthis, anyway?",
+                french=" Je me demande à quand remonte\nla dernière fois que je l\'ai vu...",
+                german=" Wann habe ich das überhaupt\nzuletzt gesehen?",
+                italian=" Quand\'è stata l\'ultima volta,\ncomunque?",
+                spanish=" ¿Cuándo fue la última vez\nque disfruté de esta vista?",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" The last time was...",
+                french=" La dernière fois remonte à...",
+                german=" Das letzte Mal war...",
+                italian=" L\'ultima volta è stata...",
+                spanish=" La última vez...",
+            }
+        case 2:
+            {
+                english=" The last time was...",
+                french=" La dernière fois remonte à...",
+                german=" Das letzte Mal war...",
+                italian=" L\'ultima volta è stata...",
+                spanish=" La última vez...",
+            }
+        default:
+            {
+                english=" The last time was...",
+                french=" La dernière fois remonte à...",
+                german=" Das letzte Mal war...",
+                italian=" L\'ultima volta è stata...",
+                spanish=" La última vez...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(30);
+    se_Play(8978);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(30);
+    bgm2_FadeOut(160);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Oh...[K] The last time I saw this...",
+                french=" Oh...[K] La dernière fois\nque j\'ai vu ça...",
+                german=" Oh...[K] Das letzte Mal war...",
+                italian=" Oh...[K] L\'ultima volta è stata...",
+                spanish=" Oh...[K] La última vez fue...",
+            }
+        case 2:
+            {
+                english=" Oh...[K] The last time I saw this...",
+                french=" Oh...[K] La dernière fois\nque j\'ai vu ça...",
+                german=" Oh...[K] Das letzte Mal war...",
+                italian=" Oh...[K] L\'ultima volta è stata...",
+                spanish=" Oh...[K] La última vez fue...",
+            }
+        default:
+            {
+                english=" Oh...[K] The last time I saw this...",
+                french=" Oh...[K] La dernière fois\nque j\'ai vu ça...",
+                german=" Oh...[K] Das letzte Mal war...",
+                italian=" Oh...[K] L\'ultima volta è stata...",
+                spanish=" Oh...[K] La última vez fue...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It was when...[K]when I met\n[hero]...",
+                french=" C\'était quand...[K] quand j\'ai\nrencontré [hero]...",
+                german=" Es war,[K] als ich [hero]\ntraf...",
+                italian=" ... quando...[K] quando ho\nconosciuto [hero]...",
+                spanish=" Fue...[K] cuando conocí a\n[hero].",
+            }
+        case 2:
+            {
+                english=" It was when...[K]when I met\n[hero]...",
+                french=" C\'était quand...[K] quand j\'ai\nrencontré [hero]...",
+                german=" Es war,[K] als ich [hero]\ntraf...",
+                italian=" ... quando...[K] quando ho\nconosciuto [hero]...",
+                spanish=" Fue...[K] cuando conocí a\n[hero].",
+            }
+        default:
+            {
+                english=" It was when...[K]when I met\n[hero]...",
+                french=" C\'était quand...[K] quand j\'ai\nrencontré [hero]...",
+                german=" Es war,[K] als ich [hero]\ntraf...",
+                italian=" ... quando...[K] quando ho\nconosciuto [hero]...",
+                spanish=" Fue...[K] cuando conocí a\n[hero].",
+            }
+    }
+    message_Close();
+    screen2_FadeOut(0, 30);
+    screen_FadeOut(1, 30);
+    back2_SetMode(0);
+    supervision_SpecialActing(3, 0, 0);
+    supervision2_SpecialActing(3, 0, 0);
+    end;
+}

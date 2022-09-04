@@ -1,0 +1,222 @@
+
+def 0 {
+    sound_Stop();
+    message_SetFace(ACTOR_NPC_BIPPA, FACE_SAD, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Oof... By gosh, we couldn\'t get\nthrough there...",
+        french=" Ouf... Sapristi, on s\'est plantés\nen beauté...",
+        german=" Uff... Donnerwetter, wir sind\nnicht durchgekommen...",
+        italian=" Uff... Ohibò, non siamo riusciti a\npassare...",
+        spanish=" Ay... No hemos podido pasar.",
+    });
+    message_KeyWait();
+    screen_FadeOutAll(1, 60);
+    message_CloseEnforce();
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    back_SetGround(LEVEL_D06P11A);
+    supervision_LoadStation(LEVEL_D06P11A, 'UM08');
+    supervision_StationCommon(0);
+    supervision_Station(3);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_CRAGGY_COAST, 0, 256);
+    Wait(30);
+    WaitLockLives(5, ACTOR_PLAYER);
+    Unlock(5);
+    Wait(15);
+    Unlock(7);
+    Wait(15);
+    Unlock(9);
+    Lock(3);
+    Wait(15);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I think we got cocky and\ncareless.",
+                french=" On a dû être un peu trop\nimprudents.",
+                german=" Ich glaube, wir haben uns\nüberschätzt und sind leichtsinnig geworden.",
+                italian=" Siamo stati troppo sicuri\ne spericolati.",
+                spanish=" Creo que nos hemos\nconfiado más de la cuenta.",
+            }
+        case 2:
+            {
+                english=" I guess we got a little careless.",
+                french=" On a dû être un peu trop\nimprudents.",
+                german=" Ich glaube, wir waren etwas zu\nleichtsinnig.",
+                italian=" Siamo stati troppo sicuri\ne spericolati.",
+                spanish=" Creo que nos hemos confiado.",
+            }
+        default:
+            {
+                english=" Maybe we got a little careless.",
+                french=" On a dû être un peu trop\nimprudents.",
+                german=" Vielleicht waren wir etwas zu\nleichtsinnig.",
+                italian=" Siamo stati troppo sicuri\ne spericolati.",
+                spanish=" Supongo que nos hemos confiado.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_BIPPA);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_BIPPA);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    se_Play(8972);
+    with (actor ACTOR_NPC_BIPPA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_BIPPA);
+    message_SetFace(ACTOR_NPC_BIPPA, FACE_SAD, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(-1, 0);
+    message_Talk({
+        english=" It\'s because I\'m not pulling my\nown weight here, isn\'t it...",
+        french=" C\'est pasque j\'ai pas fait mon\ntravail comme il faut, pour sûr...",
+        german=" Es liegt daran, dass ich euch\nzur Last falle, oder?",
+        italian=" È perché non mi sono impegnato\na sufficienza, vero?",
+        spanish=" Supongo que es porque yo no\nestoy a la altura...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    WaitExecuteLives(ACTOR_NPC_BIPPA);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" No, [CS:N]Bidoof[CR], it\'s not your fault.\nWe\'re a team, and that\'s what\'s important.",
+                french=" Mais non, [CS:N]Keunotor[CR], ce n\'est pas\nta faute. Nous sommes une équipe et c\'est ça\nqui compte.",
+                german=" Nein, [CS:N]Bidiza[CR], es liegt nicht an\ndir. Wir sind ein Team und das ist, was zählt.",
+                italian=" No, [CS:N]Bidoof[CR], non è colpa tua.\nSiamo una squadra ed è questo che conta.",
+                spanish=" No, [CS:N]Bidoof[CR], no es culpa tuya.\nSomos un equipo hasta el final.",
+            }
+        case 2:
+            {
+                english=" No, [CS:N]Bidoof[CR], it\'s not your fault.\nWe\'re a team, and that\'s what\'s important.",
+                french=" Mais non, [CS:N]Keunotor[CR], ce n\'est pas\nta faute. Nous sommes une équipe et c\'est ça\nqui compte.",
+                german=" Nein, [CS:N]Bidiza[CR], es liegt nicht an\ndir. Wir sind ein Team und das ist, was zählt.",
+                italian=" No, [CS:N]Bidoof[CR], non è colpa tua.\nSiamo una squadra ed è questo che conta.",
+                spanish=" No, [CS:N]Bidoof[CR], no es culpa tuya.\nSomos un equipo hasta el final.",
+            }
+        default:
+            {
+                english=" No, [CS:N]Bidoof[CR], it\'s not your fault.\nWe\'re a team, and that\'s what\'s important.",
+                french=" Mais non, [CS:N]Keunotor[CR], ce n\'est pas\nta faute. Nous sommes une équipe et c\'est ça\nqui compte.",
+                german=" Nein, [CS:N]Bidiza[CR], es liegt nicht an\ndir. Wir sind ein Team und das ist, was zählt.",
+                italian=" No, [CS:N]Bidoof[CR], non è colpa tua.\nSiamo una squadra ed è questo che conta.",
+                spanish=" No, [CS:N]Bidoof[CR], no es culpa tuya.\nSomos un equipo hasta el final.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We need to hurry so we can\nmeet up with the others at the base camp.",
+                french=" Nous devons nous dépêcher de\nrejoindre les autres au camp de base.",
+                german=" Wir müssen uns beeilen,\num die anderen am Basislager zu treffen.",
+                italian=" Dobbiamo affrettarci per \nincontrare gli altri al Campo Base.",
+                spanish=" Hay que darse prisa\npara encontrarnos con los demás\nen el campamento base.",
+            }
+        case 2:
+            {
+                english=" We should hurry so we can\nlink up with the others at the base camp.",
+                french=" Nous devons nous dépêcher de\nrejoindre les autres au camp de base.",
+                german=" Wir sollten uns beeilen, damit\nwir die anderen am Basislager treffen können.",
+                italian=" Dobbiamo affrettarci per \nincontrare gli altri al Campo Base.",
+                spanish=" Debemos apresurarnos para\nreunirnos con los demás en el campamento\nbase.",
+            }
+        default:
+            {
+                english=" Let\'s hurry so we can join the\nothers at the base camp.",
+                french=" Nous devons nous dépêcher de\nrejoindre les autres au camp de base.",
+                german=" Beeilen wir uns, damit wir die\nanderen am Basislager treffen können.",
+                italian=" Dobbiamo affrettarci per \nincontrare gli altri al Campo Base.",
+                spanish=" Démonos prisa para reunirnos\ncon los demás en el campamento base.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Let\'s get it done!",
+                french=" Finissons-en!",
+                german=" Wir schaffen das!",
+                italian=" Forza!",
+                spanish=" ¡A por ello!",
+            }
+        case 2:
+            {
+                english=" Let\'s get it done!",
+                french=" Finissons-en!",
+                german=" Wir schaffen das!",
+                italian=" Forza!",
+                spanish=" ¡Venga, vamos!",
+            }
+        default:
+            {
+                english=" Let\'s get it done!",
+                french=" Finissons-en!",
+                german=" Wir schaffen das!",
+                italian=" Forza!",
+                spanish=" ¡Adelante!",
+            }
+    }
+    message_Close();
+    end;
+}
+
+def 1 for_actor(ACTOR_PLAYER) {
+    SetDirection(DIR_RIGHT);
+    SetAnimation(76);
+    Lock(5);
+    CallCommon(CORO_WAKEUP_FUNC);
+    CallCommon(CORO_LOOK_AROUND_FUNC);
+    Lock(6);
+    hold;
+}
+
+def 2 for_actor(ACTOR_ATTENDANT1) {
+    SetDirection(DIR_LEFT);
+    SetAnimation(76);
+    Lock(7);
+    CallCommon(CORO_WAKEUP_FUNC);
+    CallCommon(CORO_LOOK_AROUND_FUNC);
+    Unlock(3);
+    Lock(8);
+    hold;
+}
+
+def 3 for_actor(ACTOR_NPC_BIPPA) {
+    SetPositionInitial();
+    SetAnimation(2);
+    Lock(9);
+    Lock(10);
+    hold;
+}

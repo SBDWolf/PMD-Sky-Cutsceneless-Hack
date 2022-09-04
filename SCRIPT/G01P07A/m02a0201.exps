@@ -1,0 +1,516 @@
+
+def 0 {
+    sound_Stop();
+    message_Narration(30, {
+        english="[CN]The next morning...",
+        french="[CN]Le lendemain matin...",
+        german="[CN]Am nächsten Morgen...",
+        italian="[CN]La mattina dopo...",
+        spanish="[CN]A la mañana siguiente...",
+    });
+    message_Close();
+    Wait(30);
+    se_Play(8971);
+    message_ResetActor();
+    message_Talk({
+        english=" HEY![K] HEY THERE!",
+        french=" HEP![K] HOP HOP HOP, VOUS DEUX!",
+        german=" HEY![K] HEY, IHR!",
+        italian=" EHI![K] EHI VOI!",
+        spanish=" ¡VENGA![K] ¡ARRIBA!",
+    });
+    message_KeyWait();
+    se_Play(8970);
+    message_Talk({
+        english=" RISE AND SHINE!",
+        french=" DEBOUT LA-DEDANS!",
+        german=" RAUS AUS DEN FEDERN!",
+        italian=" È ORA DI ALZARSI!",
+        spanish=" ¡HORA DE LEVANTARSE!",
+    });
+    WaitSe(8970);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER, FACE_DIZZY, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Ugh!)",
+                french="(Argh!)",
+                german="(Umpf!)",
+                italian="(Ugh!)",
+                spanish="(¡Ah!)",
+            }
+        default:
+            {
+                english="(Ugh!)",
+                french="(Argh!)",
+                german="(Umpf!)",
+                italian="(Ugh!)",
+                spanish="(¡Uf!)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(M-my head is pounding!)",
+                french="(Ah... ma... ma tête! Ça fait mal!)",
+                german="(M-mir brummt der Schädel!)",
+                italian="(Mi rimbomba la testa!)",
+                spanish="(¡Tengo la cabeza como un bombo!)",
+            }
+        default:
+            {
+                english="(M-my head is pounding!)",
+                french="(Ah... ma... ma tête! Ça fait mal!)",
+                german="(M-mir brummt der Schädel!)",
+                italian="(Mi rimbomba la testa!)",
+                spanish="(¡Qué susto!)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Wh-what a ridiculously loud voice! It almost\nblasted my eardrums!)",
+                french="(Quelle voix ridiculement forte! Pourquoi\nil crie comme ça? J\'ai l\'impression qu\'il\nm\'a perforé les tympans!)",
+                german="(W-was für eine lächerlich laute Stimme!\nMir ist fast das Trommelfell geplatzt!)",
+                italian="(Mai sentita una voce così! Mi ha quasi \nspaccato i timpani!)",
+                spanish="(¡Menudo vozarrón! ¡Casi me rompe\nlos tímpanos!)",
+            }
+        default:
+            {
+                english="(Wh-what a ridiculously loud voice! It almost\nblasted my eardrums!)",
+                french="(Quelle voix ridiculement forte! Pourquoi\nil crie comme ça? J\'ai l\'impression qu\'il\nm\'a perforé les tympans!)",
+                german="(W-was für eine lächerlich laute Stimme!\nMir ist fast das Trommelfell geplatzt!)",
+                italian="(Mai sentita una voce così! Mi ha quasi \nspaccato i timpani!)",
+                spanish="(¡Vaya vozarrón! ¡Casi me rompe\nlos tímpanos!)",
+            }
+    }
+    message_Close();
+    back_SetGround(LEVEL_G01P07A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(68);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(68);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    se_Play(8971);
+    camera_SetEffect(2, 2, 33536);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(19);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(2);
+    }
+    camera_SetEffect(0, 0, 0);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_ANGRY, 3);
+    }
+    message_SetFaceOnly(ACTOR_NPC_DOGOOMU, FACE_ANGRY, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" Why are you still ASLEEP?![K] WAKE UP!",
+        french=" Vous dormez ENCORE?![K] DEBOUT!",
+        german=" Wieso seid ihr noch IM BETT?!?[K]\nWACHT AUF!",
+        italian=" Cosa ci fate ancora A LETTO?![K] SVEGLIA!",
+        spanish=" ¿CÓMO PODÉIS ESTAR DURMIENDO?[K]\n¡VAMOS, ARRIBA!",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    message_SetFace(ACTOR_PLAYER, FACE_DIZZY, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Ugh!)",
+                french="(Argh!)",
+                german="(Umpf!)",
+                italian="(Ugh!)",
+                spanish="(¡Uf!)",
+            }
+        default:
+            {
+                english="(Ugh!)",
+                french="(Argh!)",
+                german="(Umpf!)",
+                italian="(Ugh!)",
+                spanish="(¡Ah!)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_DIZZY, FACE_POS_BOTTOM_C_FACEL);
+    message_FacePositionOffset(-3, 0);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" M-my ears...",
+                french=" M-mes oreilles...",
+                german=" M-meine Ohren...",
+                italian=" L-Le mie orecchie...",
+                spanish=" Mis oídos...",
+            }
+        case 2:
+            {
+                english=" M-my poor ears...",
+                french=" M-mes oreilles...",
+                german=" M-meine armen Ohren...",
+                italian=" L-Le mie povere orecchie...",
+                spanish=" Mis pobres oídos...",
+            }
+        default:
+            {
+                english=" M-my poor ears...",
+                french=" M-mes oreilles...",
+                german=" M-meine armen Ohren...",
+                italian=" L-Le mie povere orecchie...",
+                spanish=" Mis pobres oídos...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8971);
+    camera_SetEffect(2, 2, 33536);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(2);
+    }
+    camera_SetEffect(0, 0, 0);
+    message_SetFaceOnly(ACTOR_NPC_DOGOOMU, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" C\'mon! Snap OUT of it!",
+        french=" Allez! SECOUEZ-vous! HOP HOP HOP!",
+        german=" Na los! RAUS aus der Falle!",
+        italian=" Forza! IN PIEDI!",
+        spanish=" ¡DESPERTAD DE UNA VEZ!",
+    });
+    message_Talk({
+        english=" I\'m [CS:N]Loudred[CR]![K] And I\'m a fellow apprentice!",
+        french=" Moi c\'est [CS:N]Ramboum[CR]![K] Et je suis\napprenti comme vous!",
+        german=" Ich bin [CS:N]Krakeelo[CR]![K] Ich bin auch ein Lehrling!",
+        italian=" Mi chiamo [CS:N]Loudred[CR]![K] E sono \nanch\'io un apprendista!",
+        spanish=" ¡Soy [CS:N]Loudred[CR]![K] ¡Yo también soy aprendiz!",
+    });
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" If you\'re late for our morning\nbriefing, you\'ll be SORRY! So MOVE it!",
+        french=" Si vous êtes en retard pour\nla réunion du matin, ça va BARDER pour\nvous! Alors on se GROUILLE!",
+        german=" Wenn ihr zu spät zur\nmorgendlichen Einweisung kommt, werdet ihr\nes BEREUEN! Also LOS!",
+        italian=" Se arrivate in ritardo per la \nriunione mattutina, saranno GUAI! Quindi \nDATEVI UNA MOSSA!!",
+        spanish=" Si llegáis tarde a la reunión de\nesta mañana... ¡LO VAIS A LAMENTAR!\nVENGA... ¡LEVANTAOS!",
+    });
+    message_Talk({
+        english=" Guildmaster [CS:N]Wigglytuff[CR] has got\na BIG temper. If you make him lose it...",
+        french=" Le Maître de la Guilde,\n[CS:N]Grodoudou[CR], est très SOUPE AU LAIT!\nSi vous le mettez en colère...",
+        german=" Unser Gildenmeister [CS:N]Knuddeluff[CR]\nist SEHR temperamentvoll. Wenn ihr ihn\nreizt...",
+        italian=" Il Capitano [CS:N]Wigglytuff[CR] ha un\nCARATTERACCIO. Se perde le staffe...",
+        spanish=" El Gran Bluff tiene mucho carácter.\nComo pierda la paciencia...",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2DirectionTurn(4, 10, 5);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_NORMAL, FACE_POS_TOP_L_FACEOUTW);
+    message_Talk({
+        english=" YOWEEE! That would be one very\nscary scene!",
+        french=" OUILLE! Vous auriez de gros\nproblèmes, c\'est moi qui vous le dis!",
+        german=" OH MANN! Das wäre vielleicht\neine gruselige Szene!",
+        italian=" IIIIIIHHHH! Quella sì che\nsarebbe una scena spaventosa!",
+        spanish=" ¡No me gustaría estar presente!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(5);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(30);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(9);
+    }
+    message_Talk({
+        english=" I\'ve got goose bumps just\nthinking about it! YEESH!",
+        french=" Rien que d\'y penser, j\'en ai\nla chair de poule! OUAIS!",
+        german=" Schon bei der Vorstellung kriege\nich Gänsehaut! AU BACKE!",
+        italian=" Mi viene la pelle d\'oca solo a \npensarci!",
+        spanish=" ¡Me dan escalofríos de pensarlo!\n¡YA LO CREO!",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(2);
+    }
+    Wait(45);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2DirectionTurn(1, 10, 5);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    se_Play(8971);
+    camera_SetEffect(2, 2, 33536);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(2);
+    }
+    camera_SetEffect(0, 0, 0);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" So ANYWAY...",
+        french=" Enfin BREF!",
+        german=" Aber WIE AUCH IMMER...",
+        italian=" Beh, IN OGNI CASO...",
+        spanish=" Así que...",
+    });
+    message_Talk({
+        english=" I\'m not about to get in trouble\nbecause you rookies got up LATE!",
+        french=" Je vais pas m\'attirer des ennuis\ntout ça parce que vous, les novices, vous\nêtes en RETARD!",
+        german=" Ich werde mir keinen Ärger\neinhandeln, weil ihr Neulinge zu SPÄT kommt!",
+        italian=" Non ho alcuna intenzione di \nfinire nei guai perché voi due avete\ndormito TROPPO!",
+        spanish=" ¡No pienso meterme en un lío\nsi llegáis tarde!",
+    });
+    message_Talk({
+        english=" SO GET IT IN GEAR!",
+        french=" ALORS REMUEZ-VOUS!",
+        german=" ALSO KOMMT IN DIE GÄNGE!",
+        italian=" QUINDI DATEVI UNA MOSSA!",
+        spanish=" ¡PREPARAOS!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        MovePositionOffset(33152, -96, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Destroy();
+    }
+    Wait(60);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_DIZZY, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Urk! My ears are still ringing...",
+                french=" Argh! Mes oreilles\nen bourdonnent encore...",
+                german=" Urgs! Meine Ohren klingeln\nimmer noch...",
+                italian=" Ugh... Le orecchie mi fanno\nancora male.",
+                spanish=" Uf... Todavía me zumban\nlos oídos...",
+            }
+        case 2:
+            {
+                english=" Urk! My ears are still ringing...",
+                french=" Argh! Mes oreilles\nen bourdonnent encore...",
+                german=" Urgs! Meine Ohren klingeln\nimmer noch...",
+                italian=" Ugh... Le orecchie mi fanno\nancora male.",
+                spanish=" Uf... Todavía me zumban\nlos oídos...",
+            }
+        default:
+            {
+                english=" Urk! My ears are still ringing...",
+                french=" Argh! Mes oreilles\nen bourdonnent encore...",
+                german=" Urgs! Meine Ohren klingeln\nimmer noch...",
+                italian=" Ugh... Le orecchie mi fanno\nancora male.",
+                spanish=" Uf... Todavía me zumban\nlos oídos...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" What did he say? Something\nabout getting ready?",
+                french=" Qu\'est-ce qu\'il a dit?\n\"Préparez-vous\", ou quelque chose comme ça?",
+                german=" Von was hat er geredet?\nIrgendwas von Aufstehen?",
+                italian=" Cos\'ha detto? Dobbiamo\nprepararci?",
+                spanish=" ¿Tú te has enterado?\n¿Ha dicho algo de prepararse?",
+            }
+        case 2:
+            {
+                english=" What did he say? Something\nabout getting ready?",
+                french=" Qu\'est-ce qu\'il a dit?\n\"Préparez-vous\", ou quelque chose comme ça?",
+                german=" Von was hat er geredet?\nIrgendwas von Aufstehen?",
+                italian=" Cos\'ha detto? Dobbiamo\nprepararci?",
+                spanish=" ¿Tú te has enterado?\n¿Nos ha dicho que nos preparemos?",
+            }
+        default:
+            {
+                english=" What did he say? Something\nabout getting ready?",
+                french=" Qu\'est-ce qu\'il a dit?\n\"Préparez-vous\", ou quelque chose comme ça?",
+                german=" Von was hat er geredet?\nIrgendwas von Aufstehen?",
+                italian=" Cos\'ha detto? Dobbiamo\nprepararci?",
+                spanish=" ¿Tú le has entendido?\n¿Ha dicho algo sobre prepararse?",
+            }
+    }
+    message_Close();
+    Wait(20);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    se_Play(8967);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Er...[K] Oh yeah!",
+                french=" Euh...[K] Ah oui!",
+                german=" Ähem...[K] Oh ja!",
+                italian=" Ehm...[K] Oh, già!",
+                spanish=" Esto...[K] ¡Ah, sí!",
+            }
+        case 2:
+            {
+                english=" Er...[K] Oh yeah!",
+                french=" Euh...[K] Ah oui!",
+                german=" Ähem...[K] Oh ja!",
+                italian=" Ehm...[K] Oh, già!",
+                spanish=" Esto...[K] ¡Ah, sí!",
+            }
+        default:
+            {
+                english=" Er...[K] Oh yeah!",
+                french=" Euh...[K] Ah oui!",
+                german=" Ähem...[K] Oh ja!",
+                italian=" Ehm...[K] Oh, già!",
+                spanish=" Esto...[K] ¡Ah, sí!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We signed up as apprentices at\n[CS:N]Wigglytuff[CR]\'s guild, that\'s right!",
+                french=" C\'est vrai, ils ont accepté notre\ninscription parmi les apprentis de la Guilde\nde [CS:N]Grodoudou[CR]!",
+                german=" Wir haben uns ja bei der\n[CS:N]Knuddeluff-Gilde[CR] als Lehrlinge eingeschrieben!",
+                italian=" È vero, siamo apprendisti alla\nGilda di [CS:N]Wigglytuff[CR]!",
+                spanish=" ¡Claro, ayer nos apuntamos como\naprendices en el [CS:N]Pokégremio de Exploradores[CR]!",
+            }
+        case 2:
+            {
+                english=" We signed up as apprentices at\n[CS:N]Wigglytuff[CR]\'s guild, that\'s right!",
+                french=" C\'est vrai, ils ont accepté notre\ninscription parmi les apprentis de la Guilde\nde [CS:N]Grodoudou[CR]!",
+                german=" Wir haben uns ja bei der\n[CS:N]Knuddeluff-Gilde[CR] als Lehrlinge eingeschrieben!",
+                italian=" È vero, siamo apprendisti alla\nGilda di [CS:N]Wigglytuff[CR]!",
+                spanish=" ¡Claro, ayer nos apuntamos como\naprendices en el [CS:N]Pokégremio de Exploradores[CR]!",
+            }
+        default:
+            {
+                english=" We signed up as apprentices at\n[CS:N]Wigglytuff[CR]\'s guild, that\'s right!",
+                french=" C\'est vrai, ils ont accepté notre\ninscription parmi les apprentis de la Guilde\nde [CS:N]Grodoudou[CR]!",
+                german=" Wir haben uns ja bei der\n[CS:N]Knuddeluff-Gilde[CR] als Lehrlinge eingeschrieben!",
+                italian=" È vero, siamo Pokémon \napprendisti alla Gilda di [CS:N]Wigglytuff[CR]!",
+                spanish=" ¡Claro, ayer nos apuntamos como\naprendices en el [CS:N]Pokégremio de Exploradores[CR]!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" But that means...",
+                french=" Mais alors, dans ce cas...",
+                german=" Aber das heißt ja...",
+                italian=" Questo vuol dire...",
+                spanish=" Pero entonces...",
+            }
+        case 2:
+            {
+                english=" But that means...",
+                french=" Mais alors, dans ce cas...",
+                german=" Aber das heißt ja...",
+                italian=" Questo vuol dire...",
+                spanish=" Pero eso significa que...",
+            }
+        default:
+            {
+                english=" But that means...",
+                french=" Mais alors, dans ce cas...",
+                german=" Aber das heißt ja...",
+                italian=" Questo vuol dire...",
+                spanish=" Pero eso quiere decir que...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8974);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Oh no! We totally overslept!\nHurry up, [hero]!",
+                french=" Oh non! On a dormi trop\nlongtemps! Dépêche-toi, [hero]!",
+                german=" Oh nein! Wir haben total\nverschlafen, [hero]! Beeile dich!",
+                italian=" Oh, no! Abbiamo dormito troppo!\nSbrighiamoci, [hero]!",
+                spanish=" ¡Oh, no! ¡Nos hemos quedado\ndormidos! ¡Rápido, [hero]!",
+            }
+        case 2:
+            {
+                english=" Waaaah! We totally overslept!\nWe\'ve got to hurry, [hero]!",
+                french=" Oh non! On a dormi trop\nlongtemps! Dépêche-toi, [hero]!",
+                german=" Waaaah! Wir haben verschlafen!\nWir müssen uns beeilen, [hero]!",
+                italian=" Oh, no! Abbiamo dormito troppo!\nSbrighiamoci, [hero]!",
+                spanish=" ¡Oh, no! ¡Nos hemos quedado\ndormidos! ¡Hay que apresurarse, [hero]!",
+            }
+        default:
+            {
+                english=" Waaaah! We overslept!\nCome on, [hero]!",
+                french=" Oh non! On a dormi trop\nlongtemps! Dépêche-toi, [hero]!",
+                german=" Waaaah! Wir haben verschlafen!\nKomm schon, [hero]!",
+                italian=" Oh, no! Abbiamo dormito troppo!\nSbrighiamoci, [hero]!",
+                spanish=" ¡Oh, no! ¡Hemos dormido más de\nla cuenta! ¡Vamos, [hero]!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        MovePositionOffset(3, -180, 0);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionOffset(3, -160, 0);
+    }
+    Wait(45);
+    screen_FadeOut(1, 30);
+    end;
+}

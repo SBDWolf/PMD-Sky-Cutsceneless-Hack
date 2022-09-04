@@ -1,0 +1,531 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_P04P01C);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD_REMIX, 0, 256);
+    se_Play(6916);
+    with (actor ACTOR_NPC_HEIGANI) {
+        MovePositionMark(1, Position<'m0', 19.5, 75.5>);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        MovePositionMark(1, Position<'m1', 25, 76.5>);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionMark(1, Position<'m2', 15, 76.5>);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        MovePositionMark(1, Position<'m3', 20, 83>);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        MovePositionMark(1, Position<'m4', 17, 80>);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        MovePositionMark(1, Position<'m5', 12.5, 79.5>);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        MovePositionMark(1, Position<'m6', 23, 79.5>);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        MovePositionMark(1, Position<'m7', 25, 82.5>);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        MovePositionMark(1, Position<'m8', 15, 82.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    se_FadeOut(6916, 90);
+    WaitExecuteLives(ACTOR_NPC_DIGUDA);
+    message_SetFace(ACTOR_NPC_KIMAWARI, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" Whew! Here we are at last!",
+        french=" Ouf! Nous y voilà enfin!",
+        german=" Puh! Endlich sind wir da!",
+        italian=" Fiuu! Eccoci qui finalmente!",
+        spanish=" ¡Uf! ¡Por fin llegamos!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_DAGUTORIO, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" No time to catch our breath.[K]\nWe\'ve got to hurry!",
+        french=" Pas le temps de se reposer.[K]\nDépêchons!",
+        german=" Keine Zeit zum Verschnaufen.[K]\nWir müssen uns beeilen!",
+        italian=" Non c\'è tempo da perdere.[K]\nDobbiamo sbrigarci!",
+        spanish=" No hay tiempo para descansar.[K]\n¡Hay que darse prisa!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8978);
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    with (actor ACTOR_NPC_HEIGANI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    message_SetFace(ACTOR_NPC_HEIGANI, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Hey, hey![K] Someone\'s over there!",
+        french=" Eh dis donc![K] Il y a quelqu\'un\nlà-bas!",
+        german=" Hey, hey![K] Da drüben ist jemand!",
+        italian=" Ehi, ehi![K] C\'è qualcuno laggiù!",
+        spanish=" ¡Oye, oye![K] ¡Hay alguien allí!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" Let\'s go!",
+        french=" Allons-y!",
+        german=" Gehen wir!",
+        italian=" Andiamo!",
+        spanish=" ¡Vamos!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(6916);
+    with (performer 0) {
+        MovePositionMark(33152, Position<'m9', 19.5, 58>);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        MovePositionMark(33152, Position<'m10', 19.5, 52.5>);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        MovePositionMark(33152, Position<'m11', 25, 53.5>);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionMark(33152, Position<'m12', 15, 53.5>);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        MovePositionMark(33152, Position<'m13', 20, 58>);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        MovePositionMark(33152, Position<'m14', 17, 56>);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        MovePositionMark(33152, Position<'m15', 12.5, 56.5>);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        MovePositionMark(33152, Position<'m16', 23, 55.5>);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        MovePositionMark(33152, Position<'m17', 25, 57.5>);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        MovePositionMark(33152, Position<'m18', 15, 57.5>);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_CHIRIIN);
+    bgm_Stop();
+    se_Play(6931);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (performer 0) {
+        MovePositionOffset(33152, 0, 4);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SlidePositionOffset(33152, 0, 16);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SlidePositionOffset(33152, 0, 16);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SlidePositionOffset(33152, 0, 16);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SlidePositionOffset(33152, 0, 16);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SlidePositionOffset(33152, 0, 16);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SlidePositionOffset(33152, 0, 16);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SlidePositionOffset(33152, 0, 16);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SlidePositionOffset(33152, 0, 16);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SlidePositionOffset(33152, 0, 16);
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetAnimation(2);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(2);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(2);
+    }
+    WaitExecuteLives(ACTOR_NPC_BIPPA);
+    with (actor ACTOR_NPC_BIPPA) {
+        SetAnimation(2);
+    }
+    WaitExecuteLives(ACTOR_NPC_DIGUDA);
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetAnimation(2);
+    }
+    WaitExecuteLives(ACTOR_NPC_KIMAWARI);
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetAnimation(2);
+    }
+    WaitExecuteLives(ACTOR_NPC_CHIRIIN);
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetAnimation(2);
+    }
+    WaitExecuteLives(ACTOR_NPC_GUREGGURU);
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetAnimation(2);
+    }
+    WaitExecuteLives(ACTOR_NPC_DAGUTORIO);
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(2);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_SURPRISED, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" Squ-squ-squawk?!",
+        french=" C-c-couac?!",
+        german=" K-k-kreisch?!?",
+        italian=" Squ-Squ-Squack?!",
+        spanish=" Cru... ¡¿Cruac?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" [CS:N]Gr[CR]-[CS:N]Gr[CR]-[CS:N]Gr[CR]-",
+        french=" [CS:N]Gr[CR]-[CS:N]Gr[CR]-[CS:N]Gr[CR]...",
+        german=" [CS:N]Gr[CR]-[CS:N]Gr[CR]-[CS:N]Gr[CR]-",
+        italian=" [CS:N]Gr[CR]... [CS:N]Gr[CR]... [CS:N]Gr[CR]...",
+        spanish=" Es [CS:N]Grou[CR]... [CS:N]Gro[CR]... [CS:N]Grou[CR]...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8975);
+    with (actor ACTOR_NPC_KIMAWARI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_KIMAWARI);
+    message_SetFace(ACTOR_NPC_KIMAWARI, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" It\'s [CS:N]Groudon[CR]! Spit it out!",
+        french=" C\'est [CS:N]Groudon[CR]! Crache\nle morceau, à la fin!",
+        german=" Sag es schon! Es ist [CS:N]Groudon[CR]!",
+        italian=" Dillo! È [CS:N]Groudon[CR]!",
+        spanish=" ¡Dilo de una vez! ¡Es [CS:N]Groudon[CR]!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8968);
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_CHIRIIN);
+    message_SetFace(ACTOR_NPC_CHIRIIN, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" D-d-d-ding!",
+        french=" D-d-d-ding!",
+        german=" D-d-d-dargh!",
+        italian=" Aaaaaah!",
+        spanish=" ¡Tilín, tilín!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_NPC_HEIGANI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    message_SetFace(ACTOR_NPC_HEIGANI, FACE_NORMAL, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" Don\'t eat me! I\'m not tasty!",
+        french=" Ne me mange pas! J\'ai mauvais\ngoût!",
+        german=" Friss mich nicht! Ich bin nicht\nsehr schmackhaft!",
+        italian=" Non mangiarmi! Non mangiarmi!\nNon ho un buon sapore!",
+        spanish=" ¡No me comas! ¡No tengo buen sabor!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_YUKUSHII) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_PUKURIN) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_PUKURIN);
+    with (actor ACTOR_NPC_PUKURIN) {
+        MovePositionOffset(32972, 0, 40);
+    }
+    WaitExecuteLives(ACTOR_NPC_PUKURIN);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" Hello to one and all!\nSo what\'s wrong?",
+        french=" Amis du jour, bonjour!\nBah alors, quel est le problème?",
+        german=" Hallo, alle miteinander!\nStimmt etwas nicht?",
+        italian=" Bentrovati, amichevoli amici! ♪\nQualcosa non va?",
+        spanish=" ¡Saludos a todos! ¿Qué pasa?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    se_Play(8967);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_SURPRISED, FACE_POS_BOTTOM_L_FACEINW);
+    message_Talk({
+        english=" G-G-Guildmaster!",
+        french=" M-Maître!",
+        german=" G-G-Gildenmeister!",
+        italian=" C-C-Capitano!",
+        spanish=" Gran... ¡Gran Bluff!",
+    });
+    with (actor ACTOR_NPC_PERAPPU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" Oh, never mind that![K]\nEveryone, look out there!",
+        french=" Oh, ne vous en faites pas\npour ça![K] Regardez par là, vous autres!",
+        german=" Oh, kümmert euch nicht darum![K]\nSeht euch das mal an!",
+        italian=" Oh, quello![K] Lasciate perdere\nquello! Guardate laggiù, invece!",
+        spanish=" ¡Ah, eso! No os preocupéis.[K]\n¡Mirad eso!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PUKURIN) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_PUKURIN);
+    Wait(10);
+    message_Talk({
+        english=" It\'s spouting!",
+        french=" L\'eau jaillit comme\nd\'une fontaine!",
+        german=" Er sprudelt!",
+        italian=" Guardate! ♪",
+        spanish=" ¡Mirad como brota!",
+    });
+    message_Talk({
+        english=" Pretty! Pretty!",
+        french=" Ooooh, que c\'est joli!",
+        german=" Wie schön! Wie schön!",
+        italian=" Chebellochebellochebello!",
+        spanish=" ¡Bonito! ¡Bonito!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8963);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    Wait(2);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    message_EmptyActor();
+    message_Talk({
+        english="[CS:N]Everyone[CR]: HUH?",
+        french="[CS:N]Tous[CR]: HEIN?",
+        german="[CS:N]Alle[CR]: HUCH?",
+        italian="[CS:N]Tutti[CR]: EEEH?",
+        spanish="[CS:N]Todos[CR]: ¿CÓMO?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_GUREGGURU) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_DIGUDA);
+    Wait(15);
+    screen_FadeOut(1, 60);
+    end;
+}
+
+def 1 for_actor(ACTOR_NPC_GURAADON) {
+    §label_0;
+    SetAnimation(2);
+    SetOutputAttribute(32);
+    WaitRandom(150, 240);
+    SetAnimation(24);
+    WaitAnimation();
+    jump @label_0;
+}

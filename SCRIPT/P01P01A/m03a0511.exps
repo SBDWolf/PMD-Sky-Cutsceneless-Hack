@@ -1,0 +1,243 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_OH_NO, 0, 256);
+    back_SetGround(LEVEL_P01P01A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    Wait(1);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(33152, Position<'m0', 27, 12.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(33152, Position<'m1', 27, 9.5>);
+    }
+    screen_FadeIn(1, 15);
+    with (actor ACTOR_NPC_MARIRU) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_NPC_MARIRU) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_TOP_L_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hey! There\'s [CS:N]Marill[CR]!",
+                french=" Regarde! Là! C\'est [CS:N]Marill[CR]!",
+                german=" Hey! Da ist [CS:N]Marill[CR]!",
+                italian=" Ehi! Ecco [CS:N]Marill[CR]!",
+                spanish=" ¡Mira! ¡Allí está [CS:N]Marill[CR]!",
+            }
+        case 2:
+            {
+                english=" Look! There\'s [CS:N]Marill[CR]!",
+                french=" Regarde! Là! C\'est [CS:N]Marill[CR]!",
+                german=" Sieh mal! Da ist [CS:N]Marill[CR]!",
+                italian=" Ehi! Ecco [CS:N]Marill[CR]!",
+                spanish=" ¡Mira! ¡Allí está [CS:N]Marill[CR]!",
+            }
+        default:
+            {
+                english=" Oh! [CS:N]Marill[CR]\'s over there!",
+                french=" Regarde! Là! C\'est [CS:N]Marill[CR]!",
+                german=" Oh! Da ist [CS:N]Marill[CR]!",
+                italian=" Ehi! Ecco [CS:N]Marill[CR]!",
+                spanish=" ¡Mira! ¡Allí está [CS:N]Marill[CR]!",
+            }
+    }
+    message_Close();
+    with (performer 0) {
+        MovePositionMark(33152, Position<'m2', 27, 23.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(33152, Position<'m3', 27, 25.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(33152, Position<'m4', 27, 22.5>);
+    }
+    with (actor ACTOR_NPC_MARIRU) {
+        Turn2Direction(1, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_MARIRU);
+    with (actor ACTOR_NPC_MARIRU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_MARIRU) {
+        WaitEffect();
+    }
+    with (actor ACTOR_NPC_MARIRU) {
+        MovePositionMark(33152, Position<'m5', 32.5, 24.5>);
+    }
+    Wait(10);
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    WaitExecutePerformer(0);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" [CS:N]Marill[CR], what\'s wrong?",
+                french=" [CS:N]Marill[CR], qu\'est-ce qu\'il y a?",
+                german=" [CS:N]Marill[CR], was ist los?",
+                italian=" [CS:N]Marill[CR], cosa c\'è?",
+                spanish=" [CS:N]Marill[CR], ¿qué pasa?",
+            }
+        case 2:
+            {
+                english=" [CS:N]Marill[CR], what\'s the matter?",
+                french=" [CS:N]Marill[CR], qu\'est-ce qu\'il y a?",
+                german=" [CS:N]Marill[CR], was ist los?",
+                italian=" [CS:N]Marill[CR], cosa succede?",
+                spanish=" [CS:N]Marill[CR], ¿qué pasa?",
+            }
+        default:
+            {
+                english=" [CS:N]Marill[CR], what\'s the matter?",
+                french=" [CS:N]Marill[CR], qu\'est-ce qu\'il y a?",
+                german=" [CS:N]Marill[CR], was ist los?",
+                italian=" [CS:N]Marill[CR], cos\'è accaduto?",
+                spanish=" [CS:N]Marill[CR], ¿qué pasa?",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Where are [CS:N]Azurill[CR] and [CS:N]Drowzee[CR]?",
+                french=" Où sont [CS:N]Azurill[CR] et [CS:N]Soporifik[CR]?",
+                german=" Wo sind [CS:N]Azurill[CR] und [CS:N]Traumato[CR]?",
+                italian=" Dove sono [CS:N]Azurill[CR] e [CS:N]Drowzee[CR]?",
+                spanish=" ¿Dónde están [CS:N]Azurill[CR]\ny [CS:N]Drowzee[CR]?",
+            }
+        case 2:
+            {
+                english=" Where are [CS:N]Azurill[CR] and [CS:N]Drowzee[CR]?",
+                french=" Où sont [CS:N]Azurill[CR] et [CS:N]Soporifik[CR]?",
+                german=" Wo sind [CS:N]Azurill[CR] und [CS:N]Traumato[CR]?",
+                italian=" Dove sono [CS:N]Azurill[CR] e [CS:N]Drowzee[CR]?",
+                spanish=" ¿Dónde están [CS:N]Azurill[CR]\ny [CS:N]Drowzee[CR]?",
+            }
+        default:
+            {
+                english=" Where are [CS:N]Azurill[CR] and [CS:N]Drowzee[CR]?",
+                french=" Où sont [CS:N]Azurill[CR] et [CS:N]Soporifik[CR]?",
+                german=" Wo sind [CS:N]Azurill[CR] und [CS:N]Traumato[CR]?",
+                italian=" Dove sono [CS:N]Azurill[CR] e [CS:N]Drowzee[CR]?",
+                spanish=" ¿Dónde están [CS:N]Azurill[CR]\ny [CS:N]Drowzee[CR]?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_MARIRU) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_MARIRU);
+    with (actor ACTOR_NPC_MARIRU) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    message_SetFace(ACTOR_NPC_MARIRU, FACE_SIGH, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Yes...about them...!",
+        french=" Oui... justement...!",
+        german=" Ja... hört zu!",
+        italian=" Sì... Si tratta proprio di loro...!",
+        spanish=" Eso mismo me pregunto yo.",
+    });
+    message_Talk({
+        english=" After we all left, we went\nlooking for our lost item together...",
+        french=" On est partis tous les trois\nà la recherche de notre objet perdu...",
+        german=" Nachdem wir losgegangen sind,\nhaben wir zusammen nach unserem verlorenen\nItem gesucht...",
+        italian=" Siamo partiti insieme per\nandare a cercare il nostro strumento...",
+        spanish=" Nos marchamos todos juntos\npara buscar el objeto que habíamos perdido...",
+    });
+    message_Talk({
+        english=" But I wound up all alone when\nMr. [CS:N]Drowzee[CR] went somewhere with [CS:N]Azurill[CR].",
+        french=" Mais j\'ai fini par me retrouver\ntout seul quand M. [CS:N]Soporifik[CR] est parti\nje ne sais où avec [CS:N]Azurill[CR].",
+        german=" Aber plötzlich war ich allein und\nHerr [CS:N]Traumato[CR] ist mit [CS:N]Azurill[CR] verschwunden.",
+        italian=" Io sono rimasto da solo\nquando il signor [CS:N]Drowzee[CR] è andato da \nqualche parte con [CS:N]Azurill[CR].",
+        spanish=" Pero de repente vi que me había\nquedado solo. El Sr. [CS:N]Drowzee[CR] se fue a alguna\nparte con [CS:N]Azurill[CR].",
+    });
+    message_Talk({
+        english=" I called and called! But they\ndidn\'t come back.[K] I got scared...",
+        french=" Je les ai appelés! Mais ils ne\nsont pas revenus.[K] J\'ai peur...",
+        german=" Ich rief und rief! Aber sie\nblieben weg.[K] Dann habe ich Angst bekommen.",
+        italian=" Li ho chiamati più volte! Ma non\nsono tornati.[K] Mi sono spaventato...",
+        spanish=" ¡Les llamé una y otra vez! Pero\nno volvieron.[K] Me asusté. No sabía qué hacer.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" So which way did they go?!",
+                french=" Dans quelle direction est-ce\nqu\'ils sont partis?",
+                german=" In welche Richtung sind sie\ngegangen?!?",
+                italian=" Da che parte sono andati?!",
+                spanish=" ¿Por dónde se fueron?",
+            }
+        case 2:
+            {
+                english=" So which way did they go?!",
+                french=" Dans quelle direction est-ce\nqu\'ils sont partis?",
+                german=" In welche Richtung sind sie\ngegangen?!?",
+                italian=" Da che parte sono andati?!",
+                spanish=" ¿Por dónde se fueron?",
+            }
+        default:
+            {
+                english=" So which way did they go?!",
+                french=" Dans quelle direction est-ce\nqu\'ils sont partis?",
+                german=" In welche Richtung sind sie\ngegangen?!?",
+                italian=" Da che parte sono andati?!",
+                spanish=" ¿Por dónde se fueron?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_MARIRU, FACE_SIGH, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Th-that way!",
+        french=" Par là!",
+        german=" D-da lang!",
+        italian=" D-Da quella parte!",
+        spanish=" Por... por ahí.",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_MARIRU) {
+        MovePositionOffset(33408, 120, 0);
+    }
+    Wait(10);
+    with (actor ACTOR_PLAYER) {
+        MovePositionOffset(33408, 160, 0);
+    }
+    Wait(5);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionOffset(33408, 160, 0);
+    }
+    Wait(45);
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 60);
+    WaitBgm(BGM_OH_NO);
+    dungeon_mode(4) = DMODE_OPEN;
+    end;
+}

@@ -1,0 +1,473 @@
+
+def 0 {
+    sound_Stop();
+    back_SetBanner2(389, 0, 160, 72, 18, {
+        english="Lapras",
+        french="Lokhlass",
+        german="Lapras",
+        italian="Lapras",
+        spanish="Lapras",
+    });
+    screen_FadeIn(1, 45);
+    Wait(160);
+    screen_FadeOut(1, 45);
+    Wait(15);
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V01P03C);
+    back_SetGround(LEVEL_D01P11B);
+    supervision_Acting(0);
+    camera2_SetPositionMark(Position<'m0', 33, 9.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    Wait(1);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m1', 54, 22.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m2', 66.5, 24.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m3', 66.5, 24.5>);
+    }
+    screen2_FadeIn(0, 30);
+    bgm_PlayFadeIn(BGM_OCEAN1, 90, 256);
+    screen_FadeIn(1, 30);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m4', 51.5, 21.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m5', 57, 24.5>);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(20);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEOUTW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I was hoping that [CS:N]Grovyle[CR] would\nbe here.",
+                french=" J\'espérais tant que [CS:N]Massko[CR]\nserait là.",
+                german=" Ich hatte gehofft, [CS:N]Reptain[CR] wäre\nhier.",
+                italian=" Speravo che [CS:N]Grovyle[CR] fosse qui.",
+                spanish=" Esperaba que [CS:N]Grovyle[CR] estuviese\naquí.",
+            }
+        case 2:
+            {
+                english=" I was hoping to see [CS:N]Grovyle[CR]\nhere.",
+                french=" J\'espérais tant que [CS:N]Massko[CR]\nserait là.",
+                german=" Ich hatte gehofft, [CS:N]Reptain[CR] hier\nzu treffen.",
+                italian=" Speravo di incontrare [CS:N]Grovyle[CR] \nqui.",
+                spanish=" Tenía la esperanza de que\n[CS:N]Grovyle[CR] estuviera aquí.",
+            }
+        default:
+            {
+                english=" I was hoping to see [CS:N]Grovyle[CR]\nhere.",
+                french=" J\'espérais tant que [CS:N]Massko[CR]\nserait là.",
+                german=" Ich hatte gehofft, [CS:N]Reptain[CR] hier\nzu treffen.",
+                italian=" Speravo di incontrare [CS:N]Grovyle[CR] \nqui.",
+                spanish=" Tenía la esperanza de que\n[CS:N]Grovyle[CR] estuviera aquí.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It doesn\'t look like he\'s here.",
+                french=" On dirait que ce n\'est pas le cas.",
+                german=" Sieht nicht so aus, als wäre er\nhier.",
+                italian=" Non sembra che sia qui.",
+                spanish=" Pero supongo que no está.",
+            }
+        case 2:
+            {
+                english=" No, he\'s not here after all.",
+                french=" On dirait que ce n\'est pas le cas.",
+                german=" Nein, er ist doch nicht hier.",
+                italian=" No, non è qui.",
+                spanish=" Pero supongo que no está.",
+            }
+        default:
+            {
+                english=" I guess he\'s not here after all...",
+                french=" On dirait que ce n\'est pas le cas.",
+                german=" Ich denke, er ist doch nicht\nhier.",
+                italian=" Non mi sembra che sia qui.",
+                spanish=" Pero supongo que no está...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8964);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(30);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Speaking of not being here...[K]\nThe [CS:N]Krabby[CR] aren\'t here, either.",
+                french=" En parlant d\'absents...[K]\nLes [CS:N]Krabby[CR] ne sont pas là, eux non plus.",
+                german=" Wo wir gerade beim\nNichthiersein sind...[K]\nDie [CS:N]Krabby[CR] sind auch nicht hier.",
+                italian=" A proposito...[K] Non ci sono \nneanche i [CS:N]Krabby[CR].",
+                spanish=" Y hablando de ausencias...[K]\nLos [CS:N]Krabby[CR] tampoco están por aquí.",
+            }
+        case 2:
+            {
+                english=" Speaking of not being here...[K]\nThe [CS:N]Krabby[CR] aren\'t here, either.",
+                french=" En parlant d\'absents...[K]\nLes [CS:N]Krabby[CR] ne sont pas là, eux non plus.",
+                german=" Wo wir gerade beim\nNichthiersein sind...[K]\nDie [CS:N]Krabby[CR] sind auch nicht hier.",
+                italian=" A proposito...[K] Non ci sono \nneanche i [CS:N]Krabby[CR].",
+                spanish=" Y hablando de ausencias...[K]\nLos [CS:N]Krabby[CR] tampoco están por aquí.",
+            }
+        default:
+            {
+                english=" Speaking of not being here...[K]\nThe [CS:N]Krabby[CR] aren\'t here, either.",
+                french=" En parlant d\'absents...[K]\nLes [CS:N]Krabby[CR] ne sont pas là, eux non plus.",
+                german=" Wo wir gerade beim\nNichthiersein sind...[K]\nDie [CS:N]Krabby[CR] sind auch nicht hier.",
+                italian=" A proposito...[K] Non ci sono \nneanche i [CS:N]Krabby[CR].",
+                spanish=" Y hablando de ausencias...[K]\nLos [CS:N]Krabby[CR] tampoco están por aquí.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" They\'re always out in the\nevening blowing bubbles.",
+                french=" D\'habitude, ils sont toujours là\nle soir, à faire des bulles.",
+                german=" Die sind abends immer hier und\nlassen ihre Blasen entstehen.",
+                italian=" Di sera sono sempre in giro a \nfare le bolle.",
+                spanish=" Antes del anochecer siempre\nsalen a soplar pompitas.",
+            }
+        case 2:
+            {
+                english=" They always come out here in\nthe evening to blow bubbles.",
+                french=" D\'habitude, ils sont toujours là\nle soir, à faire des bulles.",
+                german=" Die kommen abends immer\nhierher, um Blasen in die Luft zu pusten.",
+                italian=" Di sera sono sempre qui intorno\na fare le bolle.",
+                spanish=" Antes del anochecer siempre\nsalen a soplar pompitas.",
+            }
+        default:
+            {
+                english=" They always come out to blow\nbubbles here in the evening.",
+                french=" D\'habitude, ils sont toujours là\nle soir, à faire des bulles.",
+                german=" Die kommen abends immer\nhierher, um Blasen in die Luft zu pusten.",
+                italian=" Di sera sono sempre qui intorno\na fare le bolle.",
+                spanish=" Antes del anochecer siempre\nsalen a soplar pompitas.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEOUTW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I love seeing their bubbles go\nfloating off.",
+                french=" J\'adore regarder leurs bulles\nemportées par le vent.",
+                german=" Ich liebe es, ihre Blasen\ndavonschweben zu sehen.",
+                italian=" Adoro guardare le loro bolle\nche volano.",
+                spanish=" Me encanta ver cómo cambian\nde color con los rayos del sol.",
+            }
+        case 2:
+            {
+                english=" I love seeing their bubbles go\nfloating away in the evening sky.",
+                french=" J\'adore regarder leurs bulles\nemportées par le vent.",
+                german=" Ich liebe es, wie ihre Blasen\nin den Abendhimmel davonschweben.",
+                italian=" Adoro guardare le loro bolle\nvolare al tramonto.",
+                spanish=" Me encanta ver cómo cambian\nde color con los rayos del sol.",
+            }
+        default:
+            {
+                english=" I love seeing their bubbles go\nfloating away in the evening sky.",
+                french=" J\'adore regarder leurs bulles\nemportées par le vent.",
+                german=" Ich liebe es, wie ihre Blasen\nin den Abendhimmel davonschweben.",
+                italian=" Adoro guardare le loro bolle\nvolare al tramonto.",
+                spanish=" Me encanta ver cómo cambian\nde color con los rayos del sol.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Well, that\'s too bad.[K] It\'s a\nletdown, but...",
+                french=" Ah, c\'est vraiment dommage.[K]\nJe suis déçu, mais...",
+                german=" Wirklich schade.[K] Es ist eine\nEnttäuschung, aber...",
+                italian=" Beh, che peccato.[K] È una\ndelusione, ma...",
+                spanish=" Vaya, qué pena.[K]\nEs una decepción, pero...",
+            }
+        case 2:
+            {
+                english=" Well, that\'s too bad.[K] It\'s a\nletdown, but...",
+                french=" Ah, c\'est vraiment dommage.[K]\nJe suis déçu, mais...",
+                german=" Wirklich schade.[K] Es ist eine\nEnttäuschung, aber...",
+                italian=" Beh, che peccato.[K] È una\ndelusione, ma...",
+                spanish=" Vaya, qué pena.[K]\nEs una decepción, pero...",
+            }
+        default:
+            {
+                english=" Well, that\'s too bad.[K] It\'s a\nletdown, but...",
+                french=" Ah, c\'est vraiment dommage.[K]\nJe suis déçue, mais...",
+                german=" Wirklich schade.[K] Es ist eine\nEnttäuschung, aber...",
+                italian=" Beh, che peccato.[K] È una\ndelusione, ma...",
+                spanish=" Vaya, qué pena.[K]\nEs una decepción, pero...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(8, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_INSPIRED, FACE_POS_BOTTOM_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" ...Look, [hero]...",
+                french=" ... Regarde, [hero]...",
+                german=" Sieh nur, [hero]...",
+                italian=" Guarda, [hero]...",
+                spanish=" Mira, [hero]...",
+            }
+        case 2:
+            {
+                english=" ...Look, [hero]...",
+                french=" ... Regarde, [hero]...",
+                german=" Sieh nur, [hero]...",
+                italian=" Guarda, [hero]...",
+                spanish=" Mira, [hero]...",
+            }
+        default:
+            {
+                english=" ...Look, [hero]...",
+                french=" ... Regarde, [hero]...",
+                german=" Sieh nur, [hero]...",
+                italian=" Guarda, [hero]...",
+                spanish=" Mira, [hero]...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" The sunset is sure pretty, just\nlike it always is.",
+                french=" Le coucher de soleil est\nmagnifique, comme d\'habitude.",
+                german=" Der Sonnenuntergang ist so\nschön wie immer.",
+                italian=" Il tramonto è bello lo stesso, \ncome sempre.",
+                spanish=" El atardecer es impresionante,\nigual que siempre.",
+            }
+        case 2:
+            {
+                english=" The sunset\'s beautiful, like it\nalways is.",
+                french=" Le coucher de soleil est\nmagnifique, comme d\'habitude.",
+                german=" Der Sonnenuntergang ist so\nschön wie immer.",
+                italian=" Il tramonto è bellissimo, come\nsempre.",
+                spanish=" El atardecer es impresionante,\nigual que siempre.",
+            }
+        default:
+            {
+                english=" The sunset is sure pretty.",
+                french=" Le coucher de soleil est\nmagnifique, comme d\'habitude.",
+                german=" Der Sonnenuntergang ist wirklich\nhübsch.",
+                italian=" Il tramonto è così bello...",
+                spanish=" La puesta de sol sigue siendo\npreciosa.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(20);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" You know...",
+                french=" Tu sais...",
+                german=" Weißt du...",
+                italian=" Sai...",
+                spanish=" ¿Sabes una cosa...?",
+            }
+        case 2:
+            {
+                english=" You know...",
+                french=" Tu sais...",
+                german=" Weißt du...",
+                italian=" Sai...",
+                spanish=" ¿Sabes una cosa...?",
+            }
+        default:
+            {
+                english=" You know...",
+                french=" Tu sais...",
+                german=" Weißt du...",
+                italian=" Sai...",
+                spanish=" ¿Sabes una cosa...?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionOffset(32896, 8, 8);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(15);
+    se_Play(6410);
+    supervision_Acting(1);
+    with (object OBJECT_G01P01A1_93) {
+        SetOutputAttribute(2);
+    }
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SlidePositionOffset(32896, -8, -8);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    Wait(20);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It was my dream to solve the\nsecret of my Relic Fragment.",
+                french=" C\'était mon rêve de découvrir\nle secret de mon Fragment de Relique.",
+                german=" Es war mein Traum, das Rätsel\nmeines Reliktfragments zu lösen.",
+                italian=" Risolvere il segreto del \nFrammento Antico era il mio sogno.",
+                spanish=" Soñaba con desvelar el secreto\nde mi Reliquia de Piedra.",
+            }
+        case 2:
+            {
+                english=" It was my dream to solve the\nsecret of my Relic Fragment.",
+                french=" C\'était mon rêve de découvrir\nle secret de mon Fragment de Relique.",
+                german=" Es war mein Traum, das Rätsel\nmeines Reliktfragments zu lösen.",
+                italian=" Risolvere il segreto del \nFrammento Antico era il mio sogno.",
+                spanish=" Soñaba con desvelar el secreto\nde mi Reliquia de Piedra.",
+            }
+        default:
+            {
+                english=" It was my dream to solve the\nsecret of my Relic Fragment.",
+                french=" C\'était mon rêve de découvrir\nle secret de mon Fragment de Relique.",
+                german=" Es war mein Traum, das Rätsel\nmeines Reliktfragments zu lösen.",
+                italian=" Risolvere il segreto del \nFrammento Antico era il mio sogno.",
+                spanish=" Soñaba con desvelar el secreto\nde mi Reliquia de Piedra.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" But I would have never guessed\nthat the Relic Fragment was connected to the\n[CS:P]Hidden Land[CR].",
+                french=" Mais je n\'aurais jamais deviné\nqu\'il était lié aux [CS:P]Terres Illusoires[CR].",
+                german=" Aber ich hätte niemals gedacht,\ndass das Reliktfragment mit dem\n[CS:P]Verborgenen Land[CR] in Verbindung steht.",
+                italian=" Ma non avrei mai pensato che\nil Frammento Antico fosse collegato alla\n[CS:P]Terra Nascosta[CR].",
+                spanish=" Pero nunca habría imaginado que\ntuviera relación alguna con la [CS:P]Tierra Oculta[CR].",
+            }
+        case 2:
+            {
+                english=" But I would have never guessed\nthat the Relic Fragment was connected to the\n[CS:P]Hidden Land[CR].",
+                french=" Mais je n\'aurais jamais deviné\nqu\'il était lié aux [CS:P]Terres Illusoires[CR].",
+                german=" Aber ich hätte niemals gedacht,\ndass das Reliktfragment mit dem\n[CS:P]Verborgenen Land[CR] in Verbindung steht.",
+                italian=" Ma non avrei mai pensato che\nil Frammento Antico fosse collegato alla\n[CS:P]Terra Nascosta[CR].",
+                spanish=" Pero nunca habría imaginado que\ntuviera relación alguna con la [CS:P]Tierra Oculta[CR].",
+            }
+        default:
+            {
+                english=" But I would have never guessed\nthat the Relic Fragment was connected to the\n[CS:P]Hidden Land[CR].",
+                french=" Mais je n\'aurais jamais deviné\nqu\'il était lié aux [CS:P]Terres Illusoires[CR].",
+                german=" Aber ich hätte niemals gedacht,\ndass das Reliktfragment mit dem\n[CS:P]Verborgenen Land[CR] in Verbindung steht.",
+                italian=" Ma non avrei mai pensato che\nil Frammento Antico fosse collegato alla\n[CS:P]Terra Nascosta[CR].",
+                spanish=" Pero nunca habría imaginado que\ntuviera relación alguna con la [CS:P]Tierra Oculta[CR].",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" That reminds me...",
+                french=" Ça me rappelle...",
+                german=" Das erinnert mich daran...",
+                italian=" Mi torna in mente una cosa...",
+                spanish=" Eso me recuerda que...",
+            }
+        case 2:
+            {
+                english=" That reminds me...",
+                french=" Ça me rappelle...",
+                german=" Das erinnert mich daran...",
+                italian=" Mi torna in mente una cosa...",
+                spanish=" Eso me recuerda que...",
+            }
+        default:
+            {
+                english=" That reminds me...",
+                french=" Ça me rappelle...",
+                german=" Das erinnert mich daran...",
+                italian=" Mi torna in mente una cosa...",
+                spanish=" Eso me recuerda que...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It was here that [CS:N]Koffing[CR] and\nhis sidekick stole my Relic Fragment.",
+                french=" C\'est ici que [CS:N]Smogo[CR] et\nson acolyte m\'ont volé mon Fragment\nde Relique.",
+                german=" Es war hier, wo [CS:N]Smogon[CR] und\nsein Handlanger mein Reliktfragment gestohlen\nhaben.",
+                italian=" È qui che [CS:N]Koffing[CR] e il suo\nscagnozzo mi hanno rubato il Frammento\nAntico.",
+                spanish=" Fue aquí donde [CS:N]Koffing[CR] y su\ncompinche me robaron la Reliquia de Piedra.",
+            }
+        case 2:
+            {
+                english=" It was here, wasn\'t it? Where\n[CS:N]Koffing[CR] and his sidekick stole my Relic\nFragment?",
+                french=" C\'est ici que [CS:N]Smogo[CR] et\nson acolyte m\'ont volé mon Fragment\nde Relique.",
+                german=" Es war hier, wo [CS:N]Smogon[CR] und\nsein Handlanger mein Reliktfragment gestohlen\nhaben.",
+                italian=" È qui, vero? Che [CS:N]Koffing[CR] e il\nsuo scagnozzo mi hanno rubato il Frammento\nAntico?",
+                spanish=" Fue aquí donde [CS:N]Koffing[CR] y su\ncompinche me robaron la Reliquia de Piedra.",
+            }
+        default:
+            {
+                english=" It was here, wasn\'t it? Where\n[CS:N]Koffing[CR] and his sidekick stole my Relic\nFragment?",
+                french=" C\'est ici que [CS:N]Smogo[CR] et\nson acolyte m\'ont volé mon Fragment\nde Relique.",
+                german=" Es war hier, wo [CS:N]Smogon[CR] und\nsein Handlanger mein Reliktfragment gestohlen\nhaben.",
+                italian=" È qui che [CS:N]Koffing[CR] e il suo\nscagnozzo mi hanno rubato il Frammento\nAntico.",
+                spanish=" Fue aquí donde [CS:N]Koffing[CR] y su\ncompinche me robaron la Reliquia de Piedra.",
+            }
+    }
+    message_Close();
+    bgm_FadeOut(60);
+    screen2_FadeOut(0, 30);
+    screen_FadeOut(1, 30);
+    back2_SetMode(0);
+    end;
+}

@@ -1,0 +1,260 @@
+
+def 0 {
+    sound_Stop();
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V02P06A);
+    camera2_SetPositionMark(Position<'m0', 19.5, 15.5>);
+    screen2_FadeIn(1, 60);
+    Wait(150);
+    screen2_FadeOut(1, 60);
+    back2_SetMode(0);
+    back_SetGround(LEVEL_G01P10C);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(44);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetAnimation(45);
+    }
+    screen_FadeChange(1, 60, 0, 192);
+    bgm_PlayFadeIn(BGM_GOODNIGHT, 0, 256);
+    Wait(30);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Phew...[K] Today was a really long\nday, yup yup...",
+        french=" Pfiou...[K] Quelle journée,\nmais quelle journée, mes aïeux!",
+        german=" Puh...[K] Heute war ein wirklich\nlanger Tag, jawollja.",
+        italian=" Uff...[K] Oggi è stata una giornata\ndavvero faticosa, già, già...",
+        spanish=" Buf...[K] Hoy ha sido un día\nlarguísimo, sí, señor...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    Wait(30);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(8, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    Wait(30);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(8, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    Wait(30);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Those two are already asleep.",
+        french=" Ces deux-là roupillent déjà.",
+        german=" Die beiden schlafen schon.",
+        italian=" Quei due si sono già\naddormentati.",
+        spanish=" Estos dos ya están durmiendo.",
+    });
+    message_Talk({
+        english=" I\'ll have to get up early\ntomorrow...[K] Guess I should probably get to bed\ntoo, yup yup.",
+        french=" Faudra qu\'je m\'lève tôt demain...[K]\nJ\'ferais mieux de dormir moi aussi,\ndu coup, ouaip.",
+        german=" Morgen muss ich früh raus...[K]\nIch sollte auch so schnell wie möglich\nRuhe finden, jawollja.",
+        italian=" Devo svegliarmi presto domani...[K]\nForse è meglio che dorma anch\'io, già, già.",
+        spanish=" Mañana tendré que levantarme\ntemprano...[K] Supongo que yo también\ndebería irme a dormir, sí, señor.",
+    });
+    message_Talk({
+        english=" Good night, you all.",
+        french=" Bonne nuit, tout l\'monde.",
+        german=" Gute Nacht, allerseits.",
+        italian=" Buonanotte a tutti.",
+        spanish=" Buenas noches a todos.",
+    });
+    message_Close();
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetDirection(DIR_LEFT);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetAnimation(25);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    Wait(30);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetAnimation(46);
+    }
+    Wait(120);
+    bgm_FadeOut(160);
+    screen_FadeOut(1, 120);
+    Wait(60);
+    message_Narration(30, {
+        english="[CN]A few minutes later...",
+        french="[CN]Quelques minutes plus tard...",
+        german="[CN]Einige Minuten später...",
+        italian="[CN]Qualche minuto dopo...",
+        spanish="[CN]Unos minutos después...",
+    });
+    message_Close();
+    Wait(45);
+    se_Play(9217);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_SPECIAL2, FACE_POS_STANDARD);
+    message_Talk({
+        english=" GOOOOOaaaaaaaaaahhhhhhhhh...",
+        french=" RRRRRROOOOOONNNNNNNNNN...",
+        german=" GOOOOOaaaaaaaaaah...",
+        italian=" ROOONFaaaaaaaaaahhhhhhhhh...",
+        spanish=" Grooooooooooooooonf...",
+    });
+    message_Talk({
+        english=" GooooOOOOOOAAAAAAAHHHHH...",
+        french=" ZZZZZZZzzzzzzzzz...",
+        german=" GooooOOOOOOAAAAAAAH...",
+        italian=" RooooOOOOONFAAAAAAAHHHHH...",
+        spanish=" Fiiiiiiiiuuuuuuuu...",
+    });
+    message_Talk({
+        english=" GUUUUGAAAAAaaaaaaaaaaaAAAA![K]\nGUUUGAAAH!?[K] GooooOOOOOOAAAAAAAHHHHH...",
+        french=" RRRooooooOOOOON![K]\nZZZzzzz?! [K]RRRROOOOOOOoooonnnNNNN...",
+        german=" GUUUUGAAAAAaaaaaaaaaaaAAAA![K]\nGUUUGAAAH?!?[K] GooooOOOOOOAAAAAAAH...",
+        italian=" ZZZZZZZZZzzzzzzzzzZZZZZZ![K]\nRONFRONFAAAH!?[K] RooonfAAAAAAAAAHHHHH...",
+        spanish=" ¡Groooooooooooooonf![K]\n¿¡Grooooonf!?[K] Fiiiiiiiiiiiiiiiuuuuuuuuu...",
+    });
+    message_Talk({
+        english=" GUGOOOOOAAAAAAaaaaahhhhh![K]\nGUGOAAAAAA!![K]\nGUGAGOGOGOGOOOOOOOOoooooOOAAAAAAHHH!!",
+        french=" RRRROOOOoooonnnRRRRRonnn![K]\nZZZZZZZZZZzzzz!![K]\nROOOOOOOOOOOOOONNZzzzzzzzzRRRRONN!!",
+        german=" GUGOOOOOAAAAAAaaaaah![K]\nGUGOAAAAAA![K]\nGUGAGOGOGOGOOOOOOOOoooooOOAAAAAAH!",
+        italian=" ROOOROOONFAAAAAAaaaaahhhhh![K]\nZZZZZZZZZZZZ!![K]\nRORORORORORORONFFFFFFFAAAAAAHHH!!",
+        spanish=" ¡Grooooooooooooooonf![K]\n¡¡Grooooonf!![K]\n¡¡Fiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiuuuuuuuuuuuuuuuuuu!!",
+    });
+    message_Close();
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetDirection(DIR_UPRIGHT);
+    }
+    screen_FadeChange(1, 60, 0, 192);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_SPECIAL2, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" KUGOOOOooooaaaaaaahhhh![K]\nGUGOOOOOAAAAAAAaaaaaaahhhhhhh!",
+        french=" RRRONZZZZRONRONZZZZZZZZ![K]\nZZZZZZZZZZZZZZZZzzzzzzzzzzzzzzzzzzzzzzz!",
+        german=" KUGOOOOooooaaaaaaah![K]\nGUGOOOOOAAAAAAAaaaaaaah!",
+        italian=" ZZZZZZZZZaaaaaaahhhh![K]\nROROOONFAAAAAAAaaaaaaahhhhhhh!",
+        spanish=" ¡Grooooooooooooonf![K]\n¡Fiiiiiiiiiiiiiiiiiuuuuuuuuuuuuuuuu!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_SWEAT_DROP, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SAD, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Sniff...[K] He\'s snoring too loud...\nI can\'t sleep...",
+        french=" Snif...[K]\nIl ronfle comme c\'est pas permis...\nImpossible de fermer l\'œil...",
+        german=" Schnüff...[K] Er schnarcht zu laut...\nIch kann nicht schlafen...",
+        italian=" Sniff...[K] Russa come un treno...\nNon riesco a dormire...",
+        spanish=" Jo...[K] Qué manera de roncar...\nAsí no hay quien pegue ojo...",
+    });
+    message_Talk({
+        english=" I\'d like to wake [CS:N]Loudred[CR] up...[K]\nBut...",
+        french=" J\'aimerais réveiller [CS:N]Ramboum[CR]...[K]\nMais...",
+        german=" Ich würde [CS:N]Krakeelo[CR] gerne\naufwecken...[K] Aber...",
+        italian=" Vorrei svegliare [CS:N]Loudred[CR]...[K]\nMa...",
+        spanish=" De buena gana despertaría a\n[CS:N]Loudred[CR].[K] Pero...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SPECIAL2, FACE_POS_STANDARD);
+    message_Talk({
+        english=" If I did that, he\'d be pretty\nangry, and that\'s a scary thought...[K]\nSniff...",
+        french=" Si j\'faisais ça, il s\'rait trop\nfurax, et là, ça f\'rait peur...[K]\nSnif...",
+        german=" Täte ich das, wäre er sicherlich\nziemlich wütend...[K] Was für ein\nfurchteinflößender Gedanke. Schnief...",
+        italian=" ... se lo facessi, andrebbe su\ntutte le furie e al solo pensarci mi\nviene paura...[K] Sniff...",
+        spanish=" Huy...[K] Si lo hiciera se enfadaría\nde lo lindo, y eso me da miedo.",
+    });
+    se_FadeOut(9217, 10);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8964);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_RIGHT, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" ...[K]Speaking of scary!",
+        french=" ...[K]\nA propos d\'trucs qui font peur!",
+        german=" ...[K]Apropos furchteinflößend!",
+        italian=" ...[K] A proposito di paura!",
+        spanish=" Vaya...[K] ¡Ahora que me acuerdo!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(8, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    Wait(15);
+    bgm_PlayFadeIn(BGM_I_SAW_SOMETHING_AGAIN, 0, 256);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SAD, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Those two I met earlier today...[K]\nThose Pokémon sure were scary, yup yup...\n",
+        french=" Ces deux Pokémon que j\'ai\ncroisés aujourd\'hui...[K] Ils faisaient\npeur, pardi...",
+        german=" Diese beiden von heute früh...[K]\nDiese Pokémon haben mir wirklich einen\nSchrecken eingejagt, jawollja...",
+        italian=" Quei due che ho incontrato oggi...[K]\nerano dei Pokémon davvero minacciosi,\ngià, già...",
+        spanish=" Esos dos que vi antes...[K]\nEsos Pokémon sí que daban miedo, sí, señor.",
+    });
+    message_Talk({
+        english=" ...[K]Just before those two\nshowed...[K]there was that Pokémon that seemed\nto be running away and then disappeared...",
+        french=" ...[K] Juste avant qu\'ils arrivent...[K]\nj\'ai vu ce Pokémon qui avait l\'air d\'s\'enfuir\net qui a disparu...",
+        german=" ...[K]Und kurz bevor die beiden\nauftauchten,[K] war da dieses Pokémon, das zu\nfliehen schien und dann verschwand...",
+        italian=" ...[K] Appena prima che saltassero\nfuori...[K] è arrivato quel Pokémon. Sembrava\nche stesse scappando, poi è svanito...",
+        spanish=" Justo...[K] Justo antes de que\naparecieran...[K] Pasó aquel Pokémon que parecía\nestar huyendo y desapareció...",
+    });
+    message_Talk({
+        english=" That Pokémon...[K] He was\nprobably being chased by those two\nscary Pokémon...",
+        french=" Ce Pokémon...[K] Il était\nsûrement poursuivi par les deux\naffreux...",
+        german=" Dieses Pokémon...[K] Vielleicht\nwurde es von den beiden furchteinflößenden\nPokémon verfolgt...",
+        italian=" Mmmh...[K] Forse quei due\nPokémon minacciosi gli stavano\ndando la caccia...",
+        spanish=" A aquel Pokémon...[K] probablemente\nlo persiguieran esos dos Pokémon\ntan horripilantes.",
+    });
+    message_Talk({
+        english=" If that was the case, I hope he\ngot away all right...",
+        french=" Si c\'est vrai, j\'espère qu\'il s\'en\nest bien tiré...",
+        german=" Wenn das der Fall war, hoffe\nich, dass es gut davongekommen ist...",
+        italian=" Se fosse così, spero che sia\nriuscito a scappare...",
+        spanish=" Si era así, espero que pudiera\nescapar sin problemas...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8967);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" That\'s right![K] When that Pokémon\nran off...",
+        french=" J\'y pense![K] Quand il\ns\'est enfui...",
+        german=" Oh, stimmt ja![K] Als dieses\nPokémon vorbeirannte...",
+        italian=" Un momento![K] Quando\nquel Pokémon è fuggito...",
+        spanish=" ¡Es verdad![K] Cuando aquel\nPokémon salió huyendo...",
+    });
+    message_Close();
+    screen_FadeOut(1, 30);
+    end;
+}

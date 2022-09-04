@@ -1,0 +1,389 @@
+
+def 0 {
+    sound_Stop();
+    Wait(30);
+    se_Play(7193);
+    Wait(90);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Come on! This way![K] We need to\nkeep running until we hit the exit!",
+        french=" Par là, vite![K] On ne peut pas\ns\'arrêter tant qu\'on n\'a pas trouvé la sortie!",
+        german=" Kommt! Hier entlang![K] Wir\nmüssen weiterlaufen, bis wir den Ausgang\nerreichen!",
+        italian=" Forza! Da questa parte![K] \nDobbiamo continuare a correre finché non \ntroviamo l\'uscita!",
+        spanish=" ¡Vamos! ¡Por aquí![K]\n¡Tenemos que correr sin parar hasta la salida!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(90);
+    message_Talk({
+        english=" Come on! Faster! Pick it up!",
+        french=" Allez! Plus vite! Du nerf!",
+        german=" Kommt! Schneller! Macht schon!",
+        italian=" Coraggio! Più in fretta! \nAndiamocene!",
+        spanish=" ¡Vamos! ¡Más rápido! ¡Apuraos!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SHOUTING, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" This is the fastest I can go!",
+                french=" Je fais aussi vite que je peux!",
+                german=" Ich kann nicht schneller!",
+                italian=" Più in fretta di così non posso!",
+                spanish=" ¡No puedo ir más rápido!",
+            }
+        case 2:
+            {
+                english=" This is the fastest I can go!",
+                french=" Je fais aussi vite que je peux!",
+                german=" Ich kann nicht schneller!",
+                italian=" Più in fretta di così non posso!",
+                spanish=" ¡No puedo ir más rápido!",
+            }
+        default:
+            {
+                english=" I\'m running as fast as I can!",
+                french=" Je fais aussi vite que je peux!",
+                german=" Ich laufe, so schnell ich kann!",
+                italian=" Sto correndo più veloce che\nposso!",
+                spanish=" ¡No puedo ir más rápido!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Quit ordering me around!",
+                french=" Et je ne suis pas à tes ordres!",
+                german=" Hör auf, mich\nherumzukommandieren!",
+                italian=" Smettila di darmi ordini!",
+                spanish=" ¡Deja de darme órdenes!",
+            }
+        case 2:
+            {
+                english=" Quit ordering me around!",
+                french=" Et je ne suis pas à tes ordres!",
+                german=" Hör auf, mich\nherumzukommandieren!",
+                italian=" Smettila di darmi ordini!",
+                spanish=" ¡Deja de darme órdenes!",
+            }
+        default:
+            {
+                english=" Don\'t order me around!",
+                french=" Et je ne suis pas à tes ordres!",
+                german=" Hör auf, mich\nherumzukommandieren!",
+                italian=" Smettila di darmi ordini!",
+                spanish=" ¡Deja de darme órdenes!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(20);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Anyway, [CS:N]Grovyle[CR]...!",
+                french=" Au fait, [CS:N]Massko[CR]...!",
+                german=" Wie auch immer, [CS:N]Reptain[CR]!",
+                italian=" Ad ogni modo, [CS:N]Grovyle[CR]...!",
+                spanish=" Oye, [CS:N]Grovyle[CR]...",
+            }
+        case 2:
+            {
+                english=" Anyway, [CS:N]Grovyle[CR]...!",
+                french=" Au fait, [CS:N]Massko[CR]...!",
+                german=" Wie auch immer, [CS:N]Reptain[CR]!",
+                italian=" Ad ogni modo, [CS:N]Grovyle[CR]...!",
+                spanish=" Oye, [CS:N]Grovyle[CR]...",
+            }
+        default:
+            {
+                english=" Anyway, [CS:N]Grovyle[CR]...!",
+                french=" Au fait, [CS:N]Massko[CR]...!",
+                german=" Wie auch immer, [CS:N]Reptain[CR]!",
+                italian=" Ad ogni modo, [CS:N]Grovyle[CR]...!",
+                spanish=" Oye, [CS:N]Grovyle[CR]...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" What?",
+        french=" Quoi?",
+        german=" Was?",
+        italian=" Cosa?",
+        spanish=" ¿Qué?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Is this...[K]the future?",
+                french=" Est-ce qu\'on est...[K] dans le futur?",
+                german=" Ist das hier...[K] die Zukunft?",
+                italian=" Questo è...[K] il futuro?",
+                spanish=" ¿Esto es...?[K] ¿Esto es el futuro?",
+            }
+        case 2:
+            {
+                english=" Is this...[K]the future?",
+                french=" Est-ce qu\'on est...[K] dans le futur?",
+                german=" Ist das hier...[K] die Zukunft?",
+                italian=" Questo è...[K] il futuro?",
+                spanish=" ¿Esto es...?[K] ¿Esto es el futuro?",
+            }
+        default:
+            {
+                english=" Is this...[K]the future?",
+                french=" Est-ce qu\'on est...[K] dans le futur?",
+                german=" Ist das hier...[K] die Zukunft?",
+                italian=" Questo è...[K] il futuro?",
+                spanish=" ¿Esto es...?[K] ¿Esto es el futuro?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" That\'s right.[K] You catch on fast.",
+        french=" C\'est exact.[K] Tu comprends vite.",
+        german=" So ist es.[K] Du schaltest schnell.",
+        italian=" Proprio così.[K] Afferri le cose in\nfretta.",
+        spanish=" Así es.[K] Vaya, qué sagaz.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Urk! So it is, after all...",
+                french=" Argh! Alors on y est bel et\nbien...",
+                german=" Urk! Also tatsächlich...",
+                italian=" Ah! È così, dopotutto...",
+                spanish=" ¡Glup! O sea, que sí lo es...",
+            }
+        case 2:
+            {
+                english=" Urk! So it is, after all...",
+                french=" Argh! Alors on y est bel et\nbien...",
+                german=" Urk! Also tatsächlich...",
+                italian=" Ah! È così, dopotutto...",
+                spanish=" ¡Glup! Así que sí lo es...",
+            }
+        default:
+            {
+                english=" Urk! So it is, after all...",
+                french=" Argh! Alors on y est bel et\nbien...",
+                german=" Urk! Also tatsächlich...",
+                italian=" Ah! È così, dopotutto...",
+                spanish=" ¡Glup! O sea, que sí lo es...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Are we...[K] Are we going to be\nable to get back to our world?",
+                french=" Est-ce qu\'on...[K] est-ce qu\'on\npourra rentrer chez nous?",
+                german=" Werden wir...[K] Werden wir in\nunsere Welt zurückkehren können?",
+                italian=" Noi...[K] riusciremo a ritornare\nnel presente?",
+                spanish=" ¿Y vamos...?[K]\n¿Vamos a poder regresar a nuestro mundo?",
+            }
+        case 2:
+            {
+                english=" Are we...[K] Are we going to be\nable to get back to our world?",
+                french=" Est-ce qu\'on...[K] est-ce qu\'on\npourra rentrer chez nous?",
+                german=" Werden wir...[K] Werden wir in\nunsere Welt zurückkehren können?",
+                italian=" Noi...[K] riusciremo a ritornare\nnel presente?",
+                spanish=" ¿Y vamos...?[K]\n¿Vamos a poder regresar a nuestro mundo?",
+            }
+        default:
+            {
+                english=" Are we...[K] Are we going to be\nable to get back to our world?",
+                french=" Est-ce qu\'on...[K] est-ce qu\'on\npourra rentrer chez nous?",
+                german=" Werden wir...[K] Werden wir in\nunsere Welt zurückkehren können?",
+                italian=" Noi...[K] riusciremo a ritornare\nnel presente?",
+                spanish=" ¿Y vamos...?[K]\n¿Vamos a poder regresar a nuestro mundo?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Who knows?[K] We just need to get\naway for now.",
+        french=" Qui sait?[K] La priorité pour\nl\'instant, c\'est de sortir de là.",
+        german=" Wer weiß?[K] Wir müssen fürs\nErste einfach weg von hier.",
+        italian=" Chi lo sa?[K] Per ora pensiamo a\nscappare.",
+        spanish=" Quién sabe...[K]\nDe momento tenemos que salir de aquí.",
+    });
+    message_Talk({
+        english=" If we get caught, returning home\nwill be the least of your worries.[K] Run faster!",
+        french=" S\'ils nous rattrapent, rentrer\nchez vous sera le cadet de vos soucis.[K]\nAccélérez!",
+        german=" Wenn sie uns fangen, wird es\neure geringste Sorge sein, wie wir\nzurückkommen.[K] Lauft schneller!",
+        italian=" Se ci prendono, ritornare a casa\ndiventerà l\'ultimo dei vostri problemi.[K] \nSbrighiamoci!",
+        spanish=" Si nos atrapan, volver a casa\nserá lo que menos te importe.[K]\n¡Corred más rápido!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I can\'t![K] I\'m exhausted...[K]\nHuff-huff...",
+                french=" Impossible![K] Je suis épuisé...[K]\nPff, pff...",
+                german=" Ich kann nicht![K] Ich bin fix und\nfertig...[K] Keuch, keuch...",
+                italian=" Non ce la faccio![K] Sono\nesausto...[K] Pant-pant...",
+                spanish=" No puedo...[K] Estoy agotado...[K]\nUf... Puf...",
+            }
+        case 2:
+            {
+                english=" I can\'t![K] I\'m exhausted...[K]\nHuff-huff...",
+                french=" Impossible![K] Je suis épuisé...[K]\nPff, pff...",
+                german=" Ich kann nicht![K] Ich bin fix und\nfertig...[K] Keuch, keuch...",
+                italian=" Non ce la faccio![K] Sono\nesausto...[K] Pant-pant...",
+                spanish=" No puedo...[K] Estoy agotado...[K]\nUf... Puf...",
+            }
+        default:
+            {
+                english=" I can\'t![K] I\'m exhausted...[K]\nHuff-huff...",
+                french=" Impossible![K] Je suis épuisée...[K]\nPff, pff...",
+                german=" Ich kann nicht![K] Ich bin fix und\nfertig...[K] Keuch, keuch...",
+                italian=" Non ce la faccio![K] Sono\nesausta...[K] Pant-pant...",
+                spanish=" No puedo...[K] Estoy agotada...[K]\nUf... Puf...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" We\'re almost there![K]\nLook! The exit is right there!",
+        french=" Nous y sommes presque![K]\nRegardez! La sortie est juste là!",
+        german=" Wir sind fast da![K]\nSeht! Der Ausgang ist gleich da!",
+        italian=" Ci siamo quasi![K] Guardate! \nL\'uscita è proprio lì!",
+        spanish=" ¡Ya casi estamos![K]\n¡Mirad! ¡La salida está allí mismo!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Huff-huff...[K] Huff-huff...",
+                french=" Pff, pff...[K] Pff, pff...",
+                german=" Keuch, keuch...[K] Keuch, keuch...",
+                italian=" Uff-uff...[K] Uff-uff...",
+                spanish=" Uf... Puf...[K] Uf... Puf...",
+            }
+        case 2:
+            {
+                english=" Huff-huff...[K] Huff-huff...",
+                french=" Pff, pff...[K] Pff, pff...",
+                german=" Keuch, keuch...[K] Keuch, keuch...",
+                italian=" Uff-uff...[K] Uff-uff...",
+                spanish=" Uf... Puf...[K] Uf... Puf...",
+            }
+        default:
+            {
+                english=" Huff-huff...[K] Huff-huff...",
+                french=" Pff, pff...[K] Pff, pff...",
+                german=" Keuch, keuch...[K] Keuch, keuch...",
+                italian=" Uff-uff...[K] Uff-uff...",
+                spanish=" Uf... Puf...[K] Uf... Puf...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We did it![K] We\'re...[K]outside!",
+                french=" On a réussi![K] On est...[K] dehors!",
+                german=" Geschafft![K] Wir sind...[K] draußen!",
+                italian=" Ce l\'abbiamo fatta![K] Siamo...[K]\nfuori!",
+                spanish=" ¡Lo logramos![K]\nEstamos...[K] ¡en el exterior!",
+            }
+        case 2:
+            {
+                english=" We did it![K] We\'re...[K]outside!",
+                french=" On a réussi![K] On est...[K] dehors!",
+                german=" Geschafft![K] Wir sind...[K] draußen!",
+                italian=" Ce l\'abbiamo fatta![K] Siamo...[K]\nfuori!",
+                spanish=" ¡Lo logramos![K]\nEstamos...[K] ¡en el exterior!",
+            }
+        default:
+            {
+                english=" We did it![K] We\'re...[K]outside!",
+                french=" On a réussi![K] On est...[K] dehors!",
+                german=" Geschafft![K] Wir sind...[K] draußen!",
+                italian=" Ce l\'abbiamo fatta![K] Siamo...[K]\nfuori!",
+                spanish=" ¡Lo logramos![K]\nEstamos...[K] ¡en el exterior!",
+            }
+    }
+    message_Close();
+    se_FadeOut(7193, 30);
+    WaitSe(7193);
+    se_Play(7187);
+    Wait(60);
+    back_SetGround(LEVEL_P05P04A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    supervision_Acting(1);
+    Wait(1);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        MovePositionMark(33152, Position<'m0', 34, 21.5>);
+    }
+    Wait(15);
+    supervision_Acting(2);
+    Wait(1);
+    with (actor ACTOR_PLAYER) {
+        MovePositionOffset(33152, 32, 0);
+    }
+    Wait(20);
+    supervision_Acting(3);
+    Wait(1);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(33152, Position<'m1', 25, 21.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(33152, Position<'m2', 29.5, 23.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    se_Play(8967);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Wah! What...[K]what is this?!",
+                french=" Ouah! Que...[K] qu\'est-ce que c\'est?!",
+                german=" Wah! Was...[K] ist das?!?",
+                italian=" Aah! Che...[K] Che cos\'è tutto \nquesto?!",
+                spanish=" ¡Aah! ¿Qué?[K] ¡¿Qué es esto?!",
+            }
+        case 2:
+            {
+                english=" Wah! What...[K]what is this?!",
+                french=" Ouah! Que...[K] qu\'est-ce que c\'est?!",
+                german=" Wah! Was...[K] ist das?!?",
+                italian=" Aah! Che...[K] Che cos\'è tutto \nquesto?!",
+                spanish=" ¡Aah! ¿Qué?[K] ¡¿Qué es esto?!",
+            }
+        default:
+            {
+                english=" Wah! What...[K]what is this?!",
+                french=" Ouah! Que...[K] qu\'est-ce que c\'est?!",
+                german=" Wah! Was...[K] ist das?!?",
+                italian=" Aah! Che...[K] Che cos\'è tutto \nquesto?!",
+                spanish=" ¡Aah! ¿Qué?[K] ¡¿Qué es esto?!",
+            }
+    }
+    message_Close();
+    screen_FadeOut(1, 30);
+    end;
+}

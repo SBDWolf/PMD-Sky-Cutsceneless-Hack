@@ -1,0 +1,614 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_MAIN = scn[14, 5];
+    back_SetGround(LEVEL_D14P11A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    bgm_PlayFadeIn(BGM_IN_THE_DEPTHS_OF_THE_PIT, 0, 256);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m0', 27, 35.5>);
+    }
+    Wait(15);
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m1', 31, 35.5>);
+    }
+    Wait(15);
+    with (actor ACTOR_UNIT_NPC1) {
+        MovePositionMark(1, Position<'m2', 29, 40.5>);
+    }
+    with (actor ACTOR_UNIT_NPC2) {
+        MovePositionMark(1, Position<'m3', 25.5, 40.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Is this the deepest part of\nthe desert?",
+                french=" Est-ce que nous avons atteint\nle tréfonds du désert?",
+                german=" Sind wir am tiefsten Punkt der\nWüste?",
+                italian=" Finisce qui il deserto?",
+                spanish=" ¿Hemos llegado a lo más\nprofundo del desierto?",
+            }
+        case 2:
+            {
+                english=" Is this the deepest part of\nthe desert?",
+                french=" Est-ce que nous avons atteint\nle tréfonds du désert?",
+                german=" Sind wir am tiefsten Punkt der\nWüste?",
+                italian=" Siamo arrivati nella parte più\nprofonda del deserto?",
+                spanish=" ¿Hemos llegado a lo más\nprofundo del desierto?",
+            }
+        default:
+            {
+                english=" Is this the deepest part of\nthe desert?",
+                french=" Est-ce que nous avons atteint\nle tréfonds du désert?",
+                german=" Sind wir am tiefsten Punkt der\nWüste?",
+                italian=" Siamo nella parte più\nprofonda del deserto?",
+                spanish=" ¿Hemos llegado a lo más\nprofundo del desierto?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    se_Play(8974);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Oh no! It\'s quicksand!",
+                french=" Attention! Des sables mouvants!",
+                german=" Oh nein! Das ist Treibsand!",
+                italian=" Oh no! Sabbie mobili!",
+                spanish=" ¡Cuidado!\n¡Son arenas movedizas!",
+            }
+        case 2:
+            {
+                english=" Watch out! It\'s quicksand!",
+                french=" Attention! Des sables mouvants!",
+                german=" Pass auf! Das ist Treibsand!",
+                italian=" Fai attenzione! Quelle sono\nsabbie mobili!",
+                spanish=" ¡Cuidado!\n¡Son arenas movedizas!",
+            }
+        default:
+            {
+                english=" Waah! There\'s quicksand!",
+                french=" Attention! Des sables mouvants!",
+                german=" Waah! Das ist Treibsand!",
+                italian=" Fai attenzione! Quelle sono\nsabbie mobili!",
+                spanish=" ¡Aaah! ¡Son arenas movedizas!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m4', 29, 27.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m5', 27, 28.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m6', 31, 28.5>);
+    }
+    with (actor ACTOR_UNIT_NPC2) {
+        MovePositionMark(1, Position<'m7', 24.5, 33.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_UNIT_NPC1) {
+        MovePositionMark(1, Position<'m8', 28, 34.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(15);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" The sand\'s getting sucked down\nthere, and there, and there!",
+                french=" Le sable est aspiré par le fond\nlà, là et là!!",
+                german=" Der Sand wird überall nach\nunten gezogen!",
+                italian=" Guarda! La sabbia viene\nrisucchiata verso il fondo!",
+                spanish=" ¡Mira cómo se traga la arena!",
+            }
+        case 2:
+            {
+                english=" The sand\'s getting sucked down\nhere and there!",
+                french=" Le sable est aspiré par le fond\nlà, là et là!!",
+                german=" Der Sand wird überall nach\nunten gezogen!",
+                italian=" Guarda! La sabbia viene\nrisucchiata verso il fondo!",
+                spanish=" ¡Mira cómo se traga la arena!",
+            }
+        default:
+            {
+                english=" The sand\'s getting sucked down\nhere and there!",
+                french=" Le sable est aspiré par le fond\nlà, là et là!!",
+                german=" Der Sand wird überall nach\nunten gezogen!",
+                italian=" Guarda! La sabbia viene\nrisucchiata verso il fondo!",
+                spanish=" ¡Mira cómo se traga la arena!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" They\'re like sand whirlpools, and\nwe\'ll be sucked down if we get close!",
+                french=" On dirait des tourbillons\nde sable! On va se faire aspirer si\non s\'en approche!",
+                german=" Das sind Sandstrudel! Wenn wir\nzu nah herangehen, ziehen sie uns mit nach\nunten!",
+                italian=" Sono come dei vortici di sabbia.\nAnche noi verremo risucchiati se ci\navviciniamo troppo!",
+                spanish=" Son una especie de remolinos,\n¡si nos acercamos más nos succionarán!",
+            }
+        case 2:
+            {
+                english=" They\'re like sand whirlpools, and\nwe\'ll be pulled in if we get close!",
+                french=" On dirait des tourbillons\nde sable! On va se faire aspirer si\non s\'en approche!",
+                german=" Das sind Sandstrudel! Wenn wir\nzu nah herangehen, werden wir hineingezogen!",
+                italian=" Sono come dei vortici di sabbia.\nAnche noi verremo risucchiati se ci\navviciniamo troppo!",
+                spanish=" Son una especie de remolinos,\n¡si nos acercamos más nos succionarán!",
+            }
+        default:
+            {
+                english=" They\'re like sand whirlpools, and\nwe\'ll be pulled under if we get close!",
+                french=" On dirait des tourbillons\nde sable! On va se faire aspirer si\non s\'en approche!",
+                german=" Das sind Sandstrudel! Wenn wir\nzu nah herangehen, werden wir nach unten\ngezogen!",
+                italian=" Sono come dei vortici di sabbia.\nRisucchieranno anche noi se ci avviciniamo\ntroppo!",
+                spanish=" Son una especie de remolinos,\n¡si nos acercamos más nos succionarán!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It\'s dangerous here!",
+                french=" C\'est dangereux ici!",
+                german=" Hier ist es gefährlich!",
+                italian=" Sono molto pericolosi!",
+                spanish=" Esto es muy peligroso.",
+            }
+        case 2:
+            {
+                english=" It\'s dangerous here!",
+                french=" C\'est dangereux ici!",
+                german=" Hier ist es gefährlich!",
+                italian=" Sono molto pericolosi!",
+                spanish=" Esto es muy peligroso.",
+            }
+        default:
+            {
+                english=" It\'s dangerous here!",
+                french=" C\'est dangereux ici!",
+                german=" Hier ist es gefährlich!",
+                italian=" Sono molto pericolosi!",
+                spanish=" Esto es peligrosísimo.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(15);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I don\'t see anything around here\nthat looks like a Time Gear!",
+                french=" Je ne vois rien qui ressemble\nà un Rouage du Temps dans le coin!",
+                german=" Ich sehe hier nichts, was ein\nZahnrad der Zeit sein könnte!",
+                italian=" Però non ho visto niente che\nassomigli a un Ingranaggio del Tempo!",
+                spanish=" No veo nada en este sitio que\nparezca un Engranaje del Tiempo.",
+            }
+        case 2:
+            {
+                english=" I don\'t see anything around here\nthat remotely looks like a Time Gear!",
+                french=" Je ne vois rien qui ressemble\nà un Rouage du Temps dans le coin!",
+                german=" Ich sehe hier nichts, was im\nEntferntesten wie ein Zahnrad der Zeit\naussieht!",
+                italian=" Però non vedo nessun\nIngranaggio del Tempo!",
+                spanish=" No veo nada en este sitio que\nparezca un Engranaje del Tiempo.",
+            }
+        default:
+            {
+                english=" I don\'t see anything around here\nthat even remotely looks like a Time Gear!",
+                french=" Je ne vois rien qui ressemble\nà un Rouage du Temps dans le coin!",
+                german=" Ich sehe hier nichts, was im\nEntferntesten wie ein Zahnrad der Zeit\naussieht!",
+                italian=" Però non vedo nessun\nIngranaggio del Tempo!",
+                spanish=" No veo nada en este sitio que\nparezca un Engranaje del Tiempo.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I guess there\'s nothing here.",
+                french=" Je suppose qu\'il n\'y a rien ici.",
+                german=" Ich schätze, hier ist nichts.",
+                italian=" Mi sa che non c\'è niente qui.",
+                spanish=" Supongo que aquí no hay nada.",
+            }
+        case 2:
+            {
+                english=" Maybe there\'s nothing here.",
+                french=" Je suppose qu\'il n\'y a rien ici.",
+                german=" Vielleicht ist hier einfach nichts.",
+                italian=" Forse non c\'è nulla qui.",
+                spanish=" Supongo que aquí no hay nada.",
+            }
+        default:
+            {
+                english=" I guess there\'s nothing here.",
+                french=" Je suppose qu\'il n\'y a rien ici.",
+                german=" Ich schätze, hier ist nichts.",
+                italian=" Forse non c\'è nulla qui.",
+                spanish=" Supongo que aquí no hay nada.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8962);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Huh?[K] What\'s up, [hero]?",
+                french=" Hein?[K] Qu\'est-ce qui se passe,\n[hero]?",
+                german=" Äh?[K] Was ist, [hero]?",
+                italian=" Mmm?[K] Che hai, [hero]?",
+                spanish=" ¿Eh?[K] ¿Qué pasa, [hero]?",
+            }
+        case 2:
+            {
+                english=" Oh?[K] What\'s the matter,\n[hero]?",
+                french=" Hein?[K] Qu\'est-ce qui se passe,\n[hero]?",
+                german=" Oh![K] Was ist los, [hero]?",
+                italian=" Mmm?[K] Cosa succede,\n[hero]?",
+                spanish=" ¿Eh?[K] ¿Qué pasa, [hero]?",
+            }
+        default:
+            {
+                english=" Oh?[K] What\'s wrong,\n[hero]?",
+                french=" Hein?[K] Qu\'est-ce qui se passe,\n[hero]?",
+                german=" Oh![K] Stimmt etwas nicht,\n[hero]?",
+                italian=" Mmm?[K] Cosa succede,\n[hero]?",
+                spanish=" ¿Eh?[K] ¿Qué pasa, [hero]?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_UNIT_NPC2) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    message_SetFace(ACTOR_PLAYER, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(...............)",
+                french="(...............)",
+                german="(...............)",
+                italian="(...............)",
+                spanish="(...)",
+            }
+        default:
+            {
+                english="(...............)",
+                french="(...............)",
+                german="(...............)",
+                italian="(...............)",
+                spanish="(...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(This feeling...)",
+                french="(Cette sensation...)",
+                german="(Dieses Gefühl...)",
+                italian="(Questa sensazione...)",
+                spanish="(Esa sensación...)",
+            }
+        default:
+            {
+                english="(This feeling...)",
+                french="(Cette sensation...)",
+                german="(Dieses Gefühl...)",
+                italian="(Questa sensazione...)",
+                spanish="(Esa sensación...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(It\'s like the one I got at [CS:P]Fogbound Lake[CR]...)",
+                french="(J\'ai ressenti la même chose au [CS:P]Lac\ndes Brumes[CR]...)",
+                german="(Dasselbe hatte ich am [CS:P]Nebelsee[CR].)",
+                italian="(È come quella che ho avuto al [CS:P]Lago Foschia[CR]...)",
+                spanish="(Es como la que tuve en el [CS:P]Lago Velado[CR].)",
+            }
+        default:
+            {
+                english="(It\'s like the one I got at [CS:P]Fogbound Lake[CR]...)",
+                french="(J\'ai ressenti la même chose au [CS:P]Lac\ndes Brumes[CR]...)",
+                german="(Dasselbe hatte ich am [CS:P]Nebelsee[CR].)",
+                italian="(È come quella che ho avuto al [CS:P]Lago Foschia[CR]...)",
+                spanish="(Es como la que tuve en el [CS:P]Lago Velado[CR].)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(I...[K]I know this place!)",
+                french="(Je...[K] je connais cet endroit!)",
+                german="(Ich...[K] Ich kenne diesen Ort!)",
+                italian="(Io...[K] sono già stato qui!)",
+                spanish="(Yo...[K] ¡conozco este lugar!)",
+            }
+        default:
+            {
+                english="(I...[K]I know this place!)",
+                french="(Je...[K] je connais cet endroit!)",
+                german="(Ich...[K] Ich kenne diesen Ort!)",
+                italian="(Io...[K] sono già stata qui!)",
+                spanish="(Yo...[K] ¡conozco este lugar!)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Maybe I have only heard of this place...[K]but it\nseems like I\'ve been here before...)",
+                french="(Peut-être... peut-être que j\'en ai seulement\nentendu parler...[K] mais j\'ai le sentiment d\'être\ndéjà venu avant...)",
+                german="(Vielleicht habe ich nur von ihm gehört.[K]\nAber es kommt mir so vor, als wäre ich schon\neinmal hiergewesen.)",
+                italian="(Potrei... sbagliarmi...[K] ma è come se\nfossi già stato qui...)",
+                spanish="(Tal vez solo haya oído hablar de este lugar...[K]\npero es como si ya lo conociera.)",
+            }
+        default:
+            {
+                english="(Maybe I have only heard of this place...[K]but it\nseems like I\'ve been here before...)",
+                french="(Peut-être... peut-être que j\'en ai seulement\nentendu parler...[K] mais j\'ai le sentiment d\'être\ndéjà venue avant...)",
+                german="(Vielleicht habe ich nur von ihm gehört.[K]\nAber es kommt mir so vor, als wäre ich schon\neinmal hiergewesen.)",
+                italian="(Potrei... sbagliarmi...[K] ma è come se\nfossi già stata qui...)",
+                spanish="(Tal vez solo haya oído hablar de este lugar...[K]\npero es como si ya lo conociera.)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(I can\'t tell which...)",
+                french="(Difficile à dire...)",
+                german="(Ich weiß nicht, woher...)",
+                italian="(Non riesco a capire...)",
+                spanish="(No sé si será una cosa o la otra.)",
+            }
+        default:
+            {
+                english="(I can\'t tell which...)",
+                french="(Difficile à dire...)",
+                german="(Ich weiß nicht, woher...)",
+                italian="(Non riesco a capire...)",
+                spanish="(No sé si será una cosa o la otra.)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Either way, I do know this place...)",
+                french="(Mais quoi qu\'il en soit, je connais cet\nendroit...)",
+                german="(Auf jeden Fall kenne ich diesen Ort.)",
+                italian="(In ogni caso, conosco questo posto...)",
+                spanish="(De cualquier forma, conozco este sitio.)",
+            }
+        default:
+            {
+                english="(Either way, I do know this place...)",
+                french="(Mais quoi qu\'il en soit, je connais cet\nendroit...)",
+                german="(Auf jeden Fall kenne ich diesen Ort.)",
+                italian="(In ogni caso, conosco questo posto...)",
+                spanish="(De cualquier forma, conozco este sitio.)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8971);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hey, [hero]!",
+                french=" Dis, [hero]!",
+                german=" Hey, [hero]!",
+                italian=" Ehi, [hero]! Mi senti?",
+                spanish=" Oye, [hero].",
+            }
+        case 2:
+            {
+                english=" Listen, [hero]!",
+                french=" Dis, [hero]!",
+                german=" Hör mal, [hero]!",
+                italian=" [hero]? Va tutto bene?",
+                spanish=" Oye, [hero].",
+            }
+        default:
+            {
+                english=" Say, [hero]!",
+                french=" Dis, [hero]!",
+                german=" Du, [hero]!",
+                italian=" [hero]? Va tutto bene?",
+                spanish=" Oye, [hero].",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8964);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(30);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_HAPPY, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" You were daydreaming!\nWhat\'s up?",
+                french=" On aurait dit que tu étais\nailleurs! Il y a un problème?",
+                german=" Träumst du vor dich hin?\nWas ist los?",
+                italian=" Ci sei? Stai dormendo in piedi!",
+                spanish=" Estabas en las nubes.\n¿Qué pasa?",
+            }
+        case 2:
+            {
+                english=" What\'s the matter? You were\noff in your own thoughts there.",
+                french=" On aurait dit que tu étais\nailleurs! Il y a un problème?",
+                german=" Was ist los? Du warst gerade\nganz gedankenversunken.",
+                italian=" Cosa ti succede? Mi è sembrato\nche fossi assente...",
+                spanish=" ¿Qué pasa? Parecías estar\npensando en otra cosa.",
+            }
+        default:
+            {
+                english=" What\'s wrong? You seemed to\nbe in a daze there.",
+                french=" On aurait dit que tu étais\nailleurs! Il y a un problème?",
+                german=" Stimmt etwas nicht? Du wirkst\nganz abwesend.",
+                italian=" Cosa ti succede? Mi è sembrato\nche fossi assente...",
+                spanish=" ¿Qué pasa? Parecías ausente.",
+            }
+    }
+    message_KeyWait();
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I hate to say it, but there seems\nto be nothing here.",
+                french=" Ça me désole, mais je crois\nqu\'il n\'y a rien ici.",
+                german=" Ich sage es ungern, aber hier\ngibt es anscheinend nichts zu finden.",
+                italian=" Comunque, sembra che non ci sia\nniente qui.",
+                spanish=" Odio admitirlo, pero aquí no\nhay nada.",
+            }
+        case 2:
+            {
+                english=" Well, there seems to be nothing\nhere. How disappointing!",
+                french=" Ça me désole, mais je crois\nqu\'il n\'y a rien ici.",
+                german=" Hier gibt es anscheinend nichts\nzu finden. Wie schade!",
+                italian=" Comunque, temo che non ci sia\nniente qui.",
+                spanish=" Bueno, parece que aquí no\nhay nada. ¡Menuda faena!",
+            }
+        default:
+            {
+                english=" Well, there seems to be nothing\nhere. How disappointing!",
+                french=" Ça me désole, mais je crois\nqu\'il n\'y a rien ici.",
+                german=" Hier gibt es anscheinend nichts\nzu finden. Wie schade!",
+                italian=" Comunque, temo che non ci sia\nniente qui.",
+                spanish=" Vaya, parece que aquí\nno hay nada. ¡Qué decepción!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Let\'s report our findings to the\nguild. Let\'s go home.",
+                french=" Allons faire notre rapport\nà la Guilde. Allez, rentrons.",
+                german=" Berichten wir der Gilde davon.\nLass uns heimgehen.",
+                italian=" Andiamo a dirlo agli altri.",
+                spanish=" Tendremos que informar al\n[CS:N]Pokégremio[CR]. Vámonos de aquí.",
+            }
+        case 2:
+            {
+                english=" Let\'s report our findings to the\nguild. Let\'s go home.",
+                french=" Allons faire notre rapport\nà la Guilde. Allez, rentrons.",
+                german=" Berichten wir der Gilde davon.\nLass uns heimgehen.",
+                italian=" Andiamo a comunicarlo alla\nGilda.",
+                spanish=" Tendremos que informar al\n[CS:N]Pokégremio[CR]. Vámonos de aquí.",
+            }
+        default:
+            {
+                english=" Let\'s report our findings to the\nguild. Let\'s go home.",
+                french=" Allons faire notre rapport\nà la Guilde. Allez, rentrons.",
+                german=" Berichten wir der Gilde davon.\nLass uns heimgehen.",
+                italian=" Andiamo a comunicarlo alla\nGilda.",
+                spanish=" Tendremos que informar al\n[CS:N]Pokégremio[CR]. Vámonos de aquí.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionOffset(32896, 16, -16);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(32, 10, DIR_UP);
+    }
+    with (actor ACTOR_UNIT_NPC1) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_UNIT_NPC2) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(32896, Position<'m9', 31, 27>);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionOffset(32896, 0, 180);
+    }
+    Wait(5);
+    with (actor ACTOR_PLAYER) {
+        MovePositionOffset(32896, 0, 180);
+    }
+    Wait(45);
+    with (actor ACTOR_UNIT_NPC1) {
+        Turn2Direction(8, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_UNIT_NPC2) {
+        Turn2Direction(8, 10, DIR_DOWN);
+    }
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 60);
+    Wait(60);
+    worldmap_SetMode(3);
+    worldmap_SetLevel(2);
+    back2_SetMode(3);
+    WaitSubScreen();
+    worldmap_ChangeLevel(3);
+    worldmap_SetCamera(21);
+    WaitSubScreen();
+    me_Play(6);
+    message_Mail({
+        english="[CN]The clouds parted over the [CS:P]Northern Desert[CR]!",
+        french="[CN]Les nuages se sont dissipés\n[CN]au-dessus du [CS:P]Désert du Nord[CR]!",
+        german="[CN]Die Wolken über der [CS:P]Nordwüste[CR]\n[CN]haben sich verzogen!",
+        italian="[CN]Le nuvole si sollevano dal [CS:P]Deserto del Nord[CR]!",
+        spanish="[CN]¡Las nubes que cubrían\n[CN]el [CS:P]Desierto Norte[CR] se disiparon!",
+    });
+    WaitMe(6);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    screen2_FadeOut(1, 15);
+    back2_SetMode(0);
+    end;
+}

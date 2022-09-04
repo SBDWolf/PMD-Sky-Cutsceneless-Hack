@@ -1,0 +1,191 @@
+
+def 0 {
+    sound_Stop();
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V02P06A);
+    camera2_SetPositionMark(Position<'m0', 19.5, 15.5>);
+    screen2_FadeIn(1, 60);
+    Wait(150);
+    screen2_FadeOut(1, 60);
+    back2_SetMode(0);
+    back_SetGround(LEVEL_G01P07C);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 60);
+    bgm_PlayFadeIn(BGM_GOODNIGHT, 0, 256);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Just before dinner, [CS:N]Chatot[CR] said\nanother Time Gear was stolen.",
+                french=" Juste avant le dîner, [CS:N]Pijako[CR]\na annoncé qu\'un autre Rouage du Temps avait\ndisparu.",
+                german=" Vor dem Essen sagte [CS:N]Plaudagei[CR],\ndass noch ein Zahnrad der Zeit gestohlen\nwurde.",
+                italian=" Prima di cena, [CS:N]Chatot[CR] ha detto\nche un altro Ingranaggio del Tempo è stato\nrubato.",
+                spanish=" Justo antes de la cena, [CS:N]Chatot[CR]\nnos contó que han robado otro Engranaje del\nTiempo.",
+            }
+        case 2:
+            {
+                english=" Just before dinner, [CS:N]Chatot[CR] said\nanother Time Gear was stolen.",
+                french=" Juste avant le dîner, [CS:N]Pijako[CR]\na annoncé qu\'un autre Rouage du Temps avait\ndisparu.",
+                german=" Vor dem Essen sagte [CS:N]Plaudagei[CR],\ndass noch ein Zahnrad der Zeit gestohlen\nwurde.",
+                italian=" Prima di cena, [CS:N]Chatot[CR] ha detto\nche un altro Ingranaggio del Tempo è stato\nrubato.",
+                spanish=" Justo antes de la cena, [CS:N]Chatot[CR]\nnos contó que han robado otro Engranaje del\nTiempo.",
+            }
+        default:
+            {
+                english=" Just before dinner, [CS:N]Chatot[CR] said\nanother Time Gear was stolen.",
+                french=" Juste avant le dîner, [CS:N]Pijako[CR]\na annoncé qu\'un autre Rouage du Temps avait\ndisparu.",
+                german=" Vor dem Essen sagte [CS:N]Plaudagei[CR],\ndass noch ein Zahnrad der Zeit gestohlen\nwurde.",
+                italian=" Prima di cena, [CS:N]Chatot[CR] ha detto\nche un altro Ingranaggio del Tempo è stato\nrubato.",
+                spanish=" Justo antes de la cena, [CS:N]Chatot[CR]\nnos contó que han robado otro Engranaje del\nTiempo.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" That makes two now! Who\'d go\naround stealing them?",
+                french=" Ça en fait deux maintenant!\nMais qui peut bien s\'amuser à les voler?",
+                german=" Das macht schon zwei!\nWer stiehlt die bloß?",
+                italian=" Ne hanno rubati due, per ora!\nMa chi sarà stato?",
+                spanish=" Ya van dos. ¿Quién los habrá\nrobado?",
+            }
+        case 2:
+            {
+                english=" That\'s two now! I can\'t imagine\nwho\'d be stealing them!",
+                french=" Ça en fait deux maintenant!\nMais qui peut bien s\'amuser à les voler?",
+                german=" Jetzt sind es schon zwei!\nIch kann mir nicht vorstellen, wer sie stiehlt!",
+                italian=" Ne hanno rubati due, per ora!\nMa chi potrebbe essere?",
+                spanish=" Ya van dos. No puedo ni\nimaginarme quién puede estar detrás\nde algo así.",
+            }
+        default:
+            {
+                english=" That\'s two now! I can\'t imagine\nwho\'d be stealing them!",
+                french=" Ça en fait deux maintenant!\nMais qui peut bien s\'amuser à les voler?",
+                german=" Jetzt sind es schon zwei!\nIch kann mir nicht vorstellen, wer sie stiehlt!",
+                italian=" Ne hanno rubati due, per ora!\nMa chi potrebbe essere?",
+                spanish=" Ya van dos. No me entra\nen la cabeza que alguien pudiera hacer\nalgo así.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" What would anyone want with\nthe Time Gears anyway?",
+                french=" Qu\'est-ce qu\'on peut bien\nen faire de toute façon?",
+                german=" Was sollte irgendwer überhaupt\nmit Zahnrädern der Zeit anstellen wollen?",
+                italian=" Cosa potrebbero mai farsene \ndegli Ingranaggi del Tempo?",
+                spanish=" ¿Para qué querría nadie\nllevarse los Engranajes del Tiempo?",
+            }
+        case 2:
+            {
+                english=" What would anyone want with\nthe Time Gears anyway?",
+                french=" Qu\'est-ce qu\'on peut bien\nen faire de toute façon?",
+                german=" Was sollte irgendwer überhaupt\nmit Zahnrädern der Zeit anstellen wollen?",
+                italian=" A che scopo rubare gli\nIngranaggi del Tempo?",
+                spanish=" ¿Para qué querría nadie\nllevarse los Engranajes del Tiempo?",
+            }
+        default:
+            {
+                english=" What would anyone want with\nthe Time Gears anyway?",
+                french=" Qu\'est-ce qu\'on peut bien\nen faire de toute façon?",
+                german=" Was sollte irgendwer überhaupt\nmit Zahnrädern der Zeit anstellen wollen?",
+                italian=" A che scopo rubare gli\nIngranaggi del Tempo?",
+                spanish=" ¿Para qué querría nadie\nllevarse los Engranajes del Tiempo?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I just don\'t know...",
+                french=" Ça me dépasse...",
+                german=" Ich weiß es nicht...",
+                italian=" Boh? Davvero non capisco...",
+                spanish=" No lo entiendo...",
+            }
+        case 2:
+            {
+                english=" I just don\'t understand...",
+                french=" Ça me dépasse...",
+                german=" Ich verstehe das nicht...",
+                italian=" Non riesco proprio a capire...",
+                spanish=" No lo entiendo...",
+            }
+        default:
+            {
+                english=" I just can\'t figure it out...",
+                french=" Ça me dépasse...",
+                german=" Ich kapiere es einfach nicht...",
+                italian=" Non riesco proprio a capire...",
+                spanish=" No lo entiendo...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(15);
+    message_SetFace(ACTOR_PLAYER, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(..................)",
+                french="(..................)",
+                german="(..................)",
+                italian="(..................)",
+                spanish="(...)",
+            }
+        default:
+            {
+                english="(..................)",
+                french="(..................)",
+                german="(..................)",
+                italian="(..................)",
+                spanish="(...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(I don\'t know either...)",
+                french="(Moi aussi, ça me dépasse...)",
+                german="(Ich weiß es auch nicht...)",
+                italian="(Nemmeno io riesco a capire il motivo.)",
+                spanish="(Yo tampoco...)",
+            }
+        default:
+            {
+                english="(I don\'t know either...)",
+                french="(Moi aussi, ça me dépasse...)",
+                german="(Ich weiß es auch nicht...)",
+                italian="(Nemmeno io riesco a capire il motivo.)",
+                spanish="(Yo tampoco...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(But when I was at [CS:P]Fogbound Lake[CR] and saw a\nTime Gear for the first time...)",
+                french="(Mais au [CS:P]Lac des Brumes[CR], quand j\'ai vu\nun Rouage du Temps pour la première fois...)",
+                german="(Aber als ich am [CS:P]Nebelsee[CR] zum ersten Mal ein\nZahnrad der Zeit sah...)",
+                italian="(Ma quella volta al [CS:P]Lago Foschia[CR], quando ho\nvisto l\'Ingranaggio del Tempo per la prima\nvolta...)",
+                spanish="(Pero cuando estuve en el [CS:P]Lago Velado[CR] y vi\nun Engranaje del Tiempo por primera vez...)",
+            }
+        default:
+            {
+                english="(But when I was at [CS:P]Fogbound Lake[CR] and saw a\nTime Gear for the first time...)",
+                french="(Mais au [CS:P]Lac des Brumes[CR], quand j\'ai vu\nun Rouage du Temps pour la première fois...)",
+                german="(Aber als ich am [CS:P]Nebelsee[CR] zum ersten Mal ein\nZahnrad der Zeit sah...)",
+                italian="(Ma quella volta al [CS:P]Lago Foschia[CR], quando ho\nvisto l\'Ingranaggio del Tempo per la prima\nvolta...)",
+                spanish="(Pero cuando estuve en el [CS:P]Lago Velado[CR] y vi\nun Engranaje del Tiempo por primera vez...)",
+            }
+    }
+    message_Close();
+    screen_FadeOut(1, 30);
+    end;
+}

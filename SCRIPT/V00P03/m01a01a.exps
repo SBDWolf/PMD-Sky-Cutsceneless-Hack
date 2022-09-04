@@ -1,0 +1,27 @@
+
+def 0 {
+    back2_SetMode(0);
+    back_SetGround(LEVEL_V00P03);
+    supervision_Acting(1);
+    with (object OBJECT_S13P02A3_564) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    Wait(150);
+    screen_FadeOut(1, 30);
+    screen2_FadeOut(1, 30);
+    back2_SetMode(5);
+    back_SetGround(LEVEL_V37P02A);
+    supervision_SpecialActing(16, 20, 120);
+    supervision2_SpecialActing(16, 0, 0);
+    screen2_FadeIn(0, 30);
+    screen_FadeIn(1, 30);
+    Wait(300);
+    screen2_FadeOut(0, 30);
+    screen_FadeOut(1, 30);
+    supervision_SpecialActing(3, 0, 0);
+    supervision2_SpecialActing(3, 0, 0);
+    back2_SetMode(32767);
+    supervision_ExecuteStation(LEVEL_T00P01, 'M01A01', 0);
+    hold;
+}

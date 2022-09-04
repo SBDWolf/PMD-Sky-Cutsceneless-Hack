@@ -1,0 +1,61 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_STORM, 0, 256);
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V01P02A);
+    back_SetGround(LEVEL_V01P01A);
+    supervision_Acting(0);
+    camera_SetPositionMark(Position<'m0', 17, 13.5>);
+    with (performer 10) {
+        SetEffect(699, 3);
+    }
+    with (performer 3) {
+        SetEffect(EFFECT_VERY_HEAVY_RAIN, 3);
+    }
+    screen2_FadeIn(0, 30);
+    screen_FadeIn(1, 30);
+    Wait(120);
+    se_Play(6401);
+    camera2_SetPositionMark(Position<'m1', 52, 12.5>);
+    Wait(2);
+    camera2_SetPositionMark(Position<'m2', 15, 12.5>);
+    Wait(2);
+    camera2_SetPositionMark(Position<'m3', 52, 12.5>);
+    supervision_Acting(1);
+    with (object OBJECT_V01P02A1_197) {
+        SetAnimation(17);
+    }
+    with (object OBJECT_V01P02A1_197) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_V01P02A1_197);
+    camera2_SetPositionMark(Position<'m4', 15, 12.5>);
+    Wait(50);
+    se_Play(6401);
+    camera2_SetPositionMark(Position<'m5', 52, 12.5>);
+    Wait(2);
+    camera2_SetPositionMark(Position<'m6', 15, 12.5>);
+    Wait(2);
+    camera2_SetPositionMark(Position<'m7', 52, 12.5>);
+    with (object OBJECT_V01P02A1_197) {
+        SetAnimation(17);
+    }
+    with (object OBJECT_V01P02A1_197) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_V01P02A1_197);
+    camera2_SetPositionMark(Position<'m8', 15, 12.5>);
+    Wait(90);
+    bgm_FadeOut(120);
+    screen2_FadeOut(0, 60);
+    screen_FadeOut(1, 60);
+    back2_SetMode(0);
+    with (performer 10) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (performer 3) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    Wait(180);
+    end;
+}

@@ -1,0 +1,226 @@
+
+def 0 {
+    sound_Stop();
+    back_SetDungeonBanner(43, 0);
+    screen_FadeIn(1, 16);
+    Wait(60);
+    screen_FadeOut(1, 16);
+    Wait(15);
+    back_SetGround(LEVEL_D30P41A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    bgm_PlayFadeIn(BGM_HEAVY_FEELING, 0, 256);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    se_Play(7690);
+    screen_WhiteOut(1, 3);
+    Wait(2);
+    screen_FadeIn(1, 3);
+    Wait(40);
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SetAnimation(19);
+    }
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        WaitAnimation();
+    }
+    camera_SetEffect(2, 1, 33024);
+    se_Play(6930);
+    message_SetFace(ACTOR_NPC_DARK_DIARUGA, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" GRRR-OOOOOO...OOOOOH!![K]\nYOU AGAIN?!",
+        french=" GRRR-OOOOOO... OOOOOH!![K]\nENCORE VOUS?!",
+        german=" GRRR-OOOOOO...OOOOOH![K]\nIHR SCHON WIEDER!",
+        italian=" GRRR-OOOOOO... OOOOOH!![K]\nANCORA VOI?!",
+        spanish=" ¡GRRRRRRR![K]\n¡¿OTRA VEZ AQUÍ?!",
+    });
+    WaitSe(6930);
+    camera_SetEffect(0, 0, 0);
+    WaitExecuteLives(ACTOR_NPC_DARK_DIARUGA);
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SetAnimation(2);
+    }
+    message_Talk({
+        english=" YOUR EFFORTS ARE FUTILE!\nI WON\'T LET YOU DESTROY THE TOWER!",
+        french=" VOS EFFORTS SONT VAINS!\nJE NE VOUS LAISSERAI PAS DETRUIRE\nLA TOUR!",
+        german=" EURE ANSTRENGUNGEN SIND\nSINNLOS! ICH LASSE EUCH DEN TURM NICHT\nZERSTÖREN!",
+        italian=" I VOSTRI SFORZI SONO INUTILI!\nNON VI PERMETTERÒ DI DISTRUGGERE LA\nTORRE!",
+        spanish=" ¡VUESTROS ESFUERZOS\nSERÁN EN VANO! ¡NO OS PERMITIRÉ\nQUE DESTRUYÁIS LA TORRE!",
+    });
+    message_Talk({
+        english=" TIME MUST NOT...[K] TIME...[K]\nGRRR-OOOOOO...OOOOOH!",
+        french=" LE TEMPS NE DOIT PAS...[K]\nLE TEMPS...[K] GRRR-OOOOOO... OOOOOH!",
+        german=" DIE ZEIT DARF NICHT...[K]\nDIE ZEIT...[K] GRRR-OOOOOO...OOOOOH!",
+        italian=" IL TEMPO NON DEVE...[K] IL\nTEMPO...[K] GRRR-OOOOOO... OOOOOH!",
+        spanish=" EL TIEMPO NO DEBE...[K]\nEL TIEMPO...[K] ¡GRRRRRRR!",
+    });
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SetAnimation(19);
+    }
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        WaitAnimation();
+    }
+    camera_SetEffect(2, 1, 33024);
+    se_Play(6930);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    WaitExecuteLives(ACTOR_NPC_DARK_DIARUGA);
+    WaitSe(6930);
+    message_CloseEnforce();
+    camera_SetEffect(0, 0, 0);
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SetAnimation(2);
+    }
+    Wait(15);
+    message_SetFace(ACTOR_PLAYER, FACE_DETERMINED, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="([CS:N]Dialga[CR]\'s taken on more darkness!)",
+                french="(L\'ombre s\'empare de [CS:N]Dialga[CR]!)",
+                german="(Die Dunkelheit hat noch mehr von [CS:N]Dialga[CR]\nBesitz ergriffen!)",
+                italian="([CS:N]Dialga[CR] sta diventando più tenebroso!)",
+                spanish="(¡La oscuridad ha afectado aún más a [CS:N]Dialga[CR]!)",
+            }
+        default:
+            {
+                english="([CS:N]Dialga[CR]\'s taken on more darkness!)",
+                french="(L\'ombre s\'empare de [CS:N]Dialga[CR]!)",
+                german="(Die Dunkelheit hat noch mehr von [CS:N]Dialga[CR]\nBesitz ergriffen!)",
+                italian="([CS:N]Dialga[CR] sta diventando più tenebroso!)",
+                spanish="(¡La oscuridad ha afectado aún más a [CS:N]Dialga[CR]!)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(That darkness will soon consume him!)",
+                french="(Elle va bientôt l\'engloutir!)",
+                german="(Die Dunkelheit wird es bald verzehren!)",
+                italian="(L\'oscurità lo consumerà presto!)",
+                spanish="(¡Pronto se adueñará de él!)",
+            }
+        default:
+            {
+                english="(That darkness will soon consume him!)",
+                french="(Elle va bientôt l\'engloutir!)",
+                german="(Die Dunkelheit wird es bald verzehren!)",
+                italian="(L\'oscurità lo consumerà presto!)",
+                spanish="(¡Pronto se adueñará de él!)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(We have to stop it!)",
+                french="(Il faut arrêter ça!)",
+                german="(Wir müssen das verhindern!)",
+                italian="(Dobbiamo fermarlo!)",
+                spanish="(¡Tenemos que detener esto!)",
+            }
+        default:
+            {
+                english="(We have to stop it!)",
+                french="(Il faut arrêter ça!)",
+                german="(Wir müssen das verhindern!)",
+                italian="(Dobbiamo fermarlo!)",
+                spanish="(¡Tenemos que detener esto!)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(For the world![K] For the future!)",
+                french="(Pour la planète![K] Pour le futur!)",
+                german="(Für die Welt![K] Für die Zukunft!)",
+                italian="(Per il mondo![K] Per il futuro!)",
+                spanish="(¡Por el mundo![K] ¡Por el futuro!)",
+            }
+        default:
+            {
+                english="(For the world![K] For the future!)",
+                french="(Pour la planète![K] Pour le futur!)",
+                german="(Für die Welt![K] Für die Zukunft!)",
+                italian="(Per il mondo![K] Per il futuro!)",
+                spanish="(¡Por el mundo![K] ¡Por el futuro!)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8967);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" H-here he comes, [hero]!",
+                french=" Il... il commence à se fâcher,\n[hero]!",
+                german=" E-es greift gleich an,\n[hero]!",
+                italian=" S-Si sta avvicinando,\n[hero]!",
+                spanish=" ¡Aquí viene, [hero]!",
+            }
+        case 2:
+            {
+                english=" H-here he comes, [hero]!",
+                french=" Il... il commence à se fâcher,\n[hero]!",
+                german=" E-es greift gleich an,\n[hero]!",
+                italian=" S-Si sta avvicinando,\n[hero]!",
+                spanish=" ¡Aquí viene, [hero]!",
+            }
+        default:
+            {
+                english=" H-here he comes, [hero]!",
+                french=" Il... il commence à se fâcher,\n[hero]!",
+                german=" E-es greift gleich an,\n[hero]!",
+                italian=" S-Si sta avvicinando,\n[hero]!",
+                spanish=" ¡Aquí viene, [hero]!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        WaitAnimation();
+    }
+    camera_SetEffect(2, 1, 33024);
+    se_Play(6930);
+    message_SetFace(ACTOR_NPC_DARK_DIARUGA, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" GRRR-OOOOOO...OOOOOH!",
+        french=" GRRR-OOOOOO... OOOOOH!",
+        german=" GRRR-OOOOOO...OOOOOH!",
+        italian=" GRRR-OOOOOO... OOOOOH!",
+        spanish=" ¡GRRRRRRR!",
+    });
+    WaitSe(6930);
+    message_CloseEnforce();
+    camera_SetEffect(0, 0, 0);
+    bgm_Stop();
+    se_Play(5140);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    WaitSe(5140);
+    CallCommon(CORO_BOSS_WIPE_FUNC);
+    main_EnterDungeon(43, 30);
+    main_EnterDungeon(-1, 30);
+    hold;
+    end;
+}

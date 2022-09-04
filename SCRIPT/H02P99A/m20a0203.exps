@@ -1,0 +1,151 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_OCEAN1, 90, 256);
+    back_SetGround(LEVEL_H02P99A);
+    supervision_Acting(2);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    Wait(60);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m0', 34.5, 24.5>);
+    }
+    Wait(15);
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(32896, Position<'m1', 34.5, 25.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecutePerformer(0);
+    Wait(30);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2Direction(4, 1, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" I see...[K] This is a hollow chamber\nin the face of the cliff.",
+        french=" Je vois...[K] C\'est une cavité\ncreusée dans la falaise.",
+        german=" Ich verstehe...[K] Das ist ein\nHohlraum auf der Vorderseite der Klippe.",
+        italian=" Capisco...[K] È una specie di\ncavità naturale all\'interno della scogliera.",
+        spanish=" Ya veo...[K] Hay una especie de\nestancia natural en la ladera del acantilado.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    supervision_Acting(1);
+    Wait(10);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(32896, Position<'m2', 34.5, 20.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    Wait(60);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(20);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_JUPUTORU);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Whew.[K] I\'m glad no one\'s\nwrecked this place.",
+                french=" Ouf![K] Je suis bien content\nque personne ne soit venu démolir cet endroit.",
+                german=" Puh.[K] Ich bin froh, dass niemand\ndiesen Ort hier verschandelt hat.",
+                italian=" Fiuuu.[K] Per fortuna nessuno ha\ntoccato niente.",
+                spanish=" Menos mal.[K] Todo sigue en\nsu sitio. Supongo que nadie ha estado por aquí.",
+            }
+        case 2:
+            {
+                english=" Whew.[K] I\'m glad no one\'s\nwrecked this place.",
+                french=" Ouf![K] Je suis bien content\nque personne ne soit venu démolir cet endroit.",
+                german=" Puh.[K] Ich bin froh, dass niemand\ndiesen Ort hier verschandelt hat.",
+                italian=" Fiuuu.[K] Per fortuna nessuno ha\ntoccato niente.",
+                spanish=" Menos mal.[K] Todo sigue en\nsu sitio. Supongo que nadie ha estado por aquí.",
+            }
+        default:
+            {
+                english=" Whew.[K] No one\'s been here to\nmess it up.",
+                french=" Ouf![K] Je suis bien contente\nque personne ne soit venu démolir cet endroit.",
+                german=" Puh.[K] Zum Glück hat niemand\ndiesen Ort hier verschandelt.",
+                italian=" Fiuuu.[K] Per fortuna nessuno ha\ntoccato niente.",
+                spanish=" Menos mal.[K] Todo sigue en\nsu sitio. Supongo que nadie ha estado por aquí.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It goes to show nobody takes\nany notice of this place.",
+                french=" Ça prouve bien que personne\nn\'en a remarqué l\'existence.",
+                german=" Das zeigt, dass niemand\ndiesen Ort wirklich beachtet.",
+                italian=" Sembra che a nessuno interessi\nmolto di questo posto.",
+                spanish=" Una prueba de que este lugar\npasa desapercibido.",
+            }
+        case 2:
+            {
+                english=" That\'s proof for how little\nnotice this place attracts.",
+                french=" Ça prouve bien que personne\nn\'en a remarqué l\'existence.",
+                german=" Das zeigt, wie wenig\nAufmerksamkeit dieser Ort auf sich zieht.",
+                italian=" È la prova che questo posto non \nsi nota molto.",
+                spanish=" Una prueba de que este lugar\npasa desapercibido.",
+            }
+        default:
+            {
+                english=" It goes to show how little\ninterest there is in this place.",
+                french=" Ça prouve bien que personne\nn\'en a remarqué l\'existence.",
+                german=" Das zeigt, wie wenig\nInteresse an diesem Ort besteht.",
+                italian=" Sembra che questo posto non \ninteressi molto.",
+                spanish=" Una prueba de que este lugar\npasa desapercibido.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It might be better if we stayed\nhere for a while.",
+                french=" On ferait mieux de rester ici\npendant quelque temps.",
+                german=" Es wäre vielleicht besser, wenn\nwir hier eine Weile bleiben würden.",
+                italian=" È meglio se restiamo qui per un\npo\'.",
+                spanish=" Creo que, por el momento,\ndeberíamos vivir aquí.",
+            }
+        case 2:
+            {
+                english=" It may be better if we stay\nhere for the time being.",
+                french=" On ferait mieux de rester ici\npendant quelque temps.",
+                german=" Es wäre vielleicht besser, wenn\nwir fürs Erste hier bleiben würden.",
+                italian=" È meglio se per ora restiamo\nqui.",
+                spanish=" Creo que, por el momento,\ndeberíamos vivir aquí.",
+            }
+        default:
+            {
+                english=" It may be better if we stay\nhere for a while.",
+                french=" On ferait mieux de rester ici\npendant quelque temps.",
+                german=" Es wäre vielleicht besser, wenn\nwir hier eine Weile bleiben würden.",
+                italian=" È meglio se restiamo qui per un\npo\'.",
+                spanish=" Por el momento, podemos vivir\naquí.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Agreed.",
+        french=" C\'est d\'accord.",
+        german=" Abgemacht.",
+        italian=" D\'accordo.",
+        spanish=" Estoy de acuerdo.",
+    });
+    message_Close();
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 60);
+    Wait(60);
+    WaitBgm(BGM_OCEAN1);
+    end;
+}

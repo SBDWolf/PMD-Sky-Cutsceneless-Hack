@@ -1,0 +1,567 @@
+
+def 0 {
+    dungeon_mode(1) = DMODE_OPEN_AND_REQUEST;
+    dungeon_mode(3) = DMODE_OPEN_AND_REQUEST;
+    dungeon_mode(4) = DMODE_OPEN_AND_REQUEST;
+    $SCENARIO_MAIN = scn[5, 1];
+    $PERFORMANCE_PROGRESS_LIST[4] = 1;
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
+    supervision_StationCommon(99);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    Wait(1);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetDirection(DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_GUREGGURU);
+    with (performer 0) {
+        SetPositionMark(Position<'m0', 60.5, 31.5>);
+    }
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    WaitExecutePerformer(0);
+    sound_Stop();
+    se_Play(8971);
+    camera_SetEffect(2, 2, 33536);
+    message_SetActor(ACTOR_NPC_DOGOOMU);
+    message_Talk({
+        english=" HEY, you two!",
+        french=" HEP LA, vous deux!",
+        german=" HEY, ihr zwei!",
+        italian=" EHI, voi due!",
+        spanish=" ¡EH! ¡PAREJA!",
+    });
+    with (actor ACTOR_PLAYER) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    Wait(10);
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    camera_SetEffect(0, 0, 0);
+    WaitSe(8971);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_DOGOOMU);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    se_Play(8967);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        MovePositionMark(2, Position<'m1', 52, 33.5>);
+    }
+    with (performer 0) {
+        MovePositionMark(33152, Position<'m2', 56, 31.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    WaitExecutePerformer(0);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_DOGOOMU);
+    }
+    se_Play(8971);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(2);
+    }
+    Wait(10);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" We need your help with\nsomething today!",
+        french=" On a besoin de votre aide\naujourd\'hui!",
+        german=" Wir brauchen heute eure Hilfe!",
+        italian=" Oggi ci serve il vostro aiuto\nper una cosetta!",
+        spanish=" ¡Hoy necesitamos que nos\nayudéis con una cosa!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD_REMIX, 0, 256);
+    with (performer 0) {
+        MovePositionMark(33152, Position<'m3', 24.5, 31.5>, Position<'m4', 24.5, 40>);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        MovePositionMark(33075, Position<'m5', 26, 33.5>, Position<'m6', 24, 35.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_DOGOOMU);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_DOGOOMU);
+    }
+    Wait(10);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(33075, Position<'m7', 35, 33.5>, Position<'m8', 28, 40.5>);
+    }
+    Wait(7);
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(33075, Position<'m9', 33, 31.5>, Position<'m10', 28, 36.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    WaitExecutePerformer(0);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(-2, 0);
+    message_Talk({
+        english=" [CS:N]Diglett[CR], I brought them!",
+        french=" [CS:N]Taupiqueur[CR], les voilà!",
+        german=" [CS:N]Digda[CR], hier sind sie!",
+        italian=" [CS:N]Diglett[CR], ecco qui!",
+        spanish=" ¡[CS:N]Diglett[CR], aquí están!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DIGUDA) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_DIGUDA);
+    message_SetFace(ACTOR_NPC_DIGUDA, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Thank you, [CS:N]Loudred[CR].",
+        french=" Merci, [CS:N]Ramboum[CR].",
+        german=" Danke, [CS:N]Krakeelo[CR].",
+        italian=" Grazie, [CS:N]Loudred[CR].",
+        spanish=" Gracias, [CS:N]Loudred[CR].",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DIGUDA) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_DIGUDA);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        MovePositionMark(32972, Position<'m11', 21, 35.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_FacePositionOffset(-3, 0);
+    message_Talk({
+        english=" You two are doing sentry\nduty today!",
+        french=" Aujourd\'hui, vous allez être\nde garde à l\'entrée!",
+        german=" Ihr beide übernehmt heute den\nWachdienst!",
+        italian=" Voi due siete di guardia oggi!",
+        spanish=" ¡Hoy os toca guardia!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_DIGUDA);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_DIGUDA);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_DIGUDA);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    WaitExecuteLives(ACTOR_PLAYER);
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_NPC_DIGUDA, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Sorry. I\'m usually the one to do\nsentry duty.",
+        french=" Désolé. Normalement, c\'est moi\nla sentinelle.",
+        german=" Tut mir leid. Normalerweise ist\nder Wachdienst meine Aufgabe.",
+        italian=" Mi spiace. Di solito lo faccio io.",
+        spanish=" Lo siento. Normalmente soy yo\nquien se ocupa de esto.",
+    });
+    message_Talk({
+        english=" But today, my dad gave me his\nduty of updating the boards.",
+        french=" Mais aujourd\'hui, je dois\naccomplir les tâches de mon père,\nc\'est-à-dire mettre les tableaux à jour.",
+        german=" Aber heute hat mein Vater mir\naufgetragen, die Infobretter zu aktualisieren.",
+        italian=" Ma oggi mio padre mi ha chiesto\ndi aggiornare le Bacheche al suo posto.",
+        spanish=" Pero mi padre me ha pedido\nque me encargue hoy de poner al día\nlos tablones.",
+    });
+    message_Talk({
+        english=" That\'s why I can\'t man my post.",
+        french=" Et c\'est pour ça que je ne peux\npas être à mon poste.",
+        german=" Also kann ich nicht auf meinem\nPosten sein.",
+        italian=" Per questo non posso stare di \nguardia.",
+        spanish=" Y por eso no puedo quedarme de\nguardia.",
+    });
+    message_Talk({
+        english=" It would be great if someone\ncould take over my sentry duty for today.",
+        french=" Ce serait super si quelqu\'un\npouvait s\'occuper du poste de garde\naujourd\'hui.",
+        german=" Es wäre toll, wenn heute jemand\nden Wachdienst für mich übernehmen könnte.",
+        italian=" Sarebbe fantastico se qualcuno\npotesse prendere il mio posto.",
+        spanish=" Y alguien debe ocupar mi puesto.",
+    });
+    message_Talk({
+        english=" And that\'s why you\'re here.\nPlease do a good job for me.[K] Bye!",
+        french=" Et c\'est pour ça que vous êtes\nici. S\'il vous plaît, travaillez bien.[K] A plus!",
+        german=" Und darum seid ihr hier.\nBitte macht meinen Job gut.[K] Tschüss!",
+        italian=" Ed ecco perché siete qui.\nVi prego di fare un buon lavoro.[K] Ciao!",
+        spanish=" Por eso estáis aquí. Espero\nque hagáis un buen trabajo.[K] ¡Hasta luego!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(6422);
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetAnimation(24);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        Destroy();
+    }
+    Wait(30);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    Wait(15);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_DOGOOMU);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_DOGOOMU);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_HAPPY, FACE_POS_TOP_L_CENTER);
+    message_FacePositionOffset(-3, 0);
+    message_Talk({
+        english=" ...And that\'s THAT.",
+        french=" ... Et c\'est TOUT.",
+        german=" Das ist ALLES!",
+        italian=" ... E così è DECISO.",
+        spanish=" Pues... No hay más que hablar.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    se_Play(8972);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Huh?! I didn\'t follow that at all!\nWhy are we involved?",
+                french=" Euh... j\'ai pas tout suivi!\nQu\'est-ce qu\'on fait là?",
+                german=" Ähem?!? Ich habe das nicht\nganz mitbekommen! Warum hast du uns geholt?",
+                italian=" Eh?! Cos\'ha detto?\nPerché dobbiamo farlo noi?",
+                spanish=" ¿Eh? ¡No me he enterado\nde nada! ¿Por qué nos ha tenido que tocar?",
+            }
+        case 2:
+            {
+                english=" Huh?! I didn\'t follow that at all!\nWhy are we involved in this?",
+                french=" Euh... j\'ai pas tout suivi!\nQu\'est-ce qu\'on fait là?",
+                german=" Ähem?!? Ich habe das nicht\nganz mitbekommen! Warum hast du uns geholt?",
+                italian=" Eh?! Non sono riuscito a seguire\nquello che diceva! Perché dobbiamo farlo noi?",
+                spanish=" ¿Eh? ¡No me he enterado\nde nada! ¿Por qué nos ha tenido que tocar?",
+            }
+        default:
+            {
+                english=" Huh?! I didn\'t follow that at all!\nHow did we get involved in this?",
+                french=" Euh... j\'ai pas tout suivi!\nQu\'est-ce qu\'on fait là?",
+                german=" Ähem?!? Ich habe das nicht\nganz mitbekommen! Warum hast du uns geholt?",
+                italian=" Eh?! Cosa voleva dire?\nPerché dobbiamo farlo noi?",
+                spanish=" ¿Eh? ¡No me he enterado\nde nada! ¿Por qué nos ha tenido que tocar?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8971);
+    camera_SetEffect(2, 2, 33536);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(19);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_ANGRY, 3);
+    }
+    camera_SetEffect(0, 0, 0);
+    Wait(5);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(68);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(68);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitAnimation();
+    }
+    WaitSe(8971);
+    camera_SetEffect(0, 0, 0);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_ANGRY, FACE_POS_TOP_L_CENTER);
+    message_FacePositionOffset(-3, 0);
+    message_Talk({
+        english=" Shut your YAP!",
+        french=" On se TAIT!",
+        german=" Halt die KLAPPE!",
+        italian=" Chiudi il BECCO!",
+        spanish=" ¡Cerrad el pico!",
+    });
+    message_Talk({
+        english=" NO MORE BELLYACHING!\nGO DO YOUR DUTY!",
+        french=" FINI LES RONCHONNEMENTS!\nA VOS POSTES!",
+        german=" KEIN GEMURRE MEHR!\nGEHT UND TUT EURE PFLICHT!",
+        italian=" BASTA LAMENTARSI!\nAL LAVORO!",
+        spanish=" ¡BASTA DE GIMOTEAR!\n¡ID A CUMPLIR CON VUESTRO DEBER!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_DIZZY, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Ugh... My head hurts...",
+                french=" Argh... Bonjour les maux de\ntête...",
+                german=" Argh, mein Kopf tut weh.",
+                italian=" Ugh... Mi fa male la testa...",
+                spanish=" Ay... Tengo la cabeza como un\nbombo...",
+            }
+        case 2:
+            {
+                english=" Ow... My head is pounding...",
+                french=" Argh... Bonjour les maux de\ntête...",
+                german=" Au, mir tut der Kopf weh.",
+                italian=" Ahi... Che mal di testa...",
+                spanish=" Uf... Qué dolor de cabeza...",
+            }
+        default:
+            {
+                english=" Ow... My head hurts...",
+                french=" Argh... Bonjour les maux de\ntête...",
+                german=" Au, mir tut der Kopf weh.",
+                italian=" Ahi... Mi gira la testa...",
+                spanish=" Uf... Mi cabeza...",
+            }
+    }
+    message_Close();
+    screen_FadeOut(1, 30);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    Wait(45);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" What do you expect us to do,\nanyway?",
+                french=" Qu\'est-ce qu\'on doit faire?",
+                german=" Was sollen wir überhaupt tun?",
+                italian=" Cosa dobbiamo fare?",
+                spanish=" ¿Y qué tenemos que hacer?",
+            }
+        case 2:
+            {
+                english=" What are we supposed to do?",
+                french=" Qu\'est-ce qu\'on doit faire?",
+                german=" Was sollen wir überhaupt tun?",
+                italian=" Cosa dobbiamo fare?",
+                spanish=" ¿Y qué tenemos que hacer?",
+            }
+        default:
+            {
+                english=" What are we expected to do,\nanyway?",
+                french=" Qu\'est-ce qu\'on doit faire?",
+                german=" Was sollen wir eigentlich tun?",
+                italian=" Cosa dobbiamo fare?",
+                spanish=" ¿Y qué tenemos que hacer?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_FacePositionOffset(-3, 0);
+    message_Talk({
+        english=" Climb down this hole and\nstand guard. You\'re on sentry duty!",
+        french=" Descendez dans ce trou et\nmontez la garde. Aujourd\'hui, vous êtes\nau poste de garde!",
+        german=" Klettert dieses Loch hinunter und\nhaltet Wache. Ihr habt Wachdienst!",
+        italian=" Dovete scendere in questo buco\nper fare il turno di guardia!",
+        spanish=" Bajad por aquí y vigilad.\n¡Estáis de guardia!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    se_Play(8962);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Sentry duty?",
+                french=" Au poste de garde?",
+                german=" Wachdienst?",
+                italian=" Turno di guardia?",
+                spanish=" ¿De guardia?",
+            }
+        case 2:
+            {
+                english=" Sentry duty?",
+                french=" Au poste de garde?",
+                german=" Wachdienst?",
+                italian=" Turno di guardia?",
+                spanish=" ¿De guardia?",
+            }
+        default:
+            {
+                english=" Sentry duty?",
+                french=" Au poste de garde?",
+                german=" Wachdienst?",
+                italian=" Turno di guardia?",
+                spanish=" ¿De guardia?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_FacePositionOffset(-3, 0);
+    message_Talk({
+        english=" You heard right.[K] Sentry duty.",
+        french=" Vous avez bien entendu.[K]\nAu poste de garde.",
+        german=" Richtig gehört.[K] Wachdienst.",
+        italian=" Avete sentito bene.[K] Dovete\nfare la guardia.",
+        spanish=" Habéis oído bien.[K] De guardia.",
+    });
+    message_Talk({
+        english=" We can\'t have suspicious\ncharacters coming into the guild.",
+        french=" Il ne faut pas que des individus\nsuspects puissent entrer à la Guilde.",
+        german=" Wir müssen vermeiden, dass\nzwielichtige Gestalten in die Gilde kommen.",
+        italian=" Dobbiamo evitare che Pokémon\nsospetti entrino alla Gilda.",
+        spanish=" No podemos permitir que entren\nindividuos sospechosos en el [CS:N]Pokégremio[CR].",
+    });
+    message_Talk({
+        english=" So we station a sentry below the\nguild entrance to evaluate Pokémon visitors.",
+        french=" On a donc installé un système\nde sentinelle sous l\'entrée de la Guilde\npour identifier les visiteurs.",
+        german=" Also ist unter dem Gildeneingang\neine Wache stationiert, die besuchende\nPokémon überprüft.",
+        italian=" Quindi c\'è una guardia sotto \nla Gilda per controllare i Pokémon che\nvengono qui.",
+        spanish=" Así que ponemos a un vigía bajo\nla puerta para comprobar quién quiere entrar.",
+    });
+    message_Talk({
+        english=" When you first came, you had\nyour footprint evaluated, right?",
+        french=" Lors de votre première visite,\non a identifié vos empreintes, pas vrai?",
+        german=" Als ihr zum ersten Mal kamt,\nwurden eure Fußabdrücke überprüft, oder?",
+        italian=" La prima volta che avete fatto \nvisita alla Gilda le vostre zampe sono state\nesaminate, giusto?",
+        spanish=" Cuando llegaste se comprobó\ntu huella, ¿no?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8964);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_LEFT, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" My footprint?[K] What do you...?",
+                french=" Mes empreintes?[K] Qu\'est-ce que\ntu...?",
+                german=" Mein Fußabdruck?[K] Was?",
+                italian=" La mia zampa?[K] Cosa...?",
+                spanish=" ¿Mi huella?[K] ¿Qué quieres...?",
+            }
+        case 2:
+            {
+                english=" My footprint?[K] What do you...?",
+                french=" Mes empreintes?[K] Qu\'est-ce que\ntu...?",
+                german=" Mein Fußabdruck?[K] Was?",
+                italian=" La mia zampa?[K] Cosa...?",
+                spanish=" ¿Mi huella?[K] ¿Qué quieres...?",
+            }
+        default:
+            {
+                english=" My footprint?[K] What do you...?",
+                french=" Mes empreintes?[K] Qu\'est-ce que\ntu...?",
+                german=" Mein Fußabdruck?[K] Was?",
+                italian=" La mia zampa?[K] Cosa...?",
+                spanish=" ¿Mi huella?[K] ¿Qué quieres...?",
+            }
+    }
+    message_Close();
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 30);
+    end;
+}

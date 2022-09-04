@@ -1,0 +1,160 @@
+
+def 0 {
+    switch ( ProcessSpecial(23, 0, 0) ) { }
+    sound_Stop();
+    back_SetGround(LEVEL_S05P03A);
+    supervision_Acting(0);
+    supervision_Acting(1);
+    if ( $SCENARIO_MAIN_BIT_FLAG[30] ) {
+        §label_0;
+        supervision_Acting(4);
+        §label_1;
+        with (performer 0) {
+            camera_SetMyself();
+        }
+        with (object OBJECT_S05P03A1_185) {
+            SetAnimation(2);
+        }
+        with (object OBJECT_S05P03A2_186) {
+            SetAnimation(2);
+        }
+        bgm_PlayFadeIn(BGM_POKEMON_EXPLORATION_TEAM_THEME, 0, 256);
+        screen_FadeIn(1, 30);
+        with (actor ACTOR_NPC_DEMO_HERO) {
+            Move2PositionMark(1, Position<'m0', 21, 65.5>);
+        }
+        with (actor ACTOR_NPC_DEMO_PARTNER) {
+            Move2PositionMark(1, Position<'m1', 18, 63.5>);
+        }
+        with (actor ACTOR_NPC_DEMO_PARTNER) {
+            SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+        }
+        with (actor ACTOR_NPC_DEMO_PARTNER) {
+            WaitEffect();
+        }
+        WaitExecuteLives(ACTOR_NPC_DEMO_PARTNER);
+        Wait(10);
+        with (actor ACTOR_NPC_DEMO_PARTNER) {
+            Turn2Direction(1, 10, DIR_DOWNRIGHT);
+        }
+        WaitExecuteLives(ACTOR_NPC_DEMO_PARTNER);
+        Wait(10);
+        with (actor ACTOR_NPC_DEMO_PARTNER) {
+            ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+        }
+        with (actor ACTOR_NPC_DEMO_HERO) {
+            Turn2Direction(4, 10, DIR_UPLEFT);
+        }
+        WaitExecuteLives(ACTOR_NPC_DEMO_HERO);
+        Wait(15);
+        with (actor ACTOR_NPC_DEMO_PARTNER) {
+            Turn2Direction(1, 10, DIR_UP);
+        }
+        Wait(30);
+        with (actor ACTOR_NPC_DEMO_HERO) {
+            Turn2Direction(4, 10, DIR_UP);
+        }
+        with (actor ACTOR_NPC_DEMO_PARTNER) {
+            Turn2DirectionLives(1, 10, ACTOR_NPC_DEMO_HERO);
+        }
+        WaitExecuteLives(ACTOR_NPC_DEMO_PARTNER);
+        Wait(10);
+        with (actor ACTOR_NPC_DEMO_PARTNER) {
+            ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+        }
+        WaitExecuteLives(ACTOR_NPC_DEMO_PARTNER);
+        with (actor ACTOR_NPC_DEMO_HERO) {
+            Turn2Direction(4, 10, DIR_UPLEFT);
+        }
+        Wait(5);
+        with (actor ACTOR_NPC_DEMO_PARTNER) {
+            ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+        }
+        WaitExecuteLives(ACTOR_NPC_DEMO_PARTNER);
+        Wait(30);
+        with (performer 0) {
+            Move2PositionMark(33152, Position<'m2', 19.5, 20.5>);
+        }
+        with (actor ACTOR_NPC_DEMO_HERO) {
+            Move2PositionMark(33152, Position<'m3', 21, 24.5>);
+        }
+        Wait(2);
+        with (actor ACTOR_NPC_DEMO_PARTNER) {
+            Move2PositionMark(33152, Position<'m4', 18, 24.5>);
+        }
+        with (actor ACTOR_NPC_DEMO_PARTNER) {
+            MovePositionMark(1, Position<'m5', 15, 19.5>);
+        }
+        with (actor ACTOR_NPC_DEMO_HERO) {
+            MovePositionMark(32972, Position<'m6', 19.5, 23.5>);
+        }
+        with (actor ACTOR_NPC_DEMO_HERO) {
+            Turn2Direction(4, 10, DIR_UP);
+        }
+        with (actor ACTOR_NPC_DEMO_PARTNER) {
+            Turn2Direction(4, 10, DIR_RIGHT);
+        }
+        WaitExecuteLives(ACTOR_NPC_DEMO_PARTNER);
+        WaitExecuteLives(ACTOR_NPC_DEMO_HERO);
+        Wait(30);
+        with (actor ACTOR_NPC_DEMO_HERO) {
+            Move2PositionMark(32844, Position<'m7', 19.5, 21.5>);
+        }
+        Wait(10);
+        with (actor ACTOR_NPC_DEMO_PARTNER) {
+            Move2PositionMark(32844, Position<'m8', 16, 19.5>);
+        }
+        WaitExecuteLives(ACTOR_NPC_DEMO_PARTNER);
+        Wait(30);
+        screen_FadeOut(1, 5);
+        screen_FadeIn(1, 5);
+        Wait(90);
+        screen_FadeOut(1, 5);
+        back_SetGround(LEVEL_S05P03A);
+        supervision_Acting(0);
+        supervision_Acting(2);
+        if ( $SCENARIO_MAIN_BIT_FLAG[30] ) {
+            supervision_Acting(4);
+            §label_3;
+            with (performer 0) {
+                camera_SetMyself();
+            }
+            with (performer 0) {
+                SetPositionMark(Position<'m9', 19.5, 20.5>);
+            }
+            with (object OBJECT_S05P03A1_185) {
+                SetAnimation(2);
+            }
+            with (object OBJECT_S05P03A2_186) {
+                SetAnimation(2);
+            }
+            screen_FadeIn(1, 5);
+            Wait(20);
+            with (performer 3) {
+                SetEffect(652, 3);
+            }
+            with (object OBJECT_S05P03A1_185) {
+                SetAnimation(17);
+            }
+            with (object OBJECT_S05P03A2_186) {
+                SetAnimation(17);
+            }
+            Wait(45);
+            screen_WhiteOutAll(1, 60);
+            back_SetGround(LEVEL_S04P01A);
+            screen_FadeInAll(1, 5);
+            screen_FadeOut(1, 0);
+            WaitBgmSignal();
+            screen_FadeIn(1, 5);
+            Wait(95);
+            screen_FadeOut(1, 5);
+            end;
+        } else {
+            supervision_Acting(3);
+            jump @label_3;
+        }
+    } else {
+        supervision_Acting(3);
+        jump @label_1;
+    }
+}

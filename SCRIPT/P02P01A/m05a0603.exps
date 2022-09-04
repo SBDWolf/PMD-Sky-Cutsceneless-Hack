@@ -1,0 +1,320 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_P02P01A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    Wait(1);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(69);
+    }
+    Wait(5);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(69);
+    }
+    with (actor ACTOR_PLAYER) {
+        ResetOutputAttribute(256);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ResetOutputAttribute(256);
+    }
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        ResetOutputAttribute(256);
+    }
+    with (actor ACTOR_NPC_RINGUMA) {
+        ResetOutputAttribute(256);
+    }
+    with (actor ACTOR_NPC_YARUKIMONO) {
+        ResetOutputAttribute(256);
+    }
+    with (actor ACTOR_NPC_MANKII) {
+        ResetOutputAttribute(256);
+    }
+    with (actor ACTOR_NPC_OKORIZARU) {
+        ResetOutputAttribute(256);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_STUCK_IN_YELLOW_WATER, 4);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_STUCK_IN_YELLOW_WATER, 4);
+    }
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        SetEffect(EFFECT_STUCK_IN_YELLOW_WATER, 4);
+    }
+    with (actor ACTOR_NPC_RINGUMA) {
+        SetEffect(EFFECT_STUCK_IN_YELLOW_WATER_DEEP, 4);
+    }
+    with (actor ACTOR_NPC_YARUKIMONO) {
+        SetEffect(EFFECT_STUCK_IN_YELLOW_WATER_MEDIUM, 4);
+    }
+    with (actor ACTOR_NPC_MANKII) {
+        SetEffect(EFFECT_STUCK_IN_YELLOW_WATER_MEDIUM2, 4);
+    }
+    with (actor ACTOR_NPC_OKORIZARU) {
+        SetEffect(EFFECT_STUCK_IN_YELLOW_WATER_DEEP2, 4);
+    }
+    screen_FadeIn(1, 30);
+    Wait(60);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m0', 32.5, 27>);
+    }
+    WaitExecutePerformer(0);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Huh? What...? Where are we?",
+                french=" Hein? Quoi...? Où est-ce\nqu\'on est?",
+                german=" Wie? Was? Wo sind wir?",
+                italian=" Eh? Cosa...? Dove siamo?",
+                spanish=" ¿Eh? ¿Qué ha pasado?\n¿Dónde estamos?",
+            }
+        case 2:
+            {
+                english=" Huh? What...? Where are we?",
+                french=" Hein? Quoi...? Où est-ce\nqu\'on est?",
+                german=" Wie? Was? Wo sind wir?",
+                italian=" Eh? Cosa...? Dove siamo?",
+                spanish=" ¿Eh? ¿Qué ha pasado?\n¿Dónde estamos?",
+            }
+        default:
+            {
+                english=" Huh? What...? Where are we?",
+                french=" Hein? Quoi...? Où est-ce\nqu\'on est?",
+                german=" Wie? Was? Wo sind wir?",
+                italian=" Eh? Cosa...? Dove siamo?",
+                spanish=" ¿Eh? ¿Qué ha pasado?\n¿Dónde estamos?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        MovePositionMark(32896, Position<'m1', 27.5, 23.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_HIMEGUMA);
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_HIMEGUMA);
+    message_SetFace(ACTOR_NPC_HIMEGUMA, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" Hi, hi! Are you two OK?",
+        french=" Coucou! Ça va, vous deux?",
+        german=" Hallihallo! Seid ihr zwei in\nOrdnung?",
+        italian=" Ehilà! Ehi, voi due! State bene?",
+        spanish=" ¡Hola! ¿Estáis bien?",
+    });
+    message_Talk({
+        english=" You plopped down from nowhere!",
+        french=" Vous apparaissez de nulle part\ncomme ça!",
+        german=" Ihr seid aus heiterem Himmel\nheruntergeplumpst!",
+        italian=" Da dove venite?",
+        spanish=" ¡Menuda zambullida os habéis\npegado!",
+    });
+    message_Talk({
+        english=" Oh, you startled everyone!",
+        french=" Vous nous avez fait peur!",
+        german=" Oh! Ihr habt uns ganz schön\nerschreckt!",
+        italian=" Avete spaventato tutti!",
+        spanish=" ¡Nos habéis dado un buen susto!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(63);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitAnimation();
+    }
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(63);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitAnimation();
+    }
+    Wait(60);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    se_Play(8963);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    Wait(10);
+    with (actor ACTOR_PLAYER) {
+        ExecuteCommon(CORO_LOOK_AROUND_LEFT_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_HIMEGUMA);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Where are we?",
+                french=" Où sommes-nous?",
+                german=" Wo sind wir?",
+                italian=" Dove ci troviamo?",
+                spanish=" ¿Dónde estamos?",
+            }
+        case 2:
+            {
+                english=" Where are we?",
+                french=" Où sommes-nous?",
+                german=" Wo sind wir?",
+                italian=" Dove ci troviamo?",
+                spanish=" ¿Dónde estamos?",
+            }
+        default:
+            {
+                english=" Where are we?",
+                french=" Où sommes-nous?",
+                german=" Wo sind wir?",
+                italian=" Dove ci troviamo?",
+                spanish=" ¿Dónde estamos?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_HIMEGUMA);
+    }
+    message_SetFace(ACTOR_NPC_HIMEGUMA, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" This is the Hot Spring.",
+        french=" A la Source Chaude.",
+        german=" Dies ist die Heiße Quelle.",
+        italian=" Questa è la Sorgente Termale.",
+        spanish=" Esta es la Terma.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8967);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" H-Hot Spring?!",
+                french=" La Source Chaude?!",
+                german=" D-die Heiße Quelle?!?",
+                italian=" S-Sorgente Termale?!",
+                spanish=" ¿La... la Terma?",
+            }
+        case 2:
+            {
+                english=" H-Hot Spring?!",
+                french=" La Source Chaude?!",
+                german=" D-die Heiße Quelle?!?",
+                italian=" S-Sorgente Termale?!",
+                spanish=" ¿La... la Terma?",
+            }
+        default:
+            {
+                english=" H-Hot Spring?!",
+                french=" La Source Chaude?!",
+                german=" D-die Heiße Quelle?!?",
+                italian=" S-Sorgente Termale?!",
+                spanish=" ¿La... la Terma?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_PlayFadeIn(BGM_HEARTWARMING, 0, 256);
+    with (actor ACTOR_NPC_KOOTASU) {
+        MovePositionOffset(32896, -56, 0);
+    }
+    Wait(20);
+    with (actor ACTOR_NPC_MANKII) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    Wait(15);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    Wait(5);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_KOOTASU) {
+        MovePositionMark(32896, Position<'m2', 32.5, 18.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_KOOTASU);
+    with (actor ACTOR_NPC_KOOTASU) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    message_SetFace(ACTOR_NPC_KOOTASU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Indeed! This is the Hot Spring.",
+        french=" Précisément.",
+        german=" In der Tat! Dies ist die\nHeiße Quelle.",
+        italian=" Esatto! Questa è la Sorgente \nTermale.",
+        spanish=" Exacto. Estáis en la Terma.",
+    });
+    message_Talk({
+        english=" The Hot Spring works wonders\non tired muscles and creaky joints. Many\nPokémon visit here.",
+        french=" Nombreux sont les Pokémon qui\nviennent à la Source Chaude, car elle soulage\nles vieux muscles et les articulations usées.",
+        german=" Die Heiße Quelle wirkt Wunder\nfür unsere müden Muskeln und steifen Gelenke.\nViele Pokémon kommen hierher.",
+        italian=" La Sorgente Termale è un vero\ntoccasana per i muscoli affaticati e le giunture\nscricchiolanti. Molti Pokémon vengono qui.",
+        spanish=" Este lugar hace maravillas con\nlos músculos cansados y las articulaciones\ndébiles. Muchos Pokémon suelen venir aquí.",
+    });
+    message_Talk({
+        english=" Tell me, youngster, have you a\nmap?",
+        french=" Dites-moi, les jeunes, avez-vous\nune carte?",
+        german=" Sag, mein junges Pokémon, hast\ndu eine Karte dabei?",
+        italian=" Ditemi, giovani amici Pokémon,\navete una mappa?",
+        spanish=" Dime, joven, ¿por casualidad\nllevas un mapa?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Map?[K] Oh, if you mean our\nWonder Map, sure we do.",
+                french=" Une carte?[K] Oh, tu veux dire une\nCarte Miracle? Bien sûr, oui.",
+                german=" Karte?[K] Oh, wenn du unsere\nWunderkarte meinst, natürlich.",
+                italian=" Mappa?[K] Oh, se intendi la\nMappa delle meraviglie, ce l\'abbiamo.",
+                spanish=" ¿Un mapa?[K] Ah, ¿te refieres\na nuestro Mapa Mágico? Por supuesto.",
+            }
+        case 2:
+            {
+                english=" Map?[K] Oh, if you mean our\nWonder Map, yes, we have one.",
+                french=" Une carte?[K] Oh, tu veux dire une\nCarte Miracle? Bien sûr, oui.",
+                german=" Karte?[K] Oh, wenn du unsere\nWunderkarte meinst, die haben wir dabei.",
+                italian=" Mappa?[K] Oh, se intendi la\nMappa delle meraviglie, ce l\'abbiamo.",
+                spanish=" ¿Un mapa?[K] Ah, si te refieres\na un Mapa Mágico, sí que tenemos uno.",
+            }
+        default:
+            {
+                english=" Map?[K] Oh, our Wonder Map, you\nmean? We have one.",
+                french=" Une carte?[K] Oh, tu veux dire une\nCarte Miracle? Bien sûr, oui.",
+                german=" Karte?[K] Oh, unsere Wunderkarte\nmeinst du? Die haben wir dabei.",
+                italian=" Mappa?[K] Oh, se intendi la\nMappa delle meraviglie, ce l\'abbiamo.",
+                spanish=" ¿Un mapa?[K] ¿Quieres decir\nun Mapa Mágico? Sí, tenemos uno.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_KOOTASU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Unfold it for me.",
+        french=" Pourrais-tu la déplier?",
+        german=" Falte sie für mich auf.",
+        italian=" Apritela un attimo.",
+        spanish=" Desplegadlo.",
+    });
+    message_Close();
+    se_Play(6667);
+    screen_FadeOut(1, 30);
+    end;
+}

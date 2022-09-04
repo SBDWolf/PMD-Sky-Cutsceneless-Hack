@@ -1,0 +1,41 @@
+
+def 0 {
+    back_SetGround(LEVEL_D28P44A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_YONOWAARU) {
+        SetAnimation(36);
+    }
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Is this really...",
+        french=" Est-ce vraiment...",
+        german=" Ist das wirklich...",
+        italian=" È davvero...",
+        spanish=" ¿Es esto...?",
+    });
+    message_Talk({
+        english=" Is this what you really want?",
+        french=" Est-ce là vraiment ce que vous\nsouhaitez?",
+        german=" Ist das wirklich, was ihr\nwollt?",
+        italian=" È davvero questo che volete?",
+        spanish=" ¿Realmente es esto lo que\nqueréis?",
+    });
+    message_Talk({
+        english=" If history is changed...[K]\nWe Pokémon of the future will disappear...",
+        french=" Si le cours de l\'histoire est\naltéré...[K] Nous, les Pokémon du futur, serons\namenés à disparaître...",
+        german=" Wenn die Geschichte verändert\nwird,[K] dann werden wir Pokémon aus der\nZukunft verschwinden...",
+        italian=" Se la storia cambia...[K] noi\nPokémon del futuro scompariremo...",
+        spanish=" Si cambiáis la historia...[K]\nlos Pokémon del futuro desapareceremos.",
+    });
+    message_Close();
+    screen_FadeOut(1, 30);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    end;
+}

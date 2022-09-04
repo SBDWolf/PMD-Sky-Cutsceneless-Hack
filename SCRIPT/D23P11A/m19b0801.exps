@@ -1,0 +1,132 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_DEEP_DUSK_FOREST, 0, 256);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_SEREBII) {
+        SetAnimation(2);
+    }
+    WaitExecuteLives(ACTOR_NPC_SEREBII);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Are you all ready to roll?",
+                french=" Tu as fini tes préparatifs?",
+                german=" Bist du bereit loszulegen?",
+                italian=" Siete tutti pronti?",
+                spanish=" ¿Podemos seguir ya?",
+            }
+        case 2:
+            {
+                english=" Are you all ready?",
+                french=" Tu as fini tes préparatifs?",
+                german=" Bist du bereit?",
+                italian=" Siete tutti pronti?",
+                spanish=" ¿Podemos seguir ya?",
+            }
+        default:
+            {
+                english=" Are you all ready?",
+                french=" Tu as fini tes préparatifs?",
+                german=" Bist du bereit?",
+                italian=" Siete tutti pronti?",
+                spanish=" ¿Podemos seguir ya?",
+            }
+    }
+    switch ( message_SwitchMenu(0, 1) ) {
+        case menu({
+            english="Yes",
+            french="Oui",
+            german="Ja",
+            italian="Sì",
+            spanish="Sí",
+        }):
+        default:
+            §label_0;
+            message_Close();
+            screen_FadeOut(1, 30);
+            main_EnterDungeon(33, 0);
+            switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+            main_EnterDungeon(-1, 0);
+            hold;
+            end;
+        case menu({
+            english="Not yet",
+            french="Pas encore",
+            german="Noch nicht...",
+            italian="Non ancora",
+            spanish="Aún no",
+        }):
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                case 1:
+                    {
+                        english=" All right.",
+                        french=" D\'accord.",
+                        german=" Alles klar.",
+                        italian=" Va bene.",
+                        spanish=" De acuerdo.",
+                    }
+                case 2:
+                    {
+                        english=" OK.",
+                        french=" D\'accord.",
+                        german=" Okay.",
+                        italian=" Ok.",
+                        spanish=" De acuerdo.",
+                    }
+                default:
+                    {
+                        english=" OK.",
+                        french=" D\'accord.",
+                        german=" Okay.",
+                        italian=" Ok.",
+                        spanish=" De acuerdo.",
+                    }
+            }
+            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                case 1:
+                    {
+                        english=" We\'ll go when you\'re ready.",
+                        french=" On part quand tu veux.",
+                        german=" Wir gehen, wenn du bereit bist.",
+                        italian=" Quando è tutto pronto partiamo.",
+                        spanish=" Nos iremos cuando quieras.",
+                    }
+                case 2:
+                    {
+                        english=" Let\'s go when you\'re ready.",
+                        french=" On part quand tu veux.",
+                        german=" Lass uns gehen, wenn du bereit\nbist.",
+                        italian=" Quando è tutto pronto partiamo.",
+                        spanish=" Nos iremos cuando quieras.",
+                    }
+                default:
+                    {
+                        english=" Let\'s go when you\'re ready.",
+                        french=" On part quand tu veux.",
+                        german=" Lass uns gehen, wenn du bereit\nbist.",
+                        italian=" Quando è tutto pronto partiamo.",
+                        spanish=" Nos iremos cuando quieras.",
+                    }
+            }
+            message_Close();
+            end;
+    }
+}

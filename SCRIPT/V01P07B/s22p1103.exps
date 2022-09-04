@@ -1,0 +1,40 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_V01P07B);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        MovePositionOffset(32870, -180, 0);
+    }
+    with (performer 3) {
+        SetEffect(EFFECT_VERY_HEAVY_RAIN, 3);
+    }
+    bgm_PlayFadeIn(BGM_TIME_GEAR_REMIX, 0, 256);
+    screen_FadeIn(1, 30);
+    message_SetActor(ACTOR_NPC_DAAKURAI);
+    message_Talk({
+        english=" Yes. You and [CS:N]Grovyle[CR] had an\naccident while traveling through time.",
+        french=" Oui. Vous avez eu un accident\nen voyageant dans le temps.",
+        german=" Ja. Du und [CS:N]Reptain[CR] hattet einen\nUnfall, als ihr durch die Zeit gereist seid.",
+        italian=" Sì. Tu e [CS:N]Grovyle[CR] avete avuto\nun incidente mentre viaggiavate nel tempo.",
+        spanish=" Sí. Tú y [CS:N]Grovyle[CR] tuvisteis\nun accidente viajando en el tiempo.",
+    });
+    message_Talk({
+        english=" You became separated as a\nresult of it.",
+        french=" Et c\'est ainsi que vous avez été\nséparés.",
+        german=" Dadurch wurdet ihr getrennt.",
+        italian=" E di conseguenza vi siete \nseparati.",
+        spanish=" Y por eso os separasteis.",
+    });
+    message_Close();
+    screen_FadeOut(1, 30);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    end;
+}

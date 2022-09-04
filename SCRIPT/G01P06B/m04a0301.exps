@@ -1,0 +1,293 @@
+
+def 0 {
+    sound_Stop();
+    se_Play(5123);
+    WaitSe(5123);
+    message_SetActor(ACTOR_NPC_PERAPPU);
+    message_Talk({
+        english=" OK, everyone![K] Dinnertime! ♪",
+        french=" A table, tout le monde![K]\nC\'est l\'heure du dîner! ♪",
+        german=" Okay, Leute![K] Essenszeit! ♪",
+        italian=" Ok, gente![K] È ora di cena! ♪",
+        spanish=" ¡Muy bien![K] ¡Todos a cenar! ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_EmptyActor();
+    message_Talk({
+        english="[CS:N]Everyone[CR]: HOORAY!",
+        french="[CS:N]Tous[CR]: HOURRA!",
+        german="[CS:N]Alle[CR]: HURRA!",
+        italian="[CS:N]Tutti[CR]: URRÀ!",
+        spanish="[CS:N]Todos[CR]: ¡HURRA!",
+    });
+    message_Close();
+    back_SetGround(LEVEL_G01P06B);
+    supervision_Acting(0);
+    Wait(1);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        MovePositionMark(32896, Position<'m0', 24, 26.5>);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(43);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_EATING, 3);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetEffect(EFFECT_EATING, 3);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetEffect(EFFECT_EATING, 3);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetEffect(EFFECT_EATING, 3);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetEffect(EFFECT_EATING_SLOW, 3);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetEffect(EFFECT_EATING_SLOW, 3);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetEffect(EFFECT_EATING_SLOW, 3);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetEffect(EFFECT_EATING_SLOW, 3);
+    }
+    WaitLockLives(5, ACTOR_NPC_PUKURIN);
+    Unlock(5);
+    with (object OBJECT_G01P06B1_107) {
+        SetAnimation(19);
+    }
+    bgm_PlayFadeIn(BGM_EATING, 60, 256);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_ResetActor();
+    message_ImitationSound({
+        english="Crunch munch! Chomp chomp! Gobble gulp![K]\nCrunch munch! Chomp chomp! Gobble gulp!",
+        french="Cronch cronch! Miam miam! Slurp slurp![K]\nCronch cronch! Miam miam! Slurp slurp!",
+        german="Stopf-schling! Schmatz! Schlabber-schlürf![K]\nStopf-schling! Schmatz! Schlabber-schlürf!",
+        italian="Gnam-gnam! Ingurg-ingurg! Slurp-slurp![K]\nGnam-gnam! Crunch-crunch! Slurp-slurp!",
+        spanish="¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem![K]\n¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem!",
+    });
+    message_ImitationSound({
+        english="Crunch munch! Chomp chomp! Gobble gulp![K]\nCrunch munch! Chomp chomp! Gobble gulp!",
+        french="Cronch cronch! Miam miam! Slurp slurp![K]\nCronch cronch! Miam miam! Slurp slurp!",
+        german="Stopf-schling! Schmatz! Schlabber-schlürf![K]\nStopf-schling! Schmatz! Schlabber-schlürf!",
+        italian="Crunch-munch! Ingurg ingurg! Snuffle-slurp![K]\nGnam-gnam! Crunch-crunch! Slurp-slurp!",
+        spanish="¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem![K]\n¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem!",
+    });
+    message_ImitationSound({
+        english="Crunch munch! Chomp chomp! Gobble gulp![K]\nCrunch munch! Chomp chomp! Gobble gulp!",
+        french="Cronch cronch! Miam miam! Slurp slurp![K]\nCronch cronch! Miam miam! Slurp slurp!",
+        german="Stopf-schling! Schmatz! Schlabber-schlürf![K]\nStopf-schling! Schmatz! Schlabber-schlürf!",
+        italian="Crunch-munch! Ingurg ingurg! Snuffle-slurp![K]\nGnam-gnam! Crunch-crunch! Slurp-slurp!",
+        spanish="¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem![K]\n¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem!",
+    });
+    message_ImitationSound({
+        english="Crunch munch! Chomp chomp! Gobble gulp![K]\nCrunch munch! Chomp chomp! Gobble gulp!",
+        french="Cronch cronch! Miam miam! Slurp slurp![K]\nCronch cronch! Miam miam! Slurp slurp!",
+        german="Stopf-schling! Schmatz! Schlabber-schlürf![K]\nStopf-schling! Schmatz! Schlabber-schlürf!",
+        italian="Crunch-munch! Ingurg ingurg! Snuffle-slurp![K]\nGnam-gnam! Crunch-crunch! Slurp-slurp!",
+        spanish="¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem![K]\n¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem!",
+    });
+    message_CloseEnforce();
+    bgm_FadeOut(120);
+    WaitExecutePerformer(0);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_ANGRY, 3);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(9);
+    }
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_NORMAL, FACE_POS_BOTTOM_C_FACER);
+    message_FacePositionOffset(-2, -2);
+    message_Talk({
+        english=" Uggggh...",
+        french=" Aaaarf...",
+        german=" Uggggh...",
+        italian=" Uggggh...",
+        spanish=" Aaayy...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_TOP_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I\'m...starving...",
+                french=" Je... meurs de faim...",
+                german=" Ich habe... Hunger...",
+                italian=" Sto... morendo di fame...",
+                spanish=" ¡Qué hambre!",
+            }
+        case 2:
+            {
+                english=" So very...hungry...",
+                french=" Je... meurs de faim...",
+                german=" Ich habe... so Hunger...",
+                italian=" Non ci vedo dalla fame...",
+                spanish=" ¡Me muero de hambre!",
+            }
+        default:
+            {
+                english=" So hungry...",
+                french=" Je... meurs de faim...",
+                german=" So hungrig...",
+                italian=" Sono... affamata...",
+                spanish=" ¡Qué hambre!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2Direction(1, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_ANGRY, 3);
+    }
+    se_Play(8974);
+    with (actor ACTOR_PLAYER) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_ANGRY, FACE_POS_BOTTOM_C_FACEL);
+    message_FacePositionOffset(-1, -2);
+    message_Talk({
+        english=" Grrr...",
+        french=" Grrr...",
+        german=" Grrr...",
+        italian=" Grrr...",
+        spanish=" Grrr...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_DOGOOMU);
+    }
+    Wait(5);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_DOGOOMU);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    WaitExecuteLives(ACTOR_PLAYER);
+    se_Play(8972);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_TOP_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Come on, quit giving me the eye!",
+                french=" C\'est bon, arrête de me\nregarder comme ça!",
+                german=" Komm schon, sieh mich nicht so\nan!",
+                italian=" Dai, non guardarmi così!",
+                spanish=" ¡No me mires con esa cara!",
+            }
+        case 2:
+            {
+                english=" Don\'t glare at me like that...",
+                french=" C\'est bon, arrête de me\nregarder comme ça!",
+                german=" Sieh mich nicht so an.",
+                italian=" Dai, smettila di guardarmi\nin quel modo!",
+                spanish=" ¡No me mires así!",
+            }
+        default:
+            {
+                english=" Please don\'t glare at me...",
+                french=" C\'est bon, arrête de me\nregarder comme ça!",
+                german=" Bitte sieh mich nicht so an.",
+                italian=" Dai, smettila di guardarmi così!",
+                spanish=" ¡No me mires de esa forma!",
+            }
+    }
+    message_Close();
+    screen_FadeOut(1, 30);
+    Wait(30);
+    back_SetGround(LEVEL_S04P01A);
+    screen_FadeIn(1, 0);
+    message_ResetActor();
+    message_Talk({
+        english=" I\'m stuffed! That was delicious!",
+        french=" J\'ai bien mangé! C\'était délicieux!",
+        german=" Bin ich satt! Das war köstlich!",
+        italian=" Sono satollo! Che delizia!",
+        spanish=" ¡Menudo atracón! ¡Qué rico estaba!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_Talk({
+        english=" Oof... I\'m so full and sleepy!",
+        french=" Ouf... Je suis calé! J\'ai sommeil,\nmaintenant!",
+        german=" Uuf... Ich bin so satt, ich könnte schlafen!",
+        italian=" Uff... Tutto quel cibo mi ha messo sonno!",
+        spanish=" ¡Uf! ¡Cómo me he puesto! Y encima\nahora me está entrando una modorra...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_Talk({
+        english=" We\'re all off to bed, then. Good night!",
+        french=" On va tous se coucher, bonne nuit!",
+        german=" Wir gehen dann mal ins Bett. Gute Nacht!",
+        italian=" Allora, tutti a letto. Buonanotte!",
+        spanish=" Ya hay que irse a la cama. ¡Buenas noches!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_Talk({
+        english=" Good night!",
+        french=" Bonne nuit!",
+        german=" Gute Nacht!",
+        italian=" Buonanotte!",
+        spanish=" ¡Buenas noches!",
+    });
+    message_KeyWait();
+    screen_FadeOutAll(1, 60);
+    message_CloseEnforce();
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    end;
+}
+
+def 1 for_actor(ACTOR_NPC_PUKURIN) {
+    SetAnimation(5);
+    SetEffect(EFFECT_APPLE_ON_HEAD, 3);
+    Lock(5);
+    §label_0;
+    forever {
+        Turn2Direction(8, 1, DIR_UP);
+        Wait(20);
+        Turn2Direction(8, 1, DIR_DOWN);
+        Wait(20);
+        continue;  // may be redundant
+    }
+}

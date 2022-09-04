@@ -1,0 +1,23 @@
+
+def 0 {
+    //bgm_PlayFadeIn(BGM_TIME_GEAR_REMIX, 0, 256);
+    //bgm2_PlayFadeIn(BGM_RAIN2, 0, 128);
+    //back_SetGround(LEVEL_V09P04A);
+    supervision_Acting(0);
+    //with (performer 0) {
+        //camera_SetMyself();
+    //}
+    //bgm2_ChangeVolume(60, 256);
+    //screen_FadeIn(1, 60);
+    //Wait(180);
+    //Wait(150);
+    //bgm_FadeOut(180);
+    //bgm2_FadeOut(180);
+    //screen_FadeOut(1, 90);
+    //Wait(90);
+    switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+    $SCENARIO_MAIN_BIT_FLAG[8] = 1;
+    $COMPULSORY_SAVE_POINT = 8;
+    //CallCommon(CORO_HANYOU_SAVE_FUNC);
+    end;
+}

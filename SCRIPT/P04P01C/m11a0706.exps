@@ -1,0 +1,76 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_P04P01C);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    Wait(1);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetAnimation(22);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    screen_FadeIn(1, 15);
+    bgm_PlayFadeIn(BGM_TIME_GEAR_REMIX, 0, 256);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_YUKUSHII, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" ..................",
+        french=" ..................",
+        german=" ..................",
+        italian=" ..................",
+        spanish=" ...",
+    });
+    message_Talk({
+        english=" I should have done it...",
+        french=" J\'aurais dû le faire...",
+        german=" Ich hätte es tun sollen...",
+        italian=" Avrei dovuto farlo...",
+        spanish=" Tendría que haberlo hecho.",
+    });
+    message_Talk({
+        english=" I should have taken their\nmemories when I had the chance...",
+        french=" J\'aurais dû effacer leurs\nsouvenirs quand j\'en ai eu l\'occasion...",
+        german=" Ich hätte ihr Gedächtnis löschen\nsollen, als ich die Chance hatte...",
+        italian=" Avrei dovuto prendermi i loro\nricordi finché ero in tempo...",
+        spanish=" Debería haberles borrado\nla memoria cuando tuve la oportunidad.",
+    });
+    message_Close();
+    Wait(30);
+    message_ResetActor();
+    message_Talk({
+        english=" .....................",
+        french=" .....................",
+        german=" .....................",
+        italian=" .....................",
+        spanish=" ...",
+    });
+    message_Talk({
+        english=" I don\'t know exactly what you\'re talking\nabout...[K] But you\'re wrong.",
+        french=" Je ne sais pas de quoi tu parles\nau juste...[K] Mais tu as tort.",
+        german=" Ich weiß nicht genau, wovon du redest...[K]\nAber du irrst dich.",
+        italian=" Non capisco bene di cosa stai parlando...[K]\nMa ti sbagli.",
+        spanish=" No sé muy bien de qué hablas...[K]\nPero te equivocas.",
+    });
+    message_Talk({
+        english=" No one led me here. No one told me about\nthis place.",
+        french=" Personne ne m\'a conduit jusqu\'ici.\nPersonne ne m\'a parlé de cet endroit.",
+        german=" Niemand hat mich hergeführt. Niemand hat\nmir von diesem Ort erzählt.",
+        italian=" Nessuno mi ha portato qui e nessuno mi ha\nraccontato di questo posto.",
+        spanish=" Nadie me ha traído aquí. Nadie me\nha hablado de este lugar.",
+    });
+    message_Talk({
+        english=" I\'ve known about the presence of a\nTime Gear here...[K]for a long time.",
+        french=" Je sais que ce Rouage du Temps est ici...[K]\ndepuis bien longtemps.",
+        german=" Dass es hier ein Zahnrad der Zeit gibt,[K]\nweiß ich schon lange.",
+        italian=" Sono a conoscenza del fatto che qui si\ntrova un Ingranaggio del Tempo...[K] da molto\ntempo.",
+        spanish=" Sabía que aquí había un Engranaje del\nTiempo...[K] desde hace mucho.",
+    });
+    message_Close();
+    screen_FadeOut(1, 15);
+    end;
+}

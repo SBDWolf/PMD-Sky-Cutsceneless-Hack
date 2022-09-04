@@ -1,0 +1,42 @@
+
+def 0 {
+    sound_Stop();
+    se_Play(9487);
+    back_SetSpecialEpisodeBanner(1, {
+        english="Bidoof\'s Wish",
+        french="Le vœu de Keunotor",
+        german="Der Wunsch von Bidiza",
+        italian="Il desiderio di Bidoof",
+        spanish="El deseo de Bidoof",
+    });
+    screen_FadeIn(1, 0);
+    Wait(160);
+    screen_FadeOut(1, 45);
+    Wait(15);
+    Wait(30);
+    message_Explanation({
+        english="[CN]That\'s right![K] My dream is to\n[CN]be the best explorer!",
+        french="[CN]Et oui![K] C\'est mon rêve: devenir\n[CN]un jour le meilleur explorateur au monde!",
+        german="[CN]Ganz genau![K] Mein Traum ist es,\n[CN]der beste Erkunder zu sein!",
+        italian="[CN]Proprio così![K] Il mio sogno è diventare\n[CN]il migliore esploratore del mondo!",
+        spanish="[CN]¡Eso es![K] ¡Mi sueño es llegar a ser\n[CN]el mejor explorador!",
+    });
+    message_Close();
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V24P08A);
+    back_SetGround(LEVEL_V32P01A);
+    supervision_Acting(0);
+    camera2_SetPositionMark(Position<'m0', 19, 15.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        MovePositionOffset(32896, 160, 0);
+    }
+    bgm_PlayFadeIn(BGM_SYMPATHY, 0, 256);
+    screen2_FadeIn(0, 60);
+    screen_FadeIn(1, 60);
+    Wait(150);
+    screen_FadeOut(1, 60);
+    end;
+}

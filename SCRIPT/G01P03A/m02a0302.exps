@@ -1,0 +1,983 @@
+
+def 0 {
+    back_SetGround(LEVEL_G01P03A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD_REMIX, 0, 256);
+    supervision_Acting(1);
+    Wait(30);
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionMark(1, Position<'m0', 34, 26.5>);
+    }
+    Wait(30);
+    supervision_Acting(2);
+    Wait(30);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m1', 29.5, 30.5>);
+    }
+    Wait(30);
+    supervision_Acting(3);
+    Wait(30);
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m2', 33.5, 30.5>);
+    }
+    with (performer 0) {
+        MovePositionMark(1, Position<'m3', 31.5, 28.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    WaitExecuteLives(ACTOR_PLAYER);
+    WaitExecutePerformer(0);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" You\'re just beginners.",
+        french=" Vous venez à peine d\'arriver.",
+        german=" Ihr seid Anfänger.",
+        italian=" Voi siete due principianti.",
+        spanish=" Como sois principiantes...",
+    });
+    message_Talk({
+        english=" We\'ll have you start off with\nthis assignment. ♪",
+        french=" Alors vous allez commencer\npar vous choisir une mission. ♪",
+        german=" Wir geben euch zum Anfang\neinen Auftrag. ♪",
+        italian=" Per iniziare, vi assegnerò un\ncompito. ♪",
+        spanish=" Empezaréis con algún\nencargo. ♪",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 1, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    message_Talk({
+        english=" This is the Job Bulletin Board.\nPokémon from various regions post job\nrequests here.",
+        french=" Voici le Tableau des Missions.\nDes Pokémon de différentes régions envoient\ndes offres de missions ici.",
+        german=" Dies ist das Job-Infobrett.\nPokémon aus unterschiedlichen Regionen\nhängen hier Jobangebote aus.",
+        italian=" Questa è la Bacheca delle \nmissioni. I Pokémon di varie regioni\nappendono qui le loro richieste.",
+        spanish=" Este es el Tablón de Anuncios.\nAquí aparecen las misiones que nos encargan\nlos Pokémon de distintos lugares.",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 2, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    message_Talk({
+        english=" You\'re aware that bad Pokémon\nare cropping up in greater numbers, right?",
+        french=" Vous savez qu\'il y a de plus en\nplus de méchants Pokémon, n\'est-ce pas?",
+        german=" Ihr wisst, dass zurzeit immer\nmehr bösartige Pokémon auftauchen, nicht\nwahr?",
+        italian=" Sapete che ultimamente ci sono \nsempre più Pokémon cattivi in giro, vero?",
+        spanish=" Sin duda sabréis que el número\nde Pokémon malvados está aumentando\núltimamente de forma considerable, ¿no?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Yup.[K] Because the flow of time is\ngetting messed up. It\'s wreaking havoc, right?",
+                french=" Oui.[K] Car quelque chose perturbe\nl\'écoulement du temps. Et cela fait\ndes ravages, c\'est bien ça?",
+                german=" Ja.[K] Weil der Fluss der Zeit\ndurcheinandergerät, entsteht Chaos, richtig?",
+                italian=" Eh sì.[K] Dipende dal fatto che il\nflusso del tempo è disturbato. Sta causando un\nbel po\' di danni, giusto?",
+                spanish=" Sí.[K] Porque hay problemas\ncon el tiempo, ¿verdad? Y todo se está\nvolviendo un caos...",
+            }
+        case 2:
+            {
+                english=" Yup.[K] Because the flow of time is\ngetting messed up. It\'s wreaking havoc, right?",
+                french=" Oui.[K] Car quelque chose perturbe\nl\'écoulement du temps. Et cela fait\ndes ravages, c\'est bien ça?",
+                german=" Ja.[K] Weil der Fluss der Zeit\ndurcheinandergerät, entsteht Chaos, richtig?",
+                italian=" Eh sì.[K] Dipende dal fatto che il\nflusso del tempo è disturbato. Sta causando un\nbel po\' di danni, giusto?",
+                spanish=" Sí.[K] Porque hay problemas\ncon el tiempo, ¿verdad? Y todo se está\nvolviendo un caos...",
+            }
+        default:
+            {
+                english=" Yup.[K] Because the flow of time is\ngetting messed up. It\'s wreaking havoc, right?",
+                french=" Oui.[K] Car quelque chose perturbe\nl\'écoulement du temps. Et cela fait\ndes ravages, c\'est bien ça?",
+                german=" Ja.[K] Weil der Fluss der Zeit\ndurcheinandergerät, entsteht Chaos, richtig?",
+                italian=" Eh sì.[K] Dipende dal fatto che il\nflusso del tempo è disturbato. Sta causando un\nbel po\' di danni, giusto?",
+                spanish=" Sí.[K] Porque hay problemas\ncon el tiempo, ¿verdad? Y todo se está\nvolviendo un caos...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Which is why lots of bad\nPokémon are appearing!",
+                french=" Ce qui explique pourquoi\nbeaucoup de méchants Pokémon apparaissent!",
+                german=" Und darum tauchen so viele\nbösartige Pokémon auf!",
+                italian=" È per questo che ci sono in giro\nun sacco di Pokémon cattivi!",
+                spanish=" Y eso está afectando a\nmuchos Pokémon.",
+            }
+        case 2:
+            {
+                english=" Which is why lots of bad\nPokémon are appearing!",
+                french=" Ce qui explique pourquoi\nbeaucoup de méchants Pokémon apparaissent!",
+                german=" Und darum tauchen so viele\nbösartige Pokémon auf!",
+                italian=" È per questo che ci sono così\ntanti Pokémon cattivi in giro!",
+                spanish=" Y eso está afectando a\nmuchos Pokémon.",
+            }
+        default:
+            {
+                english=" Which is why lots of bad\nPokémon are appearing!",
+                french=" Ce qui explique pourquoi\nbeaucoup de méchants Pokémon apparaissent!",
+                german=" Und darum tauchen so viele\nbösartige Pokémon auf!",
+                italian=" Per questo motivo ci sono\nparecchi Pokémon cattivi in giro ultimamente.",
+                spanish=" Y eso está afectando a\nmuchos Pokémon.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER, FACE_WORRIED, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(The flow of time is getting messed up?)",
+                french="(L\'écoulement du temps est perturbé?)",
+                german="(Der Fluss der Zeit gerät durcheinander?)",
+                italian="(Il flusso del tempo è disturbato?)",
+                spanish="(¿Así que hay problemas con el tiempo?)",
+            }
+        default:
+            {
+                english="(The flow of time is getting messed up?)",
+                french="(L\'écoulement du temps est perturbé?)",
+                german="(Der Fluss der Zeit gerät durcheinander?)",
+                italian="(Il flusso del tempo è disturbato?)",
+                spanish="(¿Así que hay problemas con el tiempo?)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Time? As in hours and minutes?[K] Do they mean\nsomething has gone wrong with time here?)",
+                french="(Le temps? Les heures, les minutes?[K]\nVeulent-ils dire qu\'il y a un problème avec\nle temps ici?)",
+                german="(Zeit? Also Stunden und Minuten?[K] Soll das\nheißen, hier ist etwas mit der Zeit\nschiefgegangen?)",
+                italian="(Il tempo? Nel senso di ore e minuti?[K] Stanno\ndicendo che qui qualcosa non va con il tempo?)",
+                spanish="(¿El tiempo? ¿El tiempo cronológico?[K]\n¡Pero eso sería muy grave!)",
+            }
+        default:
+            {
+                english="(Time? As in hours and minutes?[K] Do they mean\nsomething has gone wrong with time here?)",
+                french="(Le temps? Les heures, les minutes?[K]\nVeulent-ils dire qu\'il y a un problème avec\nle temps ici?)",
+                german="(Zeit? Also Stunden und Minuten?[K] Soll das\nheißen, hier ist etwas mit der Zeit\nschiefgegangen?)",
+                italian="(Il tempo? Nel senso di ore e minuti?[K] Stanno\ndicendo che qui qualcosa non va con il tempo?)",
+                spanish="(¿El tiempo? ¿El tiempo cronológico?[K]\n¡Pero eso sería muy grave!)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(And, because of that, more and more bad\nPokémon are popping up?)",
+                french="(Et qu\'à cause de cela, on voit apparaître\nde plus en plus de méchants Pokémon?)",
+                german="(Und deswegen gibt es immer mehr bösartige\nPokémon?)",
+                italian="(E che per questo un sacco di Pokémon cattivi\nstanno facendo la loro comparsa?)",
+                spanish="(¿Y por culpa de eso cada vez están\napareciendo más Pokémon malvados?)",
+            }
+        default:
+            {
+                english="(And, because of that, more and more bad\nPokémon are popping up?)",
+                french="(Et qu\'à cause de cela, on voit apparaître\nde plus en plus de méchants Pokémon?)",
+                german="(Und deswegen gibt es immer mehr bösartige\nPokémon?)",
+                italian="(E che per questo un sacco di Pokémon cattivi\nstanno facendo la loro comparsa?)",
+                spanish="(¿Y por culpa de eso cada vez están\napareciendo más Pokémon malvados?)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(What\'s going on here?!)",
+                french="(Mais que se passe-t-il ici?!)",
+                german="(Was geht hier nur vor?!?)",
+                italian="(Cosa sta succedendo qui?!)",
+                spanish="(¿Qué está pasando?)",
+            }
+        default:
+            {
+                english="(What\'s going on here?!)",
+                french="(Mais que se passe-t-il ici?!)",
+                german="(Was geht hier nur vor?!?)",
+                italian="(Cosa sta succedendo qui?!)",
+                spanish="(¿Qué está pasando?)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Precisely.[K] Time getting out of\nwhack has caused an outbreak of bad Pokémon.\nPerhaps because of all that...",
+        french=" Précisément.[K] Le temps étant\nperturbé, les apparitions de méchants Pokémon\nse font plus fréquentes.",
+        german=" Genau.[K] Weil die Zeit aus dem\nGleichgewicht gerät, gibt es eine Flut von\nbösartigen Pokémon. Vielleicht liegt es daran...",
+        italian=" Esattamente.[K] Questo disturbo\ndel tempo ha causato l\'epidemia di Pokémon\ncattivi. Potrebbe essere la ragione per cui...",
+        spanish=" Exactamente.[K] El tiempo está\ndescontrolándose y por eso ha aparecido tanto\nPokémon malvado. Precisamente por eso...",
+    });
+    message_Talk({
+        english=" We have noticed an increase\nin the number of jobs.",
+        french=" C\'est peut-être pour ça... que\nnous constatons une augmentation du nombre\nde missions.",
+        german=" Wir haben einen Anstieg bei den\nangebotenen Jobs bemerkt.",
+        italian=" ... abbiamo notato un aumento del\nnumero di missioni.",
+        spanish=" Hemos notado que el número de\nmisiones está aumentando.",
+    });
+    message_Talk({
+        english=" In addition...and it\'s unknown if\nthis is because of time\'s influence...",
+        french=" Il y a autre chose... mais nous\nne savons pas si c\'est lié à l\'influence\ndu temps...",
+        german=" Und dann ist da noch etwas. Man\nweiß nicht, ob es auch mit der Zeit zu tun\nhat...",
+        italian=" Inoltre... e non sappiamo se \nquesto abbia a che fare con il tempo...",
+        spanish=" Además, ha pasado otra cosa\ncuriosa, aunque no se sabe si es por culpa\nde lo que pasa con el tiempo o no...",
+    });
+    message_Talk({
+        english=" There has also been a mass\noutbreak of...[K]mystery dungeons.",
+        french=" Il y a une recrudescence\nimportante du nombre de...[K] donjons mystères.",
+        german=" Es gibt eine regelrechte Flut\nvon...[K] Mystery Dungeons.",
+        italian=" ... sono aumentati anche...[K]\ni dungeon misteriosi.",
+        spanish=" Han aparecido muchos...[K]\nterritorios misteriosos en el mundo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER, FACE_WORRIED, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Mystery dungeons?!)",
+                french="(Des donjons mystères?!)",
+                german="(Mystery Dungeons?!?)",
+                italian="(Dungeon misteriosi?!)",
+                spanish="(¿Territorios misteriosos?)",
+            }
+        default:
+            {
+                english="(Mystery dungeons?!)",
+                french="(Des donjons mystères?!)",
+                german="(Mystery Dungeons?!?)",
+                italian="(Dungeon misteriosi?!)",
+                spanish="(¿Territorios misteriosos?)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 1, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" So, [hero]!",
+                french=" Dis, [hero]!",
+                german=" Also, [hero]!",
+                italian=" Allora, [hero]!",
+                spanish=" ¡Oye, [hero]!",
+            }
+        case 2:
+            {
+                english=" So, [hero]!",
+                french=" Dis, [hero]!",
+                german=" Also, [hero]!",
+                italian=" Allora, [hero]!",
+                spanish=" ¡Oye, [hero]!",
+            }
+        default:
+            {
+                english=" So, [hero]!",
+                french=" Dis, [hero]!",
+                german=" Also, [hero]!",
+                italian=" Allora, [hero]!",
+                spanish=" ¡Una cosa, [hero]!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 2, ACTOR_ATTENDANT1);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" You know how we got my Relic\nFragment back yesterday?",
+                french=" Tu te rappelles quand on a\nrécupéré mon Fragment de Relique hier?",
+                german=" Erinnerst du dich an gestern, als\nwir mein Reliktfragment zurückgeholt haben?",
+                italian=" Ti ricordi come abbiamo\nrecuperato il mio Frammento Antico, ieri?",
+                spanish=" ¿Te acuerdas de cuando\nrecuperamos mi Reliquia de Piedra?",
+            }
+        case 2:
+            {
+                english=" You know how we got my Relic\nFragment back yesterday?",
+                french=" Tu te rappelles quand on a\nrécupéré mon Fragment de Relique hier?",
+                german=" Erinnerst du dich an gestern, als\nwir mein Reliktfragment zurückgeholt haben?",
+                italian=" Ti ricordi come abbiamo\nrecuperato il mio Frammento Antico, ieri?",
+                spanish=" ¿Te acuerdas de ayer, cuando\nrecuperamos mi Reliquia de Piedra?",
+            }
+        default:
+            {
+                english=" You know how we got my Relic\nFragment back yesterday?",
+                french=" Tu te rappelles quand on a\nrécupéré mon Fragment de Relique hier?",
+                german=" Erinnerst du dich an gestern, als\nwir mein Reliktfragment zurückgeholt haben?",
+                italian=" Ti ricordi come abbiamo\nrecuperato il mio Frammento Antico, ieri?",
+                spanish=" ¿Te acuerdas de ayer, cuando\nrecuperamos mi Reliquia de Piedra?",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" The place where we found it\nwas a mystery dungeon.",
+                french=" L\'endroit où nous l\'avons trouvé\nétait un donjon mystère.",
+                german=" Der Ort, an dem wir es gefunden\nhaben, war ein Mystery Dungeon.",
+                italian=" Il luogo dove l\'abbiamo trovato \nera un dungeon misterioso.",
+                spanish=" El sitio en el que la encontramos\nera un territorio misterioso.",
+            }
+        case 2:
+            {
+                english=" The place where we found it\nwas a mystery dungeon.",
+                french=" L\'endroit où nous l\'avons trouvé\nétait un donjon mystère.",
+                german=" Der Ort, an dem wir es gefunden\nhaben, war ein Mystery Dungeon.",
+                italian=" Il luogo dove l\'abbiamo trovato \nera un dungeon misterioso.",
+                spanish=" El sitio en el que la recobramos\nera un territorio misterioso.",
+            }
+        default:
+            {
+                english=" The place where we found it\nwas a mystery dungeon.",
+                french=" L\'endroit où nous l\'avons trouvé\nétait un donjon mystère.",
+                german=" Der Ort, an dem wir es gefunden\nhaben, war ein Mystery Dungeon.",
+                italian=" Il luogo dove l\'abbiamo trovato \nera un dungeon misterioso.",
+                spanish=" El sitio en el que la recuperamos\nera un territorio misterioso.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" A mystery dungeon changes each\ntime you go into it. There\'s a different layout\nand different items every time you enter!",
+                french=" Un donjon mystère change à\nchaque fois que l\'on s\'y rend. Son apparence\net les objets y sont toujours différents!",
+                german=" Ein Mystery Dungeon ändert sich\njedes Mal, wenn man ihn betritt. Jedes Mal\nsieht er anders aus und enthält andere Items!",
+                italian=" Un dungeon misterioso cambia\nogni volta che ci entri. Ha una forma diversa\ne contiene strumenti differenti ogni volta!",
+                spanish=" Un territorio misterioso\nse transforma cada vez que lo visitas.\nTodo es diferente... ¡incluso hay otros objetos!",
+            }
+        case 2:
+            {
+                english=" A mystery dungeon changes each\ntime you go into it. There\'s a different layout\nand different items every time you enter!",
+                french=" Un donjon mystère change à\nchaque fois que l\'on s\'y rend. Son apparence\net les objets y sont toujours différents!",
+                german=" Ein Mystery Dungeon ändert sich\njedes Mal, wenn man ihn betritt. Jedes Mal\nsieht er anders aus und enthält andere Items!",
+                italian=" Un dungeon misterioso cambia\nogni volta che ci entri. Ha una forma diversa\ne contiene strumenti differenti ogni volta!",
+                spanish=" Un territorio misterioso\nse transforma cada vez que lo visitas.\nTodo es diferente... ¡incluso hay otros objetos!",
+            }
+        default:
+            {
+                english=" A mystery dungeon changes each\ntime you go into it. There\'s a different layout\nand different items every time you enter!",
+                french=" Un donjon mystère change à\nchaque fois que l\'on s\'y rend. Son apparence\net les objets y sont toujours différents!",
+                german=" Ein Mystery Dungeon ändert sich\njedes Mal, wenn man ihn betritt. Jedes Mal\nsieht er anders aus und enthält andere Items!",
+                italian=" Un dungeon misterioso cambia\nogni volta che ci entri. Ha una forma diversa\ne contiene strumenti differenti ogni volta!",
+                spanish=" Un territorio misterioso\nse transforma cada vez que lo visitas.\nTodo es diferente... ¡incluso hay otros objetos!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" If you faint in the middle of a\ndungeon, you lose half of your money...",
+                french=" Si tu tombes K.O. dans un\ndonjon, tu perds la moitié de ton argent...",
+                german=" Gehst du in einem Dungeon K.O.,\nverlierst du die Hälfte deines Geldes...",
+                italian=" Se finisci KO dentro un dungeon,\nperdi metà dei tuoi soldi...",
+                spanish=" Si te debilitas estando en un\nterritorio, perderás la mitad de tu dinero...",
+            }
+        case 2:
+            {
+                english=" If you faint in the middle of a\ndungeon, you lose half of your money...",
+                french=" Si tu tombes K.O. dans un\ndonjon, tu perds la moitié de ton argent...",
+                german=" Gehst du in einem Dungeon K.O.,\nverlierst du die Hälfte deines Geldes...",
+                italian=" Se finisci KO dentro un dungeon,\nperdi metà dei tuoi soldi...",
+                spanish=" Si te debilitas estando en un\nterritorio, pierdes la mitad de tu dinero...",
+            }
+        default:
+            {
+                english=" If you faint in the middle of a\ndungeon, you lose half of your money...",
+                french=" Si tu tombes K.O. dans un\ndonjon, tu perds la moitié de ton argent...",
+                german=" Gehst du in einem Dungeon K.O.,\nverlierst du die Hälfte deines Geldes...",
+                italian=" Se finisci KO dentro un dungeon,\nperdi metà dei tuoi soldi...",
+                spanish=" Si te debilitas estando en un\nterritorio, pierdes la mitad de tu dinero...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" You can even lose half your\nitems or more...",
+                french=" On peut même perdre la moitié\nde ses objets, voire plus...",
+                german=" Du kannst sogar die Hälfte\ndeiner Items oder mehr verlieren...",
+                italian=" Puoi anche perdere metà dei tuoi\nstrumenti o addirittura di più!",
+                spanish=" También es muy posible que se\npierdan la mitad de los objetos, o más...",
+            }
+        case 2:
+            {
+                english=" You can even lose half your\nitems or more...",
+                french=" On peut même perdre la moitié\nde ses objets, voire plus...",
+                german=" Du kannst sogar die Hälfte\ndeiner Items oder mehr verlieren...",
+                italian=" Puoi anche perdere metà dei tuoi\nstrumenti o addirittura di più!",
+                spanish=" También es muy posible que\npierdas la mitad de los objetos, o más...",
+            }
+        default:
+            {
+                english=" You can even lose half your\nitems or more...",
+                french=" On peut même perdre la moitié\nde ses objets, voire plus...",
+                german=" Du kannst sogar die Hälfte\ndeiner Items oder mehr verlieren...",
+                italian=" Puoi anche perdere metà dei tuoi\nstrumenti o addirittura di più!",
+                spanish=" También es muy posible que se\npierdan la mitad de los objetos, o más...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Finally, you get kicked right out.\nThey\'re very strange places.",
+                french=" Et puis, on se fait expulser\ndu donjon. Ce sont des endroits très\nétranges.",
+                german=" Und du wirst aus dem Dungeon\ngeworfen. Diese Orte sind sehr seltsam.",
+                italian=" E ti ritrovi fuori dal dungeon.\nSono dei luoghi molto bizzarri.",
+                spanish=" Y, además, luego apareces fuera.\nLo cierto es que son unos sitios muy raros.",
+            }
+        case 2:
+            {
+                english=" Finally, you get kicked right out.\nThey\'re very strange places.",
+                french=" Et puis, on se fait expulser\ndu donjon. Ce sont des endroits très\nétranges.",
+                german=" Und du wirst aus dem Dungeon\ngeworfen. Diese Orte sind sehr seltsam.",
+                italian=" E ti ritrovi fuori dal dungeon.\nSono dei luoghi molto bizzarri.",
+                spanish=" Y, además, luego aparecerás\nfuera. La verdad es que son unos sitios\nmuy raros.",
+            }
+        default:
+            {
+                english=" Finally, you get kicked right out.\nThey\'re very strange places.",
+                french=" Et puis, on se fait expulser\ndu donjon. Ce sont des endroits très\nétranges.",
+                german=" Und du wirst aus dem Dungeon\ngeworfen. Diese Orte sind sehr seltsam.",
+                italian=" E ti ritrovi fuori dal dungeon.\nSono dei luoghi molto bizzarri.",
+                spanish=" Y, además, luego apareces fuera.\n¡Son unos lugares muy extraños!",
+            }
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_INSPIRED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" But every time you go inside\none, there are always new things to discover!",
+                french=" Mais à chaque fois qu\'on va\ndans un donjon, il y a de nouvelles choses\nà découvrir!",
+                german=" Aber jedes Mal, wenn du einen\nbetrittst, gibt es neue Dinge zu entdecken!",
+                italian=" Ma ogni volta che ci entri,\nci sono sempre nuove cose da scoprire!",
+                spanish=" ¡Pero también es cierto que\ncada vez que entras aparecen cosas nuevas!",
+            }
+        case 2:
+            {
+                english=" But every time you go inside\none, there are always new things to discover!",
+                french=" Mais à chaque fois qu\'on va\ndans un donjon, il y a de nouvelles choses\nà découvrir!",
+                german=" Aber jedes Mal, wenn du einen\nbetrittst, gibt es neue Dinge zu entdecken!",
+                italian=" Ma ogni volta che ci entri,\nci sono sempre nuove cose da scoprire!",
+                spanish=" ¡Pero también es cierto que\ncada vez que entras aparecen cosas nuevas!",
+            }
+        default:
+            {
+                english=" But every time you go inside\none, there are always new things to discover!",
+                french=" Mais à chaque fois qu\'on va\ndans un donjon, il y a de nouvelles choses\nà découvrir!",
+                german=" Aber jedes Mal, wenn du einen\nbetrittst, gibt es neue Dinge zu entdecken!",
+                italian=" Ma ogni volta che ci entri,\nci sono sempre nuove cose da scoprire!",
+                spanish=" ¡Pero también es cierto que\ncada vez que entras aparecen cosas nuevas!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" They\'re really awesome places\nto explore!",
+                french=" Ce sont des endroits vraiment\ngéniaux à explorer!",
+                german=" Sie sind super zum Erkunden!",
+                italian=" Ci sono dei posti incredibili\nda esplorare!",
+                spanish=" ¡Y por eso merece la pena\nexplorarlos una y otra vez!",
+            }
+        case 2:
+            {
+                english=" They really are fantastic places\nto go exploring!",
+                french=" Ce sont des endroits vraiment\ngéniaux à explorer!",
+                german=" Sie eignen sich hervorragend\nzum Erkunden!",
+                italian=" Ci sono dei posti davvero \nfantastici da esplorare!",
+                spanish=" ¡Eso hace que merezca\nla pena ir a explorarlos de vez en cuando!",
+            }
+        default:
+            {
+                english=" They really are fantastic places\nto go explore!",
+                french=" Ce sont des endroits vraiment\ngéniaux à explorer!",
+                german=" Sie eignen sich fantastisch\nzum Erkunden!",
+                italian=" Ci sono dei posti davvero \nfavolosi da esplorare!",
+                spanish=" ¡Son un lugar increíble\npara ir de exploración!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5122);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(2);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Well! You\'re quite informed,\naren\'t you! ♪",
+        french=" Eh bien! Tu es bien au courant,\ndis-moi! ♪",
+        german=" Tja! Du bist ganz gut informiert,\nnicht wahr? ♪",
+        italian=" Beh! Vedo che sai parecchie\ncose! ♪",
+        spanish=" Vaya, veo que te han informado\nbien. ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_HAPPY, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" That makes things much easier\nfor me to explain! ♪",
+        french=" Cela me facilite la tâche! J\'ai\nmoins de choses à vous expliquer! ♪",
+        german=" Das erleichtert mir die\nErklärung um einiges! ♪",
+        italian=" Mi rende più facile spiegare\nil resto! ♪",
+        spanish=" Eso me facilita las cosas\npara explicaros todo esto. ♪",
+    });
+    message_Talk({
+        english=" Jobs all take place in\nmystery dungeons.",
+        french=" Toutes les missions ont lieu dans\nles donjons mystères.",
+        german=" Alle Jobs finden in Mystery\nDungeons statt.",
+        italian=" Tutte le missioni si svolgono\nall\'interno di dungeon misteriosi.",
+        spanish=" Las misiones tienen lugar\nen territorios misteriosos.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 1, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" So...[K]let\'s look for a job that you\nshould perform! ♪",
+        french=" Alors...[K] Cherchons une mission\nqui vous conviendrait! ♪",
+        german=" Also...[K] Lasst uns einen Job für\neuch suchen! ♪",
+        italian=" Allora...[K] Scegliamo una\nmissione per voi! ♪",
+        spanish=" Así que...[K] ¡Vamos a ver si hay\nuna misión adecuada para vuestro equipo! ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(30);
+    se_Play(8964);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 2, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    message_Talk({
+        english=" Ah, yes. ♪ Maybe this will do?",
+        french=" Ah, oui. ♪ Celle-là devrait\nfaire l\'affaire.",
+        german=" Ah, ja. ♪ Vielleicht dieser?",
+        italian=" Ah, sì. ♪ Andrà bene questa?",
+        spanish=" Ah, sí. ♪ Esta nos servirá.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    if ( variation ) {
+    }
+    §label_0;
+    with (actor ACTOR_NPC_PERAPPU) {
+        Move2PositionOffset(1, -16, 16);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    se_Play(5124);
+    Wait(45);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SlidePositionOffset(1, 16, -16);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    Wait(20);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    bgm_FadeOut(120);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Oh, yeah? Let\'s read it!",
+                french=" Oh, vraiment? Lisons-la!",
+                german=" Wirklich? Lass es uns lesen!",
+                italian=" Oh, sì? Leggiamo!",
+                spanish=" ¿Ah, sí? ¡Veamos el anuncio!",
+            }
+        case 2:
+            {
+                english=" Oh, really? Let\'s read it!",
+                french=" Oh, vraiment? Lisons-la!",
+                german=" Oh, wirklich? Lass es uns lesen!",
+                italian=" Oh, sì? Leggiamo!",
+                spanish=" ¿Ah, sí? ¡Leamos el anuncio!",
+            }
+        default:
+            {
+                english=" Oh, really? Let\'s read it!",
+                french=" Oh, vraiment? Lisons-la!",
+                german=" Oh, wirklich? Lass es uns lesen!",
+                italian=" Oh, sì? Leggiamo!",
+                spanish=" ¿Sí? ¡Vamos a leer el anuncio!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_Mail({
+        english="\"Hello! My name is [CS:N]Spoink[CR]!\"",
+        french="\"Bonjour! Mon nom est [CS:N]Spoink[CR]!",
+        german="[F:S2]Hallo! Mein Name ist [CS:N]Spoink[CR]![F:E2]",
+        italian="\"Ciao! Mi chiamo [CS:N]Spoink[CR]!\"",
+        spanish="\"¡Hola! Me llamo [CS:N]Spoink[CR].\"",
+    });
+    message_Mail({
+        english="\"An outlaw has run off with my most prized\npossession. My precious pearl!\"",
+        french="Un hors-la-loi s\'est enfui avec mon bien\nle plus cher. Ma perle précieuse!",
+        german="[F:S2]Ein Ganove ist mit meinem wertvollsten\nBesitz abgehauen, mit meiner kostbaren\nPerle![F:E2]",
+        italian="\"Un ricercato è scappato con la cosa più \npreziosa che ho. La mia perla!\"",
+        spanish="\"Un desaprensivo se ha escapado con mi\nposesión más preciada... ¡Mi valiosa perla!\"",
+    });
+    message_Mail({
+        english="\"That pearl is life itself...to me!\"",
+        french="Cette perle... est tout pour moi!",
+        german="[F:S2]Diese Perle bedeutet mir so viel wie mein\nLeben![F:E2]",
+        italian="\"Quella perla è tutta la mia vita!\"",
+        spanish="\"¡Esa perla es... mi vida!\"",
+    });
+    message_Mail({
+        english="\"I just can\'t seem to settle down if that pearl\nisn\'t in its proper place atop my head!\"",
+        french="Je ne peux pas retrouver mon calme tant que\ncette perle n\'est pas à sa place, c\'est-à-dire\nsur ma tête!",
+        german="[F:S2]Ich kann mich einfach nicht beruhigen, solange\ndiese Perle nicht auf meinem Kopf ist. Da, wo\nsie hingehört![F:E2]",
+        italian="\"Non riesco proprio a stare tranquillo se non\nho quella perla sulla testa!\"",
+        spanish="\"No me siento capaz de hacer nada sin ella.\"",
+    });
+    message_Mail({
+        english="\"But I\'ve heard my pearl has been sighted!\"",
+        french="J\'ai entendu dire qu\'on a vu ma perle!",
+        german="[F:S2]Doch ich habe gehört, dass meine Perle\ngesehen wurde![F:E2]",
+        italian="\"Ma ho sentito dire che qualcuno l\'ha vista!\"",
+        spanish="\"Me han llegado rumores sobre dónde podría\nestar.\"",
+    });
+    message_Mail({
+        english="\"It\'s said to be on a rocky bluff. But this bluff\nis reported to be extremely unsafe.\"",
+        french="On dit l\'avoir vue sur une falaise rocheuse.\nMais on dit aussi que cette falaise est très\ndangereuse.",
+        german="[F:S2]Sie soll sich auf einer felsigen Klippe\nbefinden, und diese Klippe soll sehr gefährlich\nsein.[F:E2]",
+        italian="\"Dovrebbe trovarsi in un luogo paludoso.\nMa pare sia molto pericoloso.\"",
+        spanish="\"He oído que se encuentra en una especie de\nacantilado, pero parece ser un lugar muy\npeligroso.\"",
+    });
+    message_Mail({
+        english="\"I could never go somewhere so frightening!\"",
+        french="Je ne pourrai jamais aller dans un endroit\naussi effrayant!",
+        german="[F:S2]An einen so furchterregenden Ort könnte ich\nniemals gehen![F:E2]",
+        italian="\"Non potrei mai andare in un posto così \nspaventoso!\"",
+        spanish="\"Me siento incapaz de arriesgarme a ir\nen mi estado actual.\"",
+    });
+    message_Mail({
+        english="\"Oh, friendly readers! Would you be so kind as\nto go to the bluff and get my pearl?\"",
+        french="Oh, chers lecteurs! Auriez-vous la bonté\nd\'aller à cette falaise pour récupérer\nma perle?",
+        german="[F:S2]Oh liebe Leser! Wärt ihr so freundlich, zu\ndieser Klippe zu gehen und meine Perle\nzurückzuholen?[F:E2]",
+        italian="\"Oh, cari lettori! Sareste così gentili da\nandare laggiù per recuperare la mia perla?\"",
+        spanish="\"¡Oh, simpáticos lectores! ¿Seríais tan\namables de ir al risco a buscar mi perla?\"",
+    });
+    message_Mail({
+        english="\"I beg your help, exploration team members!\"\n\n                                        From [CS:N]Spoink[CR]",
+        french="J\'implore votre aide, explorateurs!\"\n\n                                        [CS:N]Spoink[CR]",
+        german="[F:S2]Ich flehe um eure Hilfe, Erkundungsteams!\n\n                                        Von [CS:N]Spoink[CR][F:E2]",
+        italian="\"Aiutatemi, membri delle squadre \nd\'esplorazione!\"\n                                        - [CS:N]Spoink[CR] -",
+        spanish="\"¡Os ruego que me ayudéis, exploradores!\"\n\n                                     Firmado: [CS:N]Spoink[CR]",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hold on a second!",
+                french=" Attends une minute!",
+                german=" Eine Sekunde!",
+                italian=" Aspetta un attimo!",
+                spanish=" ¡Un segundo!",
+            }
+        case 2:
+            {
+                english=" Wait a second...",
+                french=" Attends une minute!",
+                german=" Moment mal...",
+                italian=" Aspetta un attimo...",
+                spanish=" ¡Un momento!",
+            }
+        default:
+            {
+                english=" Wait a second...",
+                french=" Attends une minute!",
+                german=" Moment mal...",
+                italian=" Aspetta un attimo...",
+                spanish=" ¡Un momento!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8971);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_ANGRY_MIRRORED, 3);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_ANGRY, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We\'re only going to fetch an\nitem that someone dropped?",
+                french=" On doit se contenter d\'aller\nchercher un objet que quelqu\'un a fait\ntomber?",
+                german=" Wir sollen nur ein Item holen,\ndas jemand verloren hat?",
+                italian=" Dobbiamo solo recuperare\nuna cosa che qualcuno ha perso?",
+                spanish=" ¿Es que vamos a ir a buscar\nun objeto que se le ha caído a alguien?",
+            }
+        case 2:
+            {
+                english=" We\'re going to fetch an item\nthat someone dropped?",
+                french=" On doit se contenter d\'aller\nchercher un objet que quelqu\'un a fait\ntomber?",
+                german=" Wir holen ein Item zurück,\ndas jemand verloren hat?",
+                italian=" Dobbiamo recuperare\nuna cosa che qualcuno ha perso?",
+                spanish=" ¿Vamos a ir a buscar\nun objeto que haya perdido alguien?",
+            }
+        default:
+            {
+                english=" We\'re going to fetch an item\nthat someone dropped?",
+                french=" On doit se contenter d\'aller\nchercher un objet que quelqu\'un a fait\ntomber?",
+                german=" Wir holen ein Item zurück,\ndas jemand verloren hat?",
+                italian=" Dobbiamo recuperare\nuna cosa che qualcuno ha perso?",
+                spanish=" ¿Vamos a ir a buscar\nun objeto que se le haya caído a alguien?",
+            }
+    }
+    message_KeyWait();
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" That\'s hardly an adventure\nat all!",
+                french=" Ça n\'a rien d\'une aventure!",
+                german=" Das ist doch kein Abenteuer!",
+                italian=" Ma che razza di avventura\nsarebbe?",
+                spanish=" ¡Eso a mí no me parece\nuna aventura precisamente!",
+            }
+        case 2:
+            {
+                english=" I would rather do something\nthat\'s more of an adventure.",
+                french=" Ça n\'a rien d\'une aventure!",
+                german=" Ich würde lieber etwas\nAbenteuerlicheres tun.",
+                italian=" Non c\'è un compito più \navventuroso?",
+                spanish=" ¡Preferiría hacer algo que\nse pareciera más a una aventura!",
+            }
+        default:
+            {
+                english=" I\'d rather go on a bigger\nadventure than that.",
+                french=" Ça n\'a rien d\'une aventure!",
+                german=" Ich würde gerne ein größeres\nAbenteuer erleben.",
+                italian=" Preferirei un compito più \navventuroso.",
+                spanish=" Tiene que haber una aventura\nmás emocionante que esa.",
+            }
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_INSPIRED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I\'d rather look for treasure or\nexplore unknown places. Things like that!",
+                french=" Je préférerais aller chercher\ndes trésors ou explorer des endroits inconnus.\nQuelque chose de passionnant, quoi!",
+                german=" Ich würde lieber Schätze suchen\noder unbekannte Orte erkunden. Solche Sachen!",
+                italian=" Vorrei andare in cerca di\ntesori o luoghi sconosciuti. Cose del genere!",
+                spanish=" Preferiría ir a buscar un tesoro\no a explorar sitios desconocidos. ¡Algo así!",
+            }
+        case 2:
+            {
+                english=" I\'d rather look for treasure or\nexplore unknown places. Things like that!",
+                french=" Je préférerais aller chercher\ndes trésors ou explorer des endroits inconnus.\nQuelque chose de passionnant, quoi!",
+                german=" Ich würde lieber Schätze suchen\noder unbekannte Orte erkunden. Solche Sachen!",
+                italian=" Vorrei andare in cerca di\ntesori o luoghi sconosciuti. Cose del genere!",
+                spanish=" Preferiría ir a buscar tesoros\no de exploración. ¡Cosas así!",
+            }
+        default:
+            {
+                english=" I\'d rather look for treasure or\nexplore unknown places. Things like that!",
+                french=" Je préférerais aller chercher\ndes trésors ou explorer des endroits inconnus.\nQuelque chose de passionnant, quoi!",
+                german=" Ich würde lieber Schätze suchen\noder unbekannte Orte erkunden. Solche Sachen!",
+                italian=" Vorrei andare in cerca di\ntesori o luoghi sconosciuti. Cose del genere!",
+                spanish=" Preferiría ir a buscar un tesoro\no a explorar sitios desconocidos. ¡Algo así!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5122);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(1, 10, DIR_UP);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_ANGRY, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Hush!",
+        french=" Silence!",
+        german=" Kusch!",
+        italian=" Shhh!",
+        spanish=" ¡Silencio!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8974);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Yikes!",
+                french=" Oups!",
+                german=" Oh Mann!",
+                italian=" Gasp!",
+                spanish=" ¡Huy!",
+            }
+        case 2:
+            {
+                english=" Yikes!",
+                french=" Oups!",
+                german=" Oh Mann!",
+                italian=" Gasp!",
+                spanish=" ¡Huy!",
+            }
+        default:
+            {
+                english=" Yikes!",
+                french=" Oups!",
+                german=" Oh Mann!",
+                italian=" Gulp!",
+                spanish=" ¡Huy!",
+            }
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_ANGRY, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" It\'s important that you rookies\npay your dues!",
+        french=" Vous êtes des novices, vous\ndevez d\'abord faire vos preuves, c\'est\nimportant!",
+        german=" Es ist wichtig, dass ihr Neulinge\neure Pflicht tut!",
+        italian=" È importante che i principianti\ncome voi vadano per gradi!",
+        spanish=" ¡Los novatos tenéis que cumplir\ncon vuestras responsabilidades antes que nada!",
+    });
+    message_Talk({
+        english=" Now pay attention![K] I\'ll repeat\nthe warnings again to make sure they stick!",
+        french=" Maintenant, écoutez-moi![K]\nJe vais répéter les recommandations pour\nêtre bien certain que vous avez compris!",
+        german=" Jetzt passt auf![K] Ich wiederhole\nmeine Warnungen, damit ihr sie auch behaltet!",
+        italian=" Adesso fate attenzione![K]\nRipeterò ancora gli avvertimenti per essere\nsicuro che non ve li dimentichiate!",
+        spanish=" ¡Y ahora prestad atención![K]\nVolveré a advertiros para que no os olvidéis.",
+    });
+    message_Talk({
+        english=" You\'ll be forced out of a dungeon\nand sent back here if either of you faints.",
+        french=" Il suffit que [hero] ou\n[partner] tombe K.O. pour que les deux se\nfassent expulser d\'un donjon et renvoyer ici.",
+        german=" Ihr werdet aus einem Dungeon\ngeworfen und zurückgeschickt, wenn einer von\neuch besiegt wird.",
+        italian=" Se uno dei due va KO in un \ndungeon, vi ritroverete qui.",
+        spanish=" Procurad no debilitaros. Si el\nlíder o el acompañante se debilitan, el\nequipo será expulsado del territorio.",
+    });
+    message_Talk({
+        english=" You\'ll lose half your money![K]\nAnd you could lose half your items or more.\nYou\'d best be careful!",
+        french=" Vous perdez alors la moitié de\nvotre argent![K] Et vous pourriez perdre la\nmoitié de vos objets, voire plus. Attention!",
+        german=" Ihr verliert die Hälfte eures\nGeldes![K] Und ihr riskiert, die Hälfte oder sogar\nmehr eurer Items zu verlieren. Gebt also acht!",
+        italian=" Perderete metà dei vostri\nsoldi![K] E potreste perdere metà dei vostri\nstrumenti o anche di più. Fate attenzione!",
+        spanish=" ¡Perderéis la mitad del dinero![K]\nY podríais perder la mitad de los objetos o\nincluso más, ¡así que id con cuidado!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5122);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(2);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" If you\'ve understood all that,\nI suggest you get on with the job! ♪",
+        french=" Si vous avez tout compris,\nje vous suggère d\'aller travailler! ♪",
+        german=" Habt ihr alles verstanden?\nDann schlage ich vor, ihr nehmt den Job in\nAngriff! ♪",
+        italian=" Se avete capito tutto,\nvi consiglio di mettervi al lavoro! ♪",
+        spanish=" Si no tenéis más preguntas, os\nsugiero que os pongáis manos a la obra. ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8961);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROP, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hmm...",
+                french=" Hmm...",
+                german=" Hmm...",
+                italian=" Mmm...",
+                spanish=" Hum...",
+            }
+        case 2:
+            {
+                english=" Hmm...",
+                french=" Hmm...",
+                german=" Hmm...",
+                italian=" Mmm...",
+                spanish=" Hum...",
+            }
+        default:
+            {
+                english=" Hmm...",
+                french=" Hmm...",
+                german=" Hmm...",
+                italian=" Mmm...",
+                spanish=" Vaya...",
+            }
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_Close();
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 60);
+    Wait(30);
+    dungeon_mode(3) = DMODE_OPEN;
+    end;
+}

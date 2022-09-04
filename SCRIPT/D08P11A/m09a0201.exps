@@ -1,0 +1,163 @@
+
+def 0 {
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Are you ready to get going,\n[hero]?",
+                french=" On peut y aller, [hero]?",
+                german=" Bist du bereit, zu gehen,\n[hero]?",
+                italian=" Tutto pronto per la partenza,\n[hero]?",
+                spanish=" ¿Nos vamos, [hero]?",
+            }
+        case 2:
+            {
+                english=" Are you ready, [hero]?",
+                french=" On peut y aller, [hero]?",
+                german=" Bist du so weit, [hero]?",
+                italian=" Tutto pronto per la partenza,\n[hero]?",
+                spanish=" ¿Seguimos adelante,\n[hero]?",
+            }
+        default:
+            {
+                english=" Are you ready, [hero]?",
+                french=" On peut y aller, [hero]?",
+                german=" Bist du so weit, [hero]?",
+                italian=" Tutto pronto per la partenza,\n[hero]?",
+                spanish=" ¿Vamos, [hero]?",
+            }
+    }
+    switch ( message_SwitchMenu(0, 1) ) {
+        case menu({
+            english="Yes",
+            french="Oui",
+            german="Ja",
+            italian="Sì",
+            spanish="Sí",
+        }):
+        default:
+            §label_0;
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                case 1:
+                    {
+                        english=" Which way should we go?",
+                        french=" On prend quel chemin?",
+                        german=" Welchen Weg nehmen wir?",
+                        italian=" Da che parte dobbiamo andare?",
+                        spanish=" ¿Por dónde vamos?",
+                    }
+                case 2:
+                    {
+                        english=" Which way should we go?",
+                        french=" On prend quel chemin?",
+                        german=" Welchen Weg nehmen wir?",
+                        italian=" Da che parte dobbiamo andare?",
+                        spanish=" ¿Por dónde vamos?",
+                    }
+                default:
+                    {
+                        english=" Which way should we go?",
+                        french=" On prend quel chemin?",
+                        german=" Welchen Weg nehmen wir?",
+                        italian=" Da che parte dobbiamo andare?",
+                        spanish=" ¿Por dónde vamos?",
+                    }
+            }
+            switch ( message_SwitchMenu(0, 1) ) {
+                case menu({
+                    english="[CS:P]Foggy Forest[CR]",
+                    french="Par la [CS:P]Forêt Brumeuse[CR]",
+                    german="[CS:P]Nebelwald[CR]",
+                    italian="[CS:P]Foresta Bruma[CR]",
+                    spanish="[CS:P]Bosque Niebla[CR]",
+                }):
+                default:
+                    $SCENARIO_MAIN_BIT_FLAG[5] = 0;
+                    message_Close();
+                    screen_FadeOutAll(1, 30);
+                    Wait(10);
+                    supervision_Acting(0);
+                    Wait(1);
+                    §label_4;
+                    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+                    $SCENARIO_MAIN = scn[10, 2];
+                    if ( $SCENARIO_MAIN_BIT_FLAG[5] ) {
+                        main_EnterDungeon(13, 0);
+                        switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                        main_EnterDungeon(-1, 0);
+                        hold;
+                    } else {
+                        main_EnterDungeon(12, 0);
+                        switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                        main_EnterDungeon(-1, 0);
+                        hold;
+                    }
+                    break;
+                case menu({
+                    english="[CS:P]Forest Path[CR]",
+                    french="Par le [CS:P]Chemin Sylvestre[CR]",
+                    german="[CS:P]Waldpfad[CR]",
+                    italian="[CS:P]Pista Silvestre[CR]",
+                    spanish="[CS:P]Paso Boscoso[CR]",
+                }):
+                    $SCENARIO_MAIN_BIT_FLAG[5] = 1;
+                    message_Close();
+                    screen_FadeOutAll(1, 30);
+                    Wait(10);
+                    supervision_Acting(0);
+                    Wait(1);
+                    jump @label_4;
+            }
+            break;
+        case menu({
+            english="Not yet",
+            french="Pas encore",
+            german="Noch nicht",
+            italian="Aspetta",
+            spanish="Aún no",
+        }):
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                case 1:
+                    {
+                        english=" Tell me when you\'re set.",
+                        french=" Dis-moi quand on peut y aller.",
+                        german=" Sag mir, wenn du fertig bist.",
+                        italian=" Dimmi quando è tutto pronto.",
+                        spanish=" Avísame cuando quieras\ncontinuar.",
+                    }
+                case 2:
+                    {
+                        english=" Tell me when you\'re\nready.",
+                        french=" Dis-moi quand on peut y aller.",
+                        german=" Sag mir, wenn du so weit bist.",
+                        italian=" Dimmi quando è tutto pronto.",
+                        spanish=" Avísame cuando quieras\ncontinuar.",
+                    }
+                default:
+                    {
+                        english=" Tell me when you\'re\nready.",
+                        french=" Dis-moi quand on peut y aller.",
+                        german=" Sag mir, wenn du so weit bist.",
+                        italian=" Dimmi quando è tutto pronto.",
+                        spanish=" Avísame cuando quieras\ncontinuar.",
+                    }
+            }
+            message_Close();
+            end;
+    }
+}

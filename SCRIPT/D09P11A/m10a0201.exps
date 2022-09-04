@@ -1,0 +1,132 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_STEAM_CAVE, 0, 256);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Ready to head in, [hero]?",
+                french=" On peut y aller, [hero]?",
+                german=" Bist du so weit, [hero]?",
+                italian=" Ci buttiamo, [hero]?",
+                spanish=" ¿Entramos ya, [hero]?",
+            }
+        case 2:
+            {
+                english=" Ready to go in, [hero]?",
+                french=" On peut y aller, [hero]?",
+                german=" Bist du so weit, [hero]?",
+                italian=" Te la senti, [hero]?",
+                spanish=" ¿Entramos ya, [hero]?",
+            }
+        default:
+            {
+                english=" Ready to go in, [hero]?",
+                french=" On peut y aller, [hero]?",
+                german=" Bist du so weit, [hero]?",
+                italian=" Te la senti, [hero]?",
+                spanish=" ¿Entramos ya, [hero]?",
+            }
+    }
+    switch ( message_SwitchMenu(0, 1) ) {
+        case menu({
+            english="Yes",
+            french="Oui",
+            german="Ja",
+            italian="Sì",
+            spanish="Sí",
+        }):
+            §label_0;
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            if ( scn($SCENARIO_MAIN) == [11, 1] ) {
+                screen_FadeOut(1, 30);
+                supervision_ExecuteCommon(CORO_EVENT_M10_03);
+                hold;
+            } else {
+                main_EnterDungeon(14, 30);
+                switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                main_EnterDungeon(-1, 30);
+                hold;
+            }
+            break;
+        case menu({
+            english="Not yet",
+            french="Non",
+            german="Nein",
+            italian="Aspetta",
+            spanish="Aún no",
+        }):
+            §label_1;
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                case 1:
+                    {
+                        english=" All right, then!",
+                        french=" D\'accord!",
+                        german=" Schon okay!",
+                        italian=" Va bene!",
+                        spanish=" ¡De acuerdo!",
+                    }
+                case 2:
+                    {
+                        english=" OK, then!",
+                        french=" D\'accord!",
+                        german=" In Ordnung!",
+                        italian=" Va bene!",
+                        spanish=" ¡De acuerdo!",
+                    }
+                default:
+                    {
+                        english=" OK, then!",
+                        french=" D\'accord!",
+                        german=" In Ordnung!",
+                        italian=" Va bene!",
+                        spanish=" ¡De acuerdo!",
+                    }
+            }
+            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                case 1:
+                    {
+                        english=" Let\'s go as soon as you\'re ready!",
+                        french=" Préviens-moi dès que tu auras\nfini tes préparatifs!",
+                        german=" Wir gehen, sobald du bereit bist!",
+                        italian=" Prepariamoci come si deve!",
+                        spanish=" Cuando quieras.",
+                    }
+                case 2:
+                    {
+                        english=" We\'ll go when you\'re ready.",
+                        french=" Préviens-moi dès que tu auras\nfini tes préparatifs!",
+                        german=" Wir gehen, wenn du so weit bist.",
+                        italian=" Meglio prepararsi prima.",
+                        spanish=" Vamos cuando digas.",
+                    }
+                default:
+                    {
+                        english=" Let\'s go when you\'re ready.",
+                        french=" Préviens-moi dès que tu auras\nfini tes préparatifs!",
+                        german=" Lass uns gehen, wenn du so weit\nbist.",
+                        italian=" Meglio prepararsi prima.",
+                        spanish=" Vamos cuando quieras.",
+                    }
+            }
+            message_Close();
+            end;
+        default:
+            jump @label_1;
+    }
+}

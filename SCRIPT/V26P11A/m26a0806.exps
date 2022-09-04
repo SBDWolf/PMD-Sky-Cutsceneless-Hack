@@ -1,0 +1,49 @@
+
+def 0 {
+    switch ( $LANGUAGE_TYPE ) {
+        case 2:
+            §label_0;
+            back_SetGround(LEVEL_V26P11A2);
+            §label_4;
+            supervision_Acting(0);
+            with (performer 0) {
+                camera_SetMyself();
+            }
+            $PERFORMANCE_PROGRESS_LIST[9] = 1;
+            $SCENARIO_MAIN = scn[29, 0];
+            dungeon_mode(1) = DMODE_OPEN_AND_REQUEST;
+            dungeon_mode(3) = DMODE_OPEN_AND_REQUEST;
+            dungeon_mode(4) = DMODE_OPEN_AND_REQUEST;
+            dungeon_mode(6) = DMODE_OPEN_AND_REQUEST;
+            dungeon_mode(7) = DMODE_OPEN_AND_REQUEST;
+            dungeon_mode(8) = DMODE_OPEN_AND_REQUEST;
+            dungeon_mode(10) = DMODE_OPEN_AND_REQUEST;
+            dungeon_mode(12) = DMODE_OPEN_AND_REQUEST;
+            dungeon_mode(14) = DMODE_OPEN_AND_REQUEST;
+            dungeon_mode(17) = DMODE_OPEN_AND_REQUEST;
+            dungeon_mode(20) = DMODE_OPEN_AND_REQUEST;
+            dungeon_mode(21) = DMODE_OPEN_AND_REQUEST;
+            dungeon_mode(24) = DMODE_OPEN_AND_REQUEST;
+            dungeon_mode(25) = DMODE_OPEN_AND_REQUEST;
+            dungeon_mode(34) = DMODE_OPEN_AND_REQUEST;
+            dungeon_mode(35) = DMODE_OPEN_AND_REQUEST;
+            dungeon_mode(38) = DMODE_REQUEST;
+            dungeon_mode(41) = DMODE_REQUEST;
+            $GROUND_PLACE = 307;
+            switch ( message_Menu(MENU_SAVE_MENU) ) { }
+            switch ( ProcessSpecial(24, 0, 0) ) { }
+            end;
+        case 3:
+            back_SetGround(LEVEL_V26P11A3);
+            jump @label_4;
+        case 4:
+            back_SetGround(LEVEL_V26P11A4);
+            jump @label_4;
+        case 5:
+            back_SetGround(LEVEL_V26P11A5);
+            jump @label_4;
+        default:
+            back_SetGround(LEVEL_V26P11A);
+            jump @label_4;
+    }
+}

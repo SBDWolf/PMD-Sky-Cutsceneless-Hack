@@ -1,0 +1,136 @@
+
+def 0 {
+    $SCENARIO_MAIN = scn[25, 4];
+    bgm_PlayFadeIn(BGM_HIDDEN_HIGHLAND, 0, 256);
+    back_SetGround(LEVEL_D28P32A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (object OBJECT_D28P32A1_65) {
+        SetOutputAttribute(4);
+    }
+    screen_FadeIn(1, 30);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(33075, Position<'m0', 28, 34.5>);
+    }
+    Wait(20);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        MovePositionMark(33075, Position<'m1', 25, 32.5>);
+    }
+    Wait(30);
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(33075, Position<'m2', 22, 36.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    se_Play(8967);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_TOP_RC_FACEOUTW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" What...[K] What is this place?!",
+                french=" C\'est...[K] c\'est quoi cet endroit?!",
+                german=" Was...[K] Was für ein Ort ist\ndas?!?",
+                italian=" Che...[K] cos\'è questo posto?!",
+                spanish=" ¿Eh?[K] ¡¿Qué será este lugar?!",
+            }
+        case 2:
+            {
+                english=" What...[K] What is this place?!",
+                french=" C\'est...[K] c\'est quoi cet endroit?!",
+                german=" Was...[K] Was für ein Ort ist\ndas?!?",
+                italian=" Che...[K] cos\'è questo posto?!",
+                spanish=" ¿Eh?[K] ¡¿Qué será este lugar?!",
+            }
+        default:
+            {
+                english=" What...[K] What is this place?!",
+                french=" C\'est...[K] c\'est quoi cet endroit?!",
+                german=" Was...[K] Was für ein Ort ist\ndas?!?",
+                italian=" Che...[K] cos\'è questo posto?!",
+                spanish=" ¿Eh?[K] ¡¿Qué será este lugar?!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" I\'m not sure myself, but...[K]\nI would imagine...",
+        french=" Je n\'en suis pas sûr, mais...[K]\nj\'imagine...",
+        german=" Ich bin mir selbst nicht sicher,\naber...[K] Ich könnte mir vorstellen...",
+        italian=" Non ne sono sicuro, ma...[K] \nImmagino che...",
+        spanish=" Yo tampoco estoy muy seguro...[K]\npero me imagino que...",
+    });
+    message_Talk({
+        english=" It must be the temple of the\n[CS:P]Old Ruins[CR].",
+        french=" ... qu\'il s\'agit du temple des\n[CS:P]Ruines Anciennes[CR].",
+        german=" Es muss der Tempel der\n[CS:P]Alten Ruinen[CR] sein.",
+        italian=" Penso che sia il tempio delle\n[CS:P]Antiche Rovine[CR].",
+        spanish=" Debe de ser el templo de\nlas [CS:P]Ruinas Arcanas[CR].",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_TOP_RC_FACEOUTW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Let\'s head up these stairs.",
+                french=" Montons cet escalier.",
+                german=" Lasst uns diese Treppe\nhinaufgehen.",
+                italian=" Saliamo queste scale.",
+                spanish=" Subamos por estas escaleras.",
+            }
+        case 2:
+            {
+                english=" Let\'s head up these stairs.",
+                french=" Montons cet escalier.",
+                german=" Lasst uns diese Treppe\nhinaufgehen.",
+                italian=" Saliamo queste scale.",
+                spanish=" Subamos por estas escaleras.",
+            }
+        default:
+            {
+                english=" Let\'s head up these stairs.",
+                french=" Montons cet escalier.",
+                german=" Lasst uns diese Treppe\nhinaufgehen.",
+                italian=" Saliamo queste scale.",
+                spanish=" Subamos por estas escaleras.",
+            }
+    }
+    message_Close();
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(33075, Position<'m3', 32.5, 34.5>);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        MovePositionMark(33075, Position<'m4', 32.5, 32.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(33075, Position<'m5', 32.5, 36.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Slide2PositionMark(1, Position<'m6', 44, 26.5>);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Slide2PositionMark(1, Position<'m7', 44, 24.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_PLAYER) {
+        Slide2PositionMark(1, Position<'m8', 44, 28.5>);
+    }
+    Wait(10);
+    screen_FadeOut(1, 30);
+    end;
+}

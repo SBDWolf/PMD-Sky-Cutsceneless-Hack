@@ -1,0 +1,118 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_HIDDEN_HIGHLAND, 0, 256);
+    screen_WhiteOutAll(1, 0);
+    Wait(1);
+    screen_FadeIn(1, 0);
+    back_SetGround(LEVEL_T01P02A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    back_SetWeather(9);
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    screen_FadeInAll(1, 30);
+    Wait(30);
+    back_SetBackEffect(4);
+    Wait(15);
+    message_EmptyActor();
+    message_Talk({
+        english="[CN]And at one point, I met\n[CN]Team [team:].",
+        french="[CN]C\'est alors que j\'ai fait la connaissance\n[CN]de l\'Equipe [team:].",
+        german="[CN]Und irgendwann traf ich dann\n[CN]Team [team:].",
+        italian="[CN]E a un certo punto, incontrai\n[CN]il Team [team:].",
+        spanish="[CN]Y, en un momento dado,\n[CN]conocí al [CS:X]Equipo[CR] [team:].",
+    });
+    message_Close();
+    back_SetBackEffect(5);
+    with (actor ACTOR_NPC_YONOWAARU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_YONOWAARU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU);
+    with (actor ACTOR_NPC_YONOWAARU) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Hello there! You\'re from the\nguild, if I\'m not mistaken?",
+        french=" Bonjour à vous! Vous êtes de\nla Guilde, si je ne m\'abuse?",
+        german=" Hallo! Ihr seid von der Gilde,\nwenn ich mich nicht irre.",
+        italian=" Buongiorno a voi. Se non erro\nfate parte della Gilda.",
+        spanish=" ¡Hola! Sois miembros del\n[CS:N]Pokégremio[CR], ¿verdad?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_HAPPY, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Yup. We\'re Team [team:].",
+                french=" Oui, on est l\'Equipe\n[team:].",
+                german=" Jep. Wir sind\nTeam [team:].",
+                italian=" Già. Noi siamo il\nTeam [team:].",
+                spanish=" Sí. Somos el [CS:X]Equipo[CR]\n[team:].",
+            }
+        case 2:
+            {
+                english=" Yes. We\'re Team [team:].",
+                french=" Oui, on est l\'Equipe\n[team:].",
+                german=" Ja. Wir sind\nTeam [team:].",
+                italian=" È proprio così. Noi siamo il\nTeam [team:].",
+                spanish=" Sí. Somos el [CS:X]Equipo[CR]\n[team:].",
+            }
+        default:
+            {
+                english=" Yes. We\'re Team [team:].",
+                french=" Oui, on est l\'Equipe\n[team:].",
+                german=" Ja. Wir sind\nTeam [team:].",
+                italian=" È proprio così. Noi siamo il\nTeam [team:].",
+                spanish=" Sí. Somos el [CS:X]Equipo[CR]\n[team:].",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We work at the guild.[K] Great to\nmeet you!",
+                french=" On travaille à la Guilde.[K]\nEnchantés de vous connaître!",
+                german=" Wir arbeiten für die Gilde.[K]\nWie toll, dich zu treffen!",
+                italian=" Piacere di conoscerla!",
+                spanish=" Trabajamos en el [CS:N]Pokégremio[CR].[K]\n¡Es un placer conocerte!",
+            }
+        case 2:
+            {
+                english=" We work at the guild.[K]\nIt\'s great to meet you!",
+                french=" On travaille à la Guilde.[K]\nEnchantés de vous connaître!",
+                german=" Wir arbeiten für die Gilde.[K]\nFreut uns sehr, dich zu treffen!",
+                italian=" È un onore per noi conoscerla!",
+                spanish=" Trabajamos en el [CS:N]Pokégremio[CR].[K]\n¡Es un placer conocerte!",
+            }
+        default:
+            {
+                english=" We work at the guild.[K]\nWe\'re pleased to meet you!",
+                french=" On travaille à la Guilde.[K]\nQuel honneur de vous connaître!",
+                german=" Wir arbeiten für die Gilde.[K]\nEs freut uns sehr, dich zu treffen!",
+                italian=" È un onore per noi conoscerla!",
+                spanish=" Trabajamos en el [CS:N]Pokégremio[CR].[K]\n¡Es un placer conocerte!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    back_SetBackEffect(4);
+    Wait(30);
+    message_EmptyActor();
+    message_Talk({
+        english="[CN]But at that point,\n[CN]I suspected nothing...",
+        french="[CN]Mais à ce moment-là,\n[CN]je ne me suis douté de rien...",
+        german="[CN]Aber zu diesem Zeitpunkt\n[CN]ahnte ich noch nichts...",
+        italian="[CN]Ma a quel punto,\n[CN]non avvertii nulla...",
+        spanish="[CN]En aquel instante\n[CN]no sospeché nada.",
+    });
+    message_Close();
+    screen_WhiteOutAll(1, 30);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    screen_WhiteOut(1, 0);
+    screen_FadeInAll(1, 0);
+    end;
+}

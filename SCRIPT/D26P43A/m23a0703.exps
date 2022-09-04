@@ -1,0 +1,271 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_D26P43A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    with (actor ACTOR_PLAYER) {
+        Move2PositionMark(33152, Position<'m0', 36.5, 45.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Move2PositionMark(33152, Position<'m1', 32.5, 45.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hey! [CS:N]Chatot[CR]!",
+                french=" Eh, [CS:N]Pijako[CR]!",
+                german=" Hey! [CS:N]Plaudagei[CR]!",
+                italian=" Ehi! [CS:N]Chatot[CR]!",
+                spanish=" ¡Oye! ¡[CS:N]Chatot[CR]!",
+            }
+        case 2:
+            {
+                english=" Hey! [CS:N]Chatot[CR]!",
+                french=" Eh, [CS:N]Pijako[CR]!",
+                german=" Hey! [CS:N]Plaudagei[CR]!",
+                italian=" Ehi! [CS:N]Chatot[CR]!",
+                spanish=" ¡Oye! ¡[CS:N]Chatot[CR]!",
+            }
+        default:
+            {
+                english=" Hey! [CS:N]Chatot[CR]!",
+                french=" Eh, [CS:N]Pijako[CR]!",
+                german=" Hey! [CS:N]Plaudagei[CR]!",
+                italian=" Ehi! [CS:N]Chatot[CR]!",
+                spanish=" ¡Oye! ¡[CS:N]Chatot[CR]!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8967);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_ANGRY, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Hmmm. You two!",
+        french=" Ah, vous voilà!",
+        german=" Hmmm. Ihr beide!",
+        italian=" Mmm. Voi due!",
+        spanish=" Ah. ¡Aquí estáis!",
+    });
+    message_Talk({
+        english=" Be alert![K] They\'re very close by!",
+        french=" Restez sur vos gardes![K] Ils sont\ntout proches!",
+        german=" Seid wachsam![K] Sie sind ganz nah\nbei uns!",
+        italian=" Fate attenzione![K] Sono molto \nvicini!",
+        spanish=" ¡Id con cuidado![K]\n¡Están muy cerca de nosotros!",
+    });
+    message_Talk({
+        english=" I saw their retreating figures\nwhen I gave chase...",
+        french=" J\'ai vu leur ombre quand\nje me suis lancé à leurs trousses...",
+        german=" Ich konnte ihre flüchtenden\nUmrisse erkennen, als ich sie verfolgte.",
+        italian=" Mentre li inseguivo ho visto le \nloro sagome che si ritraevano...",
+        spanish=" Vi algo que se movía y salí\nen su persecución...",
+    });
+    message_Talk({
+        english=" But I\'d lost sight of them by\nthe time I reached this spot.",
+        french=" Mais je les ai perdus de vue\nquand je suis arrivé ici.",
+        german=" Aber als ich an diese Stelle kam,\nhatte ich sie schon aus den Augen verloren.",
+        italian=" Ma poi li ho persi di vista.",
+        spanish=" Pero, al llegar a este punto, ya\nno había nadie.",
+    });
+    message_Talk({
+        english=" They must be lurking here\nsomewhere.",
+        french=" Ils nous ont sûrement tendu\nune embuscade pas loin.",
+        german=" Sie müssen hier irgendwo\nlauern.",
+        italian=" Devono essersi nascosti da \nqualche parte.",
+        spanish=" Sé que tienen que estar por\naquí, en alguna parte.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    se_Play(8963);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_LOOK_AROUND_LEFT_FUNC_SERIES, 0);
+    }
+    Wait(10);
+    with (actor ACTOR_PLAYER) {
+        ExecuteCommon(CORO_LOOK_AROUND_RIGHT_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        Move2PositionMark(1, Position<'m2', 29.5, 41.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(20);
+    with (actor ACTOR_PLAYER) {
+        Move2PositionMark(1, Position<'m3', 39.5, 41.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_LOOK_AROUND_LEFT_FUNC_SERIES, 0);
+    }
+    se_Play(8963);
+    with (actor ACTOR_PLAYER) {
+        ExecuteCommon(CORO_LOOK_AROUND_RIGHT_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        Move2PositionMark(1, Position<'m4', 32.5, 37.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        Move2PositionMark(1, Position<'m5', 36.5, 37.5>);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_LOOK_AROUND_LEFT_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    se_Play(8963);
+    with (actor ACTOR_PLAYER) {
+        ExecuteCommon(CORO_LOOK_AROUND_RIGHT_FUNC_SERIES, 0);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_TOP_LC_FACEOUTW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" But...[K]there\'s just nowhere to\nhide here.",
+                french=" Mais...[K] il n\'y a nulle part\noù se cacher ici.",
+                german=" Aber[K] hier kann man sich\nnirgendwo verstecken.",
+                italian=" Ma...[K] non c\'è nessun posto per\nnascondersi qui.",
+                spanish=" Pero...[K] ¡si no hay ningún sitio\ndonde esconderse!",
+            }
+        case 2:
+            {
+                english=" But...[K]there doesn\'t appear to be\nanyplace to hide here.",
+                french=" Mais...[K] il n\'y a nulle part\noù se cacher ici.",
+                german=" Aber...[K] Es scheint hier nichts zu\ngeben, wo man sich verstecken könnte.",
+                italian=" Ma...[K] non sembra ci sia un\nposto per nascondersi qui.",
+                spanish=" Pero...[K] ¡si no hay ningún sitio\ndonde esconderse!",
+            }
+        default:
+            {
+                english=" But...[K]there doesn\'t appear to be\nanywhere to hide here.",
+                french=" Mais...[K] il n\'y a nulle part\noù se cacher ici.",
+                german=" Aber...[K] Es scheint hier nichts zu\ngeben, wo man sich verstecken könnte.",
+                italian=" Ma...[K] non vedo posti per\nnascondersi qui.",
+                spanish=" Pero...[K] ¡si no hay ningún sitio\ndonde esconderse!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_PAIN, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" (What is this...?)",
+        french=" (Qu\'est-ce que c\'est...?)",
+        german=" (Was ist das?)",
+        italian=" (Cos\'è questo...?)",
+        spanish=" (¿Qué ocurre?)",
+    });
+    message_Talk({
+        english=" (An odd sense of foreboding!)",
+        french=" (J\'ai un étrange pressentiment!)",
+        german=" (Eine seltsame Vorahnung!)",
+        italian=" (Un presentimento...)",
+        spanish=" (¡Tengo un extraño\npresentimiento!)",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_TOP_LC_FACEOUTW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" There are only rock walls\naround us.",
+                french=" Il n\'y a que des parois de pierre\ntout autour de nous.",
+                german=" Um uns herum sind nur\nFelswände.",
+                italian=" Ci sono solo muri di roccia\nattorno a noi.",
+                spanish=" Aquí solo hay paredes.",
+            }
+        case 2:
+            {
+                english=" There are only these rock walls\naround us.",
+                french=" Il n\'y a que des parois de pierre\ntout autour de nous.",
+                german=" Da sind nur Felswände um uns\nherum.",
+                italian=" Ci sono solo questi muri di\nroccia attorno a noi.",
+                spanish=" Aquí solo hay paredes.",
+            }
+        default:
+            {
+                english=" There are only rock walls\naround us.",
+                french=" Il n\'y a que des parois de pierre\ntout autour de nous.",
+                german=" Da sind nur Felswände um uns\nherum.",
+                italian=" Ci sono solo muri di roccia\nattorno a noi.",
+                spanish=" Aquí solo hay paredes.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_PAIN, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" (That one glance I caught of\nthem...[K] I\'m on the verge of remembering...)",
+        french=" (Je n\'ai fait que les\napercevoir...[K] Ça va me revenir...)",
+        german=" (Das, was ich aus dem\nAugenwinkel von ihnen gesehen habe...[K] Ich bin\nkurz davor, mich zu erinnern.)",
+        italian=" (Li ho solo intravisti, ma...[K]\nMi sembra di ricordare...)",
+        spanish=" (Solo les vi un instante...[K]\nPero estoy a punto de recordarlo...)",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8967);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        WaitEffect();
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" (That\'s it!)",
+        french=" (J\'y suis!)",
+        german=" (Das ist es!)",
+        italian=" (Ecco!)",
+        spanish=" (¡Eso es!)",
+    });
+    message_Talk({
+        english=" (When they attacked me last\ntime...)",
+        french=" (Quand ils m\'ont attaqué\nla dernière fois...)",
+        german=" (Als sie mich das letzte Mal\nangegriffen haben...)",
+        italian=" (Quando mi hanno attaccato\nl\'ultima volta...)",
+        spanish=" (Cuando me atacaron la última\nvez...)",
+    });
+    message_Talk({
+        english=" (They seemed to appear out of\nnowhere.)",
+        french=" (... c\'est comme s\'ils avaient\nsurgi de nulle part.)",
+        german=" (Sie erschienen aus dem Nichts.)",
+        italian=" (Sono come comparsi dal nulla.)",
+        spanish=" (Aparecieron como por encanto.)",
+    });
+    message_Talk({
+        english=" (But where they really appeared\nfrom was...)",
+        french=" (Mais en fait, ils sont arrivés\nde...)",
+        german=" (Aber tatsächlich kamen sie...)",
+        italian=" (Ma in realtà sono apparsi da...)",
+        spanish=" (Y se abalanzaron hacia mí\ndesde...)",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(30);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    Wait(15);
+    screen_FadeOut(1, 15);
+    end;
+}

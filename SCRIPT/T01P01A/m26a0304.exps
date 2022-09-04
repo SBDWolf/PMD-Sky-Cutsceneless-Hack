@@ -1,0 +1,67 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_TIME_RESTORED, 0, 200);
+    back_SetGround(LEVEL_T01P01A);
+    supervision_StationCommon(0);
+    supervision_StationCommon(99);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        MovePositionOffset(32896, -200, 0);
+    }
+    with (actor ACTOR_NPC_KEMUSSO) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_OOSUBAME) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    CallCommon(CORO_FADE_OUT_ALL_BEFORE);
+    screen_FadeInAll(1, 30);
+    Wait(60);
+    message_SetActor(ACTOR_ATTENDANT1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It\'s Treasure Town!",
+                french=" C\'est Bourg-Trésor!",
+                german=" Das ist Schatzstadt!",
+                italian=" È Borgo Tesoro!",
+                spanish=" ¡Es Aldea Tesoro!",
+            }
+        case 2:
+            {
+                english=" It\'s Treasure Town!",
+                french=" C\'est Bourg-Trésor!",
+                german=" Das ist Schatzstadt!",
+                italian=" È Borgo Tesoro!",
+                spanish=" ¡Es Aldea Tesoro!",
+            }
+        default:
+            {
+                english=" It\'s Treasure Town!",
+                french=" C\'est Bourg-Trésor!",
+                german=" Das ist Schatzstadt!",
+                italian=" È Borgo Tesoro!",
+                spanish=" ¡Es Aldea Tesoro!",
+            }
+    }
+    Wait(240);
+    message_CloseEnforce();
+    screen_FadeOutAll(1, 60);
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    end;
+}

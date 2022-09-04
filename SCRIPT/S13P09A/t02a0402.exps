@@ -1,0 +1,122 @@
+
+def 0 {
+    back2_SetMode(5);
+    back_SetGround(LEVEL_S13P09A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_DEMO_HERO) {
+        SetOutputAttribute(8);
+    }
+    with (actor ACTOR_NPC_DEMO_PARTNER) {
+        SetOutputAttribute(8);
+    }
+    with (actor ACTOR_NPC_PUKURIN) {
+        SetOutputAttribute(8);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetOutputAttribute(8);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetOutputAttribute(8);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetOutputAttribute(8);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetOutputAttribute(8);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetOutputAttribute(8);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetOutputAttribute(8);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetOutputAttribute(8);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetOutputAttribute(8);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetOutputAttribute(8);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetAnimation(4);
+    }
+    with (object OBJECT_S13P02A1_353) {
+        SetOutputAttribute(1024);
+    }
+    screen2_FadeIn(0, 15);
+    screen_FadeIn(1, 15);
+    with (actor ACTOR_NPC_DEMO_HERO) {
+        MovePositionMark(33280, Position<'m0', 18, 52.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_DEMO_PARTNER) {
+        MovePositionMark(33280, Position<'m1', 14, 52.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_PUKURIN) {
+        MovePositionMark(33280, Position<'m2', 10, 55.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_BIPPA) {
+        MovePositionMark(33280, Position<'m3', 17, 55.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionMark(33280, Position<'m4', 13, 57.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_KIMAWARI) {
+        MovePositionMark(33280, Position<'m5', 23, 57.5>);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_HEIGANI) {
+        MovePositionMark(33280, Position<'m6', 19, 58.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_CHIRIIN) {
+        MovePositionMark(33280, Position<'m7', 20, 61.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        MovePositionMark(33280, Position<'m8', 11, 62.5>);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_GUREGGURU) {
+        MovePositionMark(33280, Position<'m9', 24, 61.5>);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_DIGUDA) {
+        MovePositionMark(33280, Position<'m10', 8, 60.5>);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        MovePositionMark(33280, Position<'m11', 16, 63.5>);
+    }
+    Wait(30);
+    with (performer 0) {
+        MovePositionMark(33100, Position<'m12', 16, 37.5>);
+    }
+    with (object OBJECT_S13P02A1_353) {
+        SetAnimation(3);
+    }
+    Wait(104);
+    with (object OBJECT_S13P02A1_353) {
+        SetAnimation(20);
+    }
+    with (object OBJECT_S13P02A1_353) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_KODORA5);
+    screen2_WhiteOut(0, 30);
+    screen_WhiteOut(1, 30);
+    back2_SetMode(0);
+    end;
+}

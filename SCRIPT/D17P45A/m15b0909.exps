@@ -1,0 +1,56 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_D17P45A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_AGUNOMU) {
+        SetDirection(DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_AGUNOMU) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_AGUNOMU) {
+        SetAnimation(22);
+    }
+    with (actor ACTOR_UNIT_NPC1) {
+        SetPositionMark(Position<'m2', 38.5, 26.5>);
+    }
+    with (actor ACTOR_UNIT_NPC2) {
+        SetPositionMark(Position<'m3', 48, 26.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetPositionMark(Position<'m4', 41.5, 23.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetPositionMark(Position<'m5', 45.5, 23.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetDirection(DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetAnimation(25);
+    }
+    screen_FadeIn(1, 30);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    WaitSe(5143);
+    CallCommon(CORO_BOSS_WIPE_FUNC);
+    main_EnterDungeon(26, 30);
+    main_EnterDungeon(-1, 30);
+    hold;
+    end;
+}

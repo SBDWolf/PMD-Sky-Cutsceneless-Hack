@@ -1,0 +1,286 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
+    $SCENARIO_MAIN = scn[13, 1];
+    supervision_StationCommon(0);
+    supervision_StationCommon(99);
+    supervision_Acting(0);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetAnimation(2);
+    }
+    WaitExecuteLives(ACTOR_NPC_GUREGGURU);
+    with (performer 0) {
+        SetPositionMark(Position<'m0', 60.5, 31.5>);
+    }
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Let\'s do our best, [hero]!\nJust like we always do!",
+                french=" Faisons de notre mieux,\n[hero], comme toujours!\n",
+                german=" Geben wir unser Bestes,\n[hero]! So wie immer!",
+                italian=" Diamoci dentro, [hero]!",
+                spanish=" ¡Esforcémonos al máximo,\n[hero]! ¡Como siempre!",
+            }
+        case 2:
+            {
+                english=" Let\'s do our best, [hero]!\nJust like we always do!",
+                french=" Faisons de notre mieux,\n[hero], comme toujours!\n",
+                german=" Geben wir unser Bestes,\n[hero]! So wie immer!",
+                italian=" Facciamo del nostro meglio come\nsempre, [hero]!",
+                spanish=" ¡Esforcémonos al máximo,\n[hero]! ¡Como siempre!",
+            }
+        default:
+            {
+                english=" Let\'s do our best, [hero]!\nJust like we always do!",
+                french=" Faisons de notre mieux,\n[hero], comme toujours!\n",
+                german=" Geben wir unser Bestes,\n[hero]! So wie immer!",
+                italian=" Facciamo del nostro meglio come\nsempre, [hero]!",
+                spanish=" ¡Esforcémonos al máximo,\n[hero]! ¡Como siempre!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_FadeOut(10);
+    message_SetActor(ACTOR_NPC_DOGOOMU);
+    message_Talk({
+        english=" WHAT? What\'s going on?!",
+        french=" QUOI? Qu\'est-ce qui se passe?!",
+        german=" WAS? Was ist los?!?",
+        italian=" COSA? Cosa sta succedendo?",
+        spanish=" ¿Cómo? ¿Qué pasa?",
+    });
+    se_Play(8978);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    Wait(5);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_Talk({
+        english=" ...OK. Got it![K] Hold on!",
+        french=" ... D\'accord, c\'est pigé![K]\nUne minute!",
+        german=" ...Okay, verstanden![K] Wartet!",
+        italian=" ... Ricevuto![K] Aspetta un\nmomento!",
+        spanish=" Vale. ¡Entendido![K] ¡Un segundo!",
+    });
+    message_Talk({
+        english=" You two! Team [team:]!",
+        french=" Vous deux! L\'Equipe\n[team:]!",
+        german=" Ihr zwei! Team [team:]!",
+        italian=" Ehi, voi! Team [team:]!",
+        spanish=" ¡Escuchad! ¡[CS:X]Equipo[CR] [team:]!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8962);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEOUTW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Huh? What?",
+                french=" Hein? Quoi?",
+                german=" Wie? Was?",
+                italian=" Uh? Cosa c\'è?",
+                spanish=" ¿Eh? ¿Qué?",
+            }
+        case 2:
+            {
+                english=" Huh? Excuse me?",
+                french=" Hein? Quoi?",
+                german=" Was? Wie?",
+                italian=" Sì? Cosa c\'è?",
+                spanish=" ¿Qué? ¿Cómo?",
+            }
+        default:
+            {
+                english=" Huh? Pardon me?",
+                french=" Hein? Quoi?",
+                german=" Ähem? Wie bitte?",
+                italian=" Sì? Cosa c\'è?",
+                spanish=" ¿Eh? ¿Qué?",
+            }
+    }
+    message_Close();
+    with (performer 0) {
+        MovePositionMark(33152, Position<'m1', 27, 31.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(33075, Position<'m2', 34, 34>);
+    }
+    Wait(15);
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(33075, Position<'m3', 31, 31.5>);
+    }
+    with (performer 0) {
+        MovePositionMark(33152, Position<'m4', 27, 36.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(33075, Position<'m5', 31, 36.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(33075, Position<'m6', 28, 34.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    WaitExecutePerformer(0);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" What\'s up?",
+                french=" Qu\'est-ce qui se passe?",
+                german=" Was gibt es?",
+                italian=" Dicci tutto!",
+                spanish=" ¿Qué pasa?",
+            }
+        case 2:
+            {
+                english=" You called?",
+                french=" Qu\'est-ce qui se passe?",
+                german=" Du hast uns gerufen?",
+                italian=" Ci hai chiamato?",
+                spanish=" ¿Nos llamabas?",
+            }
+        default:
+            {
+                english=" What\'s up?",
+                french=" Qu\'est-ce qui se passe?",
+                german=" Was gibt es?",
+                italian=" Possiamo aiutarti?",
+                spanish=" ¿Qué pasa?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" You\'ve got yourselves some\nvisitors.",
+        french=" Vous avez de la visite.",
+        german=" Es ist Besuch für euch da.",
+        italian=" C\'è una visita per voi.",
+        spanish=" Parece que tenéis visita.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8962);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Visitors?",
+                french=" De la visite?",
+                german=" Besuch?",
+                italian=" Una visita?",
+                spanish=" ¿Visita?",
+            }
+        case 2:
+            {
+                english=" Visitors?",
+                french=" De la visite?",
+                german=" Besuch?",
+                italian=" Una visita?",
+                spanish=" ¿Visita?",
+            }
+        default:
+            {
+                english=" Visitors?",
+                french=" De la visite?",
+                german=" Besuch?",
+                italian=" Una visita?",
+                spanish=" ¿Visita?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" They\'re waiting at the guild\nentrance.[K] Go see them.\n",
+        french=" Ils vous attendent à l\'entrée\nde la Guilde.[K] Allez les voir.\n",
+        german=" Sie warten am Gildeneingang.[K]\nGeht zu ihnen.\n",
+        italian=" Vi aspettano all\'ingresso della\nGilda.[K] Andate da loro.\n",
+        spanish=" Os están esperando en la entrada\ndel [CS:N]Pokégremio[CR].[K] Id a ver.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I wonder who it is...",
+                french=" Qui ça peut bien être?",
+                german=" Ich frage mich, wer das ist...",
+                italian=" Mah! Chi sarà mai...?",
+                spanish=" Me pregunto quién será...",
+            }
+        case 2:
+            {
+                english=" Who could it be?",
+                french=" Qui ça peut bien être?",
+                german=" Wer könnte das sein?",
+                italian=" Chi potrebbe mai essere?",
+                spanish=" ¿Quién puede ser?",
+            }
+        default:
+            {
+                english=" I wonder who it is...",
+                french=" Qui ça peut bien être?",
+                german=" Ich frage mich, wer das ist...",
+                italian=" Chi potrebbe mai essere?",
+                spanish=" Me pregunto quién será...",
+            }
+    }
+    message_Close();
+    screen_FadeOut(1, 60);
+    end;
+}

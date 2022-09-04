@@ -1,0 +1,113 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_MEMORIES_RETURNED, 0, 256);
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_S04P01A);
+    back_SetGround(LEVEL_D28P44A);
+    screen_WhiteOutAll(1, 0);
+    Wait(1);
+    screen_FadeIn(1, 0);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    Wait(1);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetPositionMark(Position<'m0', 34.5, 27.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetDirection(DIR_RIGHT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetDirection(DIR_LEFT);
+    }
+    with (performer 0) {
+        SetPositionMark(Position<'m1', 33.5, 26.5>);
+    }
+    with (performer 3) {
+        SetEffect(653, 3);
+    }
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    screen2_FadeIn(0, 30);
+    screen_FadeInAll(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_DETERMINED, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hey, [hero]!",
+                french=" Eh, [hero]!",
+                german=" Hey, [hero]!",
+                italian=" Ehi, [hero]!",
+                spanish=" ¡Oye, [hero]!",
+            }
+        case 2:
+            {
+                english=" Hey, [hero]!",
+                french=" Eh, [hero]!",
+                german=" Hey, [hero]!",
+                italian=" Ehi, [hero]!",
+                spanish=" ¡Oye, [hero]!",
+            }
+        default:
+            {
+                english=" Hey, [hero]!",
+                french=" Eh, [hero]!",
+                german=" Hey, [hero]!",
+                italian=" Ehi, [hero]!",
+                spanish=" ¡Oye, [hero]!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We have to do this for [CS:N]Grovyle[CR]\'s\nsake! Let\'s go to [CS:P]Temporal Tower[CR]!",
+                french=" Il faut qu\'on y arrive,\npour [CS:N]Massko[CR]! C\'est parti pour la [CS:P]Tour\ndu Temps[CR]!",
+                german=" Wir müssen das [CS:N]Reptain[CR] zuliebe\ntun! Gehen wir zum [CS:P]Zeitturm[CR]!",
+                italian=" Dobbiamo farlo per [CS:N]Grovyle[CR]! \nAndiamo alla [CS:P]Torre del Tempo[CR]!",
+                spanish=" ¡Tenemos que hacer esto por\n[CS:N]Grovyle[CR]! ¡Vamos a la [CS:P]Torre del Tiempo[CR]!",
+            }
+        case 2:
+            {
+                english=" We have to do this for [CS:N]Grovyle[CR]\'s\nsake! Let\'s go to [CS:P]Temporal Tower[CR]!",
+                french=" Il faut qu\'on y arrive,\npour [CS:N]Massko[CR]! C\'est parti pour la [CS:P]Tour\ndu Temps[CR]!",
+                german=" Wir müssen das [CS:N]Reptain[CR] zuliebe\ntun! Gehen wir zum [CS:P]Zeitturm[CR]!",
+                italian=" Dobbiamo farlo per [CS:N]Grovyle[CR]! \nAndiamo alla [CS:P]Torre del Tempo[CR]!",
+                spanish=" ¡Tenemos que hacer esto por\n[CS:N]Grovyle[CR]! ¡Vamos a la [CS:P]Torre del Tiempo[CR]!",
+            }
+        default:
+            {
+                english=" We have to do this for [CS:N]Grovyle[CR]\'s\nsake! Let\'s go to [CS:P]Temporal Tower[CR]!",
+                french=" Il faut qu\'on y arrive,\npour [CS:N]Massko[CR]! C\'est parti pour la [CS:P]Tour\ndu Temps[CR]!",
+                german=" Wir müssen das [CS:N]Reptain[CR] zuliebe\ntun! Gehen wir zum [CS:P]Zeitturm[CR]!",
+                italian=" Dobbiamo farlo per [CS:N]Grovyle[CR]! \nAndiamo alla [CS:P]Torre del Tempo[CR]!",
+                spanish=" ¡Tenemos que hacer esto por\n[CS:N]Grovyle[CR]! ¡Vamos a la [CS:P]Torre del Tiempo[CR]!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(71);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(71);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    Wait(45);
+    screen2_FadeOut(0, 60);
+    screen_WhiteOutAll(1, 60);
+    screen_WhiteOut(1, 0);
+    screen_FadeInAll(1, 0);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    end;
+}

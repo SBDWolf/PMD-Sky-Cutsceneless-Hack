@@ -1,0 +1,63 @@
+
+def 0 {
+    screen2_FadeOut(0, 30);
+    screen_FadeOut(1, 30);
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V04P03A);
+    back_SetGround(LEVEL_S08P01A);
+    camera_SetPositionMark(Position<'m0', 16, 10.5>);
+    camera2_SetPositionMark(Position<'m1', 19.5, 16.5>);
+    if ( scn($SCENARIO_MAIN) == [5, 2] || scn($SCENARIO_MAIN) == [7, 5] ) {
+        §label_0;
+        $EVENT_LOCAL = 1;
+        §label_1;
+        switch ( message_Menu(MENU_GUILD_MINI_GAME_START) ) { }
+        supervision2_SpecialActing(15, 0, 0);
+        screen2_FadeIn(0, 30);
+        screen_FadeIn(1, 30);
+        switch ( message_Menu(MENU_GUILD_MINI_GAME_FLAG_CHECK) ) {
+            case 0:
+                $EVENT_LOCAL = 0;
+                §label_10;
+                screen2_FadeOut(0, 30);
+                screen_FadeOut(1, 30);
+                supervision2_SpecialActing(3, 0, 0);
+                back2_SetMode(0);
+                switch ( message_Menu(MENU_GUILD_MINI_GAME_END) ) { }
+                switch ( scn($SCENARIO_SELECT)[0] ) {
+                    case == 53:
+                        supervision_ExecuteStation(LEVEL_T00P01, 'M01A01', 0);
+                        hold;
+                    default:
+                        end;
+                }
+                break;
+            case 1:
+                $EVENT_LOCAL = 1;
+                jump @label_10;
+            case 2:
+                $EVENT_LOCAL = 2;
+                jump @label_10;
+            case 3:
+                $EVENT_LOCAL = 3;
+                jump @label_10;
+            case 4:
+                $EVENT_LOCAL = 4;
+                jump @label_10;
+            case 5:
+                $EVENT_LOCAL = 5;
+                jump @label_10;
+            case 6:
+                $EVENT_LOCAL = 6;
+                jump @label_10;
+            case 7:
+                $EVENT_LOCAL = 7;
+                jump @label_10;
+            default:
+                jump @label_10;
+        }
+    } else {
+        $EVENT_LOCAL = 0;
+        jump @label_1;
+    }
+}

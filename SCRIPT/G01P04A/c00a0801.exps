@@ -1,0 +1,24 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
+    $SCENARIO_MAIN_BIT_FLAG[1] = 0;
+    back_SetGround(LEVEL_G01P04A);
+    supervision_StationCommon(0);
+    supervision_StationCommon(10);
+    supervision_Acting(0);
+    supervision_Acting(1);
+    supervision_Acting(2);
+    switch ( sector() ) {
+        case 1:
+            §label_0;
+            screen_FadeOut(1, 30);
+            end;
+        case 2:
+            end;
+        default:
+            CallCommon(CORO_EVENT_END_MAPIN);
+            main_SetGround(LEVEL_G01P04A);
+            supervision_ExecuteStationCommon(LEVEL_G01P04A, 1);
+            end;
+    }
+}

@@ -1,0 +1,27 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_S04P01A);
+    screen_FadeIn(0, 0);
+    message_Explanation({
+        english="[CN]Yes, that\'s exactly it!",
+        french="[CN]Oui, c\'est exactement cela!",
+        german="[CN]Ja, genau das ist es!",
+        italian="[CN]Sì, è proprio così!",
+        spanish="[CN]¡Exacto!",
+    });
+    message_Explanation({
+        english="[CN]Never abandon hope!",
+        french="[CN]Gardez espoir!",
+        german="[CN]Niemals die Hoffnung aufgeben!",
+        italian="[CN]Non bisogna mai disperare!",
+        spanish="[CN]¡Nunca hay que perder la esperanza!",
+    });
+    message_Close();
+    se_Play(6672);
+    screen_WhiteOut(1, 3);
+    Wait(3);
+    screen_FadeIn(1, 3);
+    screen_FadeOut(0, 0);
+    end;
+}

@@ -1,0 +1,817 @@
+
+def 0 {
+    back_SetGround(LEVEL_G01P04A);
+    supervision_Acting(0);
+    supervision_Acting(1);
+    supervision_Acting(2);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 5);
+    Wait(30);
+    message_SetFace(ACTOR_PLAYER, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(That was...!)",
+                french="(J\'ai vu...!)",
+                german="(Das war...)",
+                italian="(Dunque...)",
+                spanish="(He visto que...)",
+            }
+        default:
+            {
+                english="(That was...!)",
+                french="(J\'ai vu...!)",
+                german="(Das war...)",
+                italian="(Dunque...)",
+                spanish="(He visto que...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="([CS:N]Grovyle[CR] was trying to steal a Time Gear!)",
+                french="(J\'ai vu [CS:N]Massko[CR] en train d\'essayer\nde s\'emparer d\'un Rouage du Temps...)",
+                german="(Das war [CS:N]Reptain[CR] beim Versuch, ein Zahnrad\nder Zeit zu stehlen!)",
+                italian="([CS:N]Grovyle[CR] stava cercando di rubare un\nIngranaggio del Tempo...)",
+                spanish="([CS:N]Grovyle[CR] intentaba robar un Engranaje del\nTiempo.)",
+            }
+        default:
+            {
+                english="([CS:N]Grovyle[CR] was trying to steal a Time Gear!)",
+                french="(J\'ai vu [CS:N]Massko[CR] en train d\'essayer\nde s\'emparer d\'un Rouage du Temps...)",
+                german="(Das war [CS:N]Reptain[CR] beim Versuch, ein Zahnrad\nder Zeit zu stehlen!)",
+                italian="([CS:N]Grovyle[CR] stava cercando di rubare un\nIngranaggio del Tempo...)",
+                spanish="([CS:N]Grovyle[CR] intentaba robar un Engranaje del\nTiempo.)",
+            }
+    }
+    message_KeyWait();
+    bgm_PlayFadeIn(BGM_I_SAW_SOMETHING_AGAIN, 0, 256);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(There was also another Pokémon...)",
+                french="(Il y avait aussi un autre Pokémon...)",
+                german="(Und da war noch ein anderes Pokémon.)",
+                italian="(Ma c\'era anche un altro Pokémon...)",
+                spanish="(También había otro Pokémon...)",
+            }
+        default:
+            {
+                english="(There was also another Pokémon...)",
+                french="(Il y avait aussi un autre Pokémon...)",
+                german="(Und da war noch ein anderes Pokémon.)",
+                italian="(Ma c\'era anche un altro Pokémon...)",
+                spanish="(También había otro Pokémon...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Was it [CS:N]Azelf[CR]?)",
+                french="([CS:N]Créfadet[CR], peut-être?)",
+                german="(War das [CS:N]Tobutz[CR]?)",
+                italian="(Che fosse [CS:N]Azelf[CR]?)",
+                spanish="(¿Se trataría de [CS:N]Azelf[CR]?)",
+            }
+        default:
+            {
+                english="(Was it [CS:N]Azelf[CR]?)",
+                french="([CS:N]Créfadet[CR], peut-être?)",
+                german="(War das [CS:N]Tobutz[CR]?)",
+                italian="(Che fosse [CS:N]Azelf[CR]?)",
+                spanish="(¿Se trataría de [CS:N]Azelf[CR]?)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Anyway...)",
+                french="(En tout cas...)",
+                german="(Wie auch immer...)",
+                italian="(Ad ogni modo...)",
+                spanish="(En cualquier caso...)",
+            }
+        default:
+            {
+                english="(Anyway...)",
+                french="(En tout cas...)",
+                german="(Wie auch immer...)",
+                italian="(Ad ogni modo...)",
+                spanish="(En cualquier caso...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(The crystal did trigger a vision...)",
+                french="(... le Cri Dimensionnel s\'est bel et bien\ndéclenché au contact de ce cristal...)",
+                german="(Dieser Kristall hat eine Vision\nhervorgerufen.)",
+                italian="(Visto che questo cristallo ha scatenato la\nvisione...)",
+                spanish="(Ha sido este cristal el que ha provocado\nla visión.)",
+            }
+        default:
+            {
+                english="(The crystal did trigger a vision...)",
+                french="(... le Cri Dimensionnel s\'est bel et bien\ndéclenché au contact de ce cristal...)",
+                german="(Dieser Kristall hat eine Vision\nhervorgerufen.)",
+                italian="(Visto che questo cristallo ha scatenato la\nvisione...)",
+                spanish="(Ha sido este cristal el que ha provocado\nla visión.)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_BOTTOM_C_FACER);
+    message_FacePositionOffset(1, 4);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" See anything, [hero]?",
+                french=" Tu as vu quelque chose,\n[hero]?",
+                german=" Hast du etwas gesehen,\n[hero]?",
+                italian=" Visto niente, [hero]?",
+                spanish=" ¿Has visto algo, [hero]?",
+            }
+        case 2:
+            {
+                english=" Did you see anything,\n[hero]?",
+                french=" Tu as vu quelque chose,\n[hero]?",
+                german=" Hast du etwas gesehen,\n[hero]?",
+                italian=" Hai visto qualcosa,\n[hero]?",
+                spanish=" ¿Has visto algo, [hero]?",
+            }
+        default:
+            {
+                english=" Did you see anything,\n[hero]?",
+                french=" Tu as vu quelque chose,\n[hero]?",
+                german=" Hast du etwas gesehen,\n[hero]?",
+                italian=" Hai visto qualcosa,\n[hero]?",
+                spanish=" ¿Has visto algo, [hero]?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(71);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    Wait(30);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    Wait(45);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    Wait(45);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    Wait(45);
+    with (actor ACTOR_PLAYER) {
+        ExecuteCommon(CORO_EXPLANATION_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    message_Mail({
+        english="[CN][hero] described the vision\n[CN]revealed by the Dimensional Scream.",
+        french="[CN][hero] décrit la vision révélée\n[CN]par le Cri Dimensionnel.",
+        german="[CN][hero] beschreibt die Vision,\n[CN]die der Dimensionale Schrei offenbart hat.",
+        italian="[CN][hero] descrive ciò che ha visto\n[CN]grazie allo Squarcio Dimensionale.",
+        spanish="[CN][hero] describió lo revelado\n[CN]por la Percepción de Cronos.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8968);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_NORMAL, FACE_POS_BOTTOM_L_CENTER);
+    message_Talk({
+        english=" WHAT?!",
+        french=" PARDON?!",
+        german=" WAS?!?",
+        italian=" COSA?!",
+        spanish=" ¡¿QUÉ?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_SURPRISED, FACE_POS_TOP_L_CENTER);
+    message_FacePositionOffset(2, -1);
+    message_Talk({
+        english=" You saw [CS:N]Grovyle[CR] knock out\na Pokémon?[K] One that you\'d never seen before?",
+        french=" Tu as vu [CS:N]Massko[CR] mettre\nun autre Pokémon K.O.?[K] Un Pokémon\nque tu n\'avais jamais vu auparavant?",
+        german=" Du hast gesehen, wie [CS:N]Reptain[CR]\nein Pokémon überwältigt hat?[K] Ein Pokémon,\ndas du noch nie gesehen hast?",
+        italian=" Hai visto [CS:N]Grovyle[CR] mettere KO\nun Pokémon?[K] Un Pokémon che non avevi\nmai visto prima?",
+        spanish=" ¿Has visto a [CS:N]Grovyle[CR] derribar a\nun Pokémon?[K] ¿Uno que no habías visto antes?",
+    });
+    message_Talk({
+        english=" And then he tried to steal a\nTime Gear?!",
+        french=" Et ensuite il a essayé de voler\nun Rouage du Temps?!",
+        german=" Und dann hat er versucht, ein\nZahnrad der Zeit zu stehlen?!?",
+        italian=" E poi ha provato a rubare un\nIngranaggio del Tempo?!",
+        spanish=" ¡¿Y luego intentó robar\nun Engranaje del Tiempo?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_KIMAWARI) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    message_SetFace(ACTOR_NPC_KIMAWARI, FACE_NORMAL, FACE_POS_BOTTOM_C_FACER);
+    message_Talk({
+        english=" Oh my gosh! Your ability is\nthrilling!",
+        french=" J\'hallucine! Il est trop cool,\nton pouvoir!",
+        german=" Auweia! Deine Fähigkeit ist\nwirklich spannend!",
+        italian=" Shock! Il tuo potere è\nincredibile!",
+        spanish=" ¡Ay, que me da! ¡Tu habilidad\nes increíble!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_BIPPA) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_BIPPA);
+    message_SetFace(ACTOR_NPC_BIPPA, FACE_NORMAL, FACE_POS_TOP_RC_FACEOUTW);
+    message_Talk({
+        english=" How did you get to see all that,\nby golly?",
+        french=" Comment t\'as fait pour voir\ntous ces trucs-là, sapristi?",
+        german=" Donnerwetter! Wie hast du das\nnur alles gesehen?",
+        italian=" E come hai fatto, ohibò, a\nvedere tutte quelle cose?",
+        spanish=" ¡Huy! ¿Cómo has podido ver\ntodo eso?",
+    });
+    message_Talk({
+        english=" It\'s mighty hard for me\nto grasp!",
+        french=" Moi, ça m\'dépasse, pardi!",
+        german=" Ich kann mir das alles kaum\nvorstellen!",
+        italian=" È davvero difficile per me\ncapirlo, sissignore!",
+        spanish=" No consigo entenderlo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_HEIGANI) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    message_SetFace(ACTOR_NPC_HEIGANI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_FacePositionOffset(2, 0);
+    message_Talk({
+        english=" Hey, hey, [hero]!",
+        french=" Eh dis donc, [hero]!",
+        german=" Hey, hey, [hero]!",
+        italian=" Ehi, ehi! [hero]!",
+        spanish=" Oye, oye, [hero].",
+    });
+    message_Talk({
+        english=" So that Pokémon you couldn\'t\nrecognize...do you think it might be [CS:N]Azelf[CR]?",
+        french=" Ce Pokémon inconnu... tu crois\nque c\'était [CS:N]Créfadet[CR]?",
+        german=" War dieses Pokémon, das du\nnicht erkannt hast... vielleicht [CS:N]Tobutz[CR]?",
+        italian=" Pensi che il Pokémon che non sei\nriuscito a riconoscere... Pensi fosse [CS:N]Azelf[CR]?",
+        spanish=" Y ese Pokémon que no podías\nreconocer... ¿Crees que podría ser [CS:N]Azelf[CR]?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(71);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    Wait(30);
+    message_SetFace(ACTOR_NPC_CHIRIIN, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_FacePositionOffset(2, 1);
+    message_Talk({
+        english=" I...I have a question for\n[hero] too.",
+        french=" Moi... moi aussi j\'ai une question\npour [hero].",
+        german=" Ich... Ich habe auch eine\nFrage an [hero].",
+        italian=" Anch\'io ho una domanda per\n[hero].",
+        spanish=" A mí también me gustaría\npreguntarle algo a [hero].",
+    });
+    message_Talk({
+        english=" Did you see the past,\n[hero]?",
+        french=" Ta vision concernait-elle\nun événement passé, [hero]?",
+        german=" Hast du die Vergangenheit\ngesehen, [hero]?",
+        italian=" La tua visione, [hero], si\nriferiva al passato?",
+        spanish=" Lo que has visto, ¿ocurría en\nel pasado, [hero]?",
+    });
+    message_Talk({
+        english=" Or was that in the future?",
+        french=" Ou à venir?",
+        german=" Oder ist es etwas, das in der\nZukunft geschehen wird?",
+        italian=" Oppure si tratta di qualcosa che\ndeve ancora accadere?",
+        spanish=" ¿O se trata de algo que va a\nsuceder en el futuro?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8967);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    message_SetFace(ACTOR_PLAYER, FACE_SURPRISED, FACE_POS_TOP_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Come to think of it...)",
+                french="(Réflexion faite...)",
+                german="(Wenn ich darüber nachdenke...)",
+                italian="(Ora che ci penso...)",
+                spanish="(Ahora que lo pienso...)",
+            }
+        default:
+            {
+                english="(Come to think of it...)",
+                french="(Réflexion faite...)",
+                german="(Wenn ich darüber nachdenke...)",
+                italian="(Ora che ci penso...)",
+                spanish="(Ahora que lo pienso...)",
+            }
+    }
+    message_SetFace(ACTOR_PLAYER, FACE_WORRIED, FACE_POS_TOP_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Visions in the past...visions in the future...)",
+                french="(Visions du passé... visions du futur...)",
+                german="(Visionen aus der Vergangenheit...\nVisionen aus der Zukunft...)",
+                italian="(Visioni del passato... del futuro...)",
+                spanish="(Cuando veo algo del pasado o del futuro...)",
+            }
+        default:
+            {
+                english="(Visions in the past...visions in the future...)",
+                french="(Visions du passé... visions du futur...)",
+                german="(Visionen aus der Vergangenheit...\nVisionen aus der Zukunft...)",
+                italian="(Visioni del passato... del futuro...)",
+                spanish="(Cuando veo algo del pasado o del futuro...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(It\'s never clear when my visions take place!)",
+                french="(Je ne sais jamais vraiment si mes visions\nconcernent l\'un ou l\'autre!)",
+                german="(Es ist nie klar, was meine Visionen zeigen!)",
+                italian="(Non è facile capire a cosa si riferiscano\nqueste visioni!)",
+                spanish="(¡Nunca está muy claro cuándo tiene lugar!)",
+            }
+        default:
+            {
+                english="(It\'s never clear when my visions take place!)",
+                french="(Je ne sais jamais vraiment si mes visions\nconcernent l\'un ou l\'autre!)",
+                german="(Es ist nie klar, was meine Visionen zeigen!)",
+                italian="(Non è facile capire a cosa si riferiscano\nqueste visioni!)",
+                spanish="(¡Nunca está muy claro cuándo tiene lugar!)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    Wait(5);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    Wait(5);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    Wait(5);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    Wait(30);
+    message_SetFace(ACTOR_NPC_CHIRIIN, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_FacePositionOffset(2, 1);
+    message_Talk({
+        english=" So you\'re not sure if it\'s in the\npast or the future...",
+        french=" Alors tu ne sais pas trop si\nc\'était le passé ou le futur...",
+        german=" Es ist also nicht sicher, ob du\ndie Vergangenheit oder die Zukunft gesehen\nhast...",
+        italian=" Non sai se si tratta del passato\no del futuro, vero?",
+        spanish=" Dices que no tienes muy claro\nsi se trata del pasado o del futuro.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_DAGUTORIO, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Well then...",
+        french=" Bon, dans ce cas...",
+        german=" Tja...",
+        italian=" In tal caso...",
+        spanish=" Entonces...",
+    });
+    message_Talk({
+        english=" Since it is impossible to tell if\nthe vision is of the future or the past...",
+        french=" Puisqu\'il est impossible\nde le savoir...",
+        german=" Man kann also unmöglich sagen,\nob die Vision die Zukunft oder die\nVergangenheit zeigt...",
+        italian=" Se non è possibile sapere se\nè una visione del futuro o del passato...",
+        spanish=" Dado que es imposible saber si la\nvisión tiene lugar en el pasado o en el futuro...",
+    });
+    message_Talk({
+        english=" Then [hero]\'s vision may\nwell be of a past event.",
+        french=" Alors imaginons que la vision\nde [hero] concernait un événement\npassé.",
+        german=" Die Vision von [hero]\nkann demnach durchaus auch aus der\nVergangenheit sein.",
+        italian=" ... non dobbiamo dimenticare che\nallora la visione di [hero] potrebbe\nriferirsi a qualcosa che è già successo.",
+        spanish=" Lo que ha visto [hero]\npodría haber ocurrido ya.",
+    });
+    message_Talk({
+        english=" In that case...",
+        french=" Dans ce cas...",
+        german=" In diesem Fall...",
+        italian=" E se fosse così...",
+        spanish=" De ser así...",
+    });
+    message_Talk({
+        english=" The Time Gear may have already\nbeen stolen from there...",
+        french=" ... le voleur s\'est peut-être déjà\nenfui avec le Rouage du Temps...",
+        german=" In diesem Fall wurde das\nZahnrad der Zeit vielleicht schon gestohlen...",
+        italian=" ... significherebbe che\nquell\'Ingranaggio del Tempo è già stato\nrubato!",
+        spanish=" Puede que ya hayan robado el\nEngranaje del Tiempo...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_FadeOut(30);
+    se_Play(5122);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PERAPPU);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PERAPPU);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PERAPPU);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PERAPPU);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PERAPPU);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PERAPPU);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_CHIRIIN) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PERAPPU);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PERAPPU);
+    }
+    with (actor ACTOR_NPC_YONOWAARU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PERAPPU);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PERAPPU);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PERAPPU);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_SURPRISED, FACE_POS_TOP_L_CENTER);
+    message_FacePositionOffset(2, -1);
+    message_Talk({
+        english=" Squawk?![K] You\'re saying we\nmay already be too late?!",
+        french=" Couac?![K] Tu insinues qu\'il est\npeut-être déjà trop tard?!",
+        german=" Kreisch![K] Meinst du, dass wir\nwomöglich schon zu spät kommen?!?",
+        italian=" Squack?![K] È vero! Potrebbe già\nessere troppo tardi!",
+        spanish=" ¡¿Cruac?![K] ¡¿Quieres decir que\nigual es demasiado tarde?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8963);
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_DIGUDA) {
+        Turn2Direction(4, 2, DIR_LEFT);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        Turn2Direction(4, 2, DIR_LEFT);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    Wait(15);
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    Wait(30);
+    with (actor ACTOR_NPC_YONOWAARU) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER_HERO);
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_FacePositionOffset(3, -3);
+    message_Talk({
+        english=" Everyone, please hold on!",
+        french=" Gardez votre calme,\ns\'il vous plaît!",
+        german=" Seid bitte alle kurz still!",
+        italian=" Prego, signori, manteniamo la\ncalma!",
+        spanish=" Esperad, calmaos todos.",
+    });
+    se_Play(8978);
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(2);
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_YONOWAARU);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_YONOWAARU);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_YONOWAARU);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_YONOWAARU);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_YONOWAARU);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_YONOWAARU);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_YONOWAARU);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_YONOWAARU);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_YONOWAARU);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_YONOWAARU);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_YONOWAARU);
+    }
+    Wait(30);
+    with (actor ACTOR_NPC_YONOWAARU) {
+        MovePositionMark(32972, Position<'m0', 50, 28.5>);
+    }
+    with (actor ACTOR_NPC_YONOWAARU) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    Wait(45);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_FacePositionOffset(4, -3);
+    message_Talk({
+        english=" Yes, it is true that it may have\nbeen a vision of the past.",
+        french=" En effet, il se peut qu\'il s\'agisse\nd\'une vision appartenant au passé.",
+        german=" Ja, es ist wahr, dass die Vision\naus der Vergangenheit kommen könnte.",
+        italian=" SÌ, è vero, potrebbe anche\ntrattarsi di una visione del passato.",
+        spanish=" Sí, es cierto que podría ser\nuna visión del pasado.",
+    });
+    message_Talk({
+        english=" But it could have been a vision\nof the future.",
+        french=" Mais l\'inverse est tout aussi\nplausible.",
+        german=" Aber es könnte auch eine Vision\naus der Zukunft sein.",
+        italian=" Ma non è ancora esclusa l\'ipotesi\nche si tratti di una visione del futuro.",
+        spanish=" Pero también podría tratarse\nde una visión del futuro.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YONOWAARU) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU);
+    message_Talk({
+        english=" If you would be so kind, could\nyou remind us what [CS:N]Mesprit[CR] said,\n[partner]?",
+        french=" Peux-tu nous rappeler ce\nqu\'a dit [CS:N]Créfollet[CR], [partner]?",
+        german=" Bist du so nett und erinnerst\nuns daran, was [CS:N]Vesprit[CR] gesagt hat,\n[partner]?",
+        italian=" [partner], potresti aiutarci a\nricordare cosa vi disse [CS:N]Mesprit[CR]?",
+        spanish=" Si eres tan amable, ¿podrías\nrecordarnos lo que dijo [CS:N]Mesprit[CR], [partner]?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    WaitExecuteLives(ACTOR_NPC_DAGUTORIO);
+    message_Talk({
+        english=" Who informed [CS:N]Mesprit[CR] via\ntelepathy that a Time Gear was stolen?",
+        french=" Qui donc a averti [CS:N]Créfollet[CR]\nde la disparition d\'un Rouage du Temps\npar télépathie?",
+        german=" Wer hat [CS:N]Vesprit[CR] per Telepathie\nmitgeteilt, dass ein Zahnrad der Zeit gestohlen\nwurde?",
+        italian=" Chi informò telepaticamente\n[CS:N]Mesprit[CR] che un Ingranaggio del Tempo era\nstato rubato?",
+        spanish=" ¿Quién informó a [CS:N]Mesprit[CR]\na través de telepatía de que habían\nrobado un Engranaje del Tiempo?",
+    });
+    message_Talk({
+        english=" If I recall correctly, did you say\nthat it was [CS:N]Uxie[CR]?",
+        french=" Si mes souvenirs sont bons,\nil s\'agissait de [CS:N]Créhelf[CR], n\'est-ce pas?",
+        german=" Wenn ich mich recht erinnere,\nwar es [CS:N]Selfe[CR], nicht?",
+        italian=" Se ricordo bene, diceste che si\ntrattava di [CS:N]Uxie[CR]?",
+        spanish=" Si no recuerdo mal, dijiste\nque fue [CS:N]Uxie[CR], ¿verdad?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hmm...",
+                french=" Hum...",
+                german=" Hmm...",
+                italian=" Mmm...",
+                spanish=" Hum.",
+            }
+        case 2:
+            {
+                english=" Hmm...",
+                french=" Hum...",
+                german=" Hmm...",
+                italian=" Mmm...",
+                spanish=" Hum.",
+            }
+        default:
+            {
+                english=" Hmm...",
+                french=" Hum...",
+                german=" Hmm...",
+                italian=" Mmm...",
+                spanish=" Hum.",
+            }
+    }
+    message_Close();
+    screen_FadeOut(1, 30);
+    end;
+}

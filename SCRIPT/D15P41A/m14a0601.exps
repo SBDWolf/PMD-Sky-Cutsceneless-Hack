@@ -1,0 +1,48 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_MAIN = scn[15, 3];
+    back_SetGround(LEVEL_D15P41A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    supervision_Acting(1);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetPositionMark(Position<'m6', 35, 25.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetPositionMark(Position<'m7', 40, 25.5>);
+    }
+    with (actor ACTOR_UNIT_NPC1) {
+        SetPositionMark(Position<'m8', 37.5, 29.5>);
+    }
+    with (actor ACTOR_UNIT_NPC2) {
+        SetPositionMark(Position<'m9', 41.5, 29.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    screen_FadeIn(1, 30);
+    Wait(10);
+    screen_FadeIn(1, 30);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    WaitSe(5143);
+    CallCommon(CORO_BOSS_WIPE_FUNC);
+    main_EnterDungeon(23, 30);
+    main_EnterDungeon(-1, 30);
+    hold;
+    end;
+}

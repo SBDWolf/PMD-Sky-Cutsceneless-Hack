@@ -1,0 +1,924 @@
+
+def 0 {
+    sound_Stop();
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V01P03C);
+    back_SetGround(LEVEL_D01P11B);
+    supervision_Acting(0);
+    camera2_SetPositionMark(Position<'m0', 33, 9.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen2_FadeIn(0, 30);
+    bgm2_PlayFadeIn(BGM_OCEAN1, 90, 256);
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_ON_THE_BEACH_AT_DUSK, 0, 256);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I remember...[K] I was too scared\nto get it back by myself.",
+                french=" Je me souviens...[K] J\'étais trop\neffrayé pour aller le récupérer tout seul.",
+                german=" Ich erinnere mich...[K] Ich hatte zu\nviel Angst, um es selbst zurückzuholen.",
+                italian=" Mi ricordo che...[K] ero troppo\nspaventato per riprendermelo da solo.",
+                spanish=" Todavía me acuerdo...[K] Estaba\ndemasiado asustado para intentar recuperarla.",
+            }
+        case 2:
+            {
+                english=" I remember...[K] I was too scared\nto get it back.",
+                french=" Je me souviens...[K] J\'étais trop\neffrayé pour aller le récupérer tout seul.",
+                german=" Ich erinnere mich...[K] Ich hatte zu\nviel Angst, um es zurückzuholen.",
+                italian=" Mi ricordo che...[K] ero troppo\nspaventato per provare a riprendermelo.",
+                spanish=" Todavía me acuerdo...[K] Estaba\ndemasiado asustado para intentar recuperarla.",
+            }
+        default:
+            {
+                english=" I remember...[K] I was too scared\nto go get it back.",
+                french=" Je me souviens...[K] J\'étais trop\neffrayée pour aller le récupérer toute seule.",
+                german=" Ich erinnere mich...[K] Ich hatte zu\nviel Angst, um es zurückzuholen.",
+                italian=" Mi ricordo che...[K] ero troppo\nspaventata per provare a riprendermelo.",
+                spanish=" Todavía me acuerdo...[K] Estaba\ndemasiado asustada para intentar recuperarla.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" You made me feel brave then,\n[hero].",
+                french=" C\'est toi qui m\'as redonné\ncourage à l\'époque, [hero].",
+                german=" Durch dich habe ich mich mutig\ngefühlt, [hero].",
+                italian=" In quell\'occasione mi hai dato\nil coraggio, [hero].",
+                spanish=" Hiciste que me sintiera valiente\nen aquella ocasión, [hero].",
+            }
+        case 2:
+            {
+                english=" You gave me courage then,\n[hero].",
+                french=" C\'est toi qui m\'as redonné\ncourage à l\'époque, [hero].",
+                german=" Du hast mir damals Mut gegeben,\n[hero].",
+                italian=" In quell\'occasione mi hai infuso\nil coraggio, [hero].",
+                spanish=" Me diste valor en aquella\nocasión, [hero].",
+            }
+        default:
+            {
+                english=" You gave me courage then,\n[hero].",
+                french=" C\'est toi qui m\'as redonné\ncourage à l\'époque, [hero].",
+                german=" Du hast mir damals Mut gegeben,\n[hero].",
+                italian=" In quell\'occasione mi hai dato\nil coraggio, [hero].",
+                spanish=" Me diste valor en aquella\nocasión, [hero].",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" You know, that was how we\nstarted, wasn\'t it?",
+                french=" Tu te souviens? C\'est comme ça\nque tout a commencé entre nous.",
+                german=" So hat das damals mit uns\nangefangen, weißt du noch?",
+                italian=" Sai, è stato così che è\nnata la nostra squadra.",
+                spanish=" Así fue como nació este equipo.",
+            }
+        case 2:
+            {
+                english=" You know, that was how we\nreally started as a team.",
+                french=" Tu te souviens? C\'est comme ça\nque tout a commencé entre nous.",
+                german=" So wurden wir damals zu einem\nrichtigen Team, weißt du?",
+                italian=" Sai, è stato così che siamo \ndavvero diventati una squadra.",
+                spanish=" Así fue como nació este equipo.",
+            }
+        default:
+            {
+                english=" You know, that was how we\nreally started as a team.",
+                french=" Tu te souviens? C\'est comme ça\nque tout a commencé entre nous.",
+                german=" So wurden wir damals zu einem\nrichtigen Team, weißt du?",
+                italian=" Sai, è stato così che è nata\nla nostra squadra.",
+                spanish=" Así fue como nació este equipo.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Getting back this Relic Fragment\nwas Team [team:]\'s first adventure.",
+                french=" Récupérer mon Fragment\nde Relique a été la première aventure\nde l\'Equipe [team:].",
+                german=" Dieses Reliktfragment\nzurückzuholen... Das war das erste Abenteuer\nfür Team [team:].",
+                italian=" Riprendersi il Frammento Antico\nè stata la prima avventura del Team\n[team:].",
+                spanish=" Recuperar la Reliquia de Piedra\nfue la primera aventura del [CS:X]Equipo[CR]\n[team:].",
+            }
+        case 2:
+            {
+                english=" Getting back this Relic Fragment\nwas Team [team:]\'s first adventure.",
+                french=" Récupérer mon Fragment\nde Relique a été la première aventure\nde l\'Equipe [team:].",
+                german=" Dieses Reliktfragment\nzurückzuholen... Das war das erste Abenteuer\nfür Team [team:].",
+                italian=" Riprendersi il Frammento Antico\nè stata la prima avventura del Team\n[team:].",
+                spanish=" Recuperar la Reliquia de Piedra\nfue la primera aventura del [CS:X]Equipo[CR]\n[team:].",
+            }
+        default:
+            {
+                english=" Getting back this Relic Fragment\nwas Team [team:]\'s first adventure.",
+                french=" Récupérer mon Fragment\nde Relique a été la première aventure\nde l\'Equipe [team:].",
+                german=" Dieses Reliktfragment\nzurückzuholen... Das war das erste Abenteuer\nfür Team [team:].",
+                italian=" Riprendersi il Frammento Antico\nè stata la prima avventura del Team\n[team:].",
+                spanish=" Recuperar la Reliquia de Piedra\nfue la primera aventura del [CS:X]Equipo[CR]\n[team:].",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" And now, we\'re using the same\nRelic Fragment so we can go to the [CS:P]Hidden\nLand[CR].",
+                french=" Et voilà qu\'on va se servir\ndu même Fragment de Relique pour atteindre\nles [CS:P]Terres Illusoires[CR].",
+                german=" Und jetzt verwenden wir\ndasselbe Reliktfragment, um zum\n[CS:P]Verborgenen Land[CR] zu gelangen.",
+                italian=" E adesso, stiamo usando quello\nstesso Frammento Antico per andare nella\n[CS:P]Terra Nascosta[CR].",
+                spanish=" Y ahora, estamos usando esa\nmisma reliquia para llegar a la [CS:P]Tierra Oculta[CR].",
+            }
+        case 2:
+            {
+                english=" And now, we\'re using the same\nRelic Fragment so we can go to the [CS:P]Hidden\nLand[CR].",
+                french=" Et voilà qu\'on va se servir\ndu même Fragment de Relique pour atteindre\nles [CS:P]Terres Illusoires[CR].",
+                german=" Und jetzt verwenden wir\ndasselbe Reliktfragment, um zum\n[CS:P]Verborgenen Land[CR] zu gelangen.",
+                italian=" E adesso, stiamo usando quello\nstesso Frammento Antico per andare nella\n[CS:P]Terra Nascosta[CR].",
+                spanish=" Y ahora, estamos usando esa\nmisma reliquia para llegar a la [CS:P]Tierra Oculta[CR].",
+            }
+        default:
+            {
+                english=" And now, we\'re using the same\nRelic Fragment so we can go to the [CS:P]Hidden\nLand[CR].",
+                french=" Et voilà qu\'on va se servir\ndu même Fragment de Relique pour atteindre\nles [CS:P]Terres Illusoires[CR].",
+                german=" Und jetzt verwenden wir\ndasselbe Reliktfragment, um zum\n[CS:P]Verborgenen Land[CR] zu gelangen.",
+                italian=" E adesso, stiamo usando quello\nstesso Frammento Antico per andare nella\n[CS:P]Terra Nascosta[CR].",
+                spanish=" Y ahora, estamos usando esa\nmisma reliquia para llegar a la [CS:P]Tierra Oculta[CR].",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It\'s strange when you think\nabout it.",
+                french=" C\'est étrange quand on y pense.",
+                german=" Seltsam, wenn man so darüber\nnachdenkt.",
+                italian=" È strano quando ci pensi.",
+                spanish=" Si lo piensas es muy extraño.",
+            }
+        case 2:
+            {
+                english=" If you think about it, it\'s kind\nof strange.",
+                french=" C\'est étrange quand on y pense.",
+                german=" Seltsam, wenn man so darüber\nnachdenkt.",
+                italian=" Se ci pensi, è così strano...",
+                spanish=" Si lo piensas es muy extraño.",
+            }
+        default:
+            {
+                english=" If you think about it, it\'s kind\nof strange.",
+                french=" C\'est étrange quand on y pense.",
+                german=" Seltsam, wenn man so darüber\nnachdenkt.",
+                italian=" Se ci pensi, è così strano...",
+                spanish=" Si lo piensas es muy extraño.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(That\'s true!)",
+                french="(C\'est vrai!)",
+                german="(Das stimmt!)",
+                italian="(È vero!)",
+                spanish="(¡Es verdad!)",
+            }
+        default:
+            {
+                english="(That\'s true!)",
+                french="(C\'est vrai!)",
+                german="(Das stimmt!)",
+                italian="(È vero!)",
+                spanish="(¡Es verdad!)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(My adventures with [partner]...)",
+                french="(Mes aventures avec [partner]...)",
+                german="(Meine Abenteuer mit [partner]...)",
+                italian="(Le mie avventure con [partner]...)",
+                spanish="(Mis aventuras con [partner]...)",
+            }
+        default:
+            {
+                english="(My adventures with [partner]...)",
+                french="(Mes aventures avec [partner]...)",
+                german="(Meine Abenteuer mit [partner]...)",
+                italian="(Le mie avventure con [partner]...)",
+                spanish="(Mis aventuras con [partner]...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(and searching for the [CS:P]Hidden Land[CR]...)",
+                french="(... et notre quête des [CS:P]Terres Illusoires[CR]...)",
+                german="(Und die Suche nach dem [CS:P]Verborgenen Land[CR]...)",
+                italian="(La ricerca della [CS:P]Terra Nascosta[CR]...)",
+                spanish="(Y la búsqueda de la [CS:P]Tierra Oculta[CR]...)",
+            }
+        default:
+            {
+                english="(and searching for the [CS:P]Hidden Land[CR]...)",
+                french="(... et notre quête des [CS:P]Terres Illusoires[CR]...)",
+                german="(Und die Suche nach dem [CS:P]Verborgenen Land[CR]...)",
+                italian="(La ricerca della [CS:P]Terra Nascosta[CR]...)",
+                spanish="(Y la búsqueda de la [CS:P]Tierra Oculta[CR]...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(The Relic Fragment was the start of both!)",
+                french="(Le Fragment de Relique est à l\'origine\nde tout!)",
+                german="(Beides begann mit dem Reliktfragment!)",
+                italian="(Il Frammento Antico ha dato il via a entrambe\nle cose!)",
+                spanish="(¡La Reliquia de Piedra ha sido el detonante\nde ambas cosas!)",
+            }
+        default:
+            {
+                english="(The Relic Fragment was the start of both!)",
+                french="(Le Fragment de Relique est à l\'origine\nde tout!)",
+                german="(Beides begann mit dem Reliktfragment!)",
+                italian="(Il Frammento Antico ha dato il via a entrambe\nle cose!)",
+                spanish="(¡La Reliquia de Piedra ha sido el detonante\nde ambas cosas!)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(20);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" This awesome sunset...",
+                french=" Ce superbe coucher de soleil...",
+                german=" Dieser unglaubliche\nSonnenuntergang...",
+                italian=" Questo fantastico tramonto...",
+                spanish=" Esta increíble puesta de sol...",
+            }
+        case 2:
+            {
+                english=" This beautiful sunset...",
+                french=" Ce superbe coucher de soleil...",
+                german=" Dieser schöne Sonnenuntergang...",
+                italian=" Questo bellissimo tramonto...",
+                spanish=" Esta espectacular puesta de sol...",
+            }
+        default:
+            {
+                english=" This pretty sunset...",
+                french=" Ce superbe coucher de soleil...",
+                german=" Dieser hübsche\nSonnenuntergang...",
+                italian=" Questo bel tramonto...",
+                spanish=" Esta hermosa puesta de sol...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It will be lost if the planet\'s\nparalysis can\'t be stopped.",
+                french=" ... il sera perdu si on n\'empêche\npas la Paralysie de la Planète.",
+                german=" Ihn wird es nicht mehr geben,\nwenn die Lähmung des Planeten nicht\naufgehalten werden kann.",
+                italian=" ... andrà perduto se non \nfermeremo la paralisi del pianeta.",
+                spanish=" Se perderá si no conseguimos\nfrenar la parálisis del planeta.",
+            }
+        case 2:
+            {
+                english=" It will be lost if the planet\'s\nparalysis can\'t be stopped.",
+                french=" ... il sera perdu si on n\'empêche\npas la Paralysie de la Planète.",
+                german=" Ihn wird es nicht mehr geben,\nwenn die Lähmung des Planeten nicht\naufgehalten werden kann.",
+                italian=" ... andrà perduto se non \nfermeremo la paralisi del pianeta.",
+                spanish=" Se perderá si no conseguimos\ndetener la parálisis del planeta.",
+            }
+        default:
+            {
+                english=" It will be lost if the planet\'s\nparalysis can\'t be stopped.",
+                french=" ... il sera perdu si on n\'empêche\npas la Paralysie de la Planète.",
+                german=" Ihn wird es nicht mehr geben,\nwenn die Lähmung des Planeten nicht\naufgehalten werden kann.",
+                italian=" ... andrà perduto se non \nfermeremo la paralisi del pianeta.",
+                spanish=" Se perderá si no conseguimos\ndetener la parálisis del planeta.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We have to prevent that![K]\nWe can\'t waste time finding the [CS:P]Hidden Land[CR].",
+                french=" On doit faire quelque chose![K]\nOn ne peut pas perdre une seconde dans\nnotre quête des [CS:P]Terres Illusoires[CR].",
+                german=" Wir müssen das verhindern![K]\nWir dürfen keine Zeit verlieren, um das\n[CS:P]Verborgene Land[CR] zu finden.",
+                italian=" Dobbiamo evitarlo![K] Dobbiamo \ntrovare la [CS:P]Terra Nascosta[CR] il più presto\npossibile.",
+                spanish=" ¡Tenemos que evitarlo![K]\n¡Hay que encontrar la [CS:P]Tierra Oculta[CR]!",
+            }
+        case 2:
+            {
+                english=" We have to stop that![K] We can\'t\nwaste any time finding the [CS:P]Hidden Land[CR].",
+                french=" On doit faire quelque chose![K]\nOn ne peut pas perdre une seconde dans\nnotre quête des [CS:P]Terres Illusoires[CR].",
+                german=" Wir müssen das verhindern![K]\nWir haben keine Zeit zu verlieren, wenn wir\ndas [CS:P]Verborgene Land[CR] finden wollen.",
+                italian=" Dobbiamo evitarlo![K] Dobbiamo \ntrovare la [CS:P]Terra Nascosta[CR] il più presto\npossibile.",
+                spanish=" ¡Tenemos que evitarlo![K]\n¡Hay que encontrar la [CS:P]Tierra Oculta[CR]!",
+            }
+        default:
+            {
+                english=" We have to stop that![K] We can\'t\nwaste any time finding the [CS:P]Hidden Land[CR].",
+                french=" On doit faire quelque chose![K]\nOn ne peut pas perdre une seconde dans\nnotre quête des [CS:P]Terres Illusoires[CR].",
+                german=" Wir müssen das verhindern![K]\nWir haben keine Zeit zu verlieren, wenn wir\ndas [CS:P]Verborgene Land[CR] finden wollen.",
+                italian=" Dobbiamo evitarlo![K] Dobbiamo \ntrovare la [CS:P]Terra Nascosta[CR] il più presto\npossibile.",
+                spanish=" ¡Tenemos que evitarlo![K]\n¡Hay que encontrar la [CS:P]Tierra Oculta[CR]!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    Wait(30);
+    with (object OBJECT_G01P01A1_93) {
+        SetOutputAttribute(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionOffset(32896, 8, 8);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(10);
+    se_Play(8710);
+    with (object OBJECT_G01P01A1_93) {
+        Destroy();
+    }
+    Wait(10);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SlidePositionOffset(32896, -8, -8);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    Wait(20);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We have to do good tomorrow,\n[hero]!",
+                french=" On doit se surpasser demain,\n[hero]!",
+                german=" Wir müssen morgen das Beste\naus uns herausholen, [hero]!",
+                italian=" Domani dobbiamo dare il meglio,\n[hero]!",
+                spanish=" ¡Mañana no podemos fallar,\n[hero]!",
+            }
+        case 2:
+            {
+                english=" We have to do good tomorrow,\n[hero]!",
+                french=" On doit se surpasser demain,\n[hero]!",
+                german=" Wir müssen morgen das Beste\naus uns herausholen, [hero]!",
+                italian=" Domani dobbiamo dare il meglio,\n[hero]!",
+                spanish=" ¡Mañana hay que echar\nel resto, [hero]!",
+            }
+        default:
+            {
+                english=" We have to do good tomorrow,\n[hero]!",
+                french=" On doit se surpasser demain,\n[hero]!",
+                german=" Wir müssen morgen das Beste\naus uns herausholen, [hero]!",
+                italian=" Domani dobbiamo dare il meglio,\n[hero]!",
+                spanish=" ¡Mañana hay que echar\nel resto, [hero]!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(30);
+    message_SetFace(ACTOR_PLAYER, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(That\'s right. We have to try hard.)",
+                french="(C\'est bien vrai. On doit donner le meilleur\nde nous-mêmes.)",
+                german="(Das stimmt. Wir müssen uns sehr\nanstrengen.)",
+                italian="(È vero. Dobbiamo mettercela tutta.)",
+                spanish="(Es cierto. Hay que esforzarse.)",
+            }
+        default:
+            {
+                english="(That\'s right. We have to try hard.)",
+                french="(C\'est bien vrai. On doit donner le meilleur\nde nous-mêmes.)",
+                german="(Das stimmt. Wir müssen uns sehr\nanstrengen.)",
+                italian="(È vero. Dobbiamo mettercela tutta.)",
+                spanish="(Es cierto. Hay que esforzarse.)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(I must fulfill the mission that I had before\nlosing my memory.)",
+                french="(Je dois remplir la mission dont j\'étais chargé\navant de perdre la mémoire.)",
+                german="(Ich muss die Mission zu Ende bringen, die ich\nhatte, bevor ich mein Gedächtnis verlor.)",
+                italian="(Devo portare a termine la missione che\navevo intrapreso prima di perdere la\nmemoria.)",
+                spanish="(Debo cumplir la misión que tenía antes de\nperder la memoria.)",
+            }
+        default:
+            {
+                english="(I must fulfill the mission that I had before\nlosing my memory.)",
+                french="(Je dois remplir la mission dont j\'étais\nchargée avant de perdre la mémoire.)",
+                german="(Ich muss die Mission zu Ende bringen, die ich\nhatte, bevor ich mein Gedächtnis verlor.)",
+                italian="(Devo portare a termine la missione che\navevo intrapreso prima di perdere la\nmemoria.)",
+                spanish="(Debo cumplir la misión que tenía antes de\nperder la memoria.)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(My mission with [CS:N]Grovyle[CR]...)",
+                french="(Ma mission avec [CS:N]Massko[CR]...)",
+                german="(Meine Mission mit [CS:N]Reptain[CR]...)",
+                italian="(La mia missione con [CS:N]Grovyle[CR]...)",
+                spanish="(El objetivo que compartía con [CS:N]Grovyle[CR]...)",
+            }
+        default:
+            {
+                english="(My mission with [CS:N]Grovyle[CR]...)",
+                french="(Ma mission avec [CS:N]Massko[CR]...)",
+                german="(Meine Mission mit [CS:N]Reptain[CR]...)",
+                italian="(La mia missione con [CS:N]Grovyle[CR]...)",
+                spanish="(El objetivo que compartía con [CS:N]Grovyle[CR]...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(A mission to help the Pokémon of this world\nand those of the future...)",
+                french="(Venir en aide aux Pokémon de ce monde\net du futur...)",
+                german="(Eine Mission, um Pokémon dieser und der\nzukünftigen Welt zu helfen...)",
+                italian="(Una missione per aiutare sia i Pokémon di\nquesto mondo che quelli del futuro...)",
+                spanish="(Una misión para ayudar a los Pokémon de\neste mundo y a los del futuro...)",
+            }
+        default:
+            {
+                english="(A mission to help the Pokémon of this world\nand those of the future...)",
+                french="(Venir en aide aux Pokémon de ce monde\net du futur...)",
+                german="(Eine Mission, um Pokémon dieser und der\nzukünftigen Welt zu helfen...)",
+                italian="(Una missione per aiutare sia i Pokémon di\nquesto mondo che quelli del futuro...)",
+                spanish="(Una misión para ayudar a los Pokémon de\neste mundo y a los del futuro...)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8964);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    bgm_FadeOut(120);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Huh? Hey, [hero]...",
+                french=" Hein? Dis, [hero]...",
+                german=" Ähem? Hey, [hero]...",
+                italian=" Eh? Ehi, [hero]...",
+                spanish=" ¿Qué? Mira, [hero]...",
+            }
+        case 2:
+            {
+                english=" What? Hey, [hero]...",
+                french=" Hein? Dis, [hero]...",
+                german=" Was? Hey, [hero]...",
+                italian=" Cosa? Ehi, [hero]...",
+                spanish=" ¿Qué? Mira, [hero]...",
+            }
+        default:
+            {
+                english=" What? Say, [hero]...",
+                french=" Hein? Dis, [hero]...",
+                german=" Was? Sag mal, [hero]...",
+                italian=" Cosa? Guarda, [hero]...",
+                spanish=" ¿Qué? Mira, [hero]...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" That...[K] What is that?",
+                french=" Regarde ça...[K] Qu\'est-ce que\nc\'est?",
+                german=" Dieses...[K] Was ist das?",
+                italian=" Chi...[K] Chi è quello?",
+                spanish=" Eso de ahí...[K] ¿Qué es eso?",
+            }
+        case 2:
+            {
+                english=" That...[K] What is that?",
+                french=" Regarde ça...[K] Qu\'est-ce que\nc\'est?",
+                german=" Dieses...[K] Was ist das?",
+                italian=" Chi...[K] Chi è quello?",
+                spanish=" Eso de ahí...[K] ¿Qué es eso?",
+            }
+        default:
+            {
+                english=" That...[K] What is that?",
+                french=" Regarde ça...[K] Qu\'est-ce que\nc\'est?",
+                german=" Dieses...[K] Was ist das?",
+                italian=" Chi...[K] Chi è quello?",
+                spanish=" Eso de ahí...[K] ¿Qué es eso?",
+            }
+    }
+    message_Close();
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(30);
+    screen2_FadeOut(1, 30);
+    back2_SetGround(LEVEL_V22P01A);
+    back2_SetBackEffect(2);
+    supervision_Acting(1);
+    with (object OBJECT_V22P01A1_289) {
+        MovePositionMark(32806, Position<'m1', 12, 16.5>);
+    }
+    camera2_SetPositionMark(Position<'m2', 19, 9.5>);
+    screen2_FadeIn(1, 30);
+    WaitExecuteObject(OBJECT_V22P01A1_289);
+    with (object OBJECT_V22P01A1_289) {
+        MovePositionOffset(32806, 100, 0);
+    }
+    screen2_FadeOut(1, 15);
+    back2_SetGround(LEVEL_V22P02A);
+    supervision_RemoveActing(1);
+    supervision_Acting(2);
+    supervision_Acting(3);
+    with (object OBJECT_V22P02A1_290) {
+        SetAnimation(1);
+    }
+    with (object OBJECT_V22P02A1_290) {
+        MovePositionMark(32870, Position<'m3', 34, 18.5>);
+    }
+    with (object OBJECT_V22P02A2_294) {
+        MovePositionMark(32870, Position<'m4', 34, 18.5>);
+    }
+    camera2_SetPositionMark(Position<'m5', 25, 9.5>);
+    back2_SetBackEffect(2);
+    screen2_FadeIn(1, 15);
+    WaitExecuteObject(OBJECT_V22P02A1_290);
+    with (object OBJECT_V22P02A1_290) {
+        MovePositionOffset(32806, 100, 0);
+    }
+    with (object OBJECT_V22P02A2_294) {
+        MovePositionOffset(32806, 100, 0);
+    }
+    screen2_FadeOut(1, 15);
+    back2_SetGround(LEVEL_V22P01A);
+    camera2_SetPositionMark(Position<'m6', 19, 9.5>);
+    back2_SetBackEffect(2);
+    supervision_RemoveActing(2);
+    supervision_RemoveActing(3);
+    supervision_Acting(1);
+    with (object OBJECT_V22P01A1_289) {
+        SetPositionMark(Position<'m7', 28, 16.5>);
+    }
+    with (object OBJECT_V22P01A1_289) {
+        MovePositionMark(32793, Position<'m8', 31, 16.5>);
+    }
+    screen2_FadeIn(1, 15);
+    WaitExecuteObject(OBJECT_V22P01A1_289);
+    with (object OBJECT_V22P01A1_289) {
+        MovePositionOffset(32793, 100, 0);
+    }
+    screen2_FadeOut(1, 30);
+    supervision_RemoveActing(1);
+    back2_SetGround(LEVEL_V01P03C);
+    camera2_SetPositionMark(Position<'m9', 33, 9.5>);
+    screen2_FadeIn(1, 30);
+    Wait(30);
+    se_Play(8962);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" What could it be...?",
+                french=" Qu\'est-ce que ça peut bien être?",
+                german=" Was könnte das sein?",
+                italian=" Chi potrebbe essere...?",
+                spanish=" ¿Qué podrá ser...?",
+            }
+        case 2:
+            {
+                english=" What could it be...?",
+                french=" Qu\'est-ce que ça peut bien être?",
+                german=" Was könnte das sein?",
+                italian=" Chi potrebbe essere...?",
+                spanish=" ¿Qué podrá ser...?",
+            }
+        default:
+            {
+                english=" What could it be...?",
+                french=" Qu\'est-ce que ça peut bien être?",
+                german=" Was könnte das sein?",
+                italian=" Chi potrebbe essere...?",
+                spanish=" ¿Qué podrá ser...?",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It seems like it\'s swimming\nacross the sunset...",
+                french=" On dirait que c\'est en train\nde nager devant le coucher de soleil...",
+                german=" Es sieht so aus, als schwömme\nes durch den Sonnenuntergang...",
+                italian=" Sembra che stia attraversando a\nnuoto la luce del tramonto...",
+                spanish=" Es como si nadara atravesando\nel ocaso...",
+            }
+        case 2:
+            {
+                english=" It looks like it\'s swimming\nacross the sunset...",
+                french=" On dirait que c\'est en train\nde nager devant le coucher de soleil...",
+                german=" Es sieht so aus, als schwömme\nes durch den Sonnenuntergang...",
+                italian=" Sembra che stia attraversando a\nnuoto la luce del tramonto...",
+                spanish=" Es como si nadara atravesando\nel ocaso...",
+            }
+        default:
+            {
+                english=" It looks like it\'s swimming\nacross the sunset...",
+                french=" On dirait que c\'est en train\nde nager devant le coucher de soleil...",
+                german=" Es sieht so aus, als schwömme\nes durch den Sonnenuntergang...",
+                italian=" Sembra che stia attraversando a\nnuoto la luce del tramonto...",
+                spanish=" Es como si nadara atravesando\nel ocaso...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I think it\'s a Pokémon...",
+                french=" Je crois que c\'est un Pokémon...",
+                german=" Ich glaube, es ist ein Pokémon...",
+                italian=" Penso che sia un Pokémon...",
+                spanish=" Creo que es un Pokémon...",
+            }
+        case 2:
+            {
+                english=" I think it\'s a Pokémon...",
+                french=" Je crois que c\'est un Pokémon...",
+                german=" Ich glaube, es ist ein Pokémon...",
+                italian=" Penso che sia un Pokémon...",
+                spanish=" Creo que es un Pokémon...",
+            }
+        default:
+            {
+                english=" I think it\'s a Pokémon...",
+                french=" Je crois que c\'est un Pokémon...",
+                german=" Ich glaube, es ist ein Pokémon...",
+                italian=" Penso che sia un Pokémon...",
+                spanish=" Creo que es un Pokémon...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Well...[K]that\'s a little strange...",
+                french=" Eh bien...[K] c\'est bizarre...",
+                german=" Hm...[K] Das ist irgendwie\nseltsam...",
+                italian=" Beh...[K] È proprio strano...",
+                spanish=" Pues...[K] Qué raro, ¿no?",
+            }
+        case 2:
+            {
+                english=" Well...[K]that\'s a little strange...",
+                french=" Eh bien...[K] c\'est bizarre...",
+                german=" Hm...[K] Das ist irgendwie\nseltsam...",
+                italian=" Beh...[K] È proprio strano...",
+                spanish=" Pues...[K] Qué raro, ¿no?",
+            }
+        default:
+            {
+                english=" Well...[K]that\'s a little strange...",
+                french=" Eh bien...[K] c\'est bizarre...",
+                german=" Hm...[K] Das ist irgendwie\nseltsam...",
+                italian=" Beh...[K] È proprio strano...",
+                spanish=" Pues...[K] Qué raro, ¿no?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(30);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" The sun\'s almost gone.",
+                french=" Le soleil a presque disparu.",
+                german=" Die Sonne ist fast weg.",
+                italian=" Il sole se n\'è quasi andato.",
+                spanish=" El sol casi se ha puesto.",
+            }
+        case 2:
+            {
+                english=" The sun\'s almost gone.",
+                french=" Le soleil a presque disparu.",
+                german=" Die Sonne ist fast weg.",
+                italian=" Il sole se n\'è quasi andato.",
+                spanish=" El sol casi se ha puesto.",
+            }
+        default:
+            {
+                english=" The sun\'s almost gone.",
+                french=" Le soleil a presque disparu.",
+                german=" Die Sonne ist fast weg.",
+                italian=" Il sole se n\'è quasi andato.",
+                spanish=" El sol casi se ha puesto.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Let\'s go back to the guild soon.",
+                french=" Retournons vite à la Guilde.",
+                german=" Lass uns bald zur Gilde\nzurückgehen.",
+                italian=" Torniamo in fretta alla Gilda.",
+                spanish=" Deberíamos volver pronto\nal [CS:N]Pokégremio[CR].",
+            }
+        case 2:
+            {
+                english=" We should go back to the\nguild soon.",
+                french=" Retournons vite à la Guilde.",
+                german=" Wir sollten bald zur Gilde\nzurückgehen.",
+                italian=" Dobbiamo tornare in fretta alla\nGilda.",
+                spanish=" Deberíamos volver pronto\nal [CS:N]Pokégremio[CR].",
+            }
+        default:
+            {
+                english=" We should go back to the\nguild soon.",
+                french=" Retournons vite à la Guilde.",
+                german=" Wir sollten bald zur Gilde\nzurückgehen.",
+                italian=" Dobbiamo tornare in fretta alla\nGilda.",
+                spanish=" Deberíamos volver pronto\nal [CS:N]Pokégremio[CR].",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(15);
+    with (actor ACTOR_PLAYER) {
+        MovePositionOffset(1, 160, 0);
+    }
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionOffset(1, 24, 24);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionOffset(1, 136, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(90);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m10', 31.5, 22.5>);
+    }
+    WaitExecutePerformer(0);
+    bgm2_FadeOut(120);
+    with (actor ACTOR_NPC_SUKATANKU) {
+        MovePositionOffset(1, 32, -32);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_ZUBATTO) {
+        MovePositionOffset(1, 32, -32);
+    }
+    Wait(15);
+    with (actor ACTOR_NPC_DOGAASU) {
+        MovePositionOffset(1, 0, -32);
+    }
+    with (actor ACTOR_NPC_SUKATANKU) {
+        MovePositionMark(1, Position<'m11', 35, 22.5>);
+    }
+    with (actor ACTOR_NPC_ZUBATTO) {
+        MovePositionMark(1, Position<'m12', 28, 22.5>);
+    }
+    with (actor ACTOR_NPC_DOGAASU) {
+        MovePositionMark(1, Position<'m13', 31.5, 25>);
+    }
+    with (actor ACTOR_NPC_ZUBATTO) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGAASU);
+    message_SetFace(ACTOR_NPC_SUKATANKU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEOUTW);
+    message_Talk({
+        english=" Chaw-haw-haw!",
+        french=" Gnark gnark gnark!",
+        german=" Cha-ha-ha!",
+        italian=" Ahr-ahr-ahr!",
+        spanish=" ¡Jua, jua, jua!",
+    });
+    message_Talk({
+        english=" The [CS:N]Krabby[CR] weren\'t around\nfor a good reason!",
+        french=" Il y a une bonne raison\nà l\'absence des [CS:N]Krabby[CR]!",
+        german=" Die [CS:N]Krabby[CR] waren aus gutem\nGrund nicht hier!",
+        italian=" È chiaro che i [CS:N]Krabby[CR] non ci\nsono.",
+        spanish=" ¡Por supuesto que no están\naquí los [CS:N]Krabby[CR]!",
+    });
+    message_Talk({
+        english=" They ran off! Scared of us!\nChaw-haw!",
+        french=" Ils ont pris la fuite! C\'est nous\nqui leur avons fait peur! Gnark gnark!",
+        german=" Sie sind abgehauen! Aus Angst\nvor uns! Cha-ha!",
+        italian=" Sono scappati! Li abbiamo \nspaventati! Ahr-ahr!",
+        spanish=" ¡Han salido pitando!\n¡Tenían miedo de nosotros! ¡Jua, jua!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_DOGAASU, FACE_NORMAL, FACE_POS_BOTTOM_C_FACER);
+    message_Talk({
+        english=" Whoa-ho-ho![K] But, Chief!",
+        french=" Mouarf mouarf mouarf![K]\nAu fait, chef!",
+        german=" Whoahoho![K] Aber Boss!",
+        italian=" Uooh-oh-oh![K] Ma, capo!",
+        spanish=" ¡Jo, jo, jo![K] Pero... ¡Jefe!",
+    });
+    message_Talk({
+        english=" That old-timer [CS:N]Torkoal[CR] wasn\'t\nlying to us, after all.",
+        french=" Ce vieux croulant de [CS:N]Chartor[CR]\nnous a pas menti, finalement.",
+        german=" Dieser Opa [CS:N]Qurtel[CR] hat uns\nwenigstens nicht angelogen.",
+        italian=" Quindi quel vecchietto di [CS:N]Torkoal[CR]\nnon ci stava mentendo.",
+        spanish=" Ese abuelete de [CS:N]Torkoal[CR] no\nnos mentía después de todo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_ZUBATTO, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEINW);
+    message_Talk({
+        english=" Heh-heh![K] That junk we stole\nback then...",
+        french=" Hin hin![K] Ce rebut qu\'on a volé\nl\'autre fois...",
+        german=" Hehe![K] Dieser Schrott, den wir\ndamals gestohlen haben...",
+        italian=" Eh-eh![K] Quella roba che \nabbiamo rubato allora...",
+        spanish=" ¡Jue, jue![K] Ese cascote que le\nquitamos aquella vez...",
+    });
+    message_Talk({
+        english=" I didn\'t know it was going to\nbe something that valuable.",
+        french=" Je pensais pas qu\'il finirait\npar prendre autant de valeur.",
+        german=" Ich wusste nicht, dass das mal\nso viel wert sein würde.",
+        italian=" Non pensavo proprio che potesse\navere un valore.",
+        spanish=" No sabía que iba a ser algo tan\nvalioso.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SUKATANKU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEOUTW);
+    message_Talk({
+        english=" So what? We\'ll get that Relic\nFragment from them one way or another.",
+        french=" Et alors? On le leur volera\nà nouveau, d\'une façon ou d\'une autre.",
+        german=" Na und? Wir kriegen das\nReliktfragment von ihnen so oder so.",
+        italian=" E allora? In un modo o nell\'altro\nci prenderemo quel Frammento Antico.",
+        spanish=" ¿Y qué? Ya conseguiremos esa\nReliquia de Piedra de una forma u otra.",
+    });
+    message_Talk({
+        english=" That means the [CS:P]Hidden Land[CR] is\ngoing to be explored by...",
+        french=" Ça signifie que la découverte\ndes [CS:P]Terres Illusoires[CR] sera à mettre\nà l\'honneur...",
+        german=" Das bedeutet, das\n[CS:P]Verborgene Land[CR] wird erkundet von...",
+        italian=" Questo significa che la [CS:P]Terra[CR]\n[CS:P]Nascosta[CR] sta per essere esplorata...",
+        spanish=" Vamos, que esa [CS:P]Tierra Oculta[CR]\nserá explorada...",
+    });
+    message_Talk({
+        english=" None other than us, Team [CS:X]Skull[CR]!\nChaw-haw-haw!",
+        french=" ... de personne d\'autre que nous,\nl\'Equipe [CS:X]Crâne[CR]! Gnark gnark gnark!",
+        german=" Von niemand anderem als uns,\nTeam [CS:X]Totenkopf[CR]!\nCha-ha-ha!",
+        italian=" ... solo da noi, il Team [CS:X]Teschio[CR]!\nAhr-ahr-ahr!",
+        spanish=" Nada menos que por nosotros,\n¡el [CS:X]Equipo Calavera[CR]! ¡Jua, jua, jua!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_DOGAASU, FACE_NORMAL, FACE_POS_BOTTOM_C_FACER);
+    message_Talk({
+        english=" Whoa-ho-ho!",
+        french=" Mouarf mouarf mouarf!",
+        german=" Whoahoho!",
+        italian=" Uooh-oh-oh!",
+        spanish=" ¡Jo, jo, jo!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_ZUBATTO, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEINW);
+    message_Talk({
+        english=" Heh-heh-heh!",
+        french=" Hin hin hin!",
+        german=" Hehehe!",
+        italian=" Eh-eh-eh!",
+        spanish=" ¡Jue, jue, jue!",
+    });
+    message_Close();
+    screen2_FadeOut(0, 90);
+    screen_FadeOut(1, 90);
+    back2_SetMode(0);
+    Wait(60);
+    end;
+}

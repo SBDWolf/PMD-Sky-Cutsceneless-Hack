@@ -1,0 +1,5 @@
+
+def 0 {
+    $SCENARIO_MAIN = scn[13, 0];
+    end;
+}

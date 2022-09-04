@@ -1,0 +1,57 @@
+
+def 0 {
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V26P06A);
+    back_SetGround(LEVEL_V26P05A);
+    supervision_Acting(0);
+    with (object OBJECT_V26P05A1_345) {
+        SetOutputAttribute(2048);
+    }
+    camera2_SetPositionMark(Position<'m0', 19, 15.5>);
+    supervision_SpecialActing(23, 600, 0);
+    supervision2_SpecialActing(23, 600, 0);
+    switch ( message_Menu(MENU_STAFF_CREDITS1) ) { }
+    WaitBgmSignal();
+    screen2_FadeIn(0, 120);
+    screen_FadeIn(1, 120);
+    WaitBgm(BGM_ENDING_THEME_INTRO);
+    bgm_PlayFadeIn(BGM_ENDING_THEME, 0, 256);
+    switch ( message_Menu(MENU_STAFF_CREDITS2) ) { }
+    Wait(180);
+    switch ( message_Menu(MENU_STAFF_CREDITS2) ) { }
+    switch ( message_Menu(MENU_STAFF_CREDITS2) ) { }
+    switch ( message_Menu(MENU_STAFF_CREDITS3) ) { }
+    bgm_FadeOut(210);
+    screen2_FadeOut(0, 180);
+    screen_FadeOut(1, 180);
+    Wait(60);
+    back2_SetMode(0);
+    supervision_SpecialActing(3, 0, 0);
+    supervision2_SpecialActing(3, 0, 0);
+    WaitBgm(BGM_ENDING_THEME);
+    end;
+}
+
+def 1 for_performer(0) {
+    camera_SetMyself();
+    §label_0;
+    forever {
+        camera_SetPositionMark(Position<'m1', 19.5, 13.5>);
+        Wait(8);
+        camera_SetPositionMark(Position<'m2', 58.5, 13.5>);
+        Wait(8);
+        camera_SetPositionMark(Position<'m3', 97.5, 13.5>);
+        Wait(8);
+        camera_SetPositionMark(Position<'m4', 19.5, 43.5>);
+        Wait(8);
+        camera_SetPositionMark(Position<'m5', 58.5, 43.5>);
+        Wait(8);
+        camera_SetPositionMark(Position<'m6', 97.5, 43.5>);
+        Wait(8);
+        camera_SetPositionMark(Position<'m7', 19.5, 73.5>);
+        Wait(8);
+        camera_SetPositionMark(Position<'m8', 58.5, 73.5>);
+        Wait(8);
+        continue;  // may be redundant
+    }
+}

@@ -1,0 +1,164 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_G01P06B);
+    supervision_Acting(0);
+    Wait(1);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        MovePositionMark(32896, Position<'m0', 24, 26.5>);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(43);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_ZUBATTO) {
+        SetAnimation(43);
+    }
+    with (actor ACTOR_NPC_DOGAASU) {
+        SetAnimation(43);
+    }
+    with (actor ACTOR_NPC_SUKATANKU) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_EATING, 3);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetEffect(EFFECT_EATING, 3);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetEffect(EFFECT_EATING, 3);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetEffect(EFFECT_EATING, 3);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_EATING, 3);
+    }
+    with (actor ACTOR_NPC_SUKATANKU) {
+        SetEffect(EFFECT_EATING, 3);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetEffect(EFFECT_EATING_SLOW, 3);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetEffect(EFFECT_EATING_SLOW, 3);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetEffect(EFFECT_EATING_SLOW, 3);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetEffect(EFFECT_EATING_SLOW, 3);
+    }
+    with (actor ACTOR_NPC_ZUBATTO) {
+        SetEffect(EFFECT_EATING_SLOW, 3);
+    }
+    with (actor ACTOR_NPC_DOGAASU) {
+        SetEffect(EFFECT_EATING_SLOW, 3);
+    }
+    with (object OBJECT_G01P06B1_107) {
+        SetAnimation(21);
+    }
+    bgm_PlayFadeIn(BGM_EATING, 60, 256);
+    screen_FadeIn(1, 30);
+    message_ResetActor();
+    message_ImitationSound({
+        english="Crunch munch! Chomp chomp! Gobble gulp![K]\nCrunch munch! Chomp chomp! Gobble gulp!",
+        french="Cronch cronch! Miam miam! Slurp slurp![K]\nCronch cronch! Miam miam! Slurp slurp!",
+        german="Stopf-schling! Schmatz! Schlabber-schlürf![K]\nStopf-schling! Schmatz! Schlabber-schlürf!",
+        italian="Gnam-gnam! Ingurg-ingurg! Slurp-slurp![K]\nGnam-gnam! Crunch-crunch! Slurp-slurp!",
+        spanish="¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem![K]\n¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem!",
+    });
+    message_ImitationSound({
+        english="Crunch munch! Chomp chomp! Gobble gulp![K]\nCrunch munch! Chomp chomp! Gobble gulp!",
+        french="Cronch cronch! Miam miam! Slurp slurp![K]\nCronch cronch! Miam miam! Slurp slurp!",
+        german="Stopf-schling! Schmatz! Schlabber-schlürf![K]\nStopf-schling! Schmatz! Schlabber-schlürf!",
+        italian="Crunch-munch! Ingurg ingurg! Snuffle-slurp![K]\nGnam-gnam! Crunch-crunch! Slurp-slurp!",
+        spanish="¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem![K]\n¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem!",
+    });
+    message_ImitationSound({
+        english="Crunch munch! Chomp chomp! Gobble gulp![K]\nCrunch munch! Chomp chomp! Gobble gulp!",
+        french="Cronch cronch! Miam miam! Slurp slurp![K]\nCronch cronch! Miam miam! Slurp slurp!",
+        german="Stopf-schling! Schmatz! Schlabber-schlürf![K]\nStopf-schling! Schmatz! Schlabber-schlürf!",
+        italian="Crunch-munch! Ingurg ingurg! Snuffle-slurp![K]\nGnam-gnam! Crunch-crunch! Slurp-slurp!",
+        spanish="¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem![K]\n¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem!",
+    });
+    message_ImitationSound({
+        english="Crunch munch! Chomp chomp! Gobble gulp![K]\nCrunch munch! Chomp chomp! Gobble gulp!",
+        french="Cronch cronch! Miam miam! Slurp slurp![K]\nCronch cronch! Miam miam! Slurp slurp!",
+        german="Stopf-schling! Schmatz! Schlabber-schlürf![K]\nStopf-schling! Schmatz! Schlabber-schlürf!",
+        italian="Crunch-munch! Ingurg ingurg! Snuffle-slurp![K]\nGnam-gnam! Crunch-crunch! Slurp-slurp!",
+        spanish="¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem![K]\n¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem!",
+    });
+    message_ImitationSound({
+        english="Crunch munch! Chomp chomp! Gobble gulp![K]\nCrunch munch! Chomp chomp! Gobble gulp!",
+        french="Cronch cronch! Miam miam! Slurp slurp![K]\nCronch cronch! Miam miam! Slurp slurp!",
+        german="Stopf-schling! Schmatz! Schlabber-schlürf![K]\nStopf-schling! Schmatz! Schlabber-schlürf!",
+        italian="Crunch-munch! Ingurg ingurg! Snuffle-slurp![K]\nGnam-gnam! Crunch-crunch! Slurp-slurp!",
+        spanish="¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem![K]\n¡Ñam, ñam! ¡Glup, glup! ¡Ñem, ñem!",
+    });
+    message_CloseEnforce();
+    WaitExecutePerformer(0);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_TOP_L_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Urf...",
+                french=" Arf...",
+                german=" Urf...",
+                italian=" Urf...",
+                spanish=" Ay...",
+            }
+        case 2:
+            {
+                english=" Urf...",
+                french=" Arf...",
+                german=" Urf...",
+                italian=" Urf...",
+                spanish=" Ay...",
+            }
+        default:
+            {
+                english=" Urf...",
+                french=" Arf...",
+                german=" Urf...",
+                italian=" Urf...",
+                spanish=" Ay...",
+            }
+    }
+    message_Close();
+    bgm_FadeOut(60);
+    screen_FadeOut(1, 60);
+    Wait(30);
+    WaitBgm(BGM_EATING);
+    end;
+}

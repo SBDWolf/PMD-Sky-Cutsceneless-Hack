@@ -1,0 +1,7 @@
+
+def 0 {
+    main_EnterDungeon(30, 30);
+    main_EnterDungeon(-1, 30);
+    hold;
+    end;
+}

@@ -1,0 +1,140 @@
+
+def 0 {
+    sound_Stop();
+    if ( variation ) {
+        §label_0;
+        switch ( ProcessSpecial(53, 32767, 0) ) { }
+        message_SetWaitMode(300, 300);
+        message_Explanation({
+            english="[CN]Thanks for playing!\n[CN]We hope you enjoyed\n[CN]the demo!",
+            french="[CN]Merci d\'avoir joué!\n[CN]Nous espérons que vous avez\n[CN]aimé cette démo!",
+            german="[CN]Vielen Dank fürs Spielen!\n[CN]Wir hoffen, dass dir die Demo-Version\n[CN]Spaß gemacht hat!",
+            italian="[CN]Grazie per aver giocato!\n[CN]Ci auguriamo che la versione demo\n[CN]ti sia piaciuta!",
+            spanish="[CN]¡Gracias por jugar!\n[CN]Para descubrir aún más aventuras,\n[CN]¡no te pierdas la versión completa!",
+        });
+        message_KeyWait();
+        switch ( ProcessSpecial(PROCESS_SPECIAL_JUMP_TO_TITLE_SCREEN, 0, 0) ) { }
+        end;
+    } else {
+        back_SetGround(LEVEL_S04P01A);
+        screen_FadeIn(1, 0);
+        message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" Ugh... That didn\'t end well...",
+                    french=" Argh... Quel échec...",
+                    german=" Hmpf... Das lief nicht so gut.",
+                    italian=" Ugh... Non è andata affatto \nbene...",
+                    spanish=" ¡Vaya! No lo hemos hecho bien...",
+                }
+            case 2:
+                {
+                    english=" Ugh... That didn\'t go well, did it?",
+                    french=" Argh... Quel échec...",
+                    german=" Hmpf... War wohl nichts, was?",
+                    italian=" Ugh... Non è andata affatto \nbene...",
+                    spanish=" ¡Vaya! Esto no ha ido muy bien...",
+                }
+            default:
+                {
+                    english=" Ugh... That didn\'t work at all...",
+                    french=" Argh... Quel échec...",
+                    german=" Hmpf... Das ging komplett\ndaneben...",
+                    italian=" Ugh... Non è andata affatto \nbene...",
+                    spanish=" Ay... No nos ha salido muy bien...",
+                }
+        }
+        message_KeyWait();
+        screen_FadeOutAll(1, 60);
+        message_CloseEnforce();
+        Wait(60);
+        CallCommon(CORO_FADE_OUT_ALL_AFTER);
+        if ( variation ) {
+            supervision_ExecuteActing(LEVEL_D02P11A, 'M02A0701', 0);
+            hold;
+        } else {
+            back_SetGround(LEVEL_G01P03A);
+            supervision_Acting(0);
+            with (performer 0) {
+                camera_SetMyself();
+            }
+            screen_FadeIn(1, 30);
+            bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
+            Wait(30);
+            message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+            message_Talk({
+                english=" Well...[K] It appears that your\nouting was less than a total success.",
+                french=" Eh bien...[K] On dirait que votre\nexcursion n\'a pas été une franche réussite.",
+                german=" Nun...[K] Eure Premiere war wohl\nnicht gerade ein großer Erfolg.",
+                italian=" Beh...[K] Si direbbe che la vostra \nmissione non sia andata esattamente secondo\ni piani.",
+                spanish=" Vaya, vaya...[K] Vuestra incursión\nno ha tenido mucho éxito que digamos.",
+            });
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            se_Play(8961);
+            with (actor ACTOR_ATTENDANT1) {
+                SetEffect(EFFECT_SWEAT_DROP, 3);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                WaitEffect();
+            }
+            WaitExecuteLives(ACTOR_ATTENDANT1);
+            message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                case 1:
+                    {
+                        english=" Ugh...",
+                        french=" Euh...",
+                        german=" Hmpf...",
+                        italian=" Gulp...",
+                        spanish=" Uf...",
+                    }
+                case 2:
+                    {
+                        english=" Ugh...",
+                        french=" Euh...",
+                        german=" Hmpf...",
+                        italian=" Gulp...",
+                        spanish=" ¡Qué vergüenza!",
+                    }
+                default:
+                    {
+                        english=" Ugh...",
+                        french=" Euh...",
+                        german=" Hmpf...",
+                        italian=" Gulp...",
+                        spanish=" ¡Qué bochorno!",
+                    }
+            }
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+            message_Talk({
+                english=" Of course, you\'re just beginners\nat all this. No need to fret! ♪",
+                french=" Après tout, vous n\'êtes que des\nnovices. Inutile de vous tracasser! ♪",
+                german=" Natürlich seid ihr erst Anfänger.\nKein Grund für schlechte Laune! ♪",
+                italian=" Beh, siete ancora agli inizi. Non\nc\'è motivo di preoccuparsi! ♪",
+                spanish=" En realidad solo sois\nprincipiantes. No hay por qué preocuparse. ♪",
+            });
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            with (actor ACTOR_NPC_PERAPPU) {
+                SetAnimation(44);
+            }
+            message_SetFace(ACTOR_NPC_PERAPPU, FACE_HAPPY, FACE_POS_TOP_R_CENTER);
+            message_Talk({
+                english=" These things happen! ♪[K] You can\nattempt another challenge tomorrow! ♪",
+                french=" Ça arrive! ♪[K] Vous pourrez\nvous rattraper demain! ♪",
+                german=" So was kommt vor! ♪[K] Morgen\nkönnt ihr eine neue Herausforderung\nannehmen! ♪",
+                italian=" Capita a tutti! ♪[K] \nDomani potrete riprovare! ♪",
+                spanish=" ¡Estas cosas pasan! ♪[K] ¡Ya lo\nintentaréis de nuevo mañana! ♪",
+            });
+            message_Close();
+            with (actor ACTOR_NPC_PERAPPU) {
+                SetAnimation(2);
+            }
+            bgm_FadeOut(120);
+            screen_FadeOut(1, 60);
+            WaitBgm(BGM_WIGGLYTUFFS_GUILD);
+            end;
+        }
+    }
+}

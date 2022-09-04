@@ -1,0 +1,279 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_S04P01A);
+    screen_FadeIn(1, 0);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" ...Wh-what?",
+                french=" ... Qu... quoi?",
+                german=" ...W-was?",
+                italian=" ... C-Cosa?",
+                spanish=" ¿Cómo...?",
+            }
+        case 2:
+            {
+                english=" ...Wh-what?",
+                french=" ... Qu... quoi?",
+                german=" ...W-was?",
+                italian=" ... C-Cosa?",
+                spanish=" ¿Cómo...?",
+            }
+        default:
+            {
+                english=" ...Wh-what?",
+                french=" ... Qu... quoi?",
+                german=" ...W-was?",
+                italian=" ... C-Cosa?",
+                spanish=" ¿Cómo...?",
+            }
+    }
+    message_KeyWait();
+    screen_FadeOutAll(1, 60);
+    message_CloseEnforce();
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V01P03B);
+    back_SetGround(LEVEL_D01P11B);
+    supervision_Acting(0);
+    camera2_SetPositionMark(Position<'m0', 33, 9.5>);
+    camera_SetPositionMark(Position<'m1', 33, 25.5>);
+    bgm_PlayFadeIn(BGM_OCEAN1, 160, 256);
+    screen2_FadeIn(0, 30);
+    screen_FadeIn(1, 30);
+    WaitLockLives(5, ACTOR_PLAYER);
+    Unlock(5);
+    Wait(12);
+    Unlock(7);
+    Lock(3);
+    Wait(15);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Owowow... That wasn\'t so good.",
+                french=" Ouille, ouille, ouille... Ça ne s\'est\npas très bien passé.",
+                german=" Auauau... Das war ein Reinfall.",
+                italian=" Ahiahiahi... Non è andata molto \nbene.",
+                spanish=" Ay, ay... No lo hemos hecho\nmuy bien.",
+            }
+        case 2:
+            {
+                english=" Owowow... That didn\'t go well.",
+                french=" Ouille, ouille, ouille... Ça ne s\'est\npas très bien passé.",
+                german=" Auauau... Das lief nicht so gut.",
+                italian=" Ahiahiahi... Non è andata molto \nbene.",
+                spanish=" Ay, ay... Esto no ha ido\ndemasiado bien.",
+            }
+        default:
+            {
+                english=" Ouch! We didn\'t do too well...",
+                french=" Ouille, ouille, ouille... Ça ne s\'est\npas très bien passé.",
+                german=" Autsch! Wir waren nicht gerade\nsuper...",
+                italian=" Ahi... Non è andata molto \nbene.",
+                spanish=" Ay, ¡qué daño! Esto no ha ido\nmuy bien que digamos.",
+            }
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I guess if either of us faints,\nthe other one can\'t carry on!",
+                french=" Apparemment, ni toi ni moi ne\npouvons continuer si l\'autre se retrouve K.O.",
+                german=" Ich glaube, wenn einer von uns\nohnmächtig wird, kann der andere auch nicht\nweiterkämpfen!",
+                italian=" Se uno di noi due va KO, l\'altro\nnon può proseguire da solo.",
+                spanish=" Por lo que veo, si uno de\nnosotros se debilita, ¡el otro no puede\nseguir adelante solo!",
+            }
+        case 2:
+            {
+                english=" I guess if either of us faints,\nthe other one can\'t carry on!",
+                french=" Apparemment, ni toi ni moi ne\npouvons continuer si l\'autre se retrouve K.O.",
+                german=" Ich glaube, wenn einer von uns\nohnmächtig wird, kann der andere auch nicht\nweiterkämpfen!",
+                italian=" Se uno di noi due va KO, l\'altro\nnon può proseguire da solo.",
+                spanish=" Parece que si uno de nosotros se\ndebilita, ¡el otro no puede seguir adelante solo!",
+            }
+        default:
+            {
+                english=" I guess if either of us faints,\nthe other one can\'t carry on!",
+                french=" Apparemment, ni toi ni moi ne\npouvons continuer si l\'autre se retrouve K.O.",
+                german=" Ich glaube, wenn einer von uns\nohnmächtig wird, kann der andere auch nicht\nweiterkämpfen!",
+                italian=" Se io vado KO, tu non potrai\nproseguire. Lo stesso succede in caso sia tu ad\nandare KO.",
+                spanish=" Supongo que no podemos seguir\nadelante por separado.\n¡No podemos debilitarnos!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" ...Could this be what they\'re\ncalling a mystery dungeon?",
+                french=" ... Se pourrait-il... Est-ce cela\nqu\'on appelle un donjon mystère?",
+                german=" ...War das etwa einer von\ndiesen sogenannten Mystery Dungeons?",
+                italian=" Che questo sia uno dei \nfamigerati dungeon misteriosi?",
+                spanish=" Eso debía de ser lo que suelen\nllamar un territorio misterioso...",
+            }
+        case 2:
+            {
+                english=" ...Could this be what they\'re\ncalling a mystery dungeon?",
+                french=" ... Se pourrait-il... Est-ce cela\nqu\'on appelle un donjon mystère?",
+                german=" ...War das etwa einer von\ndiesen sogenannten Mystery Dungeons?",
+                italian=" Che questo sia uno dei \nfamigerati dungeon misteriosi?",
+                spanish=" Supongo que era lo que suelen\nllamar un territorio misterioso...",
+            }
+        default:
+            {
+                english=" ...Could this be what they\'re\ncalling a mystery dungeon?",
+                french=" ... Se pourrait-il... Est-ce cela\nqu\'on appelle un donjon mystère?",
+                german=" ...War das etwa einer von\ndiesen sogenannten Mystery Dungeons?",
+                italian=" Che questo sia uno dei \nfamigerati dungeon misteriosi?",
+                spanish=" Supongo que era lo que suelen\nllamar un territorio misterioso...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8967);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hey! We don\'t have time\nfor this!",
+                french=" Oh! On n\'a pas de temps\nà perdre avec ça!",
+                german=" Hey! Wir haben keine Zeit zum\nReden!",
+                italian=" Beh, adesso non abbiamo tempo!",
+                spanish=" ¡Oye! ¡No es momento para\nquedarse aquí como un pasmarote!",
+            }
+        case 2:
+            {
+                english=" Hey! This isn\'t the time for this!",
+                french=" Oh! On n\'a pas de temps\nà perdre avec ça!",
+                german=" Hey! Dafür haben wir jetzt\nkeine Zeit!",
+                italian=" Beh, adesso non abbiamo tempo!",
+                spanish=" ¡Oye! ¡Este no es el momento\npara ponerse a divagar!",
+            }
+        default:
+            {
+                english=" Oh! There\'s no time to waste!",
+                french=" Oh! On n\'a pas de temps\nà perdre avec ça!",
+                german=" Hey! Wir haben keine Zeit zu\nverlieren!",
+                italian=" Oh! Non c\'è tempo da perdere!",
+                spanish=" ¡Oye! ¡No hay tiempo que perder!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We have to find [CS:N]Koffing[CR] and his\nbuddy to get my item back!",
+                french=" On doit retrouver [CS:N]Smogo[CR] et\nson acolyte pour leur reprendre mon objet!",
+                german=" Wir müssen [CS:N]Smogon[CR] und seinen\nKumpel finden und meinen Schatz zurückholen!",
+                italian=" Dobbiamo trovare [CS:N]Koffing[CR] e il\nsuo compare per recuperare il mio tesoro!",
+                spanish=" ¡Hay que encontrar a [CS:N]Koffing[CR]\ny al Pokémon que lo acompañaba para\nrecuperar mi talismán!",
+            }
+        case 2:
+            {
+                english=" We\'ve got to find [CS:N]Koffing[CR] and\nhis sidekick to recover my item!",
+                french=" On doit retrouver [CS:N]Smogo[CR] et\nson acolyte pour leur reprendre mon objet!",
+                german=" Wir müssen [CS:N]Smogon[CR] und sein\nAnhängsel finden und meinen Schatz retten!",
+                italian=" Dobbiamo trovare [CS:N]Koffing[CR] e il\nsuo compare per recuperare il mio tesoro!",
+                spanish=" ¡Hay que encontrar a [CS:N]Koffing[CR]\ny a su compinche para recuperar mi talismán!",
+            }
+        default:
+            {
+                english=" We need to catch [CS:N]Koffing[CR] and\nhis buddy and get my treasure back!",
+                french=" On doit retrouver [CS:N]Smogo[CR] et\nson acolyte pour leur reprendre mon objet!",
+                german=" Wir müssen [CS:N]Smogon[CR] und seinen\nFreund fangen und meinen Schatz retten!",
+                italian=" Dobbiamo trovare [CS:N]Koffing[CR] e il\nsuo compare per recuperare il mio tesoro!",
+                spanish=" ¡Hay que dar con [CS:N]Koffing[CR] y con\nsu compinche para recuperar mi talismán!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_DETERMINED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Let\'s roll, [hero]!",
+                french=" Allons-y, [hero]!",
+                german=" Packen wir es an, [hero]!",
+                italian=" Forza, andiamo, [hero]!",
+                spanish=" ¡A por ellos, [hero]!",
+            }
+        case 2:
+            {
+                english=" Let\'s go, [hero]!",
+                french=" Allons-y, [hero]!",
+                german=" Los, gehen wir, [hero]!",
+                italian=" Andiamo, [hero]!",
+                spanish=" ¡En marcha, [hero]!",
+            }
+        default:
+            {
+                english=" Let\'s go, [hero]!",
+                french=" Allons-y, [hero]!",
+                german=" Los, gehen wir, [hero]!",
+                italian=" Andiamo, [hero]!",
+                spanish=" ¡Adelante, [hero]!",
+            }
+    }
+    message_Close();
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(33152, Position<'m2', 12, 25.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(33152, Position<'m3', 13, 25.5>);
+    }
+    Wait(60);
+    bgm_FadeOut(60);
+    screen2_FadeOut(0, 30);
+    screen_FadeOut(1, 30);
+    back2_SetMode(0);
+    WaitBgm2(BGM_OCEAN1);
+    main_EnterDungeon(1, 0);
+    switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+    main_EnterDungeon(-1, 0);
+    hold;
+    end;
+}
+
+def 1 for_actor(ACTOR_PLAYER) {
+    SetDirection(DIR_RIGHT);
+    SetAnimation(76);
+    Lock(5);
+    CallCommon(CORO_WAKEUP_FUNC);
+    CallCommon(CORO_LOOK_AROUND_DOWN_FUNC);
+    Lock(6);
+    hold;
+}
+
+def 2 for_actor(ACTOR_ATTENDANT1) {
+    SetDirection(DIR_LEFT);
+    SetAnimation(76);
+    Lock(7);
+    CallCommon(CORO_WAKEUP_FUNC);
+    CallCommon(CORO_LOOK_AROUND_FUNC);
+    Unlock(3);
+    Lock(8);
+    hold;
+}

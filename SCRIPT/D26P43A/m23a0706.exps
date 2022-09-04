@@ -1,0 +1,97 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_D26P43A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_KABUTOPUSU) {
+        ResetFunctionAttribute(256);
+    }
+    with (actor ACTOR_NPC_OMUSUTAA) {
+        ResetFunctionAttribute(256);
+    }
+    with (actor ACTOR_NPC_OMUSUTAA2) {
+        ResetFunctionAttribute(256);
+    }
+    with (actor ACTOR_NPC_OMUSUTAA) {
+        SetFunctionAttribute(256);
+    }
+    WaitExecuteLives(ACTOR_NPC_OMUSUTAA2);
+    with (actor ACTOR_NPC_OMUSUTAA2) {
+        SetFunctionAttribute(256);
+    }
+    WaitExecuteLives(ACTOR_NPC_KABUTOPUSU);
+    with (actor ACTOR_NPC_KABUTOPUSU) {
+        SetFunctionAttribute(256);
+    }
+    //camera_SetEffect(2, 33024, 33280);
+
+    with (actor ACTOR_NPC_KABUTOPUSU) {
+        SetPositionMark(Position<'m7', 34.5, 36.5>);
+    }
+    with (actor ACTOR_NPC_OMUSUTAA) {
+        SetPositionMark(Position<'m8', 30.5, 36.5>);
+    }
+    with (actor ACTOR_NPC_OMUSUTAA2) {
+        SetPositionMark(Position<'m9', 38.5, 36.5>);
+    }
+    with (actor ACTOR_NPC_OMUSUTAA) {
+        SetDirection(DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_OMUSUTAA2) {
+        SetDirection(DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetPositionMark(Position<'m10', 32.5, 41.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetPositionMark(Position<'m11', 36.5, 41.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetPositionMark(Position<'m12', 34.5, 39.5>);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(34);
+    }
+    with (actor ACTOR_NPC_OMUSUTAA) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_OMUSUTAA2) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_KABUTOPUSU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    //WaitExecuteLives(ACTOR_NPC_OMUSUTAA2);
+    screen_FadeIn(1, 30);
+    bgm_FadeOut(10);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    WaitSe(5143);
+    CallCommon(CORO_BOSS_WIPE_FUNC);
+    main_EnterDungeon(37, 30);
+    main_EnterDungeon(-1, 30);
+    hold;
+    end;
+}

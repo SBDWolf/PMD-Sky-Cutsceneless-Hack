@@ -1,0 +1,38 @@
+
+def 0 {
+    back_SetGround(LEVEL_T01P01A);
+    $SCENARIO_MAIN = scn[14, 1];
+    supervision_LoadStation(LEVEL_T01P01A, 'UM13');
+    supervision_Station(1);
+    supervision_StationCommon(0);
+    supervision_StationCommon(99);
+    supervision_Acting(0);
+    with (actor ACTOR_NPC_BIPPA) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_YONOWAARU) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_BANEBUU) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_YONOWAARU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_BANEBUU) {
+        SetAnimation(2);
+    }
+    CallCommon(CORO_FADE_OUT_ALL_BEFORE);
+    screen_FadeInAll(1, 30);
+    bgm_PlayFadeIn(BGM_TREASURE_TOWN, 0, 256);
+    end;
+}

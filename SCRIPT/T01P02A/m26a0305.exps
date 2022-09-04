@@ -1,0 +1,61 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_TIME_RESTORED, 0, 200);
+    back_SetGround(LEVEL_T01P02A);
+    supervision_StationCommon(0);
+    supervision_StationCommon(99);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        MovePositionOffset(32896, 0, -200);
+    }
+    with (actor ACTOR_NPC_NYOROTONO) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_REDIBA) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_TOGEPII) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_NEITYIO) {
+        SetAnimation(4);
+    }
+    CallCommon(CORO_FADE_OUT_ALL_BEFORE);
+    screen_FadeInAll(1, 30);
+    Wait(60);
+    message_SetActor(ACTOR_ATTENDANT1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Everyone looks happy!",
+                french=" Tout le monde a l\'air si heureux!",
+                german=" Alle sehen glücklich aus!",
+                italian=" Sembrano tutti felici!",
+                spanish=" ¡Todos parecen contentos!",
+            }
+        case 2:
+            {
+                english=" Everyone looks happy!",
+                french=" Tout le monde a l\'air si heureux!",
+                german=" Alle sehen glücklich aus!",
+                italian=" Sembrano tutti felici!",
+                spanish=" ¡Todos parecen contentos!",
+            }
+        default:
+            {
+                english=" Everyone looks cheerful!",
+                french=" Tout le monde a l\'air si heureux!",
+                german=" Alle sehen fröhlich aus!",
+                italian=" Sembrano tutti allegri!",
+                spanish=" ¡Todos parecen contentos!",
+            }
+    }
+    Wait(240);
+    message_CloseEnforce();
+    screen_FadeOutAll(1, 60);
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    end;
+}

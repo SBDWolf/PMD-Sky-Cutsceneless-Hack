@@ -1,0 +1,149 @@
+
+def 0 {
+    CallCommon(CORO_FADE_OUT_ALL_BEFORE);
+    back_SetGround(LEVEL_D28P44A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (object OBJECT_D28P34A2_77) {
+        SetAnimation(10);
+    }
+    with (performer 3) {
+        SetEffect(653, 3);
+    }
+    bgm_PlayFadeIn(BGM_IN_THE_HANDS_OF_FATE, 0, 256);
+    screen_FadeInAll(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_PLAYER, FACE_SAD, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(That\'s right...)",
+                french="(C\'est vrai...)",
+                german="(Das stimmt...)",
+                italian="(È vero...)",
+                spanish="(Sí que es duro.)",
+            }
+        default:
+            {
+                english="(That\'s right...)",
+                french="(C\'est vrai...)",
+                german="(Das stimmt...)",
+                italian="(È vero...)",
+                spanish="(Sí que es duro.)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(If the future is changed, [CS:N]Grovyle[CR] will\ndisappear...)",
+                french="(Si on modifie le futur, [CS:N]Massko[CR] disparaîtra...)",
+                german="(Wenn die Zukunft verändert wird, dann wird\n[CS:N]Reptain[CR] verschwinden.)",
+                italian="(Se il futuro cambia, [CS:N]Grovyle[CR] scomparirà...)",
+                spanish="(Si el futuro cambia, [CS:N]Grovyle[CR] desaparecerá.)",
+            }
+        default:
+            {
+                english="(If the future is changed, [CS:N]Grovyle[CR] will\ndisappear...)",
+                french="(Si on modifie le futur, [CS:N]Massko[CR] disparaîtra...)",
+                german="(Wenn die Zukunft verändert wird, dann wird\n[CS:N]Reptain[CR] verschwinden.)",
+                italian="(Se il futuro cambia, [CS:N]Grovyle[CR] scomparirà...)",
+                spanish="(Si el futuro cambia, [CS:N]Grovyle[CR] desaparecerá.)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(And...[K]I will disappear too...)",
+                french="(Et moi aussi...[K] je disparaîtrai...)",
+                german="(Und...[K] Auch ich werde verschwinden.)",
+                italian="(E...[K] anche io scomparirò...)",
+                spanish="(Y...[K] yo también.)",
+            }
+        default:
+            {
+                english="(And...[K]I will disappear too...)",
+                french="(Et moi aussi...[K] je disparaîtrai...)",
+                german="(Und...[K] Auch ich werde verschwinden.)",
+                italian="(E...[K] anche io scomparirò...)",
+                spanish="(Y...[K] yo también.)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(32896, Position<'m0', 34.5, 23.5>);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (object OBJECT_D28P34A2_77) {
+        Destroy();
+    }
+    Wait(45);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_TOP_R_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hey, [hero].",
+                french=" Eh, [hero].",
+                german=" Hey, [hero].",
+                italian=" Ehi, [hero].",
+                spanish=" Oye, [hero].",
+            }
+        case 2:
+            {
+                english=" Hey, [hero].",
+                french=" Eh, [hero].",
+                german=" Hey, [hero].",
+                italian=" Ehi, [hero].",
+                spanish=" Oye, [hero].",
+            }
+        default:
+            {
+                english=" Say, [hero].",
+                french=" Eh, [hero].",
+                german=" Sag mal, [hero].",
+                italian=" Senti, [hero].",
+                spanish=" Oye, [hero].",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" The last thing [CS:N]Grovyle[CR] said to\nyou, [hero]...",
+                french=" La dernière chose que [CS:N]Massko[CR]\nt\'a dite, [hero]...",
+                german=" Das Letzte, was [CS:N]Reptain[CR] zu dir\nsagte, [hero]...",
+                italian=" L\'ultima cosa che ti ha detto\n[CS:N]Grovyle[CR], [hero]...",
+                spanish=" Lo último que te dijo [CS:N]Grovyle[CR],\n[hero]...",
+            }
+        case 2:
+            {
+                english=" The last thing [CS:N]Grovyle[CR] said to\nyou, [hero]...",
+                french=" La dernière chose que [CS:N]Massko[CR]\nt\'a dite, [hero]...",
+                german=" Das Letzte, was [CS:N]Reptain[CR] zu dir\nsagte, [hero]...",
+                italian=" L\'ultima cosa che ti ha detto\n[CS:N]Grovyle[CR], [hero]...",
+                spanish=" Lo último que te dijo [CS:N]Grovyle[CR],\n[hero]...",
+            }
+        default:
+            {
+                english=" The last thing [CS:N]Grovyle[CR] said to\nyou, [hero]...",
+                french=" La dernière chose que [CS:N]Massko[CR]\nt\'a dite, [hero]...",
+                german=" Das Letzte, was [CS:N]Reptain[CR] zu dir\nsagte, [hero]...",
+                italian=" L\'ultima cosa che ti ha detto\n[CS:N]Grovyle[CR], [hero]...",
+                spanish=" Lo último que te dijo [CS:N]Grovyle[CR],\n[hero]...",
+            }
+    }
+    message_Close();
+    screen_FadeOutAll(1, 30);
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    end;
+}

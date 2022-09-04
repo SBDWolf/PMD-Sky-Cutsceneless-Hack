@@ -1,0 +1,800 @@
+
+def 0 {
+    switch ( $EXECUTE_SPECIAL_EPISODE_TYPE ) {
+        case 0:
+            §label_0;
+            with (actor ACTOR_PLAYER_BIPPA) {
+                SetAnimation(2);
+            }
+            with (actor ACTOR_NPC_YUKIKABURI) {
+                SetAnimation(2);
+            }
+            message_ResetActor();
+            message_Mail({
+                english="[CN]Would you like to return\n[CN]to Treasure Town?",
+                french="[CN]Voulez-vous retourner\n[CN]à Bourg-Trésor?",
+                german="[CN]Möchtet ihr nach Schatzstadt\n[CN]zurückkehren?",
+                italian="[CN]Vuoi tornare a Borgo Tesoro?",
+                spanish="[CN]¿Quieres volver a\n[CN]Aldea Tesoro?",
+            });
+            §label_37;
+            switch ( message_SwitchMenu(0, 1) ) {
+                case menu({
+                    english="Yes",
+                    french="Oui",
+                    german="Ja",
+                    italian="Sì",
+                    spanish="Sí",
+                }):
+                default:
+                    message_Close();
+                    bgm_FadeOut(60);
+                    screen_FadeOut(1, 30);
+                    $GROUND_START_MODE = 9;
+                    switch ( $GROUND_ENTER ) {
+                        case 228:
+                            §label_57;
+                            switch ( $EXECUTE_SPECIAL_EPISODE_TYPE ) {
+                                case 0:
+                                    §label_58;
+                                    $DUNGEON_RESULT = 3;
+                                    switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+                                    supervision_ExecuteCommon(CORO_EVENT_N01_10YARARETA);
+                                    §label_59;
+                                    $DUNGEON_RESULT = 3;
+                                    switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+                                    if ( scn($SCENARIO_SIDE) >= [43, 9] ) {
+                                        supervision_ExecuteCommon(CORO_EVENT_N04_23);
+                                        hold;
+                                    } else {
+                                        supervision_ExecuteCommon(CORO_EVENT_N04_06);
+                                        hold;
+                                    }
+                                    break;
+                                case 2:
+                                    jump @label_59;
+                                default:
+                                    supervision_ExecuteCommon(CORO_GETOUT_REQUEST_DUNGEON);
+                                    jump @label_58;
+                            }
+                            break;
+                        default:
+                            $DUNGEON_RESULT = 3;
+                            $SCENARIO_MAIN_BIT_FLAG[29] = 1;
+                            jump @label_57;
+                    }
+                    break;
+                case menu({
+                    english="No",
+                    french="Non",
+                    german="Nein",
+                    italian="No",
+                    spanish="No",
+                }):
+                    §label_27;
+                    message_Close();
+                    supervision_Suspend(-2);
+                    end;
+            }
+            break;
+        case 1:
+            with (actor ACTOR_PLAYER_PUPURIN) {
+                SetAnimation(2);
+            }
+            with (actor ACTOR_NPC_AAMARUDO) {
+                SetAnimation(2);
+            }
+            message_ResetActor();
+            message_Mail({
+                english="[CN]Would you like to return to\n[CN][CS:P]Armaldo\'s Shelter[CR]?",
+                french="[CN]Voulez-vous retourner\n[CN]à l\'[CS:P]Abri d\'Armaldo[CR]?",
+                german="[CN]Möchtet ihr zur [CS:P]Zuflucht von Armaldo[CR]\n[CN]zurückkehren?",
+                italian="[CN]Vuoi tornare al\n[CN][CS:P]Rifugio di Armaldo[CR]?",
+                spanish="[CN]¿Quieres volver a la\n[CN][CS:P]Guarida de Armaldo[CR]?",
+            });
+            switch ( message_SwitchMenu(0, 1) ) {
+                case menu({
+                    english="Yes",
+                    french="Oui",
+                    german="Ja",
+                    italian="Sì",
+                    spanish="Sí",
+                }):
+                default:
+                    message_Close();
+                    bgm_FadeOut(60);
+                    screen_FadeOut(1, 30);
+                    $GROUND_START_MODE = 9;
+                    $SCENARIO_MAIN_BIT_FLAG[29] = 1;
+                    $DUNGEON_RESULT = 3;
+                    switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+                    supervision_ExecuteCommon(CORO_EVENT_N03_11);
+                    hold;
+                case menu({
+                    english="No",
+                    french="Non",
+                    german="Nein",
+                    italian="No",
+                    spanish="No",
+                }):
+                    jump @label_27;
+            }
+            break;
+        case 4:
+            with (actor ACTOR_PLAYER_FUTURE) {
+                SetAnimation(2);
+            }
+            Wait(1);
+            switch ( $GROUND_ENTER ) {
+                case 114:
+                default:
+                    message_ResetActor();
+                    message_Mail({
+                        english="[CN]Would you like to return to\n[CN][CS:P]Barren Valley\'s entrance[CR]?",
+                        french="[CN]Voulez-vous retourner\n[CN]à l\'[CS:P]entrée de la Vallée Stérile[CR]?",
+                        german="[CN]Möchtest du zum [CS:P]Kargtaleingang[CR]\n[CN]zurückkehren?",
+                        italian="[CN]Vuoi tornare all\'ingresso della\n[CN][CS:P]Valle Desolata[CR]?",
+                        spanish="[CN]¿Quieres volver a la entrada\n[CN]del [CS:P]Valle Desolado[CR]?",
+                    });
+                    switch ( message_SwitchMenu(0, 1) ) {
+                        case menu({
+                            english="Yes",
+                            french="Oui",
+                            german="Ja",
+                            italian="Sì",
+                            spanish="Sí",
+                        }):
+                        default:
+                            message_Close();
+                            bgm_FadeOut(60);
+                            screen_FadeOut(1, 30);
+                            $DUNGEON_RESULT = 3;
+                            switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+                            if ( scn($SCENARIO_SIDE) >= [47, 3] ) {
+                                supervision_ExecuteCommon(CORO_EVENT_N08_09);
+                                hold;
+                            } else {
+                                supervision_ExecuteCommon(CORO_EVENT_N08_03);
+                                hold;
+                            }
+                            break;
+                        case menu({
+                            english="No",
+                            french="Non",
+                            german="Nein",
+                            italian="No",
+                            spanish="No",
+                        }):
+                            jump @label_27;
+                    }
+                    break;
+                case 119:
+                    message_Mail({
+                        english="[CN]Would you like to return to\n[CN][CS:P]Temporal Tower\'s entrance[CR]?",
+                        french="[CN]Voulez-vous retourner à [CS:P]l\'entrée\n[CN]de la Tour du Temps[CR]?",
+                        german="[CN]Möchtet ihr zum [CS:P]Zeitturmeingang[CR]\n[CN]zurückkehren?",
+                        italian="[CN]Vuoi tornare all\'ingresso della\n[CN][CS:P]Torre del Tempo[CR]?",
+                        spanish="[CN]¿Quieres volver a la entrada\n[CN]de la [CS:P]Torre del Tiempo[CR]?",
+                    });
+                    switch ( message_SwitchMenu(0, 1) ) {
+                        case menu({
+                            english="Yes",
+                            french="Oui",
+                            german="Ja",
+                            italian="Sì",
+                            spanish="Sí",
+                        }):
+                        default:
+                            message_Close();
+                            bgm_FadeOut(60);
+                            screen_FadeOut(1, 30);
+                            $DUNGEON_RESULT = 3;
+                            switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+                            supervision_ExecuteCommon(CORO_EVENT_N08_16);
+                            hold;
+                        case menu({
+                            english="No",
+                            french="Non",
+                            german="Nein",
+                            italian="No",
+                            spanish="No",
+                        }):
+                            jump @label_27;
+                    }
+                    break;
+                case 123:
+                    message_Mail({
+                        english="[CN]Would you like to return to\n[CN][CS:P]Dark Ice Mountain\'s entrance[CR]?",
+                        french="[CN]Voulez-vous retourner\n[CN]à l\'[CS:P]entrée de la Montagne Sombre Gel[CR]?",
+                        german="[CN]Möchtet ihr zum [CS:P]Dunkeleisbergeingang[CR]\n[CN]zurückkehren?",
+                        italian="[CN]Vuoi tornare all\'ingresso del\n[CN][CS:P]Ghiacciaio Tenebroso[CR]?",
+                        spanish="[CN]¿Quieres volver a la entrada\n[CN]del [CS:P]Iceberg Oscuro[CR]?",
+                    });
+                    switch ( message_SwitchMenu(0, 1) ) {
+                        case menu({
+                            english="Yes",
+                            french="Oui",
+                            german="Ja",
+                            italian="Sì",
+                            spanish="Sí",
+                        }):
+                        default:
+                            message_Close();
+                            bgm_FadeOut(60);
+                            screen_FadeOut(1, 30);
+                            $DUNGEON_RESULT = 3;
+                            switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+                            if ( scn($SCENARIO_SIDE) >= [48, 4] ) {
+                                supervision_ExecuteCommon(CORO_EVENT_N09_07);
+                                hold;
+                            } else {
+                                supervision_ExecuteCommon(CORO_EVENT_N09_01);
+                                hold;
+                            }
+                            break;
+                        case menu({
+                            english="No",
+                            french="Non",
+                            german="Nein",
+                            italian="No",
+                            spanish="No",
+                        }):
+                            jump @label_27;
+                    }
+                    break;
+                case 131:
+                    message_Mail({
+                        english="[CN]Would you like to return to\n[CN][CS:P]Vast Ice Mountain\'s entrance[CR]?",
+                        french="[CN]Voulez-vous retourner\n[CN]à l\'[CS:P]entrée de la Montagne Glacier[CR]?",
+                        german="[CN]Möchtet ihr zum [CS:P]Rieseneisbergeingang[CR]\n[CN]zurückkehren?",
+                        italian="[CN]Vuoi tornare all\'ingresso\n[CN]dell\'[CS:P]Altopiano Ghiacciato[CR]?",
+                        spanish="[CN]¿Quieres volver a la entrada\n[CN]del [CS:P]Gran Iceberg[CR]?",
+                    });
+                    switch ( message_SwitchMenu(0, 1) ) {
+                        case menu({
+                            english="Yes",
+                            french="Oui",
+                            german="Ja",
+                            italian="Sì",
+                            spanish="Sí",
+                        }):
+                        default:
+                            message_Close();
+                            bgm_FadeOut(60);
+                            screen_FadeOut(1, 30);
+                            $DUNGEON_RESULT = 3;
+                            switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+                            if ( scn($SCENARIO_SIDE) >= [48, 9] ) {
+                                supervision_ExecuteCommon(CORO_EVENT_N09_20);
+                                hold;
+                            } else {
+                                supervision_ExecuteCommon(CORO_EVENT_N09_14);
+                                hold;
+                            }
+                            break;
+                        case menu({
+                            english="No",
+                            french="Non",
+                            german="Nein",
+                            italian="No",
+                            spanish="No",
+                        }):
+                            jump @label_27;
+                    }
+                    break;
+            }
+            break;
+        case 3:
+            with (actor ACTOR_PLAYER_CHARMS) {
+                SetAnimation(2);
+            }
+            with (actor ACTOR_NPC_SAANAITO) {
+                SetAnimation(2);
+            }
+            with (actor ACTOR_NPC_CHAAREMU) {
+                SetAnimation(2);
+            }
+            switch ( $GROUND_ENTER ) {
+                case 139:
+                default:
+                    message_ResetActor();
+                    message_Mail({
+                        english="[CN]Would you like to return to\n[CN][CS:P]Boulder Quarry\'s entrance[CR]?",
+                        french="[CN]Voulez-vous retourner\n[CN]à l\'[CS:P]entrée de la Carrière Rocher[CR]?",
+                        german="[CN]Möchtet ihr zum [CS:P]Geröllbrucheingang[CR]\n[CN]zurückkehren?",
+                        italian="[CN]Vuoi tornare all\'ingresso della\n[CN][CS:P]Cava Rocciosa[CR]?",
+                        spanish="[CN]¿Quieres volver a la entrada\n[CN]del [CS:P]Roquedal[CR]?",
+                    });
+                    switch ( message_SwitchMenu(0, 1) ) {
+                        case menu({
+                            english="Yes",
+                            french="Oui",
+                            german="Ja",
+                            italian="Sì",
+                            spanish="Sí",
+                        }):
+                        default:
+                            message_Close();
+                            bgm_FadeOut(60);
+                            screen_FadeOut(1, 30);
+                            $GROUND_START_MODE = 9;
+                            $SCENARIO_MAIN_BIT_FLAG[29] = 1;
+                            $DUNGEON_RESULT = 3;
+                            switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+                            if ( scn($SCENARIO_SIDE) >= [45, 7] ) {
+                                supervision_ExecuteCommon(CORO_EVENT_N06_16);
+                                hold;
+                            } else {
+                                supervision_ExecuteCommon(CORO_EVENT_N06_09);
+                                hold;
+                            }
+                            break;
+                        case menu({
+                            english="No",
+                            french="Non",
+                            german="Nein",
+                            italian="No",
+                            spanish="No",
+                        }):
+                            jump @label_27;
+                    }
+                    break;
+                case 143:
+                    message_ResetActor();
+                    message_Mail({
+                        english="[CN]Would you like to return to\n[CN][CS:P]Illusion Stone Chamber[CR]?",
+                        french="[CN]Voulez-vous retourner\n[CN]au [CS:P]Passage du Mur Mirage[CR]?",
+                        german="[CN]Möchtet ihr zur [CS:P]Illusionssteinkammer[CR]\n[CN]zurückkehren?",
+                        italian="[CN]Vuoi tornare alla\n[CN][CS:P]Sala dell\'Inganno[CR]?",
+                        spanish="[CN]¿Quieres volver a la\n[CN][CS:P]Cámara Espejismo[CR]?",
+                    });
+                    switch ( message_SwitchMenu(0, 1) ) {
+                        case menu({
+                            english="Yes",
+                            french="Oui",
+                            german="Ja",
+                            italian="Sì",
+                            spanish="Sí",
+                        }):
+                        default:
+                            message_Close();
+                            bgm_FadeOut(60);
+                            screen_FadeOut(1, 30);
+                            $GROUND_START_MODE = 9;
+                            $SCENARIO_MAIN_BIT_FLAG[29] = 1;
+                            $DUNGEON_RESULT = 3;
+                            switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+                            if ( scn($SCENARIO_SIDE) >= [47, 3] ) {
+                                supervision_ExecuteCommon(CORO_EVENT_N06_37);
+                                hold;
+                            } else {
+                                supervision_ExecuteCommon(CORO_EVENT_N06_29);
+                                hold;
+                            }
+                            break;
+                        case menu({
+                            english="No",
+                            french="Non",
+                            german="Nein",
+                            italian="No",
+                            spanish="No",
+                        }):
+                            jump @label_27;
+                    }
+                    break;
+            }
+            break;
+        case 2:
+            with (actor ACTOR_PLAYER_KIMAWARI) {
+                SetAnimation(2);
+            }
+            message_ResetActor();
+            message_Mail({
+                english="[CN]Would you like to return\n[CN]to Treasure Town?",
+                french="[CN]Voulez-vous retourner\n[CN]à Bourg-Trésor?",
+                german="[CN]Möchtet ihr nach Schatzstadt\n[CN]zurückkehren?",
+                italian="[CN]Vuoi tornare a Borgo Tesoro?",
+                spanish="[CN]¿Quieres volver a\n[CN]Aldea Tesoro?",
+            });
+            jump @label_37;
+        default:
+            with (actor ACTOR_PLAYER) {
+                SetAnimation(2);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                SetAnimation(2);
+            }
+            with (actor ACTOR_PLAYER_APPOINT) {
+                SetAnimation(2);
+            }
+            switch ( $GROUND_ENTER ) {
+                case 27:
+                    if ( scn($SCENARIO_MAIN) >= [12, 0] ) {
+                        §label_25;
+                        if ( scn($SCENARIO_MAIN) >= [29, 5] ) {
+                            message_ResetActor();
+                            message_Mail({
+                                english="[CN]Would you like to return\n[CN]to Sharpedo Bluff?",
+                                french="[CN]Voulez-vous retourner\n[CN]à la Falaise Sharpedo?",
+                                german="[CN]Möchtet ihr zur Tohaido-Klippe\n[CN]zurückkehren?",
+                                italian="[CN]Vuoi tornare al Promontorio Sharpedo?",
+                                spanish="[CN]¿Quieres volver al\n[CN]Risco Sharpedo?",
+                            });
+                            jump @label_37;
+                        } else {
+                            switch ( scn($SCENARIO_MAIN)[0] ) {
+                                case == 25:
+                                case == 26:
+                                    message_ResetActor();
+                                    message_Mail({
+                                        english="[CN]Would you like to return\n[CN]to Treasure Town?",
+                                        french="[CN]Voulez-vous retourner\n[CN]à Bourg-Trésor?",
+                                        german="[CN]Möchtet ihr nach Schatzstadt\n[CN]zurückkehren?",
+                                        italian="[CN]Vuoi tornare a Borgo Tesoro?",
+                                        spanish="[CN]¿Quieres volver a\n[CN]Aldea Tesoro?",
+                                    });
+                                    jump @label_37;
+                                default:
+                                    message_ResetActor();
+                                    message_Mail({
+                                        english="[CN]Would you like to return\n[CN]to the guild?",
+                                        french="[CN]Voulez-vous retourner\n[CN]à la Guilde?",
+                                        german="[CN]Möchtet ihr zur Gilde\n[CN]zurückkehren?",
+                                        italian="[CN]Vuoi tornare alla Gilda?",
+                                        spanish="[CN]¿Quieres volver al\n[CN][CS:N]Pokégremio de Exploradores[CR]?",
+                                    });
+                                    jump @label_37;
+                            }
+                        }
+                    } else {
+                        message_ResetActor();
+                        message_Mail({
+                            english="[CN]Would you like to return to\n[CN][CS:P]Steam Cave\'s entrance[CR]?",
+                            french="[CN]Voulez-vous retourner à [CS:P]l\'entrée\n[CN]de la Grotte Etuve[CR]?",
+                            german="[CN]Möchtet ihr zum [CS:P]Dunsthöhleneingang[CR]\n[CN]zurückkehren?",
+                            italian="[CN]Vuoi tornare all\'ingresso della\n[CN][CS:P]Grotta del Vapore[CR]?",
+                            spanish="[CN]¿Quieres volver a la entrada\n[CN]de la [CS:P]Cueva Vapor[CR]?",
+                        });
+                        switch ( message_SwitchMenu(0, 1) ) {
+                            case menu({
+                                english="Yes",
+                                french="Oui",
+                                german="Ja",
+                                italian="Sì",
+                                spanish="Sí",
+                            }):
+                            default:
+                                message_Close();
+                                bgm_FadeOut(60);
+                                screen_FadeOut(1, 30);
+                                $DUNGEON_RESULT = 3;
+                                switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+                                main_EnterGround(LEVEL_D09P11A, 30);
+                                hold;
+                            case menu({
+                                english="No",
+                                french="Non",
+                                german="Nein",
+                                italian="No",
+                                spanish="No",
+                            }):
+                                jump @label_27;
+                        }
+                    }
+                    break;
+                case 48:
+                    message_ResetActor();
+                    message_Mail({
+                        english="[CN]Would you like to return to\n[CN]the [CS:P]Sealed Ruin\'s entrance[CR]?",
+                        french="[CN]Voulez-vous retourner à [CS:P]l\'entrée\n[CN]de la Ruine Scellée[CR]?",
+                        german="[CN]Möchtet ihr zum [CS:P]Ruinenverlieseingang[CR]\n[CN]zurückkehren?",
+                        italian="[CN]Vuoi tornare all\'ingresso delle \n[CN][CS:P]Rovine Inviolabili[CR]?\n",
+                        spanish="[CN]¿Quieres volver a la entrada\n[CN]de las [CS:P]Ruinas Herméticas[CR]?",
+                    });
+                    switch ( message_SwitchMenu(0, 1) ) {
+                        case menu({
+                            english="Yes",
+                            french="Oui",
+                            german="Ja",
+                            italian="Sì",
+                            spanish="Sí",
+                        }):
+                        default:
+                            message_Close();
+                            bgm_FadeOut(60);
+                            screen_FadeOut(1, 30);
+                            $DUNGEON_RESULT = 3;
+                            switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+                            main_EnterGround(LEVEL_D20P11A, 30);
+                            hold;
+                        case menu({
+                            english="No",
+                            french="Non",
+                            german="Nein",
+                            italian="No",
+                            spanish="No",
+                        }):
+                            jump @label_27;
+                    }
+                    break;
+                case 56:
+                    if ( scn($SCENARIO_MAIN) >= [25, 0] ) {
+                        jump @label_25;
+                    } else {
+                        message_ResetActor();
+                        message_Mail({
+                            english="[CN]Would you like to return to\n[CN][CS:P]Brine Cave\'s entrance[CR]?",
+                            french="[CN]Voulez-vous retourner à [CS:P]l\'entrée\n[CN]de la Caverne Saline[CR]?",
+                            german="[CN]Möchtet ihr zum [CS:P]Salzwasserhöhleneingang[CR]\n[CN]zurückkehren?",
+                            italian="[CN]Vuoi tornare all\'ingresso della\n[CN][CS:P]Grotta Salmastra[CR]?",
+                            spanish="[CN]¿Quieres volver a la entrada\n[CN]de la [CS:P]Cueva Aguamar[CR]?",
+                        });
+                        switch ( message_SwitchMenu(0, 1) ) {
+                            case menu({
+                                english="Yes",
+                                french="Oui",
+                                german="Ja",
+                                italian="Sì",
+                                spanish="Sí",
+                            }):
+                            default:
+                                message_Close();
+                                bgm_FadeOut(60);
+                                screen_FadeOut(1, 30);
+                                $DUNGEON_RESULT = 3;
+                                switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+                                main_EnterGround(LEVEL_D25P11A, 30);
+                                hold;
+                            case menu({
+                                english="No",
+                                french="Non",
+                                german="Nein",
+                                italian="No",
+                                spanish="No",
+                            }):
+                                jump @label_27;
+                        }
+                    }
+                    break;
+                case 60:
+                    if ( scn($SCENARIO_MAIN) >= [27, 0] ) {
+                        jump @label_25;
+                    } else {
+                        message_ResetActor();
+                        message_Mail({
+                            english="[CN]Would you like to return to\n[CN]the [CS:P]Hidden Land\'s entrance[CR]?",
+                            french="[CN]Voulez-vous retourner à [CS:P]l\'entrée\n[CN]des Terres Illusoires[CR]?",
+                            german="[CN]Möchtet ihr zum [CS:P]Verborgenes Land-Eingang[CR]\n[CN]zurückkehren?",
+                            italian="[CN]Vuoi tornare all\'ingresso della\n[CN][CS:P]Terra Nascosta[CR]?",
+                            spanish="[CN]¿Quieres volver a la entrada\n[CN]de la [CS:P]Tierra Oculta[CR]?",
+                        });
+                        switch ( message_SwitchMenu(0, 1) ) {
+                            case menu({
+                                english="Yes",
+                                french="Oui",
+                                german="Ja",
+                                italian="Sì",
+                                spanish="Sí",
+                            }):
+                            default:
+                                message_Close();
+                                bgm_FadeOut(60);
+                                screen_FadeOut(1, 30);
+                                $DUNGEON_RESULT = 3;
+                                switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+                                main_EnterGround(LEVEL_D27P11A, 30);
+                                hold;
+                            case menu({
+                                english="No",
+                                french="Non",
+                                german="Nein",
+                                italian="No",
+                                spanish="No",
+                            }):
+                                jump @label_27;
+                        }
+                    }
+                    break;
+                case 67:
+                    if ( scn($SCENARIO_MAIN) >= [27, 0] ) {
+                        jump @label_25;
+                    } else {
+                        message_ResetActor();
+                        message_Mail({
+                            english="[CN]Would you like to return to\n[CN]the [CS:P]Hidden Land\'s entrance[CR]?",
+                            french="[CN]Voulez-vous retourner à [CS:P]l\'entrée\n[CN]des Terres Illusoires[CR]?",
+                            german="[CN]Möchtet ihr zum [CS:P]Verborgenes Land-Eingang[CR]\n[CN]zurückkehren?",
+                            italian="[CN]Vuoi tornare all\'Ingresso della\n[CN][CS:P]Terra Nascosta[CR]?",
+                            spanish="[CN]¿Quieres volver a la entrada\n[CN]de la [CS:P]Tierra Oculta[CR]?",
+                        });
+                        switch ( message_SwitchMenu(0, 1) ) {
+                            case menu({
+                                english="Yes",
+                                french="Oui",
+                                german="Ja",
+                                italian="Sì",
+                                spanish="Sí",
+                            }):
+                            default:
+                                message_Close();
+                                bgm_FadeOut(60);
+                                screen_FadeOut(1, 30);
+                                $DUNGEON_RESULT = 3;
+                                main_EnterGround(LEVEL_D27P11A, 30);
+                                hold;
+                            case menu({
+                                english="No",
+                                french="Non",
+                                german="Nein",
+                                italian="No",
+                                spanish="No",
+                            }):
+                                jump @label_27;
+                        }
+                    }
+                    break;
+                case 68:
+                    if ( scn($SCENARIO_MAIN) >= [27, 0] ) {
+                        jump @label_25;
+                    } else {
+                        message_ResetActor();
+                        message_Mail({
+                            english="[CN]Would you like to return to\n[CN][CS:P]Temporal Tower\'s entrance[CR]?",
+                            french="[CN]Voulez-vous retourner à [CS:P]l\'entrée\n[CN]de la Tour du Temps[CR]?",
+                            german="[CN]Möchtet ihr zum [CS:P]Zeitturmeingang[CR]\n[CN]zurückkehren?",
+                            italian="[CN]Vuoi tornare all\'ingresso della\n[CN][CS:P]Torre del Tempo[CR]?",
+                            spanish="[CN]¿Quieres volver a la entrada\n[CN]de la [CS:P]Torre del Tiempo[CR]?",
+                        });
+                        switch ( message_SwitchMenu(0, 1) ) {
+                            case menu({
+                                english="Yes",
+                                french="Oui",
+                                german="Ja",
+                                italian="Sì",
+                                spanish="Sí",
+                            }):
+                            default:
+                                message_Close();
+                                bgm_FadeOut(60);
+                                screen_FadeOut(1, 30);
+                                $DUNGEON_RESULT = 3;
+                                switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+                                main_EnterGround(LEVEL_D29P11A, 30);
+                                hold;
+                            case menu({
+                                english="No",
+                                french="Non",
+                                german="Nein",
+                                italian="No",
+                                spanish="No",
+                            }):
+                                jump @label_27;
+                        }
+                    }
+                    break;
+                case 98:
+                    if ( scn($SCENARIO_MAIN) >= [29, 86] ) {
+                        jump @label_25;
+                    } else {
+                        message_ResetActor();
+                        message_Mail({
+                            english="[CN]Would you like to return to\n[CN][CS:P]Spacial Rift\'s entrance[CR]?",
+                            french="[CN]Voulez-vous retourner à [CS:P]l\'entrée\n[CN]de la Faille Spatiale[CR]?",
+                            german="[CN]Möchtet ihr zum [CS:P]Raumspalteneingang[CR]\n[CN]zurückkehren?",
+                            italian="[CN]Vuoi tornare all\'ingresso della\n[CN][CS:P]Valle Dimensionale[CR]?",
+                            spanish="[CN]¿Quieres volver a la entrada\n[CN]de la [CS:P]Grieta Espacial[CR]?",
+                        });
+                        switch ( message_SwitchMenu(0, 1) ) {
+                            case menu({
+                                english="Yes",
+                                french="Oui",
+                                german="Ja",
+                                italian="Sì",
+                                spanish="Sí",
+                            }):
+                            default:
+                                message_Close();
+                                bgm_FadeOut(60);
+                                screen_FadeOut(1, 30);
+                                $DUNGEON_RESULT = 3;
+                                switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+                                main_EnterGround(LEVEL_D38P12A, 30);
+                                hold;
+                            case menu({
+                                english="No",
+                                french="Non",
+                                german="Nein",
+                                italian="No",
+                                spanish="No",
+                            }):
+                                jump @label_27;
+                        }
+                    }
+                    break;
+                case 228:
+                    if ( scn($SCENARIO_MAIN) >= [29, 5] ) {
+                        §label_13;
+                        message_ResetActor();
+                        message_Mail({
+                            english="[CN]Would you like to return\n[CN]to Treasure Town?",
+                            french="[CN]Voulez-vous retourner\n[CN]à Bourg-Trésor?",
+                            german="[CN]Möchtet ihr nach Schatzstadt\n[CN]zurückkehren?",
+                            italian="[CN]Vuoi tornare a Borgo Tesoro?",
+                            spanish="[CN]¿Quieres volver a\n[CN]Aldea Tesoro?",
+                        });
+                        switch ( message_SwitchMenu(0, 1) ) {
+                            case menu({
+                                english="Yes",
+                                french="Oui",
+                                german="Ja",
+                                italian="Sì",
+                                spanish="Sí",
+                            }):
+                            default:
+                                message_Close();
+                                bgm_FadeOut(60);
+                                main_EnterGround(LEVEL_P01P01A, 30);
+                                hold;
+                            case menu({
+                                english="No",
+                                french="Non",
+                                german="Nein",
+                                italian="No",
+                                spanish="No",
+                            }):
+                                jump @label_27;
+                        }
+                    } else {
+                        jump @label_25;
+                    }
+                    break;
+                case 74:
+                    jump @label_13;
+                case 156:
+                    supervision_ExecuteCommon(CORO_EVENT_S31_03);
+                    hold;
+                case 157:
+                    $DUNGEON_RESULT = 3;
+                    supervision_ExecuteCommon(CORO_EVENT_S31_07);
+                    hold;
+                case 158:
+                    $DUNGEON_RESULT = 3;
+                    supervision_ExecuteCommon(CORO_EVENT_S31_10);
+                    hold;
+                case 159:
+                    $DUNGEON_RESULT = 3;
+                    supervision_ExecuteCommon(CORO_EVENT_S31_13);
+                    hold;
+                case 160:
+                    $DUNGEON_RESULT = 3;
+                    supervision_ExecuteCommon(CORO_EVENT_S31_16);
+                    hold;
+                case 161:
+                    $DUNGEON_RESULT = 3;
+                    supervision_ExecuteCommon(CORO_EVENT_S31_38);
+                    hold;
+                case 162:
+                    $DUNGEON_RESULT = 3;
+                    supervision_ExecuteCommon(CORO_EVENT_S31_22);
+                    hold;
+                case 163:
+                    $DUNGEON_RESULT = 3;
+                    supervision_ExecuteCommon(CORO_EVENT_S31_25);
+                    hold;
+                case 164:
+                    $DUNGEON_RESULT = 3;
+                    supervision_ExecuteCommon(CORO_EVENT_S31_29);
+                    hold;
+                case 165:
+                    $DUNGEON_RESULT = 3;
+                    supervision_ExecuteCommon(CORO_EVENT_S31_32);
+                    hold;
+                case 166:
+                    supervision_ExecuteCommon(CORO_EVENT_S32_03);
+                    hold;
+                default:
+                    jump @label_25;
+            }
+            break;
+    }
+}

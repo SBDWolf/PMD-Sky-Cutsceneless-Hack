@@ -1,0 +1,46 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_MAIN = scn[19, 4];
+    back_SetGround(LEVEL_D21P41A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_MIKARUGE) {
+        SetAnimation(23);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetAnimation(29);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetOutputAttribute(2);
+    }
+    with (object OBJECT_D21P41A1_61) {
+        SetAnimation(1);
+    }
+    supervision_Acting(1);
+    screen_FadeIn(1, 30);
+
+    //with (object OBJECT_D21P41A2_64) {
+        //Destroy();
+    //}
+    Wait(1);
+    WaitExecuteLives(ACTOR_NPC_MIKARUGE);
+    bgm_FadeOut(30);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    WaitSe(5143);
+    CallCommon(CORO_BOSS_WIPE_FUNC);
+    main_EnterDungeon(31, 30);
+    main_EnterDungeon(-1, 30);
+    hold;
+    end;
+}

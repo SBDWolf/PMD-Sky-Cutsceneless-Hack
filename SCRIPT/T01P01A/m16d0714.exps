@@ -1,0 +1,320 @@
+
+def 0 {
+    bgm_Stop();
+    CallCommon(CORO_FADE_OUT_ALL_BEFORE);
+    back_SetGround(LEVEL_T01P01A);
+    supervision_Acting(2);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    screen_FadeInAll(1, 30);
+    Wait(30);
+    with (actor ACTOR_NPC_S_YONOWAARU) {
+        SetAnimation(27);
+    }
+    with (actor ACTOR_NPC_S_YONOWAARU) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_S_YONOWAARU);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" It\'s too soon for farewells!",
+        french=" Il est encore trop tôt pour\nnous dire adieu!",
+        german=" Es ist noch zu früh, um sich\nzu verabschieden!",
+        italian=" È troppo presto per gli addii!",
+        spanish=" ¡Es muy pronto para despedidas!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_S_YONOWAARU) {
+        SetAnimation(28);
+    }
+    with (actor ACTOR_NPC_S_YONOWAARU) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_S_YONOWAARU);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(11);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(11);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_BOTTOM_L_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Waah!",
+                french=" Ouaaah!",
+                german=" Waah!",
+                italian=" Aargh!!!",
+                spanish=" ¡Aaah!",
+            }
+        case 2:
+            {
+                english=" Waah!",
+                french=" Ouaaah!",
+                german=" Waah!",
+                italian=" Aaah!",
+                spanish=" ¡Aaah!",
+            }
+        default:
+            {
+                english=" Waah!",
+                french=" Ouaaah!",
+                german=" Waah!",
+                italian=" Aaah!",
+                spanish=" ¡Aaah!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_RINGUMA) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_S_DIGUDA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_S_PERAPPU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_S_BIPPA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_S_DOGOOMU) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_S_DAGUTORIO) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_JIBAKOIRU);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" You two...[K]are coming with me!",
+        french=" Vous deux...[K] vous venez avec\nmoi!",
+        german=" Ihr zwei...[K] kommt mit mir!",
+        italian=" Voi due...[K] venite con me!",
+        spanish=" Porque...[K] ¡os venís conmigo!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_S_YONOWAARU) {
+        SetAnimation(50);
+    }
+    with (actor ACTOR_PLAYER) {
+        SlidePositionOffset(3, 0, -16);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SlidePositionOffset(3, 0, -16);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_NPC_S_YONOWAARU) {
+        SlidePositionOffset(32896, 0, -24);
+    }
+    with (actor ACTOR_PLAYER) {
+        SlidePositionOffset(32896, 0, -24);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SlidePositionOffset(32896, 0, -24);
+    }
+    bgm_FadeOut(60);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_BOTTOM_L_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Waaah!",
+                french=" Ouaaah!",
+                german=" Waaah!",
+                italian=" Aaaah!",
+                spanish=" ¡Aaah!",
+            }
+        case 2:
+            {
+                english=" Waaah!",
+                french=" Ouaaah!",
+                german=" Waaah!",
+                italian=" Aaaah!",
+                spanish=" ¡Aaah!",
+            }
+        default:
+            {
+                english=" Waaah!",
+                french=" Ouaaah!",
+                german=" Waaah!",
+                italian=" Aaaah!",
+                spanish=" ¡Aaah!",
+            }
+    }
+    Wait(45);
+    message_CloseEnforce();
+    with (actor ACTOR_NPC_S_YONOWAARU) {
+        Destroy();
+    }
+    with (actor ACTOR_PLAYER) {
+        Destroy();
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_RINGUMA) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_S_DIGUDA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_S_PERAPPU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_S_BIPPA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_S_DOGOOMU) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_S_DAGUTORIO) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_JIBAKOIRU);
+    with (actor ACTOR_NPC_S_BIPPA) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_S_BIPPA);
+    message_SetFace(ACTOR_NPC_BIPPA, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" By gosh!",
+        french=" Sapristi!",
+        german=" Meine Güte!",
+        italian=" Ohibò!",
+        spanish=" ¡Córcholis!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_CHIRIIN, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" [partner]! [hero]!",
+        french=" [partner]! [hero]!",
+        german=" [partner]! [hero]!",
+        italian=" [partner]! [hero]!",
+        spanish=" ¡[partner]! ¡[hero]!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_S_DIGUDA) {
+        Move2PositionOffset(1, -8, -12);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        Move2PositionOffset(1, -12, -8);
+    }
+    with (actor ACTOR_NPC_S_CHIRIIN) {
+        Move2PositionOffset(1, -12, -12);
+    }
+    with (actor ACTOR_NPC_S_BIPPA) {
+        Move2PositionOffset(1, -12, -8);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_S_DAGUTORIO) {
+        Move2PositionOffset(1, 0, -12);
+    }
+    with (actor ACTOR_NPC_S_PUKURIN) {
+        Move2PositionOffset(1, -8, -12);
+    }
+    with (actor ACTOR_NPC_S_PERAPPU) {
+        Move2PositionOffset(1, -8, -12);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_S_HEIGANI) {
+        Move2PositionOffset(1, 0, -20);
+    }
+    with (actor ACTOR_NPC_KAKUREON1) {
+        Move2PositionOffset(1, 0, -16);
+    }
+    with (actor ACTOR_NPC_S_KIMAWARI) {
+        Move2PositionOffset(1, 8, -12);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_S_DOGOOMU) {
+        Move2PositionOffset(1, 12, -16);
+    }
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        Move2PositionOffset(1, 0, -12);
+    }
+    with (actor ACTOR_NPC_S_YUKUSHII) {
+        Move2PositionOffset(1, 8, -12);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_S_EMURITTO) {
+        Move2PositionOffset(1, 8, -12);
+    }
+    with (actor ACTOR_NPC_S_AGUNOMU) {
+        Move2PositionOffset(1, 8, -12);
+    }
+    with (actor ACTOR_NPC_RINGUMA) {
+        Move2PositionOffset(1, 12, -12);
+    }
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        Move2PositionOffset(1, 12, -12);
+    }
+    with (object OBJECT_T01P01A5_194) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_T01P01A5_194) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_T01P01A5_194);
+    with (object OBJECT_T01P01A5_194) {
+        Destroy();
+    }
+    Wait(60);
+    message_SetFace(ACTOR_NPC_KAKUREON1, FACE_NORMAL, FACE_POS_BOTTOM_R_CENTER);
+    message_Talk({
+        english=" Wh-what was...",
+        french=" Qu\'est-ce que...",
+        german=" W-was war...",
+        italian=" C-Cosa...",
+        spanish=" ¿Pero... qué...?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_KIMAWARI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" What just happened...?",
+        french=" Qu\'est-ce qui s\'est passé...?",
+        german=" Was ist gerade passiert?",
+        italian=" Cos\'è successo...?",
+        spanish=" ¿Qué acaba de suceder...?",
+    });
+    message_Close();
+    screen_FadeOutAll(1, 30);
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    end;
+}

@@ -1,0 +1,21 @@
+
+def 0 {
+    sound_Stop();
+    §label_0;
+    §label_4;
+    $SCENARIO_MAIN_BIT_FLAG[1] = 1;
+    back_SetGround(LEVEL_G01P07A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
+    screen_FadeIn(1, 30);
+    main_SetGround(LEVEL_G01P07A);
+    $SCENARIO_MAIN_BIT_FLAG[7] = 1;
+    CallCommon(CORO_HANYOU_SAVE_FUNC);
+    CallCommon(CORO_EVENT_END_MAPIN);
+    supervision_ExecuteStationCommon(LEVEL_G01P07A, 1);
+    end;
+}

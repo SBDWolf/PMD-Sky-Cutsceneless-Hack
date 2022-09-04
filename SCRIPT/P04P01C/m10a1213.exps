@@ -1,0 +1,11 @@
+
+def 0 {
+    switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+    $COMPULSORY_SAVE_POINT = 9;
+    $SCENARIO_BALANCE_FLAG = 3;
+    $SPECIAL_EPISODE_OPEN[1] = 1;
+    $SCENARIO_MAIN = scn[12, 0];
+    //Wait(40);
+    //CallCommon(CORO_HANYOU_SAVE_FUNC);
+    end;
+}

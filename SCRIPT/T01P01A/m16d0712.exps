@@ -1,0 +1,90 @@
+
+def 0 {
+    CallCommon(CORO_FADE_OUT_ALL_BEFORE);
+    back_SetGround(LEVEL_T01P01A);
+    supervision_Acting(2);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    Wait(1);
+    with (actor ACTOR_NPC_S_JUPUTORU) {
+        SetAnimation(26);
+    }
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    screen_FadeInAll(1, 30);
+    Wait(30);
+    with (actor ACTOR_NPC_S_YONOWAARU) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_S_YONOWAARU);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" [CS:N]Uxie[CR]...[CS:N]Mesprit[CR]...[CS:N]Azelf[CR]...",
+        french=" [CS:N]Créhelf[CR]... [CS:N]Créfollet[CR]...\n[CS:N]Créfadet[CR]...",
+        german=" [CS:N]Selfe[CR]...[CS:N] Vesprit[CR]...[CS:N] Tobutz[CR]...",
+        italian=" [CS:N]Uxie[CR]... [CS:N]Mesprit[CR]... [CS:N]Azelf[CR]...",
+        spanish=" [CS:N]Uxie[CR]... [CS:N]Mesprit[CR]... [CS:N]Azelf[CR]...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_S_YUKUSHII) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_S_YUKUSHII);
+    message_Talk({
+        english=" I entrust you with the rest.",
+        french=" Je vous fais confiance\npour la suite.",
+        german=" Ich vertraue euch die Aufgabe\nan, es zu Ende zu bringen.",
+        italian=" Affido a voi il resto.",
+        spanish=" Os confío a vosotros el resto.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_AGUNOMU, FACE_NORMAL, FACE_POS_BOTTOM_C_FACEL);
+    message_FacePositionOffset(1, 4);
+    message_Talk({
+        english=" Yep.",
+        french=" Ouaip.",
+        german=" Ja.",
+        italian=" D\'accordo.",
+        spanish=" Sí.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_EMURITTO, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" We know.",
+        french=" Nous savons ce que nous avons\nà faire.",
+        german=" Wir wissen Bescheid.",
+        italian=" Lasci fare a noi.",
+        spanish=" Lo sabemos.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_YUKUSHII, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEINW);
+    message_Talk({
+        english=" We got the Time Gears back.",
+        french=" Nous avons récupéré\nles Rouages du Temps.",
+        german=" Wir haben die Zahnräder der\nZeit wieder.",
+        italian=" Gli Ingranaggi del Tempo sono\ntornati in mano nostra...",
+        spanish=" Hemos recuperado los Engranajes\ndel Tiempo.",
+    });
+    message_Talk({
+        english=" And we will make sure they\'re\nreturned to their rightful places.",
+        french=" Et nous allons nous assurer\nqu\'ils reprennent leur juste place.",
+        german=" Und wir werden sicherstellen,\ndass sie wieder da hinkommen, wo sie\nhingehören.",
+        italian=" Sarà nostro compito rimetterli\nal loro posto.",
+        spanish=" Y nos encargaremos de que\nvuelvan a ocupar el lugar que les corresponde.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" The task is yours.",
+        french=" Cette tâche vous revient.",
+        german=" Das ist eure Aufgabe.",
+        italian=" Va bene.",
+        spanish=" Eso queda en vuestras manos.",
+    });
+    message_Close();
+    screen_FadeOutAll(1, 30);
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    end;
+}

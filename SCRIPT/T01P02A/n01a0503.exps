@@ -1,0 +1,702 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_TREASURE_TOWN, 0, 0);
+    back_SetGround(LEVEL_T01P02A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    supervision_Acting(4);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_KAKUREON1) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_KAKUREON2) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_KAKUREON1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_KAKUREON2) {
+        SetAnimation(2);
+    }
+    bgm_ChangeVolume(60, 256);
+    CallCommon(CORO_FADE_OUT_ALL_BEFORE);
+    screen_FadeInAll(1, 30);
+    Wait(30);
+    se_Play(8972);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SPECIAL2, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Sniff...[K] This is the emergency\nmoney I got from Mama.",
+        french=" Snif...[K] C\'est l\'argent que m\'man\nm\'a filé en cas de coup dur.",
+        german=" Schnief...[K] Das ist der\nNotgroschen von meiner Mama.",
+        italian=" Sniff...[K] Questi sono i soldi che\nla mamma mi ha dato in caso di emergenza.",
+        spanish=" Así es...[K] Este es el dinero para\nemergencias que me dio mamá.",
+    });
+    message_Talk({
+        english=" I can\'t just spend it carelessly...",
+        french=" J\'peux pas m\'permettre de\nl\'dépenser sans r\'garder.",
+        german=" Den kann ich nicht einfach\nso ausgeben...",
+        italian=" Non posso sperperarli\ninutilmente...",
+        spanish=" No puedo gastarlo a la ligera...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        MovePositionOffset(1, 0, 8);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    se_Play(8713);
+    supervision_RemoveActing(4);
+    Wait(30);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SlidePositionOffset(1, 0, -8);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetAnimation(2);
+    }
+    Wait(30);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(4, 2, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SAD, FACE_POS_STANDARD);
+    message_Talk({
+        english=" I considered it...[K]but I\'ll have to\npass on buying it.",
+        french=" Tout bien considéré...[K]\nj\'vais pas pouvoir l\'acheter.",
+        german=" Ich habe darüber nachgedacht,[K]\naber ich kann mir diesen Kauf nicht erlauben.",
+        italian=" Ci ho pensato...[K] ma temo che\ndovrò rinunciare all\'acquisto.",
+        spanish=" Me lo he estado pensando...[K]\nNo voy a poder comprarla.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_KAKUREON2, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Is that so...[K]\nThat\'s too bad...",
+        french=" Vraiment?[K]\nC\'est bien dommage...",
+        german=" Na, wenn das so ist...[K]\nZu schade...",
+        italian=" Capisco...[K]\nPeccato...",
+        spanish=" Vaya...[K] Es una lástima...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SAD, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Thank you so much for listening\nto me...[K] See you.",
+        french=" Merci quand même d\'m\'avoir\nécouté...[K] A plus.",
+        german=" Vielen Dank für deine\nAufmerksamkeit...[K] Bis bald.",
+        italian=" Vi ringrazio molto di avermi\nascoltato...[K] Ci vediamo.",
+        spanish=" Muchísimas gracias por escucharme.[K]\nHasta luego.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (performer 0) {
+        MovePositionOffset(32896, 40, 0);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        MovePositionOffset(32896, 40, 0);
+    }
+    with (actor ACTOR_NPC_KAKUREON1) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_KAKUREON2) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_KAKUREON2);
+    Wait(5);
+    message_SetFace(ACTOR_NPC_KAKUREON2, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Anytime!",
+        french=" Au plaisir!",
+        german=" Wann immer du willst!",
+        italian=" A presto!",
+        spanish=" ¡No hay de qué!",
+    });
+    message_Talk({
+        english=" If you change your mind, come\nback anytime. ♪",
+        french=" N\'hésite pas à repasser, si\njamais tu changes d\'avis. ♪",
+        german=" Komm wieder, wenn du dich\numentscheiden solltest. ♪",
+        italian=" Se cambi idea, torna pure\nquando vuoi. ♪",
+        spanish=" Si cambia de opinión, vuelva\ncuando quiera. ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(4, 2, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    se_Play(8972);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SAD, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" ...[K]Sniff...[K] Now that you\'ve said\nthat, how can I ever make up my mind\nfor sure? Yup yup...",
+        french=" ...[K] Snif...[K] Ne m\'dis pas ça,\nj\'pourrais rev\'nir sur ma décision... ouaip...",
+        german=" ...[K]Schnüff...[K] Ich lasse es mir\nnoch mal durch den Kopf gehen... Jawollja...",
+        italian=" ...[K] Sniff...[K] Se mi dici così,\ndivento più indeciso di prima... Già, già...",
+        spanish=" Jo...[K] Buaa...[K] Si me dices eso,\n¿cómo voy a decidirme del todo? Ay...",
+    });
+    message_Talk({
+        english=" But...[K] It\'s fine...[K]\nImpulse buying isn\'t good.",
+        french=" Mais...[K] non, c\'est décidé...[K]\nAcheter sur un coup d\'tête, c\'est pas bon...",
+        german=" Aber...[K] Vielleicht ist es besser\nso...[K] Spontankäufe sind so eine Sache...",
+        italian=" Ma...[K] è meglio di no...[K]\nSpendere soldi senza riflettere è sbagliato.",
+        spanish=" Pero...[K] No pasa nada...[K]\nNo es bueno comprar de forma impulsiva.",
+    });
+    message_Talk({
+        english=" It\'s too bad...[K]but I\'m going to\ngive up on the TM...",
+        french=" C\'est trop bête...[K]\nmais faut qu\'j\'oublie cette histoire de CT...",
+        german=" Wirklich schade...[K] Aber aus der\nTM wird wohl nix.",
+        italian=" È un peccato...[K] ma dovrò\nrinunciare alla MT...",
+        spanish=" Es una pena...[K] pero voy a tener\nque olvidarme de la MT.",
+    });
+    message_Close();
+    bgm_FadeOut(120);
+    with (performer 0) {
+        MovePositionMark(32896, Position<'m0', 53, 24.5>);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        MovePositionMark(32896, Position<'m1', 53, 24>);
+    }
+    Wait(45);
+    supervision_Acting(1);
+    Wait(1);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        MovePositionMark(33152, Position<'m2', 59, 26.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    se_Play(8978);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_RIGHT, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        ExecuteCommon(CORO_LOOK_AROUND_RIGHT_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SetAnimation(3);
+    }
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    Wait(1);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SetAnimation(2);
+    }
+    message_SetFaceOnly(ACTOR_NPC_YUKIKABURI, FACE_PAIN, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Erk...[K] Scary...",
+        french=" Je tremble...[K] J\'ai peur...",
+        german=" Bibber...[K] Ich habe Angst...",
+        italian=" Brrr...[K] Che paura...",
+        spanish=" Qué escalofrío...[K] Qué miedo...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        Turn2Direction(1, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    Wait(15);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    message_SetFaceOnly(ACTOR_NPC_YUKIKABURI, FACE_WORRIED, FACE_POS_BOTTOM_R_FACEOUTW);
+    message_Talk({
+        english=" Umm...[K] Umm... What should I do...",
+        french=" Mmmh...[K] Mmmh... Que faire...?",
+        german=" Oh...[K] Oh... Was soll ich nur machen...",
+        italian=" Uhm...[K] Uhm... Cosa devo fare...",
+        spanish=" Hum...[K] Hum... Qué hago...",
+    });
+    se_Play(8972);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    Wait(20);
+    se_Play(8964);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    Wait(20);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        MovePositionMark(33152, Position<'m3', 53, 26.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    se_Play(8972);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    message_SetFaceOnly(ACTOR_NPC_YUKIKABURI, FACE_PAIN, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Excuse me! [K]H-hold this!",
+        french=" Excuse-moi! [K]T-tiens ça!",
+        german=" Entschuldige![K] N-nimm das bitte!",
+        italian=" Scusami![K] P-Prendi questo!",
+        spanish=" ¡Disculpa![K] ¡Sujétame esto!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8710);
+    WaitSe(8710);
+    message_Mail({
+        english="[CN][CS:Y]Bidoof[CR] received something\n[CN]from the strange Pokémon.",
+        french="[CN]Un étrange Pokémon\n[CN]donne quelque chose à [CS:Y]Keunotor[CR].",
+        german="[CN][CS:Y]Bidiza[CR] erhielt etwas von\n[CN]dem sonderbaren Pokémon.",
+        italian="[CN][CS:Y]Bidoof[CR] riceve qualcosa\n[CN]da uno strano Pokémon.",
+        spanish="[CN][CS:Y]Bidoof[CR] ha recibido algo\n[CN]del Pokémon desconocido.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SAD, FACE_POS_TOP_C_FACER);
+    message_FacePositionOffset(0, 2);
+    message_Talk({
+        english=" Huh...[K] Golly, what is this?",
+        french=" Hein...[K] Sapristi, c\'est quoi, ça?",
+        german=" Nanu![K]\nDonnerwetter, was ist los?",
+        italian=" Uh...[K] Ohibò, cos\'è questo?",
+        spanish=" ¿Eh?...[K] Caramba, ¿qué es esto?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        Turn2Direction(1, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    Wait(15);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    Wait(15);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        MovePositionOffset(33408, -200, 0);
+    }
+    Wait(20);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_KAKUREON2) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_NPC_KAKUREON1) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SAD, FACE_POS_TOP_C_FACEL);
+    message_FacePositionOffset(0, 2);
+    message_Talk({
+        english=" Hey! [K]You...[K]wait!",
+        french=" Hé! [K]Toi...[K] attends un peu!",
+        german=" Hey! [K]Du...[K] Warte!",
+        italian=" Ehi![K] Tu...[K] Aspetta!",
+        spanish=" ¡Eh![K] ¡Tú!...[K] ¡Espera!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        Destroy();
+    }
+    Wait(60);
+    se_Play(8961);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_SWEAT_DROP, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SAD, FACE_POS_TOP_C_FACEL);
+    message_FacePositionOffset(0, 2);
+    message_Talk({
+        english=" ...[K]Just now...[K]\nWhat was that, anyway...?",
+        french=" ...[K] Ça alors...[K]\nC\'est quoi, c\'t\'histoire...?",
+        german=" ...[K]Aber...[K] Was war das\ndenn gerade?",
+        italian=" ...[K] E adesso?[K]\nMa chi era quello...?",
+        spanish=" Eeeh...[K] Pero...[K] ¿a qué ha venido eso?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    supervision_Acting(2);
+    Wait(1);
+    with (actor ACTOR_NPC_TATSUBEI) {
+        MovePositionMark(33152, Position<'m4', 59, 26.5>);
+    }
+    Wait(15);
+    supervision_Acting(3);
+    Wait(1);
+    with (actor ACTOR_NPC_GURAIGAA) {
+        MovePositionMark(33152, Position<'m5', 63, 26.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_TATSUBEI);
+    bgm_PlayFadeIn(BGM_AIR_OF_UNEASE, 0, 256);
+    with (actor ACTOR_NPC_TATSUBEI) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    Wait(12);
+    with (actor ACTOR_NPC_GURAIGAA) {
+        ExecuteCommon(CORO_LOOK_AROUND_DOWN_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_GURAIGAA);
+    message_SetFaceOnly(ACTOR_NPC_GURAIGAA, FACE_NORMAL, FACE_POS_TOP_RC_FACER);
+    message_Talk({
+        english=" Do you see him...? [CS:N]Bagon[CR]!",
+        french=" Tu le vois...? [CS:N]Draby[CR]!",
+        german=" Siehst du ihn? [CS:N]Kindwurm[CR]!",
+        italian=" [CS:N]Bagon[CR]! Lo vedi...?",
+        spanish=" [CS:N]Bagon[CR], ¿lo ves por algún lado?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_TATSUBEI, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(0, 2);
+    message_Talk({
+        english=" Nope. [K]Lost sight of him.",
+        french=" Non. [K]Perdu de vue.",
+        german=" Nein.[K] Habe ihn aus den Augen\nverloren.",
+        italian=" No.[K] L\'ho perso di vista.",
+        spanish=" Pues no.[K] Le he perdido la pista.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8971);
+    with (actor ACTOR_NPC_GURAIGAA) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_GURAIGAA);
+    message_SetFaceOnly(ACTOR_NPC_GURAIGAA, FACE_NORMAL, FACE_POS_TOP_RC_FACER);
+    message_Talk({
+        english=" Blast! [K]Where\'d he disappear to?!",
+        french=" Malédiction![K]\nOù est-ce qu\'il a bien pu disparaître?!",
+        german=" So was![K] Wohin ist er nur verschwunden?",
+        italian=" Diamine![K] Dov\'è finito?!",
+        spanish=" ¿Dónde está?[K] ¡¿Adónde ha ido?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_GURAIGAA) {
+        ExecuteCommon(CORO_LOOK_AROUND_DOWN_FUNC_SERIES, 0);
+    }
+    Wait(15);
+    with (actor ACTOR_NPC_TATSUBEI) {
+        MovePositionMark(33152, Position<'m6', 53, 26.5>);
+    }
+    with (actor ACTOR_NPC_TATSUBEI) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_TATSUBEI);
+    message_SetFace(ACTOR_NPC_TATSUBEI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Hey! You!",
+        french=" Hé! Toi!",
+        german=" Hey! Du!",
+        italian=" Ehi! Tu!",
+        spanish=" ¡Eh, tú!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8962);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    with (actor ACTOR_NPC_KAKUREON1) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_KAKUREON2) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_FacePositionOffset(0, 2);
+    message_Talk({
+        english=" Yes?",
+        french=" Oui?",
+        german=" Ja?",
+        italian=" Sì?",
+        spanish=" ¿Sí?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_GURAIGAA) {
+        MovePositionMark(33152, Position<'m7', 56, 26.5>);
+    }
+    with (actor ACTOR_NPC_GURAIGAA) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_GURAIGAA);
+    message_SetFace(ACTOR_NPC_TATSUBEI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Did you just see a lone Pokémon\nrun through here?",
+        french=" Tu as vu un Pokémon tout seul\npasser par ici en courant?",
+        german=" Hast du gerade ein einzelnes\nPokémon hier vorbeilaufen sehen?",
+        italian=" Hai visto un Pokémon solitario\npassare di qua?",
+        spanish=" ¿Por casualidad no habrás visto\na un Pokémon solo corriendo por aquí?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_FacePositionOffset(0, 2);
+    message_Talk({
+        english=" A Pokémon...?[K] Let me see...",
+        french=" Un Pokémon...?[K]\nBen, attends voir...",
+        german=" Ein Pokémon?[K]\nEinen Augenblick...",
+        italian=" Un Pokémon...?[K] Fatemi pensare...",
+        spanish=" ¿Un Pokémon?[K] A ver que piense...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8971);
+    with (actor ACTOR_NPC_GURAIGAA) {
+        SetEffect(EFFECT_ANGRY, 3);
+    }
+    with (actor ACTOR_NPC_GURAIGAA) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(1, 10, DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    message_SetFaceOnly(ACTOR_NPC_GURAIGAA, FACE_ANGRY, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Come on! We\'re in a hurry!",
+        french=" Dépêche! On n\'a pas toute la journée!",
+        german=" Nun mach schon! Wir haben es eilig!",
+        italian=" Muoviti! Abbiamo fretta!",
+        spanish=" ¡Venga! ¡Tenemos prisa!",
+    });
+    message_Talk({
+        english=" Quit taking your time and just spit it\nout already!",
+        french=" Arrête de nous faire perdre notre temps\net crache le morceau!",
+        german=" Nun mach schon und spuck es aus!",
+        italian=" Smettila di perdere tempo e dicci\nquello che sai!",
+        spanish=" ¡Deja ya de pensártelo y suéltalo\nde una vez, que ya tardas!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8968);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SlidePositionOffset(2, -4, -4);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetAnimation(2);
+    }
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SPECIAL2, FACE_POS_TOP_C_FACER);
+    message_FacePositionOffset(0, 2);
+    message_Talk({
+        english=" Eee...[K] Eeeeeeeeeeeeek![K]\nS-scary!",
+        french=" Hiii...[K] Hiiiiiiiiiiiiiiiiiiiii![K]\nLa... la trouille!",
+        german=" Iee...[K] Ieeeeeeeeeeeek![K] H-hilfe!",
+        italian=" Aaa...[K] Aaaaaaah![K]\nC-Che paura!",
+        spanish=" Aaaah...[K] ¡Aaaaaay![K] ¡Vale, vale!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_TATSUBEI) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_GURAIGAA);
+    }
+    WaitExecuteLives(ACTOR_NPC_TATSUBEI);
+    message_SetFace(ACTOR_NPC_TATSUBEI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Hey, hold on, [CS:N]Gligar[CR].",
+        french=" Holà, maîtrise-toi un peu,\n[CS:N]Scorplane[CR].",
+        german=" Hey, mal langsam, [CS:N]Skorgla[CR].",
+        italian=" Ehi, calmati, [CS:N]Gligar[CR].",
+        spanish=" Eh, cálmate, [CS:N]Gligar[CR].",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_GURAIGAA) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_TATSUBEI) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER_BIPPA);
+    }
+    WaitExecuteLives(ACTOR_NPC_TATSUBEI);
+    message_SetFace(ACTOR_NPC_TATSUBEI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" White body, looking kind of\nnervous.[K] Did you see him?",
+        french=" Tout blanc, l\'air nerveux.[K]\nAlors, tu l\'as vu ou pas?",
+        german=" Weißer Körper, ein wenig\nnervös,[K] hast du so einen gesehen?",
+        italian=" Corpo bianco, aria nervosa...[K]\nLo hai visto?",
+        spanish=" Cuerpo blanco, con pinta de\nandar nervioso...[K] ¿Lo has visto?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SAD, FACE_POS_TOP_C_FACER);
+    message_FacePositionOffset(0, 2);
+    message_Talk({
+        english=" Um...[K] Uh...[K] Th-that is...",
+        french=" Heu...[K] B-ben...[K] C-c\'est que...",
+        german=" Ähm...[K] Öh...[K]\nAlso, um genau zu sein...",
+        italian=" Uhm...[K] Uh...[K] Ma è...",
+        spanish=" Hum...[K] Eh...[K] Pues...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SAD, FACE_POS_TOP_C_FACEL);
+    message_FacePositionOffset(0, 2);
+    message_Talk({
+        english=" He went that way...",
+        french=" Il est parti par là...",
+        german=" Er ist dort lang...",
+        italian=" È andato da quella parte...",
+        spanish=" Se ha ido por ahí...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_GURAIGAA) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_TATSUBEI);
+    }
+    WaitExecuteLives(ACTOR_NPC_GURAIGAA);
+    with (actor ACTOR_NPC_TATSUBEI) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_GURAIGAA);
+    }
+    WaitExecuteLives(ACTOR_NPC_TATSUBEI);
+    message_SetFace(ACTOR_NPC_GURAIGAA, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Let\'s go!",
+        french=" En avant!",
+        german=" Auf geht\'s!",
+        italian=" Andiamo!",
+        spanish=" ¡Vamos!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_NPC_TATSUBEI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Yeah!",
+        french=" Ouais!",
+        german=" Jawoll!",
+        italian=" Sì!",
+        spanish=" ¡Sí!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_FadeOut(160);
+    with (actor ACTOR_NPC_TATSUBEI) {
+        MovePositionOffset(33408, -200, 0);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_GURAIGAA) {
+        MovePositionOffset(33408, -200, 0);
+    }
+    Wait(20);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_KAKUREON2) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_NPC_KAKUREON1) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_GURAIGAA);
+    with (actor ACTOR_NPC_TATSUBEI) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_GURAIGAA) {
+        Destroy();
+    }
+    Wait(90);
+    se_Play(8972);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SAD, FACE_POS_TOP_C_FACEL);
+    message_FacePositionOffset(0, 2);
+    message_Talk({
+        english=" Sniff...[K] They were pretty scary.",
+        french=" Snif...[K] Y z\'étaient affreux,\nces types.",
+        german=" Schnüff...[K]\nDie waren ganz schön furchteinflößend.",
+        italian=" Sniff...[K] Che paura mi hanno\nfatto.",
+        spanish=" Jo...[K] Daban bastante miedito.",
+    });
+    message_Talk({
+        english=" I\'m not very brave, so I don\'t\nwant to have anything to do with Pokémon\nlike them...[K] Sniff...",
+        french=" J\'suis pas bien courageux, alors\nj\'veux pas avoir quoi qu\'ce soit à faire avec\ndes Pokémon comme ça...[K] Snif...",
+        german=" Mit Pokémon wie diesen möchte\nich lieber nichts zu tun haben, dafür habe ich\nzu viel Angst...[K] Schnüff...",
+        italian=" Non sono molto coraggioso,\nquindi non voglio avere niente a che\nfare con Pokémon simili...[K] Sniff...",
+        spanish=" No soy muy valiente, así que\nno quiero tener nada que ver con Pokémon\nde esa calaña...[K] Ay...",
+    });
+    message_Close();
+    screen_FadeOutAll(1, 90);
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    Wait(60);
+    $SCENARIO_MAIN_BIT_FLAG[8] = 1;
+    $COMPULSORY_SAVE_POINT_SIDE = 0;
+    CallCommon(CORO_HANYOU_SAVE_FUNC);
+    end;
+}

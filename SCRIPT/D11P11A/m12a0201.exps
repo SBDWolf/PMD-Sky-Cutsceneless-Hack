@@ -1,0 +1,10 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_MAIN = scn[13, 2];
+    main_EnterDungeon(17, 30);
+    switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+    main_EnterDungeon(-1, 30);
+    hold;
+    end;
+}

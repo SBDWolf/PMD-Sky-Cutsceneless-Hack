@@ -1,0 +1,163 @@
+
+def 0 {
+    bgm2_PlayFadeIn(BGM_OCEAN1, 0, 256);
+    back_SetGround(LEVEL_V24P02A);
+    supervision_Acting(0);
+    with (object OBJECT_V24P02A1_308) {
+        SetOutputAttribute(2);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetOutputAttribute(4);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetOutputAttribute(4);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetAnimation(2);
+    }
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hey, [CS:N]Lapras[CR].",
+                french=" Dis, [CS:N]Lokhlass[CR].",
+                german=" Hey, [CS:N]Lapras[CR].",
+                italian=" Ehi, [CS:N]Lapras[CR].",
+                spanish=" Oye, [CS:N]Lapras[CR]...",
+            }
+        case 2:
+            {
+                english=" Hey, [CS:N]Lapras[CR].",
+                french=" Dis, [CS:N]Lokhlass[CR].",
+                german=" Hey, [CS:N]Lapras[CR].",
+                italian=" Ehi, [CS:N]Lapras[CR].",
+                spanish=" Oye, [CS:N]Lapras[CR]...",
+            }
+        default:
+            {
+                english=" Say, [CS:N]Lapras[CR].",
+                french=" Dis, [CS:N]Lokhlass[CR].",
+                german=" Sag mal, [CS:N]Lapras[CR].",
+                italian=" Senti, [CS:N]Lapras[CR].",
+                spanish=" Oye, [CS:N]Lapras[CR]...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (object OBJECT_V24P02A1_308) {
+        SetAnimation(2);
+    }
+    message_SetActor(ACTOR_NPC_RAPURASU);
+    message_Talk({
+        english=" Yes?",
+        french=" Oui?",
+        german=" Ja?",
+        italian=" Sì?",
+        spanish=" ¿Sí?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" You\'ve been swimming a long\ntime. Are you doing OK?",
+                french=" Ça fait un moment que tu nages.\nÇa va aller?",
+                german=" Du schwimmst schon seit einiger\nZeit. Geht es dir gut?",
+                italian=" Stai nuotando da tanto tempo.\nVa tutto bene?",
+                spanish=" Llevas mucho tiempo nadando.\n¿Cómo vas?",
+            }
+        case 2:
+            {
+                english=" You\'ve been swimming a long\ntime. Are you doing OK?",
+                french=" Ça fait un moment que tu nages.\nÇa va aller?",
+                german=" Du schwimmst schon seit einiger\nZeit. Geht es dir gut?",
+                italian=" Stai nuotando da tanto tempo.\nVa tutto bene?",
+                spanish=" Llevas mucho tiempo nadando.\n¿Cómo vas?",
+            }
+        default:
+            {
+                english=" You\'ve been swimming a long\ntime. Are you doing OK?",
+                french=" Ça fait un moment que tu nages.\nÇa va aller?",
+                german=" Du schwimmst schon seit einiger\nZeit. Geht es dir gut?",
+                italian=" Stai nuotando da tanto tempo.\nSei stanco?",
+                spanish=" Llevas mucho tiempo nadando.\n¿Cómo vas?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetActor(ACTOR_NPC_RAPURASU);
+    message_Talk({
+        english=" I\'m fine, [partner].",
+        french=" Tout va bien, [partner].",
+        german=" Ja, kein Problem, [partner].",
+        italian=" Sto bene, [partner].",
+        spanish=" No te preocupes, [partner].",
+    });
+    message_Talk({
+        english=" No need for concern.[K] Because\nwe\'re almost there.",
+        french=" Pas d\'inquiétude à avoir.[K]\nNous y sommes presque.",
+        german=" Kein Grund zur Sorge.[K] Wir sind\nnämlich gleich da.",
+        italian=" Non preoccuparti.[K] Ci siamo\nquasi.",
+        spanish=" Estoy bien...[K]\nYa casi hemos llegado.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (object OBJECT_V24P02A1_308) {
+        SetAnimation(1);
+    }
+    message_Talk({
+        english=" See![K] It\'s coming into view!",
+        french=" Regardez![K] Terre en vue!",
+        german=" Da![K] Man kann es schon sehen!",
+        italian=" Guarda![K] Si inizia a intravedere!",
+        spanish=" ¡Mirad![K] ¡Ya casi se puede ver!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Huh?",
+                french=" Quoi?",
+                german=" Wo?",
+                italian=" Eh?",
+                spanish=" ¿Qué?",
+            }
+        case 2:
+            {
+                english=" What?",
+                french=" Quoi?",
+                german=" Wo?",
+                italian=" Cosa?",
+                spanish=" ¿Qué?",
+            }
+        default:
+            {
+                english=" What?",
+                french=" Quoi?",
+                german=" Wo?",
+                italian=" Cosa?",
+                spanish=" ¿Qué?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetActor(ACTOR_NPC_RAPURASU);
+    message_Talk({
+        english=" On the far horizon. Do you see\nwhere the sea looks a little different?",
+        french=" Là-bas, à l\'horizon! Vous voyez\nl\'endroit où la mer semble un peu différente?",
+        german=" Am fernen Horizont. Seht ihr?\nDa, wo das Meer ein bisschen anders aussieht?",
+        italian=" All\'orizzonte. Vedete dove il\nmare sembra un po\' diverso?",
+        spanish=" En el horizonte, allí delante.\n¿Veis ese lugar donde el mar parece\ncambiar ligeramente?",
+    });
+    message_Close();
+    screen_FadeOut(1, 30);
+    end;
+}

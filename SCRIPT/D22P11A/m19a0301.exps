@@ -1,0 +1,195 @@
+
+def 0 {
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetAnimation(2);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Are you all ready to roll?",
+                french=" Tu as fini tes préparatifs?\nOn peut y aller?",
+                german=" Bist du bereit loszulegen?",
+                italian=" Possiamo partire?",
+                spanish=" ¿Continuamos entonces?",
+            }
+        case 2:
+            {
+                english=" Are you all ready?",
+                french=" Tu as fini tes préparatifs?\nOn peut y aller?",
+                german=" Bist du bereit?",
+                italian=" Possiamo partire?",
+                spanish=" ¿Continuamos entonces?",
+            }
+        default:
+            {
+                english=" Are you all ready?",
+                french=" Tu as fini tes préparatifs?\nOn peut y aller?",
+                german=" Bist du bereit?",
+                italian=" Possiamo partire?",
+                spanish=" ¿Nos vamos?",
+            }
+    }
+    switch ( message_SwitchMenu(0, 1) ) {
+        case menu({
+            english="Yes",
+            french="Oui",
+            german="Ja",
+            italian="Sì",
+            spanish="Sí",
+        }):
+        default:
+            §label_0;
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            if ( scn($SCENARIO_MAIN) >= [20, 2] ) {
+                §label_2;
+                message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+                message_Talk({
+                    english=" You seem to be ready.",
+                    french=" Vous avez l\'air d\'avoir terminé\nvos préparatifs.",
+                    german=" Ihr scheint bereit zu sein.",
+                    italian=" Mi pare che sia tutto pronto.",
+                    spanish=" Ya estáis, ¿verdad?",
+                });
+                CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                with (actor ACTOR_PLAYER) {
+                    Turn2Direction(4, 10, DIR_DOWN);
+                }
+                with (actor ACTOR_ATTENDANT1) {
+                    Turn2Direction(4, 10, DIR_DOWN);
+                }
+                WaitExecuteLives(ACTOR_ATTENDANT1);
+                with (performer 0) {
+                    SetPositionLives(0);
+                }
+                with (performer 0) {
+                    camera_SetMyself();
+                }
+                with (actor ACTOR_NPC_JUPUTORU) {
+                    MovePositionMark(1, Position<'m0', 34.5, 21.5>);
+                }
+                with (performer 0) {
+                    MovePositionOffset(1, 0, 48);
+                }
+                with (actor ACTOR_NPC_JUPUTORU) {
+                    Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+                }
+                WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+                with (actor ACTOR_ATTENDANT1) {
+                    Turn2DirectionLives(4, 10, ACTOR_NPC_JUPUTORU);
+                }
+                WaitExecuteLives(ACTOR_ATTENDANT1);
+                with (actor ACTOR_PLAYER) {
+                    Turn2DirectionLives(4, 10, ACTOR_NPC_JUPUTORU);
+                }
+                Wait(20);
+                message_Talk({
+                    english=" Fine! We leave now!",
+                    french=" Très bien! Partons tout\nde suite!",
+                    german=" Schön! Wir gehen jetzt los!",
+                    italian=" Bene! Si parte!",
+                    spanish=" ¡Estupendo!\n¡Pongámonos en marcha!",
+                });
+                message_Close();
+                with (actor ACTOR_PLAYER) {
+                    MovePositionOffset(1, 0, -80);
+                }
+                Wait(10);
+                with (actor ACTOR_ATTENDANT1) {
+                    MovePositionOffset(1, 0, -80);
+                }
+                Wait(10);
+                with (actor ACTOR_NPC_JUPUTORU) {
+                    MovePositionOffset(1, 0, -80);
+                }
+                Wait(20);
+                main_EnterDungeon(32, 30);
+                switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                main_EnterDungeon(-1, 30);
+                hold;
+                end;
+            } else {
+                $SCENARIO_MAIN = scn[20, 2];
+                supervision_ExecuteCommon(CORO_EVENT_M19_04);
+                jump @label_2;
+            }
+            break;
+        case menu({
+            english="Not yet",
+            french="Pas encore",
+            german="Noch nicht...",
+            italian="Non ancora",
+            spanish="Aún no",
+        }):
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                case 1:
+                    {
+                        english=" All right.",
+                        french=" D\'accord.",
+                        german=" Alles klar.",
+                        italian=" Va bene.",
+                        spanish=" Vale.",
+                    }
+                case 2:
+                    {
+                        english=" OK.",
+                        french=" D\'accord.",
+                        german=" Okay.",
+                        italian=" Ok.",
+                        spanish=" Muy bien.",
+                    }
+                default:
+                    {
+                        english=" OK.",
+                        french=" D\'accord.",
+                        german=" Okay.",
+                        italian=" Ok.",
+                        spanish=" De acuerdo.",
+                    }
+            }
+            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                case 1:
+                    {
+                        english=" We\'ll go when you\'re ready.",
+                        french=" On part quand tu veux.",
+                        german=" Wir gehen, wenn du bereit bist.",
+                        italian=" Quando è tutto pronto andiamo.",
+                        spanish=" Nos iremos cuando tú quieras.",
+                    }
+                case 2:
+                    {
+                        english=" Let\'s go when you\'re ready.",
+                        french=" On part quand tu veux.",
+                        german=" Lass uns gehen, wenn du bereit\nbist.",
+                        italian=" Quando è tutto pronto andiamo.",
+                        spanish=" Nos iremos cuando tú quieras.",
+                    }
+                default:
+                    {
+                        english=" Let\'s go when you\'re ready.",
+                        french=" On part quand tu veux.",
+                        german=" Lass uns gehen, wenn du bereit\nbist.",
+                        italian=" Quando è tutto pronto andiamo.",
+                        spanish=" Nos iremos cuando tú quieras.",
+                    }
+            }
+            message_Close();
+            end;
+    }
+}

@@ -1,0 +1,178 @@
+
+def 0 {
+    sound_Stop();
+    if ( variation ) {
+        §label_0;
+        switch ( ProcessSpecial(53, 32767, 0) ) { }
+        message_SetWaitMode(300, 300);
+        message_Explanation({
+            english="[CN]Thanks for playing!\n[CN]We hope you enjoyed\n[CN]the demo!",
+            french="[CN]Merci d\'avoir joué!\n[CN]Nous espérons que vous avez\n[CN]aimé cette démo!",
+            german="[CN]Vielen Dank fürs Spielen!\n[CN]Wir hoffen, dass dir die Demo-Version\n[CN]Spaß gemacht hat!",
+            italian="[CN]Grazie per aver giocato!\n[CN]Ci auguriamo che la versione demo\n[CN]ti sia piaciuta!",
+            spanish="[CN]¡Gracias por jugar!\n[CN]Para descubrir aún más aventuras,\n[CN]¡no te pierdas la versión completa!",
+        });
+        message_KeyWait();
+        switch ( ProcessSpecial(PROCESS_SPECIAL_JUMP_TO_TITLE_SCREEN, 0, 0) ) { }
+        end;
+    } else {
+        back_SetDungeonBanner(3, 0);
+        screen_FadeIn(1, 16);
+        Wait(60);
+        screen_FadeOut(1, 16);
+        Wait(15);
+        switch ( scn($SCENARIO_MAIN)[1] ) {
+            case 3:
+                $SCENARIO_MAIN = scn[3, 6];
+                §label_3;
+                back_SetGround(LEVEL_D02P31A);
+                supervision_Acting(0);
+                with (performer 0) {
+                    camera_SetMyself();
+                }
+                Wait(1);
+                with (actor ACTOR_PLAYER) {
+                    MovePositionMark(1, Position<'m0', 32, 35.5>);
+                }
+                with (actor ACTOR_ATTENDANT1) {
+                    MovePositionMark(1, Position<'m1', 28, 35.5>);
+                }
+                bgm_PlayFadeIn(BGM_IN_THE_DEPTHS_OF_THE_PIT, 0, 256);
+                screen_FadeIn(1, 30);
+                WaitExecuteLives(ACTOR_PLAYER);
+                WaitExecuteLives(ACTOR_ATTENDANT1);
+                se_Play(8978);
+                with (actor ACTOR_ATTENDANT1) {
+                    SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+                }
+                with (actor ACTOR_ATTENDANT1) {
+                    WaitEffect();
+                }
+                WaitExecuteLives(ACTOR_ATTENDANT1);
+                message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+                message_SwitchTalk ($PARTNER_TALK_KIND) {
+                    case 1:
+                        {
+                            english=" Hey! There it is!",
+                            french=" Regarde! Là!",
+                            german=" Hey! Da ist sie!",
+                            italian=" Ehi! Eccola là!",
+                            spanish=" ¡Eh! ¡Allí está!",
+                        }
+                    case 2:
+                        {
+                            english=" Oh! Look at that!",
+                            french=" Regarde! Là!",
+                            german=" Oh! Sieh mal!",
+                            italian=" Oh! Guarda!",
+                            spanish=" ¡Oh! ¡Mira eso!",
+                        }
+                    default:
+                        {
+                            english=" Oh! Over there!",
+                            french=" Regarde! Là!",
+                            german=" Oh! Dort drüben!",
+                            italian=" Oh! Di qua!",
+                            spanish=" ¡Eh! ¡Mira allí!",
+                        }
+                }
+                CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                with (performer 0) {
+                    MovePositionMark(1, Position<'m2', 30, 24.5>);
+                }
+                with (actor ACTOR_PLAYER) {
+                    MovePositionMark(1, Position<'m3', 32, 25.5>);
+                }
+                Wait(5);
+                with (actor ACTOR_ATTENDANT1) {
+                    MovePositionMark(1, Position<'m4', 28, 25.5>);
+                }
+                WaitExecuteLives(ACTOR_PLAYER);
+                with (actor ACTOR_PLAYER) {
+                    Turn2Direction(4, 10, DIR_UPLEFT);
+                }
+                WaitExecuteLives(ACTOR_ATTENDANT1);
+                with (actor ACTOR_ATTENDANT1) {
+                    Turn2Direction(4, 10, DIR_UPRIGHT);
+                }
+                WaitExecuteLives(ACTOR_ATTENDANT1);
+                Wait(30);
+                with (actor ACTOR_ATTENDANT1) {
+                    Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+                }
+                WaitExecuteLives(ACTOR_ATTENDANT1);
+                with (actor ACTOR_PLAYER) {
+                    Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+                }
+                message_SwitchTalk ($PARTNER_TALK_KIND) {
+                    case 1:
+                        {
+                            english=" This has to be [CS:N]Spoink[CR]\'s pearl!",
+                            french=" Ce doit être la perle de [CS:N]Spoink[CR]!",
+                            german=" Das muss die Perle von [CS:N]Spoink[CR]\nsein!",
+                            italian=" Questa dev\'essere la perla \ndi [CS:N]Spoink[CR]!",
+                            spanish=" ¡Esa tiene que ser la perla\nde [CS:N]Spoink[CR]!",
+                        }
+                    case 2:
+                        {
+                            english=" This must be [CS:N]Spoink[CR]\'s pearl!",
+                            french=" Ce doit être la perle de [CS:N]Spoink[CR]!",
+                            german=" Das muss die Perle von [CS:N]Spoink[CR]\nsein!",
+                            italian=" Questa dev\'essere la perla \ndi [CS:N]Spoink[CR]!",
+                            spanish=" ¡Seguro que esa es la perla\nde [CS:N]Spoink[CR]!",
+                        }
+                    default:
+                        {
+                            english=" This has to be [CS:N]Spoink[CR]\'s pearl!",
+                            french=" Ce doit être la perle de [CS:N]Spoink[CR]!",
+                            german=" Das muss die Perle von [CS:N]Spoink[CR]\nsein!",
+                            italian=" Questa dev\'essere la perla \ndi [CS:N]Spoink[CR]!",
+                            spanish=" ¡Creo que esa es la perla\nde [CS:N]Spoink[CR]!",
+                        }
+                }
+                message_SwitchTalk ($PARTNER_TALK_KIND) {
+                    case 1:
+                        {
+                            english=" Let\'s take it back right now!",
+                            french=" Prenons-la, vite!",
+                            german=" Bringen wir sie sofort zurück!",
+                            italian=" Riportiamogliela subito!",
+                            spanish=" ¡Vamos a llevársela\nahora mismo!",
+                        }
+                    case 2:
+                        {
+                            english=" Let\'s hurry back with it!",
+                            french=" Prenons-la, vite!",
+                            german=" Bringen wir sie schnell zurück!",
+                            italian=" Riportiamogliela subito!",
+                            spanish=" ¡Vamos a devolvérsela\nahora mismo!",
+                        }
+                    default:
+                        {
+                            english=" Quick! Let\'s take it back!",
+                            french=" Prenons-la, vite!",
+                            german=" Schnell! Bringen wir sie zurück!",
+                            italian=" Riportiamogliela subito!",
+                            spanish=" ¡Tenemos que llevársela\ncuanto antes!",
+                        }
+                }
+                message_Close();
+                with (actor ACTOR_PLAYER) {
+                    MovePositionOffset(32972, -16, -16);
+                }
+                with (actor ACTOR_ATTENDANT1) {
+                    Turn2Direction(4, 10, DIR_UPRIGHT);
+                }
+                WaitExecuteLives(ACTOR_ATTENDANT1);
+                Wait(30);
+                bgm_FadeOut(120);
+                screen_FadeOut(1, 60);
+                WaitBgm(BGM_IN_THE_DEPTHS_OF_THE_PIT);
+                switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+                end;
+            default:
+                $SCENARIO_MAIN = scn[3, 7];
+                jump @label_3;
+        }
+    }
+}

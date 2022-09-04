@@ -1,0 +1,25 @@
+
+def 0 {
+    sound_Stop();
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_PAIN, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Sniff...[K] It\'s too tough...",
+        french=" Snif...[K] C\'est trop balaise...",
+        german=" Schnief...[K]\nDas ist härter als erwartet...",
+        italian=" Sniff...[K] È così difficile...",
+        spanish=" Buaa...[K] Es demasiado difícil...",
+    });
+    message_Talk({
+        english=" That\'s it for today...",
+        french=" Suffit pour aujourd\'hui...",
+        german=" Das war es wohl für heute...",
+        italian=" Per oggi non posso fare altro...",
+        spanish=" Ya es suficiente por hoy...",
+    });
+    message_KeyWait();
+    screen_FadeOutAll(1, 60);
+    message_CloseEnforce();
+    Wait(60);
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    end;
+}

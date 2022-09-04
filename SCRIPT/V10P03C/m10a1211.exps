@@ -1,0 +1,653 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_TIME_RESTORED, 0, 256);
+    back2_SetMode(5);
+    back_SetGround(LEVEL_V10P03C);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (object OBJECT_V10P03C1_243) {
+        SetAnimation(1);
+    }
+    with (object OBJECT_V10P03C1_243) {
+        SetOutputAttribute(8);
+    }
+    screen2_FadeIn(0, 60);
+    screen_FadeIn(1, 60);
+    Wait(30);
+    Wait(180);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" ..................",
+                french=" ..................",
+                german=" ..................",
+                italian=" ..................",
+                spanish=" ...",
+            }
+        case 2:
+            {
+                english=" ..................",
+                french=" ..................",
+                german=" ..................",
+                italian=" ..................",
+                spanish=" ...",
+            }
+        default:
+            {
+                english=" ..................",
+                french=" ..................",
+                german=" ..................",
+                italian=" ..................",
+                spanish=" ...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Are you looking at this,\n[hero]? This is too magical!",
+                french=" Tu as vu ce spectacle,\n[hero]? C\'est carrément magique!",
+                german=" Siehst du das, [hero]?\nDas ist einfach traumhaft!",
+                italian=" Hai visto, [hero]?\nÈ troppo forte!",
+                spanish=" ¿Estás viendo esto,\n[hero]? ¡Es mágico!",
+            }
+        case 2:
+            {
+                english=" Are you taking in this view,\n[hero]? This is so magical!",
+                french=" Tu as vu ce spectacle,\n[hero]? C\'est carrément magique!",
+                german=" Siehst du diese Aussicht,\n[hero]? Das ist einfach traumhaft!",
+                italian=" Hai visto anche tu,\n[hero]? È... è davvero incantevole!",
+                spanish=" ¿Estás viendo esto,\n[hero]? ¡Es mágico!",
+            }
+        default:
+            {
+                english=" Are you taking in this view,\n[hero]? This is utterly magical!",
+                french=" Tu as vu ce spectacle,\n[hero]? C\'est carrément magique!",
+                german=" Siehst du diese Aussicht,\n[hero]? Das ist so traumhaft!",
+                italian=" Hai visto, [hero]?\nÈ... È davvero incantevole!",
+                spanish=" ¿Qué opinas de esta\nvista, [hero]? ¿No es mágica?",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Too bad we didn\'t learn anything\nabout your past, [hero].",
+                french=" Dommage qu\'on ait rien appris\nde plus sur ton passé, [hero].",
+                german=" Schade, dass wir nichts über\ndeine Vergangenheit herausgefunden haben,\n[hero].",
+                italian=" Peccato però che non abbiamo\nscoperto niente sul tuo passato, [hero]!",
+                spanish=" Aunque es una pena que no\nhayamos descubierto nada de tu pasado,\n[hero].",
+            }
+        case 2:
+            {
+                english=" It\'s really too bad that we didn\'t\nlearn anything about your past, [hero].",
+                french=" Dommage qu\'on ait rien appris\nde plus sur ton passé, [hero].",
+                german=" Es ist schade, dass wir nichts\nüber deine Vergangenheit herausgefunden\nhaben, [hero].",
+                italian=" Purtroppo, però, non abbiamo\nscoperto nulla sul tuo passato, [hero].",
+                spanish=" Es una pena que no hayamos\ndescubierto nada de tu pasado, [hero].",
+            }
+        default:
+            {
+                english=" It\'s really a shame that we didn\'t\nlearn anything about your past, [hero].",
+                french=" Dommage qu\'on ait rien appris\nde plus sur ton passé, [hero].",
+                german=" Es ist wirklich schade, dass wir\nnichts über deine Vergangenheit\nherausgefunden haben, [hero].",
+                italian=" Purtroppo, però, non abbiamo\nscoperto nulla sul tuo passato, [hero].",
+                spanish=" Es una pena que no hayamos\ndescubierto nada de tu pasado, [hero].",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" But I\'m glad we came!",
+                french=" Mais je suis content d\'être là\nquand même!",
+                german=" Aber ich bin froh, dass wir\nhergekommen sind!",
+                italian=" Ma sono contento che siamo qui!",
+                spanish=" ¡Me alegro de que hayamos\nvenido!",
+            }
+        case 2:
+            {
+                english=" But I\'m glad we came!",
+                french=" Mais je suis content d\'être là\nquand même!",
+                german=" Aber ich bin froh, dass wir\nhergekommen sind!",
+                italian=" Ma sono contento di essere qui!",
+                spanish=" ¡Pero me alegro de que hayamos\nvenido!",
+            }
+        default:
+            {
+                english=" But I\'m glad we came!",
+                french=" Mais je suis contente d\'être là\nquand même!",
+                german=" Aber ich bin froh, dass wir\nhergekommen sind!",
+                italian=" Ma sono contenta di essere qui!",
+                spanish=" ¡Pero me alegro de que hayamos\nvenido!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It was great to see such a\ncool thing with everyone!",
+                french=" C\'était super de partager\nce moment magique avec tout le monde!",
+                german=" Es war toll, dass wir etwas so\nSchönes zu sehen bekommen haben!",
+                italian=" È stato grandioso vedere una\ncosa così bella insieme agli altri!",
+                spanish=" ¡Ha sido genial ver algo\ntan chulo con todos vosotros!",
+            }
+        case 2:
+            {
+                english=" I\'m happy that I got to see\nsuch a beautiful scene with everyone!",
+                french=" C\'était super de partager\nce moment magique avec tout le monde!",
+                german=" Es freut mich, dass wir einen\nso schönen Anblick zu sehen bekommen haben!",
+                italian=" Sono felice di aver assistito ad\nuno spettacolo così meraviglioso insieme a\ntutti gli altri!",
+                spanish=" ¡Me alegro de haber visto algo\ntan bonito con todos vosotros!",
+            }
+        default:
+            {
+                english=" I\'m happy that I was able to\nshare such a beautiful moment with everyone!",
+                french=" C\'était super de partager\nce moment magique avec tout le monde!",
+                german=" Ich bin glücklich, dass wir alle\neinen so schönen Augenblick teilen konnten!",
+                italian=" Sono felice di aver condiviso un\nmomento così bello con tutti gli altri!",
+                spanish=" ¡Me alegro de haber visto algo\ntan bonito con todos vosotros!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I gotta say that I\'m really happy!",
+                french=" Je suis comblé!",
+                german=" Ich muss sagen, ich bin wirklich\nglücklich!",
+                italian=" Sono proprio contento!",
+                spanish=" Tengo que admitir que estoy\nmuy contento.",
+            }
+        case 2:
+            {
+                english=" I\'m truly happy.",
+                french=" Je suis comblé!",
+                german=" Ich bin wirklich glücklich.",
+                italian=" Sono proprio contento!",
+                spanish=" Estoy realmente contento.",
+            }
+        default:
+            {
+                english=" I just couldn\'t be happier!",
+                french=" Je suis comblée!",
+                german=" Ich könnte nicht glücklicher\nsein!",
+                italian=" Non potrei essere più felice!",
+                spanish=" ¡Estoy muy contenta!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(I\'m glad I came too.)",
+                french="(Moi aussi, je suis heureux d\'être venu.)",
+                german="(Ich bin auch froh, dass ich hergekommen bin.)",
+                italian="(Anch\'io sono contento di aver partecipato.)",
+                spanish="(Yo también me alegro de haber venido.)",
+            }
+        default:
+            {
+                english="(I\'m glad I came too.)",
+                french="(Moi aussi, je suis heureuse d\'être venue.)",
+                german="(Ich bin auch froh, dass ich hergekommen bin.)",
+                italian="(Anch\'io sono contenta di aver partecipato.)",
+                spanish="(Yo también me alegro de haber venido.)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Sure, it\'s true we never learned who I am...)",
+                french="(Bon, on n\'en sait pas plus sur ma véritable\nidentité...)",
+                german="(Sicher, wir haben nicht herausgefunden, wer\nich bin...)",
+                italian="(È vero, non abbiamo scoperto chi sono\nveramente...)",
+                spanish="(Es cierto que no he averiguado quién soy...)",
+            }
+        default:
+            {
+                english="(Sure, it\'s true we never learned who I am...)",
+                french="(Bon, on n\'en sait pas plus sur mon identité...)",
+                german="(Sicher, wir haben nicht herausgefunden, wer\nich bin...)",
+                italian="(È vero, non abbiamo scoperto chi sono\nveramente...)",
+                spanish="(Es cierto que no he averiguado quién soy...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Hang on a minute...[K][CS:N]Uxie[CR] said...)",
+                french="(Une minute... [K][CS:N]Créhelf[CR] a dit...)",
+                german="(Einen Moment mal... [K][CS:N]Selfe[CR] sagte...)",
+                italian="(Però, aspetta...[K] [CS:N]Uxie[CR] ha detto...)",
+                spanish="(Un momento...[K] [CS:N]Uxie[CR] dijo...)",
+            }
+        default:
+            {
+                english="(Hang on a minute...[K][CS:N]Uxie[CR] said...)",
+                french="(Une minute... [K][CS:N]Créhelf[CR] a dit...)",
+                german="(Einen Moment mal... [K][CS:N]Selfe[CR] sagte...)",
+                italian="(Però, aspetta...[K] [CS:N]Uxie[CR] ha detto...)",
+                spanish="(Un momento...[K] [CS:N]Uxie[CR] dijo...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="([CS:N]Uxie[CR] said he didn\'t know me...)",
+                french="([CS:N]Créhelf[CR] a dit qu\'il ne m\'avait jamais vu...)",
+                german="(Laut [CS:N]Selfe[CR] war ich noch nie hier...)",
+                italian="([CS:N]Uxie[CR] ha detto di non conoscermi...)",
+                spanish="([CS:N]Uxie[CR] dijo que no me conocía...)",
+            }
+        default:
+            {
+                english="([CS:N]Uxie[CR] said he didn\'t know me...)",
+                french="([CS:N]Créhelf[CR] a dit qu\'il ne m\'avait jamais vue...)",
+                german="(Laut [CS:N]Selfe[CR] war ich noch nie hier...)",
+                italian="([CS:N]Uxie[CR] ha detto di non conoscermi...)",
+                spanish="([CS:N]Uxie[CR] dijo que no me conocía...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(But if that\'s true...)",
+                french="(Mais si c\'est le cas...)",
+                german="(Aber wenn das wahr ist...)",
+                italian="(Se è così...)",
+                spanish="(Pero si eso es verdad...)",
+            }
+        default:
+            {
+                english="(But if that\'s true...)",
+                french="(Mais si c\'est le cas...)",
+                german="(Aber wenn das wahr ist...)",
+                italian="(Se è così...)",
+                spanish="(Pero si eso es verdad...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(How did I know about this place?!)",
+                french="(Comment se fait-il que cet endroit me soit\nfamilier?!)",
+                german="(Woher kannte ich diesen Ort dann?!?)",
+                italian="(Come faccio a conoscere questo posto?)",
+                spanish="(¿Por qué sentía que conocía este lugar?)",
+            }
+        default:
+            {
+                english="(How did I know about this place?!)",
+                french="(Comment se fait-il que cet endroit me soit\nfamilier?!)",
+                german="(Woher kannte ich diesen Ort dann?!?)",
+                italian="(Come faccio a conoscere questo posto?)",
+                spanish="(¿Por qué sentía que conocía este lugar?)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(And that Time Gear!)",
+                french="(Et le Rouage du Temps!)",
+                german="(Und das Zahnrad der Zeit!)",
+                italian="(Per non parlare dell\'Ingranaggio del Tempo!)",
+                spanish="(¡Y ese Engranaje del Tiempo!)",
+            }
+        default:
+            {
+                english="(And that Time Gear!)",
+                french="(Et le Rouage du Temps!)",
+                german="(Und das Zahnrad der Zeit!)",
+                italian="(Per non parlare dell\'Ingranaggio del Tempo!)",
+                spanish="(¡Y ese Engranaje del Tiempo!)",
+            }
+    }
+    message_Close();
+    screen2_FadeOut(0, 60);
+    screen_FadeOut(1, 60);
+    back2_SetMode(0);
+    end;
+}
+
+def 1 for_object(OBJECT_V10P01C1_228) {
+    SetOutputAttribute(4);
+    SetOutputAttribute(8);
+    §label_0;
+    forever {
+        MovePositionMark(32832, Position<'m0', 31, 46.5>);
+        Wait(10);
+        MovePositionMark(32832, Position<'m1', 9, 46.5>);
+        Wait(19);
+        continue;  // may be redundant
+    }
+}
+
+def 2 for_object(OBJECT_V10P01C1_229) {
+    §label_1;
+    SetOutputAttribute(4);
+    SetOutputAttribute(8);
+    MovePositionMark(32857, Position<'m2', 30, 40.5>);
+    Wait(10);
+    MovePositionMark(32857, Position<'m3', 10, 40.5>);
+    Wait(14);
+    jump @label_1;
+}
+
+def 3 for_object(OBJECT_V10P01C1_230) {
+    §label_2;
+    SetOutputAttribute(4);
+    SetOutputAttribute(8);
+    MovePositionMark(32857, Position<'m4', 11, 43.5>);
+    Wait(11);
+    MovePositionMark(32857, Position<'m5', 28, 43.5>);
+    Wait(15);
+    jump @label_2;
+}
+
+def 4 for_object(OBJECT_V10P01C2_234) {
+    §label_3;
+    SetOutputAttribute(4);
+    SetOutputAttribute(8);
+    MovePositionMark(32844, Position<'m6', 23, 27.5>);
+    Wait(10);
+    MovePositionMark(32844, Position<'m7', 15, 27.5>);
+    Wait(14);
+    jump @label_3;
+}
+
+def 5 for_object(OBJECT_V10P01C2_235) {
+    §label_4;
+    SetOutputAttribute(4);
+    SetOutputAttribute(8);
+    MovePositionMark(32857, Position<'m8', 13, 31.5>);
+    Wait(15);
+    MovePositionMark(32857, Position<'m9', 25, 31.5>);
+    Wait(9);
+    jump @label_4;
+}
+
+def 6 for_object(OBJECT_V10P01C2_236) {
+    §label_5;
+    SetOutputAttribute(4);
+    SetOutputAttribute(8);
+    MovePositionMark(32832, Position<'m10', 29, 37.5>);
+    Wait(15);
+    MovePositionMark(32832, Position<'m11', 10, 37.5>);
+    Wait(22);
+    jump @label_5;
+}
+
+def 7 for_object(OBJECT_V10P01C3_240) {
+    §label_6;
+    SetOutputAttribute(4);
+    SetOutputAttribute(8);
+    MovePositionMark(32844, Position<'m12', 26, 35.5>);
+    Wait(15);
+    MovePositionMark(32844, Position<'m13', 11, 35.5>);
+    Wait(14);
+    jump @label_6;
+}
+
+def 8 for_object(OBJECT_V10P01C1_226) {
+    §label_7;
+    SetOutputAttribute(4);
+    SetOutputAttribute(8);
+    MovePositionMark(32857, Position<'m14', 5, 42.5>);
+    Wait(10);
+    MovePositionMark(32857, Position<'m15', 35, 42.5>);
+    Wait(15);
+    jump @label_7;
+}
+
+def 9 for_object(OBJECT_V10P01C1_227) {
+    §label_8;
+    SetOutputAttribute(4);
+    SetOutputAttribute(8);
+    MovePositionMark(32844, Position<'m16', 11, 29.5>);
+    Wait(12);
+    MovePositionMark(32844, Position<'m17', 26, 29.5>);
+    Wait(10);
+    jump @label_8;
+}
+
+def 10 for_object(OBJECT_V10P01C2_231) {
+    §label_9;
+    SetOutputAttribute(4);
+    SetOutputAttribute(8);
+    MovePositionMark(32857, Position<'m18', 8, 35.5>);
+    Wait(15);
+    MovePositionMark(32857, Position<'m19', 30, 35.5>);
+    Wait(12);
+    jump @label_9;
+}
+
+def 11 for_object(OBJECT_V10P01C2_232) {
+    §label_10;
+    SetOutputAttribute(4);
+    SetOutputAttribute(8);
+    MovePositionMark(32844, Position<'m20', 29, 32.5>);
+    Wait(10);
+    MovePositionMark(32844, Position<'m21', 11, 32.5>);
+    Wait(13);
+    jump @label_10;
+}
+
+def 12 for_object(OBJECT_V10P01C2_233) {
+    §label_11;
+    SetOutputAttribute(4);
+    SetOutputAttribute(8);
+    MovePositionMark(32849, Position<'m22', 11, 31.5>);
+    Wait(10);
+    MovePositionMark(32849, Position<'m23', 30, 31.5>);
+    Wait(15);
+    jump @label_11;
+}
+
+def 13 for_object(OBJECT_V10P01C3_237) {
+    §label_12;
+    SetOutputAttribute(4);
+    SetOutputAttribute(8);
+    MovePositionMark(32832, Position<'m24', 12, 33.5>);
+    Wait(14);
+    MovePositionMark(32832, Position<'m25', 27, 33.5>);
+    Wait(2);
+    jump @label_12;
+}
+
+def 14 for_object(OBJECT_V10P01C3_238) {
+    §label_13;
+    SetOutputAttribute(4);
+    SetOutputAttribute(8);
+    MovePositionMark(32844, Position<'m26', 10, 38.5>);
+    Wait(10);
+    MovePositionMark(32844, Position<'m27', 29, 38.5>);
+    Wait(12);
+    jump @label_13;
+}
+
+def 15 for_object(OBJECT_V10P01C3_239) {
+    §label_14;
+    SetOutputAttribute(4);
+    SetOutputAttribute(8);
+    MovePositionMark(32832, Position<'m28', 26, 27.5>);
+    Wait(12);
+    MovePositionMark(32832, Position<'m29', 12, 27.5>);
+    Wait(10);
+    jump @label_14;
+}
+
+def 16 for_actor(ACTOR_NPC_BARUBIITO1) {
+    SetOutputAttribute(4);
+    SetOutputAttribute(8);
+    ResetOutputAttribute(256);
+    Wait(5);
+    SetAnimation(42);
+    §label_15;
+    forever {
+        Slide2PositionOffset(1, 100, 0);
+        SetDirection(DIR_RIGHT);
+        Wait(60);
+        Slide2PositionOffset(1, 150, -30);
+        SetDirection(DIR_RIGHT);
+        Wait(60);
+        Slide2PositionOffset(1, 150, 0);
+        SetPositionMark(Position<'m30', 0, 39.5>);
+        Wait(60);
+        Wait(24);
+        continue;  // may be redundant
+    }
+}
+
+def 17 for_actor(ACTOR_NPC_BARUBIITO2) {
+    SetOutputAttribute(4);
+    SetOutputAttribute(8);
+    ResetOutputAttribute(256);
+    Wait(5);
+    SetAnimation(42);
+    §label_16;
+    forever {
+        Wait(60);
+        Slide2PositionOffset(33049, -120, 0);
+        SetDirection(DIR_LEFT);
+        Wait(50);
+        Slide2PositionOffset(33049, -100, -30);
+        SetDirection(DIR_LEFT);
+        Wait(75);
+        Slide2PositionOffset(33049, -150, 0);
+        SetPositionMark(Position<'m31', 37, 35.5>);
+        Wait(60);
+        Wait(24);
+        continue;  // may be redundant
+    }
+}
+
+def 18 for_actor(ACTOR_NPC_BARUBIITO3) {
+    SetOutputAttribute(4);
+    SetOutputAttribute(8);
+    ResetOutputAttribute(256);
+    Wait(5);
+    SetAnimation(42);
+    §label_17;
+    forever {
+        Slide2PositionOffset(32998, -80, -40);
+        SetDirection(DIR_LEFT);
+        Wait(55);
+        Slide2PositionOffset(32972, -150, -20);
+        SetDirection(DIR_LEFT);
+        Wait(45);
+        Slide2PositionOffset(32998, -150, 0);
+        SetPositionMark(Position<'m32', 37, 36.5>);
+        Wait(55);
+        Wait(24);
+        continue;  // may be redundant
+    }
+}
+
+def 19 for_actor(ACTOR_NPC_BARUBIITO4) {
+    SetOutputAttribute(4);
+    SetOutputAttribute(8);
+    ResetOutputAttribute(256);
+    Wait(5);
+    SetAnimation(42);
+    §label_18;
+    forever {
+        Slide2PositionOffset(32998, 70, 0);
+        SetDirection(DIR_RIGHT);
+        Wait(45);
+        Slide2PositionOffset(33100, 250, 0);
+        SetPositionMark(Position<'m33', 0, 34.5>);
+        Wait(45);
+        Wait(24);
+        continue;  // may be redundant
+    }
+}
+
+def 20 for_actor(ACTOR_NPC_IRUMIIZE1) {
+    SetOutputAttribute(4);
+    SetOutputAttribute(8);
+    ResetOutputAttribute(256);
+    SetAnimation(42);
+    Wait(5);
+    SetPositionOffset(24, 0);
+    §label_19;
+    forever {
+        Slide2PositionOffset(1, 100, 0);
+        SetDirection(DIR_RIGHT);
+        Wait(60);
+        Slide2PositionOffset(1, 150, -30);
+        SetDirection(DIR_RIGHT);
+        Wait(60);
+        Slide2PositionOffset(1, 150, 0);
+        SetPositionMark(Position<'m34', 0, 39.5>);
+        Wait(60);
+        Slide2PositionOffset(1, 24, 0);
+        continue;  // may be redundant
+    }
+}
+
+def 21 for_actor(ACTOR_NPC_IRUMIIZE2) {
+    SetOutputAttribute(4);
+    SetOutputAttribute(8);
+    ResetOutputAttribute(256);
+    SetAnimation(42);
+    Wait(5);
+    SetPositionOffset(-24, 0);
+    §label_20;
+    forever {
+        Wait(60);
+        Slide2PositionOffset(33049, -120, 0);
+        SetDirection(DIR_LEFT);
+        Wait(50);
+        Slide2PositionOffset(33049, -100, -30);
+        SetDirection(DIR_LEFT);
+        Wait(75);
+        Slide2PositionOffset(33049, -150, 0);
+        SetPositionMark(Position<'m35', 37, 35.5>);
+        Wait(60);
+        Slide2PositionOffset(1, -24, 0);
+        continue;  // may be redundant
+    }
+}
+
+def 22 for_actor(ACTOR_NPC_IRUMIIZE3) {
+    SetOutputAttribute(4);
+    SetOutputAttribute(8);
+    ResetOutputAttribute(256);
+    SetAnimation(42);
+    Wait(5);
+    SetPositionOffset(-24, 0);
+    §label_21;
+    forever {
+        Slide2PositionOffset(32998, -80, -40);
+        SetDirection(DIR_LEFT);
+        Wait(55);
+        Slide2PositionOffset(32972, -150, -20);
+        SetDirection(DIR_LEFT);
+        Wait(45);
+        Slide2PositionOffset(32998, -150, 0);
+        SetPositionMark(Position<'m36', 37, 36.5>);
+        Wait(55);
+        Slide2PositionOffset(1, -24, 0);
+        continue;  // may be redundant
+    }
+}
+
+def 23 for_actor(ACTOR_NPC_IRUMIIZE4) {
+    SetOutputAttribute(4);
+    SetOutputAttribute(8);
+    ResetOutputAttribute(256);
+    SetAnimation(42);
+    Wait(5);
+    SetPositionOffset(24, 0);
+    §label_22;
+    forever {
+        Slide2PositionOffset(32998, 70, 0);
+        SetDirection(DIR_RIGHT);
+        Wait(45);
+        Slide2PositionOffset(33100, 250, 0);
+        SetPositionMark(Position<'m37', 0, 34.5>);
+        Wait(45);
+        Slide2PositionOffset(1, 24, 0);
+        continue;  // may be redundant
+    }
+}

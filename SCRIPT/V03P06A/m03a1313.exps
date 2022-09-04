@@ -1,0 +1,230 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_TIME_GEAR_REMIX, 0, 256);
+    bgm2_PlayFadeIn(BGM_STORM, 0, 256);
+    back_SetGround(LEVEL_V03P06A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    Wait(1);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetAnimation(1024);
+    }
+    with (performer 3) {
+        SetEffect(EFFECT_VERY_HEAVY_RAIN, 3);
+    }
+    with (object OBJECT_V03P06A2_216) {
+        SetAnimation(3);
+    }
+    with (object OBJECT_V03P06A1_212) {
+        SetAnimation(3);
+    }
+    screen_FadeChange(1, 15, 0, 192);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        MovePositionMark(33152, Position<'m0', 25.5, 25.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetAnimation(22);
+    }
+    Wait(60);
+    se_Play(6401);
+    screen_WhiteOut(1, 2);
+    Wait(3);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    screen_WhiteOut(1, 2);
+    Wait(3);
+    screen_FadeIn(1, 2);
+    screen_FadeChange(1, 0, 0, 192);
+    Wait(60);
+    message_SetActor(ACTOR_ATTENDANT1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" But my guess is that if a Time\nGear is removed from a region...",
+                french=" Mais j\'imagine que si une\nrégion n\'a plus son Rouage du Temps...",
+                german=" Aber ich vermute, wenn ein\nZahnrad der Zeit aus einer Region\nentfernt wird...",
+                italian=" Ma penso che se un Ingranaggio\ndel Tempo venisse rimosso...",
+                spanish=" Pero supongo que si se quitase\nel Engranaje del Tiempo de una región...",
+            }
+        case 2:
+            {
+                english=" But my guess is that if a Time\nGear is removed from a region...",
+                french=" Mais j\'imagine que si une\nrégion n\'a plus son Rouage du Temps...",
+                german=" Aber ich vermute, wenn ein\nZahnrad der Zeit aus einer Region\nentfernt wird...",
+                italian=" Ma penso che se un Ingranaggio\ndel Tempo venisse rimosso...",
+                spanish=" Pero supongo que si se extrajera\nel Engranaje del Tiempo de una región...",
+            }
+        default:
+            {
+                english=" But my guess is that if a Time\nGear is removed from a region...",
+                french=" Mais j\'imagine que si une\nrégion n\'a plus son Rouage du Temps...",
+                german=" Aber ich vermute, wenn ein\nZahnrad der Zeit aus einer Region\nentfernt wird...",
+                italian=" Ma penso che se un Ingranaggio\ndel Tempo venisse rimosso...",
+                spanish=" Pero supongo que si se quitase\nel Engranaje del Tiempo de una región...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" The flow of time in that region\nwill probably stop too.",
+                french=" ... le temps cesse de s\'y écouler\nnormalement.",
+                german=" Dann wird der Fluss der Zeit\nin dieser Region wahrscheinlich aufhören.",
+                italian=" ... probabilmente il flusso\ndel tempo in quella regione si arresterebbe.",
+                spanish=" El tiempo dejaría de fluir en esa\nzona.",
+            }
+        case 2:
+            {
+                english=" The flow of time in that region\nwill probably stop too.",
+                french=" ... le temps cesse de s\'y écouler\nnormalement.",
+                german=" Dann wird der Fluss der Zeit\nin dieser Region wahrscheinlich aufhören.",
+                italian=" ... probabilmente il flusso\ndel tempo in quella regione si arresterebbe.",
+                spanish=" El tiempo dejaría de fluir en esa\nzona.",
+            }
+        default:
+            {
+                english=" The flow of time in that region\nwill probably stop too.",
+                french=" ... le temps cesse de s\'y écouler\nnormalement.",
+                german=" Dann wird der Fluss der Zeit\nin dieser Region wahrscheinlich aufhören.",
+                italian=" ... probabilmente il flusso\ndel tempo in quella regione si arresterebbe.",
+                spanish=" El tiempo dejaría de fluir en esa\nzona.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetAnimation(768);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        MovePositionOffset(32896, 0, -40);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetAnimation(256);
+    }
+    Wait(30);
+    se_Play(6401);
+    screen_WhiteOut(1, 2);
+    Wait(3);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    screen_WhiteOut(1, 2);
+    Wait(3);
+    screen_FadeIn(1, 2);
+    screen_FadeChange(1, 0, 0, 192);
+    Wait(45);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" That\'s why everyone makes sure\nnever to disturb the Time Gears.",
+                french=" C\'est pour ça qu\'il faut veiller\nà ce que les Rouages du Temps ne soient\npas déplacés.",
+                german=" Darum achtet jeder darauf, die\nZahnräder der Zeit nicht zu stören. ",
+                italian=" È per questo che gli Ingranaggi\ndel Tempo vengono lasciati in pace.",
+                spanish=" Por eso, nadie se atreve a tocar\nlos Engranajes del Tiempo.",
+            }
+        case 2:
+            {
+                english=" That\'s why everyone makes sure\nnever to disturb the Time Gears.",
+                french=" C\'est pour ça qu\'il faut veiller\nà ce que les Rouages du Temps ne soient\npas déplacés.",
+                german=" Darum achtet jeder darauf, die\nZahnräder der Zeit nicht zu stören. ",
+                italian=" È per questo che gli Ingranaggi\ndel Tempo vengono lasciati in pace.",
+                spanish=" Por eso, nadie se atreve a tocar\nlos Engranajes del Tiempo.",
+            }
+        default:
+            {
+                english=" That\'s why everyone makes sure\nnever to disturb the Time Gears.",
+                french=" C\'est pour ça qu\'il faut veiller\nà ce que les Rouages du Temps ne soient\npas déplacés.",
+                german=" Darum achtet jeder darauf, die\nZahnräder der Zeit nicht zu stören. ",
+                italian=" È per questo che gli Ingranaggi\ndel Tempo vengono lasciati in pace.",
+                spanish=" Por eso, nadie se atreve a tocar\nlos Engranajes del Tiempo.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Everyone has long been certain\nthat some kind of disaster would strike.",
+                french=" A ce qu\'on raconte, cela\nprovoquerait un désastre sans précédent.",
+                german=" Alle sind sich seit Langem\nsicher, dass es zu einer Katastrophe\nführen würde.",
+                italian=" Tutti i Pokémon sono consape-\nvoli del fatto che rimuoverli sarebbe\ndisastroso.",
+                spanish=" Todos sabemos que algo así\nprovocaría un desastre.",
+            }
+        case 2:
+            {
+                english=" Everyone has long been certain\nthat some kind of disaster would strike.",
+                french=" A ce qu\'on raconte, cela\nprovoquerait un désastre sans précédent.",
+                german=" Alle sind sich seit Langem\nsicher, dass es zu einer Katastrophe\nführen würde.",
+                italian=" Tutti i Pokémon sono consape-\nvoli del fatto che rimuoverli sarebbe\ndisastroso.",
+                spanish=" Todos sabemos que algo así\nprovocaría un desastre.",
+            }
+        default:
+            {
+                english=" Everyone has long been certain\nthat some kind of disaster would strike.",
+                french=" A ce qu\'on raconte, cela\nprovoquerait un désastre sans précédent.",
+                german=" Alle sind sich seit Langem\nsicher, dass es zu einer Katastrophe\nführen würde.",
+                italian=" Tutti i Pokémon sono consape-\nvoli del fatto che rimuoverli sarebbe\ndisastroso.",
+                spanish=" Todos sabemos que algo así\nprovocaría un desastre.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" So everyone stays away from\nthe Time Gears and doesn\'t tamper with them.",
+                french=" C\'est pour ça que personne n\'ose\ntoucher aux Rouages du Temps.",
+                german=" Also halten sich alle davon fern\nund lassen die Finger von ihnen.",
+                italian=" Quindi si tengono tutti alla larga\ndagli Ingranaggi del Tempo ed evitano di\nmanometterli.",
+                spanish=" A nadie se le pasaría por la\ncabeza acercarse a ninguno de ellos.",
+            }
+        case 2:
+            {
+                english=" So everyone stays away from\nthe Time Gears and doesn\'t tamper with them.",
+                french=" C\'est pour ça que personne n\'ose\ntoucher aux Rouages du Temps.",
+                german=" Also halten sich alle davon fern\nund lassen die Finger von ihnen.",
+                italian=" Quindi si tengono tutti alla larga\ndagli Ingranaggi del Tempo ed evitano di\nmanometterli.",
+                spanish=" A nadie se le pasaría por la\ncabeza acercarse a ninguno de ellos.",
+            }
+        default:
+            {
+                english=" So everyone stays away from\nthe Time Gears and doesn\'t tamper with them.",
+                french=" C\'est pour ça que personne n\'ose\ntoucher aux Rouages du Temps.",
+                german=" Also halten sich alle davon fern\nund lassen die Finger von ihnen.",
+                italian=" Quindi si tengono tutti alla larga\ndagli Ingranaggi del Tempo ed evitano di\nmanometterli.",
+                spanish=" A nadie se le pasaría por la\ncabeza acercarse a ninguno de ellos.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Even the most hardened criminal\nPokémon know to avoid messing with them.",
+                french=" Même les criminels les plus\nendurcis ne s\'y trompent pas: ils savent\nqu\'on ne plaisante pas avec ça.",
+                german=" Selbst skrupellose Verbrecher\nmachen sich lieber nicht an ihnen zu schaffen.",
+                italian=" Persino il più incallito dei\ncriminali sa che è meglio lasciarli stare.",
+                spanish=" Ni el malhechor más desalmado\nse atrevería a tocarlos.",
+            }
+        case 2:
+            {
+                english=" Even the most hardened criminal\nPokémon know to avoid messing with them.",
+                french=" Même les criminels les plus\nendurcis ne s\'y trompent pas: ils savent\nqu\'on ne plaisante pas avec ça.",
+                german=" Selbst skrupellose Verbrecher\nmachen sich lieber nicht an ihnen zu schaffen.",
+                italian=" Persino il più incallito dei\ncriminali sa che è meglio lasciarli stare.",
+                spanish=" Ni el malhechor más desalmado\nse atrevería a tocarlos.",
+            }
+        default:
+            {
+                english=" Even the most hardened criminal\nPokémon know to avoid messing with them.",
+                french=" Même les criminels les plus\nendurcis ne s\'y trompent pas: ils savent\nqu\'on ne plaisante pas avec ça.",
+                german=" Selbst skrupellose Verbrecher\nmachen sich lieber nicht an ihnen zu schaffen.",
+                italian=" Persino il più incallito dei\ncriminali sa che è meglio lasciarli stare.",
+                spanish=" Ni el malhechor más desalmado\nse atrevería a tocarlos.",
+            }
+    }
+    message_Close();
+    screen_FadeOut(1, 15);
+    end;
+}

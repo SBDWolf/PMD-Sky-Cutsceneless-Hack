@@ -1,0 +1,46 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_T01P01A);
+    supervision_Acting(0);
+    supervision_LoadStation(LEVEL_T01P01A, 'UM03');
+    supervision_Station(10);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    Wait(1);
+    with (actor ACTOR_NPC_SURIIPU) {
+        Move2PositionMark(1, Position<'m0', 50, 24.5>);
+    }
+    CallCommon(CORO_FADE_OUT_ALL_BEFORE);
+    screen_FadeInAll(0, 30);
+    Wait(45);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionOffset(1, 4, 0);
+    }
+    with (actor ACTOR_PLAYER) {
+        SlidePositionOffset(1, -4, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_SURIIPU);
+    with (actor ACTOR_NPC_SURIIPU) {
+        Turn2DirectionLives(4, 1, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_NPC_SURIIPU);
+    message_SetFace(ACTOR_NPC_SURIIPU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Whoops![K] Excuse me.",
+        french=" Oh![K] Pardon.",
+        german=" Hoppla![K] Entschuldigung.",
+        italian=" Ops![K] Scusa.",
+        spanish=" ¡Vaya![K] Perdón.",
+    });
+    message_Close();
+    screen_FadeOutAll(1, 30);
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    end;
+}

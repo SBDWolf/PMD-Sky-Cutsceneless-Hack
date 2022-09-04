@@ -1,0 +1,227 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_OCEAN1, 90, 256);
+    worldmap_SetMode(4);
+    worldmap_SetLevel(5);
+    back2_SetMode(3);
+    WaitSubScreen();
+    worldmap_SetCamera(184);
+    worldmap_SetMark(184);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" From here...",
+                french=" A partir d\'ici...",
+                german=" Hmm. Von hier aus...",
+                italian=" Vediamo...",
+                spanish=" Desde aquí...",
+            }
+        case 2:
+            {
+                english=" From here...",
+                french=" A partir d\'ici...",
+                german=" Hmm. Von hier aus...",
+                italian=" Vediamo...",
+                spanish=" Desde aquí...",
+            }
+        default:
+            {
+                english=" From here...",
+                french=" A partir d\'ici...",
+                german=" Hmm. Von hier aus...",
+                italian=" Vediamo...",
+                spanish=" Desde aquí...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    worldmap_SetArrow(188);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I guess the [CS:P]Underground Lake[CR]\nwould be the closest.",
+                french=" Je pense que c\'est le [CS:P]Lac\nSouterrain[CR] qui est le plus proche.",
+                german=" Nun, vermutlich liegt der\n[CS:P]Untergrundsee[CR] am nächsten.",
+                italian=" Credo che il [CS:P]Lago Sotterraneo[CR]\nsia il posto più vicino.",
+                spanish=" Supongo que lo más cercano\nsería el [CS:P]Lago Subterráneo[CR].",
+            }
+        case 2:
+            {
+                english=" The [CS:P]Underground Lake[CR] would\nbe the closest, I guess.",
+                french=" Je pense que c\'est le [CS:P]Lac\nSouterrain[CR] qui est le plus proche.",
+                german=" Nun, vermutlich liegt der\n[CS:P]Untergrundsee[CR] am nächsten.",
+                italian=" Il [CS:P]Lago Sotterraneo[CR] dovrebbe\nessere il posto più vicino, credo.",
+                spanish=" Supongo que lo más cercano\nsería el [CS:P]Lago Subterráneo[CR].",
+            }
+        default:
+            {
+                english=" The [CS:P]Underground Lake[CR] seems to\nbe the closest.",
+                french=" Je pense que c\'est le [CS:P]Lac\nSouterrain[CR] qui est le plus proche.",
+                german=" Nun, vermutlich liegt der\n[CS:P]Untergrundsee[CR] am nächsten.",
+                italian=" Il [CS:P]Lago Sotterraneo[CR] sembra\nessere il posto più vicino.",
+                spanish=" Supongo que lo más cercano\nsería el [CS:P]Lago Subterráneo[CR].",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    worldmap_DeleteArrow();
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" How about [CS:P]Treeshroud Forest[CR]?[K]\nThat was where I got my first Time Gear the\nlast time.",
+        french=" Et pourquoi pas la [CS:P]Forêt\nLinceul[CR]?[K] C\'est là que j\'ai déniché mon\npremier Rouage du Temps, la dernière fois.",
+        german=" Wie wäre es mit dem\n[CS:P]Schemengehölz[CR]?[K] Dort habe ich damals mein\nerstes Zahnrad der Zeit bekommen.",
+        italian=" E che ne pensi della [CS:P]Foresta[CR]\n[CS:P]Arcana[CR]?[K] È il posto in cui l\'altra volta\nho preso il mio primo Ingranaggio del Tempo.",
+        spanish=" ¿Qué tal el [CS:P]Bosque Enraizado[CR]?[K]\nAllí fue donde conseguí el primer\nEngranaje del Tiempo la otra vez.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Where is that?",
+                french=" C\'est où?",
+                german=" Wo liegt das?",
+                italian=" Dove si trova?",
+                spanish=" ¿Dónde está eso?",
+            }
+        case 2:
+            {
+                english=" Where is that?",
+                french=" C\'est où?",
+                german=" Wo liegt das?",
+                italian=" Dove si trova?",
+                spanish=" ¿Dónde está eso?",
+            }
+        default:
+            {
+                english=" Where is that?",
+                french=" C\'est où?",
+                german=" Wo liegt das?",
+                italian=" Dove si trova?",
+                spanish=" ¿Dónde está eso?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Here.",
+        french=" Là.",
+        german=" Hier.",
+        italian=" Qua.",
+        spanish=" Aquí.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    worldmap_MoveCamera(35);
+    WaitSubScreen();
+    worldmap_SetMark(35);
+    worldmap_SetArrow(35);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" It is a little far from here,\nbut...",
+        french=" C\'est un peu loin, mais...",
+        german=" Es ist etwas weit von hier,\naber...",
+        italian=" È un po\' lontana da qui, ma...",
+        spanish=" Está un poco lejos, pero...",
+    });
+    message_Talk({
+        english=" There is no one like [CS:N]Uxie[CR]\nguarding that Time Gear.",
+        french=" On ne risque pas de tomber sur\nquelqu\'un comme [CS:N]Créhelf[CR], personne ne surveille\nce Rouage du Temps-là.",
+        german=" Dort passt niemand wie [CS:N]Selfe[CR]\nauf das Zahnrad der Zeit auf.",
+        italian=" Non c\'è nessuno come [CS:N]Uxie[CR]\na fare la guardia a quell\'Ingranaggio del Tempo.",
+        spanish=" Allí no hay nadie como [CS:N]Uxie[CR]\ncustodiando ese Engranaje del Tiempo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Great!",
+                french=" Génial!",
+                german=" Super!",
+                italian=" Grandioso!",
+                spanish=" ¡Genial!",
+            }
+        case 2:
+            {
+                english=" Oh, great!",
+                french=" Génial!",
+                german=" Oh, super!",
+                italian=" Oh, grandioso!",
+                spanish=" ¡Genial!",
+            }
+        default:
+            {
+                english=" Oh, great!",
+                french=" Génial!",
+                german=" Oh, super!",
+                italian=" Oh, grandioso!",
+                spanish=" ¡Genial!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" If we have to fight someone\nover a Time Gear, that would attract\nattention.",
+                french=" S\'il faut qu\'on se batte pour\ns\'emparer d\'un Rouage du Temps, ça risque\nd\'attirer l\'attention.",
+                german=" Wenn wir wegen eines\nZahnrades der Zeit mit jemandem kämpfen\nwürden, könnte das Aufmerksamkeit erregen. ",
+                italian=" Se dovessimo lottare con\nqualcuno per recuperare un Ingranaggio\ndel Tempo, attireremmo l\'attenzione su di noi.",
+                spanish=" Si tuviéramos que enfrentarnos\na alguien para conseguir el Engranaje del\nTiempo, llamaríamos la atención.",
+            }
+        case 2:
+            {
+                english=" If we were to fight someone\nover a Time Gear, that would attract\nattention.",
+                french=" S\'il faut qu\'on se batte pour\ns\'emparer d\'un Rouage du Temps, ça risque\nd\'attirer l\'attention.",
+                german=" Wenn wir jemanden wegen eines\nZahnrades der Zeit bekämpfen würden, könnte\ndas Aufmerksamkeit erregen. ",
+                italian=" Se dovessimo lottare con\nqualcuno per recuperare un Ingranaggio\ndel Tempo, attireremmo l\'attenzione su di noi.",
+                spanish=" Si tuviéramos que enfrentarnos\na alguien para conseguir el Engranaje del\nTiempo, llamaríamos la atención.",
+            }
+        default:
+            {
+                english=" If we have to fight someone\nover a Time Gear, that would attract\nattention.",
+                french=" S\'il faut qu\'on se batte pour\ns\'emparer d\'un Rouage du Temps, ça risque\nd\'attirer l\'attention.",
+                german=" Wenn wir wegen eines\nZahnrades der Zeit mit jemandem kämpfen\nwürden, könnte das Aufmerksamkeit erregen. ",
+                italian=" Se dovessimo lottare con\nqualcuno per recuperare un Ingranaggio\ndel Tempo, attireremmo l\'attenzione su di noi.",
+                spanish=" Si tuviéramos que enfrentarnos\na alguien para conseguir el Engranaje del\nTiempo, llamaríamos la atención.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" But we wouldn\'t have to worry\nabout that here, right?",
+                french=" Mais là-bas, ce ne sera pas\nle cas, n\'est-ce pas?",
+                german=" Aber hier müssten wir das nicht\nbefürchten, richtig?",
+                italian=" Ma là non c\'è nulla di cui \npreoccuparsi, vero?",
+                spanish=" Y si vamos allí no tendríamos\nque preocuparnos por eso, ¿verdad?",
+            }
+        case 2:
+            {
+                english=" But that won\'t be a concern\nhere, right?",
+                french=" Mais là-bas, ce ne sera pas\nle cas, n\'est-ce pas?",
+                german=" Aber hier wäre das kein\nProblem, oder?",
+                italian=" Ma là non c\'è nulla di cui \npreoccuparsi, vero?",
+                spanish=" Y si vamos allí no tendríamos\nque preocuparnos por eso, ¿verdad?",
+            }
+        default:
+            {
+                english=" But that won\'t be a problem\nhere, right?",
+                french=" Mais là-bas, ce ne sera pas\nle cas, n\'est-ce pas?",
+                german=" Aber hier hätten wir damit keine\nProbleme, oder?",
+                italian=" Ma là non dovremmo avere \nproblemi, vero?",
+                spanish=" Y si vamos allí no tendríamos\nque preocuparnos por eso, ¿verdad?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Exactly.",
+        french=" Exact.",
+        german=" Genau.",
+        italian=" Esattamente.",
+        spanish=" Exacto.",
+    });
+    message_Close();
+    se_Play(6667);
+    screen2_FadeOut(1, 15);
+    back2_SetMode(0);
+    end;
+}

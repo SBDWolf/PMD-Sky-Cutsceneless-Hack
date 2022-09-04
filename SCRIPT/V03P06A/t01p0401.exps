@@ -1,0 +1,97 @@
+
+def 0 {
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_S05P04A);
+    back_SetGround(LEVEL_V03P06A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    camera2_SetPositionMark(Position<'m0', 19.5, 17>);
+    back2_SetBackEffect(3);
+    screen2_FadeIn(1, 0);
+    with (object OBJECT_S05P04A1_187) {
+        SetAnimation(17);
+    }
+    with (object OBJECT_S05P04A1_187) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_S05P04A1_187);
+    Wait(60);
+    screen2_WhiteOut(1, 60);
+    with (object OBJECT_S05P04A1_187) {
+        Destroy();
+    }
+    Wait(45);
+    WaitBgmSignal();
+    se_Play(8979);
+    back2_SetGround(LEVEL_S05P04A);
+    camera2_SetPositionMark(Position<'m1', 16.5, 13.5>);
+    back2_SetBackEffect(3);
+    screen2_FadeIn(1, 0);
+    camera2_SetPositionMark(Position<'m2', 16.5, 13.5>);
+    Wait(2);
+    camera2_SetPositionMark(Position<'m3', 49.5, 13.5>);
+    Wait(2);
+    camera2_SetPositionMark(Position<'m4', 82.5, 13.5>);
+    Wait(2);
+    camera2_SetPositionMark(Position<'m5', 16.5, 37.5>);
+    Wait(2);
+    camera2_SetPositionMark(Position<'m6', 49.5, 37.5>);
+    Wait(2);
+    camera2_SetPositionMark(Position<'m7', 82.5, 37.5>);
+    Wait(2);
+    camera2_SetPositionMark(Position<'m8', 16.5, 61.5>);
+    Wait(2);
+    camera2_SetPositionMark(Position<'m9', 49.5, 61.5>);
+    Wait(2);
+    camera2_SetPositionMark(Position<'m10', 82.5, 61.5>);
+    Wait(2);
+    camera2_SetPositionMark(Position<'m11', 16.5, 85.5>);
+    Wait(2);
+    camera2_SetPositionMark(Position<'m12', 49.5, 85.5>);
+    Wait(2);
+    camera2_SetPositionMark(Position<'m13', 82.5, 85.5>);
+    if ( variation ) {
+        §label_0;
+        supervision_Acting(10);
+        §label_1;
+        Wait(30);
+        with (object OBJECT_V03P06A2_216) {
+            SetOutputAttribute(2);
+        }
+        with (object OBJECT_V03P06A1_212) {
+            SetOutputAttribute(2);
+        }
+        with (object OBJECT_V03P06A2_216) {
+            SetAnimation(3);
+        }
+        with (object OBJECT_V03P06A1_212) {
+            SetAnimation(3);
+        }
+        Wait(1);
+        screen_FadeIn(1, 30);
+        Wait(60);
+        with (performer 3) {
+            SetEffect(659, 3);
+        }
+        with (performer 3) {
+            WaitEffect();
+        }
+        Wait(110);
+        supervision_Acting(1);
+        Wait(10);
+        supervision_Acting(2);
+        with (object OBJECT_S05P02A2_170) {
+            SetAnimation(2);
+        }
+        $EVENT_LOCAL = 1;
+        switch ( ProcessSpecial(22, 1, 0) ) { }
+        Wait(2000);
+        screen2_FadeOut(0, 60);
+        screen_FadeOut(1, 60);
+        end;
+    } else {
+        jump @label_1;
+    }
+}

@@ -1,0 +1,128 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
+    $SCENARIO_MAIN = scn[6, 1];
+    $PERFORMANCE_PROGRESS_LIST[8] = 1;
+    back_SetGround(LEVEL_G01P04A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" Er, ahem.[K] Everyone, listen up.\nI have an important announcement to make.",
+        french=" Hum hum.[K] Ecoutez tous.\nJ\'ai une annonce importante à faire.",
+        german=" Ähem.[K] Hört bitte alle her.\nIch habe eine wichtige Neuigkeit.",
+        italian=" Ahem.[K] Posso avere la vostra\nattenzione? Devo fare un annuncio importante.",
+        spanish=" Ejem...[K] Escuchadme todos.\nTengo que anunciar algo importante.",
+    });
+    message_Talk({
+        english=" Far to the northeast, then\nfarther into its outermost reaches...",
+        french=" Loin au nord-est, aux confins\nde notre monde...",
+        german=" Weit oben im Nordosten,\nund noch weiter draußen, in den äußersten\nGefilden...",
+        italian=" A nord-est, molto lontano da\nqui...",
+        spanish=" Muy lejos del [CS:N]Pokégremio[CR], más\nallá de los confines del noroeste...",
+    });
+    message_Talk({
+        english=" There lies a place named\n[CS:P]Treeshroud Forest[CR]...",
+        french=" ... se trouve un endroit connu\nsous le nom de [CS:P]Forêt Linceul[CR]...",
+        german=" Dort gibt es einen Ort namens\n[CS:P]Schemengehölz[CR]...",
+        italian=" ... c\'è un luogo chiamato\n[CS:P]Foresta Arcana[CR].",
+        spanish=" Se encuentra un lugar conocido\ncomo el [CS:P]Bosque Enraizado[CR].",
+    });
+    message_Talk({
+        english=" In [CS:P]Treeshroud Forest[CR]...",
+        french=" Dans cette [CS:P]Forêt Linceul[CR]...",
+        german=" Im [CS:P]Schemengehölz[CR]...",
+        italian=" Nella [CS:P]Foresta Arcana[CR]...",
+        spanish=" En el [CS:P]Bosque Enraizado[CR]...",
+    });
+    message_Talk({
+        english=" Time has apparently stopped...",
+        french=" ... il semble que le temps se soit\narrêté...",
+        german=" Dort ist anscheinend die Zeit\nstehen geblieben...",
+        italian=" ... il tempo sembra essersi \nfermato.",
+        spanish=" El tiempo parece haberse detenido.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_Stop();
+    se_Play(8968);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    message_SetFace(ACTOR_NPC_DIGUDA, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Huh?!",
+        french=" Hein?!",
+        german=" Äh?!?",
+        italian=" Eh?!",
+        spanish=" ¡¿Qué?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_KIMAWARI) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_KIMAWARI);
+    message_SetFace(ACTOR_NPC_KIMAWARI, FACE_NORMAL, FACE_POS_BOTTOM_R_CENTER);
+    message_FacePositionOffset(2, -2);
+    message_Talk({
+        english=" Eek! What did you say?!",
+        french=" Hiii! J\'hallucine!",
+        german=" Ieek! Was hast du gesagt?!?",
+        italian=" Ehi! Cosa hai detto?!",
+        spanish=" ¡Ayayay! ¡¿Qué has dicho?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_HEIGANI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    message_SetFace(ACTOR_NPC_HEIGANI, FACE_NORMAL, FACE_POS_BOTTOM_L_CENTER);
+    message_FacePositionOffset(-3, 0);
+    message_Talk({
+        english=" You\'re saying time stopped?!\nHey, hey, hey!",
+        french=" Tu es en train de dire que\nle temps s\'est arrêté?! Dis donc!",
+        german=" Du sagst, die Zeit ist stehen\ngeblieben?!? Hey, hey, hey!",
+        italian=" Stai dicendo che il tempo si è\nfermato?! Ehi, ehi, ehi!",
+        spanish=" ¡¿El tiempo se ha parado?!\n¿En serio?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" Yes, that\'s correct...",
+        french=" Oui, c\'est exact...",
+        german=" Ja, richtig...",
+        italian=" Sì, è così...",
+        spanish=" Así es.",
+    });
+    message_Close();
+    screen_FadeOut(1, 30);
+    end;
+}

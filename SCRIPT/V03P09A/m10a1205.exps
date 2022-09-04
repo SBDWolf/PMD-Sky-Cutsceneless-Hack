@@ -1,0 +1,251 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_TIME_GEAR, 0, 256);
+    back_SetGround(LEVEL_V03P09A);
+    back_SetBackScrollSpeed(3, 3);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    back_SetEffect(7, 0);
+    back_SetBackEffect(2);
+    CallCommon(CORO_FADE_OUT_ALL_BEFORE);
+    screen_FadeInAll(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_PLAYER, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(............)",
+                french="(............)",
+                german="(............)",
+                italian="(............)",
+                spanish="(...)",
+            }
+        default:
+            {
+                english="(............)",
+                french="(............)",
+                german="(............)",
+                italian="(............)",
+                spanish="(...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(What could that be?)",
+                french="(Qu\'est-ce que ça peut bien être?)",
+                german="(Was könnte das sein?)",
+                italian="(E quello cosa sarà?)",
+                spanish="(¿Qué será?)",
+            }
+        default:
+            {
+                english="(What could that be?)",
+                french="(Qu\'est-ce que ça peut bien être?)",
+                german="(Was könnte das sein?)",
+                italian="(E quello cosa sarà?)",
+                spanish="(¿Qué podrá ser?)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(I can\'t figure it out...[K]but it\'s making my\nheart race!)",
+                french="(Je l\'ignore...[K] mais mon cœur bat la chamade!)",
+                german="(Ich komme nicht darauf.[K] Aber es verursacht\nHerzrasen bei mir!)",
+                italian="(Davvero non lo so...[K] ma guardarlo mi toglie\nil respiro!)",
+                spanish="(No consigo verlo bien...[K] ¡pero está\nhaciendo que me palpite el corazón!)",
+            }
+        default:
+            {
+                english="(I can\'t figure it out...[K]but it\'s making my\nheart race!)",
+                french="(Je l\'ignore...[K] mais mon cœur bat la chamade!)",
+                german="(Ich komme nicht darauf.[K] Aber es verursacht\nHerzrasen bei mir!)",
+                italian="(Davvero non lo so...[K] ma guardarlo mi toglie\nil respiro!)",
+                spanish="(No consigo verlo bien...[K] ¡pero está\nhaciendo que me palpite el corazón!)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(But why? Why should it stir me up so much?)",
+                french="(Mais pourquoi? Pourquoi ça me fait un tel\neffet?)",
+                german="(Aber warum? Warum bewegt es mich so?)",
+                italian="(Perché? Chissà perché mi fa questo\neffetto...)",
+                spanish="(Pero, ¿por qué me estará afectando tanto?)",
+            }
+        default:
+            {
+                english="(But why? Why should it stir me up so much?)",
+                french="(Mais pourquoi? Pourquoi ça me fait un tel\neffet?)",
+                german="(Aber warum? Warum bewegt es mich so?)",
+                italian="(Perché? Chissà perché mi fa questo\neffetto...)",
+                spanish="(Pero, ¿por qué me estará afectando tanto?)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Why is my pulse speeding all of a sudden?)",
+                french="(Pourquoi mon pouls s\'accélère tout à coup?)",
+                german="(Warum ist mein Puls plötzlich so schnell?)",
+                italian="(Perché mi sento così?)",
+                spanish="(¿Por qué se me ha acelerado el pulso de\nforma tan repentina?)",
+            }
+        default:
+            {
+                english="(Why is my pulse speeding all of a sudden?)",
+                french="(Pourquoi mon pouls s\'accélère tout à coup?)",
+                german="(Warum ist mein Puls plötzlich so schnell?)",
+                italian="(Perché mi sento così?)",
+                spanish="(¿Por qué se me ha acelerado el pulso de\nforma tan repentina?)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_INSPIRED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" That\'s fantastic![K] But...",
+                french=" C\'est fantastique![K] Mais...",
+                german=" Das ist fantastisch![K] Aber...",
+                italian=" Wow! È davvero fantastico![K]\nPerò...",
+                spanish=" ¡Es fantástico![K] Pero...",
+            }
+        case 2:
+            {
+                english=" That\'s fantastic![K] But...",
+                french=" C\'est fantastique![K] Mais...",
+                german=" Das ist fantastisch![K] Aber...",
+                italian=" È bellissimo![K] Ma...",
+                spanish=" ¡Es fantástico![K] Pero...",
+            }
+        default:
+            {
+                english=" That\'s fantastic![K] But...",
+                french=" C\'est fantastique![K] Mais...",
+                german=" Das ist fantastisch![K] Aber...",
+                italian=" È bellissimo![K] Ma...",
+                spanish=" ¡Es fantástico![K] Pero...",
+            }
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" What is that?",
+                french=" Qu\'est-ce que c\'est?",
+                german=" Was ist das?",
+                italian=" Che cos\'è?",
+                spanish=" ¿Qué es eso?",
+            }
+        case 2:
+            {
+                english=" What is that?",
+                french=" Qu\'est-ce que c\'est?",
+                german=" Was ist das?",
+                italian=" Che cos\'è?",
+                spanish=" ¿Qué es eso?",
+            }
+        default:
+            {
+                english=" What is that?",
+                french=" Qu\'est-ce que c\'est?",
+                german=" Was ist das?",
+                italian=" Che cos\'è?",
+                spanish=" ¿Qué es eso?",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It has such a mysterious quality!",
+                french=" Une aura mystérieuse\ns\'en dégage!",
+                german=" Es hat eine so mysteriöse Aura!",
+                italian=" È davvero qualcosa di\nmisterioso!",
+                spanish=" ¡Es algo misterioso!",
+            }
+        case 2:
+            {
+                english=" It has such a mystical quality!",
+                french=" Une aura mystérieuse\ns\'en dégage!",
+                german=" Es hat eine so mysteriöse Aura!",
+                italian=" Sembra...[K] così misterioso!",
+                spanish=" ¡Parece algo misterioso!",
+            }
+        default:
+            {
+                english=" Oooh...[K]it seems so mystical!",
+                french=" Une aura mystérieuse\ns\'en dégage!",
+                german=" Uuuh![K] Es wirkt so mysteriös!",
+                italian=" Sembra...[K] così misterioso!",
+                spanish=" ¡Oooh![K] ¡Parece tan misterioso!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_YUKUSHII, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" That is...[K]a Time Gear.",
+        french=" Ceci est...[K] un Rouage du Temps.",
+        german=" Das ist...[K] Das ist ein Zahnrad\nder Zeit.",
+        italian=" Quello...[K] è un Ingranaggio del\nTempo.",
+        spanish=" Es...[K] un Engranaje del Tiempo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" What?![K] Really?![K] A Time Gear?!",
+                french=" Hein?! Vraiment?![K] Un Rouage\ndu Temps?!",
+                german=" Wie bitte?!?[K] Wirklich?!?[K]\nEin Zahnrad der Zeit?!?",
+                italian=" Eh?[K] Davvero?[K] Un Ingranaggio\ndel Tempo?",
+                spanish=" ¡¿Qué?![K] ¡¿En serio?![K]\n¡¿Un Engranaje del Tiempo?!",
+            }
+        case 2:
+            {
+                english=" What?![K] That\'s a Time Gear?!",
+                french=" Hein?! Vraiment?![K] Un Rouage\ndu Temps?!",
+                german=" Was?!?[K] Das ist ein Zahnrad der\nZeit?!?",
+                italian=" Cosa?[K] Un Ingranaggio\ndel Tempo?",
+                spanish=" ¡¿Qué?![K] ¡¿Eso es\nun Engranaje del Tiempo?!",
+            }
+        default:
+            {
+                english=" What?![K] Really and truly?![K]\nThat\'s a Time Gear?!",
+                french=" Hein?! Vraiment?![K] Un Rouage\ndu Temps?!",
+                german=" Was?!?[K] Wirklich und\nwahrhaftig?!?[K] Das ist ein Zahnrad der Zeit?!?",
+                italian=" Cosa?[K] Un Ingranaggio\ndel Tempo?",
+                spanish=" ¡¿Qué?![K] ¡¿De verdad?![K]\n¡¿Un Engranaje del Tiempo?!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_YUKUSHII, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Yes.",
+        french=" Oui.",
+        german=" Ja.",
+        italian=" È così.",
+        spanish=" En efecto.",
+    });
+    message_Talk({
+        english=" I guard the Time Gear.",
+        french=" Pour ma part, ma mission ici\nconsiste à protéger ce Rouage du Temps.",
+        german=" Ich bewache das Zahnrad der\nZeit.",
+        italian=" Sono il custode dell\'Ingranaggio\ndel Tempo.",
+        spanish=" Yo custodio el Engranaje del Tiempo.",
+    });
+    message_Talk({
+        english=" It\'s the sole reason I\'m here.",
+        french=" C\'est la seule et unique raison\nde ma présence ici.",
+        german=" Das ist der einzige Grund,\naus dem ich hier bin.",
+        italian=" Questa è la ragione della mia\npresenza qui.",
+        spanish=" Es la única razón por la que\nestoy aquí.",
+    });
+    message_Close();
+    screen_FadeOutAll(1, 60);
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    end;
+}

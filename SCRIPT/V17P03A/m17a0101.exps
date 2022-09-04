@@ -1,0 +1,164 @@
+
+def 0 {
+    sound_Stop();
+    back_SetBanner2(275, 0, 156, 124, 14, {
+        english="Into the\nFuture",
+        french="Voyage dans\nle futur",
+        german="In die\nZukunft",
+        italian="Nel futuro",
+        spanish="Viaje al futuro",
+    });
+    screen_FadeIn(1, 45);
+    Wait(160);
+    screen_FadeOut(1, 45);
+    Wait(15);
+    $SCENARIO_MAIN = scn[18, 1];
+    Wait(30);
+    message_SetFace(ACTOR_PLAYER, FACE_PAIN, FACE_POS_STANDARD);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="..................",
+                french="..................",
+                german="..................",
+                italian="..................",
+                spanish="...",
+            }
+        default:
+            {
+                english="..................",
+                french="..................",
+                german="..................",
+                italian="..................",
+                spanish="... ...",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="....................................",
+                french="....................................",
+                german="....................................",
+                italian="....................................",
+                spanish="... ... ...",
+            }
+        default:
+            {
+                english="....................................",
+                french="....................................",
+                german="....................................",
+                italian="....................................",
+                spanish="... ... ... ...",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="...Ugh...",
+                french="... Argh...",
+                german="...Argh...",
+                italian="... Oooh...",
+                spanish="(Ay...)",
+            }
+        default:
+            {
+                english="...Ugh...",
+                french="... Argh...",
+                german="...Argh...",
+                italian="... Oooh...",
+                spanish="(Ay...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="Where is this...?",
+                french="Où suis-je...?",
+                german="Wo bin ich?",
+                italian="Dove...?",
+                spanish="(¿Dónde estoy?)",
+            }
+        default:
+            {
+                english="Where is this...?",
+                french="Où suis-je...?",
+                german="Wo bin ich?",
+                italian="Dove...?",
+                spanish="(¿Dónde estoy?)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="I was...[K]dragged?",
+                french="On m\'a...[K] traîné jusqu\'ici?",
+                german="Wurde ich...[K] mitgerissen?",
+                italian="Dove...[K] mi trovo?",
+                spanish="(Me...[K] ¿Me han arrastrado?)",
+            }
+        default:
+            {
+                english="I was...[K]dragged?",
+                french="On m\'a...[K] traînée jusqu\'ici?",
+                german="Wurde ich...[K] mitgerissen?",
+                italian="Dove...[K] mi trovo?",
+                spanish="(Me...[K] ¿Me han arrastrado?)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="I can\'t... Losing consciousness...again...",
+                french="Je ne peux... je vais m\'évanouir... encore...",
+                german="Ich kann nicht... Werde wieder ohnmächtig...",
+                italian="Devo... tenere gli occhi aperti...",
+                spanish="(No puedo... volver a perder... la\nconsciencia...)",
+            }
+        default:
+            {
+                english="I can\'t... Losing consciousness...again...",
+                french="Je ne peux... je vais m\'évanouir... encore...",
+                german="Ich kann nicht... Werde wieder ohnmächtig...",
+                italian="Devo... tenere gli occhi aperti...",
+                spanish="(No puedo... volver a perder... la\nconsciencia...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="........................",
+                french="........................",
+                german="........................",
+                italian="........................",
+                spanish="...",
+            }
+        default:
+            {
+                english="........................",
+                french="........................",
+                german="........................",
+                italian="........................",
+                spanish="...",
+            }
+    }
+    message_KeyWait();
+    screen_FadeOutAll(1, 60);
+    message_CloseEnforce();
+    Wait(30);
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V17P01A);
+    back_SetGround(LEVEL_V17P03A);
+    supervision_Acting(0);
+    camera2_SetPositionMark(Position<'m0', 17, 15.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    bgm_PlayFadeIn(BGM_ON_THE_CEILING, 90, 128);
+    screen2_FadeIn(0, 60);
+    screen_FadeIn(1, 60);
+    Wait(180);
+    Wait(90);
+    screen_FadeOut(1, 60);
+    end;
+}

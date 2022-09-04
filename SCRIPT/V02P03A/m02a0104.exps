@@ -1,0 +1,121 @@
+
+def 0 {
+    sound_Stop();
+    back2_SetMode(5);
+    back_SetGround(LEVEL_V02P03A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen2_FadeIn(0, 30);
+    screen_FadeIn(1, 30);
+    Wait(90);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m0', 16, 69.5>);
+    }
+    WaitExecutePerformer(0);
+    Wait(15);
+    se_Play(8961);
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetEffect(EFFECT_SWEAT_DROP, 3);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_DIGUDA);
+    message_SetFace(ACTOR_NPC_DIGUDA, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Umm...[K] The footprint is...",
+        french=" Hum...[K] C\'est l\'empreinte\nde...",
+        german=" Ähm...[K] Der Fußabdruck ist...",
+        italian=" Uhm...[K] È la zampa di...",
+        spanish=" Hum...[K] La huella...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DIGUDA) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_DIGUDA);
+    message_SetFace(ACTOR_NPC_DIGUDA, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEOUTW);
+    message_Talk({
+        english=" Maybe [c_kind:PLAYER]\'s![K]\nMaybe [c_kind:PLAYER]\'s!",
+        french=" Peut-être celle de [c_kind:PLAYER]!\nPeut-être celle de [c_kind:PLAYER]!",
+        german=" Vielleicht ist er von\n[c_kind:PLAYER]![K] Vielleicht von [c_kind:PLAYER]!",
+        italian=" Forse è di [c_kind:PLAYER]![K]\nForse è di [c_kind:PLAYER]!",
+        spanish=" ¡Podría ser de [c_kind:PLAYER]![K]\n¡Podría ser de [c_kind:PLAYER]!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_ResetActor();
+    message_Talk({
+        english=" What?! MAYBE?!",
+        french=" Quoi?! Comment ça, PEUT-ETRE?!",
+        german=" Was?!? VIELLEICHT?!?",
+        italian=" Cosa?! FORSE?!",
+        spanish=" ¿Cómo? ¡¿Cómo que podría ser?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_DIGUDA);
+    message_SetFace(ACTOR_NPC_DIGUDA, FACE_PAIN, FACE_POS_BOTTOM_L_FACEOUTW);
+    message_Talk({
+        english=" B-but...[K] It\'s not a footprint that\nyou normally see around here...",
+        french=" M-mais...[K] ce n\'est pas\nune empreinte qu\'on voit souvent par ici...",
+        german=" A-aber...[K] So einen Fußabdruck\nsieht man hier für gewöhnlich nicht...",
+        italian=" M-Ma...[K] è una zampa che si\nvede di rado da queste parti...",
+        spanish=" Es que...[K] no es una huella que se\nvea a menudo...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_ResetActor();
+    message_Talk({
+        english=" UGH! That\'s pretty crummy!",
+        french=" BAAAH! Quelle excuse à deux Poké!",
+        german=" HACH! Faule Ausrede!",
+        italian=" UGH! Molto deludente!",
+        spanish=" ¡Desde luego, menudo inútil!",
+    });
+    message_Talk({
+        english=" Checking the footprints of visiting\nPokémon...",
+        french=" Vérifier les empreintes des Pokémon\nqui arrivent...",
+        german=" Die Fußabdrücke von Besuchern zu\nbestimmen...",
+        italian=" Controllare la forma delle zampe dei \nPokémon che vengono qui...",
+        spanish=" ¡Pero si lo único que tienes que hacer es\ncomprobar las huellas de los Pokémon que\nquieren entrar!",
+    });
+    message_Talk({
+        english=" That\'s your job, ISN\'T it, [CS:N]Diglett[CR]?",
+        french=" ... c\'est ton BOULOT, pas vrai,\n[CS:N]Taupiqueur[CR]?",
+        german=" Das ist doch dein JOB, [CS:N]Digda[CR], oder NICHT?",
+        italian=" ... è il tuo lavoro, NON È VERO [CS:N]Diglett[CR]?",
+        spanish=" Ese es tu trabajo, ¿no, [CS:N]Diglett[CR]?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetAnimation(4);
+    }
+    Wait(45);
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetAnimation(2);
+    }
+    message_SetFace(ACTOR_NPC_DIGUDA, FACE_PAIN, FACE_POS_BOTTOM_L_FACEOUTW);
+    message_Talk({
+        english=" Yes, but...[K] I don\'t know what\nI don\'t know.",
+        french=" Oui, mais...[K] quand je ne sais pas,\nje ne sais pas!",
+        german=" Ja, aber...[K] Wenn ich einen\nFußabdruck nicht kenne, erkenne ich ihn nicht.",
+        italian=" Sì, ma...[K] se non lo so, non lo\nso.",
+        spanish=" Sí, pero...[K] y si no lo sé... ¿qué\nhago, me lo invento?",
+    });
+    message_Close();
+    screen2_FadeOut(0, 30);
+    screen_FadeOut(1, 30);
+    back2_SetMode(0);
+    end;
+}

@@ -1,0 +1,253 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_TIME_GEAR, 0, 256);
+    back_SetGround(LEVEL_P04P01C);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_INSPIRED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Unbelievable!",
+                french=" Je n\'en crois pas mes yeux!",
+                german=" Unglaublich!",
+                italian=" Incredibile!",
+                spanish=" ¡Increíble!",
+            }
+        case 2:
+            {
+                english=" That\'s incredible!",
+                french=" Je n\'en crois pas mes yeux!",
+                german=" Das ist unglaublich!",
+                italian=" È fantastico!",
+                spanish=" ¡Es increíble!",
+            }
+        default:
+            {
+                english=" It\'s so very incredible!",
+                french=" Je n\'en crois pas mes yeux!",
+                german=" Das ist einfach unglaublich!",
+                italian=" È davvero fantastico!",
+                spanish=" ¡Resulta increíble!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Such a big lake! Who\'d ever\nexpect it way up here on this plateau!",
+                french=" Qui aurait pu penser qu\'un\nsi grand lac puisse se trouver à une telle\naltitude?",
+                german=" Was für ein großer See! Wer\nhätte so etwas hier oben erwartet?",
+                italian=" Che lago enorme! Chi l\'avrebbe\nmai detto, così in alto...",
+                spanish=" ¡Qué lago tan grande!\n¿Quién se lo iba a esperar aquí arriba,\nen esta especie de meseta?",
+            }
+        case 2:
+            {
+                english=" Who\'d expect to see such a big\nlake on a plateau so high up?",
+                french=" Qui aurait pu penser qu\'un\nsi grand lac puisse se trouver à une telle\naltitude?",
+                german=" Wer würde so hoch oben\neinen so großen See erwarten?",
+                italian=" Chi avrebbe mai immaginato che\nci potesse essere un lago così immenso\nquassù?",
+                spanish=" ¿Quién se iba a esperar ver un\nlago tan grande aquí arriba, en esta meseta?",
+            }
+        default:
+            {
+                english=" Who would have guessed that a\nbig lake could be high up on this plateau!",
+                french=" Qui aurait pu penser qu\'un\nsi grand lac puisse se trouver à une telle\naltitude?",
+                german=" Wer hätte gedacht, dass es so\nhoch oben einen so großen See gibt!",
+                italian=" Chi avrebbe mai immaginato che\nci potesse essere un lago così immenso\nquassù?",
+                spanish=" ¿Quién iba a suponer que un lago\ntan grande podía estar aquí arriba, en esta\nespecie de meseta?",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" And look! Those [CS:N]Volbeat[CR] and\n[CS:N]Illumise[CR] flying around...",
+                french=" Et regarde tous ces [CS:N]Muciole[CR]\net ces [CS:N]Lumivole[CR] un peu partout dans le ciel...",
+                german=" Und sieh mal! Diese\numherfliegenden [CS:N]Volbeat[CR] und [CS:N]Illumise[CR]...",
+                italian=" E guarda! Tutti quei [CS:N]Volbeat[CR] e\nquegli [CS:N]Illumise[CR] che volano...",
+                spanish=" ¡Y mira cómo revolotean por\naquí esos [CS:N]Illumise[CR] y [CS:N]Volbeat[CR]!",
+            }
+        case 2:
+            {
+                english=" And those floating [CS:N]Volbeat[CR] and\n[CS:N]Illumise[CR]...",
+                french=" Et regarde tous ces [CS:N]Muciole[CR]\net ces [CS:N]Lumivole[CR] un peu partout dans le ciel...",
+                german=" Und diese umherschwebenden\n[CS:N]Volbeat[CR] und [CS:N]Illumise[CR]...",
+                italian=" E tutti quei [CS:N]Volbeat[CR] e gli\n[CS:N]Illumise[CR] che volano...",
+                spanish=" ¡Y mira cómo revolotean por\naquí esos [CS:N]Illumise[CR] y [CS:N]Volbeat[CR]!",
+            }
+        default:
+            {
+                english=" And just look at those fluttering\n[CS:N]Volbeat[CR] and [CS:N]Illumise[CR]...",
+                french=" Et regarde tous ces [CS:N]Muciole[CR]\net ces [CS:N]Lumivole[CR] un peu partout dans le ciel...",
+                german=" Und sieh dir nur mal diese\numherschwirrenden [CS:N]Volbeat[CR] und [CS:N]Illumise[CR] an...",
+                italian=" E tutti quei [CS:N]Volbeat[CR] e gli\n[CS:N]Illumise[CR] che volano...",
+                spanish=" ¡Y mira cómo revolotean por\naquí esos [CS:N]Illumise[CR] y [CS:N]Volbeat[CR]!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Amazing!",
+                french=" Quel spectacle éblouissant!",
+                german=" Großartig!",
+                italian=" Davvero incredibile!",
+                spanish=" ¡Increíble!",
+            }
+        case 2:
+            {
+                english=" So beautiful!",
+                french=" Quel spectacle éblouissant!",
+                german=" Wunderschön!",
+                italian=" È bellissimo!",
+                spanish=" ¡Esto es fascinante!",
+            }
+        default:
+            {
+                english=" This couldn\'t be more dazzling!",
+                french=" Quel spectacle éblouissant!",
+                german=" Das ist einfach umwerfend!",
+                italian=" È bellissimo!",
+                spanish=" ¡Qué hermoso!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_YUKUSHII, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Water constantly wells up from\nfar below this place.",
+        french=" Un puits d\'eau très profond\nalimente constamment le lac.",
+        german=" Unter diesem Ort quillt\nunablässig Wasser nach oben.",
+        italian=" L\'acqua sgorga incessantemente\ndalle profondità di questo luogo...",
+        spanish=" El agua brota con fuerza bajo\neste lugar.",
+    });
+    message_Talk({
+        english=" It flows up so heavily that it\nhas long formed this enormous lake.",
+        french=" La source est si abondante\nqu\'elle a fini par créer un lac immense.",
+        german=" Sein Strom ist so stark, dass es\nschon vor langer Zeit diesen riesigen See\nbildete.",
+        italian=" ... creando il lago che state\nosservando.",
+        spanish=" Brota de forma ininterrumpida,\npor lo que hace mucho tiempo se formó\neste enorme lago.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YUKUSHII) {
+        Turn2Direction(8, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKUSHII);
+    message_Talk({
+        english=" Now cast your eyes to the\nglowing area at the lake\'s center.",
+        french=" Maintenant, tournez votre\nregard vers le point lumineux en son centre.",
+        german=" Nun richtet euren Blick auf die\nleuchtende Stelle in der Mitte des Sees.",
+        italian=" Adesso, vi prego di volgere il\nvostro sguardo alla luce che si trova al centro.",
+        spanish=" Ahora mirad con atención\nel resplandor del centro.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Yep, I see it!",
+                french=" Oui, je le vois!",
+                german=" Okay, ich sehe sie!",
+                italian=" Ok! La vedo!",
+                spanish=" ¡Sí, ya lo veo!",
+            }
+        case 2:
+            {
+                english=" Yes, I see it!",
+                french=" Oui, je le vois!",
+                german=" Ja, ich sehe sie!",
+                italian=" Sì, la vedo!",
+                spanish=" ¡Sí, ya lo veo!",
+            }
+        default:
+            {
+                english=" Sure, I can see it!",
+                french=" Oui, je le vois!",
+                german=" Oh ja, ich sehe sie!",
+                italian=" Sì, la vedo!",
+                spanish=" ¡Sí, ya lo veo!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It\'s coming from below!",
+                french=" La lumière provient du fond\ndu lac!",
+                german=" Es kommt von unten!",
+                italian=" Viene da sotto!",
+                spanish=" ¡Sale del fondo!",
+            }
+        case 2:
+            {
+                english=" It\'s radiating from below!",
+                french=" La lumière provient du fond\ndu lac!",
+                german=" Das Leuchten kommt von unten!",
+                italian=" Proviene dal fondo del lago!",
+                spanish=" ¡La luz sale del fondo!",
+            }
+        default:
+            {
+                english=" It\'s shining up from beneath\nthe waves!",
+                french=" La lumière provient du fond\ndu lac!",
+                german=" Es leuchtet zwischen den Wellen\nnach oben!",
+                italian=" Proviene dal fondo del lago!",
+                spanish=" ¡Algo brilla por debajo del agua!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" That sorta blue, sorta green\nlight, right?",
+                french=" C\'est cette lumière bleu-vert,\nc\'est ça?",
+                german=" Dieses halb grünliche, halb\nbläuliche Licht, oder?",
+                italian=" È quella luce un po\' blu e un po\'\nverdina, no?",
+                spanish=" Te refieres a esa especie\nde resplandor azul verdoso, ¿no?",
+            }
+        case 2:
+            {
+                english=" That blue green radiance, right?",
+                french=" C\'est cette lumière bleu-vert,\nc\'est ça?",
+                german=" Dieses grünblaue Strahlen, oder?",
+                italian=" Quella luce tra il blu e il\nverde, giusto?",
+                spanish=" Te refieres a esa especie\nde resplandor azul verdoso, ¿no?",
+            }
+        default:
+            {
+                english=" The bluish green radiance, right?",
+                french=" C\'est cette lumière bleu-vert,\nc\'est ça?",
+                german=" Das bläulich grüne Strahlen,\noder?",
+                italian=" Quella luce tra il blu e il\nverde, giusto?",
+                spanish=" Te refieres a esa especie\nde resplandor azul verdoso, ¿no?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_YUKUSHII, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Step forward for a closer look.",
+        french=" Approchez-vous pour la voir\nde plus près.",
+        german=" Geht näher heran und seht\ngenauer hin.",
+        italian=" Avvicinatevi.",
+        spanish=" Dad un paso al frente para poder\nverlo mejor.",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_YUKUSHII) {
+        Turn2Direction(8, 2, DIR_UP);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(32972, Position<'m0', 17, 46>);
+    }
+    Wait(5);
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(32972, Position<'m1', 22, 46>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(30);
+    screen_FadeOut(1, 30);
+    end;
+}

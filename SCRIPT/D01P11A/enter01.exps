@@ -1,0 +1,112 @@
+
+def 0 {
+    switch ( $EXECUTE_SPECIAL_EPISODE_TYPE ) {
+        case 0:
+        case 1:
+        case 2:
+        case 4:
+        case 3:
+            §label_0;
+            switch ( $GROUND_ENTER ) {
+                case 224:
+                    §label_3;
+                    main_EnterGround(LEVEL_P01P02A, 30);
+                    hold;
+                default:
+                    debug_Print('BGM_FADEOUT');
+                    bgm_FadeOut(60);
+                    jump @label_3;
+            }
+            break;
+        default:
+            if ( scn($SCENARIO_MAIN) == [29, 1] ) {
+                with (actor ACTOR_ATTENDANT1) {
+                    SetAnimation(2);
+                }
+                with (actor ACTOR_PLAYER) {
+                    SetAnimation(2);
+                }
+                with (actor ACTOR_ATTENDANT1) {
+                    Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+                }
+                WaitExecuteLives(ACTOR_ATTENDANT1);
+                with (actor ACTOR_PLAYER) {
+                    Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+                }
+                message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+                message_SwitchTalk ($PARTNER_TALK_KIND) {
+                    case 1:
+                        {
+                            english=" We have to get equipped for\nexploration first, [hero].",
+                            french=" On doit d\'abord faire nos\npréparatifs pour l\'expédition, [hero].",
+                            german=" Wir müssen uns erst für die\nErkundung ausstatten, [hero].",
+                            italian=" Prima dobbiamo prepararci\nper l\'esplorazione, [hero].",
+                            spanish=" Tenemos que equiparnos bien\nantes de ir a explorar, [hero].",
+                        }
+                    case 2:
+                        {
+                            english=" We have to get ready for\nexploration first, [hero].",
+                            french=" On doit d\'abord faire nos\npréparatifs pour l\'expédition, [hero].",
+                            german=" Wir müssen uns erst auf die\nErkundung vorbereiten, [hero].",
+                            italian=" Prima dobbiamo prepararci\nper l\'esplorazione, [hero].",
+                            spanish=" Mejor nos equipamos bien\nantes de ir a explorar, [hero].",
+                        }
+                    default:
+                        {
+                            english=" We have to get ready for\nexploration first, [hero].",
+                            french=" On doit d\'abord faire nos\npréparatifs pour l\'expédition, [hero].",
+                            german=" Wir müssen uns erst auf die\nErkundung vorbereiten, [hero].",
+                            italian=" Prima dobbiamo prepararci\nper l\'esplorazione, [hero].",
+                            spanish=" Será mejor que nos equipemos\nbien antes de ir a explorar, [hero].",
+                        }
+                }
+                message_SwitchTalk ($PARTNER_TALK_KIND) {
+                    case 1:
+                        {
+                            english=" We have to go by Treasure\nTown.",
+                            french=" Passons par Bourg-Trésor.",
+                            german=" Wir müssen in Schatzstadt\nvorbeigehen.",
+                            italian=" Dobbiamo andare a Borgo Tesoro.",
+                            spanish=" Tenemos que pasarnos por\nAldea Tesoro.",
+                        }
+                    case 2:
+                        {
+                            english=" We have to go by Treasure\nTown.",
+                            french=" Passons par Bourg-Trésor.",
+                            german=" Wir müssen in Schatzstadt\nvorbeigehen.",
+                            italian=" Dobbiamo andare a Borgo Tesoro.",
+                            spanish=" Tenemos que pasarnos por\nAldea Tesoro.",
+                        }
+                    default:
+                        {
+                            english=" We have to go by Treasure\nTown.",
+                            french=" Passons par Bourg-Trésor.",
+                            german=" Wir müssen in Schatzstadt\nvorbeigehen.",
+                            italian=" Dobbiamo andare a Borgo Tesoro.",
+                            spanish=" Tenemos que pasarnos por\nAldea Tesoro.",
+                        }
+                }
+                message_Close();
+                supervision_Suspend(-2);
+                end;
+            } elseif ( scn($SCENARIO_MAIN) < [4, 5] || $SCENARIO_MAIN_BIT_FLAG[96] ) {
+                jump @label_0;
+            } else {
+                $SCENARIO_MAIN_BIT_FLAG[96] = 1;
+                screen_FadeOutAll(0, 30);
+                screen2_FadeOut(1, 30);
+                WaitScreenFade();
+                WaitScreenFadeAll();
+                screen_FadeOut(1, 0);
+                screen_FadeInAll(1, 0);
+                supervision_ExecuteCommon(CORO_EVENT_M00_12);
+                hold;
+                end;
+            }
+            break;
+    }
+}
+
+def 1 for_actor(ACTOR_PLAYER) {
+    hold;
+}

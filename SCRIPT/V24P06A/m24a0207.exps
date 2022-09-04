@@ -1,0 +1,41 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_THROUGH_THE_SEA_OF_TIME, 0, 256);
+    back_SetGround(LEVEL_V24P06A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (object OBJECT_V24P06A1_327) {
+        Move2PositionMark(32844, Position<'m0', 18, 11.5>);
+    }
+    screen_FadeIn(1, 30);
+    Wait(330);
+    se_Play(5125);
+    bgm_FadeOut(180);
+    screen_WhiteOut(1, 30);
+    Wait(120);
+    back_SetGround(LEVEL_S04P01A);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    worldmap_SetMode(3);
+    worldmap_SetLevel(5);
+    back2_SetMode(3);
+    WaitSubScreen();
+    worldmap_ChangeLevel(6);
+    worldmap_SetCamera(39);
+    WaitSubScreen();
+    message_Mail({
+        english="[CN]The clouds parted over\n[CN]the [CS:P]Hidden Land[CR]!",
+        french="[CN]Les nuages se sont dissipés au-dessus\n[CN]des [CS:P]Terres Illusoires[CR]!",
+        german="[CN]Die Wolken teilen sich\n[CN]über dem [CS:P]Verborgenen Land[CR]!",
+        italian="[CN]Le nuvole che ricoprono la [CS:P]Terra Nascosta[CR]\n[CN]si sollevano.",
+        spanish="[CN]¡Las nubes que cubrían la\n[CN][CS:P]Tierra Oculta[CR] se disiparon!",
+    });
+    Wait(60);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    screen_FadeOut(0, 0);
+    screen2_FadeOut(1, 30);
+    back2_SetMode(0);
+    end;
+}

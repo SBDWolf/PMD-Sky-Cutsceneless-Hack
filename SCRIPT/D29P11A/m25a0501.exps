@@ -1,0 +1,29 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_MAIN = scn[26, 2];
+    back_SetGround(LEVEL_D29P11A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        SetPositionMark(Position<'m0', 37.5, 34.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetPositionMark(Position<'m1', 35.5, 34.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetPositionMark(Position<'m2', 39.5, 34.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetDirection(DIR_RIGHT);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetDirection(DIR_LEFT);
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_TEMPORAL_TOWER, 0, 256);
+    end;
+}

@@ -1,0 +1,21 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_MAIN = scn[18, 3];
+    back_SetGround(LEVEL_D18P11A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_PLAYER) {
+        SetDirection(DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetDirection(DIR_UPRIGHT);
+    }
+    screen_FadeIn(1, 30);
+    //Wait(30);
+    bgm_PlayFadeIn(BGM_CHASM_CAVE, 0, 256);
+    end;
+}

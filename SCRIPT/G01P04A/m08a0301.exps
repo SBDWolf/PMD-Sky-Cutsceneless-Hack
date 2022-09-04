@@ -1,0 +1,52 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
+    $SCENARIO_MAIN = scn[9, 1];
+    back_SetGround(LEVEL_G01P04A);
+    supervision_LoadStation(LEVEL_G01P04A, 'UM08');
+    supervision_Station(2);
+    supervision_Acting(0);
+    supervision_Acting(1);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(2);
+    }
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    supervision_RemoveActing(1);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetPositionMark(Position<'m18', 54.5, 33.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetPositionMark(Position<'m19', 51, 33.5>);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetPositionMark(Position<'m20', 57, 27.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetDirection(DIR_DOWN);
+    }
+    camera_SetDefault();
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
+    $SCENARIO_BALANCE_FLAG = 2;
+    end;
+}

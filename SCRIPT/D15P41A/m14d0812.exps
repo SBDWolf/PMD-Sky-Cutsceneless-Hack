@@ -1,0 +1,38 @@
+
+def 0 {
+    back_SetGround(LEVEL_D15P41A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_EMURITTO, FACE_PAIN, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Don\'t lie to me!",
+        french=" Epargnez-moi vos mensonges!",
+        german=" Lügt mich nicht an!",
+        italian=" Non mentitemi!",
+        spanish=" ¡Basta de mentiras!",
+    });
+    message_Talk({
+        english=" [CS:N]Uxie[CR] used his telepathy to tell\nme what happened!",
+        french=" Je sais tout! [CS:N]Créhelf[CR] m\'a\navertie par télépathie!",
+        german=" [CS:N]Selfe[CR] hat mir per Telepathie\nerzählt, was geschehen ist!",
+        italian=" [CS:N]Uxie[CR] si è messo in contatto\ntelepatico con me e mi ha raccontato tutto!",
+        spanish=" ¡[CS:N]Uxie[CR] me ha contado\ntelepáticamente lo que ocurrió!",
+    });
+    message_Talk({
+        english=" I know that the Time Gear from\n[CS:P]Fogbound Lake[CR] was stolen!",
+        french=" Je sais que le Rouage du Temps\ndu [CS:P]Lac des Brumes[CR] a disparu!",
+        german=" Ich weiß, dass das Zahnrad der\nZeit vom [CS:P]Nebelsee[CR] gestohlen wurde!",
+        italian=" So benissimo che l\'Ingranaggio\ndel Tempo del [CS:P]Lago Foschia[CR] è stato rubato!",
+        spanish=" ¡Sé que robasteis el Engranaje\ndel Tiempo del [CS:P]Lago Velado[CR]!",
+    });
+    message_Close();
+    screen_FadeOut(1, 30);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    end;
+}

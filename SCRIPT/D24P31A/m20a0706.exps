@@ -1,0 +1,155 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_TIME_GEAR_REMIX, 0, 256);
+    back_SetGround(LEVEL_D24P31B);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Didn\'t [CS:N]Uxie[CR] and his friends make\na promise...?",
+                french=" [CS:N]Créhelf[CR] et ses amis ont bien\nfait une promesse, non...?",
+                german=" Haben [CS:N]Selfe[CR] und seine Freunde\nda nicht versprochen...",
+                italian=" [CS:N]Uxie[CR] e i suoi amici non avevano\nfatto una promessa...?",
+                spanish=" ¿No hicieron [CS:N]Uxie[CR] y sus amigos\nuna promesa?",
+            }
+        case 2:
+            {
+                english=" Didn\'t [CS:N]Uxie[CR] and his friends make\na promise...?",
+                french=" [CS:N]Créhelf[CR] et ses amis ont bien\nfait une promesse, non...?",
+                german=" Haben [CS:N]Selfe[CR] und seine Freunde\nda nicht versprochen...",
+                italian=" [CS:N]Uxie[CR] e i suoi amici non avevano\nfatto una promessa...?",
+                spanish=" ¿No hicieron [CS:N]Uxie[CR] y sus amigos\nuna promesa?",
+            }
+        default:
+            {
+                english=" Didn\'t [CS:N]Uxie[CR] and his friends make\na promise...?",
+                french=" [CS:N]Créhelf[CR] et ses amis ont bien\nfait une promesse, non...?",
+                german=" Haben [CS:N]Selfe[CR] und seine Freunde\nda nicht versprochen...",
+                italian=" [CS:N]Uxie[CR] e i suoi amici non avevano\nfatto una promessa...?",
+                spanish=" ¿No hicieron [CS:N]Uxie[CR] y sus amigos\nuna promesa?",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" That they\'d put back the Time\nGears in their rightful places?",
+                french=" Ils ont dit qu\'ils remettraient\nles Rouages du Temps en place.",
+                german=" Dass sie die Zahnräder der Zeit\nwieder an die vorgesehenen Stellen bringen?",
+                italian=" Ovvero che avrebbero riportato\ngli Ingranaggi del Tempo al loro posto?",
+                spanish=" ¿No dijeron que devolverían\nlos Engranajes del Tiempo al lugar que\nles correspondía?",
+            }
+        case 2:
+            {
+                english=" That they would return the\nTime Gears to their rightful places?",
+                french=" Ils ont dit qu\'ils remettraient\nles Rouages du Temps en place.",
+                german=" Dass sie die Zahnräder der Zeit\nwieder an die vorgesehenen Stellen bringen?",
+                italian=" Ovvero che avrebbero riportato\ngli Ingranaggi del Tempo al loro posto?",
+                spanish=" ¿No dijeron que devolverían\nlos Engranajes del Tiempo al lugar que\nles correspondía?",
+            }
+        default:
+            {
+                english=" That they would return the\nTime Gears to their rightful places?",
+                french=" Ils ont dit qu\'ils remettraient\nles Rouages du Temps en place.",
+                german=" Dass sie die Zahnräder der Zeit\nwieder an die vorgesehenen Stellen bringen?",
+                italian=" Ovvero che avrebbero riportato\ngli Ingranaggi del Tempo al loro posto?",
+                spanish=" ¿No dijeron que devolverían\nlos Engranajes del Tiempo al lugar que\nles correspondía?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" But time remains stopped here...",
+        french=" Et pourtant, le temps est\ntoujours à l\'arrêt ici...",
+        german=" Aber die Zeit steht hier noch\nimmer still...",
+        italian=" Ma il tempo qui è ancora \nfermo...",
+        spanish=" Pero el tiempo aquí sigue sin\nfluir...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" That means...",
+                french=" Ce qui signifie...",
+                german=" Das bedeutet...",
+                italian=" Questo significa...",
+                spanish=" Eso quiere decir que...",
+            }
+        case 2:
+            {
+                english=" That could mean...",
+                french=" Ce qui signifie...",
+                german=" Das könnte bedeuten...",
+                italian=" Questo significa...",
+                spanish=" Eso quiere decir que...",
+            }
+        default:
+            {
+                english=" That means...",
+                french=" Ce qui signifie...",
+                german=" Das bedeutet...",
+                italian=" Questo significa...",
+                spanish=" Eso quiere decir que...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" The Time Gears might not be\nput back in their rightful places yet.",
+                french=" ... que les Rouages du Temps\nn\'ont pas encore été remis à leur place.",
+                german=" Die Zahnräder der Zeit wurden\nnoch nicht an die für sie vorgesehenen Stellen\nzurückgebracht.",
+                italian=" Significa che gli Ingranaggi del\nTempo potrebbero non essere ancora al loro\nposto.",
+                spanish=" Puede que todavía no hayan\ndevuelto los Engranajes del Tiempo a\nsu sitio.",
+            }
+        case 2:
+            {
+                english=" The Time Gears may not have\nbeen returned to their rightful places yet.",
+                french=" ... que les Rouages du Temps\nn\'ont pas encore été remis à leur place.",
+                german=" Die Zahnräder der Zeit wurden\nnoch nicht an die für sie vorgesehenen Stellen\nzurückgebracht.",
+                italian=" Significa che gli Ingranaggi del\nTempo potrebbero non essere ancora al loro\nposto.",
+                spanish=" Puede que todavía no hayan\ndevuelto los Engranajes del Tiempo a\nsu sitio.",
+            }
+        default:
+            {
+                english=" The Time Gears may not have\nbeen put back in their rightful places yet.",
+                french=" ... que les Rouages du Temps\nn\'ont pas encore été remis à leur place.",
+                german=" Die Zahnräder der Zeit wurden\nnoch nicht an die für sie vorgesehenen Stellen\nzurückgebracht.",
+                italian=" Significa che gli Ingranaggi del\nTempo potrebbero non essere ancora al loro\nposto.",
+                spanish=" Puede que todavía no hayan\ndevuelto los Engranajes del Tiempo a\nsu sitio.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" We\'ll see about that. The\nforest\'s Time Gear was over here.",
+        french=" On va bien voir. Le Rouage du\nTemps de cette forêt se trouvait\npar là, autrefois.",
+        german=" Das werden wir feststellen. \nDas Zahnrad der Zeit dieses Waldes war an\ndieser Stelle.",
+        italian=" Lo scopriremo. L\'Ingranaggio del\nTempo della foresta era da queste parti.",
+        spanish=" Ahora lo comprobaremos.\nEl Engranaje del Tiempo estaba por aquí.",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_JUPUTORU) {
+        MovePositionOffset(33152, 0, -160);
+    }
+    Wait(5);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionOffset(33152, 0, -160);
+    }
+    Wait(5);
+    with (actor ACTOR_PLAYER) {
+        MovePositionOffset(33152, 0, -160);
+    }
+    Wait(30);
+    screen_FadeOut(1, 30);
+    end;
+}

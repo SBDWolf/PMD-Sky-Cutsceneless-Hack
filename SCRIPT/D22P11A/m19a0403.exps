@@ -1,0 +1,9 @@
+
+def 0 {
+    bgm_FadeOut(30);
+    main_EnterDungeon(32, 30);
+    switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+    main_EnterDungeon(-1, 30);
+    hold;
+    end;
+}

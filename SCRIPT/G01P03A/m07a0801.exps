@@ -1,0 +1,391 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_G01P03A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
+    Wait(30);
+    se_Play(8968);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(2);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_SURPRISED, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Whaaaat? You failed?!",
+        french=" Quoi? Vous avez échoué?!",
+        german=" Waaaas? Ihr habt versagt?!?",
+        italian=" Coooosa? Non ce l\'avete fatta?!",
+        spanish=" ¿Quéee? ¡¿Habéis fracasado\nen la misión?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5122);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(2);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_SURPRISED, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Are you serious?[K] Oh no! What\nam I going to do?!",
+        french=" Sérieusement?[K] Oh non! Que\nvais-je faire?!",
+        german=" Ist das euer Ernst?[K] Oh nein!\nWas soll ich nur tun?!?",
+        italian=" Dite sul serio?[K] Oh, no! Cosa\nfaccio adesso?!",
+        spanish=" ¿En serio?[K] ¡Oh, no!\n¡¿Qué voy a hacer ahora?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5122);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(20);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionOffset(33408, 32, 0);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionOffset(33408, -64, 0);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionOffset(33408, 32, 0);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionOffset(33408, 0, -16);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_SURPRISED, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Seriously! What am I to do?!",
+        french=" Oh, mes aïeux! Que vais-je\nbien pouvoir faire?!",
+        german=" Im Ernst! Was soll ich tun?!?",
+        italian=" Seriamente! Cosa faccio?!",
+        spanish=" ¡En serio! ¡¿Qué hago yo ahora?!",
+    });
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We couldn\'t help it. I mean,\n[CS:N]Skuntank[CR] and his...",
+                french=" On n\'y peut rien. En fait, c\'est\nà cause de [CS:N]Moufflair[CR] et de ses...",
+                german=" Wir konnten nichts machen. Ich\nmeine, [CS:N]Skuntank[CR] und seine...",
+                italian=" Non è colpa nostra. Voglio dire,\n[CS:N]Skuntank[CR] e la sua...",
+                spanish=" No pudimos hacer nada.\n[CS:N]Skuntank[CR] y su...",
+            }
+        case 2:
+            {
+                english=" There was nothing we could do.\nYou see, [CS:N]Skuntank[CR] and his...",
+                french=" On n\'y peut rien. En fait, c\'est\nà cause de [CS:N]Moufflair[CR] et de ses...",
+                german=" Es gab nichts, was wir tun\nkonnten. Weißt du, [CS:N]Skuntank[CR] und seine...",
+                italian=" Non è colpa nostra. Voglio dire,\n[CS:N]Skuntank[CR] e la sua...",
+                spanish=" No pudimos hacer nada.\nEl caso es que [CS:N]Skuntank[CR] y su...",
+            }
+        default:
+            {
+                english=" It\'s not our fault. It\'s because\n[CS:N]Skuntank[CR] and his...",
+                french=" On n\'y peut rien. En fait, c\'est\nà cause de [CS:N]Moufflair[CR] et de ses...",
+                german=" Es ist nicht unsere Schuld. Es ist\nso, [CS:N]Skuntank[CR] und seine...",
+                italian=" Non è colpa nostra. Voglio dire,\n[CS:N]Skuntank[CR] e la sua...",
+                spanish=" No pudimos hacer nada.\n[CS:N]Skuntank[CR] y su...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionOffset(33408, 0, 16);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    se_Play(8971);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_ANGRY, 3);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_ANGRY, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Quiet![K] I don\'t want to hear\nany excuses!",
+        french=" Silence![K] Je ne veux entendre\naucune excuse!",
+        german=" Ruhe![K] Ich will keine Ausreden\nhören!",
+        italian=" Silenzio![K] Non voglio sentire \nscuse!",
+        spanish=" ¡Silencio![K] ¡No quiero oír\nninguna excusa!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8961);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROP, 3);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Urk...",
+                french=" Argh...",
+                german=" Urks...",
+                italian=" Urk...",
+                spanish=" Ay...",
+            }
+        case 2:
+            {
+                english=" Urk...",
+                french=" Argh...",
+                german=" Urks...",
+                italian=" Urk...",
+                spanish=" Ay...",
+            }
+        default:
+            {
+                english=" Urk...",
+                french=" Argh...",
+                german=" Urks...",
+                italian=" Urk...",
+                spanish=" Ay...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_ANGRY, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" You leave me no choice.",
+        french=" Vous ne me laissez pas le choix.",
+        german=" Ihr lasst mir keine Wahl.",
+        italian=" Non mi lasciate altra scelta.",
+        spanish=" No me dejáis elección.",
+    });
+    message_Talk({
+        english=" For the time being, you\'ll go\nwithout dinner tonight!",
+        french=" Vous irez vous coucher sans\nmanger jusqu\'à nouvel ordre!",
+        german=" Für euch gibt es heute kein\nAbendessen! Fürs Erste!",
+        italian=" Dovrò mandarvi a letto senza\ncena!",
+        spanish=" ¡Me temo que esta noche os\nvais a quedar sin cenar!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8968);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" What?! B-but...",
+                french=" Quoi?! Mais...",
+                german=" Was?!? A-aber...",
+                italian=" C-Cosa?! M-Ma...",
+                spanish=" ¡¿Qué?! Pero si...",
+            }
+        case 2:
+            {
+                english=" What?! B-but...",
+                french=" Quoi?! Mais...",
+                german=" Was?!? A-aber...",
+                italian=" C-Cosa?! M-Ma...",
+                spanish=" ¡¿Qué?! Pero si...",
+            }
+        default:
+            {
+                english=" What?! B-but...",
+                french=" Quoi?! Mais...",
+                german=" Was?!? A-aber...",
+                italian=" C-Cosa?! M-Ma...",
+                spanish=" ¡¿Qué?! Pero si...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_ANGRY, 3);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_ANGRY, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" You failed to complete an\nimportant job.",
+        french=" Vous avez échoué lors d\'une\nmission importante.",
+        german=" Ihr habt bei einem wichtigen\nJob versagt.",
+        italian=" Non avete portato a termine una\nmissione importante.",
+        spanish=" Habéis fracasado en una misión\nimportantísima.",
+    });
+    message_Talk({
+        english=" Your punishment could be much\nmore severe!",
+        french=" Ne vous plaignez pas, votre\npunition pourrait être encore plus sévère!",
+        german=" Eure Strafe könnte noch viel\nhärter ausfallen!",
+        italian=" La punizione avrebbe potuto\nessere molto più severa!",
+        spanish=" ¡Vuestro castigo podría ser\nmuchísimo más severo!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Ugh...",
+                french=" Argh...",
+                german=" Umpf...",
+                italian=" Ugh...",
+                spanish=" Ay...",
+            }
+        case 2:
+            {
+                english=" Ugh...",
+                french=" Argh...",
+                german=" Umpf...",
+                italian=" Ugh...",
+                spanish=" Ay...",
+            }
+        default:
+            {
+                english=" Ugh...",
+                french=" Argh...",
+                german=" Umpf...",
+                italian=" Ugh...",
+                spanish=" Ay...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_ANGRY, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" I don\'t want to hear anything\nfrom you!",
+        french=" Je ne veux plus vous entendre!",
+        german=" Ich will nichts mehr von euch\nhören!",
+        italian=" Non voglio sentire altro!",
+        spanish=" ¡No quiero oír ni una palabra más!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_PAIN, FACE_POS_TOP_RC_FACEOUTW);
+    message_Talk({
+        english=" You\'ve saddled me with this\nterrible task!",
+        french=" Vous me mettez dans une\nposition fort délicate, vous savez!",
+        german=" Euretwegen wird mir jetzt diese\nentsetzliche Aufgabe zuteil!",
+        italian=" Per causa vostra ora devo fare\nuna cosa... tremenda!",
+        spanish=" ¡Ahora voy a tener que pasar\nun mal trago por vuestra culpa!",
+    });
+    message_Talk({
+        english=" I\'ve got to report this to the\nGuildmaster now!",
+        french=" Je dois faire mon rapport au\nMaître de la Guilde!",
+        german=" Ich muss dem Gildenmeister\ndavon berichten!",
+        italian=" Devo andare a fare rapporto al\nCapitano!",
+        spanish=" ¡Tengo que dar parte al Gran\nBluff inmediatamente!",
+    });
+    message_Talk({
+        english=" Upon hearing my report, the\nGuildmaster is sure to...",
+        french=" En l\'entendant, le Maître va\nsûrement...",
+        german=" Wenn ich ihm das berichte, wird\nder Gildenmeister mit Sicherheit...",
+        italian=" Quando lo saprà, sicuramente\nil Capitano...",
+        spanish=" Al oír mi informe, el Gran Bluff\nsin duda se va a...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5122);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(20);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_SURPRISED, FACE_POS_TOP_RC_FACEOUTW);
+    message_Talk({
+        english=" Waaaaaaah!",
+        french=" Couaaac!",
+        german=" Waaaaaaah!",
+        italian=" Waaaaaaah!",
+        spanish=" ¡Aaaaah!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionOffset(33408, 32, 0);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionOffset(33408, -64, 0);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionOffset(33408, 32, 0);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionOffset(33408, 0, -32);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionOffset(33408, 0, 32);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    Wait(20);
+    se_Play(8971);
+    with (actor ACTOR_NPC_PERAPPU) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_ANGRY, 3);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_ANGRY, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" I will report this to the\nGuildmaster after dinner.",
+        french=" Tout bien réfléchi, je ferai mon\nrapport après le dîner.",
+        german=" Ich werde dem Gildenmeister\nnach dem Abendessen davon berichten.",
+        italian=" Informerò il Capitano dopo cena.",
+        spanish=" Mejor se lo cuento después\nde cenar.",
+    });
+    message_Talk({
+        english=" You two will come with me when\nI do so.",
+        french=" Et vous deux, vous\nm\'accompagnerez.",
+        german=" Ihr zwei werdet mich\nbegleiten, wenn es so weit ist.",
+        italian=" E voi due verrete con me.",
+        spanish=" Tendréis que estar presentes.\nFaltaría más.",
+    });
+    message_Talk({
+        english=" If I had to face the\nGuildmaster\'s wrath all by myself, well, that\nwould hardly be fair.",
+        french=" Il serait injuste que j\'affronte\nseul le courroux du Maître.",
+        german=" Wenn ich den Zorn des\nGildenmeisters alleine über mich ergehen\nlassen müsste, wäre das wohl kaum fair.",
+        italian=" Non è giusto che io debba \naffrontare le sue ire da solo.",
+        spanish=" Sería injusto que solo yo tuviera\nque enfrentarme a la ira del Gran Bluff.",
+    });
+    message_Talk({
+        english=" Therefore, you two will come\nwith me!",
+        french=" C\'est pourquoi vous viendrez\navec moi.",
+        german=" Deshalb werdet ihr beide\nmitkommen!",
+        italian=" Quindi, voi due mi\naccompagnerete.",
+        spanish=" Por tanto, ¡vais a venir conmigo!",
+    });
+    message_Talk({
+        english=" That\'s an order!",
+        french=" C\'est un ordre!",
+        german=" Das ist ein Befehl!",
+        italian=" È un ordine!",
+        spanish=" ¡Es una orden!",
+    });
+    message_Close();
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 60);
+    Wait(30);
+    end;
+}

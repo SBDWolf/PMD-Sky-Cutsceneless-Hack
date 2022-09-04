@@ -1,0 +1,81 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_H02P99C);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    Wait(1);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(62);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetAnimation(29);
+    }
+    with (object OBJECT_H02P99C1_115) {
+        SetOutputAttribute(2);
+    }
+    bgm_PlayFadeIn(BGM_OCEAN1, 120, 256);
+    screen_FadeIn(1, 60);
+    Wait(60);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetAnimation(31);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetAnimation(2);
+    }
+    Wait(45);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2Direction(8, 10, DIR_LEFT);
+    }
+    Wait(20);
+    se_Play(8964);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_LEFT, 3);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Hm?[K] [partner] isn\'t here...",
+        french=" Hmm?[K] [partner] n\'est pas\nlà...",
+        german=" Hm?[K] [partner] ist nicht\nhier...",
+        italian=" Uh?[K] [partner] non è qui...",
+        spanish=" ¿Eh?[K] [partner] no está.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    message_Talk({
+        english=" Maybe outside...?",
+        french=" Dehors, peut-être...?",
+        german=" Vielleicht draußen?",
+        italian=" Sarà fuori...?",
+        spanish=" ¿Habrá salido?",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_JUPUTORU) {
+        MovePositionOffset(1, -60, 0);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        MovePositionOffset(1, 0, -56);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        MovePositionMark(32972, Position<'m0', 61.5, 17.5>);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Destroy();
+    }
+    Wait(30);
+    screen_FadeOut(1, 30);
+    end;
+}

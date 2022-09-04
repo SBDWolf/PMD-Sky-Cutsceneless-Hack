@@ -1,0 +1,811 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_H02P99C);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_FIRE_CRACKLING, 90, 256);
+    Wait(30);
+    message_SetFace(ACTOR_PLAYER, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Maybe I couldn\'t envision anything that time\nwe were in the future...)",
+                french="(Peut-être que si rien ne m\'est apparu quand\non était dans le futur...)",
+                german="(Vielleicht konnte ich nichts vor meinem\ngeistigen Auge sehen, als wir in der Zukunft\nwaren, weil...)",
+                italian="(Quando eravamo nel futuro, non riuscivo\na vedere nulla...)",
+                spanish="(Tal vez por eso no pude sentir nada en aquella\nocasión...)",
+            }
+        default:
+            {
+                english="(Maybe I couldn\'t envision anything that time\nwe were in the future...)",
+                french="(Peut-être que si rien ne m\'est apparu quand\non était dans le futur...)",
+                german="(Vielleicht konnte ich nichts vor meinem\ngeistigen Auge sehen, als wir in der Zukunft\nwaren, weil...)",
+                italian="(Quando eravamo nel futuro, non riuscivo\na vedere nulla...)",
+                spanish="(Tal vez por eso no pude sentir nada en aquella\nocasión...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Because we were in a place that wasn\'t tied\nto any Time Gears!)",
+                french="(... c\'est parce qu\'on se trouvait dans\nun endroit qui n\'était pas lié à un Rouage\ndu Temps!)",
+                german="(Weil wir nicht an einem Ort waren, der eine\nVerbindung zu den Zahnrädern der Zeit hatte!)",
+                italian="(Forse perché eravamo in un luogo che non era\nlegato a nessun Ingranaggio del Tempo!)",
+                spanish="(¡Estábamos en un lugar que no tenía nada\nque ver con los Engranajes del Tiempo!)",
+            }
+        default:
+            {
+                english="(Because we were in a place that wasn\'t tied\nto any Time Gears!)",
+                french="(... c\'est parce qu\'on se trouvait dans\nun endroit qui n\'était pas lié à un Rouage\ndu Temps!)",
+                german="(Weil wir nicht an einem Ort waren, der eine\nVerbindung zu den Zahnrädern der Zeit hatte!)",
+                italian="(Forse perché eravamo in un luogo che non era\nlegato a nessun Ingranaggio del Tempo!)",
+                spanish="(¡Estábamos en un lugar que no tenía nada\nque ver con los Engranajes del Tiempo!)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Maybe that\'s why my Dimensional Scream\nfailed to work.)",
+                french="(Si ça se trouve, c\'est pour ça que le Cri\nDimensionnel n\'a pas marché.)",
+                german="(Vielleicht funktionierte deshalb mein\nDimensionaler Schrei nicht.)",
+                italian="(Deve essere il motivo per cui lo Squarcio\nDimensionale non ha funzionato.)",
+                spanish="(Y por ese motivo no funcionó.)",
+            }
+        default:
+            {
+                english="(Maybe that\'s why my Dimensional Scream\nfailed to work.)",
+                french="(Si ça se trouve, c\'est pour ça que le Cri\nDimensionnel n\'a pas marché.)",
+                german="(Vielleicht funktionierte deshalb mein\nDimensionaler Schrei nicht.)",
+                italian="(Deve essere il motivo per cui lo Squarcio\nDimensionale non ha funzionato.)",
+                spanish="(Y por ese motivo no funcionó.)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Maybe [CS:N]Grovyle[CR] is right about the future and\nthe past being different...)",
+                french="([CS:N]Massko[CR] a peut-être raison de dire\nque le passé et le futur sont différents...)",
+                german="(Und vielleicht sagt [CS:N]Reptain[CR] die Wahrheit,\nwenn er behauptet, Zukunft und Vergangenheit\nseien verschieden.)",
+                italian="(Forse ha ragione [CS:N]Grovyle[CR] quando dice che\nnel passato e nel futuro le cose funzionano\nin modo diverso...)",
+                spanish="(Quizá [CS:N]Grovyle[CR] tiene razón al decir\nque el futuro y el pasado son diferentes...)",
+            }
+        default:
+            {
+                english="(Maybe [CS:N]Grovyle[CR] is right about the future and\nthe past being different...)",
+                french="([CS:N]Massko[CR] a peut-être raison de dire\nque le passé et le futur sont différents...)",
+                german="(Und vielleicht sagt [CS:N]Reptain[CR] die Wahrheit,\nwenn er behauptet, Zukunft und Vergangenheit\nseien verschieden.)",
+                italian="(Forse ha ragione [CS:N]Grovyle[CR] quando dice che\nnel passato e nel futuro le cose funzionano\nin modo diverso...)",
+                spanish="(Quizá [CS:N]Grovyle[CR] tiene razón al decir\nque el futuro y el pasado son diferentes...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Or different enough to make my Dimensional\nScream ability work differently.)",
+                french="(Ou du moins, assez différents pour influer\nsur le fonctionnement du Cri Dimensionnel.)",
+                german="(Oder verschieden genug, um meinen\nDimensionalen Schrei unterschiedlich\nfunktionieren zu lassen.)",
+                italian="(O abbastanza diverso da cambiare il\nfunzionamento dello Squarcio Dimensionale.)",
+                spanish="(Al menos, lo suficiente, como para que la\nPercepción de Cronos funcione de forma\ndistinta.)",
+            }
+        default:
+            {
+                english="(Or different enough to make my Dimensional\nScream ability work differently.)",
+                french="(Ou du moins, assez différents pour influer\nsur le fonctionnement du Cri Dimensionnel.)",
+                german="(Oder verschieden genug, um meinen\nDimensionalen Schrei unterschiedlich\nfunktionieren zu lassen.)",
+                italian="(O abbastanza diverso da cambiare il\nfunzionamento dello Squarcio Dimensionale.)",
+                spanish="(Al menos, lo suficiente, como para que la\nPercepción de Cronos funcione de forma\ndistinta.)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Anyway...",
+        french=" Enfin bref...",
+        german=" Wie dem auch sei...",
+        italian=" Ad ogni modo...",
+        spanish=" Bueno...",
+    });
+    message_Talk({
+        english=" Like I was saying, we were\ninvestigating the planet\'s paralysis.",
+        french=" Comme je le disais, on enquêtait\nsur la Paralysie de la Planète.",
+        german=" Wie ich schon sagte, wir haben\ndie Lähmung des Planeten untersucht.",
+        italian=" Come stavo dicendo, \nindagavamo sulla paralisi del pianeta.",
+        spanish=" Como iba diciendo, estábamos\ninvestigando la parálisis del planeta.",
+    });
+    message_Talk({
+        english=" We used the Dimensional Scream\nability to...",
+        french=" On s\'est servis du Cri\nDimensionnel...",
+        german=" Dazu setzten wir den\nDimensionalen Schrei ein.",
+        italian=" Usavamo lo Squarcio \nDimensionale...",
+        spanish=" Y utilizamos la Percepción de\nCronos.",
+    });
+    message_Talk({
+        english=" identify the locations of the\nTime Gears in your world while we were in\nthe future.",
+        french=" ... pour localiser les Rouages\ndu Temps dans votre monde, alors qu\'on était\nencore dans le futur.",
+        german=" So bestimmten wir die Standorte\nder Zahnräder der Zeit in eurer Welt, als wir\nnoch in der Zukunft waren.",
+        italian=" Grazie ad esso identificavamo\ndal futuro i luoghi in cui gli Ingranaggi del\nTempo erano posizionati nel presente.",
+        spanish=" Así, pudimos saber la ubicación\nde todos los Engranajes del Tiempo de vuestro\nmundo cuando aún estábamos en el futuro.",
+    });
+    message_Close();
+    bgm_FadeOut(60);
+    screen_FadeOut(1, 30);
+    WaitBgm(BGM_FIRE_CRACKLING);
+    Wait(30);
+    message_Explanation({
+        english="[CN]That\'s it!",
+        french="[CN]Ça y est!",
+        german="[CN]Das ist es!",
+        italian="[CN]È tutto!",
+        spanish="[CN]¡Eso es!",
+    });
+    message_Explanation({
+        english="[CN]Here!",
+        french="[CN]Il est là!",
+        german="[CN]Hier!",
+        italian="[CN]Ecco qui!",
+        spanish="[CN]¡Aquí!",
+    });
+    message_Explanation({
+        english="[CN]A Time Gear is here!",
+        french="[CN]Le Rouage du Temps est là!",
+        german="[CN]Hier ist ein Zahnrad der Zeit!",
+        italian="[CN]Qui c\'è un Ingranaggio del Tempo!",
+        spanish="[CN]¡Aquí hay un Engranaje del Tiempo!",
+    });
+    message_Close();
+    Wait(60);
+    message_Explanation({
+        english="[CN]I see!",
+        french="[CN]Je vois!",
+        german="[CN]Ich verstehe!",
+        italian="[CN]Ho capito!",
+        spanish="[CN]¡Ya lo veo!",
+    });
+    message_Explanation({
+        english="[CN]Place the Drought Stone\n[CN]in Groudon\'s heart.",
+        french="[CN]Place la Pierre-Sèche\n[CN]dans le cœur de Groudon.",
+        german="[CN]Setze den Melioriestein\n[CN]in das Herz von Groudon.",
+        italian="[CN]Metti la Pietra del Sole\n[CN]nel cuore di Groudon.",
+        spanish="[CN]Coloca la Piedra Sequía\n[CN]en el corazón de Groudon.",
+    });
+    message_Explanation({
+        english="[CN]That lifts the fog!",
+        french="[CN]Le brouillard se lève!",
+        german="[CN]Das löst den Nebel auf!",
+        italian="[CN]Così la nebbia si alzerà!",
+        spanish="[CN]¡Eso disipará la niebla!",
+    });
+    message_Explanation({
+        english="[CN]Very well done!\n[CN]Good job, partner!",
+        french="[CN]Très bien joué!\n[CN]Beau travail, partenaire!",
+        german="[CN]Sehr gut gemacht!\n[CN]Gute Arbeit, Partner!",
+        italian="[CN]Ben fatto!\n[CN]Buon lavoro, partner!",
+        spanish="[CN]¡Muy bien hecho!\n[CN]¡Buen trabajo, camarada!",
+    });
+    message_Close();
+    Wait(30);
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_FIRE_CRACKLING, 90, 256);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" After identifying the locations\nwhere the Time Gears would be in the past...",
+        french=" Après avoir localisé les Rouages\ndu Temps dans le passé...",
+        german=" Erst ermittelten wir,\nwo sich die Zahnräder der Zeit in der\nVergangenheit befinden würden.",
+        italian=" Dopo aver identificato i luoghi\nin cui, nel passato, erano posizionati gli \nIngranaggi del Tempo...",
+        spanish=" Tras averiguar dónde estarían\nlos Engranajes del Tiempo en el pasado...",
+    });
+    message_Talk({
+        english=" We took the Passage of Time.",
+        french=" ... on a emprunté le Couloir\ndu Temps.",
+        german=" Dann nahmen wir den Zeittunnel.",
+        italian=" ... abbiamo attraversato il\nPortale del Tempo.",
+        spanish=" Cruzamos el Pasaje del Tiempo.",
+    });
+    message_Talk({
+        english=" That brought us from our world\nin your future to this world.",
+        french=" Il nous a téléportés\nde notre monde dans le futur vers\nce monde-ci.",
+        german=" Der brachte uns aus unserer\nWelt, also deiner Zukunft, in diese Welt.",
+        italian=" Così siamo passati dal nostro \nmondo nel futuro a questo mondo.",
+        spanish=" Para llegar a vuestro mundo.",
+    });
+    message_Talk({
+        english=" However...",
+        french=" Cependant...",
+        german=" Allerdings...",
+        italian=" Comunque sia...",
+        spanish=" Sin embargo...",
+    });
+    message_Close();
+    bgm_FadeOut(30);
+    screen_FadeOut(1, 30);
+    WaitBgm(BGM_FIRE_CRACKLING);
+    back_SetGround(LEVEL_S04P01A);
+    bgm_PlayFadeIn(BGM_STORM, 90, 256);
+    screen_FadeIn(1, 30);
+    se_Play(6401);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(30);
+    message_ResetActor();
+    message_Talk({
+        english=" Whoa! Wh-wh-whoa...!",
+        french=" Wouaaah! Aaah...!",
+        german=" Boah! B-b-boah!",
+        italian=" Wow! Wo-wo-wow...!",
+        spanish=" ¡Cuidado! ¡Mucho cuidado!",
+    });
+    message_Talk({
+        english=" Are...[K] Are you OK?!",
+        french=" Ça...[K] ça va?!",
+        german=" Bist...[K] Bist du in Ordnung?!?",
+        italian=" Stai...[K] Stai bene?!",
+        spanish=" ¿Estás...?[K] ¿Estás bien?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(6401);
+    screen_WhiteOut(1, 3);
+    Wait(2);
+    screen_FadeIn(1, 3);
+    Wait(30);
+    message_Talk({
+        english=" No![K] Don\'t let go!",
+        french=" Non![K] Tiens bon!",
+        german=" Nein![K] Nicht aufgeben!",
+        italian=" No![K] Non mollare!",
+        spanish=" ¡No![K] ¡No te sueltes!",
+    });
+    message_Talk({
+        english=" Just a little longer...[K] Come on! Hang on!",
+        french=" Allez, encore un effort...[K] Allez!\nTiens le coup!",
+        german=" Nur noch ein bisschen...[K] Komm schon!\nHalte durch!",
+        italian=" Ancora per poco...[K] Forza! Devi farcela!",
+        spanish=" Solo un poco más...[K] ¡Vamos! ¡Aguanta!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(6401);
+    screen_WhiteOut(1, 3);
+    Wait(2);
+    screen_FadeIn(1, 3);
+    Wait(30);
+    message_Talk({
+        english=" N-n-no![K] I can\'t...[K]hold on...!",
+        french=" N-non![K] Je ne peux pas...[K] continuer...!",
+        german=" N-n-nein![K] Ich kann...[K] nicht mehr!",
+        italian=" N-N-No![K] Non ce la...[K] faccio...!",
+        spanish=" ¡No![K] No puedo...[K]\n¡No puedo sujetarme!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    WaitSe(6401);
+    se_Play(6402);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(5);
+    se_Play(6402);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(30);
+    se_Play(6401);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(5);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(20);
+    se_Play(6403);
+    message_Talk({
+        english=" Waaaaaah!",
+        french=" Wouaaah!",
+        german=" Uaaaaaah!",
+        italian=" Waaaaaah!",
+        spanish=" ¡Aaaaaah!",
+    });
+    bgm_FadeOut(120);
+    screen_WhiteOutAll(1, 90);
+    message_CloseEnforce();
+    Wait(120);
+    WaitBgm(BGM_STORM);
+    back_SetGround(LEVEL_H02P99C);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeInAll(1, 30);
+    bgm_PlayFadeIn(BGM_FIRE_CRACKLING, 60, 256);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" We encountered turbulence while\nwe were traveling through time...",
+        french=" Il y a eu des turbulences au\ncours de notre voyage dans le temps...",
+        german=" Es gab Turbulenzen während\nunserer Reise durch die Zeit...",
+        italian=" Mentre viaggiavamo\nattraverso il tempo abbiamo incontrato\ndelle turbolenze...",
+        spanish=" El viaje en el tiempo fue muy\nturbulento.",
+    });
+    message_Talk({
+        english=" Thus [hero] and I became\nseparated.",
+        french=" Et c\'est comme ça qu\'on a été\nséparés, [hero] et moi.",
+        german=" Deswegen wurden [hero]\nund ich getrennt.",
+        italian=" Così [hero] ed io siamo\nstati separati.",
+        spanish=" Y [hero] y yo terminamos\nseparándonos.",
+    });
+    message_Talk({
+        english=" For some reason, [hero]\ngot amnesia and was turned into a Pokémon.",
+        french=" Pour une raison que j\'ignore,\n[hero] a perdu la mémoire et a pris la\nforme d\'un Pokémon.",
+        german=" Aus irgendeinem Grund\nverlor [hero] das Gedächtnis und\nverwandelte sich in ein Pokémon.",
+        italian=" Per qualche ragione, \n[hero] ha perso la memoria e \nal risveglio era un Pokémon.",
+        spanish=" Por algún motivo, [hero]\nperdió la memoria y se convirtió en un\nPokémon.",
+    });
+    message_Talk({
+        english=" I can only guess that it had\nsomething to do with our accident while\ntraveling in time.",
+        french=" J\'imagine que c\'est lié à ce\nqui s\'est passé pendant notre voyage dans\nle temps.",
+        german=" Ich kann nur vermuten, dass das\netwas mit unserem Unfall während der\nZeitreise zu tun hatte.",
+        italian=" Posso solo immaginare che tutto \nquesto abbia a che fare con il nostro incidente\ndurante il viaggio nel tempo.",
+        spanish=" Supongo que habrá tenido algo que\nver con el accidente que sufrimos al viajar\nen el tiempo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(..................)",
+                french="(..................)",
+                german="(..................)",
+                italian="(..................)",
+                spanish="(...)",
+            }
+        default:
+            {
+                english="(..................)",
+                french="(..................)",
+                german="(..................)",
+                italian="(..................)",
+                spanish="(...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(I...[K]I came from the future...)",
+                french="(Alors je...[K] je viens du futur...)",
+                german="(Ich...[K] Ich bin aus der Zukunft gekommen...)",
+                italian="(Io...[K] Io vengo dal futuro...)",
+                spanish="(Entonces...[K] soy del futuro.)",
+            }
+        default:
+            {
+                english="(I...[K]I came from the future...)",
+                french="(Alors je...[K] je viens du futur...)",
+                german="(Ich...[K] Ich bin aus der Zukunft gekommen...)",
+                italian="(Io...[K] Io vengo dal futuro...)",
+                spanish="(Entonces...[K] soy del futuro.)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(And not just that! I came with the mission of\npreventing the planet\'s paralysis.)",
+                french="(Et ce n\'est pas tout! Je suis venu ici avec\npour mission d\'empêcher la Paralysie de la\nPlanète.)",
+                german="(Und nicht nur das! Ich bin mit der Mission\nhergekommen, die Lähmung des Planeten zu\nverhindern.)",
+                italian="(E non solo! Vengo con il compito di prevenire\nla paralisi del pianeta.)",
+                spanish="(¡Y no solo eso! Vine con la misión de evitar\nla parálisis del planeta.)",
+            }
+        default:
+            {
+                english="(And not just that! I came with the mission of\npreventing the planet\'s paralysis.)",
+                french="(Et ce n\'est pas tout! Je suis venue ici avec\npour mission d\'empêcher la Paralysie de la\nPlanète.)",
+                german="(Und nicht nur das! Ich bin mit der Mission\nhergekommen, die Lähmung des Planeten zu\nverhindern.)",
+                italian="(E non solo! Vengo con il compito di prevenire\nla paralisi del pianeta.)",
+                spanish="(¡Y no solo eso! Vine con la misión de evitar\nla parálisis del planeta.)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(I don\'t know... It seems so outlandish...[K]\nIt doesn\'t feel real, somehow...)",
+                french="(Incroyable... Tout ça paraît si saugrenu...[K]\nOn dirait que ce n\'est pas réel...)",
+                german="(Ich weiß nicht... Es fühlt sich so fremd an...[K]\nEs erscheint mir irgendwie nicht real...)",
+                italian="(Non so... È tutto così strano...[K]\nIn un certo senso, non mi sembra vero...)",
+                spanish="(No sé... Parece tan descabellado...[K]\nCasi irreal.)",
+            }
+        default:
+            {
+                english="(I don\'t know... It seems so outlandish...[K]\nIt doesn\'t feel real, somehow...)",
+                french="(Incroyable... Tout ça paraît si saugrenu...[K]\nOn dirait que ce n\'est pas réel...)",
+                german="(Ich weiß nicht... Es fühlt sich so fremd an...[K]\nEs erscheint mir irgendwie nicht real...)",
+                italian="(Non so... È tutto così strano...[K]\nIn un certo senso, non mi sembra vero...)",
+                spanish="(No sé... Parece tan descabellado...[K]\nCasi irreal.)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" So, [hero]...[K] You may not\nremember any of this, but...",
+        french=" Eh oui, [hero]...[K]\nTu ne t\'en souviens peut-être pas, mais...",
+        german=" Also, [hero]...[K] Du magst\ndich vielleicht an nichts erinnern, aber...",
+        italian=" Dunque, [hero]...[K] Forse\nnon ricorderai nulla di tutto ciò, ma...",
+        spanish=" [hero]...[K] puede que ya no\nlo recuerdes, pero...",
+    });
+    message_Talk({
+        english=" You were my closest friend.",
+        french=" ... nous étions les meilleurs\namis du monde.",
+        german=" Du warst mein engster Freund.",
+        italian=" Per me eri la persona più cara.",
+        spanish=" Yo era tu mejor amigo.",
+    });
+    message_Talk({
+        english=" I worried about you when we\nwere separated.[K] I\'m glad to see you\'re safe.",
+        french=" Je me suis beaucoup inquiété\npour toi après notre séparation.[K] Content\nde voir que tu vas bien.",
+        german=" Ich habe mir Sorgen gemacht,\nals wir getrennt wurden.[K] Ich bin froh, dass\nich dich wohlbehalten sehe.",
+        italian=" Quando ci siamo separati ero\nmolto preoccupato per te.[K] Sono contento di\nvedere che stai bene.",
+        spanish=" Me preocupé mucho por ti\ncuando nos separamos.[K]\nMe alegra ver que estás bien.",
+    });
+    message_Talk({
+        english=" Your appearance may have\nchanged...[K] And though you have lost your\nmemory...[K] You\'re still you.",
+        french=" Tu as changé...[K] Et tu as perdu\nla mémoire...[K] Mais tu es toujours toi-même.",
+        german=" Deine Erscheinung mag sich\nverändert haben...[K] Und trotz deines verlorenen\nGedächtnisses...[K] bist du noch ganz du selbst.",
+        italian=" Il tuo aspetto può\nessere cambiato...[K] Hai anche perso la\nmemoria...[K] Ma sei sempre tu.",
+        spanish=" Puede que hayas cambiado de\naspecto...[K] y que hayas perdido la memoria...[K]\npero sigues siendo quien eres.",
+    });
+    message_Talk({
+        english=" And none of this alters the fact\nthat you remain my friend.",
+        french=" Et tout ça ne change rien\nà la profonde amitié que je te porte.",
+        german=" Und nichts ändert etwas an der\nTatsache, dass wir Freunde sind.",
+        italian=" Questo non cambia il fatto che\ntengo molto a te.",
+        spanish=" Seguimos siendo amigos.\nLo ocurrido no cambia nada.",
+    });
+    message_Talk({
+        english=" Oh, [hero].[K] I\'m glad to\nsee you again.",
+        french=" Oh, [hero].[K] Comme je suis\ncontent de te revoir.",
+        german=" Oh, [hero].[K] Ich bin so\nfroh, dich wiederzusehen.",
+        italian=" Oh, [hero].[K] Sono\ncontento di rivederti.",
+        spanish=" Oh, [hero].[K]\nMe alegro de volver a verte.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(..................)",
+                french="(..................)",
+                german="(..................)",
+                italian="(..................)",
+                spanish="(...)",
+            }
+        default:
+            {
+                english="(..................)",
+                french="(..................)",
+                german="(..................)",
+                italian="(..................)",
+                spanish="(...)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    Wait(45);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    Wait(45);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Now.[K] We have to decide on our\ncourse of action.",
+        french=" Bon.[K] Il faut qu\'on mette au point\nun plan d\'action.",
+        german=" Okay.[K] Wir müssen über unser\nweiteres Vorgehen entscheiden.",
+        italian=" Bene.[K] Dobbiamo decidere come\nmuoverci.",
+        spanish=" Bueno.[K] Ahora tenemos que\ndecidir lo que vamos a hacer.",
+    });
+    message_Talk({
+        english=" Like I\'ve told you before...[K]\nI\'m going to collect the Time Gears again.",
+        french=" Comme je vous l\'ai dit...[K] je vais\nme remettre à rassembler les Rouages\ndu Temps.",
+        german=" Wie ich bereits sagte...[K]\nIch werde wieder Zahnräder der Zeit sammeln.",
+        italian=" Come vi ho già detto,[K] \nvoglio raccogliere gli Ingranaggi del Tempo.",
+        spanish=" Tal y como os he dicho...[K] Voy\na buscar de nuevo los Engranajes del Tiempo.",
+    });
+    message_Talk({
+        english=" What are you going to do?",
+        french=" Et vous, qu\'est-ce que vous allez\nfaire?",
+        german=" Was habt ihr denn vor?",
+        italian=" Come facciamo?",
+        spanish=" ¿Habéis decidido ya lo que vais\na hacer?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Umm...",
+                french=" Euh...",
+                german=" Ähm...",
+                italian=" Uhm...",
+                spanish=" Hum...",
+            }
+        case 2:
+            {
+                english=" Umm...",
+                french=" Euh...",
+                german=" Ähm...",
+                italian=" Uhm...",
+                spanish=" Hum...",
+            }
+        default:
+            {
+                english=" Umm...",
+                french=" Euh...",
+                german=" Ähm...",
+                italian=" Uhm...",
+                spanish=" Hum...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I\'m a bit worried about how\ntime stops in the region where its Time Gear\nis removed.",
+                french=" Ça m\'inquiète un peu que\nle temps s\'arrête dans les régions privées\nde leur Rouage du Temps.",
+                german=" Ich bin etwas besorgt darüber,\ndass die Zeit in Regionen stillsteht, denen das\nZahnrad der Zeit genommen wurde.",
+                italian=" Mi preoccupa un po\' il fatto che \nnelle regioni in cui viene rimosso l\'Ingranaggio\ndel Tempo, il tempo si ferma.",
+                spanish=" A mí me preocupa que el tiempo\nse pare en las regiones donde se quitan los\nEngranajes del Tiempo.",
+            }
+        case 2:
+            {
+                english=" I\'m a little worried about how\ntime stops in the region where its Time Gear\nis removed.",
+                french=" Ça m\'inquiète un peu que\nle temps s\'arrête dans les régions privées\nde leur Rouage du Temps.",
+                german=" Ich bin etwas besorgt darüber,\ndass die Zeit in Regionen stillsteht, denen das\nZahnrad der Zeit genommen wurde.",
+                italian=" Mi preoccupa un po\' il fatto che \nil tempo si fermi nelle regioni in cui viene\nrimosso l\'Ingranaggio del Tempo.",
+                spanish=" A mí me preocupa que el tiempo\nse pare en las regiones donde se quitan los\nEngranajes del Tiempo.",
+            }
+        default:
+            {
+                english=" I\'m a little worried about how\ntime stops in the region where its Time Gear\nis removed.",
+                french=" Ça m\'inquiète un peu que\nle temps s\'arrête dans les régions privées\nde leur Rouage du Temps.",
+                german=" Ich bin etwas besorgt darüber,\ndass die Zeit in Regionen stillsteht, denen das\nZahnrad der Zeit genommen wurde.",
+                italian=" Mi preoccupa un po\' il fatto che \nil tempo si ferma nelle regioni in cui viene\nrimosso l\'Ingranaggio del Tempo.",
+                spanish=" A mí me preocupa que el tiempo\nse pare en las regiones donde se quitan los\nEngranajes del Tiempo.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" But that\'s really a temporary\nthing?",
+                french=" Mais, on est bien d\'accord,\nce n\'est que temporaire?",
+                german=" Ist das wirklich nur eine\nvorübergehende Sache?",
+                italian=" Davvero è solo una situazione\ntemporanea?",
+                spanish=" Aunque ese efecto es solo\ntemporal, ¿verdad?",
+            }
+        case 2:
+            {
+                english=" But you\'re sure that it will only\nbe temporary?",
+                french=" Mais, on est bien d\'accord,\nce n\'est que temporaire?",
+                german=" Aber du bist sicher, dass das\nnur zeitweilig ist?",
+                italian=" Sei sicuro che sarà solo una\ncosa temporanea?",
+                spanish=" Aunque ese efecto es solo\ntemporal, ¿verdad?",
+            }
+        default:
+            {
+                english=" But you\'re sure that it will only\nbe temporary?",
+                french=" Mais, on est bien d\'accord,\nce n\'est que temporaire?",
+                german=" Aber du bist sicher, dass das\nnur zeitweilig ist?",
+                italian=" Sei sicuro che sarà solo una\ncosa temporanea?",
+                spanish=" Aunque ese efecto es solo\ntemporal, ¿verdad?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" That\'s right. As soon as the Time\nGears are set in place at [CS:P]Temporal Tower[CR]...",
+        french=" C\'est exact. Dès que les Rouages\ndu Temps auront repris leur place dans\nla [CS:P]Tour du Temps[CR]...",
+        german=" Ganz sicher. Man muss nur die\nZahnräder der Zeit wieder in den [CS:P]Zeitturm[CR]\neinsetzen.",
+        italian=" È così. Non appena gli Ingranaggi\ndel Tempo saranno posizionati al loro posto\nnella [CS:P]Torre del Tempo[CR]...",
+        spanish=" Así es. En cuanto coloque los\nEngranajes del Tiempo en la [CS:P]Torre del Tiempo[CR]...",
+    });
+    message_Talk({
+        english=" time will be restored to its\nnormal state everywhere.",
+        french=" ... le temps reprendra son cours\nnormal dans le monde entier.",
+        german=" Dann kehrt die Zeit überall\nin ihren normalen Zustand zurück.",
+        italian=" ... tutto quanto tornerà come \nprima.",
+        spanish=" Se volverá a la normalidad en\ntodas partes.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Well then!",
+                french=" Alors ça me va!",
+                german=" Na dann!",
+                italian=" Bene allora!",
+                spanish=" ¡Estupendo!",
+            }
+        case 2:
+            {
+                english=" Well then!",
+                french=" Alors ça me va!",
+                german=" Na dann!",
+                italian=" Bene allora!",
+                spanish=" ¡Estupendo!",
+            }
+        default:
+            {
+                english=" Well then!",
+                french=" Alors ça me va!",
+                german=" Na dann!",
+                italian=" Bene allora!",
+                spanish=" ¡Estupendo!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We\'ll go too.[K] We\'ll go with you,\n[CS:N]Grovyle[CR].",
+                french=" Nous aussi on vient.[K]\nOn t\'accompagne, [CS:N]Massko[CR].",
+                german=" Dann gehen wir auch.[K] Wir gehen\nmit dir, [CS:N]Reptain[CR].",
+                italian=" Veniamo anche noi.[K] Veniamo con\nte, [CS:N]Grovyle[CR].",
+                spanish=" Lo mejor será que...[K]\nIremos contigo, [CS:N]Grovyle[CR].",
+            }
+        case 2:
+            {
+                english=" We\'ll go too.[K] We\'ll go with you,\n[CS:N]Grovyle[CR].",
+                french=" Nous aussi on vient.[K]\nOn t\'accompagne, [CS:N]Massko[CR].",
+                german=" Dann gehen wir auch.[K] Wir gehen\nmit dir, [CS:N]Reptain[CR].",
+                italian=" Veniamo anche noi.[K] Veniamo con\nte, [CS:N]Grovyle[CR].",
+                spanish=" Lo mejor será que...[K]\nIremos contigo, [CS:N]Grovyle[CR].",
+            }
+        default:
+            {
+                english=" We\'ll go too.[K] We\'ll go with you,\n[CS:N]Grovyle[CR].",
+                french=" Nous aussi on vient.[K]\nOn t\'accompagne, [CS:N]Massko[CR].",
+                german=" Dann gehen wir auch.[K] Wir gehen\nmit dir, [CS:N]Reptain[CR].",
+                italian=" Veniamo anche noi.[K] Veniamo con\nte, [CS:N]Grovyle[CR].",
+                spanish=" Lo mejor será que...[K]\nIremos contigo, [CS:N]Grovyle[CR].",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Taking a Time Gear will cause\ntrouble for Pokémon that live in that area...",
+                french=" S\'emparer des Rouages du Temps\nva causer beaucoup d\'ennuis aux Pokémon\nqui vivent dans les régions concernées...",
+                german=" Wenn ein Zahnrad der Zeit\nweggenommen wird, wird das negative Folgen\nfür die Pokémon in jener Gegend haben.",
+                italian=" Rimuovere un Ingranaggio del \nTempo causerà qualche problema ai Pokémon\nche vivono in quella zona...",
+                spanish=" Causaremos algunos problemas a\nlos Pokémon que vivan en la zona cercana a\nlos engranajes...",
+            }
+        case 2:
+            {
+                english=" Taking a Time Gear will badly\naffect the Pokémon that live in that area...",
+                french=" S\'emparer des Rouages du Temps\nva causer beaucoup d\'ennuis aux Pokémon\nqui vivent dans les régions concernées...",
+                german=" Wenn ein Zahnrad der Zeit\nweggenommen wird, wird das negative Folgen\nfür die Pokémon in jener Gegend haben.",
+                italian=" Rimuovere un Ingranaggio del \nTempo causerà qualche problema ai Pokémon\nche vivono in quella zona...",
+                spanish=" Causaremos algunos problemas a\nlos Pokémon que vivan en la zona cercana a\nlos engranajes...",
+            }
+        default:
+            {
+                english=" Stealing a Time Gear will cause\ntrouble for Pokémon that live in that area...",
+                french=" S\'emparer des Rouages du Temps\nva causer beaucoup d\'ennuis aux Pokémon\nqui vivent dans les régions concernées...",
+                german=" Wenn ein Zahnrad der Zeit\nweggenommen wird, wird das negative Folgen\nfür die Pokémon in jener Gegend haben.",
+                italian=" Rimuovere un Ingranaggio del \nTempo causerà qualche problema ai Pokémon\nche vivono in quella zona...",
+                spanish=" Causaremos algunos problemas a\nlos Pokémon que vivan en la zona cercana a\nlos engranajes...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" But we have to stop the planet\'s\nparalysis!",
+                french=" Mais on doit empêcher\nla Paralysie de la Planète!",
+                german=" Aber wir müssen die Lähmung\ndes Planeten aufhalten!",
+                italian=" Ma dobbiamo arrestare la \nparalisi del pianeta!",
+                spanish=" ¡Pero tenemos que detener la\nparálisis del planeta!",
+            }
+        case 2:
+            {
+                english=" But we have to prevent the\nplanet\'s paralysis!",
+                french=" Mais on doit empêcher\nla Paralysie de la Planète!",
+                german=" Aber wir müssen die Lähmung\ndes Planeten verhindern!",
+                italian=" Ma dobbiamo prevenire la \nparalisi del pianeta!",
+                spanish=" ¡Pero tenemos que detener la\nparálisis del planeta!",
+            }
+        default:
+            {
+                english=" But we have to prevent the\nplanet\'s paralysis!",
+                french=" Mais on doit empêcher\nla Paralysie de la Planète!",
+                german=" Aber wir müssen die Lähmung\ndes Planeten verhindern!",
+                italian=" Ma dobbiamo prevenire la \nparalisi del pianeta!",
+                spanish=" ¡Pero tenemos que detener la\nparálisis del planeta!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" OK, then. We\'ll go together.",
+        french=" C\'est entendu. On ira tous\nles trois.",
+        german=" Na gut. Wir gehen zusammen.",
+        italian=" E va bene. Andremo insieme.",
+        spanish=" Entonces decidido. Iremos juntos.",
+    });
+    message_Talk({
+        english=" But the hour is late.",
+        french=" Mais il est tard.",
+        german=" Aber es ist spät am Abend.",
+        italian=" Ma si sta facendo tardi.",
+        spanish=" Aunque ya es muy tarde.",
+    });
+    message_Talk({
+        english=" We\'re also exhausted from all\nthe running we\'ve done.",
+        french=" Et cette course-poursuite\nnous a tous épuisés.",
+        german=" Außerdem sind wir von der\nganzen Lauferei ziemlich erschöpft.",
+        italian=" E siamo anche esausti per tutte\nle corse che abbiamo fatto.",
+        spanish=" Y estamos agotados por todos\nlos esfuerzos que hemos hecho.",
+    });
+    message_Talk({
+        english=" We should rest up tonight. We\'ll\nleave in the morning.",
+        french=" Reposons-nous pour la nuit.\nOn partira demain matin.",
+        german=" Wir sollten uns heute Abend\nausruhen. Morgen früh ziehen wir los.",
+        italian=" È meglio che stanotte ci \nriposiamo. Partiremo domani mattina.",
+        spanish=" Esta noche debemos descansar.\nSaldremos por la mañana.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(1, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(71);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(71);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    Wait(30);
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 90);
+    WaitBgm(BGM_FIRE_CRACKLING);
+    Wait(60);
+    $SCENARIO_MAIN_BIT_FLAG[8] = 1;
+    $COMPULSORY_SAVE_POINT = 17;
+    CallCommon(CORO_HANYOU_SAVE_FUNC);
+    end;
+}

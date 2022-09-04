@@ -1,0 +1,57 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
+    supervision_LoadStation(LEVEL_G01P04A, 'UM06');
+    supervision_StationCommon(0);
+    supervision_StationCommon(99);
+    supervision_Station(3);
+    supervision_Acting(0);
+    Wait(1);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_FacePositionOffset(0, -1);
+    message_Talk({
+        english=" Ah, it\'s you.",
+        french=" Ah, c\'est vous.",
+        german=" Ach, ihr seid es.",
+        italian=" Ah, siete voi.",
+        spanish=" Ah, aquí estáis.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_Talk({
+        english=" Today again, I want you to check\nthe Job Bulletin Board and the Outlaw Notice\nBoard and do the posted jobs.",
+        french=" Aujourd\'hui, consultez le Tableau\ndes Missions et les Avis de Recherche. Il y a\ndu travail pour vous!",
+        german=" Lest heute wieder die Job- und\nGanoven-Infobretter und erledigt die dort\nausgeschriebenen Jobs.",
+        italian=" Oggi voglio che vi occupiate\ndelle missioni elencate sulla Bacheca delle\nmissioni e su quella dei ricercati.",
+        spanish=" Hoy quiero que también os\nencarguéis de las misiones del Tablón\nde Anuncios y del Tablón \"Se Busca\".",
+    });
+    message_Talk({
+        english=" That will do for now. ♪",
+        french=" Ce sera tout pour l\'instant. ♪",
+        german=" Das wäre es fürs Erste. ♪",
+        italian=" È tutto, per ora. ♪",
+        spanish=" Eso es todo por ahora. ♪",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    end;
+}

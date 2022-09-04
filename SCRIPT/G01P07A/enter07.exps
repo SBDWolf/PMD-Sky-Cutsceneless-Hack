@@ -1,0 +1,21 @@
+
+def 0 {
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    message_Notice({
+        english="[CN]GET UP ALREADY!\n[CN]         -[CS:N]Loudred[CR]",
+        french="[CN]ALLEZ, DEBOUT! HOP HOP HOP!\n[CN]         - [CS:N]Ramboum[CR]",
+        german="[CN]NUN STEHT ENDLICH AUF!\n[CN]- [CS:N]Krakeelo[CR]",
+        italian="[CN]SU! È ORA DI ALZARSI!\n[CN]               - [CS:N]Loudred[CR] -",
+        spanish="[CN]¡DESPERTAD YA!\n[CN]         -[CS:N]Loudred[CR]",
+    });
+    JumpCommon(CORO_END_TALK);
+}
+
+def 1 for_actor(ACTOR_PLAYER) {
+    hold;
+}

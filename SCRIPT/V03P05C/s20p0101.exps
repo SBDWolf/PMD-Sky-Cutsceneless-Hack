@@ -1,0 +1,33 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_MAIN = scn[29, 69];
+    back_SetGround(LEVEL_V03P05C);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 3) {
+        SetEffect(EFFECT_VERY_HEAVY_RAIN, 3);
+    }
+    bgm_PlayFadeIn(BGM_STORM, 120, 256);
+    screen_FadeIn(1, 30);
+    Wait(120);
+    se_Play(6401);
+    with (object OBJECT_V01P07B1_207) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_V01P07B1_207) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_V01P07B1_207);
+    WaitSe(6401);
+    Wait(150);
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 60);
+    WaitBgm(BGM_STORM);
+    with (performer 3) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    end;
+}

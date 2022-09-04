@@ -1,0 +1,183 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_G01P01A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    Wait(1);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        MovePositionOffset(32896, 24, 0);
+    }
+    bgm2_PlayFadeIn(BGM_OCEAN3, 60, 190);
+    screen_FadeIn(1, 30);
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        MovePositionOffset(32896, -48, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        MovePositionOffset(32896, 24, 0);
+    }
+    Wait(30);
+    supervision_Acting(1);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    se_Play(8964);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    message_SetFaceOnly(ACTOR_NPC_YUKIKABURI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Oh!",
+        french=" Oh!",
+        german=" Oh!",
+        italian=" Oh!",
+        spanish=" ¡Anda!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Huh? You are?",
+        french=" Hein? Toi?",
+        german=" Huch! Du?",
+        italian=" Eh? Ma tu sei...",
+        spanish=" ¿Eh? ¿Quién eres?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        MovePositionMark(1, Position<'m0', 30, 24.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" You\'re from yesterday!",
+        french=" C\'était toi, hier!",
+        german=" Du bist der von gestern!",
+        italian=" Tu sei quello di ieri!",
+        spanish=" ¡Yo te conozco de ayer!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFaceOnly(ACTOR_NPC_YUKIKABURI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" ...Y-yes.[K] Nice to meet you.[K]\nM-my name is [CS:N]Snover[CR].",
+        french=" ... Heu, oui.[K] Ravi de te rencontrer.[K]\nM-mon nom est [CS:N]Blizzi[CR].",
+        german=" ...J-ja.[K] Schön, dich zu sehen.[K]\nM-mein Name ist [CS:N]Shnebedeck[CR].",
+        italian=" S-Sì...[K] Piacere di conoscerti.[K]\nM-Mi chiamo [CS:N]Snover[CR].",
+        spanish=" Sí...[K] Encantado de conocerte.[K]\nMe... Me llamo [CS:N]Snover[CR].",
+    });
+    message_SetFace(ACTOR_NPC_YUKIKABURI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" I\'m really sorry to have caused\nyou trouble yesterday.",
+        french=" Je suis vraiment désolé de\nt\'avoir mis dans le pétrin, hier.",
+        german=" Die Aufregung gestern tut mir\nsehr leid.",
+        italian=" Mi dispiace davvero di averti\ncausato tutto quel disturbo ieri.",
+        spanish=" Siento mucho haberte causado\nproblemas ayer.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SetAnimation(24);
+    }
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SetAnimation(2);
+    }
+    se_Play(8972);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SPECIAL2, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Never mind that...[K] What\nabout those scary Pokémon that were\nchasing you...",
+        french=" T\'inquiète...[K] Mais, ces deux\naffreux Pokémon qui t\'poursuivaient...",
+        german=" Ach, schon gut...[K] Was ist mit\nden furchteinflößenden Pokémon, die dich\ngestern gejagt haben?",
+        italian=" Non ti preoccupare...[K]\nChe è successo con quei loschi Pokémon\nche ti stavano dando la caccia?",
+        spanish=" No te preocupes...[K] Cuéntame\nlo de esos Pokémon horripilantes que\nte perseguían...",
+    });
+    message_Talk({
+        english=" A-are you all right?",
+        french=" T-tu t\'portes bien?",
+        german=" D-dir geht es gut?",
+        italian=" S-Stai bene?",
+        spanish=" ¿E... estás bien?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_YUKIKABURI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Y-yes. I\'m OK.[K]\nBut...",
+        french=" Oui, tout va bien.[K]\nMais...",
+        german=" J-ja. Ich bin okay.[K] Aber...",
+        italian=" S-Sì. È tutto a posto.[K]\nMa...",
+        spanish=" Sí... Sí, estoy bien.[K] Pero...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    message_SetFace(ACTOR_NPC_YUKIKABURI, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEOUTW);
+    message_Talk({
+        english=" Truth is I had a bit of a\nscary encounter...",
+        french=" Pour dire la vérité, j\'ai fait une\nmauvaise rencontre...",
+        german=" Ich habe allerdings eine\nbeängstigende Begegnung hinter mir...",
+        italian=" La verità è che me la sono\nvista brutta...",
+        spanish=" La verdad es que tuve un\nencuentro bastante espeluznante...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm2_FadeOut(60);
+    se_Play(8968);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SURPRISED, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Whaaat?[K] Scary encounter...[K]\nWhat happened?!",
+        french=" Ah oui?[K]\nQu\'est-c\'qui s\'est passé?!",
+        german=" Waaaas?[K] Beängstigend...[K]\nWas ist passiert?!?",
+        italian=" Cooosa?[K] Te la sei vista brutta?[K]\nChe cosa è successo?!",
+        spanish=" ¿Quéee?[K] Se me están poniendo\nlos pelos como escarpias...[K] ¡Cuéntamelo todo!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_PlayFadeIn(BGM_AIR_OF_UNEASE, 0, 256);
+    message_SetFace(ACTOR_NPC_YUKIKABURI, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEOUTW);
+    message_Talk({
+        english=" After we met, I tried my best to\nrun away...",
+        french=" Après notre rencontre, j\'ai\nessayé de détaler le plus loin possible...",
+        german=" Nach unserer Begegnung gab\nich mein Bestes, wegzurennen...",
+        italian=" Dopo il nostro incontro, ho fatto\ndel mio meglio per fuggire...",
+        spanish=" Después de que nos cruzáramos,\nintenté huir por todos los medios...",
+    });
+    message_Talk({
+        english=" But [CS:N]Bagon[CR] and [CS:N]Gligar[CR] caught up\nwith me...",
+        french=" Mais [CS:N]Draby[CR] et [CS:N]Scorplane[CR]\nont fini par me rattraper...",
+        german=" Aber [CS:N]Kindwurm[CR] und [CS:N]Skorgla[CR]\nholten mich ein...",
+        italian=" Ma [CS:N]Bagon[CR] e [CS:N]Gligar[CR] mi\nhanno raggiunto...",
+        spanish=" Pero [CS:N]Bagon[CR] y [CS:N]Gligar[CR] me alcanzaron...",
+    });
+    message_Close();
+    screen_FadeOut(1, 30);
+    end;
+}

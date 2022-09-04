@@ -1,0 +1,278 @@
+
+def 0 {
+    sound_Stop();
+    back_SetDungeonBanner(40, 0);
+    screen_FadeIn(1, 16);
+    Wait(60);
+    screen_FadeOut(1, 16);
+    Wait(15);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Whoa![K] Th-this place is...",
+                french=" Waouh![K] Cet endroit est...",
+                german=" Huah![K] D-dieser Ort ist...",
+                italian=" Wow![K] Q-Questo posto è...",
+                spanish=" ¡Vaya![K] Este lugar es...",
+            }
+        case 2:
+            {
+                english=" Wow![K] Th-this place is...",
+                french=" Waouh![K] Cet endroit est...",
+                german=" Wow![K] D-dieser Ort ist...",
+                italian=" Wow![K] Q-Questo posto è...",
+                spanish=" ¡Vaya![K] Este lugar es...",
+            }
+        default:
+            {
+                english=" Wow![K] Th-this place is...",
+                french=" Waouh![K] Cet endroit est...",
+                german=" Wow![K] D-dieser Ort ist...",
+                italian=" Wow![K] Q-Questo posto è...",
+                spanish=" ¡Vaya![K] Este lugar es...",
+            }
+    }
+    message_Close();
+    back_SetGround(LEVEL_D28P31A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_HIDDEN_HIGHLAND, 0, 256);
+    WaitLockLives(5, ACTOR_PLAYER);
+    Unlock(9);
+    Wait(10);
+    Unlock(5);
+    Wait(15);
+    Unlock(13);
+    Lock(3);
+    with (performer 0) {
+        MovePositionMark(32972, Position<'m0', 41, 24>);
+    }
+    Unlock(14);
+    Wait(15);
+    Unlock(6);
+    Wait(20);
+    Unlock(10);
+    Lock(3);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It\'s awesome! Look at it,\n[hero]!",
+                french=" Il est fantastique! Regarde\nun peu, [hero]!",
+                german=" Er ist großartig! Sieh es dir an,\n[hero]!",
+                italian=" È incredibile! Guarda, \n[hero]!",
+                spanish=" ¡Es increíble!\n¡Mira, [hero]!",
+            }
+        case 2:
+            {
+                english=" It\'s incredible! Look at it,\n[hero]!",
+                french=" Il est fantastique! Regarde\nun peu, [hero]!",
+                german=" Er ist unglaublich! Sieh es dir\nan, [hero]!",
+                italian=" È incredibile! Guarda, \n[hero]!",
+                spanish=" ¡Es asombroso!\n¡Mira, [hero]!",
+            }
+        default:
+            {
+                english=" It\'s fantastic! Look at it,\n[hero]!",
+                french=" Il est fantastique! Regarde\nun peu, [hero]!",
+                german=" Er ist fantastisch! Sieh es dir\nan, [hero]!",
+                italian=" È incredibile! Guarda, \n[hero]!",
+                spanish=" ¡Es fantástico!\n¡Mira, [hero]!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Look at these fantastic\ninscriptions and paintings on the rock walls!",
+                french=" Tu as vu ces gravures et ces\npeintures sur les parois, c\'est superbe!",
+                german=" Sieh dir diese fantastischen\nInschriften und Malereien an den Felswänden\nan!",
+                italian=" Guarda quelle fantastiche \nincisioni e quei bellissimi dipinti sulle pareti\nrocciose!",
+                spanish=" ¡Mira todos esos fantásticos\ndibujos en las paredes de roca!",
+            }
+        case 2:
+            {
+                english=" Look at all these fantastic\npaintings and inscriptions on the walls!",
+                french=" Tu as vu ces gravures et ces\npeintures sur les parois, c\'est superbe!",
+                german=" Sieh dir diese fantastischen\nInschriften und Malereien an den Wänden an!",
+                italian=" Guarda quelle fantastiche \nincisioni e quei bellissimi dipinti sulle pareti\nrocciose!",
+                spanish=" ¡Mira todos esos fantásticos\ndibujos en las paredes de roca!",
+            }
+        default:
+            {
+                english=" Look at all these fantastic\npaintings and inscriptions on the walls!",
+                french=" Tu as vu ces gravures et ces\npeintures sur les parois, c\'est superbe!",
+                german=" Sieh dir diese fantastischen\nInschriften und Malereien an den Wänden an!",
+                italian=" Guarda quelle fantastiche \nincisioni e quei bellissimi dipinti sulle pareti\nrocciose!",
+                spanish=" ¡Mira todos esos fantásticos\ndibujos en las paredes de roca!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (performer 0) {
+        MovePositionMark(33152, Position<'m1', 64.5, 24>);
+    }
+    Unlock(15);
+    Wait(5);
+    Unlock(7);
+    Wait(5);
+    Unlock(11);
+    Lock(3);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Like [CS:N]Lapras[CR] said, this place is\nthe [CS:P]Old Ruins[CR]...",
+        french=" Ce sont les [CS:P]Ruines Anciennes[CR]\ndont a parlé [CS:N]Lokhlass[CR]...",
+        german=" Wie [CS:N]Lapras[CR] schon sagte, dies\nsind die [CS:P]Alten Ruinen[CR]...",
+        italian=" Come diceva [CS:N]Lapras[CR],\nqueste sono le [CS:P]Antiche Rovine[CR]...",
+        spanish=" Tal como dijo [CS:N]Lapras[CR], estas son\nlas [CS:P]Ruinas Arcanas[CR]...",
+    });
+    message_Talk({
+        english=" The Rainbow Stoneship should\nbe here.",
+        french=" Le Vaisseau Arc-en-Ciel ne doit\nplus être très loin.",
+        german=" Das Regenbogen-Steinschiff\nsollte hier sein.",
+        italian=" Il Vascello Arcobaleno dovrebbe \nessere qui.",
+        spanish=" La Barca Arcoiris debe de estar\npor aquí.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Yeah, that\'s right!",
+                french=" Oui, c\'est vrai!",
+                german=" Ja, so ist es!",
+                italian=" Sì, hai ragione!",
+                spanish=" ¡Claro que sí!",
+            }
+        case 2:
+            {
+                english=" Yup, that\'s right!",
+                french=" Oui, c\'est vrai!",
+                german=" Jep, so ist es!",
+                italian=" Sì, hai ragione!",
+                spanish=" ¡Claro que sí!",
+            }
+        default:
+            {
+                english=" Yup, that\'s right!",
+                french=" Oui, c\'est vrai!",
+                german=" Jep, so ist es!",
+                italian=" Sì, hai ragione!",
+                spanish=" ¡Claro que sí!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Let\'s get in there!",
+                french=" Allons-y!",
+                german=" Gehen wir hinein!",
+                italian=" Entriamo!",
+                spanish=" Entremos ahí.",
+            }
+        case 2:
+            {
+                english=" Let\'s go in there!",
+                french=" Allons-y!",
+                german=" Gehen wir hinein!",
+                italian=" Entriamo!",
+                spanish=" Entremos ahí.",
+            }
+        default:
+            {
+                english=" Let\'s get in there!",
+                french=" Allons-y!",
+                german=" Gehen wir hinein!",
+                italian=" Entriamo!",
+                spanish=" Entremos ahí.",
+            }
+    }
+    message_Close();
+    with (actor ACTOR_PLAYER) {
+        MovePositionOffset(33152, 120, 0);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionOffset(33152, 120, 0);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        MovePositionOffset(33152, 120, 0);
+    }
+    Wait(30);
+    screen_FadeOut(1, 30);
+    end;
+}
+
+def 1 for_actor(ACTOR_PLAYER) {
+    SetAnimation(2);
+    Lock(5);
+    CallCommon(CORO_LOOK_AROUND_FUNC);
+    Wait(30);
+    Unlock(3);
+    Lock(6);
+    MovePositionMark(33075, Position<'m2', 25, 26>);
+    Turn2Direction(4, 10, DIR_UP);
+    Wait(15);
+    CallCommon(CORO_LOOK_AROUND_FUNC);
+    MovePositionMark(33075, Position<'m3', 36, 26>);
+    Turn2Direction(4, 10, DIR_UP);
+    Lock(7);
+    MovePositionMark(33152, Position<'m4', 60.5, 26>);
+    Turn2Direction(4, 10, DIR_UP);
+    Unlock(3);
+    Lock(8);
+    hold;
+}
+
+def 2 for_actor(ACTOR_ATTENDANT1) {
+    SetAnimation(2);
+    Lock(9);
+    CallCommon(CORO_LOOK_AROUND_FUNC);
+    Wait(30);
+    Lock(10);
+    MovePositionMark(33075, Position<'m5', 27, 24>);
+    Turn2Direction(4, 10, DIR_UP);
+    CallCommon(CORO_LOOK_AROUND_FUNC);
+    Wait(15);
+    MovePositionMark(33075, Position<'m6', 40.5, 24>);
+    Turn2Direction(4, 10, DIR_UP);
+    Wait(15);
+    CallCommon(CORO_JUMP_ANGRY_FUNC);
+    Unlock(3);
+    Lock(11);
+    MovePositionMark(33152, Position<'m7', 64.5, 24>);
+    Turn2Direction(4, 10, DIR_UP);
+    Lock(12);
+    hold;
+}
+
+def 3 for_actor(ACTOR_NPC_JUPUTORU) {
+    SetAnimation(2);
+    Lock(13);
+    CallCommon(CORO_LOOK_AROUND_RIGHT_FUNC);
+    Lock(14);
+    MovePositionMark(33075, Position<'m8', 32, 26>);
+    Turn2Direction(4, 10, DIR_UP);
+    CallCommon(CORO_LOOK_AROUND_FUNC);
+    Wait(15);
+    MovePositionMark(33075, Position<'m9', 45, 26>);
+    Turn2Direction(4, 10, DIR_UP);
+    Lock(15);
+    MovePositionMark(33152, Position<'m10', 68.5, 26>);
+    Turn2Direction(4, 10, DIR_UP);
+    Lock(16);
+    hold;
+}

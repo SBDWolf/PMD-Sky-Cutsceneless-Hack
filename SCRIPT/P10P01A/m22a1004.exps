@@ -1,0 +1,121 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_OCEAN1, 0, 256);
+    back_SetGround(LEVEL_P10P01A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    Wait(1);
+    with (actor ACTOR_NPC_RAPURASU) {
+        ResetOutputAttribute(256);
+    }
+    with (actor ACTOR_NPC_RAPURASU) {
+        SetEffect(646, 4);
+    }
+    screen_FadeIn(1, 30);
+    with (actor ACTOR_NPC_RAPURASU) {
+        MovePositionMark(32896, Position<'m0', 20.5, 15.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_RAPURASU);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" [CS:N]Lapras[CR]![K] Long time no see! ♪",
+        french=" [CS:N]Lokhlass[CR]![K] Ça faisait\nlongtemps! ♪",
+        german=" [CS:N]Lapras[CR]![K] Lange nicht gesehen! ♪",
+        italian=" [CS:N]Lapras[CR]![K] È da tanto che non ci\nvediamo! ♪",
+        spanish=" ¡[CS:N]Lapras[CR]![K]\n¡Cuánto tiempo sin vernos! ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_RAPURASU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" It\'s been too long, [CS:N]Wigglytuff[CR].[K]\nYou look well.",
+        french=" Trop longtemps, [CS:N]Grodoudou[CR].[K]\nTu as l\'air de te porter comme un charme.",
+        german=" Zu lange nicht, [CS:N]Knuddeluff[CR].[K]\nGut siehst du aus.",
+        italian=" Quanto tempo, [CS:N]Wigglytuff[CR].[K]\nMi sembri in forma.",
+        spanish=" Ha pasado mucho tiempo,\n[CS:N]Wigglytuff[CR].[K] Tienes buen aspecto.",
+    });
+    message_Talk({
+        english=" Is [CS:N]Chatot[CR] doing well too?",
+        french=" Comment va [CS:N]Pijako[CR]?",
+        german=" Geht es [CS:N]Plaudagei[CR] auch gut?",
+        italian=" Sta bene anche [CS:N]Chatot[CR]?",
+        spanish=" ¿[CS:N]Chatot[CR] también está bien?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Yes![K] Very well! ♪",
+        french=" Bien![K] Très bien! ♪",
+        german=" Ja![K] Sehr gut! ♪",
+        italian=" Sì![K] Molto bene! ♪",
+        spanish=" ¡Sí![K] ¡Muy bien! ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_RAPURASU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" I\'m glad to hear that!",
+        french=" Ravi de l\'apprendre!",
+        german=" Freut mich zu hören!",
+        italian=" Mi fa piacere!",
+        spanish=" ¡Me alegro de oírlo!",
+    });
+    message_Talk({
+        english=" I\'ve always meant to thank you.",
+        french=" Je voulais te remercier.",
+        german=" Ich wollte dir schon immer\ndanken.",
+        italian=" Avrei sempre voluto\nringraziarvi.",
+        spanish=" Siempre he querido darte\nlas gracias.",
+    });
+    message_Talk({
+        english=" I deeply appreciate the promise\nyou made...and upheld for all this time.",
+        french=" J\'apprécie à sa juste valeur\nla promesse que tu as faite... et tenue pendant\ntout ce temps.",
+        german=" Ich weiß dein Versprechen sehr\nzu schätzen... Und dass du es all die Zeit\ngehalten hast.",
+        italian=" Ho apprezzato profondamente la\npromessa che avete fatto... e che avete\nmantenuto per tutto questo tempo.",
+        spanish=" Aprecio la promesa que hiciste\ny que has mantenido todo este tiempo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" No problem! ♪ No big deal! ♪",
+        french=" Pas de problème! ♪\nPas la peine d\'en faire tout un plat! ♪",
+        german=" Kein Problem! ♪ Nicht der\nRede wert! ♪",
+        italian=" Nessun problema! ♪ Capirai! ♪",
+        spanish=" ¡Ningún problema! ♪\n¡No es para tanto! ♪",
+    });
+    message_Talk({
+        english=" But today...[K] I am here to see\nyou about that promise.",
+        french=" Mais si je suis ici aujourd\'hui...[K]\nc\'est justement à cause de cette promesse.",
+        german=" Aber heute...[K] Heute bin ich\nwegen dieses Versprechens zu dir gekommen.",
+        italian=" Ma oggi...[K] sono qui per parlarti\ndi quella promessa.",
+        spanish=" Pero hoy...[K] he venido\na verte para hablarte de esa promesa.",
+    });
+    message_Talk({
+        english=" We find ourselves in a situation\nwhere we can\'t afford to uphold that promise.\nI suspect that you know why.",
+        french=" Nous nous trouvons dans\nune situation qui ne nous permet plus de tenir\nparole. Je pense que tu sais pourquoi.",
+        german=" Unsere Situation erlaubt es\nnicht, dass wir uns an dieses Versprechen\nhalten. Du weißt vermutlich, warum.",
+        italian=" Ci troviamo nella situazione di \nnon poterla più mantenere. Immagino che tu\nsappia il perché.",
+        spanish=" Nos encontramos en una\nsituación en la que no me puedo permitir\nmantenerla. Creo que sabes por qué.",
+    });
+    message_Talk({
+        english=" So please tell me...",
+        french=" Alors, s\'il te plaît,\nexplique-moi...",
+        german=" Also erzähl mir bitte etwas...",
+        italian=" Dunque, per favore, \ndimmi tutto...",
+        spanish=" Querría pedirte que...",
+    });
+    message_Talk({
+        english=" about that...[K]strange pattern we\nonce saw.",
+        french=" ... ce symbole...[K] étrange\nque nous avons vu une fois.",
+        german=" Und zwar über...[K] Über\ndieses seltsame Muster, das wir einmal\ngesehen haben.",
+        italian=" Parlami di quello...[K] strano\ndisegno che abbiamo visto quella volta.",
+        spanish=" Me hablaras de...[K] aquella extraña\nforma que vimos.",
+    });
+    message_Close();
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 90);
+    Wait(60);
+    $SCENARIO_MAIN = scn[24, 0];
+    end;
+}

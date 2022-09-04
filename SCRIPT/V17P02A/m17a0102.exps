@@ -1,0 +1,21 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_ON_THE_CEILING, 0, 128);
+    back_SetGround(LEVEL_V17P02A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        MovePositionMark(32896, Position<'m0', 51, 16.5>);
+    }
+    screen_FadeIn(1, 60);
+    WaitExecutePerformer(0);
+    Wait(90);
+    bgm_FadeOut(210);
+    screen2_FadeOut(0, 60);
+    screen_FadeOut(1, 60);
+    back2_SetMode(0);
+    Wait(30);
+    end;
+}

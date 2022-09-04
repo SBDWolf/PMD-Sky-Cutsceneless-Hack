@@ -1,0 +1,245 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_S04P01A);
+    screen_FadeIn(1, 0);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Ugh, we blew it...",
+                french=" Argh, on a échoué...",
+                german=" Uff, wir haben es vermasselt...",
+                italian=" Ugh, non ce l\'abbiamo fatta...",
+                spanish=" Uf... Hemos metido la pata.",
+            }
+        case 2:
+            {
+                english=" Ugh, we blew it...",
+                french=" Argh, on a échoué...",
+                german=" Uff, wir haben es vermasselt...",
+                italian=" Ugh, non ce l\'abbiamo fatta...",
+                spanish=" ¡Qué mal! Hemos metido la pata.",
+            }
+        default:
+            {
+                english=" Ugh, we blew it...",
+                french=" Argh, on a échoué...",
+                german=" Uff, wir haben es vermasselt...",
+                italian=" Ugh, non ce l\'abbiamo fatta...",
+                spanish=" Vaya, hemos metido la pata.",
+            }
+    }
+    message_KeyWait();
+    screen_FadeOutAll(1, 60);
+    message_CloseEnforce();
+    back_SetGround(LEVEL_D08P11A);
+    supervision_LoadStation(LEVEL_D08P11A, 'UM09');
+    supervision_Station(2);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    Wait(1);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(2);
+    }
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeInAll(1, 30);
+    bgm_PlayFadeIn(BGM_FOGGY_FOREST, 0, 256);
+    Wait(30);
+    WaitLockLives(5, ACTOR_PLAYER);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" What are you doing?",
+        french=" Que faites-vous?",
+        german=" Was macht ihr?",
+        italian=" Cosa state facendo?",
+        spanish=" ¿Qué hacéis aquí?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8964);
+    Unlock(7);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_TOP_L_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" ...Huh?!",
+                french=" ... Hein?!",
+                german=" ...Wie?!?",
+                italian=" ... Eh?!",
+                spanish=" ¡¿Eh?!",
+            }
+        case 2:
+            {
+                english=" ...Huh?!",
+                french=" ... Hein?!",
+                german=" ...Wie?!?",
+                italian=" ... Eh?!",
+                spanish=" ¡¿Eh?!",
+            }
+        default:
+            {
+                english=" ...Huh?!",
+                french=" ... Hein?!",
+                german=" ...Wie?!?",
+                italian=" ... Eh?!",
+                spanish=" ¡¿Eh?!",
+            }
+    }
+    Lock(3);
+    message_Close();
+    Unlock(5);
+    Wait(15);
+    Unlock(8);
+    Lock(3);
+    Wait(15);
+    se_Play(8963);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Wh-where is this?",
+                french=" Mais... où sommes-nous?",
+                german=" W-wo sind wir?",
+                italian=" D-Dove siamo?",
+                spanish=" ¿Do... dónde estamos?",
+            }
+        case 2:
+            {
+                english=" Wh-where is this?",
+                french=" Mais... où sommes-nous?",
+                german=" W-wo sind wir?",
+                italian=" D-Dove siamo?",
+                spanish=" ¿Do... dónde estamos?",
+            }
+        default:
+            {
+                english=" Wh-where is this?",
+                french=" Mais... où sommes-nous?",
+                german=" W-wo sind wir?",
+                italian=" D-Dove siamo?",
+                spanish=" ¿Do... dónde estamos?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" This is the base camp. It\nappears that your exploration has suffered\na setback.",
+        french=" Voici le camp de base. On dirait\nque votre exploration n\'a pas été de tout\nrepos.",
+        german=" Dies ist das Basislager.\nOffenbar läuft eure Erkundung nicht allzu gut.",
+        italian=" Questo è il Campo Base. Sembra\nche la vostra esplorazione abbia subito una\nbattuta d\'arresto.",
+        spanish=" Este es el campamento base.\nParece que vuestra exploración ha sufrido\nun contratiempo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5122);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_ANGRY, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Do it again! Get going!",
+        french=" Allez! Ne vous attardez pas ici!",
+        german=" Versucht es noch mal! Geht!",
+        italian=" Provate di nuovo! Muovetevi!",
+        spanish=" Volved a explorar, ¡venga!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    se_Play(8972);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_TOP_L_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Urk! Let\'s get going,\n[hero].",
+                french=" Argh! En route, [hero].",
+                german=" Urks! Gehen wir, [hero].",
+                italian=" Urk! Andiamo,\n[hero].",
+                spanish=" ¡Ay! Vamos, [hero].",
+            }
+        case 2:
+            {
+                english=" Urk! Let\'s get going,\n[hero].",
+                french=" Argh! En route, [hero].",
+                german=" Urks! Gehen wir, [hero].",
+                italian=" Urk! Andiamo,\n[hero].",
+                spanish=" ¡Ay! Vamos, [hero].",
+            }
+        default:
+            {
+                english=" Eep! Let\'s get going,\n[hero].",
+                french=" Argh! En route, [hero].",
+                german=" Urks! Gehen wir, [hero].",
+                italian=" Urk! Andiamo,\n[hero].",
+                spanish=" ¡Ay! Vamos, [hero].",
+            }
+    }
+    message_Close();
+    end;
+}
+
+def 1 for_actor(ACTOR_PLAYER) {
+    SetDirection(DIR_RIGHT);
+    SetAnimation(76);
+    Lock(5);
+    SetAnimation(63);
+    WaitAnimation();
+    Wait(10);
+    SetAnimation(2);
+    SetDirection(DIR_DOWN);
+    Wait(40);
+    CallCommon(CORO_LOOK_AROUND_LEFT_FUNC);
+    Turn2Direction(4, 10, DIR_DOWN);
+    Lock(6);
+    hold;
+}
+
+def 2 for_actor(ACTOR_ATTENDANT1) {
+    SetDirection(DIR_LEFT);
+    SetAnimation(76);
+    Lock(7);
+    SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    WaitEffect();
+    Unlock(3);
+    Lock(8);
+    SetAnimation(63);
+    WaitAnimation();
+    Wait(10);
+    SetAnimation(2);
+    SetDirection(DIR_DOWN);
+    Wait(40);
+    CallCommon(CORO_LOOK_AROUND_FUNC);
+    Unlock(3);
+    Lock(9);
+    hold;
+}

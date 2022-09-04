@@ -1,0 +1,391 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_D04P31A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    Wait(1);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(67);
+    }
+    screen_FadeIn(1, 5);
+    Wait(30);
+    message_SetFace(ACTOR_PLAYER, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(But that was...!)",
+                french="(Mais c\'est...!)",
+                german="(Aber das war...)",
+                italian="(Ma era...!)",
+                spanish="(¡Pero si ese era...!)",
+            }
+        default:
+            {
+                english="(But that was...!)",
+                french="(Mais c\'est...!)",
+                german="(Aber das war...)",
+                italian="(Ma era...!)",
+                spanish="(¡Pero si ese era...!)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(67);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_ANGRY, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Urrrrrrgh![K] Urrrrrrgh!",
+                french=" Aaargh! [K]Aaaaargh!",
+                german=" Urrrrrrgh![K] Urrrrrrgh!",
+                italian=" Urrrrrrgh![K] Urrrrrrgh!",
+                spanish=" ¡Aaah![K] ¡Uuuuf!",
+            }
+        case 2:
+            {
+                english=" Urrrrrrgh![K] Urrrrrrgh!",
+                french=" Aaargh! [K]Aaaaargh!",
+                german=" Urrrrrrgh![K] Urrrrrrgh!",
+                italian=" Urrrrrrgh![K] Urrrrrrgh!",
+                spanish=" ¡Aaah![K] ¡Uuuuf!",
+            }
+        default:
+            {
+                english=" Urrrrrrgh![K] Urrrrrrgh!",
+                french=" Aaargh! [K]Aaaaargh!",
+                german=" Urrrrrrgh![K] Urrrrrrgh!",
+                italian=" Urrrrrrgh![K] Urrrrrrgh!",
+                spanish=" ¡Aaah![K] ¡Uuuuf!",
+            }
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SlidePositionOffset(1, 0, 16);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    se_Play(8972);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I can\'t get it out...",
+                french=" Impossible de la sortir de là...\nDécidément, ça ne sert à rien.",
+                german=" Ich kriege ihn nicht raus...",
+                italian=" Non riesco a spostarla...",
+                spanish=" No puedo sacarla...",
+            }
+        case 2:
+            {
+                english=" It\'s no good. I can\'t pull it out...",
+                french=" Impossible de la sortir de là...\nDécidément, ça ne sert à rien.",
+                german=" Es bringt nichts. Ich kann ihn\nnicht herausziehen.",
+                italian=" Non riesco a spostarla...",
+                spanish=" No sirve de nada.\nNo consigo sacarla...",
+            }
+        default:
+            {
+                english=" N-no. It just won\'t come out...",
+                french=" Impossible de la sortir de là...\nDécidément, ça ne sert à rien.",
+                german=" N-nein, er gibt einfach nicht\nnach.",
+                italian=" Non riesco a spostarla...",
+                spanish=" Imposible. No hay forma\nde sacarla...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(30);
+    se_Play(8965);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionOffset(1, 0, -16);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_Mail({
+        english="[CN][partner] just happened\n[CN]to push the gigantic gem!",
+        french="[CN][partner] pousse la gemme\n[CN]géante à tout hasard!",
+        german="[CN]Durch Zufall drückt [partner]\n[CN]gegen den riesigen Edelstein!",
+        italian="[CN][partner] spinge senza volerlo\n[CN]la gemma gigante!",
+        spanish="[CN]Casualmente, en ese momento [partner]\n[CN]empujó la gema gigantesca.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(6658);
+    Wait(30);
+    se_Play(8968);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    message_SetFace(ACTOR_PLAYER, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Aaaack! That\'s...)",
+                french="(Aaah! C\'est...)",
+                german="(Aaaargh! Das ist...)",
+                italian="(Aaaack! È...)",
+                spanish="(¡Aaaah! Eso es...)",
+            }
+        default:
+            {
+                english="(Aaaack! That\'s...)",
+                french="(Aaah! C\'est...)",
+                german="(Aaaargh! Das ist...)",
+                italian="(Aaaack! È...)",
+                spanish="(¡Aaaah! Eso es...)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SlidePositionOffset(1, 0, 16);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    Wait(60);
+    se_Play(5131);
+    camera_SetEffect(2, 1, 1);
+    Wait(30);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(1, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_UNIT_NPC1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_UNIT_NPC2) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Huh? What\'s going on?",
+                french=" Quoi? Que se passe-t-il?",
+                german=" Ähem? Was passiert jetzt?",
+                italian=" Eh? Cosa sta succedendo?",
+                spanish=" ¿Eh? ¿Qué pasa?",
+            }
+        case 2:
+            {
+                english=" Huh? What\'s going on?",
+                french=" Quoi? Que se passe-t-il?",
+                german=" Ähem? Was passiert jetzt?",
+                italian=" Eh? Cosa sta succedendo?",
+                spanish=" ¿Eh? ¿Qué pasa?",
+            }
+        default:
+            {
+                english=" Huh? What\'s happening?",
+                french=" Quoi? Que se passe-t-il?",
+                german=" Ähem? Was passiert jetzt?",
+                italian=" Eh? Cosa sta succedendo?",
+                spanish=" ¿Eh? ¿Qué pasa?",
+            }
+    }
+    message_Close();
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    Wait(2);
+    with (actor ACTOR_UNIT_NPC1) {
+        ExecuteCommon(CORO_LOOK_AROUND_LEFT_FUNC_SERIES, 0);
+    }
+    Wait(5);
+    with (actor ACTOR_UNIT_NPC2) {
+        ExecuteCommon(CORO_LOOK_AROUND_DOWN_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    se_Play(5130);
+    camera_SetEffect(2, 3, 1);
+    Wait(30);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(1, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_UNIT_NPC1) {
+        Turn2Direction(1, 10, DIR_RIGHT);
+    }
+    with (actor ACTOR_UNIT_NPC2) {
+        Turn2Direction(1, 10, DIR_RIGHT);
+    }
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_UNIT_NPC1) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_UNIT_NPC2) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_BOTTOM_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Waaah! It\'s a flood!",
+                french=" Wouaaah! Une vague déferlante!",
+                german=" Waaah! Es ist eine Flutwelle!",
+                italian=" Waaah! Un\'inondazione!",
+                spanish=" ¡Aaah! ¡Es una riada!",
+            }
+        case 2:
+            {
+                english=" Waaah! It\'s a flood!",
+                french=" Wouaaah! Une vague déferlante!",
+                german=" Waaah! Es ist eine Flutwelle!",
+                italian=" Waaah! Un\'inondazione!",
+                spanish=" ¡Aaah! ¡Es una riada!",
+            }
+        default:
+            {
+                english=" Waaah! It\'s a flood!",
+                french=" Wouaaah! Une vague déferlante!",
+                german=" Waaah! Es ist eine Flutwelle!",
+                italian=" Waaah! Un\'inondazione!",
+                spanish=" ¡Aaah! ¡Se está inundando todo!",
+            }
+    }
+    message_Close();
+    bgm_PlayFadeIn(BGM_STORMY_OCEAN1, 0, 256);
+    supervision_SpecialActing(7, 0, 0);
+    with (actor ACTOR_PLAYER) {
+        MovePositionOffset(33152, -80, 0);
+    }
+    with (actor ACTOR_UNIT_NPC2) {
+        MovePositionOffset(33152, -96, 0);
+    }
+    Wait(10);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionOffset(33075, -40, 0);
+    }
+    Wait(20);
+    with (actor ACTOR_UNIT_NPC1) {
+        MovePositionOffset(33075, -40, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(11);
+    }
+    with (actor ACTOR_PLAYER) {
+        SlidePositionOffset(2, -180, 0);
+    }
+    with (actor ACTOR_UNIT_NPC2) {
+        SlidePositionOffset(2, -180, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(11);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SlidePositionOffset(2, -180, 0);
+    }
+    with (actor ACTOR_UNIT_NPC1) {
+        SlidePositionOffset(2, -180, 0);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SHOUTING, FACE_POS_BOTTOM_L_FACEOUTW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Waaaaaaah!",
+                french=" Wouaaaaaaah!",
+                german=" Waaaaaaah!",
+                italian=" Aaaaaaaah!",
+                spanish=" ¡Aaaaaaaah!",
+            }
+        case 2:
+            {
+                english=" Waaaaaaah!",
+                french=" Wouaaaaaaah!",
+                german=" Waaaaaaah!",
+                italian=" Aaaaaaaah!",
+                spanish=" ¡Aaaaaaaah!",
+            }
+        default:
+            {
+                english=" Waaaaaaah!",
+                french=" Wouaaaaaaah!",
+                german=" Waaaaaaah!",
+                italian=" Aaaaaaaah!",
+                spanish=" ¡Aaaaaaaah!",
+            }
+    }
+    Wait(30);
+    screen_FadeOut(1, 30);
+    supervision_SpecialActing(3, 0, 0);
+    Wait(60);
+    se_FadeOut(5130, 120);
+    bgm_FadeOut(120);
+    screen_FadeOutAll(1, 60);
+    message_CloseEnforce();
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    end;
+}

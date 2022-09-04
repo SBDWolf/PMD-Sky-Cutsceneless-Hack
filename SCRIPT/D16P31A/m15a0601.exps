@@ -1,0 +1,194 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_IN_THE_DEPTHS_OF_THE_PIT, 0, 256);
+    bgm_FadeOut(60);
+    screen_FadeOut(1, 30);
+    back2_SetMode(0);
+    WaitSubScreen();
+    supervision_RemoveCommon(13);
+    supervision_RemoveCommon(14);
+    supervision_RemoveCommon(15);
+    supervision_Acting(1);
+    supervision_Acting(3);
+    with (object OBJECT_D16P31A8_55) {
+        SetAnimation(9);
+    }
+    with (object OBJECT_D16P31A2_37) {
+        SetAnimation(10);
+    }
+    camera_SetPositionMark(Position<'m0', 37.5, 28.5>);
+    with (actor ACTOR_PLAYER) {
+        SetFunctionAttribute(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetFunctionAttribute(2);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetPositionMark(Position<'m1', 39.5, 28.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetPositionMark(Position<'m2', 35.5, 28.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetDirection(DIR_UP);
+    }
+    Wait(30);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    se_Play(7176);
+    with (object OBJECT_D16P31A8_55) {
+        SetAnimation(17);
+    }
+    with (object OBJECT_D16P31A2_37) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_D16P31A2_37) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D16P31A2_37);
+    with (object OBJECT_D16P31A2_37) {
+        SetAnimation(17);
+    }
+    with (object OBJECT_D16P31A2_37) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D16P31A2_37);
+    Wait(30);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    Wait(15);
+    with (actor ACTOR_PLAYER) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    Wait(60);
+    bgm_PlayFadeIn(BGM_EARTHQUAKE1, 0, 256);
+    camera_SetEffect(2, 1, 33024);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Waaah! A tremor!",
+                french=" Ouaaah! Un tremblement\nde terre!",
+                german=" Waaah! Ein Beben!",
+                italian=" Waaah! Un terremoto!",
+                spanish=" ¡Aaaah! ¡Un temblor!",
+            }
+        case 2:
+            {
+                english=" Waaah! A tremor!",
+                french=" Ouaaah! Un tremblement\nde terre!",
+                german=" Waaah! Ein Beben!",
+                italian=" Waaah! Un terremoto!",
+                spanish=" ¡Aaaah! ¡Un temblor!",
+            }
+        default:
+            {
+                english=" Waaah! A tremor!",
+                french=" Ouaaah! Un tremblement\nde terre!",
+                german=" Waaah! Ein Beben!",
+                italian=" Waaah! Un terremoto!",
+                spanish=" ¡Aaaah! ¡Un temblor!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(30);
+    se_Play(7177);
+    supervision_Acting(2);
+    with (object OBJECT_D16P31A9_58) {
+        SetOutputAttribute(4);
+    }
+    with (object OBJECT_D16P31A9_58) {
+        SetAnimation(17);
+    }
+    with (object OBJECT_D16P31A9_58) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D16P31A9_58);
+    with (object OBJECT_D16P31A9_58) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_D16P31A9_58) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D16P31A9_58);
+    with (object OBJECT_D16P31A9_58) {
+        SetAnimation(3);
+    }
+    Wait(30);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    Wait(10);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It\'s dangerous, [hero]!\nLet\'s take cover!",
+                french=" C\'est dangereux, [hero]!\nAux abris!",
+                german=" Es wird gefährlich,\n[hero]! Gehen wir in Deckung!",
+                italian=" Al riparo, [hero]!",
+                spanish=" ¡Ten cuidado, [hero]!\n¡Pongámonos a cubierto!",
+            }
+        case 2:
+            {
+                english=" It\'s dangerous, [hero]!\nLet\'s back off!",
+                french=" C\'est dangereux, [hero]!\nAux abris!",
+                german=" Es wird gefährlich,\n[hero]! Weg von hier!",
+                italian=" Al riparo, [hero]!",
+                spanish=" ¡Ten cuidado, [hero]!\n¡Pongámonos a cubierto!",
+            }
+        default:
+            {
+                english=" It\'s dangerous, [hero]!\nLet\'s back off!",
+                french=" C\'est dangereux, [hero]!\nAux abris!",
+                german=" Es wird gefährlich,\n[hero]! Weg von hier!",
+                italian=" Al riparo, [hero]!",
+                spanish=" ¡Ten cuidado, [hero]!\n¡Pongámonos a cubierto!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Move2PositionMark(33152, Position<'m3', 35.5, 50.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(33152, Position<'m4', 39.5, 50.5>);
+    }
+    Wait(20);
+    with (actor ACTOR_UNIT_NPC1) {
+        MovePositionOffset(33152, 0, 180);
+    }
+    Wait(5);
+    with (actor ACTOR_UNIT_NPC2) {
+        MovePositionOffset(33152, 0, 180);
+    }
+    bgm_FadeOut(60);
+    se_FadeOut(7177, 60);
+    screen_FadeOut(1, 30);
+    camera_SetEffect(0, 0, 0);
+    WaitBgm(BGM_EARTHQUAKE1);
+    end;
+}

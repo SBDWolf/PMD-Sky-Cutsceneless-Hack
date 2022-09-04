@@ -1,0 +1,169 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_MT_HORN, 0, 256);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetAnimation(2);
+    }
+    WaitExecuteLives(ACTOR_NPC_BIPPA);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Are you ready, [hero]?",
+                french=" C\'est bon, [hero]?",
+                german=" Bist du bereit, [hero]?",
+                italian=" Tutto pronto, [hero]?",
+                spanish=" ¿Seguimos, [hero]?",
+            }
+        case 2:
+            {
+                english=" Are you ready, [hero]?",
+                french=" C\'est bon, [hero]?",
+                german=" Bist du bereit, [hero]?",
+                italian=" Tutto pronto, [hero]?",
+                spanish=" ¿Seguimos, [hero]?",
+            }
+        default:
+            {
+                english=" Are you ready, [hero]?",
+                french=" C\'est bon, [hero]?",
+                german=" Bist du bereit, [hero]?",
+                italian=" Tutto pronto, [hero]?",
+                spanish=" ¿Seguimos, [hero]?",
+            }
+    }
+    switch ( message_SwitchMenu(0, 1) ) {
+        case menu({
+            english="All set!",
+            french="C\'est bon!",
+            german="Alles klar!",
+            italian="Tutto pronto!",
+            spanish="¡Ahora mismo!",
+        }):
+        default:
+            §label_0;
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                case 1:
+                    {
+                        english=" Which way should we go?",
+                        french=" On prend quel chemin?",
+                        german=" Welchen Weg nehmen wir?",
+                        italian=" Da che parte dobbiamo andare?",
+                        spanish=" ¿Por dónde vamos?",
+                    }
+                case 2:
+                    {
+                        english=" Which way should we go?",
+                        french=" On prend quel chemin?",
+                        german=" Welchen Weg nehmen wir?",
+                        italian=" Da che parte dobbiamo andare?",
+                        spanish=" ¿Por dónde vamos?",
+                    }
+                default:
+                    {
+                        english=" Which way should we go?",
+                        french=" On prend quel chemin?",
+                        german=" Welchen Weg nehmen wir?",
+                        italian=" Da che parte dobbiamo andare?",
+                        spanish=" ¿Por dónde vamos?",
+                    }
+            }
+            switch ( message_SwitchMenu(0, 1) ) {
+                case menu({
+                    english="[CS:P]Mt. Horn[CR]",
+                    french="Par le [CS:P]Mt Corne[CR]",
+                    german="[CS:P]Hornberg[CR]",
+                    italian="[CS:P]Monte Aguzzo[CR]",
+                    spanish="[CS:P]Monte Cuerno[CR]",
+                }):
+                default:
+                    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+
+                    if ( scn($SCENARIO_MAIN) >= [9, 5] ) {
+                        §label_4;
+                        main_EnterDungeon(10, 30);
+                        switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                        main_EnterDungeon(-1, 30);
+                        hold;
+                    } else {
+                        $SCENARIO_MAIN = scn[9, 5];
+                        jump @label_4;
+                    }
+                    break;
+                case menu({
+                    english="[CS:P]Rock Path[CR]",
+                    french="Par le [CS:P]Chemin Rocheux[CR]",
+                    german="[CS:P]Felspfad[CR]",
+                    italian="[CS:P]Pista Rocciosa[CR]",
+                    spanish="[CS:P]Paso Rocoso[CR]",
+                }):
+                    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                    if ( scn($SCENARIO_MAIN) >= [9, 5] ) {
+                        §label_5;
+                        bgm_FadeOut(60);
+                        main_EnterDungeon(11, 30);
+                        switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                        main_EnterDungeon(-1, 30);
+                        hold;
+                    } else {
+                        $SCENARIO_MAIN = scn[9, 5];
+                        jump @label_5;
+                    }
+                    break;
+            }
+            break;
+        case menu({
+            english="Not yet...",
+            french="Pas encore...",
+            german="Noch nicht...",
+            italian="Non ancora...",
+            spanish="Espera un poco",
+        }):
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                case 1:
+                    {
+                        english=" All right. We\'ll get moving when\nyou\'re ready.",
+                        french=" On part quand tout le monde est\nprêt.",
+                        german=" In Ordnung. Wir gehen los, wenn\ndu so weit bist.",
+                        italian=" Va bene. Partiremo quando sarà\ntutto pronto.",
+                        spanish=" Vale. Seguiremos cuando quieras.",
+                    }
+                case 2:
+                    {
+                        english=" OK. Let\'s get moving when\nyou\'re ready.",
+                        french=" On part quand tout le monde est\nprêt.",
+                        german=" In Ordnung. Wir gehen los, wenn\ndu so weit bist.",
+                        italian=" Va bene. Partiremo quando sarà\ntutto pronto.",
+                        spanish=" Vale. Seguiremos cuando quieras.",
+                    }
+                default:
+                    {
+                        english=" OK. Let\'s get moving when\nyou\'re ready.",
+                        french=" On part quand tout le monde est\nprêt.",
+                        german=" In Ordnung. Wir gehen los, wenn\ndu so weit bist.",
+                        italian=" Va bene. Partiremo quando sarà\ntutto pronto.",
+                        spanish=" Vale. Seguiremos cuando quieras.",
+                    }
+            }
+            message_Close();
+            end;
+    }
+}

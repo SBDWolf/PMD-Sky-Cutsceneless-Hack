@@ -1,0 +1,58 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_D03P41A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_DETERMINED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We won\'t let you do that![K]\n[CS:N]Drowzee[CR], you bully!",
+                french=" On ne te laissera pas t\'en sortir\ncomme ça![K] [CS:N]Soporifik[CR], tu n\'es qu\'un monstre!",
+                german=" Das lassen wir nicht zu![K]\n[CS:N]Traumato[CR], du Bösewicht!",
+                italian=" Non te lo permetteremo![K]\n[CS:N]Drowzee[CR], brutto delinquente!",
+                spanish=" ¡No te permitiremos hacerle\neso![K] [CS:N]Drowzee[CR], ¡eres un abusón!",
+            }
+        case 2:
+            {
+                english=" We won\'t let you do that![K]\n[CS:N]Drowzee[CR], you bully!",
+                french=" On ne te laissera pas t\'en sortir\ncomme ça![K] [CS:N]Soporifik[CR], tu n\'es qu\'un monstre!",
+                german=" Das lassen wir nicht zu![K]\n[CS:N]Traumato[CR], du Bösewicht!",
+                italian=" Non te lo permetteremo![K]\nVigliacco di un [CS:N]Drowzee[CR]!",
+                spanish=" ¡No tiene por qué hacer eso![K]\n[CS:N]Drowzee[CR], ¡eres un abusón!",
+            }
+        default:
+            {
+                english=" We won\'t let you do that![K]\n[CS:N]Drowzee[CR], you bully!",
+                french=" On ne te laissera pas t\'en sortir\ncomme ça![K] [CS:N]Soporifik[CR], tu n\'es qu\'un monstre!",
+                german=" Das lassen wir nicht zu![K]\n[CS:N]Traumato[CR], du Bösewicht!",
+                italian=" Non te lo permetteremo![K]\n[CS:N]Drowzee[CR], brutto scellerato!",
+                spanish=" ¡No te permitiremos que le\nobligues a hacer eso![K]\n[CS:N]Drowzee[CR], ¡eres un abusón!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_SURIIPU) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_SURIIPU) {
+        WaitEffect();
+    }
+    message_SetFace(ACTOR_NPC_SURIIPU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" H-how did you find this place?!",
+        french=" Comment avez-vous fait pour\narriver jusqu\'ici?!",
+        german=" W-wie habt ihr uns gefunden?!?",
+        italian=" C-Come avete fatto ad arrivare \nqui?!",
+        spanish=" ¡¿Cómo habéis encontrado\neste sitio?!",
+    });
+    message_Close();
+    screen_FadeOut(1, 30);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    end;
+}

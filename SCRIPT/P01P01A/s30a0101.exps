@@ -1,0 +1,13 @@
+
+def 0 {
+    $SCENARIO_MAIN = scn[6, 4];
+    back_SetGround(LEVEL_P01P03A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    supervision_StationCommon(7);
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_TREASURE_TOWN, 0, 256);
+    end;
+}

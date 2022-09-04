@@ -1,0 +1,110 @@
+
+def 0 {
+    CallCommon(CORO_FADE_OUT_ALL_BEFORE);
+    back_SetGround(LEVEL_P03P01A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeInAll(1, 15);
+    Wait(30);
+    se_Play(8973);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    message_SetFace(ACTOR_PLAYER, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Wh-what was that?)",
+                french="(C\'était quoi?)",
+                german="(W-was war das?)",
+                italian="(C-Cosa è stato?)",
+                spanish="(¿Qué... qué ha sido eso?)",
+            }
+        default:
+            {
+                english="(Wh-what was that?)",
+                french="(C\'était quoi?)",
+                german="(W-was war das?)",
+                italian="(C-Cosa è stato?)",
+                spanish="(¿Qué... qué ha sido eso?)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Whose voice was that?)",
+                french="(A qui appartenait cette voix?)",
+                german="(Wessen Stimme war das?)",
+                italian="(Di chi era quella voce?)",
+                spanish="(¿De quién era esa voz?)",
+            }
+        default:
+            {
+                english="(Whose voice was that?)",
+                french="(A qui appartenait cette voix?)",
+                german="(Wessen Stimme war das?)",
+                italian="(Di chi era quella voce?)",
+                spanish="(¿De quién era esa voz?)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5133);
+    screen_FlushOut(1, 4, 4, 128, 96, 64);
+    screen_FlushIn(1, 8, 4, 128, 96, 64);
+    screen_FlushOut(1, 8, 4, 128, 96, 64);
+    screen_FlushIn(1, 12, 4, 128, 96, 64);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    Wait(30);
+    message_SetFace(ACTOR_PLAYER, FACE_PAIN, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Wh-what, again?)",
+                french="(Quoi, encore?)",
+                german="(W-was?)",
+                italian="(C-Cosa? Ancora?)",
+                spanish="(¿Cómo, otra vez?)",
+            }
+        default:
+            {
+                english="(Wh-what, again?)",
+                french="(Quoi, encore?)",
+                german="(W-was?)",
+                italian="(C-Cosa? Ancora?)",
+                spanish="(¿Cómo, otra vez?)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(So soon after the first one...)",
+                french="(Déjà une deuxième vision...)",
+                german="(Schon so kurz nach dem ersten...)",
+                italian="(Così presto dopo il primo...)",
+                spanish="(Justo después de la otra.)",
+            }
+        default:
+            {
+                english="(So soon after the first one...)",
+                french="(Déjà une deuxième vision...)",
+                german="(Schon so kurz nach dem ersten...)",
+                italian="(Così presto dopo il primo...)",
+                spanish="(Justo después de la otra.)",
+            }
+    }
+    message_Close();
+    screen_FadeOutAll(1, 5);
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    end;
+}
+
+def 1 for_object(OBJECT_P03P01A1_127) {
+    SetOutputAttribute(1024);
+    hold;
+}

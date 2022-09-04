@@ -1,0 +1,75 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_MEMORIES_RETURNED, 0, 256);
+    back2_SetMode(0);
+    back_SetGround(LEVEL_D04P11A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I\'m going to believe you,\n[hero]!",
+                french=" Je te crois,\n[hero]!",
+                german=" Ich glaube dir, [hero]!",
+                italian=" Ti credo,\n[hero]!",
+                spanish=" ¡Me fiaré de ti, [hero]!",
+            }
+        case 2:
+            {
+                english=" I\'m putting my faith in you,\n[hero]!",
+                french=" Je te crois,\n[hero]!",
+                german=" Ich vertraue dir, [hero]!",
+                italian=" Ti credo,\n[hero]!",
+                spanish=" ¡Confiaré en ti, [hero]!",
+            }
+        default:
+            {
+                english=" I\'m going to believe you,\n[hero]!",
+                french=" Je te crois,\n[hero]!",
+                german=" Ich glaube dir, [hero]!",
+                italian=" Ti credo,\n[hero]!",
+                spanish=" ¡Confiaré en ti, [hero]!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Yes! I totally believe in you,\n[hero]!",
+                french=" Oui! J\'ai entièrement confiance\nen toi, [hero]!",
+                german=" Ja! Ich glaube fest an dich,\n[hero]!",
+                italian=" Sì! Mi fido ciecamente di te,\n[hero]!",
+                spanish=" ¡La verdad es que creo en ti,\n[hero]!",
+            }
+        case 2:
+            {
+                english=" Yes! I totally believe in you,\n[hero].",
+                french=" Oui! J\'ai entièrement confiance\nen toi, [hero]!",
+                german=" Ja! Ich glaube fest an dich,\n[hero]!",
+                italian=" Sì! Mi fido ciecamente di te,\n[hero]!",
+                spanish=" ¡La verdad es que creo en ti,\n[hero]!",
+            }
+        default:
+            {
+                english=" Yes! I totally believe in you,\n[hero]!",
+                french=" Oui! J\'ai entièrement confiance\nen toi, [hero]!",
+                german=" Ja! Ich glaube fest an dich,\n[hero]!",
+                italian=" Sì! Mi fido ciecamente di te,\n[hero]!",
+                spanish=" ¡La verdad es que creo en ti,\n[hero]!",
+            }
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_Close();
+    screen_WhiteOut(1, 30);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    Wait(30);
+    end;
+}

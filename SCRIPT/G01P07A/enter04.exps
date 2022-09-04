@@ -1,0 +1,21 @@
+
+def 0 {
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    $SCENARIO_MAIN_BIT_FLAG[7] = 1;
+    CallCommon(CORO_HANYOU_SAVE_FUNC);
+    JumpCommon(CORO_END_TALK);
+}

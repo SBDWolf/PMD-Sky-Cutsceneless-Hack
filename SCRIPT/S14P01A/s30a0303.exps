@@ -1,0 +1,241 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_SPINDAS_CAFE, 0, 256);
+    back_SetGround(LEVEL_S14P01A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    §label_2;
+    forever {
+        Wait(30);
+        supervision_Acting(1);
+        se_Play(11026);
+        with (object OBJECT_S14P01A1_399) {
+            SetAnimation(17);
+        }
+        with (object OBJECT_S14P01A1_399) {
+            WaitAnimation();
+        }
+        WaitExecuteObject(OBJECT_S14P01A1_399);
+        Wait(15);
+        with (object OBJECT_S14P01A1_399) {
+            SetAnimation(2);
+        }
+        Wait(30);
+        message_SetActor(ACTOR_NPC_PATCHIIRU);
+        message_Talk({
+            english=" Right now at the Recycle Shop,\nyou trade several items in exchange for one of\nthe shop\'s items.",
+            french=" A l\'heure actuelle, à la Bourse\nd\'Echange, vous échangez plusieurs objets\ncontre un autre du magasin.",
+            german=" Zurzeit tauscht ihr im\nWiederverwertungsladen einige eurer\nItems gegen eines der Items des Ladens.",
+            italian=" Finora al Centro Riciclo\nsi consegnavano vari strumenti per\nottenerne uno del negozio.",
+            spanish=" Ahora, en el Reciclaje Explorador\nse intercambian varios objetos por uno de los\nde la tienda.",
+        });
+        message_Talk({
+            english=" Thanks to everyone\'s continued\nrecycling efforts, we have gathered a lot of\nitems here at the shop.",
+            french=" Grâce à votre soutien pour\nnotre projet d\'échanges, nous avons\nun énorme stock d\'objets!",
+            german=" Da der Wiederverwertungsladen\nvon vielen genutzt wird, konnten wir eine\nMenge Items hier im Laden sammeln.",
+            italian=" Grazie ai vostri continui sforzi\nnel riciclare, il negozio ha raccolto\nmolti strumenti.",
+            spanish=" Gracias al esfuerzo de todos,\nhemos reunido muchísimos objetos\nen la tienda.",
+        });
+        message_Talk({
+            english=" The service will continue to\noperate in the same manner...",
+            french=" Le service continuera d\'opérer\nde la même manière.",
+            german=" Dieser Service wird wie\ngewohnt weiterlaufen...",
+            italian=" Il servizio continuerà\na funzionare nello stesso modo...",
+            spanish=" El servicio continuará\nfuncionando del mismo modo...",
+        });
+        message_Talk({
+            english=" And now with Project P\nestablished...",
+            french=" A présent, avec l\'instauration\ndu Projet P...",
+            german=" Und jetzt, wo wir\nProjekt P starten...",
+            italian=" E ora che abbiamo istituito\nil Progetto P...",
+            spanish=" Y ahora, con el nuevo Proyecto P...",
+        });
+        CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+        supervision_Acting(2);
+        se_Play(11027);
+        with (object OBJECT_S14P01A4_402) {
+            SetAnimation(1);
+        }
+        Wait(45);
+        supervision_Acting(3);
+        se_Play(11026);
+        with (object OBJECT_S14P01A2_400) {
+            SetAnimation(17);
+        }
+        with (object OBJECT_S14P01A2_400) {
+            WaitAnimation();
+        }
+        WaitExecuteObject(OBJECT_S14P01A2_400);
+        Wait(15);
+        with (object OBJECT_S14P01A2_400) {
+            SetAnimation(2);
+        }
+        message_SetActor(ACTOR_NPC_PATCHIIRU);
+        message_Talk({
+            english=" You might be wondering how\nProject P fits into all this...",
+            french=" ... vous vous demandez\npeut-être quel est le rapport...",
+            german=" Da fragt ihr euch sicher, wie\ndas Projekt P dort hineinpasst.",
+            italian=" Vi starete chiedendo cosa c\'entra\nil Progetto P in tutto questo...",
+            spanish=" Seguramente os preguntéis cómo\nencaja el Proyecto P en todo esto...",
+        });
+        message_Talk({
+            english=" We\'ll use the accumulated items\nto explore unexplored areas!",
+            french=" Nous allons utiliser les objets\naccumulés pour explorer\ndes territoires inexplorés!",
+            german=" Ganz einfach: Wir nutzen die\ngesammelten Items, um unerforschte Gebiete\nzu erkunden!",
+            italian=" Utilizzeremo gli strumenti\naccumulati per esplorare luoghi sconosciuti!",
+            spanish=" Pues bien, ¡usaremos los objetos\nacumulados para explorar nuevos lugares!",
+        });
+        message_Talk({
+            english=" There are still so many places\naround the world that are waiting to be\nfound and explored.",
+            french=" Il y a encore tant d\'endroits\nde par le monde qui attendent d\'être\ndécouverts...",
+            german=" Es gibt noch so viele Gebiete auf\ndieser Welt, die im Verborgenen liegen und\nbisher nicht erkundet wurden.",
+            italian=" Nel mondo ci sono ancora così\ntanti posti che aspettano solo di essere\nscoperti ed esplorati.",
+            spanish=" Sigue habiendo muchos lugares\nen el mundo esperando ser hallados\ny explorados.",
+        });
+        message_Talk({
+            english=" So many secret treasures\nand challenging puzzles waiting to\nbe discovered...",
+            french=" Tant de trésors secrets à\ntrouver et tant d\'énigmes à résoudre...",
+            german=" So viele geheime Schätze und\nherausfordernde Rätsel, die ihrer\nEntdeckung harren...",
+            italian=" Così tanti tesori nascosti\ned enigmi complicati che attendono\ndi essere riportati alla luce...",
+            spanish=" Hay tantos tesoros ocultos y\nmisterios desafiantes esperando\nser encontrados...",
+        });
+        message_Talk({
+            english=" So let\'s go out and find them!\nThat\'s what Project P is about!",
+            french=" Alors en avant, mes amis!\nPartons à leur recherche!\nVoilà l\'essence même du Projet P!",
+            german=" Also lasst uns hinausziehen\nund sie ausfindig machen! Das ist der Sinn\nvon Projekt P!",
+            italian=" Quindi forza, mettiamoci\nalla ricerca! Ecco qual è lo scopo\ndel Progetto P!",
+            spanish=" ¡Así que eso es lo que haremos!\n¡Eso es el Proyecto P!",
+        });
+        message_Talk({
+            english=" Ah, the pursuit of knowledge...",
+            french=" Ah, la soif de connaissance...",
+            german=" Ah, das Streben nach Wissen...",
+            italian=" Ah, la ricerca della conoscenza...",
+            spanish=" Ah, la sed de conocimientos...",
+        });
+        CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+        message_Talk({
+            english=" And continuing exploration...",
+            french=" ... l\'exploration perpétuelle...",
+            german=" Und nach andauernder\nErkundung...",
+            italian=" ... e l\'inesauribile desiderio\ndi esplorazione.",
+            spanish=" Y de nuevas exploraciones...",
+        });
+        CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+        supervision_Acting(4);
+        se_Play(11027);
+        with (object OBJECT_S14P01A4_403) {
+            SetAnimation(2);
+        }
+        Wait(30);
+        supervision_Acting(5);
+        se_Play(11028);
+        with (object OBJECT_S14P01A3_401) {
+            SetAnimation(17);
+        }
+        with (object OBJECT_S14P01A3_401) {
+            WaitAnimation();
+        }
+        WaitExecuteObject(OBJECT_S14P01A3_401);
+        Wait(15);
+        with (object OBJECT_S14P01A3_401) {
+            SetAnimation(2);
+        }
+        message_SetActor(ACTOR_NPC_PATCHIIRU);
+        message_Talk({
+            english=" We\'ll find dazzling treasures\nand new exploration areas! (Probably...)",
+            french=" Nous découvrirons de nouveaux\ntrésors étincelants et de nouvelles régions\ninexplorées! (Je l\'espère...)",
+            german=" Wir werden schillernde Schätze\nund neue Erkundungsgebiete finden!\n(Vielleicht...)",
+            italian=" Scopriremo tesori sfavillanti\ne nuovi luoghi da visitare! (Forse...)",
+            spanish=" ¡Encontraremos tesoros\ndeslumbrantes y nuevas zonas por explorar!\n(Se supone...)",
+        });
+        message_Talk({
+            english=" And if you bring your\ndiscoveries back to the café...",
+            french=" Et en ramenant vos découvertes\nau café...",
+            german=" Und wenn ihr eure Entdeckungen\nmit zum Café bringt, wird sich das für euch\nlohnen.",
+            italian=" E se porterete le vostre\nscoperte qui al caffè...",
+            spanish=" Y, si traéis vuestros\nhallazgos a la cafetería...",
+        });
+        CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+        supervision_Acting(6);
+        se_Play(11027);
+        with (object OBJECT_S14P01A4_404) {
+            SetAnimation(3);
+        }
+        Wait(15);
+        message_SetActor(ACTOR_NPC_PATCHIIRU);
+        message_Talk({
+            english=" You\'ll get a special deal at the\nRecycle Shop!",
+            french=" ... vous pourrez profiter\nd\'avantages spéciaux à la Bourse d\'Echange!",
+            german=" Und zwar dadurch, dass sich\neure Konditionen im Wiederverwertungsladen\nverbessern!",
+            italian=" ... otterrete qualcosa di speciale\nal Centro Riciclo!",
+            spanish=" ¡Tendréis una oferta especial en\nel Reciclaje Explorador!",
+        });
+        message_Talk({
+            english=" This should keep items\ncirculating through the Recycle Shop.",
+            french=" De cette manière, les objets\ncontinueront de circuler à la Bourse d\'Echange.",
+            german=" Auf diese Art sollten wir es\nschaffen, die Menge an frischen Items im\nWiederverwertungsladen hoch zu halten.",
+            italian=" In questo modo potremo\ncontinuare a riciclare gli strumenti.",
+            spanish=" Así los objetos del Reciclaje\nExplorador seguirán en circulación.",
+        });
+        message_Talk({
+            english=" The items at the Recycle Shop\nwill become more and more amazing!",
+            french=" Les objets proposés à la Bourse\nd\'Echange deviendront de plus en plus fabuleux!",
+            german=" Die Items, die wir im\nWiederverwertungsladen anbieten, werden\nzunehmend toller!",
+            italian=" Gli strumenti del Centro Riciclo\ndiventeranno sempre più incredibili!",
+            spanish=" ¡Los objetos del Reciclaje\nExplorador serán cada vez más sensacionales!",
+        });
+        message_Talk({
+            english=" What do you think?\nDo you understand?",
+            french=" Qu\'en dites-vous?\nComprenez-vous toute la portée de ce projet?",
+            german=" Was haltet ihr davon?\nVersteht ihr, was ich meine?",
+            italian=" Che ne pensate?\nAvete capito?",
+            spanish=" ¿Qué os parece?\n¿Entendéis el concepto?",
+        });
+        switch ( message_SwitchMenu(0, 1) ) {
+            case menu({
+                english="Yes",
+                french="Oui",
+                german="Ja",
+                italian="Sì",
+                spanish="Sí",
+            }):
+                break_loop;
+                break;
+            case menu({
+                english="No",
+                french="Non",
+                german="Nein",
+                italian="No",
+                spanish="No",
+            }):
+            default:
+                message_SetActor(ACTOR_NPC_PATCHIIRU);
+                message_Talk({
+                    english=" OK, I\'ll explain again from the\nbeginning.",
+                    french=" Ah, très bien, dans ce cas, je\nvais reprendre depuis le début...",
+                    german=" Okay, ich werde es noch einmal\nvon Anfang an erklären.",
+                    italian=" Ok, ve lo spiego un\'altra volta.",
+                    spanish=" Bueno, pues lo vuelvo a explicar\ndesde el principio.",
+                });
+                message_Close();
+                screen_FadeOut(1, 30);
+                supervision_RemoveActing(1);
+                supervision_RemoveActing(2);
+                supervision_RemoveActing(3);
+                supervision_RemoveActing(4);
+                supervision_RemoveActing(5);
+                supervision_RemoveActing(6);
+                Wait(10);
+                screen_FadeIn(1, 30);
+                continue;  // may be redundant
+        }
+    }
+    §label_0;
+    message_Close();
+    screen_FadeOut(1, 30);
+    end;
+}

@@ -1,0 +1,179 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_G01P04A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD_REMIX, 0, 256);
+    Wait(30);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2Direction(1, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    se_Play(8971);
+    camera_SetEffect(2, 2, 33536);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(19);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(2);
+    }
+    camera_SetEffect(0, 0, 0);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_ANGRY, 3);
+    }
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_ANGRY, FACE_POS_STANDARD);
+    message_Talk({
+        english=" HEY! Not YET?![K]\nYou\'re SLOW, [CS:Y]BIDOOF[CR]!",
+        french=" QUOI! Toujours PAS de RETOUR![K]\nT\'es LENT, [CS:Y]KEUNOTOR[CR]!",
+        german=" HEY! Immer noch NICHT?!?[K]\nDu bist LANGSAM, [CS:Y]BIDIZA[CR]!",
+        italian=" EHI! ANCORA niente?![K]\nSei LENTO, [CS:Y]BIDOOF[CR]!",
+        spanish=" ¡Pero bueno, vaya horas![K]\n¡Eres un lentorro, [CS:Y]Bidoof[CR]!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(30);
+    message_SetActor(ACTOR_PLAYER_BIPPA);
+    message_Talk({
+        english=" Yes![K]\nI\'m here!",
+        french=" Ouais![K]\nMe v\'là!",
+        german=" Doch![K] Da bin ich!",
+        italian=" Sì! [K]\nEccomi!",
+        spanish=" ¡Bueno, vale![K] ¡Ya llego!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        MovePositionMark(2, Position<'m0', 32, 36.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    se_Play(8972);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SAD, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Whew...[K]\nSorry to keep you waiting. [K]Here it is! Yup yup!",
+        french=" Pffff...[K]\nDésolé d\'t\'avoir fait attendre.[K] Tiens, la v\'là!\nOuaip ouaip!",
+        german=" Puh...[K] Tut mir leid, dass es so\nlange gedauert hat.[K] Hier ist er! Jawollja!",
+        italian=" Pant pant...[K]\nScusa se ti ho fatto aspettare.[K]\nEcco qua! Già, già!",
+        spanish=" Arf, arf...[K] Siento mucho haberte\nhecho esperar.[K] ¡Toma!",
+    });
+    message_Talk({
+        english=" Here\'s your [CS:I]Reviver Seed[CR]!",
+        french=" V\'là ta [CS:I]Résugraine[CR]!",
+        german=" Hier ist dein [CS:I]Belebersamen[CR]!",
+        italian=" Il tuo [CS:I]Revitalseme[CR]!",
+        spanish=" Aquí tienes tu [CS:I]Sem. Revivir[CR].",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        MovePositionOffset(1, -16, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    se_Play(8710);
+    Wait(30);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SlidePositionOffset(1, 16, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetAnimation(2);
+    }
+    Wait(30);
+    se_Play(8968);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_STUNNED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Wh-what...[K]IS this? HUH?!",
+        french=" Que...[K]\nQU\'EST-CE que C\'EST que ce MACHIN? HEIN?!",
+        german=" W-was...[K] ist DAS? HÄH?!?",
+        italian=" C-Cosa...[K] È questo? UH?!",
+        spanish=" Pe... pero...[K] ¡¿qué es esto?!",
+    });
+    message_Talk({
+        english=" THIS is a [CS:I]DOOM Seed[CR], ISN\'T it?!",
+        french=" ÇA, c\'est une [CS:I]PEPINGRAINE[CR],\nça se voit PAS?!",
+        german=" DIES ist ein [CS:I]SCHWUNDsamen[CR]!\nODER etwa nicht?!?",
+        italian=" QUESTO è un [CS:I]SEMEFATO[CR], VERO?!",
+        spanish=" Es una [CS:I]Sem. Condena[CR], ¡¿no?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8971);
+    camera_SetEffect(2, 2, 33536);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(19);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(2);
+    }
+    camera_SetEffect(0, 0, 0);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_ANGRY, 3);
+    }
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_ANGRY, FACE_POS_STANDARD);
+    message_Talk({
+        english=" NO, GENIUS!![K]\nBRING me the RIGHT one!",
+        french=" Tu es un VRAI génie, TOI,\nma PAROLE![K]\nRAMENE-moi la BONNE graine, et au TROT!",
+        german=" Und JETZT, SCHLAUMEIER...[K]\nBRING mir sofort den RICHTIGEN!",
+        italian=" NON ci siamo, GENIACCIO!!![K]\nPORTAMI quello GIUSTO!",
+        spanish=" ¡Menudo lumbreras estás hecho![K]\nAnda, ve y tráeme la buena esta vez...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Eeeeeeeek!!",
+        french=" Aaaarrrrgh!",
+        german=" Ieeeeeeek!!!",
+        italian=" Aaaaaaaah!!!",
+        spanish=" ¡Aaaaaaay!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    Wait(45);
+    message_Mail({
+        english="[CN]Sniff...[K]\n[CN]Didn\'t matter what I did, I would always \n[CN]mess it up...",
+        french="[CN]Snif...[K]\n[CN]Quoi qu\'je fasse, j\'le faisais de traviole...",
+        german="[CN]Schnüff...[K]\n[CN]Egal, was mir aufgetragen wurde,\n[CN]jedes Mal ging etwas schief...",
+        italian="[CN]Sniff...[K]\n[CN]Per quanto mi impegni, finisco sempre\n[CN]per fare qualcosa di sbagliato...",
+        spanish="[CN]Jo...[K] Daba igual qué hiciera,\n[CN] al final siempre la fastidiaba...",
+    });
+    message_Mail({
+        english="[CN]And then another time...",
+        french="[CN]Comme c\'te fois, là...",
+        german="[CN]Und dann...",
+        italian="[CN]Anche in un\'altra occasione...",
+        spanish="[CN]Un día...",
+    });
+    message_Close();
+    screen_FadeOut(1, 30);
+    end;
+}

@@ -1,0 +1,219 @@
+
+def 0 {
+    sound_Stop();
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V02P06A);
+    camera2_SetPositionMark(Position<'m0', 19.5, 16.5>);
+    screen2_FadeIn(1, 60);
+    Wait(150);
+    screen2_FadeOut(1, 60);
+    back2_SetMode(0);
+    back_SetGround(LEVEL_G01P01C);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    bgm_PlayFadeIn(BGM_FIRE_CRACKLING_LOUDER, 120, 256);
+    screen_FadeIn(1, 60);
+    Wait(30);
+    Wait(30);
+    with (actor ACTOR_NPC_SUKATANKU) {
+        MovePositionMark(32972, Position<'m1', 30, 26.5>);
+    }
+    with (actor ACTOR_NPC_ZUBATTO) {
+        MovePositionMark(32972, Position<'m2', 27, 29.5>);
+    }
+    with (actor ACTOR_NPC_DOGAASU) {
+        MovePositionMark(32972, Position<'m3', 33, 29.5>);
+    }
+    Wait(30);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m4', 30, 27.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGAASU);
+    Wait(30);
+    se_Play(8972);
+    with (actor ACTOR_NPC_ZUBATTO) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_ZUBATTO) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_ZUBATTO);
+    with (actor ACTOR_NPC_ZUBATTO) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_SUKATANKU);
+    }
+    WaitExecuteLives(ACTOR_NPC_ZUBATTO);
+    message_SetFace(ACTOR_NPC_ZUBATTO, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Ch-Ch-Chief...[K] We were really\nput in our place on that last expedition...[K] Urk!",
+        french=" Ch... chef...[K] On s\'est\nvraiment fait remettre à notre place\npendant la dernière expédition...[K] Argh!",
+        german=" B-b-boss...[K] Auf der letzten\nExpedition haben wir unser Fett wirklich\nwegbekommen...[K] Urk!",
+        italian=" C-C-Capo...[K] le abbiamo proprio\nprese in quella spedizione...[K] Ohi!",
+        spanish=" Je... Je... Jefe...[K]\nRealmente nos han dado para el pelo\nen la última expedición...[K] ¡Ay!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_SUKATANKU) {
+        MoveHeight(1, 2);
+    }
+    Wait(1);
+    with (actor ACTOR_NPC_SUKATANKU) {
+        MoveHeight(1, 0);
+    }
+    Wait(2);
+    with (actor ACTOR_NPC_SUKATANKU) {
+        MoveHeight(1, 2);
+    }
+    Wait(1);
+    with (actor ACTOR_NPC_SUKATANKU) {
+        MoveHeight(1, 0);
+    }
+    message_SetFace(ACTOR_NPC_SUKATANKU, FACE_NORMAL, FACE_POS_BOTTOM_C_FACER);
+    message_FacePositionOffset(0, -2);
+    message_Talk({
+        english=" Chaw-haw-haw... [CS:N]Wigglytuff[CR]\nwrecked us...",
+        french=" Gnark gnark gnark... [CS:N]Grodoudou[CR]\nnous a démolis...",
+        german=" Cha-ha-ha... [CS:N]Knuddeluff[CR] hat uns\nden Rest gegeben...",
+        italian=" Ohi ohi ohi... [CS:N]Wigglytuff[CR] ci ha\ndato una bella lezione.",
+        spanish=" ¡Ay!... [CS:N]Wigglytuff[CR] nos ha dado\nuna buena paliza.",
+    });
+    message_Talk({
+        english=" And I\'m not about to let it go!\nSo humiliating! I need payback...[K]one way\nor another.",
+        french=" Et je n\'ai pas l\'intention de\nlaisser passer ça! Quelle humiliation! Il faut\nque je me venge...[K] coûte que coûte.",
+        german=" Und ich denke nicht daran, es zu\nvergessen! Wie erniedrigend! Ich will Rache.[K]\nAuf die eine oder andere Weise. Ganz egal wie!",
+        italian=" Però non sono disposto ad\narrendermi! Che umiliazione! Avrò la mia\nvendetta...[K] in un modo o nell\'altro.",
+        spanish=" ¡No pienso dejarlo estar!\n¡Qué humillación! Necesito vengarme...[K]\n¡Como sea!",
+    });
+    message_Talk({
+        english=" But, to be brutally honest, we\ndon\'t stand a chance against [CS:N]Wigglytuff[CR].",
+        french=" Mais, pour être tout à fait\nhonnête, on n\'a aucune chance contre\n[CS:N]Grodoudou[CR].",
+        german=" Aber um ehrlich zu sein, wir\nhaben keine Chance gegen [CS:N]Knuddeluff[CR].",
+        italian=" Devo dire la verità...[K] Non\nabbiamo speranza di battere [CS:N]Wigglytuff[CR].",
+        spanish=" Pero, para qué engañarnos...\nNo tenemos ni la menor oportunidad\ncontra [CS:N]Wigglytuff[CR].",
+    });
+    message_KeyWait();
+    with (actor ACTOR_NPC_SUKATANKU) {
+        MoveHeight(1, 2);
+    }
+    Wait(1);
+    with (actor ACTOR_NPC_SUKATANKU) {
+        MoveHeight(1, 0);
+    }
+    Wait(2);
+    with (actor ACTOR_NPC_SUKATANKU) {
+        MoveHeight(1, 2);
+    }
+    Wait(1);
+    with (actor ACTOR_NPC_SUKATANKU) {
+        MoveHeight(1, 0);
+    }
+    message_Talk({
+        english=" Grrrrr![K] I\'m so furious! It\'s\nburning me up!",
+        french=" Grrrrr![K] J\'enrage!\nÇa me rend fou!",
+        german=" Grrrrr![K] Ich bin so wütend!\nEs frisst mich auf!",
+        italian=" Grrrrr![K] E questo mi rende\nancora più furioso!",
+        spanish=" ¡Grrr![K] ¡Qué rabia me da!\n¡Esto me está amargando!",
+    });
+    with (actor ACTOR_NPC_SUKATANKU) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_SUKATANKU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_SUKATANKU);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DOGAASU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_SUKATANKU);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGAASU);
+    message_SetFace(ACTOR_NPC_DOGAASU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Whoa-ho-ho! There\'s gotta be\nsome way we can get back at \'em!",
+        french=" Mouarf mouarf mouarf! Il y a\nforcément un moyen de prendre notre\nrevanche!",
+        german=" Whoahoho! Es muss einen Weg\ngeben, es ihm heimzuzahlen!",
+        italian=" Uooh-oh-oh! Ci dev\'essere un\nmodo per fargliela pagare!",
+        spanish=" Tiene que haber alguna forma\nde vengarnos de ellos.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_ZUBATTO, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Heh-heh-heh! I\'d settle for\npicking on wimps. Oh! Hey!",
+        french=" Hin hin hin! Je suggère qu\'on\naille s\'amuser en persécutant des avortons!\nOh, je sais!",
+        german=" Hehehe! Ich würde lieber nur\nauf Schwächlingen herumhacken. Oh! Hey!",
+        italian=" Eh-eh-eh! Secondo me è\nmeglio prendersela con i più deboli!",
+        spanish=" ¡Jue, jue, jue! A mí me basta\ncon meterme con los debiluchos. ¡Ah!\n¡Oídme!",
+    });
+    message_Talk({
+        english=" Instead of [CS:N]Wigglytuff[CR],\nhow about we take revenge on the wimps in\nthat Team [team:]?",
+        french=" Et si on se vengeait sur\nles poules mouillées de l\'Equipe [team:]\nplutôt que sur [CS:N]Grodoudou[CR]?",
+        german=" Wie wäre es, wenn wir uns an\nden Schwächlingen von Team [team:]\nrächen, anstatt an [CS:N]Knuddeluff[CR]?",
+        italian=" Lasciamo perdere [CS:N]Wigglytuff[CR] e\nprendiamocela con quei pivelli del\nTeam [team:]!",
+        spanish=" En vez de enfrentarnos a\n[CS:N]Wigglytuff[CR], ¿por qué no nos metemos\ncon el [CS:X]Equipo[CR] [team:]?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8965);
+    with (actor ACTOR_NPC_SUKATANKU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_SUKATANKU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_SUKATANKU);
+    with (actor ACTOR_NPC_SUKATANKU) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_SUKATANKU);
+    message_SetFace(ACTOR_NPC_SUKATANKU, FACE_NORMAL, FACE_POS_BOTTOM_C_FACER);
+    message_FacePositionOffset(0, -2);
+    message_Talk({
+        english=" Chaw-haw![K] Great idea!",
+        french=" Gnark gnark![K] Excellente idée!",
+        german=" Cha-ha![K] Tolle Idee!",
+        italian=" Ahr-ahr-ahr![K] Ottima idea!",
+        spanish=" ¡Jua, jua![K] ¡Buena idea!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_DOGAASU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Whoa-ho-ho! And we know that\nTeam [team:] is wimpy!",
+        french=" Mouarf mouarf mouarf!\nEt en plus, avec l\'Equipe [team:],\non prend pas de risques!",
+        german=" Whoahoho! Und wir wissen ja,\ndass Team [team:] aus Feiglingen besteht!",
+        italian=" Uooh-oh-oh! È vero! Quelle\nschiappe del Team [team:]!",
+        spanish=" ¡Jo, jo! ¡Y ya sabemos lo flojo\nque es el [CS:X]Equipo[CR] [team:]!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SUKATANKU, FACE_NORMAL, FACE_POS_BOTTOM_C_FACER);
+    message_FacePositionOffset(0, -2);
+    message_Talk({
+        english=" Time to do some plotting, boys!\nChaw-haw-haw!",
+        french=" C\'est le moment de préparer\nun mauvais coup! Gnark gnark gnark!",
+        german=" Es ist Zeit, einen Plan zu\nschmieden, Jungs! Cha-ha-ha!",
+        italian=" Andiamo a combinare un po\' di\ndanni, ragazzi! Ahr-ahr-ahr!",
+        spanish=" Es hora de tramar algo,\nmuchachos. ¡Jua, jua, jua!",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_SUKATANKU) {
+        MovePositionOffset(1, 0, 150);
+    }
+    with (actor ACTOR_NPC_ZUBATTO) {
+        Turn2Direction(4, 1, DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_DOGAASU) {
+        Turn2Direction(16, 2, DIR_DOWN);
+    }
+    Wait(45);
+    with (actor ACTOR_NPC_ZUBATTO) {
+        MovePositionOffset(1, 0, 150);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_DOGAASU) {
+        MovePositionOffset(1, 0, 150);
+    }
+    Wait(45);
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 60);
+    WaitBgm(BGM_FIRE_CRACKLING_LOUDER);
+    Wait(60);
+    end;
+}

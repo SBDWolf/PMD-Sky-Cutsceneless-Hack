@@ -1,0 +1,99 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_CRAGGY_COAST, 0, 256);
+    back_SetGround(LEVEL_D06P11A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    //with (actor ACTOR_ATTENDANT1) {
+        //SetPositionMark(Position<'m1', 46, 24.5>);
+    //}
+    //with (actor ACTOR_NPC_BIPPA) {
+        //SetPositionMark(Position<'m2', 46, 27.5>);
+    //}
+    //with (actor ACTOR_PLAYER) {
+        //SetPositionMark(Position<'m3', 43, 29.5>);
+    //}
+    //with (actor ACTOR_PLAYER) {
+        //Turn2Direction(4, 10, DIR_UPRIGHT);
+    //}
+    //with (actor ACTOR_NPC_BIPPA) {
+        //Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    //}
+    //with (actor ACTOR_ATTENDANT1) {
+        //Turn2Direction(4, 10, DIR_DOWNLEFT);
+    //}
+    screen_FadeIn(1, 15);
+    Wait(30);    
+    //WaitExecuteLives(ACTOR_ATTENDANT1);
+    //WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_TOP_R_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Which way should we go?",
+                french=" On prend quel chemin?",
+                german=" Welchen Weg nehmen wir?",
+                italian=" Da che parte andiamo?",
+                spanish=" ¿Por dónde vamos?",
+            }
+        case 2:
+            {
+                english=" Which way should we go?",
+                french=" On prend quel chemin?",
+                german=" Welchen Weg nehmen wir?",
+                italian=" Da che parte andiamo?",
+                spanish=" ¿Por dónde vamos?",
+            }
+        default:
+            {
+                english=" Which way should we go?",
+                french=" On prend quel chemin?",
+                german=" Welchen Weg nehmen wir?",
+                italian=" Da che parte andiamo?",
+                spanish=" ¿Por dónde vamos?",
+            }
+    }
+    switch ( message_SwitchMenu(0, 1) ) {
+        case menu({
+            english="[CS:P]Craggy Coast[CR]",
+            french="Par la [CS:P]Côte Escarpée[CR]",
+            german="[CS:P]Schroffküste[CR]",
+            italian="[CS:P]Dirupo Costiero[CR]",
+            spanish="[CS:P]Costa Escarpada[CR]",
+        }):
+        default:
+            §label_0;
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            §label_2;
+            $SCENARIO_MAIN = scn[9, 2];
+            if ( $SCENARIO_MAIN_BIT_FLAG[5] ) {
+                debug_Print('ENTER_CHIISANAYOKOANA');
+                bgm_FadeOut(60);
+                main_EnterDungeon(9, 30);
+                switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                main_EnterDungeon(-1, 30);
+                hold;
+                end;
+            } else {
+                debug_Print('ENTER_ENGANNOIWABA');
+                main_EnterDungeon(8, 30);
+                switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                main_EnterDungeon(-1, 30);
+                hold;
+            }
+            break;
+        case menu({
+            english="[CS:P]Side Path[CR]",
+            french="Par le [CS:P]Chemin Lisière[CR]",
+            german="[CS:P]Schleichpfad[CR]",
+            italian="[CS:P]Sentiero Scosceso[CR]",
+            spanish="[CS:P]Paso Flanco[CR]",
+        }):
+            $SCENARIO_MAIN_BIT_FLAG[5] = 1;
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            jump @label_2;
+    }
+}

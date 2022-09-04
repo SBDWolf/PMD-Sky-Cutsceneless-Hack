@@ -1,0 +1,80 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_G01P07C);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Let\'s get some sleep.",
+                french=" Il est l\'heure de dormir.",
+                german=" Lass uns schlafen gehen.",
+                italian=" Andiamo a dormire.",
+                spanish=" Vamos a dormir.",
+            }
+        case 2:
+            {
+                english=" We should get some sleep.",
+                french=" Il est l\'heure de dormir.",
+                german=" Wir sollten schlafen gehen.",
+                italian=" Andiamo a dormire.",
+                spanish=" Será mejor que durmamos.",
+            }
+        default:
+            {
+                english=" Why don\'t we get some sleep?",
+                french=" Il est l\'heure de dormir.",
+                german=" Wieso legen wir uns nicht\nschlafen?",
+                italian=" Andiamo a dormire.",
+                spanish=" Será mejor que nos vayamos\na dormir.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    supervision_Acting(1);
+    Wait(1);
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionMark(33075, Position<'m0', 14, 23>);
+    }
+    Wait(20);
+    se_Play(8978);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_LEFT, 3);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" Hey, beginners!",
+        french=" Hé! Les novices!",
+        german=" Hey, Neulinge!",
+        italian=" Ehi, principianti!",
+        spanish=" ¡Escuchadme, aprendices!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8964);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    message_Talk({
+        english=" Before you go to bed, our\nGuildmaster wants to speak with you.",
+        french=" Le Maître de la Guilde veut vous\nparler avant que vous n\'alliez vous coucher.",
+        german=" Bevor ihr ins Bett geht, möchte\nunser Gildenmeister euch noch sprechen.",
+        italian=" Prima che andiate a letto, il\nnostro Capitano vorrebbe parlarvi.",
+        spanish=" Antes de que os acostéis, al\nGran Bluff le gustaría deciros algo.",
+    });
+    message_Close();
+    screen_FadeOut(1, 30);
+    end;
+}

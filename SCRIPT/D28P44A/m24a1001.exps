@@ -1,0 +1,95 @@
+
+def 0 {
+    sound_Stop();
+    back_SetDungeonBanner(40, 0);
+    screen_FadeIn(1, 16);
+    Wait(60);
+    screen_FadeOut(1, 16);
+    Wait(15);
+    back_SetGround(LEVEL_D28P44A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_THE_POWER_OF_DARKNESS, 0, 256);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Humph.[K] Up to now, I\'ve had to\nchase after you.",
+        french=" Pfff![K] Jusqu\'à présent,\nj\'ai dû vous donner la chasse sans relâche.",
+        german=" Grmpf.[K] Bis zum jetzigen Moment\nmusste ich euch hinterherjagen.",
+        italian=" Bah.[K] Fino ad oggi, ho dovuto\ninseguirvi.",
+        spanish=" Ja.[K] Hasta ahora, había tenido que\nperseguiros.",
+    });
+    message_Talk({
+        english=" But now, all that\'s required is\nfor you to come to me.",
+        french=" Mais maintenant, il ne me reste\nplus qu\'à attendre que vous veniez à moi.",
+        german=" Aber jetzt müsst ihr einfach\nnur zu mir kommen.",
+        italian=" Ma ora, siete voi a dover venire\nda me.",
+        spanish=" Pero, últimamente, solo tengo\nque sentarme a esperaros.",
+    });
+    message_Talk({
+        english=" How deliciously convenient.",
+        french=" Voilà qui est délicieusement\nconfortable.",
+        german=" Wie überaus gelegen.",
+        italian=" Che sensazione deliziosa.",
+        spanish=" Qué fácil me lo ponéis, en serio.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Urgh...",
+        french=" Argh...",
+        german=" Umpf...",
+        italian=" Uh...",
+        spanish=" Grr...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" This time...",
+        french=" Cette fois-ci...",
+        german=" Dieses Mal...",
+        italian=" Questa volta...",
+        spanish=" Esta vez...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(30);
+    message_Talk({
+        english=" You\'re not going to slip through\nour grasp now!",
+        french=" ... vous n\'avez aucune chance\nde nous échapper!",
+        german=" Ihr werdet uns diesmal nicht\nentwischen!",
+        italian=" ... non sfuggirete alla nostra\nstretta!",
+        spanish=" ¡No os vais a escapar de mí!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_FadeOut(10);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(30);
+    message_Talk({
+        english=" This is it!",
+        french=" C\'en est fini de vous!",
+        german=" Jetzt wird es sich zeigen!",
+        italian=" Proprio così!",
+        spanish=" ¡Se acabó!",
+    });
+    message_Close();
+    CallCommon(CORO_BOSS_WIPE_FUNC);
+    main_EnterDungeon(40, 30);
+    main_EnterDungeon(-1, 30);
+    hold;
+    end;
+}

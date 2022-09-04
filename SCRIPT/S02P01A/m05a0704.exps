@@ -1,0 +1,113 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_THAT_SHAPE, 0, 256);
+    back_SetGround(LEVEL_S02P01A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    Wait(1);
+    screen_FlushOut(1, 0, 6, 0, 0, 0);
+    with (actor ACTOR_NPC_PUKURIN) {
+        SetAnimation(23);
+    }
+    CallCommon(CORO_FADE_OUT_ALL_BEFORE);
+    screen_FadeInAll(1, 30);
+    Wait(30);
+    Wait(30);
+    message_SetActor(ACTOR_PLAYER);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(That shape...)",
+                french="(Cette silhouette...)",
+                german="(Diese Form...)",
+                italian="(Quella forma...)",
+                spanish="(Esa forma...)",
+            }
+        default:
+            {
+                english="(That shape...)",
+                french="(Cette silhouette...)",
+                german="(Diese Form...)",
+                italian="(Quella forma...)",
+                spanish="(Esa forma...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(I\'ve seen that shape before...)",
+                french="(... je l\'ai déjà vue...)",
+                german="(Ich habe diese Form schon einmal gesehen.)",
+                italian="(Ho già visto quella forma...)",
+                spanish="(Yo he visto esa silueta antes...)",
+            }
+        default:
+            {
+                english="(I\'ve seen that shape before...)",
+                french="(... je l\'ai déjà vue...)",
+                german="(Ich habe diese Form schon einmal gesehen.)",
+                italian="(Ho già visto quella forma...)",
+                spanish="(Yo he visto esa silueta antes...)",
+            }
+    }
+    message_SetActor(ACTOR_PLAYER);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(That shape...[K] There\'s no mistaking it!)",
+                french="(Cette silhouette...[K] Il n\'y a pas d\'erreur\npossible!)",
+                german="(Diese Form...[K] Sie ist unverwechselbar!)",
+                italian="(Quella forma...[K] È impossibile sbagliarsi!)",
+                spanish="(Esa silueta...[K] ¡Es inconfundible!)",
+            }
+        default:
+            {
+                english="(That shape...[K] There\'s no mistaking it!)",
+                french="(Cette silhouette...[K] Il n\'y a pas d\'erreur\npossible!)",
+                german="(Diese Form...[K] Sie ist unverwechselbar!)",
+                italian="(Quella forma...[K] È impossibile sbagliarsi!)",
+                spanish="(Esa silueta...[K] ¡Es inconfundible!)",
+            }
+    }
+    message_Close();
+    bgm_FadeOut(120);
+    Wait(20);
+    with (actor ACTOR_NPC_PUKURIN) {
+        SetDirection(DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_PUKURIN) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_PUKURIN);
+    se_Play(8966);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    with (actor ACTOR_NPC_PUKURIN) {
+        SetDirection(DIR_RIGHT);
+    }
+    WaitSe(8966);
+    message_SetActor(ACTOR_PLAYER);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(That was...[K][CS:N]Wigglytuff[CR]!)",
+                french="(C\'était... [K][CS:N]Grodoudou[CR]!)",
+                german="(Das war...[K] [CS:N]Knuddeluff[CR]!)",
+                italian="(Quello era...[K] [CS:N]Wigglytuff[CR]!)",
+                spanish="(Se trataba de...[K] ¡[CS:N]Wigglytuff[CR]!)",
+            }
+        default:
+            {
+                english="(That was...[K][CS:N]Wigglytuff[CR]!)",
+                french="(C\'était... [K][CS:N]Grodoudou[CR]!)",
+                german="(Das war...[K] [CS:N]Knuddeluff[CR]!)",
+                italian="(Quello era...[K] [CS:N]Wigglytuff[CR]!)",
+                spanish="(Se trataba de...[K] ¡[CS:N]Wigglytuff[CR]!)",
+            }
+    }
+    message_Close();
+    screen_FadeOutAll(1, 30);
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    end;
+}

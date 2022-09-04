@@ -1,0 +1,98 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_H01P99A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    bgm_PlayFadeIn(BGM_OCEAN1, 90, 256);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I\'m beat! It was a long day!",
+                french=" Je suis vanné! Rude journée!",
+                german=" Ich bin platt! Das war ein langer\nTag!",
+                italian=" Sono sfinito! È stata una lunga\ngiornata!",
+                spanish=" ¡Me duele todo el cuerpo!\n¡Vaya día que hemos tenido!",
+            }
+        case 2:
+            {
+                english=" We put in a full day today.\nI\'m exhausted.",
+                french=" Je suis vanné! Rude journée!",
+                german=" Wir haben heute den ganzen Tag\nlang Einsatz gezeigt. Ich bin erschöpft.",
+                italian=" Oggi abbiamo dato tutto. Sono\nesausto.",
+                spanish=" Ha sido un día duro, estoy que\nno me puedo mover.",
+            }
+        default:
+            {
+                english=" We worked hard all day long.\nI\'m tired!",
+                french=" Je suis vannée! Rude journée!",
+                german=" Wir haben den ganzen Tag lang\nhart gearbeitet. Ich bin müde!",
+                italian=" Oggi abbiamo dato tutto. Sono\nstanca.",
+                spanish=" Ha sido un día muy largo.\n¡Estoy molida!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We should get some rest now.",
+                french=" Allons nous reposer, maintenant.",
+                german=" Wir sollten uns jetzt etwas\nausruhen.",
+                italian=" Dovremmo riposarci un po\'.",
+                spanish=" Será mejor que vayamos a\ndormir.",
+            }
+        case 2:
+            {
+                english=" We should get some sleep now.",
+                french=" Allons nous reposer, maintenant.",
+                german=" Wir sollten jetzt etwas\nschlafen.",
+                italian=" Dovremmo dormire un po\'.",
+                spanish=" Mejor nos vamos a dormir.",
+            }
+        default:
+            {
+                english=" We should get some sleep now.",
+                french=" Allons nous reposer, maintenant.",
+                german=" Wir sollten jetzt etwas\nschlafen.",
+                italian=" Dovremmo dormire un po\'.",
+                spanish=" Mejor nos vamos a dormir.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" That way, we can put in another\ngood effort tomorrow.",
+                french=" Comme ça, on sera en forme\npour demain.",
+                german=" Auf diese Weise können wir\nmorgen wieder richtig loslegen.",
+                italian=" Così, domani saremo di nuovo\nin gran forma.",
+                spanish=" Así, mañana nos levantaremos\ncon las pilas cargadas.",
+            }
+        case 2:
+            {
+                english=" We can be rested up for another\ngood day tomorrow.",
+                french=" Comme ça, on sera en forme\npour demain.",
+                german=" Wir sollten für einen weiteren\ntollen Tag morgen ausgeruht sein.",
+                italian=" Ne abbiamo bisogno, così domani\npotremo dare il meglio.",
+                spanish=" Así, mañana nos levantaremos\ncon las pilas cargadas.",
+            }
+        default:
+            {
+                english=" We\'ll need it for another full\nday tomorrow.",
+                french=" Comme ça, on sera en forme\npour demain.",
+                german=" Wir brauchen die Erholung für\neinen weiteren langen Tag morgen.",
+                italian=" Ne abbiamo bisogno, così domani\npossiamo dare il meglio.",
+                spanish=" Así, mañana nos levantaremos\ncon las pilas cargadas.",
+            }
+    }
+    message_Close();
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 60);
+    WaitBgm(BGM_OCEAN1);
+    Wait(30);
+    end;
+}

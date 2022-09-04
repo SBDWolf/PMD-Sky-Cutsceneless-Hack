@@ -1,0 +1,35 @@
+
+def 0 {
+    sound_Stop();
+    back_SetBanner2(335, 0, 168, 116, 19, {
+        english="To the\nHidden Land",
+        french="Vers les Terres\nIllusoires",
+        german="Nächster Stopp:\nVerborgenes Land",
+        italian="Verso la\nTerra Nascosta",
+        spanish="Viaje a la\nTierra Oculta",
+    });
+    screen_FadeIn(1, 45);
+    Wait(160);
+    screen_FadeOut(1, 45);
+    Wait(15);
+    $SCENARIO_MAIN = scn[25, 1];
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V02P06A);
+    camera2_SetPositionMark(Position<'m0', 19.5, 16.5>);
+    screen2_FadeIn(1, 60);
+    Wait(150);
+    screen2_FadeOut(1, 60);
+    back2_SetMode(0);
+    back_SetGround(LEVEL_G01P01C);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    bgm_PlayFadeIn(BGM_FIRE_CRACKLING_LOUDER, 90, 256);
+    screen_FadeIn(1, 60);
+    Wait(150);
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 60);
+    end;
+}

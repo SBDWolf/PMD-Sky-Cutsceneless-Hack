@@ -1,0 +1,658 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_TIME_GEAR_REMIX, 0, 256);
+    back_SetGround(LEVEL_V03P06B);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (object OBJECT_V03P06A2_216) {
+        SetOutputAttribute(64);
+    }
+    with (object OBJECT_V03P06A2_216) {
+        SetOutputAttribute(8);
+    }
+    with (object OBJECT_V03P06A2_216) {
+        SetAnimation(3);
+    }
+    with (object OBJECT_V03P06A1_212) {
+        SetAnimation(3);
+    }
+    back_SetEffect(11, 0);
+    screen_FadeIn(1, 30);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        MovePositionMark(33075, Position<'m0', 25, 22.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(33075, Position<'m1', 23, 26.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(33075, Position<'m2', 27, 26.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    se_Play(8967);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    Wait(5);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" But what\'s this?",
+                french=" Mais qu\'est-ce que c\'est que ça?",
+                german=" Aber was ist das?",
+                italian=" Ma questo cos\'è?",
+                spanish=" Pero, ¿qué es eso?",
+            }
+        case 2:
+            {
+                english=" But what\'s this?",
+                french=" Mais qu\'est-ce que c\'est que ça?",
+                german=" Aber was ist das?",
+                italian=" Ma questo cos\'è?",
+                spanish=" Pero, ¿qué es eso?",
+            }
+        default:
+            {
+                english=" But what\'s this?",
+                french=" Mais qu\'est-ce que c\'est que ça?",
+                german=" Aber was ist das?",
+                italian=" Ma questo cos\'è?",
+                spanish=" Pero, ¿qué es eso?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" It\'s a Time Gear.[K] There\'s no\nmistaking it.",
+        french=" C\'est un Rouage du Temps.[K]\nImpossible de s\'y tromper.",
+        german=" Es ist ein Zahnrad der Zeit.[K] Da\ngibt es kein Vertun.",
+        italian=" È un Ingranaggio del Tempo.[K] \nNon c\'è dubbio.",
+        spanish=" Eso es un Engranaje del Tiempo.[K]\nNo hay confusión posible.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" But...",
+                french=" Pourtant...",
+                german=" Aber...",
+                italian=" Ma...",
+                spanish=" Pero...",
+            }
+        case 2:
+            {
+                english=" But...",
+                french=" Pourtant...",
+                german=" Aber...",
+                italian=" Ma...",
+                spanish=" Pero...",
+            }
+        default:
+            {
+                english=" But...",
+                french=" Pourtant...",
+                german=" Aber...",
+                italian=" Ma...",
+                spanish=" Pero...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Time here seems to be stopped.",
+                french=" ... le temps semble être à\nl\'arrêt ici.",
+                german=" Die Zeit hier scheint angehalten\nzu haben.",
+                italian=" Il tempo qui sembra fermo.",
+                spanish=" El tiempo parece haberse\ndetenido.",
+            }
+        case 2:
+            {
+                english=" Time here seems to be stopped.",
+                french=" ... le temps semble être à\nl\'arrêt ici.",
+                german=" Die Zeit hier scheint angehalten\nzu haben.",
+                italian=" Il tempo qui sembra fermo.",
+                spanish=" El tiempo parece haberse\ndetenido.",
+            }
+        default:
+            {
+                english=" Time here seems to be stopped.",
+                french=" ... le temps semble être à\nl\'arrêt ici.",
+                german=" Die Zeit hier scheint angehalten\nzu haben.",
+                italian=" Il tempo qui sembra fermo.",
+                spanish=" El tiempo parece haberse\ndetenido.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" There\'s no wind...",
+                french=" Il n\'y a pas le moindre courant\nd\'air...",
+                german=" Es weht kein Wind...",
+                italian=" Non c\'è vento...",
+                spanish=" No sopla el viento...",
+            }
+        case 2:
+            {
+                english=" No wind is blowing...",
+                french=" Il n\'y a pas le moindre courant\nd\'air...",
+                german=" Hier bläst kein Wind...",
+                italian=" Il vento non soffia...",
+                spanish=" No sopla el viento...",
+            }
+        default:
+            {
+                english=" There isn\'t even a breeze...",
+                french=" Il n\'y a pas le moindre courant\nd\'air...",
+                german=" Noch nicht einmal eine Brise...",
+                italian=" Non c\'è un filo di vento...",
+                spanish=" No hay ni la menor brisa...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(32972, Position<'m3', 18.5, 23.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(20);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_TOP_L_FACEOUTW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" See? Those leaves are fixed\nin place.",
+                french=" Regardez! Ces feuilles sont\ncomplètement immobiles.",
+                german=" Seht ihr? Diese Blätter sind\nwie erstarrt.",
+                italian=" Vedi? Quelle foglie sono\nimmobili.\n",
+                spanish=" ¿Ves? Esas hojas están tiesas.",
+            }
+        case 2:
+            {
+                english=" See? Those leaves are fixed\nin place.",
+                french=" Regardez! Ces feuilles sont\ncomplètement immobiles.",
+                german=" Seht ihr? Diese Blätter sind\nwie erstarrt.",
+                italian=" Vedi? Quelle foglie sono\nimmobili.\n",
+                spanish=" ¿Ves? Esas hojas están tiesas.",
+            }
+        default:
+            {
+                english=" See? Those leaves are fixed\nin place.",
+                french=" Regardez! Ces feuilles sont\ncomplètement immobiles.",
+                german=" Seht ihr? Diese Blätter sind\nwie erstarrt.",
+                italian=" Vedi? Quelle foglie sono\nimmobili.\n",
+                spanish=" ¿Ves? Esas hojas están tiesas.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    se_Play(8971);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_TOP_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Time really is stopped here!",
+                french=" Le temps est bel et bien figé ici!",
+                german=" Die Zeit ist hier wirklich\nstehen geblieben!",
+                italian=" Il tempo qui si è davvero\nfermato!",
+                spanish=" ¡Aquí el tiempo se ha parado!",
+            }
+        case 2:
+            {
+                english=" Time is stopped here!",
+                french=" Le temps est bel et bien figé ici!",
+                german=" Hier hat die Zeit angehalten!",
+                italian=" Il tempo qui si è fermato!",
+                spanish=" ¡Aquí el tiempo se ha parado!",
+            }
+        default:
+            {
+                english=" Time has really stopped here!",
+                french=" Le temps est bel et bien figé ici!",
+                german=" Hier hat die Zeit angehalten!",
+                italian=" Il tempo qui si è davvero\nfermato!",
+                spanish=" ¡Aquí el tiempo se ha parado!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" But the Time Gear is back where\nit should be...[K] Why is this happening?!",
+                french=" Et pourtant, le Rouage du Temps\na repris sa place...[K] Mais qu\'est-ce qui\nse passe?!",
+                german=" Aber das Zahnrad der Zeit ist\nda, wo es hingehört...[K] Warum ist das so?",
+                italian=" Ma l\'Ingranaggio del Tempo è di\nnuovo al suo posto...[K] Perché allora?",
+                spanish=" Pero el Engranaje del Tiempo\nestá donde le corresponde...[K]\n¡¿Por qué está ocurriendo esto?!",
+            }
+        case 2:
+            {
+                english=" But the Time Gear has been\nreturned to its rightful place...[K] Why is this\nhappening?!",
+                french=" Et pourtant, le Rouage du Temps\na repris sa place...[K] Mais qu\'est-ce qui\nse passe?!",
+                german=" Aber das Zahnrad der Zeit ist\nda, wo es hingehört...[K] Warum ist das so?",
+                italian=" Ma l\'Ingranaggio del Tempo è di\nnuovo al suo posto...[K] Perché sta succedendo \nquesto?!",
+                spanish=" Pero el Engranaje del Tiempo\nestá donde le corresponde...[K]\n¡¿Por qué está ocurriendo esto?!",
+            }
+        default:
+            {
+                english=" But the Time Gear is back where\nit should be...[K] Why is this happening?!",
+                french=" Et pourtant, le Rouage du Temps\na repris sa place...[K] Mais qu\'est-ce qui\nse passe?!",
+                german=" Aber das Zahnrad der Zeit ist\nda, wo es hingehört...[K] Warum ist das so?",
+                italian=" Ma l\'Ingranaggio del Tempo è di\nnuovo dove dovrebbe essere...[K] Perché sta\nsuccedendo questo?!",
+                spanish=" Pero el Engranaje del Tiempo\nestá donde le corresponde...[K]\n¡¿Por qué está ocurriendo esto?!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" ........................",
+        french=" ........................",
+        german=" ........................",
+        italian=" ........................",
+        spanish=" ...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_FadeOut(120);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    Wait(30);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        MovePositionOffset(32896, 0, -20);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(8, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(8, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    Wait(15);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetAnimation(3);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        MoveHeight(2, 15);
+    }
+    Wait(1);
+    with (object OBJECT_V03P06A1_212) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        MoveHeight(2, 0);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetAnimation(2);
+    }
+    se_Play(8968);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    message_Mail({
+        english="[CN][CS:N]Grovyle[CR] took\n[CN]the Time Gear!",
+        french="[CN][CS:N]Massko[CR] prend\n[CN]le Rouage du Temps!",
+        german="[CN][CS:N]Reptain[CR] nimmt\n[CN]das Zahnrad der Zeit!",
+        italian="[CN][CS:N]Grovyle[CR] prende\n[CN]l\'Ingranaggio del Tempo!",
+        spanish="[CN]¡[CS:N]Grovyle[CR] cogió\n[CN]el Engranaje del Tiempo!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SlidePositionOffset(32896, 0, 24);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        SetAnimation(2);
+    }
+    se_Play(7440);
+    back_SetEffect(12, 60);
+    WaitBackEffect();
+    with (object OBJECT_V03P06A2_216) {
+        Destroy();
+    }
+    screen_FadeChange(1, 120, 255, 192);
+    Wait(10);
+    WaitSe(7440);
+    se_Play(8973);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_TOP_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hey! What are you doing?!",
+                french=" Eh! Qu\'est-ce que tu as fait?!",
+                german=" Hey! Was hast du getan?!?",
+                italian=" Ehi! Cosa hai fatto?!",
+                spanish=" ¡¿Pero qué has hecho?!",
+            }
+        case 2:
+            {
+                english=" Hey! What are you doing?!",
+                french=" Eh! Qu\'est-ce que tu as fait?!",
+                german=" Hey! Was hast du getan?!?",
+                italian=" Ehi! Cosa hai fatto?!",
+                spanish=" ¡¿Pero qué has hecho?!",
+            }
+        default:
+            {
+                english=" Hey! What are you doing?!",
+                french=" Eh! Qu\'est-ce que tu as fait?!",
+                german=" Hey! Was hast du getan?!?",
+                italian=" Ehi! Cosa hai fatto?!",
+                spanish=" ¡¿Pero qué has hecho?!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Time has already stopped here.",
+        french=" Le temps est déjà figé ici.",
+        german=" Die Zeit hat hier schon\nangehalten.",
+        italian=" Qui il tempo è già fermo.",
+        spanish=" El tiempo ya se ha detenido en\neste lugar.",
+    });
+    message_Talk({
+        english=" It won\'t make any difference if\nI take the Time Gear now.",
+        french=" Ça ne changera rien que\nje prenne le Rouage du Temps ou pas.",
+        german=" Es macht deswegen keinen\nUnterschied, wenn ich das Zahnrad der Zeit\njetzt mitnehme.",
+        italian=" Non cambierà nulla se prendo \nl\'Ingranaggio del Tempo.",
+        spanish=" Da igual que lo coja o no.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    message_Talk({
+        english=" There\'s also...[K]something that\'s\nmore worrying.",
+        french=" Et il y a quelque chose...[K]\nd\'encore plus inquiétant.",
+        german=" Außerdem...[K] Etwas anderes ist\nviel beunruhigender.",
+        italian=" C\'è anche...[K] qualcosa di più\npreoccupante.",
+        spanish=" En realidad hay una cosa...[K]\nque resulta mucho más preocupante.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8962);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_TOP_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" M-more worrying?",
+                french=" Encore plus inquiétant?",
+                german=" V-viel beunruhigender?",
+                italian=" P-Più preoccupante?",
+                spanish=" ¿Más preocupante aún?",
+            }
+        case 2:
+            {
+                english=" M-more worrying?",
+                french=" Encore plus inquiétant?",
+                german=" V-viel beunruhigender?",
+                italian=" P-Più preoccupante?",
+                spanish=" ¿Más preocupante aún?",
+            }
+        default:
+            {
+                english=" M-more worrying?",
+                french=" Encore plus inquiétant?",
+                german=" V-viel beunruhigender?",
+                italian=" P-Più preoccupante?",
+                spanish=" ¿Más preocupante aún?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Forget it.[K] Let\'s leave.",
+        french=" Laissez tomber.[K] Partons.",
+        german=" Vergesst es.[K] Gehen wir von hier\nweg.",
+        italian=" Lascia perdere.[K] Andiamocene.",
+        spanish=" Olvidadlo.[K] Vámonos.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_JUPUTORU) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPUTORU);
+    message_Talk({
+        english=" Also, [partner]...[K] There\'s\nsomething I\'d like you to do.",
+        french=" Au fait, [partner]...[K]\nj\'ai une mission à te confier.",
+        german=" Übrigens, [partner]...[K] Es gibt\netwas, das du für mich tun könntest.",
+        italian=" E poi, [partner]...[K] C\'è una \ncosa che vorrei che facessi.",
+        spanish=" Por cierto, [partner]...[K]\nMe gustaría que hicieras una cosa.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_TOP_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" What is it?",
+                french=" Quoi donc?",
+                german=" Was denn?",
+                italian=" Di cosa si tratta?",
+                spanish=" ¿De qué se trata?",
+            }
+        case 2:
+            {
+                english=" What is it?",
+                french=" Quoi donc?",
+                german=" Was denn?",
+                italian=" Di cosa si tratta?",
+                spanish=" ¿De qué se trata?",
+            }
+        default:
+            {
+                english=" What is it?",
+                french=" Quoi donc?",
+                german=" Was denn?",
+                italian=" Di cosa si tratta?",
+                spanish=" ¿De qué se trata?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Before you go back to Sharpedo\nBluff...",
+        french=" Avant de regagner la Falaise\nSharpedo...",
+        german=" Bevor du zurück zur\nTohaido-Klippe gehst...",
+        italian=" Prima di tornare al Promontorio\nSharpedo, dovresti fare una cosa.",
+        spanish=" Antes de que vuelvas al\nRisco Sharpedo...",
+    });
+    message_Talk({
+        english=" I\'d like you to gather some\ninformation in Treasure Town.",
+        french=" ... je voudrais que tu recueilles\ndes informations à Bourg-Trésor.",
+        german=" Ich hätte gerne, dass du vorher\nin Schatzstadt ein paar Informationen\nsammelst.",
+        italian=" Vorrei che raccogliessi alcune\ninformazioni a Borgo Tesoro.",
+        spanish=" Me gustaría que consiguieras\ncierta información en Aldea Tesoro.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_TOP_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" In Treasure Town?",
+                french=" A Bourg-Trésor?",
+                german=" In Schatzstadt?",
+                italian=" A Borgo Tesoro?",
+                spanish=" ¿En Aldea Tesoro?",
+            }
+        case 2:
+            {
+                english=" In Treasure Town?",
+                french=" A Bourg-Trésor?",
+                german=" In Schatzstadt?",
+                italian=" A Borgo Tesoro?",
+                spanish=" ¿En Aldea Tesoro?",
+            }
+        default:
+            {
+                english=" In Treasure Town?",
+                french=" A Bourg-Trésor?",
+                german=" In Schatzstadt?",
+                italian=" A Borgo Tesoro?",
+                spanish=" ¿En Aldea Tesoro?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Yes, here\'s what I want you to\nfind out.",
+        french=" Oui, laisse-moi t\'expliquer.",
+        german=" Ja, und Folgendes sollst du für\nmich herausfinden.",
+        italian=" Sì, vorrei che cercassi\ndi scoprire qualcosa.",
+        spanish=" Sí. Esto es lo que quiero que\naverigües...",
+    });
+    message_Talk({
+        english=" Learn everything you can about\nwhat\'s happening in this world right now.",
+        french=" Réunis un maximum de\nrenseignements sur ce qui se passe\ndans ce monde en ce moment.",
+        german=" Versuch alles herauszufinden,\nwas gerade in dieser Welt passiert.",
+        italian=" Scopri tutto quello che puoi su\nciò che sta accadendo adesso qui.",
+        spanish=" Tienes que enterarte de todo\nlo que está pasando últimamente.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Gotcha. I\'ll go find out.",
+                french=" Compris. J\'y vais de ce pas.",
+                german=" Verstanden. Ich werde es\nherausfinden.",
+                italian=" Capito. Lo scoprirò.\n",
+                spanish=" Entendido. Iré a averiguarlo.",
+            }
+        case 2:
+            {
+                english=" OK. I\'ll go find out.",
+                french=" Compris. J\'y vais de ce pas.",
+                german=" Okay. Ich werde es\nherausfinden.",
+                italian=" Ok. Lo scoprirò.",
+                spanish=" Entendido. Iré a averiguarlo.",
+            }
+        default:
+            {
+                english=" Sure thing. I\'ll go find out.",
+                french=" Compris. J\'y vais de ce pas.",
+                german=" Klare Sache. Ich werde es\nherausfinden.",
+                italian=" Certo. Lo scoprirò.",
+                spanish=" Entendido. Iré a averiguarlo.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Everyone thinks that you\'ve gone\nto the future.[K] Therefore...",
+        french=" Tout le monde vous croit encore\ndans le futur.[K] Par conséquent...",
+        german=" Jeder glaubt, dass ihr in die\nZukunft gegangen seid.[K] Daher...",
+        italian=" Pensano tutti che tu sia ancora\nnel futuro.[K] Quindi...",
+        spanish=" Todos creen que estáis\nen el futuro.[K] Por tanto...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Yup, I know.[K] If they found out\nI\'m back, there would be an uproar. I\'ll keep\nlow and get some news.",
+                french=" Oui, je sais.[K] Si on découvre que\nnous sommes de retour, ça va être la panique.\nJe me ferai discret tout en glanant des infos.",
+                german=" Ja, schon klar.[K] Wüsste man,\ndass wir zurück sind, gäbe es einen Aufruhr.\nIch verhalte mich ruhig und höre mich um.",
+                italian=" Già, lo so.[K] Se scoprono che\nsono tornato, scoppierà un putiferio. Cercherò\ndi non farmi notare e di scoprire qualcosa.",
+                spanish=" Sí, ya lo sé.[K] Si alguien se entera\nde que hemos vuelto, sería un escándalo.\nIntentaré no llamar la atención.",
+            }
+        case 2:
+            {
+                english=" Yes, I understand.[K] If they found\nout I\'m back, there would be an uproar. I\'ll\nkeep low and get some news.",
+                french=" Oui, je sais.[K] Si on découvre que\nnous sommes de retour, ça va être la panique.\nJe me ferai discret tout en glanant des infos.",
+                german=" Ja, schon klar.[K] Wüsste man,\ndass wir zurück sind, gäbe es einen Aufruhr.\nIch verhalte mich ruhig und höre mich um.",
+                italian=" Sì, capisco.[K] Se scoprono che\nsono tornato, ci sarà un po\' di caos. Cercherò\ndi non farmi notare e di scoprire qualcosa.",
+                spanish=" Sí, ya lo sé.[K] Si alguien se entera\nde que hemos vuelto, sería un escándalo.\nIntentaré no llamar la atención.",
+            }
+        default:
+            {
+                english=" I know.[K] If they found out I\'m\nback, there would be an uproar. I\'ll keep low\nand get some news.",
+                french=" Oui, je sais.[K] Si on découvre que\nnous sommes de retour, ça va être la panique.\nJe me ferai discrète tout en glanant des infos.",
+                german=" Ja, schon klar.[K] Wüsste man,\ndass wir zurück sind, gäbe es einen Aufruhr.\nIch verhalte mich ruhig und höre mich um.",
+                italian=" Lo so.[K] Se scoprono che sono\ntornata, chissà che caos! Cercherò di\nnon farmi notare e di scoprire qualcosa.",
+                spanish=" Sí, ya lo sé.[K] Si alguien se entera\nde que hemos vuelto, sería un escándalo.\nIntentaré no llamar la atención.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JUPUTORU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" I\'m counting on you.",
+        french=" Je compte sur toi.",
+        german=" Ich zähle auf dich.",
+        italian=" Conto su di te.",
+        spanish=" Cuento contigo.",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_JUPUTORU) {
+        MovePositionOffset(1, 0, 160);
+    }
+    Wait(10);
+    with (actor ACTOR_PLAYER) {
+        MovePositionOffset(1, 0, 160);
+    }
+    Wait(10);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionOffset(1, 36, 160);
+    }
+    Wait(30);
+    screen_FadeOut(1, 60);
+    Wait(90);
+    switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+    end;
+}

@@ -1,0 +1,177 @@
+
+def 0 {
+    sound_Stop();
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V02P06A);
+    camera2_SetPositionMark(Position<'m0', 19.5, 15.5>);
+    screen2_FadeIn(1, 60);
+    Wait(150);
+    screen2_FadeOut(1, 60);
+    back2_SetMode(0);
+    Wait(60);
+    message_SetFace(ACTOR_NPC_ZUBATTO, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" But, Chief... Why\'d you bother\nhelping out that chicken?",
+        french=" Mais, chef... Pourquoi vous avez\naidé ces poules mouillées?",
+        german=" Aber Boss, wieso haben wir dem\nAngsthasen geholfen?",
+        italian=" Ma, capo... Perché ti sei \ndisturbato ad aiutare quella mezza tacca?",
+        spanish=" Pero, Jefe... ¿Por qué te\nhas molestado en intervenir?",
+    });
+    message_Talk({
+        english=" Like giving away that Perfect\nApple right then...",
+        french=" Leur donner cette Pomme\nParfaite... Je pige pas...",
+        german=" Wir hätten den Perfekten Apfel\nnicht so früh hergeben sollen...",
+        italian=" Perché hai regalato quella Mela\nPerfetta?",
+        spanish=" ¿Por qué le has dado la Manzana\nPerfecta justo en ese momento?",
+    });
+    message_Talk({
+        english=" We should\'ve just watched\nwhat\'d happen to them after.",
+        french=" On aurait dû rester planqués et\nvoir ce qui allait leur arriver.",
+        german=" Wir hätten warten sollen, damit\nwir sehen, was mit ihnen passiert.",
+        italian=" Chissà che fine avrebbero fatto\nquei due!",
+        spanish=" Tendríamos que haber visto\nlo que les pasaba después.",
+    });
+    message_Talk({
+        english=" That would\'ve been hilarious.",
+        french=" On se serait bien marrés.",
+        german=" Das wäre lustig gewesen.",
+        italian=" Ci saremmo sbellicati dalle\nrisate.",
+        spanish=" Seguro que hubiera sido\ndivertidísimo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_DOGAASU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Yeah, my thoughts exactly.",
+        french=" Ouais, je pense pareil!",
+        german=" Ja, finde ich auch.",
+        italian=" Già, sarebbe stato interessante!",
+        spanish=" Eso mismo pienso yo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SUKATANKU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Chaw-haw-haw! You\'re not\nthinking strategically, you two.",
+        french=" Gnark gnark gnark! Vous deux,\nvous ne pensez pas de manière stratégique.",
+        german=" Cha-ha-ha! Ihr denkt nicht\nstrategisch, ihr zwei.",
+        italian=" Ahr-ahr-ahr! Voi due \nnon avete una prospettiva strategica.",
+        spanish=" ¡Jua, jua, jua! Vosotros no\npensáis estratégicamente, ¿verdad?",
+    });
+    message_Talk({
+        english=" Why\'d we come here in the\nfirst place?[K] The expedition, right?",
+        french=" Pourquoi sommes-nous venus ici,\nau départ?[K] Pour l\'expédition, non?",
+        german=" Wozu sind wir denn überhaupt\nhier?[K] Wegen der Expedition, oder?",
+        italian=" Perché siamo venuti qui?[K] \nPer la spedizione, giusto?",
+        spanish=" A ver, ¿para qué hemos venido\na este [CS:N]Pokégremio[CR]?[K] Por la expedición, ¿no?",
+    });
+    message_Talk({
+        english=" Right now, the trick is for us to\nwin the trust of [CS:N]Wigglytuff[CR].",
+        french=" L\'astuce, maintenant, est de\ngagner la confiance de [CS:N]Grodoudou[CR].",
+        german=" Im Moment geht es darum, das\nVertrauen von [CS:N]Knuddeluff[CR] zu gewinnen.",
+        italian=" Per il momento, la cosa più \nimportante per noi è guadagnarci la fiducia\ndi [CS:N]Wigglytuff[CR].",
+        spanish=" Lo más importante entonces era\nganarnos la confianza de [CS:N]Wigglytuff[CR].",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_DOGAASU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" I get it now.",
+        french=" Ah, j\'ai compris!",
+        german=" Jetzt verstehe ich.",
+        italian=" Adesso capisco.",
+        spanish=" Ahora lo pillo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SUKATANKU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" But...",
+        french=" Mais...",
+        german=" Aber...",
+        italian=" Ma...",
+        spanish=" El caso es que...",
+    });
+    message_Talk({
+        english=" This being a famous guild and\nall, I was playing it cautious at first, but it\'s\nbeen ridiculously easy.",
+        french=" Comme cette Guilde est célèbre,\nj\'ai préféré être prudent au début, mais en\nfait c\'était vraiment trop facile.",
+        german=" Weil es ja so eine berühmte\nGilde ist, war ich zuerst vorsichtig,\naber bisher war alles lächerlich einfach.",
+        italian=" ... visto che questa è una Gilda\nfamosa, all\'inizio ho voluto agire con cautela,\nma è stato troppo facile.",
+        spanish=" Siendo un [CS:N]Pokégremio[CR] tan\nfamoso trataba de ir con cierta cautela, pero\nlo cierto es que ha sido facilísimo.",
+    });
+    message_Talk({
+        english=" [CS:N]Wigglytuff[CR]\'s been nothing more\nthan a big baby.",
+        french=" [CS:N]Grodoudou[CR] n\'est rien de plus\nqu\'un gros bébé.",
+        german=" [CS:N]Knuddeluff[CR] ist wie ein\ngroßes Baby.",
+        italian=" [CS:N]Wigglytuff[CR] non ha fatto altro \nche comportarsi come un bambinone.",
+        spanish=" [CS:N]Wigglytuff[CR] no es más que un\nniño grande.",
+    });
+    message_Talk({
+        english=" He\'s no big deal.",
+        french=" Il ne nous posera pas\nde problèmes.",
+        german=" Er macht keine Probleme.",
+        italian=" Non è certo un pericolo.",
+        spanish=" No nos tenemos que preocupar\npor él.",
+    });
+    message_Talk({
+        english=" Why everyone\'s so terrified of\n[CS:N]Wigglytuff[CR], I don\'t know. I\'m clueless.",
+        french=" Je ne sais pas pourquoi\ntout le monde a peur de [CS:N]Grodoudou[CR].\nFranchement, ça me dépasse.",
+        german=" Wieso alle solche Angst vor\n[CS:N]Knuddeluff[CR] haben, weiß ich nicht. Ich habe\nnicht die geringste Ahnung.",
+        italian=" Non riesco proprio a capire \nperché tutti abbiano così tanta paura di \n[CS:N]Wigglytuff[CR]. Non ci arrivo proprio.",
+        spanish=" Si alguien entiende qué es lo que\nasusta tanto a todo el mundo de [CS:N]Wigglytuff[CR],\nque me lo diga.",
+    });
+    message_Talk({
+        english=" Anyway, if we find a treasure\nwhile on the expedition...",
+        french=" Quoi qu\'il en soit, si on trouve\nun trésor pendant l\'expédition...",
+        german=" Jedenfalls, wenn wir während\nder Expedition einen Schatz finden...",
+        italian=" Ad ogni modo, se troviamo un\ntesoro nel corso della spedizione...",
+        spanish=" Entonces, si encontramos algún\ntesoro interesante en la expedición...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_DOGAASU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" We knock out the guild\'s crew.",
+        french=" ... on met une raclée aux\nmembres de la Guilde.",
+        german=" Werden wir die Gildencrew\naus dem Weg räumen.",
+        italian=" ... mettiamo KO i membri della \nGilda.",
+        spanish=" Solo tendremos que zurrar a\nlos miembros del [CS:N]Pokégremio[CR].",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_ZUBATTO, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Then we snatch the treasure and\nskedaddle on out!",
+        french=" On s\'empare du trésor et on\ndéguerpit!",
+        german=" Dann schnappen wir uns den\nSchatz und machen uns aus dem Staub!",
+        italian=" Poi arraffiamo il tesoro e ce la\ndiamo a gambe!",
+        spanish=" Luego, cogemos el tesoro...\n¡y nos damos el piro!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_DOGAASU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Whoa-ho-ho! This plan is a\nsure thing.",
+        french=" Mouarf mouarf mouarf! C\'est un\nbon plan.",
+        german=" Whoahoho! Dieser Plan ist eine\nsichere Sache.",
+        italian=" Uooh-ho-ho! Questo piano è \nproprio grandioso.",
+        spanish=" ¡Jo, jo, jo! ¡Este plan es pan\ncomido!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_ZUBATTO, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Heh-heh.",
+        french=" Hin hin.",
+        german=" Hehehe.",
+        italian=" Eh-eh.",
+        spanish=" Jue, jue...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SUKATANKU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Chaw-haw-haw.",
+        french=" Gnark gnark gnark!",
+        german=" Cha-ha-ha.",
+        italian=" Ahr-ahr-ahr.",
+        spanish=" Jua, jua, jua.",
+    });
+    message_KeyWait();
+    screen_FadeOutAll(1, 60);
+    message_CloseEnforce();
+    Wait(60);
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    end;
+}

@@ -1,0 +1,16 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
+    $SCENARIO_MAIN = scn[7, 4];
+    supervision_LoadStation(LEVEL_G01P04A, 'UM06');
+    supervision_StationCommon(0);
+    supervision_StationCommon(99);
+    supervision_Station(3);
+    supervision_Acting(0);
+    Wait(1);
+    bgm_FadeOut(60);
+    screen_FadeOut(1, 30);
+    $SCENARIO_MAIN = scn[7, 5];
+    §label_2;
+    end;
+}

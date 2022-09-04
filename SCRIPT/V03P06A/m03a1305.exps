@@ -1,0 +1,45 @@
+
+def 0 {
+    back_SetGround(LEVEL_V03P06A);
+    supervision_Acting(0);
+    camera_SetPositionMark(Position<'m0', 25.5, 19.5>);
+    with (object OBJECT_V03P06A2_216) {
+        SetAnimation(3);
+    }
+    with (object OBJECT_V03P06A1_212) {
+        SetAnimation(3);
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_TIME_GEAR_REMIX, 0, 256);
+    Wait(30);
+    message_SetActor(ACTOR_ATTENDANT1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Like in a forest...",
+                french=" Ils peuvent se trouver par\nexemple dans une forêt...",
+                german=" Zum Beispiel in einem Wald...",
+                italian=" Ad esempio in una foresta...",
+                spanish=" Como por ejemplo en lo más\nprofundo de un bosque...",
+            }
+        case 2:
+            {
+                english=" Like in a forest...",
+                french=" Ils peuvent se trouver par\nexemple dans une forêt...",
+                german=" Zum Beispiel in einem Wald...",
+                italian=" Ad esempio in una foresta...",
+                spanish=" Como por ejemplo en lo más\nprofundo de un bosque...",
+            }
+        default:
+            {
+                english=" Like in a forest...",
+                french=" Ils peuvent se trouver par\nexemple dans une forêt...",
+                german=" Zum Beispiel in einem Wald...",
+                italian=" Ad esempio in una foresta...",
+                spanish=" Como por ejemplo en lo más\nprofundo de un bosque...",
+            }
+    }
+    message_Close();
+    screen_FadeOut(1, 30);
+    end;
+}

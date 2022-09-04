@@ -1,0 +1,149 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_D03P11A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_JIBAKOIRU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" We have been able to arrest a\nwanted outlaw! ZZZT!",
+        french=" Nous avons pu arrêter un\ncriminel recherché! ZZZT!",
+        german=" Dank euch konnten wir einen\ngesuchten Verbrecher fassen! ZZZT!",
+        italian=" Siamo riusciti ad arrestare un\nricercato! ZZZT!",
+        spanish=" ¡Hemos podido arrestar\na un peligroso malhechor! ¡Bzz!",
+    });
+    message_Talk({
+        english=" ZZZT! We owe you great thanks\nfor your cooperation! ZZZT!",
+        french=" ZZZT! Merci beaucoup de votre\ncoopération! ZZZT!",
+        german=" ZZZT! Wir sind euch für eure\nMitarbeit zu großem Dank verpflichtet! ZZZT!",
+        italian=" ZZZT! Grazie mille per la vostra\ncollaborazione! ZZZT!",
+        spanish=" ¡Bzz! ¡Estamos muy agradecidos\npor vuestra colaboración! ¡Bzz!",
+    });
+    message_Close();
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    with (actor ACTOR_NPC_KOIRU) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    with (actor ACTOR_NPC_KOIRU2) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        SetAnimation(22);
+    }
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_KOIRU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_KOIRU2) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    Wait(20);
+    message_Talk({
+        english=" ZZZT! We will send the reward\nto your guild. Thank you again! ZZZT!",
+        french=" ZZZT! Nous remettrons la\nrécompense à votre Guilde. Merci\nencore! ZZZT!",
+        german=" ZZZT! Wir lassen die Belohnung\neurer Gilde zukommen. Nochmals danke! ZZZT!",
+        italian=" ZZZT! Manderemo la ricompensa\nalla Gilda. Grazie ancora! ZZZT!",
+        spanish=" ¡Bzz! Enviaremos la recompensa\na vuestro [CS:N]Pokégremio[CR].\n¡Muchísimas gracias por todo! ¡Bzz!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_SURIIPU);
+    }
+    WaitExecuteLives(ACTOR_NPC_JIBAKOIRU);
+    message_Talk({
+        english=" ZZZT! Now come with us! ZZZT!",
+        french=" ZZZT! Viens avec nous! ZZZT!",
+        german=" ZZZT! Jetzt komm mit! ZZZT!",
+        italian=" ZZZT! Adesso vieni\ncon noi! ZZZT!",
+        spanish=" ¡Bzz! Ahora, ¡ven con nosotros!\n¡Bzz!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_SURIIPU) {
+        SetEffect(EFFECT_SWEAT_DROP, 3);
+    }
+    with (actor ACTOR_NPC_SURIIPU) {
+        WaitEffect();
+    }
+    message_SetFace(ACTOR_NPC_SURIIPU, FACE_SIGH, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Awww...",
+        french=" Aïe...",
+        german=" Grmpf...",
+        italian=" Awww...",
+        spanish=" ¡Ay!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        MovePositionOffset(1, 200, 0);
+    }
+    Wait(15);
+    with (actor ACTOR_NPC_KOIRU) {
+        ResetHitAttribute(31);
+    }
+    with (actor ACTOR_NPC_KOIRU2) {
+        ResetHitAttribute(31);
+    }
+    with (actor ACTOR_NPC_SURIIPU) {
+        ResetHitAttribute(31);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_RURIRI) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_KOIRU) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    with (actor ACTOR_NPC_SURIIPU) {
+        MovePositionOffset(1, 16, 16);
+    }
+    with (actor ACTOR_NPC_KOIRU2) {
+        MovePositionOffset(1, 32, 32);
+    }
+    WaitExecuteLives(ACTOR_NPC_SURIIPU);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_SURIIPU) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_KOIRU2);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(16, 10, DIR_RIGHT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(16, 10, DIR_RIGHT);
+    }
+    with (actor ACTOR_NPC_RURIRI) {
+        Turn2Direction(16, 10, DIR_RIGHT);
+    }
+    with (actor ACTOR_NPC_KOIRU) {
+        MovePositionOffset(1, 200, 0);
+    }
+    with (actor ACTOR_NPC_SURIIPU) {
+        MovePositionOffset(1, 200, 0);
+    }
+    with (actor ACTOR_NPC_KOIRU2) {
+        MovePositionOffset(1, 200, 0);
+    }
+    screen_FadeOut(1, 30);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    end;
+}

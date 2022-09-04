@@ -1,0 +1,32 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
+    $SCENARIO_MAIN = scn[22, 2];
+    back_SetGround(LEVEL_G01P04A);
+    supervision_LoadStation(LEVEL_G01P04A, 'UM21');
+    supervision_Station(8);
+    supervision_Acting(0);
+    supervision_Acting(1);
+    supervision_Acting(2);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(2);
+    }
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    //with (performer 0) {
+        //MovePositionLives(1, 0);
+    //}
+    with (actor ACTOR_ATTENDANT1) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetDirection(DIR_DOWN);
+    }
+    supervision_RemoveActing(1);
+    screen_FadeIn(1, 30);
+    end;
+}

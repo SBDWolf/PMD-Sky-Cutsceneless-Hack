@@ -1,0 +1,29 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_S04P01A);
+    screen_FadeIn(1, 0);
+    message_SetFace(ACTOR_NPC_DOGAASU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Whoa-ho! What\'s with them?[K]\nThey went down before they even got near the\nPerfect Apples.",
+        french=" Mouarf mouarf! C\'est quoi leur\nproblème?[K] Comment on peut tomber K.O. aussi\nvite sans avoir trouvé les Pommes Parfaites?",
+        german=" Whoaho! Was ist mit denen\nlos?[K] Sie haben es nicht einmal in die Nähe\nder Perfekten Äpfel geschafft!",
+        italian=" Uooh-ho! Ma cosa succede?[K]\nVanno KO prima ancora di aver raggiunto le\nMele Perfette?",
+        spanish=" ¡Jo, jo...! ¡Qué poco aguante![K]\nLes han dado para el pelo antes de poder\nacercarse a las Manzanas Perfectas.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_ZUBATTO, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Heh-heh. And they did it all\nthemselves without us helping.",
+        french=" Hin hin! Et en plus, on y est pour\nrien!",
+        german=" Hehe. Und wir mussten nicht\neinmal nachhelfen.",
+        italian=" Eh-eh. E non c\'è neanche stato\nbisogno del nostro intervento.",
+        spanish=" ¡Jue, jue! Y nosotros ni siquiera\nhemos tenido que hacer nada.",
+    });
+    message_KeyWait();
+    screen_FadeOutAll(1, 60);
+    message_CloseEnforce();
+    Wait(60);
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    end;
+}

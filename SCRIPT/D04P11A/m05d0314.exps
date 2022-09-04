@@ -1,0 +1,72 @@
+
+def 0 {
+    back_SetGround(LEVEL_D04P11A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    switch ( sector() ) {
+        case 0:
+        default:
+            §label_0;
+            screen_FlushOut(1, 0, 8, 0, 0, 0);
+            bgm_PlayFadeIn(BGM_THAT_SHAPE, 0, 256);
+            screen_FadeIn(1, 30);
+            Wait(30);
+            Wait(40);
+            §label_2;
+            with (performer 0) {
+                MovePositionOffset(1, 0, 40);
+            }
+            with (actor ACTOR_NPC_DARK_PUKURIN) {
+                MovePositionMark(1, Position<'m0', 31.5, 32.5>);
+            }
+            with (actor ACTOR_NPC_DARK_PUKURIN) {
+                Turn2Direction(4, 10, DIR_UP);
+            }
+            WaitExecuteLives(ACTOR_NPC_DARK_PUKURIN);
+            Wait(60);
+            with (performer 0) {
+                MovePositionOffset(33408, 0, -64);
+            }
+            with (actor ACTOR_NPC_DARK_PUKURIN) {
+                MovePositionMark(33408, Position<'m1', 31.5, 24.5>);
+            }
+            with (actor ACTOR_NPC_DARK_PUKURIN) {
+                ResetOutputAttribute(256);
+            }
+            with (actor ACTOR_NPC_DARK_PUKURIN) {
+                SetAnimation(17);
+            }
+            with (actor ACTOR_NPC_DARK_PUKURIN) {
+                MovePositionMark(33408, Position<'m2', 31.5, 20.5>);
+            }
+            WaitExecuteLives(ACTOR_NPC_DARK_PUKURIN);
+            supervision_Acting(1);
+            with (object OBJECT_D04P11A1_18) {
+                SetOutputAttribute(4);
+            }
+            with (actor ACTOR_NPC_DARK_PUKURIN) {
+                Destroy();
+            }
+            switch ( sector() ) {
+                case 0:
+                default:
+                    screen_FadeOut(1, 30);
+                    §label_5;
+                    screen_FlushIn(1, 0, 1, 0, 0, 0);
+                    end;
+                case 1:
+                    Wait(15);
+                    screen_WhiteOut(1, 5);
+                    jump @label_5;
+            }
+            break;
+        case 1:
+            screen_FlushOut(1, 0, 6, 0, 0, 0);
+            screen_FadeIn(1, 5);
+            Wait(30);
+            Wait(80);
+            jump @label_2;
+    }
+}

@@ -1,0 +1,124 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_G01P07C);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_ANGRY, 3);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(9);
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_ANGRY, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" Grrr...",
+        french=" Grrr...",
+        german=" Grrr...",
+        italian=" Grrr...",
+        spanish=" Grrr...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8961);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SWEAT_DROP, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROP, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitEffect();
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_BOTTOM_C_FACEL);
+    message_FacePositionOffset(-2, 0);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Will you let it go already?",
+                french=" Tu veux bien arrêter?",
+                german=" Lass es endlich gut sein!",
+                italian=" La vuoi smettere?",
+                spanish=" ¿Quieres dejarlo ya?",
+            }
+        case 2:
+            {
+                english=" Can you stop that already?",
+                french=" Tu veux bien arrêter?",
+                german=" Kannst du endlich damit\naufhören?",
+                italian=" La vuoi smettere?",
+                spanish=" ¿Quieres parar de una vez?",
+            }
+        default:
+            {
+                english=" Can you let it go, please?",
+                french=" Tu veux bien arrêter?",
+                german=" Kannst du bitte endlich damit\naufhören?",
+                italian=" La vuoi smettere, per favore?",
+                spanish=" ¿Quieres dejarlo ya?",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We\'re going to bed too...",
+                french=" Nous aussi, allons nous\ncoucher...",
+                german=" Wir gehen auch ins Bett.",
+                italian=" Andiamo anche noi a letto...",
+                spanish=" Pues también nos vamos\na la cama.",
+            }
+        case 2:
+            {
+                english=" We\'re going to bed too...",
+                french=" Nous aussi, allons nous\ncoucher...",
+                german=" Wir gehen auch ins Bett.",
+                italian=" Andiamo anche noi a letto...",
+                spanish=" Pues también nos vamos\na la cama.",
+            }
+        default:
+            {
+                english=" We\'re going to bed too...",
+                french=" Nous aussi, allons nous\ncoucher...",
+                german=" Wir gehen auch ins Bett.",
+                italian=" Andiamo anche noi a letto...",
+                spanish=" Pues también nos vamos\na la cama.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I mean, I can understand how\nyou\'d be steamed at us, but...",
+                french=" Oui, tu as le droit d\'être en\ncolère contre nous, mais bon...",
+                german=" Ich meine, ich kann verstehen,\ndass du sauer auf uns bist, aber...",
+                italian=" Insomma, posso capire che tu\nsia arrabbiato con noi, ma...",
+                spanish=" Entiendo que tengas motivos\npara estar enfadado, pero...",
+            }
+        case 2:
+            {
+                english=" Yes, you have the right to be\nangry with us, but...",
+                french=" Oui, tu as le droit d\'être en\ncolère contre nous, mais bon...",
+                german=" Ja, du hast das Recht, wütend\nauf uns zu sein, aber...",
+                italian=" Insomma, posso capire che tu\nsia arrabbiato con noi, ma...",
+                spanish=" Tienes motivos para\nestar enfadado, pero...",
+            }
+        default:
+            {
+                english=" Yes, you have the right to be\nangry with us, but...",
+                french=" Oui, tu as le droit d\'être en\ncolère contre nous, mais bon...",
+                german=" Ja, du hast das Recht, wütend\nauf uns zu sein, aber...",
+                italian=" Insomma, posso capire che tu\nsia arrabbiato con noi, ma...",
+                spanish=" Comprendo que estés\nenfadado, pero...",
+            }
+    }
+    message_Close();
+    screen_FadeOut(1, 60);
+    Wait(60);
+    end;
+}

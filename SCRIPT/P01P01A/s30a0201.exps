@@ -1,0 +1,300 @@
+
+def 0 {
+    $SCENARIO_MAIN = scn[7, 3];
+    back_SetGround(LEVEL_P01P03A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    supervision_StationCommon(7);
+    Wait(1);
+    with (actor ACTOR_NPC_SOONANSU) {
+        MovePositionOffset(32896, 22, 0);
+    }
+    with (actor ACTOR_NPC_SOONANO) {
+        SetAnimation(4);
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_TREASURE_TOWN, 0, 256);
+    with (actor ACTOR_NPC_SOONANSU) {
+        MovePositionOffset(32896, -22, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_SOONANSU);
+    with (actor ACTOR_NPC_SOONANSU) {
+        MovePositionOffset(32896, 22, 0, -22, 0);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m0', 25.5, 20.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m1', 29, 20.5>);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_NPC_SOONANO) {
+        SetAnimation(2);
+    }
+    Wait(4);
+    se_Play(8978);
+    with (actor ACTOR_NPC_SOONANO) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_SOONANO) {
+        WaitEffect();
+    }
+    with (actor ACTOR_NPC_SOONANSU) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_SOONANSU);
+    message_SetFace(ACTOR_NPC_SOONANO, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Oh! A customer, is it not?",
+        french=" Oh! Un client? O.K.!",
+        german=" Oh! Ein Kunde, isses nich so?",
+        italian=" Oh! Un cliente, vero no?",
+        spanish=" ¡Anda! Clientes, ¿no es así?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m2', 27, 23>);
+    }
+    with (actor ACTOR_NPC_SOONANSU) {
+        MovePositionMark(1, Position<'m3', 29, 23.5>);
+    }
+    with (actor ACTOR_NPC_SOONANO) {
+        MovePositionMark(1, Position<'m4', 25.5, 23.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_SOONANO);
+    message_SetFace(ACTOR_NPC_SOONANO, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Good day, is it not?",
+        french=" Belle journée, non?",
+        german=" Ein schöner Tag, isses nich so?",
+        italian=" Bella giornata, vero no?",
+        spanish=" Buenos días...",
+    });
+    message_Talk({
+        english=" The new shop, [CS:K]Spinda[CR]\'s Café, is\nnow open!",
+        french=" Le [CS:K]Café Spinda[CR],\nvotre nouveau magasin, est à présent ouvert!",
+        german=" Der neue Laden, [CS:K]Pandir-Café[CR],\nhat jetzt geöffnet!",
+        italian=" Il nuovo locale Caffè di [CS:K]Spinda[CR]\nè ufficialmente aperto!",
+        spanish=" ¡Queda inaugurada la nueva\ntienda, la [CS:K]Cafetería Spinda[CR]!",
+    });
+    message_Talk({
+        english=" This wonderful shop is\noverflowing with hopes and dreams,\nis it not?",
+        french=" Ce merveilleux magasin vous\npropose de réaliser tous vos rêves.",
+        german=" Dieser schöne Laden quillt\nüber vor Hoffnungen und Träumen,\nisses nich so?",
+        italian=" Questo posto meraviglioso\ntrabocca di sogni e di speranze, vero no?",
+        spanish=" Esta maravillosa tienda\nes un lugar de ensueño, ¿no es así?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8962);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hopes and dreams?",
+                french=" Tous nos rêves?",
+                german=" Hoffen und träumen?",
+                italian=" Sogni e speranze?",
+                spanish=" ¿De ensueño?",
+            }
+        case 2:
+            {
+                english=" Hopes and dreams?",
+                french=" Tous nos rêves?",
+                german=" Hoffen und träumen?",
+                italian=" Sogni e speranze?",
+                spanish=" ¿De ensueño?",
+            }
+        default:
+            {
+                english=" Hopes and dreams?",
+                french=" Tous nos rêves?",
+                german=" Hoffen und träumen?",
+                italian=" Sogni e speranze?",
+                spanish=" ¿De ensueño?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_SOONANSU) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_SOONANSU);
+    with (actor ACTOR_NPC_SOONANSU) {
+        SetAnimation(22);
+    }
+    with (actor ACTOR_NPC_SOONANSU) {
+        WaitAnimation();
+    }
+    message_SetFace(ACTOR_NPC_SOONANSU, FACE_HAPPY, FACE_POS_BOTTOM_R_FACEOUTW);
+    message_Talk({
+        english=" That\'s right!",
+        french=" Banco!",
+        german=" Ja, genau!",
+        italian=" Esatto!",
+        spanish=" ¡Eso, eso!",
+    });
+    with (actor ACTOR_NPC_SOONANO) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    Wait(3);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_SOONANSU);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_SOONANSU) {
+        SetAnimation(2);
+    }
+    Wait(10);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m5', 27, 28.5>);
+    }
+    with (actor ACTOR_NPC_SOONANO) {
+        MovePositionMark(1, Position<'m6', 29, 26.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_SOONANO);
+    with (actor ACTOR_NPC_SOONANO) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_NPC_SOONANSU) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_SOONANSU);
+    message_SetFace(ACTOR_NPC_SOONANO, FACE_NORMAL, FACE_POS_BOTTOM_R_CENTER);
+    message_Talk({
+        english=" Hey! Why not come on in?\nDon\'t be shy!",
+        french=" Hé! Entrez donc, entrez donc!\nNe soyez pas timides!",
+        german=" He! Warum kommt ihr nicht\nrein? Nicht so schüchtern!",
+        italian=" Ehi! Perché voi non entrate?\nNon siate timidi!",
+        spanish=" ¡Eh! ¿Por qué no entráis?\n¡Dejad la timidez a un lado!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8961);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROP, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_STUNNED, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(1, -1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I don\'t know what this place is.\nWant to find out?",
+                french=" Je me demande de quel genre\nd\'endroit il s\'agit. On va jeter un œil?",
+                german=" Ich kenne diesen Ort noch nicht.\nWollen wir nicht mal reinschauen?",
+                italian=" Non ho idea di cosa sia questo\nposto. Che ne dici di dare un\'occhiata?",
+                spanish=" No tengo ni idea de qué es este\nsitio... ¿Lo averiguamos?",
+            }
+        case 2:
+            {
+                english=" I don\'t really know about this.\nWant to find out?",
+                french=" Je me demande de quel genre\nd\'endroit il s\'agit. On va jeter un œil?",
+                german=" Ich kann mir darunter nichts\nvorstellen. Warum schauen wir nicht einfach\nmal rein?",
+                italian=" Che strano posto. Perché non\ndiamo un\'occhiata?",
+                spanish=" No sé qué es esto.\n¿Quieres que lo averigüemos?",
+            }
+        default:
+            {
+                english=" I\'m not sure what this is... Want\nto find out?",
+                french=" Je me demande de quel genre\nd\'endroit il s\'agit. On va jeter un œil?",
+                german=" Ich bin mir nicht sicher, was\ndas bedeuten soll... Lass es uns herausfinden!",
+                italian=" Non ho mai visto un posto così...\nperché non ci diamo un\'occhiata?",
+                spanish=" No tengo claro qué es esto...\n¿Quieres que lo descubramos?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(71);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    Wait(5);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(10);
+    with (actor ACTOR_NPC_SOONANO) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    message_SetFace(ACTOR_NPC_SOONANO, FACE_NORMAL, FACE_POS_BOTTOM_R_CENTER);
+    message_Talk({
+        english=" We have two guests!",
+        french=" Nous avons deux clients, O.K.!",
+        german=" Wir haben zwei Gäste!",
+        italian=" Abbiamo due clienti!",
+        spanish=" ¡Tenemos dos clientes!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_SOONANO) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m7', 25.5, 28.5>);
+    }
+    Wait(35);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m8', 25.5, 28.5>);
+    }
+    Wait(30);
+    with (actor ACTOR_NPC_SOONANO) {
+        Turn2Direction(16, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_SOONANSU) {
+        Turn2Direction(16, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m9', 18, 29.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m10', 18, 29.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        Destroy();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_SOONANO) {
+        MovePositionMark(1, Position<'m11', 18, 29.5>);
+    }
+    Wait(20);
+    with (actor ACTOR_NPC_SOONANSU) {
+        MovePositionMark(1, Position<'m12', 29, 25.5>, Position<'m13', 18, 29.5>);
+    }
+    Wait(20);
+    bgm_FadeOut(60);
+    screen_FadeOut(1, 30);
+    Wait(30);
+    end;
+}

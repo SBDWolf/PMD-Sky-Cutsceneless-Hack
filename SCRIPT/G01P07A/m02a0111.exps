@@ -1,0 +1,141 @@
+
+def 0 {
+    back_SetGround(LEVEL_G01P07A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD_REMIX, 0, 256);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" This is your room! ♪",
+        french=" Voici votre dortoir! ♪",
+        german=" Das ist euer Raum! ♪",
+        italian=" Questa è la vostra stanza! ♪",
+        spanish=" Este es vuestro cuarto. ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m0', 25.5, 23>);
+    }
+    Wait(10);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m1', 19.5, 23>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 1, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(20);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MoveHeight(2, 10);
+    }
+    Wait(1);
+    with (actor ACTOR_ATTENDANT1) {
+        MoveHeight(2, 0);
+    }
+    Wait(2);
+    with (actor ACTOR_ATTENDANT1) {
+        MoveHeight(2, 10);
+    }
+    Wait(1);
+    with (actor ACTOR_ATTENDANT1) {
+        MoveHeight(2, 0);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_JOYOUS, FACE_POS_BOTTOM_C_FACEL);
+    message_FacePositionOffset(-2, -1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Wow! We get beds!",
+                french=" Waouh! On a des lits!",
+                german=" Wow! Wir bekommen Betten!",
+                italian=" Wow! Dei letti!",
+                spanish=" ¡Vaya! ¡Nos dan camas!",
+            }
+        case 2:
+            {
+                english=" Great! We get beds!",
+                french=" Waouh! On a des lits!",
+                german=" Super! Wir bekommen Betten!",
+                italian=" Wow! Dei letti!",
+                spanish=" ¡Qué bien! ¡Nos dan camas!",
+            }
+        default:
+            {
+                english=" Yay! We get beds!",
+                french=" Waouh! On a des lits!",
+                german=" Hurra! Wir bekommen Betten!",
+                italian=" Wow! Dei letti!",
+                spanish=" ¡Bien! ¡Nos han dado camas!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PERAPPU);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" You will live here while you\nwork for us.",
+        french=" Tant que vous travaillerez\npour nous, vous vivrez ici.",
+        german=" Hier werdet ihr wohnen, solange\nihr für uns arbeitet.",
+        italian=" Fino a quando lavorerete per noi,\nquesta sarà la vostra stanza.",
+        spanish=" Viviréis aquí mientras trabajéis\npara nosotros.",
+    });
+    message_Talk({
+        english=" Things will start getting busy\nfor you tomorrow! ♪[K] So rise early and start\nliving up to our code!",
+        french=" Les choses sérieuses\ncommencent demain! ♪[K] Donc levez-vous tôt\net commencez à vivre selon nos codes!",
+        german=" Ab morgen werdet ihr alle Hände\nvoll zu tun haben! ♪[K] Steht früh auf und fangt\nan, nach unserem strengen Kodex zu leben!",
+        italian=" Da domani non avrete molto\ntempo libero! ♪[K] Quindi alzatevi presto e \niniziate a vivere secondo le nostre regole!",
+        spanish=" A partir de mañana empezaréis\na trabajar duro. ♪[K] Así que madrugad,\ny cumplid con nuestro estricto código.",
+    });
+    message_Talk({
+        english=" Don\'t stay up late. Get to sleep\nearly tonight! ♪[K] That is all.",
+        french=" Ne veillez pas trop tard. Allez\nvous coucher de bonne heure ce soir! ♪[K]\nVoilà, c\'est tout.",
+        german=" Bleibt nicht lange auf. Geht\nheute früh ins Bett! ♪[K] Das ist alles.",
+        italian=" Non andate a letto tardi. \nStanotte dovete riposarvi il più possibile! ♪[K]\nÈ tutto.",
+        spanish=" No trasnochéis. ¡Hoy tenéis que\niros pronto a la cama! ♪[K] Eso es todo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionOffset(1, -8, 8);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionOffset(1, -88, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Destroy();
+    }
+    Wait(30);
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 90);
+    WaitBgm(BGM_WIGGLYTUFFS_GUILD_REMIX);
+    end;
+}
