@@ -2,11 +2,10 @@
 
 A Hack of Pokémon Mystery Dungeon: Explorers of Sky that removes cutscenes while keeping gameplay as intact as possible.
 
-At the moment, only the Any% portion is finished, not special episodes and postgame.
+At the moment, only the Any% portion and Bidoof's Wish are finished, not the other special episodes and the postgame.
 
 Known issues:
 
-- Some extra textboxes accidentally left in before Treeshroud Forest;
 - Some inconsistent music fades.
 
 The source is just the files used by Skytemple.
