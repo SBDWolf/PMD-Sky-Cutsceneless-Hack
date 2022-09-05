@@ -1,6 +1,7 @@
 
 def 0 {
     sound_Stop();
+    switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
     $SCENARIO_MAIN = scn[3, 0];
     end;
 }

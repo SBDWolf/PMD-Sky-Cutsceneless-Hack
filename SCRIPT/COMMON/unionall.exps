@@ -6913,8 +6913,13 @@ coro EVENT_N01_31 {
     CallCommon(CORO_SUBSCREEN_INIT);
     debug_Print('BIPPANONEGAIGOTOCOME');
     supervision_ExecuteActingSub(LEVEL_D42P42A, 'N01A3101', 0);
-    supervision_ExecuteActingSub(LEVEL_G01P04A, 'N01A3102', 0);
-    supervision_ExecuteActingSub(LEVEL_S04P01A, 'N01A3103', 0);
+    //supervision_ExecuteActingSub(LEVEL_G01P04A, 'N01A3102', 0);
+    //supervision_ExecuteActingSub(LEVEL_S04P01A, 'N01A3103', 0);
+    $SPECIAL_EPISODE_TYPE = 32767;
+    adventure_log = 1000;
+    switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+    switch ( message_Menu(MENU_SAVE_MENU) ) { }
+    switch ( ProcessSpecial(24, 0, 0) ) { }
     end;
 }
 
