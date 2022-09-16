@@ -6,7 +6,8 @@ At the moment, only the Any% portion and Bidoof's Wish are finished, not the oth
 
 Known issues:
 
-- Some inconsistent music fades.
+- Some inconsistent music fades;
+- Increased recruit rate (game assumes you've answered Yes to "Did you play "Explorers of Time" or "Explorers of Darkness"" during the quiz).
 
 The source is just the files used by Skytemple.
 
