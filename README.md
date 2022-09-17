@@ -2,19 +2,18 @@
 
 A Hack of Pokémon Mystery Dungeon: Explorers of Sky that removes cutscenes while keeping gameplay as intact as possible.
 
-At the moment, only the Any% portion and Bidoof's Wish are finished, not the other special episodes and the postgame.
+At the moment, only the Any% portion, Bidoof's Wish and a small portion of the post-game are finished.
 
 Known issues:
 
 - Some inconsistent music fades;
-- Increased recruit rate (game assumes you've answered Yes to "Did you play "Explorers of Time" or "Explorers of Darkness"" during the quiz).
 
 The source is just the files used by Skytemple.
 
 To install:
 
 - Acquire a European ROM of PMD Sky;
-- Use xdelta to apply the patch of your choosing to the ROM.
+- Use Flips or xdelta to apply the patch of your choosing to the ROM.
 If using xdeltaUI, you might get weird error messages trying to apply these out of the box. This is caused the version of xdeltaUI that you find online sometimes making use of an old version of the patcher. If you're having problem in trying to apply the patch, try following these steps:
 
 - Delete xdelda.exe inside of the xdeltaUI folder;
