@@ -1,0 +1,667 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_D31P41A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    WaitLockLives(5, ACTOR_PLAYER);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    se_Play(7170);
+    Unlock(5);
+    Wait(10);
+    Unlock(9);
+    Lock(3);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Owowow...",
+                french=" Ouh là là...",
+                german=" Oh, oh, oh...",
+                italian=" Ahiahiahi...",
+                spanish=" Ay, ay, ay...",
+            }
+        case 2:
+            {
+                english=" Owowow...",
+                french=" Ouh là là...",
+                german=" Oh, oh, oh...",
+                italian=" Ahiahiahi...",
+                spanish=" Ay, ay, ay...",
+            }
+        default:
+            {
+                english=" Owowow...",
+                french=" Ouh là là...",
+                german=" Oh, oh, oh...",
+                italian=" Ahiahiahi...",
+                spanish=" Ay, ay, ay...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Unlock(6);
+    Wait(10);
+    Unlock(10);
+    Lock(3);
+    Wait(15);
+    se_Play(8963);
+    Unlock(11);
+    Wait(5);
+    Unlock(7);
+    Lock(3);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Th-this is...",
+                french=" C-c\'est...",
+                german=" D-das ist...",
+                italian=" Q-Questa è...",
+                spanish=" Esto es...",
+            }
+        case 2:
+            {
+                english=" Th-this is...",
+                french=" C-c\'est...",
+                german=" D-das ist...",
+                italian=" Q-Questa è...",
+                spanish=" Esto es...",
+            }
+        default:
+            {
+                english=" Th-this is...",
+                french=" C-c\'est...",
+                german=" D-das ist...",
+                italian=" Q-Questa è...",
+                spanish=" Esto es...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Was that...[K]a pitfall trap?)",
+                french="(Qu\'est-ce que c\'était...[K] un Piège Trappe?)",
+                german="(War das...[K] eine Gruben-Falle?)",
+                italian="(Era una...[K] trappola?)",
+                spanish="(Hum...[K] ¿Hemos caído en una trampa?)",
+            }
+        default:
+            {
+                english="(Was that...[K]a pitfall trap?)",
+                french="(Qu\'est-ce que c\'était...[K] un Piège Trappe?)",
+                german="(War das...[K] eine Gruben-Falle?)",
+                italian="(Era una...[K] trappola?)",
+                spanish="(Hum...[K] ¿Hemos caído en una trampa?)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(We fell down a pitfall trap![K] That\'s what\nhappened to us...)",
+                french="(Nous venons de tomber dans un Piège Trappe!\nVoilà ce qui nous est arrivé...)",
+                german="(Wir sind in eine Gruben-Falle geraten![K] Das ist\nalso passiert...)",
+                italian="(Abbiamo camminato su una trappola![K] Ecco\ncosa ci è successo...)",
+                spanish="(¡Hemos caído en una trampa![K]\nDebe de ser eso...)",
+            }
+        default:
+            {
+                english="(We fell down a pitfall trap![K] That\'s what\nhappened to us...)",
+                french="(Nous venons de tomber dans un Piège Trappe!\nVoilà ce qui nous est arrivé...)",
+                german="(Wir sind in eine Gruben-Falle geraten![K] Das ist\nalso passiert...)",
+                italian="(Abbiamo camminato su una trappola![K] Ecco\ncosa ci è successo...)",
+                spanish="(¡Hemos caído en una trampa![K]\nDebe de ser eso...)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(7940);
+    camera_SetEffect(2, 1, 33024);
+    screen_FadeOut(0, 120);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(1, 10, DIR_UP);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(1, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Arrgh![K] The hole!",
+                french=" Aaah![K] Le trou!",
+                german=" Arrgh![K] Das Loch!",
+                italian=" Arrgh![K] Il buco!",
+                spanish=" ¡Oh, no![K] ¡El agujero!",
+            }
+        case 2:
+            {
+                english=" Arrgh![K] The hole!",
+                french=" Aaah![K] Le trou!",
+                german=" Arrgh![K] Das Loch!",
+                italian=" Arrgh![K] Il buco!",
+                spanish=" ¡Oh, no![K] ¡El agujero!",
+            }
+        default:
+            {
+                english=" Oh no![K] The hole!",
+                french=" Aaah![K] Le trou!",
+                german=" Oh nein![K] Das Loch!",
+                italian=" Oh, no![K] Il buco!",
+                spanish=" ¡Oh, no![K] ¡El agujero!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" The hole\'s closing up!",
+                french=" Il se referme!",
+                german=" Das Loch schließt sich!",
+                italian=" Il buco si sta chiudendo!",
+                spanish=" ¡Se está cerrando!",
+            }
+        case 2:
+            {
+                english=" The hole\'s closing up!",
+                french=" Il se referme!",
+                german=" Das Loch schließt sich!",
+                italian=" Il buco si sta chiudendo!",
+                spanish=" ¡Se está cerrando!",
+            }
+        default:
+            {
+                english=" The hole\'s closing up!",
+                french=" Il se referme!",
+                german=" Das Loch schließt sich!",
+                italian=" Il buco si sta chiudendo!",
+                spanish=" ¡Se está cerrando!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_FadeOut(7940, 90);
+    WaitScreenFade();
+    camera_SetEffect(0, 0, 0);
+    WaitSe(7940);
+    se_Play(7941);
+    WaitSe(7941);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Whoa![K] It\'s pitch black in here!\nI can\'t see a thing!",
+                french=" Ouaaah![K] Il fait tout noir\nlà-dedans! On ne voit plus rien du tout!",
+                german=" Uaah![K] Hier herrscht\nrabenschwarze Dunkelheit! Ich sehe nichts!\n",
+                italian=" Gulp![K] Qui dentro è buio pesto!\nNon vedo niente!",
+                spanish=" ¡Vaya![K] ¡Estamos a oscuras!\n¡No veo nada!",
+            }
+        case 2:
+            {
+                english=" Waah![K] It\'s pitch black! I can\'t\nsee a thing!",
+                french=" Ouaaah![K] Il fait tout noir\nlà-dedans! On ne voit plus rien du tout!",
+                german=" Uaah![K] Hier herrscht\nrabenschwarze Dunkelheit! Ich sehe nichts!\n",
+                italian=" Aaah![K] Qui dentro è buio pesto!\nNon vedo niente!",
+                spanish=" ¡Vaya![K] ¡Estamos a oscuras!\n¡No veo nada!",
+            }
+        default:
+            {
+                english=" Waah![K] It\'s pitch black! I can\'t\nsee a thing!",
+                french=" Ouaaah![K] Il fait tout noir\nlà-dedans! On ne voit plus rien du tout!",
+                german=" Uaah![K] Hier herrscht\nrabenschwarze Dunkelheit! Ich sehe nichts!\n",
+                italian=" Aaah![K] Qui dentro è buio pesto!\nNon vedo niente!",
+                spanish=" ¡Vaya![K] ¡Estamos a oscuras!\n¡No veo nada!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Are we trapped?!",
+                french=" C\'est un piège?!",
+                german=" Sind wir gefangen?!?",
+                italian=" Siamo in trappola?!",
+                spanish=" ¿Estamos atrapados?",
+            }
+        case 2:
+            {
+                english=" Are we trapped?!",
+                french=" C\'est un piège?!",
+                german=" Sind wir gefangen?!?",
+                italian=" Siamo in trappola?!",
+                spanish=" ¿Estamos atrapados?",
+            }
+        default:
+            {
+                english=" Are we trapped?!",
+                french=" C\'est un piège?!",
+                german=" Sind wir gefangen?!?",
+                italian=" Siamo in trappola?!",
+                spanish=" ¿Nos han atrapado aquí?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_ResetActor();
+    message_Talk({
+        english=" Muah-hahahaha!",
+        french=" Mouah ha ha ha ha!",
+        german=" Mua-hahahaha!",
+        italian=" Uah-ahahahah!",
+        spanish=" ¡Jia, jia, jia!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_PlayFadeIn(BGM_GROWING_ANXIETY, 0, 256);
+    message_SetFace(ACTOR_PLAYER, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(What...?[K] Someone\'s here!)",
+                french="(Quoi...?[K] Il y a quelqu\'un!)",
+                german="(Was...[K] Hier ist jemand!)",
+                italian="(Cosa...?[K] C\'è qualcuno qui dentro!)",
+                spanish="(¿Qué...?[K] ¡Hay alguien ahí!)",
+            }
+        default:
+            {
+                english="(What...?[K] Someone\'s here!)",
+                french="(Quoi...?[K] Il y a quelqu\'un!)",
+                german="(Was...[K] Hier ist jemand!)",
+                italian="(Cosa...?[K] C\'è qualcuno qui dentro!)",
+                spanish="(¿Qué...?[K] ¡Hay alguien ahí!)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Who is it?[K] Who are you?!",
+                french=" Qui est là? [K]Qui êtes-vous?!",
+                german=" Wer ist da?[K] Wer bist du?!?",
+                italian=" Chi c\'è qui?[K] Chi sei?!",
+                spanish=" ¿Quién está ahí?[K] ¡¿Quién eres?!",
+            }
+        case 2:
+            {
+                english=" Who is it?[K] Who are you?!",
+                french=" Qui est là? [K]Qui êtes-vous?!",
+                german=" Wer ist da?[K] Wer bist du?!?",
+                italian=" Chi c\'è qui?[K] Chi sei?!",
+                spanish=" ¿Quién está ahí?[K] ¡¿Quién eres?!",
+            }
+        default:
+            {
+                english=" Who\'s there?[K] Who are you?!",
+                french=" Qui est là? [K]Qui êtes-vous?!",
+                german=" Wer ist da?[K] Wer bist du?!?",
+                italian=" Chi c\'è qui?[K] Chi sei?!",
+                spanish=" ¿Quién está ahí?[K] ¡¿Quién eres\ntú?!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_ResetActor();
+    message_Talk({
+        english=" Welcome...[K]to the world of darkness.",
+        french=" Je vous souhaite la bienvenue...[K] dans\nle monde de l\'ombre.",
+        german=" Willkommen...[K] in der Welt der Dunkelheit.",
+        italian=" I miei saluti...[K] dal mondo dell\'oscurità.",
+        spanish=" Os doy la bienvenida...[K] al mundo de la\noscuridad.",
+    });
+    message_Talk({
+        english=" I am the grand master of all things bad.",
+        french=" Je suis le grand maître de tous les maux.",
+        german=" Ich bin der Großmeister allen Übels.",
+        italian=" Sono Sua Malvagità.",
+        spanish=" Soy el gran malo requetemalo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Whaaat?!",
+                french=" Quoiii?!",
+                german=" Waaaas?!?",
+                italian=" Cooosa?!",
+                spanish=" ¡¿Quéeee?!",
+            }
+        case 2:
+            {
+                english=" Whaaat?!",
+                french=" Quoiii?!",
+                german=" Waaaas?!?",
+                italian=" Cooosa?!",
+                spanish=" ¡¿Quéeee?!",
+            }
+        default:
+            {
+                english=" Whaaat?!",
+                french=" Quoiii?!",
+                german=" Waaaas?!?",
+                italian=" Cooosa?!",
+                spanish=" ¡¿Quéeee?!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" The G-g-g-[K]grand master of\nall things bad?!",
+                french=" Le g-g-g-[K]grand maître de\ntous les maux?!",
+                german=" Der G-g-g-[K]großmeister allen\nÜbels?!?",
+                italian=" S-S-Sua[K] Malvagità?!",
+                spanish=" El gran...[K] ¡¿El gran malo\nrequetemalo?!",
+            }
+        case 2:
+            {
+                english=" The G-g-g-[K]grand master of\nall things bad?!",
+                french=" Le g-g-g-[K]grand maître de\ntous les maux?!",
+                german=" Der G-g-g-[K]großmeister allen\nÜbels?!?",
+                italian=" S-S-Sua[K] Malvagità?!",
+                spanish=" El gran...[K] ¡¿El gran malo\nrequetemalo?!",
+            }
+        default:
+            {
+                english=" The G-g-g-[K]grand master of\nall things bad?!",
+                french=" Le g-g-g-[K]grand maître de\ntous les maux?!",
+                german=" Der G-g-g-[K]großmeister allen\nÜbels?!?",
+                italian=" S-S-Sua[K] Malvagità?!",
+                spanish=" El gran...[K] ¡¿El gran malo\nrequetemalo?!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_ResetActor();
+    message_Talk({
+        english=" Humph![K] Not only the grand master, but\nmore of us besides! ♪",
+        french=" Hum, hum![K] Le grand maître n\'est pas tout\nseul, il y a ses sbires aussi! ♪",
+        german=" Hmpf![K] Nicht nur der Großmeister, sondern\naußerdem noch mehr von uns! ♪",
+        italian=" Humph![K] Non solo Sua Malvagità! Siamo\nmolti di più! ♪",
+        spanish=" ¡Ajá![K] ¡Y no solo el gran malo, hay muchos\nmás! ♪",
+    });
+    message_Talk({
+        english=" A BUNCH of us minions of the grand\nmaster are here!",
+        french=" Les ARMEES de serviteurs du grand maître\nsont là!",
+        german=" Ein ganzer HAUFEN von Untergebenen des\nGroßmeisters ist hier!",
+        italian=" Siamo un ESERCITO di sgherri di Sua\nMalvagità!",
+        spanish=" ¡Sí, también estamos unos cuantos\nsecuaces del gran malo!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_EmptyActor();
+    message_Talk({
+        english="[CS:N]Minion[CR]: You can\'t see us in the dark...[K]but you\'re\ncompletely surrounded!",
+        french="[CS:N]Sbire[CR]: Vous ne pouvez pas nous voir dans\nl\'obscurité...[K] mais nous vous encerclons\ncomplètement!",
+        german="[CS:N]Untergebener[CR]: Ihr könnt uns in der Dunkelheit\nnicht sehen,[K] aber ihr seid vollständig\numzingelt!",
+        italian="[CS:N]Sgherro[CR]: Non potete vederci al buio...[K]\nma siamo tutti intorno a voi!",
+        spanish="[CS:N]Secuaz[CR]: No podéis vernos...[K] ¡pero os hemos\nrodeado!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_EmptyActor();
+    message_Talk({
+        english="[CS:N]Grand Master[CR]: Muah-hahahaha![K]\nMuah-hahahaha-hahahaha!",
+        french="[CS:N]Grand maître[CR]: Mouah ha ha ha ha![K]\nMouah ha ha ha ha ha ha ha ha!",
+        german="[CS:N]Großmeister[CR]: Mua-hahahaha![K]\nMua-hahahaha-hahahaha!",
+        italian="[CS:N]Sua Malvagità[CR]: Uah-ahahahah![K]\nUah-ahahahah-ahahahah!",
+        spanish="[CS:N]Gran malo[CR]: ¡Jia, jia, jia![K]\n¡Jia, jia, jia!",
+    });
+    message_Talk({
+        english="[CS:N]Grand Master[CR]: Coming to our lair is the last\nmistake you will ever make.[K] You\'re not\nwalking out of here.",
+        french="[CS:N]Grand maître[CR]: Pénétrer dans notre repaire\nsera votre dernière erreur.[K] Vous ne quitterez\njamais ces lieux.",
+        german="[CS:N]Großmeister[CR]: In unsere Höhle zu kommen, war\neuer letzter Fehler.[K] Hier kommt ihr nicht\nmehr heraus.",
+        italian="[CS:N]Sua Malvagità[CR]: Venire qui è stato il vostro\nultimo errore.[K] Non uscirete mai di qui.",
+        spanish="[CS:N]Gran malo[CR]: Venir a nuestra guarida ha sido un\ncraso error.[K] No saldréis de aquí.",
+    });
+    message_Talk({
+        english="[CS:N]Grand Master[CR]: Prepare to...",
+        french="[CS:N]Grand maître[CR]: Préparez-vous à...",
+        german="[CS:N]Großmeister[CR]: Bereitet\neuch vor, zu...",
+        italian="[CS:N]Sua Malvagità[CR]: Preparatevi a...",
+        spanish="[CS:N]Gran malo[CR]: Preparaos para...",
+    });
+    message_Close();
+    supervision_Acting(1);
+    bgm_Stop();
+    se_Play(7940);
+    camera_SetEffect(2, 1, 33024);
+    Wait(45);
+    se_FadeOut(7940, 60);
+    screen_FadeIn(1, 60);
+    camera_SetEffect(0, 0, 0);
+    message_SetFaceEmpty(ACTOR_NPC_PUKURIN, FACE_HAPPY, FACE_POS_TOP_L_CENTER);
+    message_FacePositionOffset(0, -1);
+    message_Talk({
+        english="[CS:N]Grand Master[CR]: Uh...",
+        french="[CS:N]Grand maître[CR]: Hein...",
+        german="[CS:N]Großmeister[CR]: Uh...",
+        italian="[CS:N]Sua Malvagità[CR]: Eh...",
+        spanish="[CS:N]Gran malo[CR]: Eh...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8968);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Huh?![K] [CS:N]Wigglytuff[CR]?!",
+                french=" Quoi?![K] [CS:N]Grodoudou[CR]?!",
+                german=" Hä?!?[K] [CS:N]Knuddeluff[CR]?!?",
+                italian=" Eh?![K] [CS:N]Wigglytuff[CR]?!",
+                spanish=" ¡¿Eh?![K] ¡¿[CS:N]Wigglytuff[CR]?!",
+            }
+        case 2:
+            {
+                english=" What?![K] [CS:N]Wigglytuff[CR]?!",
+                french=" Quoi?![K] [CS:N]Grodoudou[CR]?!",
+                german=" Was?!?[K] [CS:N]Knuddeluff[CR]?!?",
+                italian=" Eh?![K] [CS:N]Wigglytuff[CR]?!",
+                spanish=" ¡¿Qué?![K] ¡¿[CS:N]Wigglytuff[CR]?!",
+            }
+        default:
+            {
+                english=" What?![K] [CS:N]Wigglytuff[CR]?!",
+                french=" Quoi?![K] [CS:N]Grodoudou[CR]?!",
+                german=" Was?!?[K] [CS:N]Knuddeluff[CR]?!?",
+                italian=" Eh?![K] [CS:N]Wigglytuff[CR]?!",
+                spanish=" ¡¿Qué?![K] ¡¿[CS:N]Wigglytuff[CR]?!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_LOOK_AROUND_LEFT_FUNC_SERIES, 0);
+    }
+    Wait(12);
+    with (actor ACTOR_PLAYER) {
+        ExecuteCommon(CORO_LOOK_AROUND_RIGHT_FUNC_SERIES, 0);
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" And everyone else?!",
+                french=" Et tous les autres aussi?!",
+                german=" Und alle anderen?!?",
+                italian=" E tutti gli altri?!",
+                spanish=" ¡Y todos los demás!",
+            }
+        case 2:
+            {
+                english=" And everyone else?!",
+                french=" Et tous les autres aussi?!",
+                german=" Und alle anderen?!?",
+                italian=" E tutti gli altri?!",
+                spanish=" ¿Y todos los demás?",
+            }
+        default:
+            {
+                english=" And everyone else?!",
+                french=" Et tous les autres aussi?!",
+                german=" Und alle anderen?!?",
+                italian=" E tutti gli altri?!",
+                spanish=" ¿Y todos los demás?",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" What\'s going on here?!",
+                french=" Mais qu\'est-ce qui se passe ici?!",
+                german=" Was geht hier vor sich?!?",
+                italian=" Cosa sta succedendo qui?!",
+                spanish=" ¡¿Qué está pasando aquí?!",
+            }
+        case 2:
+            {
+                english=" What\'s going on here?!",
+                french=" Mais qu\'est-ce qui se passe ici?!",
+                german=" Was geht hier vor sich?!?",
+                italian=" Cosa sta succedendo qui?!",
+                spanish=" ¡¿Qué está pasando aquí?!",
+            }
+        default:
+            {
+                english=" What\'s going on here?!",
+                french=" Mais qu\'est-ce qui se passe ici?!",
+                german=" Was geht hier vor sich?!?",
+                italian=" Cosa sta succedendo qui?!",
+                spanish=" ¡¿Qué está pasando aquí?!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_NPC_PUKURIN) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    se_Play(8975);
+    with (actor ACTOR_NPC_PERAPPU) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    bgm_PlayFadeIn(BGM_GUILDMASTER_WIGGLYTUFF, 0, 256);
+    message_SetFaceEmpty(ACTOR_NPC_PERAPPU, FACE_SURPRISED, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(2, 0);
+    message_Talk({
+        english="[CS:N]Minion[CR]: H-hey![K] [CS:N]Bidoof[CR]!",
+        french="[CS:N]Sbire[CR]: H-hé![K] [CS:N]Keunotor[CR]!",
+        german="[CS:N]Untergebener[CR]: H-hey![K] [CS:N]Bidiza[CR]!",
+        italian="[CS:N]Sgherro[CR]: E-Ehi![K] [CS:N]Bidoof[CR]!",
+        spanish="[CS:N]Secuaz[CR]: ¡Eh![K] ¡[CS:N]Bidoof[CR]!",
+    });
+    message_Talk({
+        english="[CS:N]Minion[CR]: Why did you take the cover off?",
+        french="[CS:N]Sbire[CR]: Mais pourquoi as-tu ouvert?!",
+        german="[CS:N]Untergebener[CR]: Warum hast du die Abdeckung\nentfernt?!?",
+        italian="[CS:N]Sgherro[CR]: Perché hai aperto lassù?!",
+        spanish="[CS:N]Secuaz[CR]: ¡¿Por qué has destapado el agujero?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetActor(ACTOR_NPC_BIPPA);
+    message_Talk({
+        english=" Uh, what?[K] Whoops!",
+        french=" Heiiin, quoi?[K] Oups!",
+        german=" Ähm, was?[K] Hoppla!",
+        italian=" Eh, cosa?[K] Ooops!",
+        spanish=" ¿Cómo?[K] ¡Vaya!",
+    });
+    message_Close();
+    screen_FadeOut(1, 30);
+    end;
+}
+
+def 1 for_actor(ACTOR_PLAYER) {
+    SetDirection(DIR_UP);
+    SetAnimation(72);
+    ResetFunctionAttribute(256);
+    Lock(5);
+    SlidePositionMark(6, Position<'m0', 36.5, 27.5>);
+    SetFunctionAttribute(256);
+    se_Play(7939);
+    SetAnimation(11);
+    SlideHeight(2, 12);
+    Wait(2);
+    SlideHeight(2, 0);
+    SetDirection(DIR_RIGHT);
+    SetAnimation(68);
+    Wait(60);
+    Lock(6);
+    SetAnimation(63);
+    WaitAnimation();
+    SetAnimation(2);
+    Lock(7);
+    Turn2Direction(4, 10, DIR_UPRIGHT);
+    Wait(20);
+    CallCommon(CORO_LOOK_AROUND_FUNC);
+    Unlock(3);
+    Lock(8);
+    hold;
+}
+
+def 2 for_actor(ACTOR_ATTENDANT1) {
+    SetDirection(DIR_UP);
+    SetAnimation(72);
+    ResetFunctionAttribute(256);
+    Lock(9);
+    SlidePositionMark(6, Position<'m1', 32.5, 27.5>);
+    SetFunctionAttribute(256);
+    SetAnimation(11);
+    SlideHeight(2, 12);
+    Wait(2);
+    SlideHeight(2, 0);
+    SetDirection(DIR_LEFT);
+    SetAnimation(68);
+    Wait(45);
+    Unlock(3);
+    Lock(10);
+    SetAnimation(63);
+    WaitAnimation();
+    SetAnimation(2);
+    Unlock(3);
+    Lock(11);
+    Turn2Direction(4, 10, DIR_DOWNLEFT);
+    Wait(12);
+    CallCommon(CORO_LOOK_AROUND_FUNC);
+    Lock(12);
+    hold;
+}

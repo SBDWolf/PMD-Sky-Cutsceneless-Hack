@@ -1,0 +1,23 @@
+
+def 0 {
+    back_SetGround(LEVEL_D31P41A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(5);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    message_CloseEnforce();
+    WaitSe(5143);
+    se_Play(5136);
+    CallCommon(CORO_BOSS_WIPE_FUNC);
+    end;
+}

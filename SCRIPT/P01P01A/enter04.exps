@@ -1,0 +1,847 @@
+
+def 0 {
+    switch ( $EXECUTE_SPECIAL_EPISODE_TYPE ) {
+        case 0:
+            §label_0;
+            with (actor ACTOR_PLAYER_BIPPA) {
+                SetAnimation(2);
+            }
+            if ( scn($SCENARIO_SIDE) >= [40, 5] ) {
+                §label_3;
+                message_Mail({
+                    english="[CN]Where would you like to go?",
+                    french="[CN]Où souhaitez-vous aller?",
+                    german="[CN]Wohin soll die Reise gehen?",
+                    italian="[CN]Dove vuoi andare?",
+                    spanish="[CN]¿Adónde quieres ir?",
+                });
+                message_Close();
+                switch ( main_EnterAdventure(32767, 30) ) {
+                    case 0:
+                        §label_12;
+                        message_Close();
+                        switch ( main_EnterAdventure(251, 30) ) { }
+                        hold;
+                    case 1:
+                        §label_5;
+                        message_Close();
+                        supervision_Suspend(-2);
+                        end;
+                    case 7:
+                        message_Mail({
+                            english="\n[CN]Caution!",
+                            french="\n[CN]Attention!",
+                            german="\n[CN]Achtung!",
+                            italian="\n[CN]Attenzione!",
+                            spanish="\n[CN]¡Atención!",
+                        });
+                        message_Mail({
+                            english="[CN]This rescue cannot be undertaken unless\n[CN]the team includes certain Pokémon.",
+                            french="[CN]Pour entreprendre ce sauvetage,\n[CN]l\'équipe doit impérativement comprendre\n[CN]certains Pokémon.",
+                            german="[CN]Diese Rettung kann nur unternommen werden,\n[CN]wenn bestimmte Pokémon im Team sind.",
+                            italian="[CN]Non puoi affrontare questa missione di Pronto \n[CN]Intervento se la squadra non include \n[CN]determinati Pokémon.",
+                            spanish="[CN]Solo podrás llevar a cabo esta misión\n[CN]si te acompaña un Pokémon determinado.",
+                        });
+                        message_Mail({
+                            english="[CN]Please put together your team\n[CN]with the Pokémon specified by\n[CN]the job, or \"Suspend\" the job.",
+                            french="[CN]Veuillez former une équipe incluant\n[CN]les Pokémon spécifiés dans l\'offre\n[CN]de mission ou \"Suspendre\" la mission.",
+                            german="[CN]Bitte stellt euer Team aus den vom Job\n[CN]vorgeschriebenen Pokémon zusammen,\n[CN]oder wählt SPÄTER zum Aufschieben des Jobs.",
+                            italian="[CN]Metti in squadra i Pokémon specificati\n[CN]nella missione, oppure usa il \n[CN]comando \"Sospendi\".",
+                            spanish="[CN]Incluye el Pokémon especificado\n[CN]en tu equipo o bien opta por\n[CN]suspender la misión.",
+                        });
+                        jump @label_5;
+                    case 8:
+                        message_Mail({
+                            english="\n[CN]Caution!",
+                            french="\n[CN]Attention!",
+                            german="\n[CN]Achtung!",
+                            italian="\n[CN]Attenzione!",
+                            spanish="\n[CN]¡Atención!",
+                        });
+                        message_Mail({
+                            english="[CN]This rescue cannot be undertaken unless\n[CN]the team includes certain Pokémon.",
+                            french="[CN]Pour entreprendre ce sauvetage,\n[CN]l\'équipe doit impérativement comprendre\n[CN]certains Pokémon.",
+                            german="[CN]Diese Rettung kann nur unternommen werden,\n[CN]wenn bestimmte Pokémon im Team sind.",
+                            italian="[CN]Non puoi affrontare questa missione di Pronto \n[CN]Intervento se la squadra non include \n[CN]determinati Pokémon.",
+                            spanish="[CN]Solo podrás llevar a cabo esta misión\n[CN]si te acompaña un Pokémon determinado.",
+                        });
+                        message_Mail({
+                            english="[CN]Please put together your team\n[CN]with the Pokémon specified by\n[CN]the job, or \"Suspend\" the job.",
+                            french="[CN]Veuillez former une équipe incluant\n[CN]les Pokémon spécifiés dans l\'offre\n[CN]de mission ou \"Suspendre\" la mission.",
+                            german="[CN]Bitte stellt euer Team aus den vom Job\n[CN]vorgeschriebenen Pokémon zusammen,\n[CN]oder wählt SPÄTER zum Aufschieben des Jobs.",
+                            italian="[CN]Metti in squadra i Pokémon specificati\n[CN]nella missione, oppure \"Sospendi\"\n[CN]la missione.",
+                            spanish="[CN]Incluye el Pokémon especificado\n[CN]en tu equipo o bien opta por\n[CN]suspender la misión.",
+                        });
+                        jump @label_5;
+                    case 20:
+                        if ( not debug ) {
+                            jump @label_5;
+                        } else {
+                            message_Notice({
+                                english="[CS:W]Dungeon Settings Error 3\nThis dungeon may not be entered from the\nCrossroads.[CR]",
+                                french="[CS:W]Paramètres donjon - erreur 3\nCe donjon n\'est pas accessible à partir\ndu Croisement.[CR]",
+                                german="[CS:W]Dungeon-Einstellungsfehler 3\nDieser Dungeon kann von der Kreuzung aus\nnicht betreten werden.[CR]",
+                                italian="[CS:W]Impostazioni Dungeon Errore 3\nNon si può accedere a questo dungeon \ndall\'incrocio.[CR]",
+                                spanish="[CS:W]Error 3 de configuración de territorio:\nNo podrás acceder a este territorio desde\nel cruce.[CR]",
+                            });
+                            jump @label_5;
+                        }
+                        break;
+                    case 21:
+                        if ( not debug ) {
+                            jump @label_5;
+                        } else {
+                            message_Notice({
+                                english="[CS:W]Dungeon Settings Error 4\nThis dungeon may not be entered from the\nCrossroads.[CR]",
+                                french="[CS:W]Paramètres donjon - erreur 4\nCe donjon n\'est pas accessible à partir\ndu Croisement.[CR]",
+                                german="[CS:W]Dungeon-Einstellungsfehler 4\nDieser Dungeon kann von der Kreuzung aus\nnicht betreten werden.[CR]",
+                                italian="[CS:W]Impostazioni Dungeon Errore 4\nNon si può accedere a questo dungeon \ndall\'incrocio.[CR]",
+                                spanish="[CS:W]Error 4 de configuración de territorio:\nNo podrás acceder a este territorio desde\nel cruce.[CR]",
+                            });
+                            jump @label_5;
+                        }
+                        break;
+                    case 22:
+                        if ( not debug ) {
+                            jump @label_5;
+                        } else {
+                            message_Notice({
+                                english="[CS:W]Dungeon Settings Error 5\nThis dungeon may not be entered from the\nCrossroads.[CR]",
+                                french="[CS:W]Paramètres donjon - erreur 5\nCe donjon n\'est pas accessible à partir\ndu Croisement.[CR]",
+                                german="[CS:W]Dungeon-Einstellungsfehler 5\nDieser Dungeon kann von der Kreuzung aus\nnicht betreten werden.[CR]",
+                                italian="[CS:W]Impostazioni Dungeon Errore 5\nNon si può accedere a questo dungeon \ndall\'incrocio.[CR]",
+                                spanish="[CS:W]Error 5 de configuración de territorio:\nNo podrás acceder a este territorio desde\nel cruce.[CR]",
+                            });
+                            jump @label_5;
+                        }
+                        break;
+                    case 23:
+                        message_Mail({
+                            english="[CN]Caution![K]\n[CN]There is a restriction\n[CN]placed on [CS:P]Zero Isle North[CR].",
+                            french="[CN]Attention![K]\n[CN]L\'[CS:P]Ile Zéro Nord[CR] est\n[CN]soumise à des restrictions.",
+                            german="[CN]Achtung![K]\n[CN]Die [CS:P]Null-Insel Nord[CR] unterliegt\n[CN]einer Einschränkung.",
+                            italian="[CN]Attenzione![K]\n[CN]Sull\'[CS:P]Isola Zero Nord[CR]\n[CN]c\'è una limitazione.",
+                            spanish="[CN]¡Atención![K]\n[CN]Explorarás con una desventaja\n[CN]si vas a la [CS:P]Isla Cero Norte[CR].",
+                        });
+                        message_Mail({
+                            english="[CN]In [CS:P]Zero Isle North[CR], you will\n[CN]not earn Exp. Points from the\n[CN]Pokémon you defeat. Is that OK?",
+                            french="[CN]Sur l\'[CS:P]Ile Zéro Nord[CR], vous ne gagnerez\n[CN]pas de points Exp. en battant des ennemis.\n[CN]C\'est d\'accord?",
+                            german="[CN]Auf der [CS:P]Null-Insel Nord[CR] erhältst\n[CN]du keine EP für das Besiegen gegnerischer\n[CN]Pokémon. Ist das okay?",
+                            italian="[CN]Sull\'[CS:P]Isola Zero Nord[CR] non \n[CN]guadagni Punti Esperienza per i\n[CN]Pokémon che sconfiggi. Va bene?",
+                            spanish="[CN]En la [CS:P]Isla Cero Norte[CR], no conseguirás\n[CN]ningún Punto de Experiencia por\n[CN]los Pokémon que derrotes. ¿Quieres continuar?",
+                        });
+                        §label_32;
+                        switch ( message_SwitchMenu(1, 2) ) {
+                            case menu({
+                                english="Yes",
+                                french="Oui",
+                                german="Ja",
+                                italian="Sì",
+                                spanish="Sí",
+                            }):
+                                jump @label_12;
+                            case menu({
+                                english="No",
+                                french="Non",
+                                german="Nein",
+                                italian="No",
+                                spanish="No",
+                            }):
+                                jump @label_5;
+                            default:
+                                jump @label_5;
+                        }
+                        break;
+                    case 24:
+                        message_Mail({
+                            english="[CN]Caution![K]\n[CN]There are certain restrictions\n[CN]on going to [CS:P]Zero Isle East[CR].",
+                            french="[CN]Attention![K]\n[CN]L\'[CS:P]Ile Zéro Est[CR] est\n[CN]soumise à des restrictions.",
+                            german="[CN]Achtung![K]\n[CN]Die [CS:P]Null-Insel Ost[CR] unterliegt\n[CN]verschiedenen Einschränkungen.",
+                            italian="[CN]Attenzione![K]\n[CN]Ci sono alcune limitazioni\n[CN]sull\'[CS:P]Isola Zero Est[CR].",
+                            spanish="[CN]¡Atención![K]\n[CN]Explorarás con algunas desventajas\n[CN]si vas a la [CS:P]Isla Cero Este[CR].",
+                        });
+                        message_Mail({
+                            english="[CN]Items from the 17th slot and beyond\n[CN]in your Treasure Bag will be lost...",
+                            french="[CN]Vous ne pourrez conserver que les 16\n[CN]premiers objets de votre Sac à Trésor...",
+                            german="[CN]Items im Schatzbeutel gehen von\n[CN]Platz 17 abwärts verloren.",
+                            italian="[CN]Gli strumenti nella Sacca dei tesori dal\n[CN]17° in poi andranno persi.",
+                            spanish="[CN]Perderás todos los objetos de la Bolsa\n[CN]a partir del decimoséptimo...",
+                        });
+                        message_Mail({
+                            english="[CN]Also, all members\' levels will be temporarily\n[CN]reduced to Level 1. (They will be restored\n[CN]upon leaving the dungeon.) Is that OK?",
+                            french="[CN]Le niveau de vos coéquipiers tombera à 1 mais\n[CN]reviendra à la normale au sortir du donjon.\n[CN]C\'est d\'accord?",
+                            german="[CN]Die Level aller Team-Mitglieder werden\n[CN]ferner auf 1 zurückgesetzt. (Bei Verlassen des\n[CN]Dungeons werden sie wiederhergestellt.) Okay?",
+                            italian="[CN]Inoltre, il livello dei membri della squadra\n[CN]scenderà a 1, ma tornerà alla normalità\n[CN]uscendo dal dungeon. Va bene?",
+                            spanish="[CN]Además, el nivel de cada miembro del\n[CN]equipo bajará temporalmente a 1.\n[CN](Se recuperará al salir.) ¿Quieres continuar?",
+                        });
+                        jump @label_32;
+                    case 25:
+                        message_Mail({
+                            english="[CN]Caution![K]\n[CN]There are certain restrictions\n[CN]on going to [CS:P]Zero Isle West[CR].",
+                            french="[CN]Attention![K]\n[CN]L\'[CS:P]Ile Zéro Ouest[CR] est\n[CN]soumise à des restrictions.",
+                            german="[CN]Achtung![K]\n[CN]Die [CS:P]Null-Insel West[CR] unterliegt\n[CN]verschiedenen Einschränkungen.",
+                            italian="[CN]Attenzione![K]\n[CN]Ci sono alcune limitazioni\n[CN]sull\'[CS:P]Isola Zero Ovest[CR].",
+                            spanish="[CN]¡Atención![K]\n[CN]Explorarás con algunas desventajas\n[CN]si vas a la [CS:P]Isla Cero Oeste[CR].",
+                        });
+                        message_Mail({
+                            english="[CN]Every item in your\n[CN]Treasure Bag will be lost...",
+                            french="[CN]Tous les objets de votre Sac à Trésor\n[CN]seront perdus...",
+                            german="[CN]Alle Items in deinem Schatzbeutel\n[CN]gehen verloren.",
+                            italian="[CN]Tutti gli strumenti nella Sacca dei tesori\n[CN]andranno persi...",
+                            spanish="[CN]Perderás todos los objetos\n[CN]que tengas en la Bolsa.",
+                        });
+                        message_Mail({
+                            english="[CN]Also, all members\' levels will be temporarily\n[CN]reduced to Level 1. (They will be restored\n[CN]upon leaving the dungeon.) Is that OK?",
+                            french="[CN]Le niveau de vos coéquipiers tombera à 1 mais\n[CN]reviendra à la normale au sortir du donjon.\n[CN]C\'est d\'accord?",
+                            german="[CN]Die Level aller Team-Mitglieder werden\n[CN]ferner auf 1 zurückgesetzt. (Bei Verlassen des\n[CN]Dungeons werden sie wiederhergestellt.) Okay?",
+                            italian="[CN]Inoltre, il livello dei membri della squadra\n[CN]scenderà a 1, ma tornerà alla normalità\n[CN]uscendo dal dungeon. Va bene?",
+                            spanish="[CN]Además, el nivel de cada miembro del\n[CN]equipo bajará temporalmente a 1.\n[CN](Se recuperará al salir.) ¿Quieres continuar?",
+                        });
+                        jump @label_32;
+                    case 26:
+                        message_Mail({
+                            english="[CN]Caution![K]\n[CN]There are certain restrictions\n[CN]on going to [CS:P]Zero Isle South[CR].",
+                            french="[CN]Attention![K]\n[CN]L\'[CS:P]Ile Zéro Sud[CR] est\n[CN]soumise à des restrictions.",
+                            german="[CN]Achtung![K]\n[CN]Die [CS:P]Null-Insel Süd[CR] unterliegt\n[CN]verschiedenen Einschränkungen.",
+                            italian="[CN]Attenzione![K]\n[CN]Ci sono alcune limitazioni\n[CN]sull\'[CS:P]Isola Zero Sud[CR].",
+                            spanish="[CN]¡Atención![K]\n[CN]Explorarás con algunas desventajas\n[CN]si vas a la [CS:P]Isla Cero Sur[CR].",
+                        });
+                        message_Mail({
+                            english="[CN]All the money and every item in\n[CN]your Treasure Bag will be lost...",
+                            french="[CN]Tout l\'argent et tous les objets de votre Sac\n[CN]à Trésor seront perdus...",
+                            german="[CN]Alle Geld- und Itemvorräte\n[CN]im Schatzbeutel gehen verloren.",
+                            italian="[CN]Tutti i soldi e tutti gli strumenti nella Sacca\n[CN]dei tesori andranno persi...",
+                            spanish="[CN]Perderás todos los objetos que tengas en la\n[CN]Bolsa y todo el dinero que lleves encima.",
+                        });
+                        message_Mail({
+                            english="[CN]Only the leader may enter...",
+                            french="[CN]Seul le meneur peut entrer dans le donjon...",
+                            german="[CN]Nur der Anführer darf den Dungeon betreten.",
+                            italian="[CN]Solo il leader può entrare...",
+                            spanish="[CN]Solo puede entrar el líder.",
+                        });
+                        message_Mail({
+                            english="[CN]Also, your level will be temporarily\n[CN]reduced to Level 1. (It will be restored\n[CN]upon leaving the dungeon.) Is that OK?",
+                            french="[CN]Son niveau tombera à 1 mais\n[CN]reviendra à la normale au sortir du donjon.\n[CN]C\'est d\'accord?",
+                            german="[CN]Der Level wird ferner auf 1 zurückgesetzt.\n[CN](Bei Verlassen des Dungeons wird er\n[CN]wiederhergestellt.) Ist das okay?",
+                            italian="[CN]Inoltre, il suo livello scenderà a 1, ma tornerà\n[CN]alla normalità quando uscirà dal dungeon.\n[CN]Va bene?",
+                            spanish="[CN]Además, el nivel del líder \n[CN]bajará temporalmente a 1.\n[CN](Se recuperará al salir.) ¿Quieres continuar?",
+                        });
+                        jump @label_32;
+                    case 27:
+                        message_Mail({
+                            english="[CN]Caution![K]\n[CN]There are certain restrictions\n[CN]on going to [CS:P]Zero Isle Center[CR].",
+                            french="[CN]Attention![K]\n[CN]L\'[CS:P]Ile Zéro Centre[CR] est\n[CN]soumise à des restrictions.",
+                            german="[CN]Achtung![K]\n[CN]Das [CS:P]Null-Insel-Zentrum[CR] unterliegt\n[CN]verschiedenen Einschränkungen.",
+                            italian="[CN]Attenzione![K]\n[CN]Ci sono alcune limitazioni\n[CN]sull\'[CS:P]Isola Zero Centro[CR].",
+                            spanish="[CN]¡Atención![K]\n[CN]Explorarás con algunas desventajas\n[CN]si vas al [CS:P]Corazón de la Isla Cero[CR].",
+                        });
+                        message_Mail({
+                            english="[CN]Items from the 17th slot and beyond\n[CN]in your Treasure Bag will be lost...",
+                            french="[CN]Vous ne pourrez conserver que les 16\n[CN]premiers objets de votre Sac à Trésor...",
+                            german="[CN]Items im Schatzbeutel gehen von\n[CN]Platz 17 abwärts verloren.",
+                            italian="[CN]Gli strumenti nella Sacca dei tesori dal\n[CN]17° in poi andranno persi.",
+                            spanish="[CN]Perderás todos los objetos de la Bolsa\n[CN]a partir del decimoséptimo...",
+                        });
+                        message_Mail({
+                            english="[CN]You will not earn Experience Points from the\n[CN]Pokémon you defeat.",
+                            french="[CN]Vous ne gagnerez pas de\n[CN]Points d\'Expérience en battant des ennemis.",
+                            german="[CN]Du erhältst keine EP für das Besiegen\n[CN]gegnerischer Pokémon.",
+                            italian="[CN]Non si ottengono Punti Esperienza\n[CN]dai Pokémon che mandate KO.",
+                            spanish="[CN]No conseguirás Puntos de\n[CN]Experiencia por los Pokémon que derrotes.",
+                        });
+                        message_Mail({
+                            english="[CN]Any hidden traps will remain invisible\n[CN]even if you try to detect them by using\n[CN]a regular attack.",
+                            french="[CN]Les pièges cachés resteront invisibles\n[CN]même si vous essayez de les détecter\n[CN]avec une attaque ordinaire.",
+                            german="[CN]Versteckte Fallen bleiben unsichtbar, selbst\n[CN]wenn man versucht, sie durch einen regulären\n[CN]Angriff aufzuspüren.",
+                            italian="[CN]Tutte le trappole nascoste\n[CN]individuate con un attacco\n[CN]normale rimarranno invisibili.",
+                            spanish="[CN]Las trampas que detectes\n[CN]si usas un ataque convencional\n[CN]seguirán siendo invisibles.",
+                        });
+                        message_Mail({
+                            english="[CN]Also, you cannot be rescued.\n[CN]Is that OK?",
+                            french="[CN]En plus, personne ne peut venir vous secourir.\n[CN]C\'est d\'accord?",
+                            german="[CN]Außerdem kannst du nicht gerettet werden.\n[CN]Ist das okay?",
+                            italian="[CN]Inoltre, non puoi richiedere soccorso.\n[CN]Va bene?",
+                            spanish="[CN]Tampoco podrán rescatarte.\n[CN]¿Quieres continuar?",
+                        });
+                        jump @label_32;
+                    case 28:
+                        message_Mail({
+                            english="[CN]Caution![K]\n[CN]There are certain restrictions\n[CN]on going to [CS:P]Destiny Tower[CR].",
+                            french="[CN]Attention![K]\n[CN]La [CS:P]Tour du Destin[CR] est\n[CN]soumise à des restrictions.",
+                            german="[CN]Achtung![K]\n[CN]Der [CS:P]Verhängnisturm[CR] unterliegt\n[CN]verschiedenen Einschränkungen.",
+                            italian="[CN]Attenzione![K]\n[CN]Ci sono alcune limitazioni\n[CN]sulla [CS:P]Torre Destino[CR].",
+                            spanish="[CN]¡Atención![K]\n[CN]Explorarás con algunas desventajas\n[CN]si vas a la [CS:P]Torre Destino[CR].",
+                        });
+                        message_Mail({
+                            english="[CN]All the money and every item in\n[CN]your Treasure Bag will be lost...",
+                            french="[CN]Tout l\'argent et tous les objets de votre Sac\n[CN]à Trésor seront perdus...",
+                            german="[CN]Alle Geld- und Itemvorräte\n[CN]im Schatzbeutel gehen verloren.",
+                            italian="[CN]Tutti i soldi e tutti gli strumenti nella Sacca\n[CN]dei tesori andranno persi...",
+                            spanish="[CN]Perderás todos los objetos que tengas en la\n[CN]Bolsa y todo el dinero que lleves encima.",
+                        });
+                        message_Mail({
+                            english="[CN]Only the leader may enter...",
+                            french="[CN]Seul le meneur peut entrer dans le donjon...",
+                            german="[CN]Nur der Anführer darf den Dungeon betreten.",
+                            italian="[CN]Solo il leader può entrare...",
+                            spanish="[CN]Solo puede entrar el líder.",
+                        });
+                        message_Mail({
+                            english="[CN]Also, your level will be temporarily\n[CN]reduced to Level 1. (It will be restored\n[CN]upon leaving the dungeon.)",
+                            french="[CN]En plus, votre niveau tombera à 1 mais\n[CN]reviendra à la normale au sortir du donjon.",
+                            german="[CN]Ferner wird dein Level auf 1 zurückgesetzt.\n[CN](Bei Verlassen des Dungeons wird er\n[CN]wiederhergestellt.)",
+                            italian="[CN]Inoltre, il suo livello scenderà a 1, ma tornerà\n[CN]alla normalità quando uscirà dal dungeon.",
+                            spanish="[CN]Además, el nivel del líder \n[CN]bajará temporalmente a 1.\n[CN](Se recuperará al salir.)",
+                        });
+                        message_Mail({
+                            english="[CN]All IQ Skills will be unusable...",
+                            french="[CN]Les aptitudes Q.I. seront inutilisables...",
+                            german="[CN]IQ-Fähigkeiten können\n[CN]nicht verwendet werden...",
+                            italian="[CN]Non è possibile utilizzare nessuna Abilità QI...",
+                            spanish="[CN]Las habilidades CI quedarán inservibles...",
+                        });
+                        message_Mail({
+                            english="[CN]Any hidden traps will remain invisible\n[CN]even if you try to detect them by using\n[CN]a regular attack.",
+                            french="[CN]Les pièges cachés resteront invisibles\n[CN]même si vous essayez de les détecter\n[CN]avec une attaque ordinaire.",
+                            german="[CN]Versteckte Fallen bleiben unsichtbar, selbst\n[CN]wenn man versucht, sie durch einen regulären\n[CN]Angriff aufzuspüren.",
+                            italian="[CN]Tutte le trappole nascoste\n[CN]individuate con un attacco\n[CN]normale rimarranno invisibili.",
+                            spanish="[CN]Las trampas que detectes\n[CN]si usas un ataque convencional\n[CN]seguirán siendo invisibles.",
+                        });
+                        message_Mail({
+                            english="[CN]Also, you cannot be rescued.\n[CN]Is that OK?",
+                            french="[CN]En plus, personne ne peut venir vous secourir.\n[CN]C\'est d\'accord?",
+                            german="[CN]Außerdem kannst du nicht gerettet werden.\n[CN]Ist das okay?",
+                            italian="[CN]Inoltre, non puoi richiedere soccorso.\n[CN]Va bene?",
+                            spanish="[CN]Tampoco podrán rescatarte.\n[CN]¿Quieres continuar?",
+                        });
+                        jump @label_32;
+                    case 29:
+                        message_Mail({
+                            english="[CN]Caution![K]\n[CN]There are certain restrictions\n[CN]on going to [CS:P]Oblivion Forest[CR].",
+                            french="[CN]Attention![K]\n[CN]La [CS:P]Forêt de l\'Oubli[CR] est\n[CN]soumise à des restrictions.",
+                            german="[CN]Achtung![K]\n[CN]Der [CS:P]Vergessenswald[CR] unterliegt\n[CN]verschiedenen Einschränkungen.",
+                            italian="[CN]Attenzione![K]\n[CN]Ci sono alcune limitazioni\n[CN]nella [CS:P]Foresta Oblio[CR].",
+                            spanish="[CN]¡Atención![K]\n[CN]Explorarás con algunas desventajas\n[CN]si vas al [CS:P]Bosque Olvido[CR].",
+                        });
+                        message_Mail({
+                            english="[CN]All of your money and items from the 9th slot\n[CN]and beyond in your Treasure Bag will be lost...",
+                            french="[CN]Vous ne pourrez conserver que\n[CN]les 8 premiers objets de votre Sac à Trésor\n[CN]et vous perdrez tout votre argent...",
+                            german="[CN]All dein Geld sowie Items in deinem\n[CN]Schatzbeutel vom 9. Platz abwärts gehen\n[CN]verloren...",
+                            italian="[CN]Tutti i soldi e gli strumenti nella Sacca\n[CN]dei tesori dal 9° in poi andranno persi...",
+                            spanish="[CN]Perderás todo el dinero que lleves y todos\n[CN]los objetos de la Bolsa a partir del noveno...",
+                        });
+                        message_Mail({
+                            english="[CN]Any team members in the 3rd position and\n[CN]beyond will return to Treasure Town.",
+                            french="[CN]Seuls les deux premiers\n[CN]membres de l\'équipe sont autorisés à entrer,\n[CN]les autres retourneront à Bourg-Trésor.",
+                            german="[CN]Team-Mitglieder von der 3. Position an\n[CN]kehren zurück nach Schatzstadt.",
+                            italian="[CN]Oltre al leader, possono partecipare alla\n[CN]spedizione solo i primi due membri della\n[CN]squadra. Gli altri torneranno a Borgo Tesoro.",
+                            spanish="[CN]Los miembros del equipo a partir del\n[CN]tercero volverán a Aldea Tesoro.",
+                        });
+                        message_Mail({
+                            english="[CN]Also, you cannot be rescued.\n[CN]Is that OK?",
+                            french="[CN]En plus, personne ne peut venir vous secourir.\n[CN]C\'est d\'accord?",
+                            german="[CN]Außerdem kannst du nicht gerettet werden.\n[CN]Ist das okay?",
+                            italian="[CN]Inoltre, non puoi richiedere soccorso.\n[CN]Va bene?",
+                            spanish="[CN]Tampoco podrán rescatarte.\n[CN]¿Quieres continuar?",
+                        });
+                        jump @label_32;
+                    case 30:
+                        message_Mail({
+                            english="[CN]Caution![K]\n[CN]There are certain restrictions\n[CN]on going to the [CS:P]Treacherous Waters[CR].",
+                            french="[CN]Attention![K]\n[CN]La [CS:P]Mer Perfide[CR] est\n[CN]soumise à des restrictions.",
+                            german="[CN]Achtung![K]\n[CN]Die [CS:P]Trügerischen Gewässer[CR] unterliegen\n[CN]verschiedenen Einschränkungen.",
+                            italian="[CN]Attenzione![K]\n[CN]Ci sono alcune limitazioni\n[CN]nelle [CS:P]Acque Traditrici[CR].",
+                            spanish="[CN]¡Atención![K]\n[CN]Explorarás con algunas desventajas\n[CN]si vas a las [CS:P]Aguas Peligrosas[CR].",
+                        });
+                        message_Mail({
+                            english="[CN]All of your money and items from the 9th slot\n[CN]and beyond in your Treasure Bag will be lost...",
+                            french="[CN]Vous ne pourrez conserver que\n[CN]les 8 premiers objets de votre Sac à Trésor\n[CN]et vous perdrez tout votre argent...",
+                            german="[CN]All dein Geld sowie Items in deinem\n[CN]Schatzbeutel vom 9. Platz abwärts gehen\n[CN]verloren...",
+                            italian="[CN]Tutti i soldi e gli strumenti nella Sacca\n[CN]dei tesori dal 9° in poi andranno persi...",
+                            spanish="[CN]Perderás todo el dinero que lleves y todos\n[CN]los objetos de la Bolsa a partir del noveno...",
+                        });
+                        message_Mail({
+                            english="[CN]Any team members in the 3rd position and\n[CN]beyond will return to Treasure Town.",
+                            french="[CN]Seuls les deux premiers\n[CN]membres de l\'équipe sont autorisés à entrer,\n[CN]les autres retourneront à Bourg-Trésor.",
+                            german="[CN]Team-Mitglieder von der 3. Position an\n[CN]kehren zurück nach Schatzstadt.",
+                            italian="[CN]Oltre al leader, possono partecipare alla\n[CN]spedizione solo i primi due membri della\n[CN]squadra. Gli altri torneranno a Borgo Tesoro.",
+                            spanish="[CN]Los miembros del equipo a partir del\n[CN]tercero volverán a Aldea Tesoro.",
+                        });
+                        message_Mail({
+                            english="[CN]Also, you cannot be rescued.\n[CN]Is that OK?",
+                            french="[CN]En plus, personne ne peut venir vous secourir.\n[CN]C\'est d\'accord?",
+                            german="[CN]Außerdem kannst du nicht gerettet werden.\n[CN]Ist das okay?",
+                            italian="[CN]Inoltre, non puoi richiedere soccorso.\n[CN]Va bene?",
+                            spanish="[CN]Tampoco podrán rescatarte.\n[CN]¿Quieres continuar?",
+                        });
+                        jump @label_32;
+                    case 31:
+                        message_Mail({
+                            english="[CN]Caution![K]\n[CN]There are certain restrictions\n[CN]on going to the [CS:P]Southeastern Islands[CR].",
+                            french="[CN]Attention![K]\n[CN]Les [CS:P]Iles du Sud-Est[CR] sont\n[CN]soumises à des restrictions.",
+                            german="[CN]Achtung![K]\n[CN]Die [CS:P]Südöstlichen Inseln[CR] unterliegen\n[CN]verschiedenen Einschränkungen.",
+                            italian="[CN]Attenzione![K]\n[CN]Ci sono alcune limitazioni\n[CN]sulle [CS:P]Isole Sudorientali[CR].",
+                            spanish="[CN]¡Atención![K]\n[CN]Explorarás con algunas desventajas\n[CN]si vas al [CS:P]Archipiélago Sureste[CR].",
+                        });
+                        message_Mail({
+                            english="[CN]All of your money and items from the 9th slot\n[CN]and beyond in your Treasure Bag will be lost...",
+                            french="[CN]Vous ne pourrez conserver que\n[CN]les 8 premiers objets de votre Sac à Trésor\n[CN]et vous perdrez tout votre argent...",
+                            german="[CN]All dein Geld sowie Items in deinem\n[CN]Schatzbeutel vom 9. Platz abwärts gehen\n[CN]verloren...",
+                            italian="[CN]Tutti i soldi e gli strumenti nella Sacca\n[CN]dei tesori dal 9° in poi andranno persi...",
+                            spanish="[CN]Perderás todo el dinero que lleves y todos\n[CN]los objetos de la Bolsa a partir del noveno...",
+                        });
+                        message_Mail({
+                            english="[CN]Only the leader may enter...",
+                            french="[CN]Seul le meneur peut entrer dans le donjon...",
+                            german="[CN]Nur der Anführer darf den Dungeon betreten.",
+                            italian="[CN]Solo il leader può entrare...",
+                            spanish="[CN]Solo puede entrar el líder...",
+                        });
+                        message_Mail({
+                            english="[CN]Also, you cannot be rescued.\n[CN]Is that OK?",
+                            french="[CN]En plus, personne ne peut venir vous secourir.\n[CN]C\'est d\'accord?",
+                            german="[CN]Außerdem kannst du nicht gerettet werden.\n[CN]Ist das okay?",
+                            italian="[CN]Inoltre, non puoi richiedere soccorso.\n[CN]Va bene?",
+                            spanish="[CN]Tampoco podrán rescatarte.\n[CN]¿Quieres continuar?",
+                        });
+                        jump @label_32;
+                    case 32:
+                        message_Mail({
+                            english="[CN]Caution![K]\n[CN]There are certain restrictions\n[CN]on going to [CS:P]Inferno Cave[CR].",
+                            french="[CN]Attention![K]\n[CN]La [CS:P]Caverne Brasier[CR] est\n[CN]soumise à des restrictions.",
+                            german="[CN]Achtung![K]\n[CN]Die [CS:P]Infernohöhle[CR] unterliegt\n[CN]verschiedenen Einschränkungen.",
+                            italian="[CN]Attenzione![K]\n[CN]Ci sono alcune limitazioni\n[CN]nella [CS:P]Grotta Infuocata[CR].",
+                            spanish="[CN]¡Atención![K]\n[CN]Explorarás con algunas desventajas\n[CN]si vas a la [CS:P]Cueva Flama[CR].",
+                        });
+                        message_Mail({
+                            english="[CN]All of your money and items from the 9th slot\n[CN]and beyond in your Treasure Bag will be lost...",
+                            french="[CN]Vous ne pourrez conserver que\n[CN]les 8 premiers objets de votre Sac à Trésor\n[CN]et vous perdrez tout votre argent...",
+                            german="[CN]All dein Geld sowie Items in deinem\n[CN]Schatzbeutel vom 9. Platz abwärts gehen\n[CN]verloren...",
+                            italian="[CN]Tutti i soldi e gli strumenti nella Sacca\n[CN]dei tesori dal 9° in poi andranno persi...",
+                            spanish="[CN]Perderás todo el dinero que lleves y todos\n[CN]los objetos de la Bolsa a partir del noveno...",
+                        });
+                        message_Mail({
+                            english="[CN]Only the leader may enter...",
+                            french="[CN]Seul le meneur peut entrer dans le donjon...",
+                            german="[CN]Nur der Anführer darf den Dungeon betreten.",
+                            italian="[CN]Solo il leader può entrare...",
+                            spanish="[CN]Solo puede entrar el líder...",
+                        });
+                        message_Mail({
+                            english="[CN]Also, you cannot be rescued.\n[CN]Is that OK?",
+                            french="[CN]En plus, personne ne peut venir vous secourir.\n[CN]C\'est d\'accord?",
+                            german="[CN]Außerdem kannst du nicht gerettet werden.\n[CN]Ist das okay?",
+                            italian="[CN]Inoltre, non puoi richiedere soccorso.\n[CN]Va bene?",
+                            spanish="[CN]Tampoco podrán rescatarte.\n[CN]¿Quieres continuar?",
+                        });
+                        jump @label_32;
+                    case 33:
+                        message_Mail({
+                            english="[CN]Caution![K]\n[CN]You cannot be rescued in [CS:P]Star Cave[CR].\n[CN]Is that OK?",
+                            french="[CN]Attention![K]\n[CN]Personne ne peut venir vous secourir dans\n[CN]la [CS:P]Caverne Etoile[CR]. C\'est d\'accord?",
+                            german="[CN]Achtung![K]\n[CN]Du kannst in der [CS:P]Sternenhöhle[CR] nicht gerettet\n[CN]werden. Ist das okay?",
+                            italian="[CN]Attenzione![K]\n[CN]Non potete richiedere soccorso nella [CS:P]Caverna[CR]\n[CN][CS:P]Stellata[CR]. Va bene?",
+                            spanish="[CN]¡Atención![K]\n[CN]No se te podrá rescatar de la [CS:P]Cueva Estrella[CR].\n[CN]¿Quieres continuar?",
+                        });
+                        jump @label_32;
+                    case 18:
+                        if ( not debug ) {
+                            jump @label_5;
+                        } else {
+                            message_Notice({
+                                english="[CS:W]Dungeon Settings Error 1\nRestrictions have been applied to dungeons\nother than Zero Isle.[CR]",
+                                french="[CS:W]Paramètres donjon - erreur 1\nDes restrictions ont été appliquées à tous\nles donjons sauf l\'Ile Zéro.[CR]",
+                                german="[CS:W]Dungeon-Einstellungsfehler 1\nAllen Dungeons mit Ausnahme der Null-Insel\nwurden Einschränkungen auferlegt.[CR]",
+                                italian="[CS:W]Impostazioni Dungeon Errore 1\nLe limitazioni sono state applicate ai dungeon \ndiversi dall\'Isola Zero.[CR]",
+                                spanish="[CS:W]Error 1 de configuración de territorio:\nHay más restricciones en otros territorios\nademás de en la Isla Cero.[CR]",
+                            });
+                            jump @label_32;
+                        }
+                        break;
+                    case 19:
+                        if ( not debug ) {
+                            jump @label_5;
+                        } else {
+                            message_Notice({
+                                english="[CS:W]Dungeon Settings Error 2\nRestrictions have been applied to dungeons\nother than Zero Isle.[CR]",
+                                french="[CS:W]Paramètres donjon - erreur 2\nDes restrictions ont été appliquées à tous\nles donjons sauf l\'Ile Zéro.[CR]",
+                                german="[CS:W]Dungeon-Einstellungsfehler 2\nAllen Dungeons mit Ausnahme der Null-Insel\nwurden Einschränkungen auferlegt.[CR]",
+                                italian="[CS:W]Impostazioni Dungeon Errore 2\nLe limitazioni sono state applicate ai dungeon \ndiversi dall\'Isola Zero.[CR]",
+                                spanish="[CS:W]Error 2 de configuración de territorio:\nHay más restricciones en otros territorios\nademás de en la Isla Cero.[CR]",
+                            });
+                            jump @label_32;
+                        }
+                        break;
+                    default:
+                        jump @label_5;
+                }
+            } elseif ( scn($SCENARIO_SIDE) >= [40, 2] ) {
+                with (actor ACTOR_PLAYER_BIPPA) {
+                    Turn2Direction(4, 10, DIR_RIGHT);
+                }
+                WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+                jump @label_3;
+            } else {
+                supervision_ExecuteCommon(CORO_EVENT_N01_04);
+                jump @label_5;
+            }
+            break;
+        case 2:
+            with (actor ACTOR_PLAYER_KIMAWARI) {
+                SetAnimation(2);
+            }
+            jump @label_3;
+        default:
+            if ( scn($SCENARIO_MAIN) < [6, 3] ) {
+                §label_6;
+                with (actor ACTOR_ATTENDANT1) {
+                    SetAnimation(2);
+                }
+                with (actor ACTOR_PLAYER) {
+                    SetAnimation(2);
+                }
+                if ( scn($SCENARIO_MAIN) == [29, 48] ) {
+                    supervision_ExecuteCommon(CORO_EVENT_S03_12);
+                    §label_8;
+                    with (actor ACTOR_ATTENDANT1) {
+                        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+                    }
+                    WaitExecuteLives(ACTOR_ATTENDANT1);
+                    with (actor ACTOR_PLAYER) {
+                        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+                    }
+                    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+                    message_SwitchTalk ($PARTNER_TALK_KIND) {
+                        case 1:
+                            {
+                                english=" We have to get ready first,\n[hero].",
+                                french=" On doit d\'abord se préparer,\n[hero].",
+                                german=" Wir müssen uns erst fertig\nmachen, [hero].",
+                                italian=" Prima dobbiamo prepararci,\n[hero].",
+                                spanish=" ¡¿Dónde vas, [hero]?!\nPrimero tenemos que prepararnos.",
+                            }
+                        case 2:
+                            {
+                                english=" We have to get ready first,\n[hero].",
+                                french=" On doit d\'abord se préparer,\n[hero].",
+                                german=" Wir müssen uns erst fertig\nmachen, [hero].",
+                                italian=" Prima dobbiamo prepararci,\n[hero].",
+                                spanish=" Primero tenemos que\nprepararnos, [hero].",
+                            }
+                        default:
+                            {
+                                english=" We have to get ready first,\n[hero].",
+                                french=" On doit d\'abord se préparer,\n[hero].",
+                                german=" Wir müssen uns erst fertig\nmachen, [hero].",
+                                italian=" Prima dobbiamo prepararci,\n[hero].",
+                                spanish=" Espera, [hero]. ¿Qué te\nparece si nos preparamos primero?",
+                            }
+                    }
+                    message_SwitchTalk ($PARTNER_TALK_KIND) {
+                        case 1:
+                            {
+                                english=" Let\'s go to Treasure Town.",
+                                french=" Allons à Bourg-Trésor.",
+                                german=" Auf nach Schatzstadt.",
+                                italian=" Andiamo a Borgo Tesoro.",
+                                spanish=" Venga, en marcha a Aldea\nTesoro.",
+                            }
+                        case 2:
+                            {
+                                english=" Let\'s go to Treasure Town.",
+                                french=" Allons à Bourg-Trésor.",
+                                german=" Auf nach Schatzstadt.",
+                                italian=" Andiamo a Borgo Tesoro.",
+                                spanish=" Vamos a Aldea Tesoro.",
+                            }
+                        default:
+                            {
+                                english=" Let\'s go to Treasure Town.",
+                                french=" Allons à Bourg-Trésor.",
+                                german=" Auf nach Schatzstadt.",
+                                italian=" Andiamo a Borgo Tesoro.",
+                                spanish=" Vayamos a Aldea Tesoro.",
+                            }
+                    }
+                    jump @label_5;
+                } elseif ( scn($SCENARIO_MAIN) == [29, 1] ) {
+                    jump @label_8;
+                } elseif ( scn($SCENARIO_MAIN) == [14, 1] ) {
+                    with (actor ACTOR_ATTENDANT1) {
+                        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+                    }
+                    WaitExecuteLives(ACTOR_ATTENDANT1);
+                    with (actor ACTOR_PLAYER) {
+                        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+                    }
+                    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+                    message_SwitchTalk ($PARTNER_TALK_KIND) {
+                        case 1:
+                            {
+                                english=" No, we can\'t, [hero].",
+                                french=" Non, on ne peut pas,\n[hero].",
+                                german=" Nein, hier können wir jetzt nicht\nlang, [hero].",
+                                italian=" No, non possiamo, [hero].",
+                                spanish=" ¡Eh!, [hero]. No podemos\nirnos.",
+                            }
+                        case 2:
+                            {
+                                english=" No, we can\'t, [hero].",
+                                french=" Non, on ne peut pas,\n[hero].",
+                                german=" Nein, hier können wir jetzt nicht\nlang, [hero].",
+                                italian=" No, non possiamo, [hero].",
+                                spanish=" [hero], no podemos irnos.",
+                            }
+                        default:
+                            {
+                                english=" No, we can\'t, [hero].",
+                                french=" Non, on ne peut pas,\n[hero].",
+                                german=" Nein, hier können wir jetzt nicht\nlang, [hero].",
+                                italian=" No, non possiamo, [hero].",
+                                spanish=" No podemos irnos, [hero].",
+                            }
+                    }
+                    message_SwitchTalk ($PARTNER_TALK_KIND) {
+                        case 1:
+                            {
+                                english=" We have to get ready for\ncapturing [CS:N]Grovyle[CR], right?",
+                                french=" On doit se préparer à la capture\nde [CS:N]Massko[CR], pas vrai?",
+                                german=" Wir müssen uns für die\nErgreifung von [CS:N]Reptain[CR] fertig machen.",
+                                italian=" Dobbiamo prepararci per\ncatturare [CS:N]Grovyle[CR], no?",
+                                spanish=" Nos tenemos que preparar para\natrapar a [CS:N]Grovyle[CR], ¿no?",
+                            }
+                        case 2:
+                            {
+                                english=" We\'re supposed to get ready for\ncapturing [CS:N]Grovyle[CR] first, right?",
+                                french=" On doit se préparer à la capture\nde [CS:N]Massko[CR], pas vrai?",
+                                german=" Wir sollten uns für die\nErgreifung von [CS:N]Reptain[CR] fertig machen.",
+                                italian=" Prima dovremmo prepararci\nper catturare [CS:N]Grovyle[CR], no?",
+                                spanish=" ¿No se supone que tenemos que\nprepararnos para atrapar a [CS:N]Grovyle[CR] primero?",
+                            }
+                        default:
+                            {
+                                english=" Aren\'t we supposed to get ready\nfor capturing [CS:N]Grovyle[CR] first?",
+                                french=" On doit se préparer à la capture\nde [CS:N]Massko[CR], pas vrai?",
+                                german=" Sollten wir uns nicht für\ndie Ergreifung von [CS:N]Reptain[CR] fertig machen?",
+                                italian=" Prima non dovremmo prepararci\nper catturare [CS:N]Grovyle[CR]?",
+                                spanish=" ¿Acaso no tenemos primero que\nprepararnos para capturar a [CS:N]Grovyle[CR]?",
+                            }
+                    }
+                    message_SwitchTalk ($PARTNER_TALK_KIND) {
+                        case 1:
+                            {
+                                english=" Let\'s get back to the guild as\nsoon as we\'re ready.",
+                                french=" Retournons à la Guilde dès que\nnous serons prêts.",
+                                german=" Gehen wir zur Gilde zurück,\nsobald wir bereit sind.",
+                                italian=" Torniamo alla Gilda appena\nè tutto pronto.",
+                                spanish=" Venga, volvamos al [CS:N]Pokégremio[CR]\nen cuanto esté todo listo.",
+                            }
+                        case 2:
+                            {
+                                english=" Let\'s go back to the guild as\nsoon as we\'re ready.",
+                                french=" Retournons à la Guilde dès que\nnous serons prêts.",
+                                german=" Lass uns zur Gilde zurückgehen,\nsobald wir bereit sind.",
+                                italian=" Torniamo alla Gilda appena\nè tutto pronto.",
+                                spanish=" Venga, volvamos al [CS:N]Pokégremio[CR]\nen cuanto esté todo listo.",
+                            }
+                        default:
+                            {
+                                english=" We\'ll go back to the guild as\nsoon as we\'re ready.",
+                                french=" Retournons à la Guilde une fois\nnos préparatifs terminés.",
+                                german=" Wir werden zur Gilde\nzurückgehen, sobald wir bereit sind.",
+                                italian=" Non appena è tutto pronto,\ntorniamo alla Gilda.",
+                                spanish=" Venga, volvamos al [CS:N]Pokégremio[CR]\nen cuanto esté todo listo.",
+                            }
+                    }
+                    jump @label_5;
+                } elseif ( scn($SCENARIO_MAIN) == [9, 1] ) {
+                    with (actor ACTOR_ATTENDANT1) {
+                        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+                    }
+                    WaitExecuteLives(ACTOR_ATTENDANT1);
+                    with (actor ACTOR_PLAYER) {
+                        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+                    }
+                    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+                    message_SwitchTalk ($PARTNER_TALK_KIND) {
+                        case 1:
+                            {
+                                english=" If we dawdle now, they\'ll go\nwithout us on the expedition!",
+                                french=" Si on traîne maintenant,\nl\'expédition risque de partir sans nous!",
+                                german=" Wenn wir jetzt trödeln, gehen\nsie noch ohne uns auf die Expedition!",
+                                italian=" Se perdiamo tempo adesso, \npartiranno per la spedizione senza di noi!",
+                                spanish=" Venga, no te entretengas,\n¡que se irán a la expedición sin nosotros!",
+                            }
+                        case 2:
+                            {
+                                english=" If we dawdle now, they\'ll leave\nus behind on the expedition!",
+                                french=" Si on traîne maintenant,\nl\'expédition risque de partir sans nous!",
+                                german=" Wenn wir jetzt trödeln, lassen\nsie uns noch zurück!",
+                                italian=" Se perdiamo tempo adesso, \nnon ci aspetteranno per la spedizione!",
+                                spanish=" ¡Si perdemos el tiempo, se irán\nsin nosotros a la expedición!",
+                            }
+                        default:
+                            {
+                                english=" If we\'re late now, they\'ll leave\nus behind on the expedition!",
+                                french=" Si on traîne maintenant,\nl\'expédition risque de partir sans nous!",
+                                german=" Wenn wir zu spät dran sind,\nlassen sie uns noch zurück!",
+                                italian=" Se perdiamo tempo adesso, \nnon ci aspetteranno per la spedizione!",
+                                spanish=" ¡Como nos retrasemos se irán\nde expedición sin esperarnos!",
+                            }
+                    }
+                    message_SwitchTalk ($PARTNER_TALK_KIND) {
+                        case 1:
+                            {
+                                english=" When we\'re ready to leave on\nthe expedition, we have to go back to\nthe guild.",
+                                french=" Quand on sera prêts pour\nl\'expédition, il faudra qu\'on retourne\nà la Guilde.",
+                                german=" Wenn wir bereit sind, zu der\nExpedition aufzubrechen, müssen wir uns\nzurück zur Gilde begeben.",
+                                italian=" Quando è tutto pronto per la\npartenza, dobbiamo tornare alla Gilda.",
+                                spanish=" Cuando lo tengamos todo listo\npara ir a la expedición, hay que volver\nal [CS:N]Pokégremio[CR].",
+                            }
+                        case 2:
+                            {
+                                english=" When we\'re ready for the\nexpedition, we have to go back to the guild.",
+                                french=" Quand on sera prêts pour\nl\'expédition, il faudra qu\'on retourne\nà la Guilde.",
+                                german=" Wenn wir bereit sind für die\nExpedition, müssen wir uns zurück zur Gilde\nbegeben.",
+                                italian=" Quando è tutto pronto per la\npartenza, dobbiamo tornare alla Gilda.",
+                                spanish=" Cuando lo tengamos todo listo\npara ir a la expedición, hay que volver\nal [CS:N]Pokégremio[CR].",
+                            }
+                        default:
+                            {
+                                english=" When we\'re ready for the\nexpedition, we have to go back to the guild.",
+                                french=" Retournons à la Guilde une fois\nnos préparatifs pour l\'expédition terminés.",
+                                german=" Wenn wir bereit sind für die\nExpedition, müssen wir uns zurück zur Gilde\nbegeben.",
+                                italian=" Quando è tutto pronto per la\npartenza, dobbiamo tornare alla Gilda.",
+                                spanish=" Cuando lo tengamos todo listo\npara ir a la expedición, hay que volver\nal [CS:N]Pokégremio[CR].",
+                            }
+                    }
+                    message_SwitchTalk ($PARTNER_TALK_KIND) {
+                        case 1:
+                            {
+                                english=" We have to let [CS:N]Chatot[CR] know\nwe\'re ready!",
+                                french=" Il faut avertir [CS:N]Pijako[CR]\nqu\'on est prêts!",
+                                german=" Wir müssen [CS:N]Plaudagei[CR] mitteilen,\ndass wir bereit sind!",
+                                italian=" Dobbiamo dire a [CS:N]Chatot[CR] che\nè tutto pronto.",
+                                spanish=" ¡Hay que decirle a [CS:N]Chatot[CR] \nque lo tenemos todo listo!",
+                            }
+                        case 2:
+                            {
+                                english=" We have to report in to [CS:N]Chatot[CR]!",
+                                french=" Il faut avertir [CS:N]Pijako[CR]\nqu\'on est prêts!",
+                                german=" Wir müssen [CS:N]Plaudagei[CR]\ninformieren, dass wir bereit sind!",
+                                italian=" Dobbiamo dire a [CS:N]Chatot[CR] che\nè tutto pronto.",
+                                spanish=" ¡Hay que decirle a [CS:N]Chatot[CR] \nque lo tenemos todo listo!",
+                            }
+                        default:
+                            {
+                                english=" We have to let [CS:N]Chatot[CR] know\nwe\'re ready!",
+                                french=" Il faut avertir [CS:N]Pijako[CR]\nque notre équipe est parée!",
+                                german=" Wir müssen [CS:N]Plaudagei[CR] mitteilen,\ndass wir bereit sind!",
+                                italian=" Dobbiamo dire a [CS:N]Chatot[CR] che\nè tutto pronto.",
+                                spanish=" ¡Hay que decirle a [CS:N]Chatot[CR] \nque lo tenemos todo listo!",
+                            }
+                    }
+                    jump @label_5;
+                } elseif ( scn($SCENARIO_MAIN) < [4, 5] ) {
+                    with (actor ACTOR_ATTENDANT1) {
+                        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+                    }
+                    WaitExecuteLives(ACTOR_ATTENDANT1);
+                    with (actor ACTOR_PLAYER) {
+                        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+                    }
+                    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+                    message_SwitchTalk ($PARTNER_TALK_KIND) {
+                        case 1:
+                            {
+                                english=" We don\'t have the time to\nwander off.",
+                                french=" On n\'a pas le temps de traîner.",
+                                german=" Wir haben keine Zeit zum\nHerumschweifen.",
+                                italian=" Non c\'è tempo di andare in giro.",
+                                spanish=" No hay tiempo que perder.",
+                            }
+                        case 2:
+                            {
+                                english=" This is no time to be dawdling.",
+                                french=" On n\'a pas le temps de traîner.",
+                                german=" Das ist nicht die richtige Zeit\nzum Bummeln.",
+                                italian=" Non c\'è tempo da perdere.",
+                                spanish=" No deberíamos perder el tiempo.",
+                            }
+                        default:
+                            {
+                                english=" We can\'t take any detours.",
+                                french=" On n\'a pas le temps de traîner.",
+                                german=" Wir können uns keine Umwege\nerlauben.",
+                                italian=" Dobbiamo fare in fretta.",
+                                spanish=" Será mejor que no perdamos\nel tiempo.",
+                            }
+                    }
+                    message_SwitchTalk ($PARTNER_TALK_KIND) {
+                        case 1:
+                            {
+                                english=" We have to do the guild\'s\nwork now.",
+                                french=" On doit accomplir la mission\npour la Guilde.",
+                                german=" Wir müssen jetzt die\nGildenarbeit erledigen.",
+                                italian=" Ora dobbiamo fare il lavoro\ndella Gilda.",
+                                spanish=" Ahora tenemos que hacer el\ntrabajo del [CS:N]Pokégremio[CR].",
+                            }
+                        case 2:
+                            {
+                                english=" We have to do the guild\'s\nwork now.",
+                                french=" On doit accomplir la mission\npour la Guilde.",
+                                german=" Wir müssen jetzt die\nGildenarbeit erledigen.",
+                                italian=" Ora dobbiamo dedicarci al lavoro\ndella Gilda.",
+                                spanish=" Ahora tenemos que hacer las\ntareas del [CS:N]Pokégremio[CR].",
+                            }
+                        default:
+                            {
+                                english=" We have the guild\'s work to\ndo now.",
+                                french=" On doit accomplir la mission\npour la Guilde.",
+                                german=" Die Gildenarbeit muss jetzt\nerledigt werden.",
+                                italian=" Ora dobbiamo dedicarci al lavoro\ndella Gilda.",
+                                spanish=" Ahora tenemos que hacer el\ntrabajo del [CS:N]Pokégremio[CR].",
+                            }
+                    }
+                    message_SwitchTalk ($PARTNER_TALK_KIND) {
+                        case 1:
+                            {
+                                english=" [CS:N]Bidoof[CR]\'s waiting at the guild.\nLet\'s move it!",
+                                french=" [CS:N]Keunotor[CR] nous attend à la Guilde.\nAllons-y!",
+                                german=" [CS:N]Bidiza[CR] wartet in der Gilde.\nKomm schon, gehen wir!",
+                                italian=" [CS:N]Bidoof[CR] sta aspettando alla Gilda.\nMuoviamoci!",
+                                spanish=" ¡Venga, a moverse, que [CS:N]Bidoof[CR]\nnos espera en el [CS:N]Pokégremio[CR]!",
+                            }
+                        case 2:
+                            {
+                                english=" [CS:N]Bidoof[CR]\'s waiting at the guild.\nLet\'s get going!",
+                                french=" [CS:N]Keunotor[CR] nous attend à la Guilde.\nAllons-y!",
+                                german=" [CS:N]Bidiza[CR] wartet in der Gilde.\nAuf geht\'s!",
+                                italian=" [CS:N]Bidoof[CR] sta aspettando alla Gilda.\nAndiamo!",
+                                spanish=" [CS:N]Bidoof[CR] nos espera en el\n[CS:N]Pokégremio[CR]. ¡Vámonos!",
+                            }
+                        default:
+                            {
+                                english=" [CS:N]Bidoof[CR]\'s waiting at the guild.\nWe have to hurry!",
+                                french=" [CS:N]Keunotor[CR] nous attend à la Guilde.\nAllons-y!",
+                                german=" [CS:N]Bidiza[CR] wartet in der Gilde.\nWir müssen uns beeilen!",
+                                italian=" [CS:N]Bidoof[CR] sta aspettando alla Gilda.\nFacciamo in fretta!",
+                                spanish=" [CS:N]Bidoof[CR] nos espera en el\n[CS:N]Pokégremio[CR]. ¡Démonos prisa!",
+                            }
+                    }
+                    jump @label_5;
+                } else {
+                    jump @label_3;
+                }
+            } else {
+                $PERFORMANCE_PROGRESS_LIST[5] = 1;
+                jump @label_6;
+            }
+            break;
+    }
+}
+
+def 1 for_actor(ACTOR_PLAYER) {
+    hold;
+}

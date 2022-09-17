@@ -31,8 +31,55 @@ def 0 {
         screen_FadeOutAll(1, 0);
         screen_FadeIn(1, 0);
         message_Close();
-        switch ( message_Menu(MENU_PERSONALITY_TEST) ) { }
-        §label_36;
+        screen2_FadeOut(0, 0);
+        screen_FadeOutAll(1, 0);
+        screen2_FlushIn(1, 0, 2, 0, 0, 0);
+        back_SetGround(LEVEL_S02P01A);
+        back2_SetGround(LEVEL_S02P01A);
+        bgm_PlayFadeIn(BGM_WELCOME_TO_THE_WORLD_OF_POKEMON, 0, 256);
+        screen2_FadeIn(0, 30);
+        screen_FadeInAll(1, 30);
+        message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="Did you play \"Explorers of Time\" or \"Explorers\nof Darkness?\"",
+                french="Avez-vous joué à \"Explorateurs du Temps\"\nou \"Explorateurs de l'Ombre?\"",
+                german="Hast du [F:S2]Erkundungsteam Zeit[F:E2] bzw.\n[F:S2]Erkundungsteam Dunkelheit[F:E2] gespielt?",
+                italian="Hai giocato a \"Esploratori del tempo\"\no a \"Esploratori dell'oscurità?\"",
+                spanish="¿Has jugado a \"Exploradores del tiempo\"o a\n\"Exploradores de la oscuridad?\"",
+            }
+        default:
+            {
+                english="Did you play \"Explorers of Time\" or \"Explorers\nof Darkness?\"",
+                french="Avez-vous joué à \"Explorateurs du Temps\"\nou \"Explorateurs de l'Ombre?\"",
+                german="Hast du [F:S2]Erkundungsteam Zeit[F:E2] bzw.\n[F:S2]Erkundungsteam Dunkelheit[F:E2] gespielt?",
+                italian="Hai giocato a \"Esploratori del tempo\"\no a \"Esploratori dell'oscurità?\"",
+                spanish="¿Has jugado a \"Exploradores del tiempo\"o a\n\"Exploradores de la oscuridad?\"",
+            }
+        }
+        switch ( message_SwitchMenu(0, 1) ) {
+            case menu({
+                english="Yes.",
+                french="Oui.",
+                german="Ja",
+                italian="Sì.",
+                spanish="Sí",
+            }):
+            default:
+                switch ( message_Menu(MENU_PERSONALITY_TEST) ) { }
+                $PLAY_OLD_GAME = 1;
+                break;
+            case menu({
+                english="No.",
+                french="Non.",
+                german="Nein",
+                italian="No.",
+                spanish="No",
+            }):
+                switch ( message_Menu(MENU_PERSONALITY_TEST) ) { }
+                $PLAY_OLD_GAME = 0;
+        }
+        §label_37;
         forever {
             switch ( message_Menu(MENU_PERSONALITY_TEST_CONTINUE) ) {
                 case 1:
@@ -269,12 +316,6 @@ def 0 {
                     continue;  // may be redundant
                 case 28:
                     debug_Print('DIAGNOSIS_BLACK2');
-                    screen2_FadeOut(0, 0);
-                    screen_FadeOutAll(1, 0);
-                    back2_SetGround(LEVEL_S04P01A);
-                    back_SetGround(LEVEL_S04P01A);
-                    screen2_FadeIn(0, 30);
-                    screen_FadeInAll(1, 30);
                     continue;  // may be redundant
                 case 29:
                     debug_Print('DIAGNOSIS_BLACK3');
@@ -286,14 +327,6 @@ def 0 {
                     screen_FadeInAll(1, 30);
                     continue;  // may be redundant
                 case 30:
-                    screen2_FadeOut(0, 0);
-                    screen_FadeOutAll(1, 0);
-                    screen2_FlushIn(1, 0, 2, 0, 0, 0);
-                    back_SetGround(LEVEL_S02P01A);
-                    back2_SetGround(LEVEL_S02P01A);
-                    bgm_PlayFadeIn(BGM_WELCOME_TO_THE_WORLD_OF_POKEMON, 0, 256);
-                    screen2_FadeIn(0, 30);
-                    screen_FadeInAll(1, 30);
                     continue;  // may be redundant
                 case 31:
                     debug_Print('DIAGNOSIS_CONTINUE_1AS');
@@ -317,17 +350,17 @@ def 0 {
         }
         debug_Print('DIAGNOSIS_CONTINUE_END');
         switch ( message_Menu(MENU_PERSONALITY_TEST_END) ) { }
-        §label_35;
+        §label_3;
         switch ( ProcessSpecial(PROCESS_SPECIAL_INIT_MAIN_TEAM_AFTER_QUIZ, 0, 0) ) { }
         switch ( $EVENT_LOCAL ) {
             case 1:
-                §label_37;
+                §label_38;
                 back2_SetMode(0);
                 end;
             default:
                 if ( debug ) {
                     back2_SetMode(0);
-                    §label_160;
+                    §label_298;
                     message_Notice({
                         english="[M:D2][CS:W]Memo: Start from which Scenario?[CR]",
                         french="[M:D2][CS:W]Memo: Start from which Scenario?[CR]",
@@ -428,7 +461,7 @@ def 0 {
                                     italian="[M:D2]Dialogue Check",
                                     spanish="[M:D2]Dialogue Check",
                                 }):
-                                    §label_83;
+                                    §label_85;
                                     message_Close();
                                     dungeon_mode(6) = DMODE_OPEN_AND_REQUEST;
                                     dungeon_mode(175) = DMODE_OPEN_AND_REQUEST;
@@ -449,7 +482,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M02-01",
                                         }):
                                             $SCENARIO_MAIN = scn[3, 1];
-                                            §label_294;
+                                            §label_209;
                                             message_Close();
                                             main_EnterGround(LEVEL_P01P01A, 30);
                                             hold;
@@ -461,7 +494,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M03-01B",
                                         }):
                                             $SCENARIO_MAIN = scn[4, 0];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M03-02",
                                             french="[M:D2]TALK-M03-02",
@@ -470,7 +503,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M03-02",
                                         }):
                                             $SCENARIO_MAIN = scn[4, 1];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M03-03",
                                             french="[M:D2]TALK-M03-03",
@@ -479,7 +512,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M03-03",
                                         }):
                                             $SCENARIO_MAIN = scn[4, 2];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M03-04",
                                             french="[M:D2]TALK-M03-04",
@@ -488,7 +521,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M03-04",
                                         }):
                                             $SCENARIO_MAIN = scn[4, 3];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M03-06",
                                             french="[M:D2]TALK-M03-06",
@@ -497,7 +530,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M03-06",
                                         }):
                                             $SCENARIO_MAIN = scn[4, 5];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M03-08",
                                             french="[M:D2]TALK-M03-08",
@@ -506,7 +539,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M03-08",
                                         }):
                                             $SCENARIO_MAIN = scn[4, 7];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M04-03",
                                             french="[M:D2]TALK-M04-03",
@@ -515,7 +548,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M04-03",
                                         }):
                                             $SCENARIO_MAIN = scn[5, 5];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M05-02",
                                             french="[M:D2]TALK-M05-02",
@@ -524,7 +557,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M05-02",
                                         }):
                                             $SCENARIO_MAIN = scn[6, 1];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M05-04",
                                             french="[M:D2]TALK-M05-04",
@@ -533,7 +566,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M05-04",
                                         }):
                                             $SCENARIO_MAIN = scn[6, 5];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M06-02",
                                             french="[M:D2]TALK-M06-02",
@@ -542,7 +575,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M06-02",
                                         }):
                                             $SCENARIO_MAIN = scn[7, 1];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M06-03",
                                             french="[M:D2]TALK-M06-03",
@@ -551,7 +584,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M06-03",
                                         }):
                                             $SCENARIO_MAIN = scn[7, 2];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M06-035",
                                             french="[M:D2]TALK-M06-035",
@@ -560,7 +593,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M06-035",
                                         }):
                                             $SCENARIO_MAIN = scn[7, 3];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M06-05",
                                             french="[M:D2]TALK-M06-05",
@@ -569,7 +602,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M06-05",
                                         }):
                                             $SCENARIO_MAIN = scn[7, 6];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M07-02",
                                             french="[M:D2]TALK-M07-02",
@@ -578,7 +611,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M07-02",
                                         }):
                                             $SCENARIO_MAIN = scn[8, 1];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M07-04",
                                             french="[M:D2]TALK-M07-04",
@@ -587,7 +620,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M07-04",
                                         }):
                                             $SCENARIO_MAIN = scn[8, 2];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M07-06",
                                             french="[M:D2]TALK-M07-06",
@@ -596,7 +629,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M07-06",
                                         }):
                                             $SCENARIO_MAIN = scn[8, 4];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M07-065",
                                             french="[M:D2]TALK-M07-065",
@@ -616,7 +649,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M07-067",
                                         }):
                                             $SCENARIO_MAIN = scn[8, 6];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M07-08",
                                             french="[M:D2]TALK-M07-08",
@@ -625,7 +658,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M07-08",
                                         }):
                                             $SCENARIO_MAIN = scn[8, 7];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M08-02",
                                             french="[M:D2]TALK-M08-02",
@@ -634,7 +667,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M08-02",
                                         }):
                                             $SCENARIO_MAIN = scn[9, 1];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M11-02",
                                             french="[M:D2]TALK-M11-02",
@@ -643,7 +676,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M11-02",
                                         }):
                                             $SCENARIO_MAIN = scn[12, 1];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M11-04",
                                             french="[M:D2]TALK-M11-04",
@@ -652,7 +685,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M11-04",
                                         }):
                                             $SCENARIO_MAIN = scn[12, 3];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M11-05",
                                             french="[M:D2]TALK-M11-05",
@@ -661,7 +694,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M11-05",
                                         }):
                                             $SCENARIO_MAIN = scn[12, 4];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M12-02",
                                             french="[M:D2]TALK-M12-02",
@@ -670,7 +703,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M12-02",
                                         }):
                                             $SCENARIO_MAIN = scn[13, 1];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M12-04",
                                             french="[M:D2]TALK-M12-04",
@@ -679,7 +712,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M12-04",
                                         }):
                                             $SCENARIO_MAIN = scn[13, 2];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M13-01",
                                             french="[M:D2]TALK-M13-01",
@@ -688,7 +721,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M13-01",
                                         }):
                                             $SCENARIO_MAIN = scn[14, 1];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M13-02",
                                             french="[M:D2]TALK-M13-02",
@@ -697,7 +730,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M13-02",
                                         }):
                                             $SCENARIO_MAIN = scn[14, 2];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M13-04",
                                             french="[M:D2]TALK-M13-04",
@@ -706,7 +739,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M13-04",
                                         }):
                                             $SCENARIO_MAIN = scn[14, 4];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M13-06",
                                             french="[M:D2]TALK-M13-06",
@@ -715,7 +748,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M13-06",
                                         }):
                                             $SCENARIO_MAIN = scn[14, 6];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M14-02",
                                             french="[M:D2]TALK-M14-02",
@@ -724,7 +757,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M14-02",
                                         }):
                                             $SCENARIO_MAIN = scn[15, 1];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M14-05",
                                             french="[M:D2]TALK-M14-05",
@@ -733,7 +766,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M14-05",
                                         }):
                                             $SCENARIO_MAIN = scn[15, 4];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M15-01",
                                             french="[M:D2]TALK-M15-01",
@@ -742,7 +775,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M15-01",
                                         }):
                                             $SCENARIO_MAIN = scn[16, 0];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M15-02",
                                             french="[M:D2]TALK-M15-02",
@@ -751,7 +784,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M15-02",
                                         }):
                                             $SCENARIO_MAIN = scn[16, 2];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M16-01",
                                             french="[M:D2]TALK-M16-01",
@@ -760,7 +793,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M16-01",
                                         }):
                                             $SCENARIO_MAIN = scn[17, 1];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M16-03",
                                             french="[M:D2]TALK-M16-03",
@@ -769,7 +802,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M16-03",
                                         }):
                                             $SCENARIO_MAIN = scn[17, 3];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M17-01",
                                             french="[M:D2]TALK-M17-01",
@@ -778,7 +811,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M17-01",
                                         }):
                                             $SCENARIO_MAIN = scn[18, 1];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M17-02",
                                             french="[M:D2]TALK-M17-02",
@@ -787,7 +820,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M17-02",
                                         }):
                                             $SCENARIO_MAIN = scn[18, 2];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M19-01",
                                             french="[M:D2]TALK-M19-01",
@@ -796,7 +829,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M19-01",
                                         }):
                                             $SCENARIO_MAIN = scn[20, 1];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M20-01",
                                             french="[M:D2]TALK-M20-01",
@@ -805,7 +838,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M20-01",
                                         }):
                                             $SCENARIO_MAIN = scn[21, 1];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M21-02",
                                             french="[M:D2]TALK-M21-02",
@@ -814,7 +847,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M21-02",
                                         }):
                                             $SCENARIO_MAIN = scn[22, 2];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M21-04",
                                             french="[M:D2]TALK-M21-04",
@@ -823,7 +856,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M21-04",
                                         }):
                                             $SCENARIO_MAIN = scn[22, 3];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M22-02",
                                             french="[M:D2]TALK-M22-02",
@@ -832,7 +865,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M22-02",
                                         }):
                                             $SCENARIO_MAIN = scn[23, 1];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M22-03",
                                             french="[M:D2]TALK-M22-03",
@@ -841,7 +874,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M22-03",
                                         }):
                                             $SCENARIO_MAIN = scn[23, 2];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M22-04",
                                             french="[M:D2]TALK-M22-04",
@@ -850,7 +883,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M22-04",
                                         }):
                                             $SCENARIO_MAIN = scn[23, 3];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M23-02",
                                             french="[M:D2]TALK-M23-02",
@@ -859,7 +892,7 @@ def 0 {
                                             spanish="[M:D2]TALK-M23-02",
                                         }):
                                             $SCENARIO_MAIN = scn[24, 1];
-                                            jump @label_294;
+                                            jump @label_209;
                                         case menu({
                                             english="[M:D2]TALK-M24-01",
                                             french="[M:D2]TALK-M24-01",
@@ -868,9 +901,9 @@ def 0 {
                                             spanish="[M:D2]TALK-M24-01",
                                         }):
                                             $SCENARIO_MAIN = scn[25, 1];
-                                            jump @label_294;
+                                            jump @label_209;
                                         default:
-                                            §label_84;
+                                            §label_86;
                                             dungeon_mode(175) = DMODE_OPEN_AND_REQUEST;
                                             dungeon_mode(178) = DMODE_OPEN_AND_REQUEST;
                                             message_Notice({
@@ -889,7 +922,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S01-01",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 1];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S01-02",
                                                     french="[M:D2]TALK-S01-02",
@@ -898,7 +931,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S01-02",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 2];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S01-03",
                                                     french="[M:D2]TALK-S01-03",
@@ -907,7 +940,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S01-03",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 3];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S01-04",
                                                     french="[M:D2]TALK-S01-04",
@@ -916,7 +949,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S01-04",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 4];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S01-05",
                                                     french="[M:D2]TALK-S01-05",
@@ -925,7 +958,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S01-05",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 5];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S01-06",
                                                     french="[M:D2]TALK-S01-06",
@@ -934,7 +967,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S01-06",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 6];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S31-01",
                                                     french="[M:D2]TALK-S31-01",
@@ -954,7 +987,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S31-015",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 9];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S31-02",
                                                     french="[M:D2]TALK-S31-02",
@@ -976,7 +1009,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S31-03",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 11];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S31-04",
                                                     french="[M:D2]TALK-S31-04",
@@ -998,7 +1031,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S31-05",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 13];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S31-06",
                                                     french="[M:D2]TALK-S31-06",
@@ -1020,7 +1053,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S31-07",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 15];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S31-08",
                                                     french="[M:D2]TALK-S31-08",
@@ -1042,7 +1075,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S31-09",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 17];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S31-10",
                                                     french="[M:D2]TALK-S31-10",
@@ -1064,7 +1097,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S31-11",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 19];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S31-12",
                                                     french="[M:D2]TALK-S31-12",
@@ -1086,7 +1119,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S31-13",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 21];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S31-14",
                                                     french="[M:D2]TALK-S31-14",
@@ -1108,7 +1141,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S31-15",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 23];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S31-16",
                                                     french="[M:D2]TALK-S31-16",
@@ -1130,7 +1163,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S31-17",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 25];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S31-18",
                                                     french="[M:D2]TALK-S31-18",
@@ -1152,7 +1185,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S31-19",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 27];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S31-20",
                                                     french="[M:D2]TALK-S31-20",
@@ -1174,7 +1207,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S31-21",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 29];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S31-22",
                                                     french="[M:D2]TALK-S31-22",
@@ -1183,7 +1216,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S31-22",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 30];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S31-23",
                                                     french="[M:D2]TALK-S31-23",
@@ -1194,7 +1227,7 @@ def 0 {
                                                     $SCENARIO_MAIN = scn[29, 31];
                                                     dungeon_mode(120) = DMODE_REQUEST;
                                                     dungeon_mode(122) = DMODE_REQUEST;
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S02-01",
                                                     french="[M:D2]TALK-S02-01",
@@ -1203,7 +1236,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S02-01",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 32];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S02-02",
                                                     french="[M:D2]TALK-S02-02",
@@ -1212,7 +1245,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S02-02",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 33];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S02-03",
                                                     french="[M:D2]TALK-S02-03",
@@ -1221,7 +1254,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S02-03",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 39];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S03-01",
                                                     french="[M:D2]TALK-S03-01",
@@ -1230,7 +1263,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S03-01",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 40];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S03-02",
                                                     french="[M:D2]TALK-S03-02",
@@ -1239,7 +1272,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S03-02",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 41];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S03-03",
                                                     french="[M:D2]TALK-S03-03",
@@ -1248,7 +1281,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S03-03",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 42];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S03-04",
                                                     french="[M:D2]TALK-S03-04",
@@ -1257,7 +1290,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S03-04",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 43];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S03-05",
                                                     french="[M:D2]TALK-S03-05",
@@ -1266,7 +1299,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S03-05",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 44];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S03-06",
                                                     french="[M:D2]TALK-S03-06",
@@ -1275,7 +1308,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S03-06",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 45];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S03-07",
                                                     french="[M:D2]TALK-S03-07",
@@ -1284,7 +1317,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S03-07",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 46];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S03-08",
                                                     french="[M:D2]TALK-S03-08",
@@ -1293,7 +1326,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S03-08",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 47];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S03-09",
                                                     french="[M:D2]TALK-S03-09",
@@ -1302,7 +1335,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S03-09",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 48];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S03-10",
                                                     french="[M:D2]TALK-S03-10",
@@ -1311,7 +1344,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S03-10",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 49];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S03-11",
                                                     french="[M:D2]TALK-S03-11",
@@ -1320,7 +1353,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S03-11",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 50];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S03-12",
                                                     french="[M:D2]TALK-S03-12",
@@ -1329,7 +1362,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S03-12",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 52];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S03-13",
                                                     french="[M:D2]TALK-S03-13",
@@ -1338,7 +1371,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S03-13",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 53];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S04-01",
                                                     french="[M:D2]TALK-S04-01",
@@ -1347,7 +1380,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S04-01",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 54];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S04-02",
                                                     french="[M:D2]TALK-S04-02",
@@ -1356,7 +1389,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S04-02",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 55];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S04-03",
                                                     french="[M:D2]TALK-S04-03",
@@ -1365,7 +1398,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S04-03",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 56];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S04-04",
                                                     french="[M:D2]TALK-S04-04",
@@ -1374,7 +1407,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S04-04",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 67];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S20-01",
                                                     french="[M:D2]TALK-S20-01",
@@ -1383,7 +1416,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S20-01",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 69];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S20-02",
                                                     french="[M:D2]TALK-S20-02",
@@ -1392,7 +1425,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S20-02",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 70];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S20-03",
                                                     french="[M:D2]TALK-S20-03",
@@ -1401,7 +1434,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S20-03",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 71];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S20-04",
                                                     french="[M:D2]TALK-S20-04",
@@ -1410,7 +1443,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S20-04",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 72];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S20-05",
                                                     french="[M:D2]TALK-S20-05",
@@ -1419,7 +1452,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S20-05",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 73];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S20-06",
                                                     french="[M:D2]TALK-S20-06",
@@ -1428,7 +1461,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S20-06",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 75];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S20-07",
                                                     french="[M:D2]TALK-S20-07",
@@ -1437,7 +1470,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S20-07",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 76];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S21-01",
                                                     french="[M:D2]TALK-S21-01",
@@ -1446,7 +1479,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S21-01",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 78];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S21-02",
                                                     french="[M:D2]TALK-S21-02",
@@ -1455,7 +1488,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S21-02",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 80];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S21-03",
                                                     french="[M:D2]TALK-S21-03",
@@ -1464,7 +1497,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S21-03",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 81];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S21-04",
                                                     french="[M:D2]TALK-S21-04",
@@ -1473,7 +1506,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S21-04",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 82];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S21-05",
                                                     french="[M:D2]TALK-S21-05",
@@ -1482,7 +1515,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S21-05",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 83];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S21-06",
                                                     french="[M:D2]TALK-S21-06",
@@ -1491,7 +1524,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S21-06",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 84];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S21-07",
                                                     french="[M:D2]TALK-S21-07",
@@ -1500,7 +1533,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S21-07",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 85];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S22-01",
                                                     french="[M:D2]TALK-S22-01",
@@ -1509,7 +1542,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S22-01",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 87];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S22-02",
                                                     french="[M:D2]TALK-S22-02",
@@ -1518,7 +1551,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S22-02",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 88];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S22-03",
                                                     french="[M:D2]TALK-S22-03",
@@ -1527,7 +1560,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S22-03",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 89];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S22-04",
                                                     french="[M:D2]TALK-S22-04",
@@ -1536,7 +1569,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S22-04",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 90];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S22-05",
                                                     french="[M:D2]TALK-S22-05",
@@ -1545,7 +1578,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S22-05",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 91];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S22-06",
                                                     french="[M:D2]TALK-S22-06",
@@ -1554,7 +1587,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S22-06",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 92];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S23-01",
                                                     french="[M:D2]TALK-S23-01",
@@ -1563,7 +1596,7 @@ def 0 {
                                                     spanish="[M:D2]TALK-S23-01",
                                                 }):
                                                     $SCENARIO_MAIN = scn[29, 93];
-                                                    jump @label_294;
+                                                    jump @label_209;
                                                 case menu({
                                                     english="[M:D2]TALK-S23-02",
                                                     french="[M:D2]TALK-S23-02",
@@ -1571,9 +1604,11 @@ def 0 {
                                                     italian="[M:D2]TALK-S23-02",
                                                     spanish="[M:D2]TALK-S23-02",
                                                 }):
-                                                default:
+                                                    §label_281;
                                                     $SCENARIO_MAIN = scn[29, 94];
-                                                    jump @label_294;
+                                                    jump @label_209;
+                                                default:
+                                                    jump @label_281;
                                             }
                                             break;
                                     }
@@ -1585,9 +1620,9 @@ def 0 {
                                     italian="[M:D2]Dialogue Check (Sub)",
                                     spanish="[M:D2]Dialogue Check (Sub)",
                                 }):
-                                    jump @label_84;
+                                    jump @label_86;
                                 case menu({
-                                    english="[M:D2]Hot Spring Check",
+                                    english="[M:D2]Cold River Check",
                                     french="[M:D2]Hot Spring Check",
                                     german="[M:D2]Hot Spring Check",
                                     italian="[M:D2]Hot Spring Check",
@@ -1608,194 +1643,190 @@ def 0 {
                                     item_GetVariable(0, $ITEM_BACKUP_KUREKURE);
                                     item_SetTableData(1, 1);
                                     item_GetVariable(1, $ITEM_BACKUP_TAKE);
-                                    §label_163;
-                                    forever {
-                                        item_SetTableData(2, 2);
-                                        item_GetVariable(2, $ITEM_BACKUP_GET);
-                                        switch ( $ITEM_BACKUP_TAKE ) {
-                                            case == value(103):
-                                                continue;  // may be redundant
-                                                break;
-                                            default:
-                                                break_loop;
-                                                break;
-                                        }
-                                    }
-                                    message_Notice({
-                                        english="[M:D2][CS:W]Memo: Which Station would you like to go to?[CR]\n[M:D2][CS:W]Special Characters at Station 3, 5, 7, and 9.[CR]\n[M:D2][CS:W]Shaymin and Jumpluff at the Peak.[CR]",
-                                        french="[M:D2][CS:W]Memo: Which Station would you like to go to?[CR]\n[M:D2][CS:W]Special Characters at Station 3, 5, 7, and 9.[CR]\n[M:D2][CS:W]Shaymin and Jumpluff at the Peak.[CR]",
-                                        german="[M:D2][CS:W]Memo: Which Station would you like to go to?[CR]\n[M:D2][CS:W]Special Characters at Station 3, 5, 7, and 9.[CR]\n[M:D2][CS:W]Shaymin and Jumpluff at the Peak.[CR]",
-                                        italian="[M:D2][CS:W]Memo: Which Station would you like to go to?[CR]\n[M:D2][CS:W]Special Characters at Station 3, 5, 7, and 9.[CR]\n[M:D2][CS:W]Shaymin and Jumpluff at the Peak.[CR]",
-                                        spanish="[M:D2][CS:W]Memo: Which Station would you like to go to?[CR]\n[M:D2][CS:W]Special Characters at Station 3, 5, 7, and 9.[CR]\n[M:D2][CS:W]Shaymin and Jumpluff at the Peak.[CR]",
-                                    });
-                                    switch ( message_SwitchMenu(0, 1) ) {
-                                        case menu({
-                                            english="[M:D2]Entrance",
-                                            french="[M:D2]Entrance",
-                                            german="[M:D2]Entrance",
-                                            italian="[M:D2]Entrance",
-                                            spanish="[M:D2]Entrance",
-                                        }):
-                                            message_Close();
-                                            $SCENARIO_MAIN = scn[29, 98];
-                                            main_EnterGround(LEVEL_D73P11A, 30);
-                                            hold;
-                                        case menu({
-                                            english="[M:D2]1st Station",
-                                            french="[M:D2]1st Station",
-                                            german="[M:D2]1st Station",
-                                            italian="[M:D2]1st Station",
-                                            spanish="[M:D2]1st Station",
-                                        }):
-                                            message_Close();
-                                            main_EnterDungeon(111, 30);
-                                            switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
-                                            $SCENARIO_MAIN = scn[29, 98];
-                                            main_EnterGround(LEVEL_D73P21A, 30);
-                                            $SCENARIO_MAIN_BIT_FLAG[74] = 1;
-                                            $SCENARIO_MAIN_BIT_FLAG[83] = 1;
-                                            $SCENARIO_MAIN_BIT_FLAG[78] = 1;
-                                            hold;
-                                        case menu({
-                                            english="[M:D2]2nd Station",
-                                            french="[M:D2]2nd Station",
-                                            german="[M:D2]2nd Station",
-                                            italian="[M:D2]2nd Station",
-                                            spanish="[M:D2]2nd Station",
-                                        }):
-                                            message_Close();
-                                            main_EnterDungeon(112, 30);
-                                            switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
-                                            $SCENARIO_MAIN = scn[29, 98];
-                                            main_EnterGround(LEVEL_D73P22A, 30);
-                                            hold;
-                                        case menu({
-                                            english="[M:D2]3rd Station",
-                                            french="[M:D2]3rd Station",
-                                            german="[M:D2]3rd Station",
-                                            italian="[M:D2]3rd Station",
-                                            spanish="[M:D2]3rd Station",
-                                        }):
-                                            message_Close();
-                                            main_EnterDungeon(113, 30);
-                                            switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
-                                            $SCENARIO_MAIN = scn[29, 98];
-                                            main_EnterGround(LEVEL_D73P23A, 30);
-                                            $SCENARIO_MAIN_BIT_FLAG[75] = 1;
-                                            $SCENARIO_MAIN_BIT_FLAG[79] = 1;
-                                            $SCENARIO_MAIN_BIT_FLAG[84] = 1;
-                                            hold;
-                                        case menu({
-                                            english="[M:D2]4th Station",
-                                            french="[M:D2]4th Station",
-                                            german="[M:D2]4th Station",
-                                            italian="[M:D2]4th Station",
-                                            spanish="[M:D2]4th Station",
-                                        }):
-                                            message_Close();
-                                            main_EnterDungeon(114, 30);
-                                            switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
-                                            $SCENARIO_MAIN = scn[29, 98];
-                                            main_EnterGround(LEVEL_D73P24A, 30);
-                                            hold;
-                                        case menu({
-                                            english="[M:D2]5th Station",
-                                            french="[M:D2]5th Station",
-                                            german="[M:D2]5th Station",
-                                            italian="[M:D2]5th Station",
-                                            spanish="[M:D2]5th Station",
-                                        }):
-                                            message_Close();
-                                            main_EnterDungeon(115, 30);
-                                            switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
-                                            $SCENARIO_MAIN = scn[29, 98];
-                                            main_EnterGround(LEVEL_D73P25A, 30);
-                                            $SCENARIO_MAIN_BIT_FLAG[76] = 1;
-                                            $SCENARIO_MAIN_BIT_FLAG[80] = 1;
-                                            $SCENARIO_MAIN_BIT_FLAG[85] = 1;
-                                            hold;
-                                        case menu({
-                                            english="[M:D2]6th Station",
-                                            french="[M:D2]6th Station",
-                                            german="[M:D2]6th Station",
-                                            italian="[M:D2]6th Station",
-                                            spanish="[M:D2]6th Station",
-                                        }):
-                                            message_Close();
-                                            main_EnterDungeon(116, 30);
-                                            switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
-                                            $SCENARIO_MAIN = scn[29, 98];
-                                            main_EnterGround(LEVEL_D73P26A, 30);
-                                            hold;
-                                        case menu({
-                                            english="[M:D2]7th Station",
-                                            french="[M:D2]7th Station",
-                                            german="[M:D2]7th Station",
-                                            italian="[M:D2]7th Station",
-                                            spanish="[M:D2]7th Station",
-                                        }):
-                                            message_Close();
-                                            main_EnterDungeon(117, 30);
-                                            switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
-                                            $SCENARIO_MAIN = scn[29, 98];
-                                            main_EnterGround(LEVEL_D73P27A, 30);
-                                            $SCENARIO_MAIN_BIT_FLAG[77] = 1;
-                                            $SCENARIO_MAIN_BIT_FLAG[81] = 1;
-                                            $SCENARIO_MAIN_BIT_FLAG[86] = 1;
-                                            hold;
-                                        case menu({
-                                            english="[M:D2]8th Station",
-                                            french="[M:D2]8th Station",
-                                            german="[M:D2]8th Station",
-                                            italian="[M:D2]8th Station",
-                                            spanish="[M:D2]8th Station",
-                                        }):
-                                            message_Close();
-                                            main_EnterDungeon(118, 30);
-                                            switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
-                                            $SCENARIO_MAIN = scn[29, 98];
-                                            main_EnterGround(LEVEL_D73P28A, 30);
-                                            hold;
-                                        case menu({
-                                            english="[M:D2]9th Station",
-                                            french="[M:D2]9th Station",
-                                            german="[M:D2]9th Station",
-                                            italian="[M:D2]9th Station",
-                                            spanish="[M:D2]9th Station",
-                                        }):
-                                            message_Close();
-                                            main_EnterDungeon(119, 30);
-                                            switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
-                                            $SCENARIO_MAIN = scn[29, 98];
-                                            main_EnterGround(LEVEL_D73P29A, 30);
-                                            $SCENARIO_MAIN_BIT_FLAG[89] = 1;
-                                            hold;
-                                        case menu({
-                                            english="[M:D2]Top",
-                                            french="[M:D2]Top",
-                                            german="[M:D2]Top",
-                                            italian="[M:D2]Top",
-                                            spanish="[M:D2]Top",
-                                        }):
-                                            message_Close();
-                                            main_EnterDungeon(120, 30);
-                                            switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
-                                            $SCENARIO_MAIN = scn[29, 98];
-                                            $SCENARIO_MAIN_BIT_FLAG[87] = 1;
-                                            main_EnterGround(LEVEL_D73P31A, 30);
-                                            hold;
+                                    §label_285;
+                                    item_SetTableData(2, 2);
+                                    item_GetVariable(2, $ITEM_BACKUP_GET);
+                                    switch ( $ITEM_BACKUP_TAKE ) {
+                                        case == value(103):
+                                            jump @label_285;
                                         default:
-                                            jump @label_83;
+                                            message_Notice({
+                                                english="[M:D2][CS:W]Memo: Which Station would you like to go to?[CR]\n[M:D2][CS:W]Special Characters at Station 3, 5, 7, and 9.[CR]\n[M:D2][CS:W]Swampert and Meditite at the Peak.[CR]",
+                                                french="[M:D2][CS:W]Memo: Which Station would you like to go to?[CR]\n[M:D2][CS:W]Special Characters at Station 3, 5, 7, and 9.[CR]\n[M:D2][CS:W]Laggron and Jumpluff at the Peak.[CR]",
+                                                german="[M:D2][CS:W]Memo: Which Station would you like to go to?[CR]\n[M:D2][CS:W]Special Characters at Station 3, 5, 7, and 9.[CR]\n[M:D2][CS:W]Sumpex and Jumpluff at the Peak.[CR]",
+                                                italian="[M:D2][CS:W]Memo: Which Station would you like to go to?[CR]\n[M:D2][CS:W]Special Characters at Station 3, 5, 7, and 9.[CR]\n[M:D2][CS:W]Swampert and Meditite at the Peak.[CR]",
+                                                spanish="[M:D2][CS:W]Memo: Which Station would you like to go to?[CR]\n[M:D2][CS:W]Special Characters at Station 3, 5, 7, and 9.[CR]\n[M:D2][CS:W]Swampert and Meditite at the Peak.[CR]",
+                                            });
+                                            switch ( message_SwitchMenu(0, 1) ) {
+                                                case menu({
+                                                    english="[M:D2]Entrance",
+                                                    french="[M:D2]Entrance",
+                                                    german="[M:D2]Entrance",
+                                                    italian="[M:D2]Entrance",
+                                                    spanish="[M:D2]Entrance",
+                                                }):
+                                                    message_Close();
+                                                    $SCENARIO_MAIN = scn[29, 98];
+                                                    main_EnterGround(LEVEL_D73P11A, 30);
+                                                    hold;
+                                                case menu({
+                                                    english="[M:D2]Giant Territory",
+                                                    french="[M:D2]1st Station",
+                                                    german="[M:D2]1st Station",
+                                                    italian="[M:D2]1st Station",
+                                                    spanish="[M:D2]1st Station",
+                                                }):
+                                                    message_Close();
+                                                    main_EnterDungeon(111, 30);
+                                                    switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                                                    $SCENARIO_MAIN = scn[29, 98];
+                                                    main_EnterGround(LEVEL_D73P21A, 30);
+                                                    $SCENARIO_MAIN_BIT_FLAG[74] = 1;
+                                                    $SCENARIO_MAIN_BIT_FLAG[83] = 1;
+                                                    $SCENARIO_MAIN_BIT_FLAG[78] = 1;
+                                                    hold;
+                                                case menu({
+                                                    english="[M:D2]Boring Bedlam",
+                                                    french="[M:D2]2nd Station",
+                                                    german="[M:D2]2nd Station",
+                                                    italian="[M:D2]2nd Station",
+                                                    spanish="[M:D2]2nd Station",
+                                                }):
+                                                    message_Close();
+                                                    main_EnterDungeon(112, 30);
+                                                    switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                                                    $SCENARIO_MAIN = scn[29, 98];
+                                                    main_EnterGround(LEVEL_D73P22A, 30);
+                                                    hold;
+                                                case menu({
+                                                    english="[M:D2]Gigantic Dunes",
+                                                    french="[M:D2]3rd Station",
+                                                    german="[M:D2]3rd Station",
+                                                    italian="[M:D2]3rd Station",
+                                                    spanish="[M:D2]3rd Station",
+                                                }):
+                                                    message_Close();
+                                                    main_EnterDungeon(113, 30);
+                                                    switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                                                    $SCENARIO_MAIN = scn[29, 98];
+                                                    main_EnterGround(LEVEL_D73P23A, 30);
+                                                    $SCENARIO_MAIN_BIT_FLAG[75] = 1;
+                                                    $SCENARIO_MAIN_BIT_FLAG[79] = 1;
+                                                    $SCENARIO_MAIN_BIT_FLAG[84] = 1;
+                                                    hold;
+                                                case menu({
+                                                    english="[M:D2]Nice Landing",
+                                                    french="[M:D2]4th Station",
+                                                    german="[M:D2]4th Station",
+                                                    italian="[M:D2]4th Station",
+                                                    spanish="[M:D2]4th Station",
+                                                }):
+                                                    message_Close();
+                                                    main_EnterDungeon(114, 30);
+                                                    switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                                                    $SCENARIO_MAIN = scn[29, 98];
+                                                    main_EnterGround(LEVEL_D73P24A, 30);
+                                                    hold;
+                                                case menu({
+                                                    english="[M:D2]Crowded Rest",
+                                                    french="[M:D2]5th Station",
+                                                    german="[M:D2]5th Station",
+                                                    italian="[M:D2]5th Station",
+                                                    spanish="[M:D2]5th Station",
+                                                }):
+                                                    message_Close();
+                                                    main_EnterDungeon(115, 30);
+                                                    switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                                                    $SCENARIO_MAIN = scn[29, 98];
+                                                    main_EnterGround(LEVEL_D73P25A, 30);
+                                                    $SCENARIO_MAIN_BIT_FLAG[76] = 1;
+                                                    $SCENARIO_MAIN_BIT_FLAG[80] = 1;
+                                                    $SCENARIO_MAIN_BIT_FLAG[85] = 1;
+                                                    hold;
+                                                case menu({
+                                                    english="[M:D2]Abandoned Territory",
+                                                    french="[M:D2]6th Station",
+                                                    german="[M:D2]6th Station",
+                                                    italian="[M:D2]6th Station",
+                                                    spanish="[M:D2]6th Station",
+                                                }):
+                                                    message_Close();
+                                                    main_EnterDungeon(116, 30);
+                                                    switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                                                    $SCENARIO_MAIN = scn[29, 98];
+                                                    main_EnterGround(LEVEL_D73P26A, 30);
+                                                    hold;
+                                                case menu({
+                                                    english="[M:D2]Guildmaster\'s Column",
+                                                    french="[M:D2]7th Station",
+                                                    german="[M:D2]7th Station",
+                                                    italian="[M:D2]7th Station",
+                                                    spanish="[M:D2]7th Station",
+                                                }):
+                                                    message_Close();
+                                                    main_EnterDungeon(117, 30);
+                                                    switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                                                    $SCENARIO_MAIN = scn[29, 98];
+                                                    main_EnterGround(LEVEL_D73P27A, 30);
+                                                    $SCENARIO_MAIN_BIT_FLAG[77] = 1;
+                                                    $SCENARIO_MAIN_BIT_FLAG[81] = 1;
+                                                    $SCENARIO_MAIN_BIT_FLAG[86] = 1;
+                                                    hold;
+                                                case menu({
+                                                    english="[M:D2]Amusing Fairground",
+                                                    french="[M:D2]8th Station",
+                                                    german="[M:D2]8th Station",
+                                                    italian="[M:D2]8th Station",
+                                                    spanish="[M:D2]8th Station",
+                                                }):
+                                                    message_Close();
+                                                    main_EnterDungeon(118, 30);
+                                                    switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                                                    $SCENARIO_MAIN = scn[29, 98];
+                                                    main_EnterGround(LEVEL_D73P28A, 30);
+                                                    hold;
+                                                case menu({
+                                                    english="[M:D2]Entertaining Manor",
+                                                    french="[M:D2]9th Station",
+                                                    german="[M:D2]9th Station",
+                                                    italian="[M:D2]9th Station",
+                                                    spanish="[M:D2]9th Station",
+                                                }):
+                                                    message_Close();
+                                                    main_EnterDungeon(119, 30);
+                                                    switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                                                    $SCENARIO_MAIN = scn[29, 98];
+                                                    main_EnterGround(LEVEL_D73P29A, 30);
+                                                    $SCENARIO_MAIN_BIT_FLAG[89] = 1;
+                                                    hold;
+                                                case menu({
+                                                    english="[M:D2]Top",
+                                                    french="[M:D2]Top",
+                                                    german="[M:D2]Top",
+                                                    italian="[M:D2]Top",
+                                                    spanish="[M:D2]Top",
+                                                }):
+                                                    message_Close();
+                                                    main_EnterDungeon(120, 30);
+                                                    switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                                                    $SCENARIO_MAIN = scn[29, 98];
+                                                    $SCENARIO_MAIN_BIT_FLAG[87] = 1;
+                                                    main_EnterGround(LEVEL_D73P31A, 30);
+                                                    hold;
+                                                default:
+                                                    jump @label_85;
+                                            }
+                                            break;
                                     }
                                     break;
                                 case menu({
-                                    english="[M:D2]Awaiting Rescue Check",
+                                    english="[M:D2]Awaiting Critical Park Check",
                                     french="[M:D2]Awaiting Rescue Check",
                                     german="[M:D2]Awaiting Rescue Check",
                                     italian="[M:D2]Awaiting Rescue Check",
                                     spanish="[M:D2]Awaiting Rescue Check",
                                 }):
-                                default:
+                                    §label_89;
                                     message_Notice({
                                         english="[M:D2][CS:W]Memo: Where would you like to start from?[CR]",
                                         french="[M:D2][CS:W]Memo: Where would you like to start from?[CR]",
@@ -1811,9 +1842,9 @@ def 0 {
                                             italian="[M:D2]From Scenario",
                                             spanish="[M:D2]From Scenario",
                                         }):
-                                            jump @label_160;
+                                            jump @label_298;
                                         case menu({
-                                            english="[M:D2]Rescue Check",
+                                            english="[M:D2]Critical Park Check",
                                             french="[M:D2]Rescue Check",
                                             german="[M:D2]Rescue Check",
                                             italian="[M:D2]Rescue Check",
@@ -1821,11 +1852,11 @@ def 0 {
                                         }):
                                         default:
                                             $SCENARIO_SELECT = 51;
-                                            §label_78;
+                                            §label_80;
                                             $SCENARIO_MAIN = scn[29, 93];
-                                            §label_82;
+                                            §label_350;
                                             if ( scn($SCENARIO_MAIN) < [3, 0] ) {
-                                                §label_295;
+                                                §label_301;
                                                 if ( scn($SCENARIO_MAIN) >= [29, 93] ) {
                                                     dungeon_mode(44) = DMODE_OPEN_AND_REQUEST;
                                                     dungeon_mode(46) = DMODE_OPEN_AND_REQUEST;
@@ -1836,7 +1867,7 @@ def 0 {
                                                     dungeon_mode(62) = DMODE_OPEN_AND_REQUEST;
                                                     dungeon_mode(64) = DMODE_OPEN_AND_REQUEST;
                                                     dungeon_mode(67) = DMODE_OPEN_AND_REQUEST;
-                                                    §label_335;
+                                                    §label_336;
                                                     dungeon_mode(1) = DMODE_OPEN_AND_REQUEST;
                                                     dungeon_mode(3) = DMODE_OPEN_AND_REQUEST;
                                                     dungeon_mode(4) = DMODE_OPEN_AND_REQUEST;
@@ -1855,29 +1886,29 @@ def 0 {
                                                     dungeon_mode(35) = DMODE_OPEN_AND_REQUEST;
                                                     dungeon_mode(38) = DMODE_REQUEST;
                                                     dungeon_mode(41) = DMODE_REQUEST;
-                                                    §label_336;
+                                                    §label_337;
                                                     message_Close();
                                                     screen_FadeOut(1, 30);
                                                     supervision_ExecuteCommon(CORO_EVENT_DIVIDE);
                                                     hold;
                                                 } elseif ( scn($SCENARIO_MAIN) >= [29, 0] ) {
-                                                    jump @label_335;
-                                                } else {
                                                     jump @label_336;
+                                                } else {
+                                                    jump @label_337;
                                                 }
                                             } elseif ( scn($SCENARIO_MAIN) < [4, 0] ) {
-                                                §label_296;
+                                                §label_302;
                                                 dungeon_mode(2) = DMODE_REQUEST;
                                                 dungeon_mode(1) = DMODE_OPEN_AND_REQUEST;
-                                                jump @label_295;
+                                                jump @label_301;
                                             } elseif ( scn($SCENARIO_MAIN) < [5, 0] ) {
-                                                §label_297;
+                                                §label_303;
                                                 dungeon_mode(3) = DMODE_OPEN_AND_REQUEST;
                                                 $PERFORMANCE_PROGRESS_LIST[1] = 1;
                                                 $PERFORMANCE_PROGRESS_LIST[2] = 1;
-                                                jump @label_296;
+                                                jump @label_302;
                                             } elseif ( scn($SCENARIO_MAIN) < [6, 0] ) {
-                                                §label_298;
+                                                §label_304;
                                                 dungeon_mode(5) = DMODE_REQUEST;
                                                 dungeon_mode(4) = DMODE_OPEN_AND_REQUEST;
                                                 $PERFORMANCE_PROGRESS_LIST[3] = 1;
@@ -1885,151 +1916,151 @@ def 0 {
                                                 $SPECIAL_EPISODE_OPEN[0] = 1;
                                                 switch ( $SCENARIO_BALANCE_FLAG ) {
                                                     case >= 1:
-                                                        jump @label_297;
+                                                        jump @label_303;
                                                     default:
                                                         $SCENARIO_BALANCE_FLAG = 1;
-                                                        jump @label_297;
+                                                        jump @label_303;
                                                 }
                                             } elseif ( scn($SCENARIO_MAIN) < [7, 0] ) {
-                                                §label_299;
+                                                §label_305;
                                                 $PERFORMANCE_PROGRESS_LIST[4] = 1;
-                                                jump @label_298;
+                                                jump @label_304;
                                             } elseif ( scn($SCENARIO_MAIN) < [8, 0] ) {
-                                                §label_300;
+                                                §label_306;
                                                 $PERFORMANCE_PROGRESS_LIST[29] = 1;
                                                 dungeon_mode(6) = DMODE_OPEN_AND_REQUEST;
                                                 $PERFORMANCE_PROGRESS_LIST[5] = 1;
                                                 $PERFORMANCE_PROGRESS_LIST[8] = 1;
                                                 adventure_log = 0;
                                                 $PERFORMANCE_PROGRESS_LIST[27] = 1;
-                                                jump @label_299;
+                                                jump @label_305;
                                             } elseif ( scn($SCENARIO_MAIN) < [9, 0] ) {
-                                                §label_301;
+                                                §label_307;
                                                 $SCENARIO_MAIN_BIT_FLAG[97] = 1;
-                                                jump @label_300;
+                                                jump @label_306;
                                             } elseif ( scn($SCENARIO_MAIN) < [10, 0] ) {
-                                                §label_302;
+                                                §label_308;
                                                 $PERFORMANCE_PROGRESS_LIST[31] = 1;
                                                 $SUB30_PROJECTP[0] = 1;
                                                 dungeon_mode(7) = DMODE_OPEN_AND_REQUEST;
-                                                jump @label_301;
+                                                jump @label_307;
                                             } elseif ( scn($SCENARIO_MAIN) < [11, 0] ) {
-                                                §label_303;
+                                                §label_309;
                                                 dungeon_mode(11) = DMODE_REQUEST;
                                                 dungeon_mode(10) = DMODE_OPEN_AND_REQUEST;
                                                 dungeon_mode(9) = DMODE_REQUEST;
                                                 dungeon_mode(8) = DMODE_OPEN_AND_REQUEST;
                                                 switch ( $SCENARIO_BALANCE_FLAG ) {
                                                     case >= 2:
-                                                        jump @label_302;
+                                                        jump @label_308;
                                                     default:
                                                         $SCENARIO_BALANCE_FLAG = 2;
-                                                        jump @label_302;
+                                                        jump @label_308;
                                                 }
                                             } elseif ( scn($SCENARIO_MAIN) < [12, 0] ) {
-                                                §label_304;
+                                                §label_310;
                                                 dungeon_mode(13) = DMODE_REQUEST;
                                                 dungeon_mode(12) = DMODE_OPEN_AND_REQUEST;
-                                                jump @label_303;
+                                                jump @label_309;
                                             } elseif ( scn($SCENARIO_MAIN) < [13, 0] ) {
-                                                §label_305;
+                                                §label_311;
                                                 dungeon_mode(16) = DMODE_REQUEST;
                                                 dungeon_mode(15) = DMODE_REQUEST;
                                                 dungeon_mode(14) = DMODE_REQUEST;
                                                 switch ( $EVENT_LOCAL ) {
                                                     case 1:
-                                                        §label_333;
+                                                        §label_339;
                                                         $PERFORMANCE_PROGRESS_LIST[13] = 1;
                                                         adventure_log = 1;
                                                         $SPECIAL_EPISODE_OPEN[1] = 1;
                                                         switch ( $SCENARIO_BALANCE_FLAG ) {
                                                             case >= 3:
-                                                                jump @label_304;
+                                                                jump @label_310;
                                                             default:
                                                                 $SCENARIO_BALANCE_FLAG = 3;
-                                                                jump @label_304;
+                                                                jump @label_310;
                                                         }
                                                         break;
                                                     default:
                                                         $EVENT_LOCAL = 1;
                                                         worldmap_SetLevel(2);
-                                                        jump @label_333;
+                                                        jump @label_339;
                                                 }
                                             } elseif ( scn($SCENARIO_MAIN) < [14, 0] ) {
-                                                §label_306;
+                                                §label_312;
                                                 $PERFORMANCE_PROGRESS_LIST[30] = 1;
-                                                jump @label_305;
+                                                jump @label_311;
                                             } elseif ( scn($SCENARIO_MAIN) < [14, 6] ) {
-                                                §label_307;
+                                                §label_313;
                                                 dungeon_mode(19) = DMODE_REQUEST;
                                                 dungeon_mode(18) = DMODE_REQUEST;
                                                 dungeon_mode(17) = DMODE_OPEN_AND_REQUEST;
                                                 $PERFORMANCE_PROGRESS_LIST[14] = 1;
-                                                jump @label_306;
+                                                jump @label_312;
                                             } elseif ( scn($SCENARIO_MAIN) < [16, 0] ) {
-                                                §label_308;
+                                                §label_314;
                                                 dungeon_mode(20) = DMODE_OPEN_AND_REQUEST;
                                                 switch ( $EVENT_LOCAL ) {
                                                     case 1:
-                                                        jump @label_307;
+                                                        jump @label_313;
                                                     default:
                                                         $EVENT_LOCAL = 1;
                                                         worldmap_SetLevel(3);
-                                                        jump @label_307;
+                                                        jump @label_313;
                                                 }
                                             } elseif ( scn($SCENARIO_MAIN) < [17, 0] ) {
-                                                §label_309;
+                                                §label_315;
                                                 dungeon_mode(23) = DMODE_REQUEST;
                                                 dungeon_mode(22) = DMODE_REQUEST;
                                                 dungeon_mode(21) = DMODE_REQUEST;
                                                 switch ( $EVENT_LOCAL ) {
                                                     case 1:
-                                                        §label_332;
+                                                        §label_342;
                                                         $PERFORMANCE_PROGRESS_LIST[28] = 1;
-                                                        jump @label_308;
+                                                        jump @label_314;
                                                     default:
                                                         $EVENT_LOCAL = 1;
                                                         worldmap_SetLevel(4);
-                                                        jump @label_332;
+                                                        jump @label_342;
                                                 }
                                             } elseif ( scn($SCENARIO_MAIN) < [18, 0] ) {
                                                 dungeon_mode(25) = DMODE_OPEN_AND_REQUEST;
                                                 dungeon_mode(24) = DMODE_OPEN_AND_REQUEST;
-                                                §label_331;
+                                                §label_344;
                                                 $SPECIAL_EPISODE_OPEN[2] = 1;
                                                 dungeon_mode(26) = DMODE_REQUEST;
                                                 switch ( $EVENT_LOCAL ) {
                                                     case 1:
-                                                        jump @label_309;
+                                                        jump @label_315;
                                                     default:
                                                         $EVENT_LOCAL = 1;
                                                         worldmap_SetLevel(5);
-                                                        jump @label_309;
+                                                        jump @label_315;
                                                 }
                                             } elseif ( scn($SCENARIO_MAIN) < [19, 0] ) {
-                                                §label_311;
+                                                §label_317;
                                                 dungeon_mode(25) = DMODE_REQUEST;
                                                 dungeon_mode(24) = DMODE_REQUEST;
                                                 switch ( $SCENARIO_BALANCE_FLAG ) {
                                                     case >= 4:
-                                                        jump @label_331;
+                                                        jump @label_344;
                                                     default:
                                                         $SCENARIO_BALANCE_FLAG = 4;
-                                                        jump @label_331;
+                                                        jump @label_344;
                                                 }
                                             } elseif ( scn($SCENARIO_MAIN) < [20, 0] ) {
-                                                §label_312;
+                                                §label_318;
                                                 dungeon_mode(27) = DMODE_REQUEST;
-                                                jump @label_311;
+                                                jump @label_317;
                                             } elseif ( scn($SCENARIO_MAIN) < [21, 0] ) {
-                                                §label_313;
+                                                §label_319;
                                                 dungeon_mode(31) = DMODE_REQUEST;
                                                 dungeon_mode(30) = DMODE_REQUEST;
                                                 dungeon_mode(29) = DMODE_REQUEST;
                                                 dungeon_mode(28) = DMODE_REQUEST;
-                                                jump @label_312;
+                                                jump @label_318;
                                             } elseif ( scn($SCENARIO_MAIN) < [22, 0] ) {
-                                                §label_314;
+                                                §label_320;
                                                 dungeon_mode(33) = DMODE_REQUEST;
                                                 dungeon_mode(32) = DMODE_REQUEST;
                                                 adventure_log = 2;
@@ -2037,55 +2068,55 @@ def 0 {
                                                 $SPECIAL_EPISODE_OPEN[3] = 1;
                                                 switch ( $SCENARIO_BALANCE_FLAG ) {
                                                     case >= 5:
-                                                        jump @label_313;
+                                                        jump @label_319;
                                                     default:
                                                         $SCENARIO_BALANCE_FLAG = 5;
-                                                        jump @label_313;
+                                                        jump @label_319;
                                                 }
                                             } elseif ( scn($SCENARIO_MAIN) < [23, 0] ) {
-                                                §label_315;
+                                                §label_321;
                                                 dungeon_mode(34) = DMODE_REQUEST;
-                                                jump @label_314;
+                                                jump @label_320;
                                             } elseif ( scn($SCENARIO_MAIN) < [24, 0] || scn($SCENARIO_MAIN) < [25, 0] ) {
-                                                §label_316;
+                                                §label_322;
                                                 $SCENARIO_MAIN_BIT_FLAG[96] = 1;
-                                                jump @label_315;
+                                                jump @label_321;
                                             } elseif ( scn($SCENARIO_MAIN) < [26, 0] ) {
-                                                §label_317;
+                                                §label_323;
                                                 $PERFORMANCE_PROGRESS_LIST[25] = 1;
                                                 dungeon_mode(37) = DMODE_REQUEST;
                                                 dungeon_mode(36) = DMODE_REQUEST;
                                                 dungeon_mode(35) = DMODE_OPEN_AND_REQUEST;
-                                                jump @label_316;
+                                                jump @label_322;
                                             } elseif ( scn($SCENARIO_MAIN) < [27, 0] ) {
-                                                §label_318;
+                                                §label_324;
                                                 dungeon_mode(40) = DMODE_REQUEST;
                                                 dungeon_mode(39) = DMODE_REQUEST;
                                                 dungeon_mode(38) = DMODE_REQUEST;
                                                 switch ( $EVENT_LOCAL ) {
                                                     case 1:
-                                                        §label_330;
+                                                        §label_345;
                                                         $PERFORMANCE_PROGRESS_LIST[16] = 1;
-                                                        jump @label_317;
+                                                        jump @label_323;
                                                     default:
                                                         $EVENT_LOCAL = 1;
                                                         worldmap_SetLevel(6);
-                                                        jump @label_330;
+                                                        jump @label_345;
                                                 }
                                             } elseif ( scn($SCENARIO_MAIN) < [29, 0] ) {
-                                                §label_319;
+                                                §label_325;
                                                 dungeon_mode(43) = DMODE_REQUEST;
                                                 dungeon_mode(42) = DMODE_REQUEST;
                                                 dungeon_mode(41) = DMODE_REQUEST;
-                                                jump @label_318;
+                                                jump @label_324;
                                             } elseif ( scn($SCENARIO_MAIN) < [29, 7] ) {
-                                                §label_320;
+                                                §label_326;
                                                 $PERFORMANCE_PROGRESS_LIST[9] = 1;
                                                 adventure_log = 3;
                                                 $PERFORMANCE_PROGRESS_LIST[17] = 1;
-                                                jump @label_319;
+                                                jump @label_325;
                                             } elseif ( scn($SCENARIO_MAIN) < [29, 32] ) {
-                                                §label_321;
+                                                §label_327;
                                                 $SCENARIO_MAIN_BIT_FLAG[98] = 1;
                                                 dungeon_mode(45) = DMODE_REQUEST;
                                                 dungeon_mode(44) = DMODE_OPEN_AND_REQUEST;
@@ -2102,13 +2133,13 @@ def 0 {
                                                 $SPECIAL_EPISODE_OPEN[4] = 1;
                                                 switch ( $SCENARIO_BALANCE_FLAG ) {
                                                     case >= 6:
-                                                        jump @label_320;
+                                                        jump @label_326;
                                                     default:
                                                         $SCENARIO_BALANCE_FLAG = 6;
-                                                        jump @label_320;
+                                                        jump @label_326;
                                                 }
                                             } elseif ( scn($SCENARIO_MAIN) < [29, 40] ) {
-                                                §label_322;
+                                                §label_328;
                                                 dungeon_mode(175) = DMODE_OPEN_AND_REQUEST;
                                                 dungeon_mode(111) = DMODE_REQUEST;
                                                 dungeon_mode(112) = DMODE_REQUEST;
@@ -2124,34 +2155,34 @@ def 0 {
                                                 dungeon_mode(122) = DMODE_REQUEST;
                                                 adventure_log = 8;
                                                 $PERFORMANCE_PROGRESS_LIST[26] = 1;
-                                                jump @label_321;
+                                                jump @label_327;
                                             } elseif ( scn($SCENARIO_MAIN) < [29, 54] ) {
-                                                §label_323;
+                                                §label_329;
                                                 dungeon_mode(49) = DMODE_REQUEST;
                                                 dungeon_mode(48) = DMODE_REQUEST;
                                                 dungeon_mode(47) = DMODE_OPEN_AND_REQUEST;
                                                 dungeon_mode(46) = DMODE_OPEN_AND_REQUEST;
                                                 switch ( $EVENT_LOCAL ) {
                                                     case 1:
-                                                        §label_329;
+                                                        §label_347;
                                                         $PERFORMANCE_PROGRESS_LIST[22] = 1;
-                                                        jump @label_322;
+                                                        jump @label_328;
                                                     default:
                                                         $EVENT_LOCAL = 1;
                                                         worldmap_SetLevel(8);
-                                                        jump @label_329;
+                                                        jump @label_347;
                                                 }
                                             } elseif ( scn($SCENARIO_MAIN) < [29, 68] ) {
-                                                §label_324;
+                                                §label_330;
                                                 $PERFORMANCE_PROGRESS_LIST[24] = 1;
                                                 $PERFORMANCE_PROGRESS_LIST[23] = 1;
                                                 dungeon_mode(53) = DMODE_REQUEST;
                                                 dungeon_mode(52) = DMODE_REQUEST;
                                                 dungeon_mode(51) = DMODE_OPEN_AND_REQUEST;
                                                 dungeon_mode(50) = DMODE_OPEN_AND_REQUEST;
-                                                jump @label_323;
+                                                jump @label_329;
                                             } elseif ( scn($SCENARIO_MAIN) < [29, 77] ) {
-                                                §label_325;
+                                                §label_331;
                                                 dungeon_mode(70) = DMODE_OPEN_AND_REQUEST;
                                                 dungeon_mode(61) = DMODE_REQUEST;
                                                 dungeon_mode(60) = DMODE_REQUEST;
@@ -2163,43 +2194,43 @@ def 0 {
                                                 dungeon_mode(54) = DMODE_OPEN_AND_REQUEST;
                                                 adventure_log = 5;
                                                 $PERFORMANCE_PROGRESS_LIST[19] = 1;
-                                                jump @label_324;
+                                                jump @label_330;
                                             } elseif ( scn($SCENARIO_MAIN) < [29, 86] ) {
-                                                §label_326;
+                                                §label_332;
                                                 dungeon_mode(63) = DMODE_REQUEST;
                                                 dungeon_mode(62) = DMODE_OPEN_AND_REQUEST;
-                                                jump @label_325;
+                                                jump @label_331;
                                             } elseif ( scn($SCENARIO_MAIN) < [29, 93] ) {
-                                                §label_327;
+                                                §label_333;
                                                 dungeon_mode(66) = DMODE_REQUEST;
                                                 dungeon_mode(65) = DMODE_REQUEST;
                                                 dungeon_mode(64) = DMODE_REQUEST;
-                                                jump @label_326;
+                                                jump @label_332;
                                             } elseif ( scn($SCENARIO_MAIN) < [29, 95] ) {
-                                                §label_328;
+                                                §label_334;
                                                 dungeon_mode(69) = DMODE_REQUEST;
                                                 dungeon_mode(68) = DMODE_REQUEST;
                                                 dungeon_mode(67) = DMODE_OPEN_AND_REQUEST;
                                                 $PERFORMANCE_PROGRESS_LIST[18] = 1;
                                                 adventure_log = 6;
-                                                jump @label_327;
+                                                jump @label_333;
                                             } else {
                                                 $PERFORMANCE_PROGRESS_LIST[10] = 1;
                                                 $SCENARIO_BALANCE_FLAG = 7;
                                                 $PERFORMANCE_PROGRESS_LIST[10] = 1;
                                                 dungeon_mode(72) = DMODE_OPEN_AND_REQUEST;
-                                                jump @label_328;
+                                                jump @label_334;
                                             }
                                             break;
                                         case menu({
-                                            english="[M:D2]Awaiting Rescue Check",
+                                            english="[M:D2]Awaiting Critical Park Check",
                                             french="[M:D2]Awaiting Rescue Check",
                                             german="[M:D2]Awaiting Rescue Check",
                                             italian="[M:D2]Awaiting Rescue Check",
                                             spanish="[M:D2]Awaiting Rescue Check",
                                         }):
                                             $SCENARIO_SELECT = 52;
-                                            jump @label_78;
+                                            jump @label_80;
                                     }
                                     break;
                                 case menu({
@@ -2239,11 +2270,11 @@ def 0 {
                                     main_EnterGround(LEVEL_T01P01A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M3 [CS:N]Drowzee[CR]",
+                                    english="[M:D2]M3 [CS:N]Tyrogue[CR]",
                                     french="[M:D2]M3 [CS:N]Drowzee[CR]",
                                     german="[M:D2]M3 [CS:N]Drowzee[CR]",
-                                    italian="[M:D2]M3 [CS:N]Drowzee[CR]",
-                                    spanish="[M:D2]M3 [CS:N]Drowzee[CR]",
+                                    italian="[M:D2]M3 [CS:N]Tyrogue[CR]",
+                                    spanish="[M:D2]M3 [CS:N]Tyrogue[CR]",
                                 }):
                                     message_Close();
                                     $SCENARIO_MAIN = scn[4, 2];
@@ -2274,7 +2305,7 @@ def 0 {
                                     main_EnterGround(LEVEL_G01P04A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M8 First Time to Craggy Coast",
+                                    english="[M:D2]M8 First Time to Crucial River",
                                     french="[M:D2]M8 First Time to Craggy Coast",
                                     german="[M:D2]M8 First Time to Craggy Coast",
                                     italian="[M:D2]M8 First Time to Craggy Coast",
@@ -2285,7 +2316,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D06P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M8 Craggy Coast Exploration",
+                                    english="[M:D2]M8 Crucial River Exploration",
                                     french="[M:D2]M8 Craggy Coast Exploration",
                                     german="[M:D2]M8 Craggy Coast Exploration",
                                     italian="[M:D2]M8 Craggy Coast Exploration",
@@ -2296,7 +2327,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D06P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M8 First Time to [CS:P]Mt. Horn[CR]",
+                                    english="[M:D2]M8 First Time to [CS:P]Neat Ocean[CR]",
                                     french="[M:D2]M8 First Time to [CS:P]Mt. Horn[CR]",
                                     german="[M:D2]M8 First Time to [CS:P]Mt. Horn[CR]",
                                     italian="[M:D2]M8 First Time to [CS:P]Mt. Horn[CR]",
@@ -2307,7 +2338,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D07P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M8 [CS:P]Mt. Horn[CR] Exploration",
+                                    english="[M:D2]M8 [CS:P]Neat Ocean[CR] Exploration",
                                     french="[M:D2]M8 [CS:P]Mt. Horn[CR] Exploration",
                                     german="[M:D2]M8 [CS:P]Mt. Horn[CR] Exploration",
                                     italian="[M:D2]M8 [CS:P]Mt. Horn[CR] Exploration",
@@ -2318,7 +2349,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D07P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M9 First Time to [CS:P]Foggy Forest[CR]",
+                                    english="[M:D2]M9 First Time to [CS:P]Ornate Burrow[CR]",
                                     french="[M:D2]M9 First Time to [CS:P]Foggy Forest[CR]",
                                     german="[M:D2]M9 First Time to [CS:P]Foggy Forest[CR]",
                                     italian="[M:D2]M9 First Time to [CS:P]Foggy Forest[CR]",
@@ -2329,7 +2360,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D08P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M9 [CS:P]Foggy Forest[CR] Exploration",
+                                    english="[M:D2]M9 [CS:P]Ornate Burrow[CR] Exploration",
                                     french="[M:D2]M9 [CS:P]Foggy Forest[CR] Exploration",
                                     german="[M:D2]M9 [CS:P]Foggy Forest[CR] Exploration",
                                     italian="[M:D2]M9 [CS:P]Foggy Forest[CR] Exploration",
@@ -2340,7 +2371,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D08P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M10 First Time to [CS:P]Steam Cave[CR]",
+                                    english="[M:D2]M10 First Time to [CS:P]Ornate Stocks[CR]",
                                     french="[M:D2]M10 First Time to [CS:P]Steam Cave[CR]",
                                     german="[M:D2]M10 First Time to [CS:P]Steam Cave[CR]",
                                     italian="[M:D2]M10 First Time to [CS:P]Steam Cave[CR]",
@@ -2351,7 +2382,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D09P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M10 [CS:P]Steam Cave[CR] Exploration",
+                                    english="[M:D2]M10 [CS:P]Ornate Stocks[CR] Exploration",
                                     french="[M:D2]M10 [CS:P]Steam Cave[CR] Exploration",
                                     german="[M:D2]M10 [CS:P]Steam Cave[CR] Exploration",
                                     italian="[M:D2]M10 [CS:P]Steam Cave[CR] Exploration",
@@ -2362,7 +2393,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D09P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M10 First Time to [CS:P]Steam Cave[CR]-2",
+                                    english="[M:D2]M10 First Time to [CS:P]Ornate Stocks[CR]-2",
                                     french="[M:D2]M10 First Time to [CS:P]Steam Cave[CR]-2",
                                     german="[M:D2]M10 First Time to [CS:P]Steam Cave[CR]-2",
                                     italian="[M:D2]M10 First Time to [CS:P]Steam Cave[CR]-2",
@@ -2373,7 +2404,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D10P21A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M10 [CS:P]Steam Cave[CR]-2 Exploration",
+                                    english="[M:D2]M10 [CS:P]Ornate Stocks[CR]-2 Exploration",
                                     french="[M:D2]M10 [CS:P]Steam Cave[CR]-2 Exploration",
                                     german="[M:D2]M10 [CS:P]Steam Cave[CR]-2 Exploration",
                                     italian="[M:D2]M10 [CS:P]Steam Cave[CR]-2 Exploration",
@@ -2384,18 +2415,18 @@ def 0 {
                                     main_EnterGround(LEVEL_D10P21A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M11 [CS:N]Marill[CR] Bros. Lost Item",
-                                    french="[M:D2]M11 [CS:N]Marill[CR] Bros. Lost Item",
-                                    german="[M:D2]M11 [CS:N]Marill[CR] Bros. Lost Item",
-                                    italian="[M:D2]M11 [CS:N]Marill[CR] Bros. Lost Item",
-                                    spanish="[M:D2]M11 [CS:N]Marill[CR] Bros. Lost Item",
+                                    english="[M:D2]M11 [CS:N]Kabuto[CR] Bros. Lost Item",
+                                    french="[M:D2]M11 [CS:N]Kabuto[CR] Bros. Lost Item",
+                                    german="[M:D2]M11 [CS:N]Kabuto[CR] Bros. Lost Item",
+                                    italian="[M:D2]M11 [CS:N]Kabuto[CR] Bros. Lost Item",
+                                    spanish="[M:D2]M11 [CS:N]Kabuto[CR] Bros. Lost Item",
                                 }):
                                     message_Close();
                                     $SCENARIO_MAIN = scn[12, 3];
                                     main_EnterGround(LEVEL_T01P02A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M12 First Time to [CS:P]Amp Clearing[CR]-2",
+                                    english="[M:D2]M12 First Time to [CS:P]Electric Cistern[CR]-2",
                                     french="[M:D2]M12 First Time to [CS:P]Amp Clearing[CR]-2",
                                     german="[M:D2]M12 First Time to [CS:P]Amp Clearing[CR]-2",
                                     italian="[M:D2]M12 First Time to [CS:P]Amp Clearing[CR]-2",
@@ -2406,7 +2437,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D12P21A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M12 [CS:P]Amp Clearing[CR]-2 Exploration",
+                                    english="[M:D2]M12 [CS:P]Electric Cistern[CR]-2 Exploration",
                                     french="[M:D2]M12 [CS:P]Amp Clearing[CR]-2 Exploration",
                                     german="[M:D2]M12 [CS:P]Amp Clearing[CR]-2 Exploration",
                                     italian="[M:D2]M12 [CS:P]Amp Clearing[CR]-2 Exploration",
@@ -2417,18 +2448,18 @@ def 0 {
                                     main_EnterGround(LEVEL_D12P21A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M13 Capturing [CS:N]Grovyle[CR] is First",
+                                    english="[M:D2]M13 Capturing [CS:N]Shiftry[CR] is First",
                                     french="[M:D2]M13 Capturing [CS:N]Grovyle[CR] is First",
                                     german="[M:D2]M13 Capturing [CS:N]Grovyle[CR] is First",
-                                    italian="[M:D2]M13 Capturing [CS:N]Grovyle[CR] is First",
-                                    spanish="[M:D2]M13 Capturing [CS:N]Grovyle[CR] is First",
+                                    italian="[M:D2]M13 Capturing [CS:N]Shiftry[CR] is First",
+                                    spanish="[M:D2]M13 Capturing [CS:N]Shiftry[CR] is First",
                                 }):
                                     message_Close();
                                     $SCENARIO_MAIN = scn[14, 1];
                                     main_EnterGround(LEVEL_P01P01A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M13 First Time to [CS:P]Northern Desert[CR]",
+                                    english="[M:D2]M13 First Time to [CS:P]Elastic Grotto[CR]",
                                     french="[M:D2]M13 First Time to [CS:P]Northern Desert[CR]",
                                     german="[M:D2]M13 First Time to [CS:P]Northern Desert[CR]",
                                     italian="[M:D2]M13 First Time to [CS:P]Northern Desert[CR]",
@@ -2440,7 +2471,7 @@ def 0 {
                                     main_EnterGround(LEVEL_G01P03A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M14 Quicksand Cave-2 Retry",
+                                    english="[M:D2]M14 Abandoned Hideout-2 Retry",
                                     french="[M:D2]M14 Quicksand Cave-2 Retry",
                                     german="[M:D2]M14 Quicksand Cave-2 Retry",
                                     italian="[M:D2]M14 Quicksand Cave-2 Retry",
@@ -2488,7 +2519,7 @@ def 0 {
                                     main_EnterGround(LEVEL_P05P02A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M17 To the Stockade",
+                                    english="[M:D2]M17 To the Amusing Vein",
                                     french="[M:D2]M17 To the Stockade",
                                     german="[M:D2]M17 To the Stockade",
                                     italian="[M:D2]M17 To the Stockade",
@@ -2499,7 +2530,7 @@ def 0 {
                                     main_EnterGround(LEVEL_P05P02A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M17 First Time to [CS:P]Chasm Cave[CR]",
+                                    english="[M:D2]M17 First Time to [CS:P]Great Battlefield[CR]",
                                     french="[M:D2]M17 First Time to [CS:P]Chasm Cave[CR]",
                                     german="[M:D2]M17 First Time to [CS:P]Chasm Cave[CR]",
                                     italian="[M:D2]M17 First Time to [CS:P]Chasm Cave[CR]",
@@ -2510,7 +2541,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D18P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M17 [CS:P]Chasm Cave[CR] Exploration",
+                                    english="[M:D2]M17 [CS:P]Great Battlefield[CR] Exploration",
                                     french="[M:D2]M17 [CS:P]Chasm Cave[CR] Exploration",
                                     german="[M:D2]M17 [CS:P]Chasm Cave[CR] Exploration",
                                     italian="[M:D2]M17 [CS:P]Chasm Cave[CR] Exploration",
@@ -2521,7 +2552,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D18P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M18 First Time to [CS:P]Dark Hill[CR]",
+                                    english="[M:D2]M18 First Time to [CS:P]Tremendous Wild[CR]",
                                     french="[M:D2]M18 First Time to [CS:P]Dark Hill[CR]",
                                     german="[M:D2]M18 First Time to [CS:P]Dark Hill[CR]",
                                     italian="[M:D2]M18 First Time to [CS:P]Dark Hill[CR]",
@@ -2532,7 +2563,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D19P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M18 [CS:P]Dark Hill[CR] Exploration",
+                                    english="[M:D2]M18 [CS:P]Tremendous Wild[CR] Exploration",
                                     french="[M:D2]M18 [CS:P]Dark Hill[CR] Exploration",
                                     german="[M:D2]M18 [CS:P]Dark Hill[CR] Exploration",
                                     italian="[M:D2]M18 [CS:P]Dark Hill[CR] Exploration",
@@ -2543,7 +2574,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D19P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M18 First Time to [CS:P]Sealed Ruin[CR]",
+                                    english="[M:D2]M18 First Time to [CS:P]Witty Lair[CR]",
                                     french="[M:D2]M18 First Time to [CS:P]Sealed Ruin[CR]",
                                     german="[M:D2]M18 First Time to [CS:P]Sealed Ruin[CR]",
                                     italian="[M:D2]M18 First Time to [CS:P]Sealed Ruin[CR]",
@@ -2554,7 +2585,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D20P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M18 [CS:P]Sealed Ruin[CR] Exploration",
+                                    english="[M:D2]M18 [CS:P]Witty Lair[CR] Exploration",
                                     french="[M:D2]M18 [CS:P]Sealed Ruin[CR] Exploration",
                                     german="[M:D2]M18 [CS:P]Sealed Ruin[CR] Exploration",
                                     italian="[M:D2]M18 [CS:P]Sealed Ruin[CR] Exploration",
@@ -2565,7 +2596,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D20P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M18 First Time to [CS:P]Sealed Ruin[CR]-2",
+                                    english="[M:D2]M18 First Time to [CS:P]Witty Lair[CR]-2",
                                     french="[M:D2]M18 First Time to [CS:P]Sealed Ruin[CR]-2",
                                     german="[M:D2]M18 First Time to [CS:P]Sealed Ruin[CR]-2",
                                     italian="[M:D2]M18 First Time to [CS:P]Sealed Ruin[CR]-2",
@@ -2576,7 +2607,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D21P21A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M18 [CS:P]Sealed Ruin[CR]-2 Exploration",
+                                    english="[M:D2]M18 [CS:P]Witty Lair[CR]-2 Exploration",
                                     french="[M:D2]M18 [CS:P]Sealed Ruin[CR]-2 Exploration",
                                     german="[M:D2]M18 [CS:P]Sealed Ruin[CR]-2 Exploration",
                                     italian="[M:D2]M18 [CS:P]Sealed Ruin[CR]-2 Exploration",
@@ -2587,7 +2618,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D21P21A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M19 First Time to [CS:P]Dusk Forest[CR]",
+                                    english="[M:D2]M19 First Time to [CS:P]Witty Boardwalk[CR]",
                                     french="[M:D2]M19 First Time to [CS:P]Dusk Forest[CR]",
                                     german="[M:D2]M19 First Time to [CS:P]Dusk Forest[CR]",
                                     italian="[M:D2]M19 First Time to [CS:P]Dusk Forest[CR]",
@@ -2598,7 +2629,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D22P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M19 [CS:P]Dusk Forest[CR] Exploration",
+                                    english="[M:D2]M19 [CS:P]Witty Boardwalk[CR] Exploration",
                                     french="[M:D2]M19 [CS:P]Dusk Forest[CR] Exploration",
                                     german="[M:D2]M19 [CS:P]Dusk Forest[CR] Exploration",
                                     italian="[M:D2]M19 [CS:P]Dusk Forest[CR] Exploration",
@@ -2609,7 +2640,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D22P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M19 First Time to [CS:P]Deep Dusk Forest[CR]",
+                                    english="[M:D2]M19 First Time to [CS:P]Deep Witty Boardwalk[CR]",
                                     french="[M:D2]M19 First Time to [CS:P]Deep Dusk Forest[CR]",
                                     german="[M:D2]M19 First Time to [CS:P]Deep Dusk Forest[CR]",
                                     italian="[M:D2]M19 First Time to [CS:P]Deep Dusk Forest[CR]",
@@ -2620,7 +2651,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D23P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M19 [CS:P]Deep Dusk Forest[CR] Exploration",
+                                    english="[M:D2]M19 [CS:P]Deep Witty Boardwalk[CR] Exploration",
                                     french="[M:D2]M19 [CS:P]Deep Dusk Forest[CR] Exploration",
                                     german="[M:D2]M19 [CS:P]Deep Dusk Forest[CR] Exploration",
                                     italian="[M:D2]M19 [CS:P]Deep Dusk Forest[CR] Exploration",
@@ -2631,7 +2662,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D23P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M20 First Time to [CS:P]Treeshroud Forest[CR]",
+                                    english="[M:D2]M20 First Time to [CS:P]Goofy Landing[CR]",
                                     french="[M:D2]M20 First Time to [CS:P]Treeshroud Forest[CR]",
                                     german="[M:D2]M20 First Time to [CS:P]Treeshroud Forest[CR]",
                                     italian="[M:D2]M20 First Time to [CS:P]Treeshroud Forest[CR]",
@@ -2642,7 +2673,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D24P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M20 [CS:P]Treeshroud Forest[CR] Exploration",
+                                    english="[M:D2]M20 [CS:P]Goofy Landing[CR] Exploration",
                                     french="[M:D2]M20 [CS:P]Treeshroud Forest[CR] Exploration",
                                     german="[M:D2]M20 [CS:P]Treeshroud Forest[CR] Exploration",
                                     italian="[M:D2]M20 [CS:P]Treeshroud Forest[CR] Exploration",
@@ -2653,11 +2684,11 @@ def 0 {
                                     main_EnterGround(LEVEL_D24P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M21 The Wise, Old [CS:N]Torkoal[CR]",
+                                    english="[M:D2]M21 The Wise, Old [CS:N]Rhydon[CR]",
                                     french="[M:D2]M21 The Wise, Old [CS:N]Torkoal[CR]",
                                     german="[M:D2]M21 The Wise, Old [CS:N]Torkoal[CR]",
-                                    italian="[M:D2]M21 The Wise, Old [CS:N]Torkoal[CR]",
-                                    spanish="[M:D2]M21 The Wise, Old [CS:N]Torkoal[CR]",
+                                    italian="[M:D2]M21 The Wise, Old [CS:N]Rhydon[CR]",
+                                    spanish="[M:D2]M21 The Wise, Old [CS:N]Rhydon[CR]",
                                 }):
                                     message_Close();
                                     $SCENARIO_MAIN = scn[22, 2];
@@ -2675,7 +2706,7 @@ def 0 {
                                     main_EnterGround(LEVEL_P01P01A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M22 Let\'s Stop by Sharpedo Bluff",
+                                    english="[M:D2]M22 Let\'s Stop by Demanding Channel",
                                     french="[M:D2]M22 Let\'s Stop by Sharpedo Bluff",
                                     german="[M:D2]M22 Let\'s Stop by Sharpedo Bluff",
                                     italian="[M:D2]M22 Let\'s Stop by Sharpedo Bluff",
@@ -2697,7 +2728,7 @@ def 0 {
                                     main_EnterGround(LEVEL_H02P99A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M22 Let\'s Swing by the Beach",
+                                    english="[M:D2]M22 Let\'s Swing by the Fundamental Dock",
                                     french="[M:D2]M22 Let\'s Swing by the Beach",
                                     german="[M:D2]M22 Let\'s Swing by the Beach",
                                     italian="[M:D2]M22 Let\'s Swing by the Beach",
@@ -2708,7 +2739,7 @@ def 0 {
                                     main_EnterGround(LEVEL_P01P01A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M23 First Time to [CS:P]Brine Cave[CR]",
+                                    english="[M:D2]M23 First Time to [CS:P]Deep Summit[CR]",
                                     french="[M:D2]M23 First Time to [CS:P]Brine Cave[CR]",
                                     german="[M:D2]M23 First Time to [CS:P]Brine Cave[CR]",
                                     italian="[M:D2]M23 First Time to [CS:P]Brine Cave[CR]",
@@ -2719,7 +2750,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D25P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M23 [CS:P]Brine Cave[CR] Exploration",
+                                    english="[M:D2]M23 [CS:P]Deep Summit[CR] Exploration",
                                     french="[M:D2]M23 [CS:P]Brine Cave[CR] Exploration",
                                     german="[M:D2]M23 [CS:P]Brine Cave[CR] Exploration",
                                     italian="[M:D2]M23 [CS:P]Brine Cave[CR] Exploration",
@@ -2730,7 +2761,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D25P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M23 First Time to the [CS:P]Brine Cave[CR]-2",
+                                    english="[M:D2]M23 First Time to the [CS:P]Deep Summit[CR]-2",
                                     french="[M:D2]M23 First Time to the [CS:P]Brine Cave[CR]-2",
                                     german="[M:D2]M23 First Time to the [CS:P]Brine Cave[CR]-2",
                                     italian="[M:D2]M23 First Time to the [CS:P]Brine Cave[CR]-2",
@@ -2741,7 +2772,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D26P21A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M23 [CS:P]Brine Cave[CR]-2 Exploration",
+                                    english="[M:D2]M23 [CS:P]Deep Summit[CR]-2 Exploration",
                                     french="[M:D2]M23 [CS:P]Brine Cave[CR]-2 Exploration",
                                     german="[M:D2]M23 [CS:P]Brine Cave[CR]-2 Exploration",
                                     italian="[M:D2]M23 [CS:P]Brine Cave[CR]-2 Exploration",
@@ -2752,7 +2783,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D26P21A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M24 First Time to the [CS:P]Hidden Land[CR]",
+                                    english="[M:D2]M24 First Time to the [CS:P]Large Staith[CR]",
                                     french="[M:D2]M24 First Time to the [CS:P]Hidden Land[CR]",
                                     german="[M:D2]M24 First Time to the [CS:P]Hidden Land[CR]",
                                     italian="[M:D2]M24 First Time to the [CS:P]Hidden Land[CR]",
@@ -2763,7 +2794,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D27P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M24 The [CS:P]Hidden Land[CR] Exploration",
+                                    english="[M:D2]M24 The [CS:P]Large Staith[CR] Exploration",
                                     french="[M:D2]M24 The [CS:P]Hidden Land[CR] Exploration",
                                     german="[M:D2]M24 The [CS:P]Hidden Land[CR] Exploration",
                                     italian="[M:D2]M24 The [CS:P]Hidden Land[CR] Exploration",
@@ -2774,7 +2805,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D27P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M24 First Time to the [CS:P]Hidden Land[CR]-2",
+                                    english="[M:D2]M24 First Time to the [CS:P]Large Staith[CR]-2",
                                     french="[M:D2]M24 First Time to the [CS:P]Hidden Land[CR]-2",
                                     german="[M:D2]M24 First Time to the [CS:P]Hidden Land[CR]-2",
                                     italian="[M:D2]M24 First Time to the [CS:P]Hidden Land[CR]-2",
@@ -2785,7 +2816,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D28P21A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M24 The [CS:P]Hidden Land[CR]-2 Exploration",
+                                    english="[M:D2]M24 The [CS:P]Large Staith[CR]-2 Exploration",
                                     french="[M:D2]M24 The [CS:P]Hidden Land[CR]-2 Exploration",
                                     german="[M:D2]M24 The [CS:P]Hidden Land[CR]-2 Exploration",
                                     italian="[M:D2]M24 The [CS:P]Hidden Land[CR]-2 Exploration",
@@ -2796,7 +2827,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D28P21A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M25 First Time to [CS:P]Temporal Tower[CR]",
+                                    english="[M:D2]M25 First Time to [CS:P]Luxurious Shadow[CR]",
                                     french="[M:D2]M25 First Time to [CS:P]Temporal Tower[CR]",
                                     german="[M:D2]M25 First Time to [CS:P]Temporal Tower[CR]",
                                     italian="[M:D2]M25 First Time to [CS:P]Temporal Tower[CR]",
@@ -2807,7 +2838,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D29P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]M25 [CS:P]Temporal Tower[CR] Exploration",
+                                    english="[M:D2]M25 [CS:P]Luxurious Shadow[CR] Exploration",
                                     french="[M:D2]M25 [CS:P]Temporal Tower[CR] Exploration",
                                     german="[M:D2]M25 [CS:P]Temporal Tower[CR] Exploration",
                                     italian="[M:D2]M25 [CS:P]Temporal Tower[CR] Exploration",
@@ -2818,7 +2849,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D29P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]S1 [CS:P]Mystifying Forest[CR] Exploration",
+                                    english="[M:D2]S1 [CS:P]Dazzling Heath[CR] Exploration",
                                     french="[M:D2]S1 [CS:P]Mystifying Forest[CR] Exploration",
                                     german="[M:D2]S1 [CS:P]Mystifying Forest[CR] Exploration",
                                     italian="[M:D2]S1 [CS:P]Mystifying Forest[CR] Exploration",
@@ -2829,18 +2860,18 @@ def 0 {
                                     main_EnterGround(LEVEL_D31P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]S2 Tale of [CS:N]Scizor[CR] the Explorer",
+                                    english="[M:D2]S2 Tale of [CS:N]Dewgong[CR] the Explorer",
                                     french="[M:D2]S2 Tale of [CS:N]Scizor[CR] the Explorer",
                                     german="[M:D2]S2 Tale of [CS:N]Scizor[CR] the Explorer",
-                                    italian="[M:D2]S2 Tale of [CS:N]Scizor[CR] the Explorer",
-                                    spanish="[M:D2]S2 Tale of [CS:N]Scizor[CR] the Explorer",
+                                    italian="[M:D2]S2 Tale of [CS:N]Dewgong[CR] the Explorer",
+                                    spanish="[M:D2]S2 Tale of [CS:N]Dewgong[CR] the Explorer",
                                 }):
                                     message_Close();
                                     $SCENARIO_MAIN = scn[29, 32];
                                     main_EnterGround(LEVEL_T01P01A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]S2 [CS:P]Crevice Cave[CR] Exploration & Return",
+                                    english="[M:D2]S2 [CS:P]Huge Hideaway[CR] Exploration & Return",
                                     french="[M:D2]S2 [CS:P]Crevice Cave[CR] Exploration & Return",
                                     german="[M:D2]S2 [CS:P]Crevice Cave[CR] Exploration & Return",
                                     italian="[M:D2]S2 [CS:P]Crevice Cave[CR] Exploration & Return",
@@ -2851,7 +2882,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D79P11A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]S3 [CS:P]Surrounded Sea[CR] Rumor",
+                                    english="[M:D2]S3 [CS:P]Pepperoni Convent[CR] Rumor",
                                     french="[M:D2]S3 [CS:P]Surrounded Sea[CR] Rumor",
                                     german="[M:D2]S3 [CS:P]Surrounded Sea[CR] Rumor",
                                     italian="[M:D2]S3 [CS:P]Surrounded Sea[CR] Rumor",
@@ -2873,11 +2904,11 @@ def 0 {
                                     main_EnterGround(LEVEL_G01P04A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]S3 Babysitting [CS:N]Manaphy[CR]",
-                                    french="[M:D2]S3 Babysitting [CS:N]Manaphy[CR]",
-                                    german="[M:D2]S3 Babysitting [CS:N]Manaphy[CR]",
-                                    italian="[M:D2]S3 Babysitting [CS:N]Manaphy[CR]",
-                                    spanish="[M:D2]S3 Babysitting [CS:N]Manaphy[CR]",
+                                    english="[M:D2]S3 Babysitting [CS:N]Luvdisc[CR]",
+                                    french="[M:D2]S3 Babysitting [CS:N]Lovdisc[CR]",
+                                    german="[M:D2]S3 Babysitting [CS:N]Liebiskus[CR]",
+                                    italian="[M:D2]S3 Babysitting [CS:N]Luvdisc[CR]",
+                                    spanish="[M:D2]S3 Babysitting [CS:N]Luvdisc[CR]",
                                 }):
                                     message_Close();
                                     $SCENARIO_MAIN = scn[29, 44];
@@ -2885,11 +2916,11 @@ def 0 {
                                     main_EnterGround(LEVEL_H02P99A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]S3 Guiding [CS:N]Manaphy[CR]",
-                                    french="[M:D2]S3 Guiding [CS:N]Manaphy[CR]",
-                                    german="[M:D2]S3 Guiding [CS:N]Manaphy[CR]",
-                                    italian="[M:D2]S3 Guiding [CS:N]Manaphy[CR]",
-                                    spanish="[M:D2]S3 Guiding [CS:N]Manaphy[CR]",
+                                    english="[M:D2]S3 Guiding [CS:N]Luvdisc[CR]",
+                                    french="[M:D2]S3 Guiding [CS:N]Lovdisc[CR]",
+                                    german="[M:D2]S3 Guiding [CS:N]Liebiskus[CR]",
+                                    italian="[M:D2]S3 Guiding [CS:N]Luvdisc[CR]",
+                                    spanish="[M:D2]S3 Guiding [CS:N]Luvdisc[CR]",
                                 }):
                                     message_Close();
                                     $SCENARIO_MAIN = scn[29, 46];
@@ -2940,7 +2971,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D32P13A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]S20 First Time to [CS:P]The Nightmare[CR]",
+                                    english="[M:D2]S20 First Time to [CS:P]Elastic Vein[CR]",
                                     french="[M:D2]S20 First Time to [CS:P]The Nightmare[CR]",
                                     german="[M:D2]S20 First Time to [CS:P]The Nightmare[CR]",
                                     italian="[M:D2]S20 First Time to [CS:P]The Nightmare[CR]",
@@ -2951,7 +2982,7 @@ def 0 {
                                     main_EnterGround(LEVEL_G01P07A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]S20 [CS:P]The Nightmare[CR] Exploration",
+                                    english="[M:D2]S20 [CS:P]Elastic Vein[CR] Exploration",
                                     french="[M:D2]S20 [CS:P]The Nightmare[CR] Exploration",
                                     german="[M:D2]S20 [CS:P]The Nightmare[CR] Exploration",
                                     italian="[M:D2]S20 [CS:P]The Nightmare[CR] Exploration",
@@ -2962,7 +2993,7 @@ def 0 {
                                     main_EnterGround(LEVEL_G01P07A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]S21 [CS:P]Spacial Rift[CR] Exploration",
+                                    english="[M:D2]S21 [CS:P]Primary Shantytown[CR] Exploration",
                                     french="[M:D2]S21 [CS:P]Spacial Rift[CR] Exploration",
                                     german="[M:D2]S21 [CS:P]Spacial Rift[CR] Exploration",
                                     italian="[M:D2]S21 [CS:P]Spacial Rift[CR] Exploration",
@@ -2973,7 +3004,7 @@ def 0 {
                                     main_EnterGround(LEVEL_D38P12A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]S21 [CS:P]Spacial Rift[CR]-2 Exploration",
+                                    english="[M:D2]S21 [CS:P]Primary Shantytown[CR]-2 Exploration",
                                     french="[M:D2]S21 [CS:P]Spacial Rift[CR]-2 Exploration",
                                     german="[M:D2]S21 [CS:P]Spacial Rift[CR]-2 Exploration",
                                     italian="[M:D2]S21 [CS:P]Spacial Rift[CR]-2 Exploration",
@@ -2995,7 +3026,7 @@ def 0 {
                                     main_EnterGround(LEVEL_H01P99A, 30);
                                     hold;
                                 case menu({
-                                    english="[M:D2]S22 Dark Crater-2 Exploration",
+                                    english="[M:D2]S22 Colossal Nation-2 Exploration",
                                     french="[M:D2]S22 Dark Crater-2 Exploration",
                                     german="[M:D2]S22 Dark Crater-2 Exploration",
                                     italian="[M:D2]S22 Dark Crater-2 Exploration",
@@ -3005,6 +3036,8 @@ def 0 {
                                     $SCENARIO_MAIN = scn[29, 89];
                                     main_EnterGround(LEVEL_D41P21A, 30);
                                     hold;
+                                default:
+                                    jump @label_89;
                             }
                             break;
                         case menu({
@@ -3030,12 +3063,12 @@ def 0 {
                             dungeon_mode(108) = DMODE_OPEN_AND_REQUEST;
                             dungeon_mode(109) = DMODE_OPEN_AND_REQUEST;
                             dungeon_mode(110) = DMODE_OPEN_AND_REQUEST;
-                            §label_43;
+                            §label_45;
                             $SCENARIO_MAIN = scn[29, 98];
                             $SCENARIO_MAIN_BIT_FLAG[95] = 1;
                             $SCENARIO_MAIN_BIT_FLAG[96] = 1;
                             $SCENARIO_MAIN_BIT_FLAG[97] = 1;
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Scenario Complete",
                             french="[M:D2]Scenario Complete",
@@ -3043,7 +3076,7 @@ def 0 {
                             italian="[M:D2]Scenario Complete",
                             spanish="[M:D2]Scenario Complete",
                         }):
-                            jump @label_43;
+                            jump @label_45;
                         case menu({
                             english="[M:D2]Main 1",
                             french="[M:D2]Main 1",
@@ -3062,7 +3095,7 @@ def 0 {
                             spanish="[M:D2]Main 2",
                         }):
                             $SCENARIO_MAIN = scn[3, 0];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Main 3",
                             french="[M:D2]Main 3",
@@ -3071,7 +3104,7 @@ def 0 {
                             spanish="[M:D2]Main 3",
                         }):
                             $SCENARIO_MAIN = scn[4, 0];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Main 4",
                             french="[M:D2]Main 4",
@@ -3080,7 +3113,7 @@ def 0 {
                             spanish="[M:D2]Main 4",
                         }):
                             $SCENARIO_MAIN = scn[5, 0];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Main 5",
                             french="[M:D2]Main 5",
@@ -3089,7 +3122,7 @@ def 0 {
                             spanish="[M:D2]Main 5",
                         }):
                             $SCENARIO_MAIN = scn[6, 0];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Main 6",
                             french="[M:D2]Main 6",
@@ -3098,7 +3131,7 @@ def 0 {
                             spanish="[M:D2]Main 6",
                         }):
                             $SCENARIO_MAIN = scn[7, 0];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Main 7",
                             french="[M:D2]Main 7",
@@ -3107,7 +3140,7 @@ def 0 {
                             spanish="[M:D2]Main 7",
                         }):
                             $SCENARIO_MAIN = scn[8, 0];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Main 8",
                             french="[M:D2]Main 8",
@@ -3116,7 +3149,7 @@ def 0 {
                             spanish="[M:D2]Main 8",
                         }):
                             $SCENARIO_MAIN = scn[9, 0];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Main 9",
                             french="[M:D2]Main 9",
@@ -3125,7 +3158,7 @@ def 0 {
                             spanish="[M:D2]Main 9",
                         }):
                             $SCENARIO_MAIN = scn[10, 0];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Main 10",
                             french="[M:D2]Main 10",
@@ -3134,7 +3167,7 @@ def 0 {
                             spanish="[M:D2]Main 10",
                         }):
                             $SCENARIO_MAIN = scn[11, 0];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Main 11",
                             french="[M:D2]Main 11",
@@ -3143,7 +3176,7 @@ def 0 {
                             spanish="[M:D2]Main 11",
                         }):
                             $SCENARIO_MAIN = scn[12, 0];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Main 12",
                             french="[M:D2]Main 12",
@@ -3152,7 +3185,7 @@ def 0 {
                             spanish="[M:D2]Main 12",
                         }):
                             $SCENARIO_MAIN = scn[13, 0];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Main 13",
                             french="[M:D2]Main 13",
@@ -3161,7 +3194,7 @@ def 0 {
                             spanish="[M:D2]Main 13",
                         }):
                             $SCENARIO_MAIN = scn[14, 0];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Main 14",
                             french="[M:D2]Main 14",
@@ -3171,7 +3204,7 @@ def 0 {
                         }):
                             $SCENARIO_MAIN = scn[14, 6];
                             dungeon_mode(21) = DMODE_OPEN;
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Main 15",
                             french="[M:D2]Main 15",
@@ -3181,7 +3214,7 @@ def 0 {
                         }):
                             $SCENARIO_MAIN = scn[16, 0];
                             dungeon_mode(24) = DMODE_OPEN;
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Main 16",
                             french="[M:D2]Main 16",
@@ -3190,7 +3223,7 @@ def 0 {
                             spanish="[M:D2]Main 16",
                         }):
                             $SCENARIO_MAIN = scn[17, 0];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Main 17",
                             french="[M:D2]Main 17",
@@ -3199,7 +3232,7 @@ def 0 {
                             spanish="[M:D2]Main 17",
                         }):
                             $SCENARIO_MAIN = scn[18, 0];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Main 18",
                             french="[M:D2]Main 18",
@@ -3208,7 +3241,7 @@ def 0 {
                             spanish="[M:D2]Main 18",
                         }):
                             $SCENARIO_MAIN = scn[19, 0];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Main 19",
                             french="[M:D2]Main 19",
@@ -3217,7 +3250,7 @@ def 0 {
                             spanish="[M:D2]Main 19",
                         }):
                             $SCENARIO_MAIN = scn[20, 0];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Main 20",
                             french="[M:D2]Main 20",
@@ -3226,7 +3259,7 @@ def 0 {
                             spanish="[M:D2]Main 20",
                         }):
                             $SCENARIO_MAIN = scn[21, 0];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Main 21",
                             french="[M:D2]Main 21",
@@ -3235,7 +3268,7 @@ def 0 {
                             spanish="[M:D2]Main 21",
                         }):
                             $SCENARIO_MAIN = scn[22, 0];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Main 22",
                             french="[M:D2]Main 22",
@@ -3244,7 +3277,7 @@ def 0 {
                             spanish="[M:D2]Main 22",
                         }):
                             $SCENARIO_MAIN = scn[23, 0];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Main 23",
                             french="[M:D2]Main 23",
@@ -3253,7 +3286,7 @@ def 0 {
                             spanish="[M:D2]Main 23",
                         }):
                             $SCENARIO_MAIN = scn[24, 0];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Main 24",
                             french="[M:D2]Main 24",
@@ -3262,7 +3295,7 @@ def 0 {
                             spanish="[M:D2]Main 24",
                         }):
                             $SCENARIO_MAIN = scn[25, 0];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Main 25",
                             french="[M:D2]Main 25",
@@ -3273,7 +3306,7 @@ def 0 {
                             main_EnterDungeon(40, 0);
                             switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
                             $SCENARIO_MAIN = scn[26, 0];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Main 26",
                             french="[M:D2]Main 26",
@@ -3284,7 +3317,7 @@ def 0 {
                             main_EnterDungeon(43, 0);
                             switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
                             $SCENARIO_MAIN = scn[27, 0];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Sub 01",
                             french="[M:D2]Sub 01",
@@ -3293,7 +3326,7 @@ def 0 {
                             spanish="[M:D2]Sub 01",
                         }):
                             $SCENARIO_MAIN = scn[29, 0];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Sub 02",
                             french="[M:D2]Sub 02",
@@ -3302,7 +3335,7 @@ def 0 {
                             spanish="[M:D2]Sub 02",
                         }):
                             $SCENARIO_MAIN = scn[29, 7];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Sub 03",
                             french="[M:D2]Sub 03",
@@ -3311,7 +3344,7 @@ def 0 {
                             spanish="[M:D2]Sub 03",
                         }):
                             $SCENARIO_MAIN = scn[29, 32];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Sub 03",
                             french="[M:D2]Sub 03",
@@ -3320,7 +3353,7 @@ def 0 {
                             spanish="[M:D2]Sub 03",
                         }):
                             $SCENARIO_MAIN = scn[29, 40];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Sub 04",
                             french="[M:D2]Sub 04",
@@ -3329,7 +3362,7 @@ def 0 {
                             spanish="[M:D2]Sub 04",
                         }):
                             $SCENARIO_MAIN = scn[29, 54];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Sub 20",
                             french="[M:D2]Sub 20",
@@ -3338,7 +3371,7 @@ def 0 {
                             spanish="[M:D2]Sub 20",
                         }):
                             $SCENARIO_MAIN = scn[29, 68];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Sub 21",
                             french="[M:D2]Sub 21",
@@ -3347,7 +3380,7 @@ def 0 {
                             spanish="[M:D2]Sub 21",
                         }):
                             $SCENARIO_MAIN = scn[29, 77];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Sub 22",
                             french="[M:D2]Sub 22",
@@ -3358,7 +3391,7 @@ def 0 {
                             main_EnterDungeon(63, 0);
                             switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
                             $SCENARIO_MAIN = scn[29, 86];
-                            jump @label_82;
+                            jump @label_350;
                         case menu({
                             english="[M:D2]Sub 23",
                             french="[M:D2]Sub 23",
@@ -3366,10 +3399,10 @@ def 0 {
                             italian="[M:D2]Sub 23",
                             spanish="[M:D2]Sub 23",
                         }):
-                            jump @label_78;
+                            jump @label_80;
                     }
                 } else {
-                    jump @label_37;
+                    jump @label_38;
                 }
                 break;
         }
@@ -3400,7 +3433,7 @@ def 0 {
                 spanish="[M:D2]No",
             }):
                 message_Close();
-                jump @label_35;
+                jump @label_3;
             case menu({
                 english="[M:D2]Start from Main 1",
                 french="[M:D2]Start from Main 1",
@@ -3408,9 +3441,11 @@ def 0 {
                 italian="[M:D2]Start from Main 1",
                 spanish="[M:D2]Start from Main 1",
             }):
-            default:
+                §label_2;
                 $EVENT_LOCAL = 1;
                 jump @label_0;
+            default:
+                jump @label_2;
         }
     }
 }

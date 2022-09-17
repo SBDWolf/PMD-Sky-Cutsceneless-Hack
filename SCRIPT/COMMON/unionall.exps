@@ -5207,9 +5207,10 @@ coro EVENT_S01_05 {
 
 coro EVENT_S01_06 {
     CallCommon(CORO_SUBSCREEN_INIT);
-    supervision_ExecuteActingSub(LEVEL_D31P31A, 'S01P0601', 0);
-    supervision_ExecuteActingSub(LEVEL_D31P41A, 'S01P0602', 0);
-    supervision_ExecuteActingSub(LEVEL_D31P31A, 'S01P0603', 0);
+    $SCENARIO_MAIN = scn[29, 4];
+    //supervision_ExecuteActingSub(LEVEL_D31P31A, 'S01P0601', 0);
+    //supervision_ExecuteActingSub(LEVEL_D31P41A, 'S01P0602', 0);
+    //supervision_ExecuteActingSub(LEVEL_D31P31A, 'S01P0603', 0);
     supervision_ExecuteActingSub(LEVEL_D31P41A, 'S01P0604', 0);
     main_EnterDungeon(45, 30);
     main_EnterDungeon(-1, 30);

@@ -116,6 +116,7 @@ def 0 {
                 }):
                     $SCENARIO_MAIN_BIT_FLAG[5] = 1;
                     message_Close();
+                    bgm_FadeOut(60);
                     screen_FadeOutAll(1, 30);
                     Wait(10);
                     supervision_Acting(0);

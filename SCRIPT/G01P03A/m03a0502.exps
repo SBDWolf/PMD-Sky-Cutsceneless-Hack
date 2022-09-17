@@ -23,6 +23,7 @@ def 0 {
     }
     WaitExecuteLives(ACTOR_ATTENDANT1);
     WaitExecuteLives(ACTOR_PLAYER);
+    bgm_FadeOut(60);    
     screen2_FadeOut(0, 30);
     screen_FadeOut(1, 30);
     back2_SetMode(0);
