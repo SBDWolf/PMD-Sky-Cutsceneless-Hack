@@ -31,54 +31,56 @@ def 0 {
         screen_FadeOutAll(1, 0);
         screen_FadeIn(1, 0);
         message_Close();
-        screen2_FadeOut(0, 0);
-        screen_FadeOutAll(1, 0);
-        screen2_FlushIn(1, 0, 2, 0, 0, 0);
-        back_SetGround(LEVEL_S02P01A);
-        back2_SetGround(LEVEL_S02P01A);
-        bgm_PlayFadeIn(BGM_WELCOME_TO_THE_WORLD_OF_POKEMON, 0, 256);
-        screen2_FadeIn(0, 30);
-        screen_FadeInAll(1, 30);
-        message_SwitchMonologue ($HERO_TALK_KIND) {
-        case 4:
-            {
-                english="Did you play \"Explorers of Time\" or \"Explorers\nof Darkness?\"",
-                french="Avez-vous joué à \"Explorateurs du Temps\"\nou \"Explorateurs de l'Ombre?\"",
-                german="Hast du [F:S2]Erkundungsteam Zeit[F:E2] bzw.\n[F:S2]Erkundungsteam Dunkelheit[F:E2] gespielt?",
-                italian="Hai giocato a \"Esploratori del tempo\"\no a \"Esploratori dell'oscurità?\"",
-                spanish="¿Has jugado a \"Exploradores del tiempo\"o a\n\"Exploradores de la oscuridad?\"",
-            }
-        default:
-            {
-                english="Did you play \"Explorers of Time\" or \"Explorers\nof Darkness?\"",
-                french="Avez-vous joué à \"Explorateurs du Temps\"\nou \"Explorateurs de l'Ombre?\"",
-                german="Hast du [F:S2]Erkundungsteam Zeit[F:E2] bzw.\n[F:S2]Erkundungsteam Dunkelheit[F:E2] gespielt?",
-                italian="Hai giocato a \"Esploratori del tempo\"\no a \"Esploratori dell'oscurità?\"",
-                spanish="¿Has jugado a \"Exploradores del tiempo\"o a\n\"Exploradores de la oscuridad?\"",
-            }
-        }
-        switch ( message_SwitchMenu(0, 1) ) {
-            case menu({
-                english="Yes.",
-                french="Oui.",
-                german="Ja",
-                italian="Sì.",
-                spanish="Sí",
-            }):
-            default:
-                switch ( message_Menu(MENU_PERSONALITY_TEST) ) { }
-                $PLAY_OLD_GAME = 1;
-                break;
-            case menu({
-                english="No.",
-                french="Non.",
-                german="Nein",
-                italian="No.",
-                spanish="No",
-            }):
-                switch ( message_Menu(MENU_PERSONALITY_TEST) ) { }
-                $PLAY_OLD_GAME = 0;
-        }
+        //screen2_FadeOut(0, 0);
+        //screen_FadeOutAll(1, 0);
+        //screen2_FlushIn(1, 0, 2, 0, 0, 0);
+        //back_SetGround(LEVEL_S02P01A);
+        //back2_SetGround(LEVEL_S02P01A);
+        //bgm_PlayFadeIn(BGM_WELCOME_TO_THE_WORLD_OF_POKEMON, 0, 256);
+        //screen2_FadeIn(0, 30);
+        //screen_FadeInAll(1, 30);
+        //message_SwitchMonologue ($HERO_TALK_KIND) {
+        //case 4:
+            //{
+                //english="Did you play \"Explorers of Time\" or \"Explorers\nof Darkness?\"",
+                //french="Avez-vous joué à \"Explorateurs du Temps\"\nou \"Explorateurs de l'Ombre?\"",
+                //german="Hast du [F:S2]Erkundungsteam Zeit[F:E2] bzw.\n[F:S2]Erkundungsteam Dunkelheit[F:E2] gespielt?",
+                //italian="Hai giocato a \"Esploratori del tempo\"\no a \"Esploratori dell'oscurità?\"",
+                //spanish="¿Has jugado a \"Exploradores del tiempo\"o a\n\"Exploradores de la oscuridad?\"",
+            //}
+        //default:
+            //{
+                //english="Did you play \"Explorers of Time\" or \"Explorers\nof Darkness?\"",
+                //french="Avez-vous joué à \"Explorateurs du Temps\"\nou \"Explorateurs de l'Ombre?\"",
+                //german="Hast du [F:S2]Erkundungsteam Zeit[F:E2] bzw.\n[F:S2]Erkundungsteam Dunkelheit[F:E2] gespielt?",
+                //italian="Hai giocato a \"Esploratori del tempo\"\no a \"Esploratori dell'oscurità?\"",
+                //spanish="¿Has jugado a \"Exploradores del tiempo\"o a\n\"Exploradores de la oscuridad?\"",
+            //}
+        //}
+        //switch ( message_SwitchMenu(0, 1) ) {
+            //case menu({
+                //english="Yes.",
+                //french="Oui.",
+                //german="Ja",
+                //italian="Sì.",
+                //spanish="Sí",
+            //}):
+            //default:
+                //switch ( message_Menu(MENU_PERSONALITY_TEST) ) { }
+                //$PLAY_OLD_GAME = 1;
+                //break;
+            //case menu({
+                //english="No.",
+                //french="Non.",
+                //german="Nein",
+                //italian="No.",
+                //spanish="No",
+            //}):
+                //switch ( message_Menu(MENU_PERSONALITY_TEST) ) { }
+                //$PLAY_OLD_GAME = 0;
+        //}
+        switch ( message_Menu(MENU_PERSONALITY_TEST) ) { }
+        $PLAY_OLD_GAME = 0;
         §label_37;
         forever {
             switch ( message_Menu(MENU_PERSONALITY_TEST_CONTINUE) ) {
@@ -327,6 +329,14 @@ def 0 {
                     screen_FadeInAll(1, 30);
                     continue;  // may be redundant
                 case 30:
+                    screen2_FadeOut(0, 0);
+                    screen_FadeOutAll(1, 0);
+                    screen2_FlushIn(1, 0, 2, 0, 0, 0);
+                    back_SetGround(LEVEL_S02P01A);
+                    back2_SetGround(LEVEL_S02P01A);
+                    bgm_PlayFadeIn(BGM_WELCOME_TO_THE_WORLD_OF_POKEMON, 0, 256);
+                    screen2_FadeIn(0, 30);
+                    screen_FadeInAll(1, 30);
                     continue;  // may be redundant
                 case 31:
                     debug_Print('DIAGNOSIS_CONTINUE_1AS');

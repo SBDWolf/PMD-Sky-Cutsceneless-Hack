@@ -1,0 +1,557 @@
+
+def 0 {
+    if ( scn($SCENARIO_MAIN) >= [29, 94] || scn($SCENARIO_MAIN) >= [29, 93] || scn($SCENARIO_MAIN) >= [29, 92] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_KAKUREON2);
+        }
+        if ( $SCENARIO_TALK_BIT_FLAG[95] ) {
+            §label_131;
+            switch ( message_Menu(MENU_KECLEON_WARES) ) { }
+            §label_130;
+            JumpCommon(CORO_END_TALK);
+        } else {
+            $SCENARIO_TALK_BIT_FLAG[95] = 1;
+            message_SetFace(ACTOR_NPC_KAKUREON2, FACE_NORMAL, FACE_POS_STANDARD);
+            message_Talk({
+                english=" Ah, the returning heroes\nof Team [team:]!",
+                french=" Ah, les voilà de retour,\nle duo héroïque de l\'Equipe [team:]!",
+                german=" Ah, die heimkehrenden Helden\nvon Team [team:]!",
+                italian=" Ah, l\'eroico Team [team:] \nè di ritorno!",
+                spanish=" Ah, ¡aquí tenemos de vuelta\nel heroico [CS:X]Equipo[CR] [team:]!",
+            });
+            message_Talk({
+                english=" I thank you sincerely for\nstopping the spreading nightmare!",
+                french=" Merci beaucoup d\'avoir mis un\nterme à la propagation du cauchemar!",
+                german=" Ich danke euch zutiefst, dass ihr\ndie Ausbreitung des Albtraums verhindert habt!",
+                italian=" Vi ringrazio di cuore per\naver fermato la diffusione dell\'incubo!",
+                spanish=" ¡Les agradezco sinceramente que\ndetuvieran el avance de esa pesadilla!",
+            });
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            jump @label_131;
+        }
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 91] || scn($SCENARIO_MAIN) >= [29, 90] || scn($SCENARIO_MAIN) >= [29, 89] || scn($SCENARIO_MAIN) >= [29, 88] || scn($SCENARIO_MAIN) >= [29, 87] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_KAKUREON2);
+        }
+        if ( $SCENARIO_TALK_BIT_FLAG[94] ) {
+            jump @label_131;
+        } else {
+            $SCENARIO_TALK_BIT_FLAG[94] = 1;
+            message_SetFace(ACTOR_NPC_KAKUREON2, FACE_NORMAL, FACE_POS_STANDARD);
+            message_Talk({
+                english=" Please don\'t succumb to\nanyone bad!",
+                french=" Veillez à ne pas succomber aux\nassauts des Pokémon méchants!",
+                german=" Bitte gebt euch dem Bösen nicht\ngeschlagen!",
+                italian=" Vi prego, non cedete di fronte\nalla malvagità!",
+                spanish=" ¡No sucumban ante los\npeligros que les esperan ahí fuera!",
+            });
+            message_Talk({
+                english=" Go forward to victory! Fight!\nFight!",
+                french=" Tout droit à la victoire!\nBattez-vous! Battez-vous!",
+                german=" Vorwärts zum Sieg! Kämpft!\nKämpft!",
+                italian=" Puntate alla vittoria! Lottate!\nLottate!",
+                spanish=" ¡Sean fuertes! ¡Luchen con brío!",
+            });
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            jump @label_131;
+        }
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 85] || scn($SCENARIO_MAIN) >= [29, 84] || scn($SCENARIO_MAIN) >= [29, 83] || scn($SCENARIO_MAIN) >= [29, 82] || scn($SCENARIO_MAIN) >= [29, 81] || scn($SCENARIO_MAIN) >= [29, 80] || scn($SCENARIO_MAIN) >= [29, 78] || scn($SCENARIO_MAIN) >= [29, 76] || scn($SCENARIO_MAIN) >= [29, 75] || scn($SCENARIO_MAIN) >= [29, 73] || scn($SCENARIO_MAIN) >= [29, 72] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_KAKUREON2);
+        }
+        if ( $SCENARIO_TALK_BIT_FLAG[93] ) {
+            jump @label_131;
+        } else {
+            $SCENARIO_TALK_BIT_FLAG[93] = 1;
+            message_SetFace(ACTOR_NPC_KAKUREON2, FACE_NORMAL, FACE_POS_STANDARD);
+            message_Talk({
+                english=" ...Hmmm...",
+                french=" ... Hmmm...",
+                german=" ...Hmm...",
+                italian=" Mmmm...",
+                spanish=" Hum...",
+            });
+            message_Talk({
+                english=" What could it possibly be? What\nhas made little [CS:N]Azurill[CR] unable to wake?",
+                french=" Qu\'est-ce que ça peut bien être?\nQu\'est-ce qui empêche le petit [CS:N]Azurill[CR] de se\nréveiller?",
+                german=" Was könnte es nur sein? Was\nkönnte den kleinen [CS:N]Azurill[CR] nur davon abhalten,\naufzuwachen?",
+                italian=" Com\'è possibile? Cos\'è che non\npermette al piccolo [CS:N]Azurill[CR] di svegliarsi?",
+                spanish=" ¿De qué se tratará? ¿Qué será\nlo que impide despertarse al pequeño [CS:N]Azurill[CR]?",
+            });
+            message_Talk({
+                english=" I do hope the dear child will\nawaken and brighten our day with his cheer.",
+                french=" J\'espère que ce petit va finir\npar se réveiller pour éclairer notre journée\nde sa gaieté.",
+                german=" Ich hoffe inständig, dass der\nliebe Kleine aufwachen und unseren Tag\nmit seinem Frohsinn bereichern wird.",
+                italian=" Spero che quel caro piccino si\nsvegli e rassereni la nostra giornata con la\nsua allegria.",
+                spanish=" Espero que ese chiquillo\nnos alegre el día despertándose al fin.",
+            });
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            jump @label_131;
+        }
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 71] || scn($SCENARIO_MAIN) >= [29, 70] || scn($SCENARIO_MAIN) >= [29, 69] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_KAKUREON2);
+        }
+        jump @label_131;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 67] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_KAKUREON2);
+        }
+        jump @label_131;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 56] || scn($SCENARIO_MAIN) >= [29, 55] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_KAKUREON2);
+        }
+        if ( $SCENARIO_TALK_BIT_FLAG[92] ) {
+            jump @label_131;
+        } else {
+            $SCENARIO_TALK_BIT_FLAG[92] = 1;
+            message_SetFace(ACTOR_NPC_KAKUREON2, FACE_NORMAL, FACE_POS_STANDARD);
+            message_Talk({
+                english=" My brother is waiting for a\nchance to speed over to see Team [CS:X]Charm[CR].\nIt\'s quite annoying!",
+                french=" Mon frère guette le moment\nopportun pour filer voir l\'Equipe [CS:X]Charme[CR].\nÇa m\'énerve, ça m\'énerve!",
+                german=" Mein Bruder wartet auf eine\nMöglichkeit hinüberzueilen, um Team [CS:X]Charme[CR]\nsehen zu können. Das ist ziemlich nervig!",
+                italian=" Mio fratello sta aspettando\nl\'occasione giusta per andare a vedere il \nTeam [CS:X]Malia[CR]. Uffa.",
+                spanish=" Mi hermano no piensa más que\nen salir corriendo a ver al [CS:X]Equipo Carisma[CR].\n¡Es irritante!",
+            });
+            message_Talk({
+                english=" For when that very chance\narrives...[K] I intend to dash first!",
+                french=" Car, lorsque ce moment\narrivera...[K] J\'ai bien l\'intention d\'être le\npremier à décamper!",
+                german=" Denn wenn sich diese Möglichkeit\nbietet...[K] Dann bin ich der Erste, der\nlosflitzen wird!",
+                italian=" Se si dovesse presentare\nl\'occasione...[K]\nVoglio arrivare io per primo!",
+                spanish=" Pero cuando llegue la ocasión...[K]\n¡Seré yo quien vaya primero!",
+            });
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            jump @label_131;
+        }
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 54] || scn($SCENARIO_MAIN) >= [29, 53] || scn($SCENARIO_MAIN) >= [29, 52] || scn($SCENARIO_MAIN) >= [29, 50] || scn($SCENARIO_MAIN) >= [29, 49] || scn($SCENARIO_MAIN) >= [29, 48] || scn($SCENARIO_MAIN) >= [29, 47] || scn($SCENARIO_MAIN) >= [29, 46] || scn($SCENARIO_MAIN) >= [29, 45] || scn($SCENARIO_MAIN) >= [29, 44] || scn($SCENARIO_MAIN) >= [29, 43] || scn($SCENARIO_MAIN) >= [29, 42] || scn($SCENARIO_MAIN) >= [29, 41] || scn($SCENARIO_MAIN) >= [29, 40] || scn($SCENARIO_MAIN) >= [29, 39] || scn($SCENARIO_MAIN) >= [29, 33] || scn($SCENARIO_MAIN) >= [29, 32] || scn($SCENARIO_MAIN) >= [29, 31] || scn($SCENARIO_MAIN) >= [29, 30] || scn($SCENARIO_MAIN) >= [29, 29] || scn($SCENARIO_MAIN) >= [29, 28] || scn($SCENARIO_MAIN) >= [29, 27] || scn($SCENARIO_MAIN) >= [29, 26] || scn($SCENARIO_MAIN) >= [29, 25] || scn($SCENARIO_MAIN) >= [29, 24] || scn($SCENARIO_MAIN) >= [29, 23] || scn($SCENARIO_MAIN) >= [29, 22] || scn($SCENARIO_MAIN) >= [29, 21] || scn($SCENARIO_MAIN) >= [29, 20] || scn($SCENARIO_MAIN) >= [29, 19] || scn($SCENARIO_MAIN) >= [29, 18] || scn($SCENARIO_MAIN) >= [29, 17] || scn($SCENARIO_MAIN) >= [29, 16] || scn($SCENARIO_MAIN) >= [29, 15] || scn($SCENARIO_MAIN) >= [29, 14] || scn($SCENARIO_MAIN) >= [29, 13] || scn($SCENARIO_MAIN) >= [29, 12] || scn($SCENARIO_MAIN) >= [29, 11] || scn($SCENARIO_MAIN) >= [29, 10] || scn($SCENARIO_MAIN) >= [29, 8] || scn($SCENARIO_MAIN) >= [29, 6] || scn($SCENARIO_MAIN) >= [29, 5] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_KAKUREON2);
+        }
+        if ( $SCENARIO_TALK_BIT_FLAG[91] ) {
+            jump @label_131;
+        } else {
+            $SCENARIO_TALK_BIT_FLAG[91] = 1;
+            message_SetFace(ACTOR_NPC_KAKUREON2, FACE_NORMAL, FACE_POS_STANDARD);
+            message_Talk({
+                english=" You\'ve graduated!\nCongratulations!",
+                french=" Vous avez décroché le diplôme\nde la Guilde! Félicitations!",
+                german=" Ihr habt den Abschluss\nerworben! Glückwunsch!",
+                italian=" Avete superato l\'esame!\nCongratulazioni!",
+                spanish=" ¡Han superado el reto!\n¡Enhorabuena!",
+            });
+            message_Talk({
+                english=" We hope for your continued\npatronage and generosity! ♪",
+                french=" Nous espérons que vous\ncontinuerez à fréquenter notre humble\nboutique! ♪",
+                german=" Wir hoffen auf eure\nfortwährende Unterstützung und\nGroßzügigkeit! ♪",
+                italian=" Contiamo sul vostro sostegno\ne sulla vostra generosità! ♪",
+                spanish=" ¡Esperamos que sigan visitando\nnuestro comercio! ♪",
+            });
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            jump @label_131;
+        }
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 4] || scn($SCENARIO_MAIN) >= [29, 3] || scn($SCENARIO_MAIN) >= [29, 2] || scn($SCENARIO_MAIN) >= [29, 1] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_KAKUREON2);
+        }
+        jump @label_131;
+    } elseif ( scn($SCENARIO_MAIN) >= [25, 4] || scn($SCENARIO_MAIN) >= [25, 3] || scn($SCENARIO_MAIN) >= [25, 2] || scn($SCENARIO_MAIN) >= [25, 2] || scn($SCENARIO_MAIN) >= [25, 1] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_KAKUREON2);
+        }
+        if ( $SCENARIO_TALK_BIT_FLAG[90] ) {
+            jump @label_131;
+        } else {
+            $SCENARIO_TALK_BIT_FLAG[90] = 1;
+            message_SetFace(ACTOR_NPC_KAKUREON2, FACE_NORMAL, FACE_POS_STANDARD);
+            message_Talk({
+                english=" Our thoughts go with you!\nPlease be strong!",
+                french=" Nos pensées vous accompagnent!\nCourage!",
+                german=" In Gedanken sind wir bei euch!\nBitte seid stark!",
+                italian=" Vi penseremo! Siate forti!",
+                spanish=" ¡Les deseamos lo mejor! ¡Sean\nfuertes!",
+            });
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            jump @label_131;
+        }
+    } elseif ( scn($SCENARIO_MAIN) >= [24, 1] || scn($SCENARIO_MAIN) >= [24, 1] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_KAKUREON2);
+        }
+        jump @label_131;
+    } elseif ( scn($SCENARIO_MAIN) >= [23, 3] || scn($SCENARIO_MAIN) >= [23, 2] || scn($SCENARIO_MAIN) >= [23, 1] || scn($SCENARIO_MAIN) >= [22, 3] || scn($SCENARIO_MAIN) >= [22, 2] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_KAKUREON2);
+        }
+        if ( $SCENARIO_TALK_BIT_FLAG[89] ) {
+            jump @label_131;
+        } else {
+            $SCENARIO_TALK_BIT_FLAG[89] = 1;
+            message_SetFace(ACTOR_NPC_KAKUREON2, FACE_NORMAL, FACE_POS_STANDARD);
+            message_Talk({
+                english=" Ah, welcome back, [hero]\nand [partner]!",
+                french=" Ah, content de vous revoir,\n[hero] et [partner]!",
+                german=" Ah, willkommen zurück,\n[hero] und [partner]!",
+                italian=" Ah, siete di nuovo qui,\n[hero] e [partner]! Che bello!",
+                spanish=" ¡Hola, [hero] y [partner]!\n¡Otra vez por aquí!",
+            });
+            message_Talk({
+                english=" Ahhh! We are happy to see you!\nWe were so very worried about you!",
+                french=" Aaah! Ça nous fait plaisir de\nvous voir! Nous étions si inquiets à\nvotre sujet!",
+                german=" Ahhh! Wir freuen uns, euch zu\nsehen! Wir haben uns solche Sorgen um euch\ngemacht!",
+                italian=" Ahhh! Siamo felici di vedervi!\nEravamo così preoccupati per voi!",
+                spanish=" ¡Aaah! ¡Qué alegría, de nuevo\npor aquí! ¡Estábamos muy preocupados\npor ustedes!",
+            });
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            jump @label_131;
+        }
+    } elseif ( scn($SCENARIO_MAIN) >= [21, 2] || scn($SCENARIO_MAIN) >= [21, 1] || scn($SCENARIO_MAIN) >= [20, 4] || scn($SCENARIO_MAIN) >= [20, 3] || scn($SCENARIO_MAIN) >= [20, 2] || scn($SCENARIO_MAIN) >= [20, 1] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_KAKUREON2);
+        }
+        jump @label_131;
+    } elseif ( scn($SCENARIO_MAIN) >= [17, 3] || scn($SCENARIO_MAIN) >= [17, 1] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_KAKUREON2);
+        }
+        if ( $SCENARIO_TALK_BIT_FLAG[88] ) {
+            jump @label_131;
+        } else {
+            $SCENARIO_TALK_BIT_FLAG[88] = 1;
+            message_SetFace(ACTOR_NPC_KAKUREON2, FACE_NORMAL, FACE_POS_STANDARD);
+            message_Talk({
+                english=" Surely, the great [CS:N]Dusknoir[CR] will\nbring that terrible [CS:N]Grovyle[CR] to justice.",
+                french=" Je suis sûr que le grand\n[CS:N]Noctunoir[CR] arrivera à capturer cet odieux\n[CS:N]Massko[CR].",
+                german=" Der große [CS:N]Zwirrfinst[CR] wird den\nschrecklichen [CS:N]Reptain[CR] mit Sicherheit seiner\ngerechten Strafe zuführen.",
+                italian=" Sicuramente il grande [CS:N]Dusknoir[CR]\nassicurerà alla giustizia quel manigoldo di\n[CS:N]Grovyle[CR].",
+                spanish=" Sin duda el gran [CS:N]Dusknoir[CR] se\nencargará de poner a ese terrible [CS:N]Grovyle[CR]\nen manos de la justicia.",
+            });
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            jump @label_131;
+        }
+    } elseif ( scn($SCENARIO_MAIN) >= [16, 2] || scn($SCENARIO_MAIN) >= [16, 0] || scn($SCENARIO_MAIN) >= [15, 4] || scn($SCENARIO_MAIN) >= [15, 1] || scn($SCENARIO_MAIN) >= [14, 5] || scn($SCENARIO_MAIN) >= [14, 4] || scn($SCENARIO_MAIN) >= [14, 2] || scn($SCENARIO_MAIN) >= [14, 1] || scn($SCENARIO_MAIN) >= [13, 2] || scn($SCENARIO_MAIN) >= [13, 1] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_KAKUREON2);
+        }
+        jump @label_131;
+    } elseif ( scn($SCENARIO_MAIN) >= [12, 4] || scn($SCENARIO_MAIN) >= [12, 3] || scn($SCENARIO_MAIN) >= [12, 1] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_KAKUREON2);
+        }
+        if ( $SCENARIO_TALK_BIT_FLAG[87] ) {
+            jump @label_131;
+        } else {
+            $SCENARIO_TALK_BIT_FLAG[87] = 1;
+            message_SetFace(ACTOR_NPC_KAKUREON2, FACE_NORMAL, FACE_POS_STANDARD);
+            message_Talk({
+                english=" Welcome back! ♪[K] Back to your\nguild training, eh?",
+                french=" Content de vous revoir! ♪[K]\nOn reprend l\'entraînement de la Guilde, hein?",
+                german=" Willkommen zurück! ♪[K] Wieder\nzurück zum Gildentraining, wie?",
+                italian=" Felice ritorno! ♪[K] Avete\nripreso gli allenamenti della Gilda, eh?",
+                spanish=" ¡Encantado de verles! ♪[K] Otra\nvez a entrenar con el [CS:N]Pokégremio[CR], ¿eh?",
+            });
+            message_Talk({
+                english=" We hope for your continued\npatronage of our humble business! ♪",
+                french=" Nous espérons que vous\ncontinuerez à fréquenter notre humble\nboutique! ♪",
+                german=" Wir hoffen auf eure\nfortwährende Unterstützung, was unsere\nbescheidene Sache anbelangt! ♪",
+                italian=" Speriamo che continuerete a \nsostenere la nostra modesta impresa! ♪",
+                spanish=" ¡Esperamos que sigan visitando\nnuestro humilde negocio! ♪",
+            });
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            jump @label_131;
+        }
+    } elseif ( scn($SCENARIO_MAIN) >= [10, 2] || scn($SCENARIO_MAIN) >= [10, 1] || scn($SCENARIO_MAIN) >= [9, 5] || scn($SCENARIO_MAIN) >= [9, 4] || scn($SCENARIO_MAIN) >= [9, 2] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_KAKUREON2);
+        }
+        jump @label_131;
+    } elseif ( scn($SCENARIO_MAIN) >= [9, 1] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_KAKUREON2);
+        }
+        if ( $SCENARIO_TALK_BIT_FLAG[86] ) {
+            jump @label_131;
+        } else {
+            $SCENARIO_TALK_BIT_FLAG[86] = 1;
+            message_SetFace(ACTOR_NPC_KAKUREON2, FACE_NORMAL, FACE_POS_STANDARD);
+            message_Talk({
+                english=" I hope you enjoy yourselves on\nthe guild\'s expedition! ♪",
+                french=" J\'espère que vous vous\namuserez bien pendant l\'expédition de\nla Guilde! ♪",
+                german=" Ich hoffe, dass ihr euch auf der\nExpedition der Gilde gut amüsiert! ♪",
+                italian=" Spero che vi divertirete durante\nla spedizione della Gilda! ♪",
+                spanish=" ¡Espero que lo pasen muy bien en\nla expedición del [CS:N]Pokégremio[CR]! ♪",
+            });
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            jump @label_131;
+        }
+    } elseif ( scn($SCENARIO_MAIN) >= [8, 7] || scn($SCENARIO_MAIN) >= [8, 6] || scn($SCENARIO_MAIN) >= [8, 5] || scn($SCENARIO_MAIN) >= [8, 3] || scn($SCENARIO_MAIN) >= [8, 2] || scn($SCENARIO_MAIN) >= [8, 1] || scn($SCENARIO_MAIN) >= [7, 6] || scn($SCENARIO_MAIN) >= [7, 3] || scn($SCENARIO_MAIN) >= [7, 2] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_KAKUREON2);
+        }
+        if ( $SCENARIO_TALK_BIT_FLAG[85] ) {
+            jump @label_131;
+        } else {
+            $SCENARIO_TALK_BIT_FLAG[85] = 1;
+            message_SetFace(ACTOR_NPC_KAKUREON2, FACE_NORMAL, FACE_POS_STANDARD);
+            message_Talk({
+                english=" The guild is going on an\nexpedition, I hear! ♪",
+                french=" La Guilde part bientôt en\nexpédition, à ce qu\'il paraît! ♪",
+                german=" Ich habe gehört, dass sich die\nGilde auf eine Expedition begibt! ♪",
+                italian=" La Gilda sta partendo per una\nspedizione, ho sentito! ♪",
+                spanish=" ¡Me han dicho que el [CS:N]Pokégremio[CR]\nse va de expedición! ♪",
+            });
+            message_Talk({
+                english=" Ah, it has been a long time! ♪",
+                french=" Ah, ça faisait longtemps! ♪",
+                german=" Ah, es ist lange her! ♪",
+                italian=" Ah, era da tanto tempo! ♪",
+                spanish=" ¡Ah, cuánto tiempo! ♪",
+            });
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            jump @label_131;
+        }
+    } elseif ( scn($SCENARIO_MAIN) >= [7, 1] || scn($SCENARIO_MAIN) >= [6, 5] || scn($SCENARIO_MAIN) >= [6, 1] || scn($SCENARIO_MAIN) >= [5, 5] || scn($SCENARIO_MAIN) >= [4, 7] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_KAKUREON2);
+        }
+        if ( $SCENARIO_TALK_BIT_FLAG[84] ) {
+            jump @label_131;
+        } else {
+            $SCENARIO_TALK_BIT_FLAG[84] = 1;
+            message_SetFace(ACTOR_NPC_KAKUREON2, FACE_NORMAL, FACE_POS_STANDARD);
+            message_Talk({
+                english=" Ahhh! To arrest a criminal so\nearly in your career! You must be exceptional!",
+                french=" Waouh! Vous devez être\nune équipe exceptionnelle pour capturer\nun criminel si tôt dans votre carrière!",
+                german=" Ahhh! So früh in eurer Laufbahn\neinen Ganoven dingfest zu machen! Ihr müsst\nwirklich außergewöhnlich sein!",
+                italian=" Ahhh! Arrestare un criminale\nall\'inizio della carriera! Siete eccezionali!",
+                spanish=" ¡Vaya! ¿Ya han arrestado a un\nmalhechor? ¡Sin duda son excepcionales!",
+            });
+            message_Talk({
+                english=" It\'s hard to believe you\'ve been\non an exploration team for a short while! ♪",
+                french=" Difficile de croire que vous\nvenez de former votre équipe d\'exploration\nil y a si peu de temps! ♪",
+                german=" Es ist schwer zu glauben, dass\nihr erst seit Kurzem einem Erkundungsteam\nangehört! ♪",
+                italian=" È difficile credere che siete una\nsquadra d\'esplorazione da così poco tempo! ♪",
+                spanish=" ¡Casi no puedo creer que lleven\ntan poco tiempo con su equipo explorador! ♪",
+            });
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            jump @label_131;
+        }
+    } elseif ( scn($SCENARIO_MAIN) >= [4, 5] || scn($SCENARIO_MAIN) >= [4, 3] || scn($SCENARIO_MAIN) >= [4, 2] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_KAKUREON2);
+        }
+        jump @label_131;
+    } elseif ( scn($SCENARIO_MAIN) >= [4, 1] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_KAKUREON2);
+        }
+        switch ( message_Menu(MENU_KECLEON_WARES) ) { }
+        supervision_ExecuteCommon(CORO_EVENT_M03_03);
+        jump @label_130;
+    } elseif ( scn($SCENARIO_MAIN) >= [4, 0] || scn($SCENARIO_MAIN) >= [3, 1] ) {
+        with (actor ACTOR_TALK_MAIN) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_TALK_SUB) {
+            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_NPC_KAKUREON2);
+        }
+        jump @label_131;
+    } else {
+        jump @label_130;
+    }
+}
