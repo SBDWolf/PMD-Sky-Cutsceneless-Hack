@@ -27,6 +27,7 @@ def 0 {
             item_Set(0, 102, 0);
             switch ( message_Menu(MENU_GIVE_ITEM) ) { }
             $CARRY_GOLD += 200;
+            switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
             end;
         }
     }
