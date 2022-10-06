@@ -1,0 +1,1249 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_CRYSTAL_CAVE, 0, 256);
+    back_SetGround(LEVEL_P14P01A);
+    supervision_Acting(0);
+    supervision_Acting(1);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (object OBJECT_P14P01A1_153) {
+        SetAnimation(2);
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" [CS:N]Wigglytuff[CR] also said this was\nwhere Pokémon would come to evolve...",
+                french=" [CS:N]Grodoudou[CR] a aussi dit que\nc\'était ici que les Pokémon se rendaient\npour évoluer...",
+                german=" [CS:N]Knuddeluff[CR] sagte auch, dass dies\nder Ort sei, den Pokémon für ihre Entwicklung\naufsuchen würden.",
+                italian=" [CS:N]Wigglytuff[CR] ha anche detto\nche una volta i Pokémon venivano qui per \nevolversi...",
+                spanish=" [CS:N]Wigglytuff[CR] también dijo que\nlos Pokémon solían venir a evolucionar a\neste lugar...",
+            }
+        case 2:
+            {
+                english=" [CS:N]Wigglytuff[CR] also said this was\nwhere Pokémon would come to evolve...",
+                french=" [CS:N]Grodoudou[CR] a aussi dit que\nc\'était ici que les Pokémon se rendaient\npour évoluer...",
+                german=" [CS:N]Knuddeluff[CR] sagte auch, dass dies\nder Ort sei, den Pokémon für ihre Entwicklung\naufsuchen würden.",
+                italian=" [CS:N]Wigglytuff[CR] ha anche detto\nche una volta i Pokémon venivano qui per \nevolversi...",
+                spanish=" [CS:N]Wigglytuff[CR] también dijo que\nlos Pokémon solían venir a evolucionar a\neste lugar...",
+            }
+        default:
+            {
+                english=" [CS:N]Wigglytuff[CR] also said this was\nwhere Pokémon would come to evolve...",
+                french=" [CS:N]Grodoudou[CR] a aussi dit que\nc\'était ici que les Pokémon se rendaient\npour évoluer...",
+                german=" [CS:N]Knuddeluff[CR] sagte auch, dass dies\nder Ort sei, den Pokémon für ihre Entwicklung\naufsuchen würden.",
+                italian=" [CS:N]Wigglytuff[CR] ha anche detto\nche una volta i Pokémon venivano qui per \nevolversi...",
+                spanish=" [CS:N]Wigglytuff[CR] también dijo que\nlos Pokémon solían venir a evolucionar a\neste lugar...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" But what is evolution?",
+                french=" Mais ça veut dire quoi,\névoluer?",
+                german=" Aber was ist Entwicklung?",
+                italian=" Ma cos\'è l\'evoluzione?",
+                spanish=" Pero, ¿a qué se refería\ncon eso?",
+            }
+        case 2:
+            {
+                english=" But what is evolution?",
+                french=" Mais ça veut dire quoi,\névoluer?",
+                german=" Aber was ist Entwicklung?",
+                italian=" Ma cos\'è l\'evoluzione?",
+                spanish=" Pero, ¿a qué se refería\ncon eso?",
+            }
+        default:
+            {
+                english=" But what is evolution?",
+                french=" Mais ça veut dire quoi,\névoluer?",
+                german=" Aber was ist Entwicklung?",
+                italian=" Ma cos\'è l\'evoluzione?",
+                spanish=" Pero, ¿a qué se refería\ncon eso?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_RINGUMA, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Oh, you don\'t know what\nevolution is? What it means to evolve?",
+        french=" Oh, vous ne savez pas ce que\nsont les évolutions ou ce qu\'elles signifient?",
+        german=" Oh, du weißt nicht, was\nEntwicklung ist? Was es bedeutet, sich zu\nentwickeln?",
+        italian=" Oh, vuoi dire che non sai che\ncos\'è l\'evoluzione? Cosa significa\nevolversi?",
+        spanish=" Ah, ¿pero es que no sabes qué\nes evolucionar? ¿Lo que significa?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    message_SetFace(ACTOR_NPC_HIMEGUMA, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Some kinds of Pokémon can\nevolve if specific conditions are first met.",
+        french=" Certains Pokémon peuvent\névoluer sous certaines conditions très\nspécifiques.",
+        german=" Manche Arten von Pokémon\nkönnen sich entwickeln, wenn gewisse\nBedingungen gegeben sind.",
+        italian=" Alcuni tipi di Pokémon possono\nevolversi a patto che vengano soddisfatte\nalcune condizioni specifiche.",
+        spanish=" Algunos tipos de Pokémon pueden\nevolucionar si reúnen una serie de condiciones.",
+    });
+    message_Talk({
+        english=" When a Pokémon evolves, its\nappearance changes, sometimes dramatically.",
+        french=" Quand un Pokémon évolue, son\napparence change, parfois de façon radicale.",
+        german=" Wenn ein Pokémon sich\nentwickelt, ändert sich sein Erscheinungsbild -\nmanchmal sogar dramatisch.",
+        italian=" Quando un Pokémon si evolve, \nil suo aspetto cambia, a volte in modo radicale.",
+        spanish=" Cuando un Pokémon evoluciona,\ncambia su aspecto. A veces, drásticamente.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8967);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Really?![K] Your appearance\nchanges?!",
+                french=" Vraiment?![K] Son apparence\nchange?!",
+                german=" Wirklich?!?[K] Deine Erscheinung\nverändert sich?!?",
+                italian=" Davvero?![K] L\'aspetto cambia?!",
+                spanish=" ¡¿En serio?![K] ¡¿Cambia tu\naspecto?!",
+            }
+        case 2:
+            {
+                english=" Really?![K] Your appearance\nchanges?!",
+                french=" Vraiment?![K] Son apparence\nchange?!",
+                german=" Wirklich?!?[K] Deine Erscheinung\nverändert sich?!?",
+                italian=" Davvero?![K] L\'aspetto cambia?!",
+                spanish=" ¡¿En serio?![K] ¡¿Cambia tu\naspecto?!",
+            }
+        default:
+            {
+                english=" Really?![K] Your appearance\nchanges?!",
+                french=" Vraiment?![K] Son apparence\nchange?!",
+                german=" Wirklich?!?[K] Deine Erscheinung\nverändert sich?!?",
+                italian=" Davvero?![K] L\'aspetto cambia?!",
+                spanish=" ¡¿Ah, sí?![K] ¡¿Cambia tu\naspecto?!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_RINGUMA, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" That\'s right.",
+        french=" C\'est exact.",
+        german=" So ist es.",
+        italian=" Proprio così.",
+        spanish=" Efectivamente.",
+    });
+    message_Talk({
+        english=" And it may not just be how you\nlook that changes, either.",
+        french=" Et ce n\'est pas seulement\nl\'apparence.",
+        german=" Und es kann sich auch nicht nur\ndein Aussehen verändern. ",
+        italian=" E a volte non cambia solo\nquello.",
+        spanish=" Y no solo cambia tu aspecto.",
+    });
+    message_Talk({
+        english=" When you evolve, sometimes\nyour form and abilities can even change.\nHow about that?",
+        french=" Quand on évolue, le type et les\naptitudes peuvent changer aussi. Incroyable,\nnon?",
+        german=" Wenn du dich entwickelst,\nändern sich manchmal auch deine Form und\ndeine Fähigkeiten. Was sagst du dazu?",
+        italian=" Quando ci si evolve, possono\ncambiare anche le caratteristiche.\nNon lo sapevate?",
+        spanish=" Al evolucionar, incluso pueden\nmejorar las habilidades. ¿Qué os parece?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" R-really?!",
+                french=" Vraiment?!",
+                german=" E-echt?!?",
+                italian=" D-Davvero?!",
+                spanish=" ¿En... En serio?",
+            }
+        case 2:
+            {
+                english=" R-really?!",
+                french=" Vraiment?!",
+                german=" E-echt?!?",
+                italian=" D-Davvero?!",
+                spanish=" ¿En... En serio?",
+            }
+        default:
+            {
+                english=" R-really?!",
+                french=" Vraiment?!",
+                german=" E-echt?!?",
+                italian=" D-Davvero?!",
+                spanish=" ¿En... En serio?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_HIMEGUMA, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Yup!",
+        french=" Oui!",
+        german=" Jep!",
+        italian=" Sì!",
+        spanish=" ¡Sí!",
+    });
+    message_Talk({
+        english=" I\'ve wanted to get stronger.",
+        french=" J\'ai toujours voulu être plus\nforte.",
+        german=" Ich wollte schon immer stärker\nwerden.",
+        italian=" Voglio diventare più forte.",
+        spanish=" Yo quería ser más fuerte.",
+    });
+    message_Talk({
+        english=" So I\'ve been hoping to evolve\nfor a long time.",
+        french=" Je voulais évoluer depuis\nlongtemps.",
+        german=" Also habe ich seit Langem\ngehofft, mich zu entwickeln.",
+        italian=" Quindi è da tanto tempo che \nspero di riuscire a evolvermi.",
+        spanish=" Y llevo mucho tiempo esperando\nevolucionar.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_RINGUMA);
+    }
+    WaitExecuteLives(ACTOR_NPC_HIMEGUMA);
+    with (actor ACTOR_NPC_RINGUMA) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_HIMEGUMA);
+    }
+    message_Talk({
+        english=" I\'ll try it out right away.",
+        french=" Je vais essayer dès maintenant.",
+        german=" Ich probiere das sofort aus.",
+        italian=" Voglio provarci subito.",
+        spanish=" Lo voy a intentar ahora mismo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        MovePositionMark(32972, Position<'m0', 37.5, 26>);
+    }
+    with (actor ACTOR_NPC_RINGUMA) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_HIMEGUMA);
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_HIMEGUMA);
+    Wait(60);
+    message_EmptyActor();
+    message_Talk({
+        english="[CN]Those that seek awakening...",
+        french="[CN]Quiconque cherche l\'éveil...",
+        german="[CN]Jene, die erwachen wollen...",
+        italian="[CN]Coloro che vogliono rinascere...",
+        spanish="[CN]Aquellos que buscan despertar...",
+    });
+    message_Talk({
+        english="[CN]This is [CS:P]Luminous Spring[CR].[K]\n[CN]Do you seek to evolve?",
+        french="[CN]Je suis la [CS:P]Source Lumineuse[CR].[K]\n[CN]Désires-tu évoluer?",
+        german="[CN]Dies ist die [CS:P]Glitzerquelle[CR].[K]\n[CN]Möchtest du dich entwickeln?",
+        italian="[CN]Questa è la [CS:P]Sorgente Luccichio[CR].[K]\n[CN]Desideri evolverti?",
+        spanish="[CN]Este es el [CS:P]Manantial Luminoso[CR].[K]\n[CN]¿Quieres evolucionar?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_HIMEGUMA, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Yup! Please!",
+        french=" Oui! S\'il vous plaît!",
+        german=" Jawohl! Bitte!",
+        italian=" Sì, per favore!",
+        spanish=" ¡Sí! ¡Por favor!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_EmptyActor();
+    message_Talk({
+        english="[CN]Do you need an item to do so?",
+        french="[CN]As-tu besoin d\'un objet à cette fin?",
+        german="[CN]Benötigst du dazu ein Item?",
+        italian="[CN]È necessario uno strumento per la\n[CN]tua evoluzione?",
+        spanish="[CN]¿Necesitas un objeto para evolucionar?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_HIMEGUMA, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Nope! I don\'t need one!",
+        french=" Non! Je n\'en ai pas besoin!",
+        german=" Nein! Ich brauche keins!",
+        italian=" No! Non ne ho bisogno!",
+        spanish=" ¡No! ¡No necesito ningún objeto!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_FadeOut(60);
+    message_EmptyActor();
+    message_Talk({
+        english="[CN]So be it...",
+        french="[CN]Qu\'il en soit ainsi...",
+        german="[CN]So sei es...",
+        italian="[CN]Così sia...",
+        spanish="[CN]Que así sea...",
+    });
+    message_Talk({
+        english="[CN]Seeker of awakening...[K]\n[CN]Let us begin.",
+        french="[CN]Toi qui cherches l\'éveil...[K]\n[CN]Commençons.",
+        german="[CN]Du, der du erwachen willst...[K]\n[CN]Lass uns beginnen.",
+        italian="[CN]Tu che aspiri a rinascere...[K]\n[CN]Preparati.",
+        spanish="[CN]Tú que buscas despertar...[K]\n[CN]Comencemos.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        SetOutputAttribute(32);
+    }
+    message_Mail({
+        english="[CN]Something is happening...[K]to [CS:N]Teddiursa[CR]...",
+        french="[CN]Quelque chose arrive...[K] à [CS:N]Teddiursa[CR]...",
+        german="[CN]Etwas geschieht mit [K][CS:N]Teddiursa[CR]...",
+        italian="[CN]Sta succedendo qualcosa...[K] a [CS:N]Teddiursa[CR]...",
+        spanish="[CN]Algo está pasando con... [K][CS:N]Teddiursa[CR].",
+    });
+    message_Mail({
+        english="[CN][CS:N]Teddiursa[CR]\'s appearance is changing...",
+        french="[CN]L\'apparence de [CS:N]Teddiursa[CR]\n[CN]est en train de changer...",
+        german="[CN]Die Erscheinung von [CS:N]Teddiursa[CR] verändert sich.",
+        italian="[CN]L\'aspetto di [CS:N]Teddiursa[CR] sta cambiando...",
+        spanish="[CN]El aspecto de [CS:N]Teddiursa[CR] ha cambiado...",
+    });
+    message_Close();
+    se_Play(5135);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(5);
+    screen_WhiteOut(1, 2);
+    supervision_RemoveActing(1);
+    supervision_Acting(2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(30);
+    me_Play(8);
+    message_Mail({
+        english="[CN][CS:N]Teddiursa[CR] evolved into [CS:N]Ursaring[CR]!",
+        french="[CN][CS:N]Teddiursa[CR] a évolué en [CS:N]Ursaring[CR]!",
+        german="[CN][CS:N]Teddiursa[CR] hat sich zu [CS:N]Ursaring[CR] entwickelt!",
+        italian="[CN][CS:N]Teddiursa[CR] si evolve in [CS:N]Ursaring[CR]!",
+        spanish="[CN]¡[CS:N]Teddiursa[CR] ha evolucionado a [CS:N]Ursaring[CR]!",
+    });
+    WaitMe(8);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8967);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_NPC_RINGUMA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    Wait(5);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Whoa![K] [CS:N]Teddiursa[CR] looks just like\n[CS:N]Ursaring[CR] now!",
+                french=" Ouah![K] [CS:N]Teddiursa[CR] ressemble\nvraiment à [CS:N]Ursaring[CR] maintenant!",
+                german=" Holla![K] [CS:N]Teddiursa[CR] sieht jetzt\ngenauso wie [CS:N]Ursaring[CR] aus!",
+                italian=" Wow![K] Adesso [CS:N]Teddiursa[CR] è \nuguale a [CS:N]Ursaring[CR]!",
+                spanish=" ¡Vaya![K] ¡[CS:N]Teddiursa[CR] ahora es\nigualita a [CS:N]Ursaring[CR]!",
+            }
+        case 2:
+            {
+                english=" Waah![K] [CS:N]Teddiursa[CR] looks just like\n[CS:N]Ursaring[CR] now!",
+                french=" Ouah![K] [CS:N]Teddiursa[CR] ressemble\nvraiment à [CS:N]Ursaring[CR] maintenant!",
+                german=" Uaah![K] [CS:N]Teddiursa[CR] sieht jetzt\ngenauso wie [CS:N]Ursaring[CR] aus!",
+                italian=" Wow![K] Adesso [CS:N]Teddiursa[CR] è \nuguale a [CS:N]Ursaring[CR]!",
+                spanish=" ¡Mira![K] ¡[CS:N]Teddiursa[CR] ahora es\nigualita a [CS:N]Ursaring[CR]!",
+            }
+        default:
+            {
+                english=" Waah![K] [CS:N]Teddiursa[CR] looks just like\n[CS:N]Ursaring[CR] now!",
+                french=" Ouah![K] [CS:N]Teddiursa[CR] ressemble\nvraiment à [CS:N]Ursaring[CR] maintenant!",
+                german=" Uaah![K] [CS:N]Teddiursa[CR] sieht jetzt\ngenauso wie [CS:N]Ursaring[CR] aus!",
+                italian=" Wow![K] Adesso [CS:N]Teddiursa[CR] è \nuguale a [CS:N]Ursaring[CR]!",
+                spanish=" ¡Vaya![K] ¡[CS:N]Teddiursa[CR] ahora es\nigualita a [CS:N]Ursaring[CR]!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_RINGUMA2) {
+        SetAnimation(4);
+    }
+    message_SetFace(ACTOR_NPC_RINGUMA, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Yay!",
+        french=" Ouais!",
+        german=" Jaaa!",
+        italian=" Sì!",
+        spanish=" ¡Estupendo!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_RINGUMA2) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_RINGUMA2) {
+        MovePositionMark(1, Position<'m1', 35.5, 30.5>);
+    }
+    with (actor ACTOR_NPC_RINGUMA2) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    with (actor ACTOR_NPC_RINGUMA) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_RINGUMA2);
+    bgm_PlayFadeIn(BGM_CRYSTAL_CAVE, 0, 256);
+    message_SetFace(ACTOR_NPC_RINGUMA, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Hey, [CS:N]Ursaring[CR]![K] I\'ve evolved!",
+        french=" Hé, [CS:N]Ursaring[CR]?[K]\nJ\'ai évolué!",
+        german=" Hey, [CS:N]Ursaring[CR]?[K] Ich habe mich\nentwickelt!",
+        italian=" Ehi, [CS:N]Ursaring[CR]![K]\nMi sono evoluta!",
+        spanish=" Eh, ¡mira, [CS:N]Ursaring[CR]![K]\n¡He evolucionado!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_RINGUMA, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Congratulations![K] All the leveling\nup you went through finally paid off!",
+        french=" Félicitations![K] Tu vois,\ntes augmentations de niveau ont fini par\nporter leurs fruits!",
+        german=" Herzlichen Glückwunsch![K] All die\nLevelaufstiege, die du erreicht hast, haben\nsich endlich ausgezahlt!",
+        italian=" Congratulazioni![K] Finalmente\ntutti gli sforzi che hai fatto per salire di\nlivello si sono rivelati utili!",
+        spanish=" ¡Felicidades![K] ¡Al final ha dado\nsus frutos el subir de nivel!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_NPC_RINGUMA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_RINGUMA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_RINGUMA);
+    message_SetFace(ACTOR_NPC_RINGUMA, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Now it\'s hard to tell us apart...",
+        french=" Maintenant, c\'est difficile\nde nous différencier...",
+        german=" Jetzt kann man uns nur schwer\nauseinanderhalten...",
+        italian=" Anche se adesso è difficile \ndistinguerci...",
+        spanish=" Ahora cuesta diferenciarnos...",
+    });
+    message_Talk({
+        english=" But good for you!",
+        french=" Mais tant mieux pour toi!",
+        german=" Ich freue mich trotzdem für\ndich!",
+        italian=" ... sono comunque felice per te!",
+        spanish=" ¡Pero me alegro por ti!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" We should try evolving too,\n[hero]!",
+                french=" Nous aussi, on devrait essayer\nd\'évoluer, [hero]!",
+                german=" Wir sollten auch versuchen, uns\nzu entwickeln, [hero]!",
+                italian=" Anche noi dovremmo provare ad\nevolverci, [hero]!",
+                spanish=" ¡Deberíamos intentar evolucionar\ntambién, [hero]!",
+            }
+        case 2:
+            {
+                english=" Let\'s try evolving too,\n[hero]!",
+                french=" Nous aussi, on devrait essayer\nd\'évoluer, [hero]!",
+                german=" Entwickeln wir uns doch auch,\n[hero]!",
+                italian=" Anche noi dovremmo provare ad\nevolverci, [hero]!",
+                spanish=" ¡Deberíamos intentar evolucionar\ntambién, [hero]!",
+            }
+        default:
+            {
+                english=" We should try evolving too,\n[hero]!",
+                french=" Nous aussi, on devrait essayer\nd\'évoluer, [hero]!",
+                german=" Wir sollten auch versuchen, uns\nzu entwickeln, [hero]!",
+                italian=" Anche noi dovremmo provare ad\nevolverci, [hero]!",
+                spanish=" ¡Deberíamos intentar evolucionar\ntambién, [hero]!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_RINGUMA) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_RINGUMA2) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_RINGUMA2);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I\'ll try first, OK?",
+                french=" J\'y vais en premier, d\'accord?",
+                german=" Ich versuche es zuerst, okay?",
+                italian=" Vado prima io, va bene?",
+                spanish=" ¿Yo primero, vale?",
+            }
+        case 2:
+            {
+                english=" I\'ll try first.",
+                french=" J\'y vais en premier, d\'accord?",
+                german=" Ich versuche es zuerst.",
+                italian=" Vado prima io, va bene?",
+                spanish=" ¿Yo primero, vale?",
+            }
+        default:
+            {
+                english=" I\'ll try it first.",
+                french=" J\'y vais en premier, d\'accord?",
+                german=" Ich versuche es zuerst.",
+                italian=" Vado prima io, va bene?",
+                spanish=" Pero iré yo en primer lugar,\n¿vale?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m2', 37.5, 26>);
+    }
+    Wait(7);
+    with (actor ACTOR_PLAYER) {
+        MovePositionOffset(1, -24, 0);
+    }
+    with (actor ACTOR_NPC_RINGUMA) {
+        MovePositionOffset(1, 16, 0);
+    }
+    with (actor ACTOR_NPC_RINGUMA2) {
+        MovePositionOffset(1, -16, 0);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_RINGUMA) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    with (actor ACTOR_NPC_RINGUMA2) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(60);
+    message_EmptyActor();
+    message_Talk({
+        english="[CN]Those that seek awakening...",
+        french="[CN]Quiconque cherche l\'éveil...",
+        german="[CN]Jene, die erwachen wollen...",
+        italian="[CN]Coloro che vogliono rinascere...",
+        spanish="[CN]Aquellos que buscan despertar...",
+    });
+    message_Talk({
+        english="[CN]This is [CS:P]Luminous Spring[CR].[K]\n[CN]Do you seek to evolve?",
+        french="[CN]Je suis la [CS:P]Source Lumineuse[CR].[K]\n[CN]Désires-tu évoluer?",
+        german="[CN]Dies ist die [CS:P]Glitzerquelle[CR].[K]\n[CN]Möchtest du dich entwickeln?",
+        italian="[CN]Questa è la [CS:P]Sorgente Luccichio[CR].[K]\n[CN]Desideri evolverti?",
+        spanish="[CN]Este es el [CS:P]Manantial Luminoso[CR].[K]\n[CN]¿Quieres evolucionar?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Yep! I want to evolve!",
+                french=" Oui! Je veux évoluer!",
+                german=" Ja! Ich will mich entwickeln!",
+                italian=" Sì! Voglio evolvermi!",
+                spanish=" ¡Sí! ¡Quiero evolucionar!",
+            }
+        case 2:
+            {
+                english=" Yes! I want to evolve!",
+                french=" Oui! Je veux évoluer!",
+                german=" Ja! Ich will mich entwickeln!",
+                italian=" Sì! Voglio evolvermi!",
+                spanish=" ¡Sí! ¡Quiero evolucionar!",
+            }
+        default:
+            {
+                english=" Yes! I want to evolve!",
+                french=" Oui! Je veux évoluer!",
+                german=" Ja! Ich will mich entwickeln!",
+                italian=" Sì! Voglio evolvermi!",
+                spanish=" ¡Sí! ¡Quiero evolucionar!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Please! Oh, this is exciting!",
+                french=" Oui, s\'il vous plaît! Ooh, je suis\nsi impatient!",
+                german=" Ja bitte! Oh, wie aufregend!",
+                italian=" Sì, per favore! \nOh, com\'è emozionante!",
+                spanish=" ¡Sí, por favor!\n(¡Qué emocionante!)",
+            }
+        case 2:
+            {
+                english=" Please! Oh, this is exciting!",
+                french=" Oui, s\'il vous plaît! Ooh, je suis\nsi impatient!",
+                german=" Ja bitte! Oh, wie aufregend!",
+                italian=" Sì, per favore! \nOh, com\'è emozionante!",
+                spanish=" ¡Sí, por favor!\n(¡Qué emocionante!)",
+            }
+        default:
+            {
+                english=" Please! Oh, this is exciting!",
+                french=" Oui, s\'il vous plaît! Ooh, je suis\nsi impatiente!",
+                german=" Ja bitte! Oh, wie aufregend!",
+                italian=" Sì, per favore! \nOh, com\'è emozionante!",
+                spanish=" ¡Sí, por favor!\n(¡Qué emocionante!)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_EmptyActor();
+    message_Talk({
+        english="[CN]Do you need an item to do so?",
+        french="[CN]As-tu besoin d\'un objet à cette fin?",
+        german="[CN]Benötigst du dazu ein Item?",
+        italian="[CN]È necessario uno strumento per la\n[CN]tua evoluzione?",
+        spanish="[CN]¿Necesitas un objeto para evolucionar?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8962);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" An item?[K] ...I don\'t know...",
+                french=" Un objet?[K] ... Je ne sais pas...",
+                german=" Ein Item?[K] Ich weiß nicht...",
+                italian=" Uno strumento?[K] Non lo so...",
+                spanish=" ¿Un objeto?[K] No lo sé...",
+            }
+        case 2:
+            {
+                english=" An item?[K] ...I don\'t know...",
+                french=" Un objet?[K] ... Je ne sais pas...",
+                german=" Ein Item?[K] Ich weiß nicht...",
+                italian=" Uno strumento?[K] Non lo so...",
+                spanish=" ¿Un objeto?[K] No sé a qué te\nrefieres...",
+            }
+        default:
+            {
+                english=" An item?[K] ...I don\'t know...",
+                french=" Un objet?[K] ... Je ne sais pas...",
+                german=" Ein Item?[K] Ich weiß nicht...",
+                italian=" Uno strumento?[K] Non lo so...",
+                spanish=" ¿Un objeto?[K] No entiendo...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Uh, no. I don\'t need one.",
+                french=" Euh, non. Je n\'en ai pas besoin.",
+                german=" Äh, nein. Ich brauche keins.",
+                italian=" Eh, no. Non ne ho bisogno.",
+                spanish=" Esto... no. No necesito ningún\nobjeto.",
+            }
+        case 2:
+            {
+                english=" Um, no. No item for me.",
+                french=" Euh, non. Je n\'en ai pas besoin.",
+                german=" Äh, nein. Kein Item für mich.",
+                italian=" Eh, no. Non ne ho bisogno.",
+                spanish=" Esto... no. No necesito ningún\nobjeto.",
+            }
+        default:
+            {
+                english=" Um, no. I don\'t need an item.",
+                french=" Euh, non. Je n\'en ai pas besoin.",
+                german=" Äh, nein. Ich brauche kein Item.",
+                italian=" Eh, no. Non ne ho bisogno.",
+                spanish=" Eh... no. No necesito ningún\nobjeto.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_EmptyActor();
+    message_Talk({
+        english="[CN]So be it...",
+        french="[CN]Qu\'il en soit ainsi...",
+        german="[CN]So sei es...",
+        italian="[CN]Così sia...",
+        spanish="[CN]Que así sea...",
+    });
+    message_Talk({
+        english="[CN]Seeker of awakening...[K]\n[CN]Let us begin.",
+        french="[CN]Toi qui cherches l\'éveil...[K]\n[CN]Commençons.",
+        german="[CN]Du, der du erwachen willst...[K]\n[CN]Lass uns beginnen.",
+        italian="[CN]Tu che aspiri a rinascere...[K]\n[CN]Preparati.",
+        spanish="[CN]Tú que buscas despertar...[K]\n[CN]Comencemos.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_FadeOut(120);
+    Wait(120);
+    message_Talk({
+        english="[CN]....................................",
+        french="[CN]....................................",
+        german="[CN]....................................",
+        italian="[CN]....................................",
+        spanish="[CN]...",
+    });
+    message_Talk({
+        english="[CN]No.[K] Impossible...\n[CN]You may not evolve.",
+        french="[CN]Non.[K] Impossible...\n[CN]Tu ne peux évoluer.",
+        german="[CN]Nein.[K] Unmöglich...\n[CN]Du kannst dich nicht entwickeln.",
+        italian="[CN]No.[K] Impossibile...\n[CN]Non puoi evolverti.",
+        spanish="[CN]No.[K] Imposible...\n[CN]No puedes evolucionar.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8968);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_RINGUMA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_RINGUMA2) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_TOP_L_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Huh? Why not?!",
+                french=" Hein? Et pourquoi pas?!",
+                german=" Warum nicht?!?",
+                italian=" Eh? Perché no?!",
+                spanish=" ¿Qué? ¡¿Por qué no?!",
+            }
+        case 2:
+            {
+                english=" What? Why not?!",
+                french=" Hein? Et pourquoi pas?!",
+                german=" Was? Warum nicht?!?",
+                italian=" Eh? Perché no?!",
+                spanish=" ¿Qué? ¡¿Por qué no?!",
+            }
+        default:
+            {
+                english=" What? Why not?!",
+                french=" Hein? Et pourquoi pas?!",
+                german=" Was? Warum nicht?!?",
+                italian=" Eh? Perché no?!",
+                spanish=" ¿Cómo? ¡¿Por qué no?!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Why can\'t I evolve?",
+                french=" Pourquoi je ne peux pas\névoluer?!",
+                german=" Warum kann ich mich nicht\nentwickeln?",
+                italian=" Perché non posso evolvermi?",
+                spanish=" ¿Por qué no puedo evolucionar?",
+            }
+        case 2:
+            {
+                english=" Why can\'t I evolve?",
+                french=" Pourquoi je ne peux pas\névoluer?!",
+                german=" Warum kann ich mich nicht\nentwickeln?",
+                italian=" Perché non posso evolvermi?",
+                spanish=" ¿Por qué no puedo evolucionar?",
+            }
+        default:
+            {
+                english=" Why can\'t I evolve?",
+                french=" Pourquoi je ne peux pas\névoluer?!",
+                german=" Warum kann ich mich nicht\nentwickeln?",
+                italian=" Perché non posso evolvermi?",
+                spanish=" ¿Por qué no puedo evolucionar?",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Is it maybe because I haven\'t\nmet my requirements for evolving?",
+                french=" Peut-être que je ne remplis\npas les conditions pour évoluer?",
+                german=" Habe ich vielleicht noch nicht die\nVoraussetzungen für meine Entwicklung\ngeschaffen?",
+                italian=" Forse perché non soddisfo\ni requisiti per l\'evoluzione?",
+                spanish=" ¿Es que no cumplo los\nrequisitos?",
+            }
+        case 2:
+            {
+                english=" Is it maybe because I haven\'t\nmet my requirements for evolving?",
+                french=" Peut-être que je ne remplis\npas les conditions pour évoluer?",
+                german=" Habe ich vielleicht noch nicht die\nVoraussetzungen für meine Entwicklung\ngeschaffen?",
+                italian=" Forse perché non soddisfo\ni requisiti per l\'evoluzione?",
+                spanish=" ¿Es que no cumplo los\nrequisitos?",
+            }
+        default:
+            {
+                english=" Is it maybe because I haven\'t\nmet my requirements for evolving?",
+                french=" Peut-être que je ne remplis\npas les conditions pour évoluer?",
+                german=" Habe ich vielleicht noch nicht die\nVoraussetzungen für meine Entwicklung\ngeschaffen?",
+                italian=" Forse perché non soddisfo\ni requisiti per l\'evoluzione?",
+                spanish=" ¿Es que no cumplo los\nrequisitos?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_EmptyActor();
+    message_Talk({
+        english="[CN]No.[K] That is not it...",
+        french="[CN]Non.[K] Ce n\'est pas cela...",
+        german="[CN]Nein.[K] Das ist es nicht...",
+        italian="[CN]No.[K] Non è per quello...",
+        spanish="[CN]No.[K] No es eso...",
+    });
+    message_Talk({
+        english="[CN]It is not merely a problem\n[CN]of not meeting requirements...",
+        french="[CN]Il ne suffit point de remplir\n[CN]quelque condition...",
+        german="[CN]Das Problem hat nichts mit den\n[CN]Voraussetzungen für die Entwicklung zu tun...",
+        italian="[CN]Non è solo un problema relativo\n[CN]alla mancanza dei requisiti...",
+        spanish="[CN]No se trata de cumplir\n[CN]los requisitos...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_TOP_L_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Then, why?",
+                french=" Alors, pourquoi?",
+                german=" Warum klappt es dann nicht?",
+                italian=" Allora perché?",
+                spanish=" ¿Y entonces?",
+            }
+        case 2:
+            {
+                english=" Then, why?",
+                french=" Alors, pourquoi?",
+                german=" Warum klappt es dann nicht?",
+                italian=" Allora perché?",
+                spanish=" ¿Y entonces?",
+            }
+        default:
+            {
+                english=" Then, why?",
+                french=" Alors, pourquoi?",
+                german=" Warum klappt es dann nicht?",
+                italian=" Allora perché?",
+                spanish=" ¿Y entonces?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 2, DIR_DOWNLEFT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" [CS:N]Teddiursa[CR] was able to evolve...",
+                french=" [CS:N]Teddiursa[CR] a pu évoluer...",
+                german=" [CS:N]Teddiursa[CR] konnte sich\nentwickeln...",
+                italian=" [CS:N]Teddiursa[CR] si è potuta evolvere...",
+                spanish=" [CS:N]Teddiursa[CR] sí que ha podido\nevolucionar...",
+            }
+        case 2:
+            {
+                english=" [CS:N]Teddiursa[CR] was able to evolve...",
+                french=" [CS:N]Teddiursa[CR] a pu évoluer...",
+                german=" [CS:N]Teddiursa[CR] konnte sich\nentwickeln...",
+                italian=" [CS:N]Teddiursa[CR] si è potuta evolvere...",
+                spanish=" [CS:N]Teddiursa[CR] sí que ha podido\nevolucionar...",
+            }
+        default:
+            {
+                english=" [CS:N]Teddiursa[CR] was able to evolve...",
+                french=" [CS:N]Teddiursa[CR] a pu évoluer...",
+                german=" [CS:N]Teddiursa[CR] konnte sich\nentwickeln...",
+                italian=" [CS:N]Teddiursa[CR] si è potuta evolvere...",
+                spanish=" [CS:N]Teddiursa[CR] sí que ha podido\nevolucionar...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Why can\'t I evolve?",
+                french=" Pourquoi je ne peux pas\névoluer?",
+                german=" Warum kann ich mich nicht\nentwickeln?",
+                italian=" Perché io non posso?",
+                spanish=" ¿Por qué yo no puedo\nevolucionar?",
+            }
+        case 2:
+            {
+                english=" Why can\'t I evolve?",
+                french=" Pourquoi je ne peux pas\névoluer?",
+                german=" Warum kann ich mich nicht\nentwickeln?",
+                italian=" Perché io non posso?",
+                spanish=" ¿Por qué yo no puedo\nevolucionar?",
+            }
+        default:
+            {
+                english=" Why can\'t I evolve?",
+                french=" Pourquoi je ne peux pas\névoluer?",
+                german=" Warum kann ich mich nicht\nentwickeln?",
+                italian=" Perché io non posso?",
+                spanish=" ¿Por qué yo no puedo\nevolucionar?",
+            }
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_PlayFadeIn(BGM_IN_THE_DEPTHS_OF_THE_PIT, 0, 256);
+    message_EmptyActor();
+    message_Talk({
+        english="[CN]Why can you not evolve...?",
+        french="[CN]Pourquoi ne peux-tu pas évoluer...?",
+        german="[CN]Warum du dich nicht entwickeln kannst?",
+        italian="[CN]Perché non puoi evolverti?",
+        spanish="[CN]¿Que por qué no puedes evolucionar tú?",
+    });
+    message_Talk({
+        english="[CN]It may be influenced by a distortion\n[CN]in the fabric of space...",
+        french="[CN]Peut-être est-ce dû à une distorsion\n[CN]dans la trame de l\'espace...",
+        german="[CN]Vielleicht hat die Verzerrung des\n[CN]Raumgefüges etwas damit zu tun...",
+        italian="[CN]Potrebbe essere dovuto a una \n[CN]distorsione della struttura dello spazio...",
+        spanish="[CN]Podría deberse a\n[CN]una deformación del espacio...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8962);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_TOP_L_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Distortion?[K] The fabric of space?",
+                french=" Une distorsion?[K] Dans la trame\nde l\'espace?",
+                german=" Verzerrung?[K] Das Raumgefüge?",
+                italian=" Distorsione?[K] Della struttura \ndello spazio?",
+                spanish=" ¿Deformación?[K] ¿Del espacio?",
+            }
+        case 2:
+            {
+                english=" Distortion?[K] The fabric of space?",
+                french=" Une distorsion?[K] Dans la trame\nde l\'espace?",
+                german=" Verzerrung?[K] Das Raumgefüge?",
+                italian=" Distorsione?[K] Della struttura\ndello spazio?",
+                spanish=" ¿Deformación?[K] ¿Del espacio?",
+            }
+        default:
+            {
+                english=" Distortion?[K] The fabric of space?",
+                french=" Une distorsion?[K] Dans la trame\nde l\'espace?",
+                german=" Verzerrung?[K] Das Raumgefüge?",
+                italian=" Distorsione?[K] Della struttura\ndello spazio?",
+                spanish=" ¿Deformación?[K] ¿Del espacio?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_EmptyActor();
+    message_Talk({
+        english="[CN]Why that should be, I do not know...",
+        french="[CN]Quelle en est la cause, je l\'ignore...",
+        german="[CN]Ich weiß nicht, warum das so sein könnte...",
+        italian="[CN]Il motivo, non lo conosco...",
+        spanish="[CN]No sé por qué...",
+    });
+    message_Talk({
+        english="[CN]But your presence...[K]is somehow related\n[CN]to the distortion of space itself.",
+        french="[CN]Mais ta présence...[K] est liée\n[CN]à la distorsion elle-même.",
+        german="[CN]Aber deine Existenz...[K] Sie hängt\n[CN]irgendwie mit der Verzerrung des Raumes\n[CN]selbst zusammen.",
+        italian="[CN]Tuttavia, la tua presenza...[K] è in qualche modo\n[CN]collegata alla distorsione dello spazio.",
+        spanish="[CN]Pero tu presencia...[K] está de algún modo\n[CN]relacionada con la deformación del espacio.",
+    });
+    message_Talk({
+        english="[CN]And as a result of that,\n[CN]you cannot evolve...",
+        french="[CN]Il en résulte que\n[CN]tu ne peux évoluer...",
+        german="[CN]Und als Folge daraus\n[CN]kannst du dich nicht entwickeln...",
+        italian="[CN]Di conseguenza,\n[CN]non puoi evolverti...",
+        spanish="[CN]Y por eso...\n[CN]no puedes evolucionar.",
+    });
+    message_Talk({
+        english="[CN]No.[K] It is not only you...[K]\n[CN]There is yet another...",
+        french="[CN]Non.[K] Pas seulement toi...[K]\n[CN]Il y a encore quelqu\'un d\'autre...",
+        german="[CN]Nein.[K] Es trifft nicht nur dich...[K]\n[CN]Es gibt noch ein anderes Pokémon...",
+        italian="[CN]No.[K] Non sei solo tu.[K]\n[CN]C\'è un altro Pokémon...",
+        spanish="[CN]Y...[K] no solo tú...[K]\n[CN]Hay alguien más...",
+    });
+    message_Talk({
+        english="[CN]The one behind you...[K]is also\n[CN]forbidden its evolution.",
+        french="[CN]Le Pokémon derrière toi...[K] est\n[CN]également interdit d\'évolution.",
+        german="[CN]Das Pokémon hinter dir...[K] Auch ihm\n[CN]bleibt eine Entwicklung versagt.",
+        italian="[CN]Quello dietro di te...[K] anche a quel Pokémon\n[CN]l\'evoluzione è preclusa.",
+        spanish="[CN]Detrás de ti...[K] Ese Pokémon\n[CN]tampoco puede evolucionar.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8967);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_RINGUMA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_RINGUMA2) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_RINGUMA2) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_RINGUMA2);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_RINGUMA) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_RINGUMA2) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_RINGUMA2);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_TOP_L_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Huh?! [hero] too?!",
+                french=" Hein?! [hero] aussi?!",
+                german=" Huch?!? [hero] auch?!?",
+                italian=" Eh?! Anche [hero]?!",
+                spanish=" ¡¿Quéee?! ¿[hero]\ntampoco?",
+            }
+        case 2:
+            {
+                english=" What?! [hero] too?!",
+                french=" Hein?! [hero] aussi?!",
+                german=" Was?!? [hero] auch?!?",
+                italian=" Cosa?! Anche [hero]?!",
+                spanish=" ¡¿Quéee?! ¿[hero]\ntampoco?",
+            }
+        default:
+            {
+                english=" What?! [hero] too?!",
+                french=" Hein?! [hero] aussi?!",
+                german=" Was?!? [hero] auch?!?",
+                italian=" Cosa?! Anche [hero]?!",
+                spanish=" ¡¿Quéee?! ¿[hero]\ntampoco?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(What...[K]me too?)",
+                french="(Quoi...[K] moi aussi?)",
+                german="(Was...[K] Mir auch?)",
+                italian="(Cosa...[K] anche io?)",
+                spanish="(¿Cómo?[K] ¿Yo tampoco?)",
+            }
+        default:
+            {
+                english="(What...[K]me too?)",
+                french="(Quoi...[K] moi aussi?)",
+                german="(Was...[K] Mir auch?)",
+                italian="(Cosa...[K] anche io?)",
+                spanish="(¿Cómo?[K] ¿Yo tampoco?)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_EmptyActor();
+    message_Talk({
+        english="[CN]That is all that I can tell...",
+        french="[CN]Je n\'en sais pas plus...",
+        german="[CN]Das ist alles, was ich erkennen kann...",
+        italian="[CN]È tutto quello che posso dirvi...",
+        spanish="[CN]Es todo cuanto puedo decir...",
+    });
+    message_Talk({
+        english="[CN]This is [CS:P]Luminous Spring[CR].[K]\n[CN]If you seek new evolution,\n[CN]then you shall return...",
+        french="[CN]Je suis la [CS:P]Source Lumineuse[CR].[K]\n[CN]Si tu désires évoluer, alors\n[CN]tu reviendras en ce lieu...",
+        german="[CN]Dies ist die [CS:P]Glitzerquelle[CR].[K]\n[CN]Falls du weitere Entwicklung suchst,\n[CN]so kehre zurück...",
+        italian="[CN]Questa è la [CS:P]Sorgente Luccichio[CR].[K]\n[CN]Colui che desidera una nuova evoluzione\n[CN]dovrà fare ritorno...",
+        spanish="[CN]El [CS:P]Manantial Luminoso[CR] ha hablado.[K]\n[CN]Si queréis evolucionar,\n[CN]regresad...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5125);
+    screen_WhiteOut(1, 30);
+    back_ChangeGround(LEVEL_P14P01A2);
+    Wait(60);
+    screen_FadeIn(1, 30);
+    Wait(60);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_TOP_L_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I guess it\'s not just me...",
+                french=" Ce n\'est pas seulement moi...",
+                german=" Ich bin wohl nicht der Einzige...",
+                italian=" Non riguarda solo me...",
+                spanish=" Al parecer, no soy solo yo...",
+            }
+        case 2:
+            {
+                english=" Looks like it\'s not just me...",
+                french=" Ce n\'est pas seulement moi...",
+                german=" Ich bin wohl nicht der Einzige...",
+                italian=" Non riguarda solo me...",
+                spanish=" Al parecer, no soy solo yo...",
+            }
+        default:
+            {
+                english=" Looks like it\'s not just me...",
+                french=" Ce n\'est pas seulement moi...",
+                german=" Ich bin wohl nicht die Einzige...",
+                italian=" Non riguarda solo me...",
+                spanish=" Al parecer, no soy solo yo...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I guess you can\'t evolve, either,\n[hero].",
+                french=" Tu ne peux pas évoluer non plus,\n[hero].",
+                german=" Ich nehme an, du kannst dich\nauch nicht entwickeln, [hero].",
+                italian=" Hai visto, neanche tu puoi\nevolverti, [hero].",
+                spanish=" Parece que tú tampoco puedes\nevolucionar, [hero].",
+            }
+        case 2:
+            {
+                english=" I guess you can\'t evolve, either,\n[hero].",
+                french=" Tu ne peux pas évoluer non plus,\n[hero].",
+                german=" Ich nehme an, du kannst dich\nauch nicht entwickeln, [hero].",
+                italian=" Hai visto, neanche tu puoi\nevolverti, [hero].",
+                spanish=" Parece que tú tampoco puedes\nevolucionar, [hero].",
+            }
+        default:
+            {
+                english=" You can\'t evolve, either,\n[hero].",
+                french=" Tu ne peux pas évoluer non plus,\n[hero].",
+                german=" Ich nehme an, du kannst dich\nauch nicht entwickeln, [hero].",
+                italian=" Hai visto, neanche tu puoi\nevolverti, [hero].",
+                spanish=" Tú tampoco puedes evolucionar,\n[hero].",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I don\'t get why we\'re not\nallowed to evolve, though.",
+                french=" Mais je ne comprends pas\npourquoi nous ne pouvons pas évoluer.",
+                german=" Ich kapiere nicht, warum uns die\nEntwicklung versagt bleibt.",
+                italian=" Però non capisco proprio perché\na noi non è permesso.",
+                spanish=" Aunque no sé por qué.",
+            }
+        case 2:
+            {
+                english=" I don\'t understand why we can\'t\nevolve, though.",
+                french=" Mais je ne comprends pas\npourquoi nous ne pouvons pas évoluer.",
+                german=" Ich verstehe nicht, warum uns\ndie Entwicklung versagt bleibt.",
+                italian=" Però non capisco proprio perché\na noi non è permesso.",
+                spanish=" Aunque no sé por qué.",
+            }
+        default:
+            {
+                english=" I don\'t understand why we\'re not\nallowed to evolve, though.",
+                french=" Mais je ne comprends pas\npourquoi nous ne pouvons pas évoluer.",
+                german=" Ich verstehe nicht, warum uns\ndie Entwicklung versagt bleibt.",
+                italian=" Però non capisco proprio perché\na noi non è permesso.",
+                spanish=" Aunque no sé por qué.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Anyway, we have the Perfect\nApple that was in the treasure box.",
+                french=" Quoi qu\'il en soit, nous avons la\nPomme Parfaite qui était dans le Coffre au\nTrésor.",
+                german=" Na ja, immerhin haben wir den\nPerfekten Apfel, der sich in der Schatzbox\nbefand.",
+                italian=" Ad ogni modo, abbiamo la Mela\nPerfetta che si trovava nel forziere.",
+                spanish=" De todos modos tenemos la\nManzana Perfecta que había en el cofre\ndel tesoro.",
+            }
+        case 2:
+            {
+                english=" Anyway, we have the Perfect\nApple that was in the treasure box.",
+                french=" Quoi qu\'il en soit, nous avons la\nPomme Parfaite qui était dans le Coffre au\nTrésor.",
+                german=" Na ja, immerhin haben wir den\nPerfekten Apfel, der sich in der Schatzbox\nbefand.",
+                italian=" Ad ogni modo, abbiamo la Mela\nPerfetta che si trovava nel forziere.",
+                spanish=" De todos modos tenemos la\nManzana Perfecta que había en el cofre\ndel tesoro.",
+            }
+        default:
+            {
+                english=" Anyway, we have the Perfect\nApple that was in the treasure box.",
+                french=" Quoi qu\'il en soit, nous avons la\nPomme Parfaite qui était dans le Coffre au\nTrésor.",
+                german=" Na ja, immerhin haben wir den\nPerfekten Apfel, der sich in der Schatzbox\nbefand.",
+                italian=" Ad ogni modo, abbiamo la Mela\nPerfetta che si trovava nel forziere.",
+                spanish=" De todos modos tenemos la\nManzana Perfecta que había en el cofre\ndel tesoro.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Let\'s take it back to the guild.",
+                french=" Rapportons-la à la Guilde.",
+                german=" Lass ihn uns mit zur Gilde\nnehmen.",
+                italian=" Riportiamola alla Gilda.",
+                spanish=" Llevémosla al [CS:N]Pokégremio[CR].",
+            }
+        case 2:
+            {
+                english=" We should go back to the guild\nwith it.",
+                french=" Rapportons-la à la Guilde.",
+                german=" Wir sollten damit zur Gilde\nzurückkehren.",
+                italian=" Riportiamola alla Gilda.",
+                spanish=" Regresemos al [CS:N]Pokégremio[CR].",
+            }
+        default:
+            {
+                english=" Let\'s go back to the guild with it.",
+                french=" Rapportons-la à la Guilde.",
+                german=" Lass uns mit dem Perfekten\nApfel zurück zur Gilde gehen.",
+                italian=" Riportiamola alla Gilda.",
+                spanish=" Llevémosla al [CS:N]Pokégremio[CR].",
+            }
+    }
+    message_Close();
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 60);
+    Wait(90);
+    WaitBgm(BGM_IN_THE_DEPTHS_OF_THE_PIT);
+    end;
+}

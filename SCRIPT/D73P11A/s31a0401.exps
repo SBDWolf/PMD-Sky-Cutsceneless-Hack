@@ -1,0 +1,93 @@
+
+def 0 {
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_Mail({
+        english="[CN]Climb [CS:P]Sky Peak[CR]?",
+        french="[CN]Gravir le [CS:P]Pic Céleste[CR]?",
+        german="[CN]Den [CS:P]Himmelsgipfel[CR] besteigen?",
+        italian="[CN]Vuoi scalare il [CS:P]Picco del Cielo[CR]?",
+        spanish="[CN]¿Quieres subir a la [CS:P]Cumbre del Cielo[CR]?",
+    });
+    switch ( message_SwitchMenu(0, 1) ) {
+        case menu({
+            english="Yes",
+            french="Oui",
+            german="Ja",
+            italian="Sì",
+            spanish="Sí",
+        }):
+            §label_0;
+            if ( scn($SCENARIO_MAIN) >= [29, 31] ) {
+                §label_2;
+                CallCommon(CORO_SORANOITADAKI_FLAGSET);
+                if ( scn($SCENARIO_MAIN) >= [29, 11] ) {
+                    §label_4;
+                    bgm_FadeOut(60);
+                    main_EnterDungeon(111, 30);
+                    switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                    main_EnterDungeon(-1, 30);
+                    hold;
+                    end;
+                } else {
+                    $SCENARIO_MAIN = scn[29, 11];
+                    jump @label_4;
+                }
+            } else {
+                switch ( ProcessSpecial(PROCESS_SPECIAL_RECURITABLE_CAN_ADD, 21, 0) ) {
+                    case 1:
+                        message_Close();
+                        with (actor ACTOR_NPC_SHEIMI) {
+                            SetAnimation(2);
+                        }
+                        with (actor ACTOR_NPC_SHEIMI) {
+                            Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+                        }
+                        WaitExecuteLives(ACTOR_NPC_SHEIMI);
+                        with (actor ACTOR_PLAYER) {
+                            Turn2DirectionLives(4, 10, ACTOR_NPC_SHEIMI);
+                        }
+                        with (actor ACTOR_ATTENDANT1) {
+                            Turn2DirectionLives(4, 10, ACTOR_NPC_SHEIMI);
+                        }
+                        WaitExecuteLives(ACTOR_ATTENDANT1);
+                        bgm_FadeOut(60);
+                        screen_FadeOut(1, 30);
+                        jump @label_2;
+                    default:
+                        message_Mail({
+                            english="[CN]You have too many team members.\n[CN][CS:N]Shaymin[CR] cannot join your team.",
+                            french="[CN]Votre équipe est déjà au complet,\n[CN][CS:N]Shaymin[CR] ne peut pas la rejoindre.",
+                            german="[CN]Du hast zu viele Team-Mitglieder, um\n[CN][CS:N]Shaymin[CR] in dein Team aufzunehmen.",
+                            italian="[CN]Ci sono troppi membri nella squadra.\n[CN][CS:N]Shaymin[CR] non può unirsi a voi.",
+                            spanish="[CN]Sois demasiados miembros en el equipo.\n[CN][CS:N]Shaymin[CR] no puede unirse al equipo.",
+                        });
+                        message_Mail({
+                            english="[CN]Use the [CS:K]Chimecho[CR] Assembly Post\n[CN]here to reduce the number of\n[CN]members in your team.",
+                            french="[CN]Allez au [CS:K]Point de Rassemblement Eoko[CR]\n[CN]à côté pour réduire le nombre\n[CN]de membres dans votre équipe.",
+                            german="[CN]Begib dich zum [CS:K]Palimpalim-Versammlungsort[CR]\n[CN]in der Nähe, um die Anzahl der\n[CN]Team-Mitglieder anzupassen.",
+                            italian="[CN]Vai al Raduno Squadra [CS:K]Chimecho[CR]\n[CN]qui accanto per diminuire il numero\n[CN]di membri della tua squadra.",
+                            spanish="[CN]Dirígete al punto de reunión de [CS:K]Chimecho[CR]\n[CN]que está aquí al lado para reducir\n[CN]el número de miembros de tu equipo.",
+                        });
+                        message_Close();
+                        end;
+                }
+            }
+            break;
+        case menu({
+            english="No",
+            french="Non",
+            german="Nein",
+            italian="No",
+            spanish="No",
+        }):
+        default:
+            message_Close();
+            end;
+    }
+}

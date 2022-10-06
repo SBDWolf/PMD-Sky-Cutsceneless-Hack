@@ -1,0 +1,46 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_SPINDAS_CAFE, 0, 256);
+    back_SetGround(LEVEL_V37P01A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        MovePositionMark(32896, Position<'m0', 16, 11.5>);
+    }
+    screen_FadeIn(1, 60);
+    WaitExecutePerformer(0);
+    message_SetActor(ACTOR_NPC_BARIYAADO);
+    message_Talk({
+        english=" It\'s a really tall mountain to\nthe east.",
+        french=" C\'est une très haute montagne,\nà l\'est.",
+        german=" So heißt ein wirklich hoher Berg\nim Osten.",
+        italian=" È una montagna altissima che\nsi trova a est di qui.",
+        spanish=" Es una montaña altísima que se\nencuentra al este.",
+    });
+    message_Talk({
+        english=" It\'s said that the mountain is so\ntall, it almost reaches beyond the sky.",
+        french=" On dit que cette montagne est si\nhaute qu\'elle s\'élève au-delà du ciel.",
+        german=" Man sagt, dieser Berg sei so\nhoch, dass er über den Himmel hinausragt.",
+        italian=" Si dice che sia talmente alta\nda superare addirittura le nuvole.",
+        spanish=" Se dice que es tan alta que\ncasi atraviesa el cielo.",
+    });
+    message_Talk({
+        english=" But it\'s surrounded by an\nimpassable mountain range, so the route there\nhas been lost.",
+        french=" Mais elle est entourée d\'une\nchaîne de montagnes presque infranchissable,\nsi bien qu\'il est très difficile de s\'y rendre.",
+        german=" Aber er ist von unüberwindbaren\nGebirgszügen umringt, sodass niemand ihn\nerreichen kann.",
+        italian=" Ma è circondata da una catena\nmontuosa insormontabile, quindi il sentiero\nè inaccessibile.",
+        spanish=" Pero la rodea una cadena montañosa\ninfranqueable y se ha perdido el sendero\nde ascenso.",
+    });
+    message_Talk({
+        english=" That\'s why it hasn\'t been fully\nexplored yet.",
+        french=" C\'est pourquoi elle n\'a pas\nencore été entièrement explorée.",
+        german=" Deswegen wurde er auch noch\nnicht vollständig erforscht.",
+        italian=" Ecco perché non è stata ancora\nesplorata del tutto.",
+        spanish=" Por eso hasta ahora no se ha\nconseguido explorar en su totalidad.",
+    });
+    message_Close();
+    screen_FadeOut(1, 60);
+    end;
+}

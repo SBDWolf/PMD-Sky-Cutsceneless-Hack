@@ -1,0 +1,259 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_D31P31A);
+    supervision_Acting(1);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (object OBJECT_D31P31A1_81) {
+        SetOutputAttribute(2);
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_EmptyActor();
+    message_Talk({
+        english="[CS:N]Grand Master[CR]: Th-they got me...",
+        french="[CS:N]Grand maître[CR]: Non, j\'ai perdu...",
+        german="[CS:N]Großmeister[CR]: S-sie haben mich erwischt...",
+        italian="[CS:N]Sua Malvagità[CR]: M-Mi hanno sconfitto...",
+        spanish="[CS:N]Gran malo[CR]: Me... Me tienen en sus manos.",
+    });
+    message_Talk({
+        english="[CS:N]Grand Master[CR]: Everyone, run away!",
+        french="[CS:N]Grand maître[CR]: Sauve qui peut!",
+        german="[CS:N]Großmeister[CR]: Lauft alle weg!",
+        italian="[CS:N]Sua Malvagità[CR]: Scappate!",
+        spanish="[CS:N]Gran malo[CR]: ¡Rápido, retirada!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    supervision_Acting(2);
+    se_Play(7430);
+    with (actor ACTOR_NPC_PUKURIN) {
+        MovePositionOffset(3, 0, 200);
+    }
+    bgm_PlayFadeIn(BGM_GUILDMASTER_WIGGLYTUFF, 0, 256);
+    message_SetFaceEmpty(ACTOR_NPC_PUKURIN, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english="[CS:N]Grand Master[CR]: Aiyeeh!",
+        french="[CS:N]Grand maître[CR]: Aiyaaah!",
+        german="[CS:N]Großmeister[CR]: Aiiiieeeh!",
+        italian="[CS:N]Sua Malvagità[CR]: Uppalalà!",
+        spanish="[CS:N]Gran malo[CR]: ¡Ayayay!",
+    });
+    WaitSe(7430);
+    message_CloseEnforce();
+    se_Play(7430);
+    supervision_Acting(3);
+    with (actor ACTOR_NPC_PERAPPU) {
+        MovePositionOffset(3, 0, 200);
+    }
+    message_SetFaceEmpty(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english="[CS:N]Minion[CR]: Squawk!",
+        french="[CS:N]Sbire[CR]: Couaaac!",
+        german="[CS:N]Untergebener[CR]: Kreisch!",
+        italian="[CS:N]Sgherro[CR]: Squack!",
+        spanish="[CS:N]Secuaz[CR]: ¡Cruac!",
+    });
+    WaitSe(7430);
+    message_CloseEnforce();
+    se_Play(7430);
+    supervision_Acting(4);
+    with (actor ACTOR_NPC_KIMAWARI) {
+        MovePositionOffset(3, 0, 200);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        MovePositionOffset(3, 0, 200);
+    }
+    message_SetFaceEmpty(ACTOR_NPC_KIMAWARI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english="[CS:N]Minion[CR]: Eeeeeeek!",
+        french="[CS:N]Sbire[CR]: Hiiiiiii!",
+        german="[CS:N]Untergebene[CR]: Kreisch!",
+        italian="[CS:N]Sgherro[CR]: Ehiiiiiii!",
+        spanish="[CS:N]Secuaz[CR]: ¡Jo!",
+    });
+    WaitSe(7430);
+    message_CloseEnforce();
+    se_Play(7430);
+    supervision_Acting(5);
+    with (actor ACTOR_NPC_HEIGANI) {
+        MovePositionOffset(3, 0, 200);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        MovePositionOffset(3, 0, 200);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        MovePositionOffset(3, 0, 200);
+    }
+    message_SetFaceEmpty(ACTOR_NPC_HEIGANI, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english="[CS:N]Minion[CR]: Hey, hey!",
+        french="[CS:N]Sbire[CR]: Eh dis donc!",
+        german="[CS:N]Untergebener[CR]: Kreisch!",
+        italian="[CS:N]Sgherro[CR]: Ehi, ehi!",
+        spanish="[CS:N]Secuaz[CR]: ¡Oye, oye!",
+    });
+    WaitSe(7430);
+    message_CloseEnforce();
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    supervision_RemoveActing(2);
+    supervision_RemoveActing(3);
+    supervision_RemoveActing(4);
+    supervision_RemoveActing(5);
+    Wait(60);
+    supervision_Acting(0);
+    Wait(1);
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m0', 30.5, 37>);
+    }
+    Wait(5);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m1', 26.5, 37>);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SIGH, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Whew...",
+                french=" Pfiou...",
+                german=" Puh...",
+                italian=" Fiuuu...",
+                spanish=" Uf...",
+            }
+        case 2:
+            {
+                english=" Whew...",
+                french=" Pfiou...",
+                german=" Puh...",
+                italian=" Fiuuu...",
+                spanish=" Uf...",
+            }
+        default:
+            {
+                english=" Whew...",
+                french=" Pfiou...",
+                german=" Puh...",
+                italian=" Fiuuu...",
+                spanish=" Uf...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" So, uh, what was that\nall about...?",
+                french=" Hein? Qu\'est-ce qui leur a pris?",
+                german=" So, äh, und was sollte das\nGanze jetzt?",
+                italian=" Quindi, ehm, cos\'è appena\nsuccesso...?",
+                spanish=" ¿De qué iba todo esto?",
+            }
+        case 2:
+            {
+                english=" What was that all about,\nI wonder...?",
+                french=" Hein? Qu\'est-ce qui leur a pris?",
+                german=" Was das wohl alles zu bedeuten\nhatte, möchte ich wissen...",
+                italian=" Quindi, ehm, cos\'è appena\nsuccesso...?",
+                spanish=" ¿De qué iba todo esto?",
+            }
+        default:
+            {
+                english=" So, uh, what was that\nall about...?",
+                french=" Hein? Qu\'est-ce qui leur a pris?",
+                german=" So, äh, und was sollte das\nGanze jetzt?",
+                italian=" Quindi, ehm, cos\'è appena\nsuccesso...?",
+                spanish=" ¿De qué iba todo esto?",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I guess we did all right.",
+                french=" Je crois que nous avons réussi.",
+                german=" Ich denke, wir haben uns gut\ngeschlagen.",
+                italian=" Direi che ce la siamo cavata\nbene.",
+                spanish=" Creo que ya está hecho.",
+            }
+        case 2:
+            {
+                english=" Well, I guess we\'re done here.",
+                french=" Je crois que nous avons réussi.",
+                german=" Nun, ich glaube, hier sind wir\nfertig.",
+                italian=" Direi che ce la siamo cavata\nbene.",
+                spanish=" Creo que ya está hecho.",
+            }
+        default:
+            {
+                english=" I guess it\'s all right.",
+                french=" Je crois que nous avons réussi.",
+                german=" Ich denke, das wäre erledigt.",
+                italian=" Direi che ce la siamo cavata\nbene.",
+                spanish=" Creo que ya hemos terminado.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(60);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(10);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Let\'s move on...[K] Let\'s go to\n[CS:P]Luminous Spring[CR].",
+                french=" Avançons...[K] Allons à la\n[CS:P]Source Lumineuse[CR].",
+                german=" Ziehen wir weiter...[K] Gehen wir\nzur [CS:P]Glitzerquelle[CR].",
+                italian=" Proseguiamo...[K] Andiamo alla\n[CS:P]Sorgente Luccichio[CR].",
+                spanish=" Sigamos adelante...[K] Vayamos al\n[CS:P]Manantial Luminoso[CR].",
+            }
+        case 2:
+            {
+                english=" We should move on...[K] Let\'s go to\n[CS:P]Luminous Spring[CR].",
+                french=" Avançons...[K] Allons à la\n[CS:P]Source Lumineuse[CR].",
+                german=" Wir sollten weiterziehen...[K]\nLass uns zur [CS:P]Glitzerquelle[CR] gehen.",
+                italian=" Proseguiamo...[K] Andiamo alla\n[CS:P]Sorgente Luccichio[CR].",
+                spanish=" Sigamos adelante...[K] Vayamos al\n[CS:P]Manantial Luminoso[CR].",
+            }
+        default:
+            {
+                english=" We should move on...[K] Let\'s go to\n[CS:P]Luminous Spring[CR].",
+                french=" Avançons...[K] Allons à la\n[CS:P]Source Lumineuse[CR].",
+                german=" Wir sollten weiterziehen...[K]\nLass uns zur [CS:P]Glitzerquelle[CR] gehen.",
+                italian=" Proseguiamo...[K] Andiamo alla\n[CS:P]Sorgente Luccichio[CR].",
+                spanish=" Continuemos...[K] Vayamos al\n[CS:P]Manantial Luminoso[CR].",
+            }
+    }
+    message_Close();
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m2', 24, 20.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m3', 33, 20.5>);
+    }
+    Wait(30);
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 60);
+    Wait(60);
+    switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+    $SCENARIO_MAIN_BIT_FLAG[8] = 1;
+    $COMPULSORY_SAVE_POINT = 23;
+    CallCommon(CORO_HANYOU_SAVE_FUNC);
+    end;
+}

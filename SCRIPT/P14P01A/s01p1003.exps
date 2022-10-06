@@ -1,0 +1,625 @@
+
+def 0 {
+    back_SetGround(LEVEL_P14P01A2);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 5);
+    Wait(30);
+    message_SetFace(ACTOR_PLAYER, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(It was [CS:N]Wigglytuff[CR] that put this\ntreasure here...)",
+                french="(C\'est [CS:N]Grodoudou[CR] qui a posé ce trésor ici...)",
+                german="(Es war [CS:N]Knuddeluff[CR], der diesen Schatz hier\nplatziert hat...)",
+                italian="(È stato [CS:N]Wigglytuff[CR] a mettere qui \nquesto forziere.)",
+                spanish="(Fue [CS:N]Wigglytuff[CR] quien dejó aquí el tesoro...)",
+            }
+        default:
+            {
+                english="(It was [CS:N]Wigglytuff[CR] that put this\ntreasure here...)",
+                french="(C\'est [CS:N]Grodoudou[CR] qui a posé ce trésor ici...)",
+                german="(Es war [CS:N]Knuddeluff[CR], der diesen Schatz hier\nplatziert hat...)",
+                italian="(È stato [CS:N]Wigglytuff[CR] a mettere qui \nquesto forziere.)",
+                spanish="(Fue [CS:N]Wigglytuff[CR] quien dejó aquí el tesoro...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(That means...[K]inside this treasure box...)",
+                french="(Ça veut dire...[K] qu\'à l\'intérieur de ce Coffre\nau Trésor...)",
+                german="(Das bedeutet...[K] In dieser Schatzbox...)",
+                italian="(Il che significa...[K] che dentro il forziere...)",
+                spanish="(Lo que significa que...[K] en este cofre...)",
+            }
+        default:
+            {
+                english="(That means...[K]inside this treasure box...)",
+                french="(Ça veut dire...[K] qu\'à l\'intérieur de ce Coffre\nau Trésor...)",
+                german="(Das bedeutet...[K] In dieser Schatzbox...)",
+                italian="(Il che significa...[K] che dentro il forziere...)",
+                spanish="(Lo que significa que...[K] en este cofre...)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_Mail({
+        english="[CN][hero] opened\n[CN]the treasure box.",
+        french="[CN][hero] ouvre\n[CN]le Coffre au Trésor.",
+        german="[CN][hero] öffnet\n[CN]die Schatzbox.",
+        italian="[CN][hero] apre\n[CN]il forziere.",
+        spanish="[CN][hero] abrió\n[CN]el cofre del tesoro.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(6411);
+    with (object OBJECT_G01P05A1_106) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_G01P05A1_106) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_G01P05A1_106);
+    WaitSe(6411);
+    se_Play(6413);
+    supervision_Acting(1);
+    with (object OBJECT_P03P02A1_128) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_PLAYER) {
+        SlidePositionOffset(1, 0, 24);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_RINGUMA) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        SlidePositionOffset(1, -8, 0);
+    }
+    with (actor ACTOR_NPC_RINGUMA) {
+        SlidePositionOffset(1, 8, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_RINGUMA);
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_RINGUMA) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_RINGUMA) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (object OBJECT_P03P02A1_128) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_P03P02A1_128);
+    se_Play(8978);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_NPC_RINGUMA, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(2, 0);
+    message_Talk({
+        english=" Th-this is...",
+        french=" C-C\'est...",
+        german=" D-das ist...",
+        italian=" Qu-Questa è...",
+        spanish=" Esto... Esto es...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_HIMEGUMA, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_FacePositionOffset(-2, 0);
+    message_Talk({
+        english=" It\'s a Perfect Apple.",
+        french=" C\'est une Pomme Parfaite.",
+        german=" Es ist ein Perfekter Apfel.",
+        italian=" È una Mela Perfetta.",
+        spanish=" Es una Manzana Perfecta.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" The treasure of [CS:P]Luminous\nSpring[CR]...[K] It was a Perfect Apple.",
+                french=" Le trésor de la [CS:P]Source\nLumineuse[CR]...[K] est une Pomme Parfaite.",
+                german=" Der Schatz der [CS:P]Glitzerquelle[CR]...[K]\nEin Perfekter Apfel!",
+                italian=" Il tesoro della [CS:P]Sorgente\nLuccichio[CR]...[K] è una Mela Perfetta.",
+                spanish=" ¡Anda! Resulta que el tesoro del\n[CS:P]Manantial Luminoso[CR] es...[K] una Manzana Perfecta.",
+            }
+        case 2:
+            {
+                english=" The treasure of [CS:P]Luminous\nSpring[CR]...[K] It was a Perfect Apple.",
+                french=" Le trésor de la [CS:P]Source\nLumineuse[CR]...[K] est une Pomme Parfaite.",
+                german=" Der Schatz der [CS:P]Glitzerquelle[CR]...[K]\nEin Perfekter Apfel!",
+                italian=" Il tesoro della [CS:P]Sorgente\nLuccichio[CR]...[K] è una Mela Perfetta.",
+                spanish=" ¡Anda! Resulta que el tesoro del\n[CS:P]Manantial Luminoso[CR] es...[K] una Manzana Perfecta.",
+            }
+        default:
+            {
+                english=" The treasure of [CS:P]Luminous\nSpring[CR]...[K] It was a Perfect Apple.",
+                french=" Le trésor de la [CS:P]Source\nLumineuse[CR]...[K] est une Pomme Parfaite.",
+                german=" Der Schatz der [CS:P]Glitzerquelle[CR]...[K]\nEin Perfekter Apfel!",
+                italian=" Il tesoro della [CS:P]Sorgente\nLuccichio[CR]...[K] è una Mela Perfetta.",
+                spanish=" ¡Anda! Resulta que el tesoro del\n[CS:P]Manantial Luminoso[CR] es...[K] una Manzana Perfecta.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionOffset(1, 16, -16);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    se_Play(8710);
+    supervision_RemoveActing(1);
+    Wait(30);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SlidePositionOffset(1, -16, 16);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    Wait(15);
+    message_SetFace(ACTOR_PLAYER, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(A Perfect Apple as the treasure...[K] It suits\n[CS:N]Wigglytuff[CR], I guess.)",
+                french="(Une Pomme Parfaite comme trésor...[K] c\'est\ndu [CS:N]Grodoudou[CR] tout craché.)",
+                german="(Ein Perfekter Apfel als Schatz...[K] Das passt zu\n[CS:N]Knuddeluff[CR], denke ich.)",
+                italian="(Una Mela Perfetta come tesoro...[K] non ci si\npoteva aspettare altro da [CS:N]Wigglytuff[CR].)",
+                spanish="(Una Manzana Perfecta como tesoro...[K] Supongo\nque no podría esperarse otra cosa de\n[CS:N]Wigglytuff[CR].)",
+            }
+        default:
+            {
+                english="(A Perfect Apple as the treasure...[K] It suits\n[CS:N]Wigglytuff[CR], I guess.)",
+                french="(Une Pomme Parfaite comme trésor...[K] c\'est\ndu [CS:N]Grodoudou[CR] tout craché.)",
+                german="(Ein Perfekter Apfel als Schatz...[K] Das passt zu\n[CS:N]Knuddeluff[CR], denke ich.)",
+                italian="(Una Mela Perfetta come tesoro...[K] non ci si\npoteva aspettare altro da [CS:N]Wigglytuff[CR].)",
+                spanish="(Una Manzana Perfecta como tesoro...[K] Supongo\nque no podría esperarse otra cosa de\n[CS:N]Wigglytuff[CR].)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(5);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    WaitSe(5143);
+    se_Play(8967);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_RINGUMA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Wa-waah![K] What was that?!",
+                french=" Ouaaah![K] C\'était quoi, ça?!",
+                german=" A-uaah![K] Was war das?!?",
+                italian=" Wa-waah![K] Cosa è stato?!",
+                spanish=" ¡Aaah![K] ¡¿Qué ha sido eso?!",
+            }
+        case 2:
+            {
+                english=" Wa-waah![K] What was that?!",
+                french=" Ouaaah![K] C\'était quoi, ça?!",
+                german=" A-uaah![K] Was war das?!?",
+                italian=" Wa-waah![K] Cosa è stato?!",
+                spanish=" ¡Aaah![K] ¡¿Qué ha sido eso?!",
+            }
+        default:
+            {
+                english=" Wa-waah![K] What was that?!",
+                french=" Ouaaah![K] C\'était quoi, ça?!",
+                german=" A-uaah![K] Was war das?!?",
+                italian=" Wa-waah![K] Cosa è stato?!",
+                spanish=" ¡Aaah![K] ¡¿Qué ha sido eso?!",
+            }
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_LOOK_AROUND_FAST_FUNC_SERIES, 0);
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        ExecuteCommon(CORO_LOOK_AROUND_RIGHT_FUNC_SERIES, 0);
+    }
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    screen_FadeIn(1, 2);
+    Wait(5);
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        ExecuteCommon(CORO_LOOK_AROUND_LEFT_FUNC_SERIES, 0);
+    }
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    with (actor ACTOR_NPC_RINGUMA) {
+        ExecuteCommon(CORO_LOOK_AROUND_DOWN_FUNC_SERIES, 0);
+    }
+    screen_FadeIn(1, 2);
+    Wait(30);
+    WaitSe(5143);
+    bgm_PlayFadeIn(BGM_CRYSTAL_CAVE, 0, 256);
+    with (performer 0) {
+        MovePositionMark(2, Position<'m0', 37.5, 26.5>);
+    }
+    WaitExecutePerformer(0);
+    Wait(30);
+    se_Play(5125);
+    screen_WhiteOut(1, 30);
+    back_ChangeGround(LEVEL_P14P01A);
+    Wait(60);
+    with (object OBJECT_P14P01A1_153) {
+        SetAnimation(2);
+    }
+    screen_FadeIn(1, 30);
+    Wait(120);
+    with (performer 0) {
+        MovePositionMark(2, Position<'m1', 37.5, 52.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_RINGUMA) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecutePerformer(0);
+    se_Play(8978);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_RINGUMA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_HIMEGUMA);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" What\'s that...?",
+                french=" Qu\'est-ce que c\'est...?",
+                german=" Was für...",
+                italian=" Che cos\'è...?",
+                spanish=" ¿Pero qué...?",
+            }
+        case 2:
+            {
+                english=" What\'s that...?",
+                french=" Qu\'est-ce que c\'est...?",
+                german=" Was für...",
+                italian=" Che cos\'è...?",
+                spanish=" ¿Pero qué...?",
+            }
+        default:
+            {
+                english=" What\'s that...?",
+                french=" Qu\'est-ce que c\'est...?",
+                german=" Was für...",
+                italian=" Che cos\'è...?",
+                spanish=" ¿Pero qué...?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_RINGUMA, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" Light...[K] Light is shining down!",
+        french=" De la lumière...[K] Un puits\nde lumière!",
+        german=" Licht...[K] Es scheint Licht herab!",
+        italian=" Luce...[K] La luce sta illuminando \ntutto!",
+        spanish=" Luz...[K] ¡Está bajando un rayo de\nluz!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_HIMEGUMA);
+    message_SetFace(ACTOR_NPC_HIMEGUMA, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" Oh, then maybe...!",
+        french=" Oh, alors peut-être...!",
+        german=" Oh, dann vielleicht...",
+        italian=" Oh, allora, forse...!",
+        spanish=" ¡Oh! Entonces quizá...",
+    });
+    message_Talk({
+        english=" Did [CS:P]Luminous Spring[CR] regain\nits power?",
+        french=" Est-ce que la [CS:P]Source Lumineuse[CR]\naurait recouvré son pouvoir?",
+        german=" Hat die [CS:P]Glitzerquelle[CR] vielleicht\nihre Kraft zurückgewonnen?",
+        italian=" Che la [CS:P]Sorgente Luccichio[CR] abbia\nrecuperato il suo potere?",
+        spanish=" ¿Habrá recuperado su poder\nel [CS:P]Manantial Luminoso[CR]?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m2', 37.5, 32.5>);
+    }
+    with (actor ACTOR_NPC_RINGUMA) {
+        MovePositionMark(1, Position<'m3', 39.5, 30.5>);
+    }
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        MovePositionMark(1, Position<'m4', 35.5, 30.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m5', 34.5, 34>);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m6', 40.5, 34>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(30);
+    message_EmptyActor();
+    message_Talk({
+        english="[CN]Those that seek awakening...",
+        french="[CN]Quiconque cherche l\'éveil...",
+        german="[CN]Jene, die erwachen wollen...",
+        italian="[CN]Coloro che vogliono rinascere...",
+        spanish="[CN]Aquellos que buscan despertar...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8967);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_RINGUMA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_HIMEGUMA);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Whoa! Where\'s that voice\ncoming from?",
+                french=" Oooh! D\'où vient cette voix?",
+                german=" Uaah! Wo kommt diese Stimme\nher?",
+                italian=" Wow! Da dove viene \nquella voce?",
+                spanish=" ¡Vaya! ¿De dónde viene esa voz?",
+            }
+        case 2:
+            {
+                english=" Waah! Who\'s saying that?!",
+                french=" Oooh! D\'où vient cette voix?",
+                german=" Aaah! Wer hat das gesagt?!?",
+                italian=" Aaah! Chi è che sta parlando?",
+                spanish=" ¿Quéee? ¡¿Quién ha dicho eso?!",
+            }
+        default:
+            {
+                english=" Waah! Who\'s saying that?!",
+                french=" Oooh! D\'où vient cette voix?",
+                german=" Aaah! Wer hat das gesagt?!?",
+                italian=" Aaah! Chi è che sta parlando?",
+                spanish=" ¿Quéee? ¡¿Quién ha dicho eso?!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_EmptyActor();
+    message_Talk({
+        english="[CN]The resumption of time...",
+        french="[CN]Le rétablissement du temps...",
+        german="[CN]Das Fortschreiten der Zeit...",
+        italian="[CN]Il ripristino del tempo...",
+        spanish="[CN]La reanudación del tiempo...",
+    });
+    message_Talk({
+        english="[CN]has brought light here again.",
+        french="[CN]... a ramené la lumière en ce lieu.",
+        german="[CN]Es brachte wieder Licht an diesen Ort.",
+        italian="[CN]... ha riportato la luce qui.",
+        spanish="[CN]ha devuelto la luz a este lugar.",
+    });
+    message_Talk({
+        english="[CN]If you seek evolution, step forward.",
+        french="[CN]Toi qui cherches l\'évolution, avance.",
+        german="[CN]So ihr Entwicklung sucht, tretet vor.",
+        italian="[CN]Se è l\'evoluzione ciò che agognate,\n[CN]avvicinatevi!",
+        spanish="[CN]Si queréis evolucionar, dad un paso adelante.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_HIMEGUMA);
+    message_SetFace(ACTOR_NPC_HIMEGUMA, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" I knew it!",
+        french=" Je le savais!",
+        german=" Ich wusste es!",
+        italian=" Lo sapevo!",
+        spanish=" ¡Lo sabía!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_RINGUMA);
+    }
+    WaitExecuteLives(ACTOR_NPC_HIMEGUMA);
+    with (actor ACTOR_NPC_RINGUMA) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_HIMEGUMA);
+    }
+    message_Talk({
+        english=" I knew that [CS:P]Luminous Spring[CR]\nwould be revived!",
+        french=" Je savais que la\n[CS:P]Source Lumineuse[CR] pouvait renaître!",
+        german=" Ich wusste, dass die\n[CS:P]Glitzerquelle[CR] wieder zum Leben erweckt\nwerden würde!",
+        italian=" Sapevo che la [CS:P]Sorgente Luccichio[CR]\navrebbe recuperato il suo potere!",
+        spanish=" ¡Sabía que el [CS:P]Manantial Luminoso[CR]\nreviviría!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_RINGUMA, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Good for you, [CS:N]Teddiursa[CR]!",
+        french=" Tant mieux pour toi, [CS:N]Teddiursa[CR]!",
+        german=" Schön für dich, [CS:N]Teddiursa[CR]!",
+        italian=" Buon per te, [CS:N]Teddiursa[CR]!",
+        spanish=" ¡Bien por ti, [CS:N]Teddiursa[CR]!",
+    });
+    message_Talk({
+        english=" You\'ve been looking forward to\nevolution for a long time!",
+        french=" Tu cherches à évoluer depuis si\nlongtemps!",
+        german=" Du hast schon sehr lange nach\nEntwicklung gestrebt!",
+        italian=" È da molto tempo che desideri\nevolverti!",
+        spanish=" ¡Hace mucho tiempo que quieres\nevolucionar!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_HIMEGUMA, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Yup!",
+        french=" Oui!",
+        german=" Stimmt!",
+        italian=" Già!",
+        spanish=" ¡Sí!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8962);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(10);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Evolution?",
+                french=" Evoluer?",
+                german=" Entwicklung?",
+                italian=" Evolverti?",
+                spanish=" ¿Evolucionar?",
+            }
+        case 2:
+            {
+                english=" Evolution?",
+                french=" Evoluer?",
+                german=" Entwicklung?",
+                italian=" Evolverti?",
+                spanish=" ¿Evolucionar?",
+            }
+        default:
+            {
+                english=" Evolution?",
+                french=" Evoluer?",
+                german=" Entwicklung?",
+                italian=" Evolverti?",
+                spanish=" ¿Evolucionar?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_RINGUMA) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_HIMEGUMA) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(30);
+    se_Play(8978);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Oh![K] That\'s right, [CS:N]Wigglytuff[CR]\nmentioned it before...",
+                french=" Oh![K] C\'est vrai, [CS:N]Grodoudou[CR]\nen a parlé...",
+                german=" Oh![K] Das stimmt, [CS:N]Knuddeluff[CR]\nhat es mal erwähnt...",
+                italian=" Oh![K] È vero, [CS:N]Wigglytuff[CR]\nne ha già parlato...",
+                spanish=" ¡Oh![K] Es verdad, [CS:N]Wigglytuff[CR]\nya lo había mencionado en una ocasión...",
+            }
+        case 2:
+            {
+                english=" Oh![K] That\'s right, [CS:N]Wigglytuff[CR]\nmentioned it before...",
+                french=" Oh![K] C\'est vrai, [CS:N]Grodoudou[CR]\nen a parlé...",
+                german=" Oh![K] Das stimmt, [CS:N]Knuddeluff[CR]\nhat es mal erwähnt...",
+                italian=" Oh![K] È vero, [CS:N]Wigglytuff[CR]\nne ha già parlato...",
+                spanish=" ¡Oh![K] Es verdad, [CS:N]Wigglytuff[CR]\nya lo había mencionado en una ocasión...",
+            }
+        default:
+            {
+                english=" Oh![K] That\'s right, [CS:N]Wigglytuff[CR]\nmentioned it before...",
+                french=" Oh![K] C\'est vrai, [CS:N]Grodoudou[CR]\nen a parlé...",
+                german=" Oh![K] Das stimmt, [CS:N]Knuddeluff[CR]\nhat es mal erwähnt...",
+                italian=" Oh![K] È vero, [CS:N]Wigglytuff[CR]\nne ha già parlato...",
+                spanish=" ¡Oh![K] Es verdad, [CS:N]Wigglytuff[CR]\nya lo había mencionado en una ocasión...",
+            }
+    }
+    message_Close();
+    screen_FadeOut(1, 30);
+    end;
+}

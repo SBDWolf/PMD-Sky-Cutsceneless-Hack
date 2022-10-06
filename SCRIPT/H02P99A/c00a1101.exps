@@ -1,16 +1,8 @@
 
 def 0 {
     sound_Stop();
-    message_Narration(30, {
-        english="[CN]The next morning...",
-        french="[CN]Le lendemain matin...",
-        german="[CN]Der nächste Morgen...",
-        italian="[CN]La mattina dopo...",
-        spanish="[CN]A la mañana siguiente...",
-    });
-    message_Close();
     back2_SetMode(4);
-    back2_SetGround(LEVEL_V24P08A);
+    //back2_SetGround(LEVEL_V24P08A);
     back_SetGround(LEVEL_H02P99A);
     supervision_StationCommon(0);
     supervision_Acting(0);
@@ -19,107 +11,22 @@ def 0 {
         camera_SetMyself();
     }
     with (actor ACTOR_ATTENDANT1) {
-        SetDirection(DIR_LEFT);
+        SetDirection(DIR_RIGHT);
     }
     with (actor ACTOR_PLAYER) {
-        SetAnimation(76);
+        SetDirection(DIR_LEFT);
     }
     with (actor ACTOR_ATTENDANT1) {
-        SetAnimation(76);
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
     }
     screen2_FadeIn(0, 30);
     screen_FadeIn(1, 30);
     bgm_PlayFadeIn(BGM_DO_YOUR_BEST_AS_ALWAYS, 0, 256);
-    with (actor ACTOR_PLAYER) {
-        SetAnimation(63);
-    }
-    with (actor ACTOR_PLAYER) {
-        WaitAnimation();
-    }
-    Wait(5);
-    with (actor ACTOR_ATTENDANT1) {
-        SetAnimation(63);
-    }
-    with (actor ACTOR_ATTENDANT1) {
-        WaitAnimation();
-    }
-    WaitExecuteLives(ACTOR_PLAYER);
-    with (actor ACTOR_PLAYER) {
-        SetAnimation(2);
-    }
-    with (actor ACTOR_PLAYER) {
-        Turn2Direction(4, 10, DIR_DOWN);
-    }
     WaitExecuteLives(ACTOR_ATTENDANT1);
-    with (actor ACTOR_ATTENDANT1) {
-        SetAnimation(2);
-    }
-    with (actor ACTOR_ATTENDANT1) {
-        Turn2Direction(4, 10, DIR_DOWN);
-    }
-    Wait(30);
-    with (actor ACTOR_ATTENDANT1) {
-        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
-    }
-    WaitExecuteLives(ACTOR_ATTENDANT1);
-    with (actor ACTOR_PLAYER) {
-        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
-    }
-    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
-    message_SwitchTalk ($PARTNER_TALK_KIND) {
-        case 1:
-            {
-                english=" Good morning, [hero]!",
-                french=" Bonjour, [hero]!",
-                german=" Guten Morgen, [hero]!",
-                italian=" Buongiorno, [hero]!",
-                spanish=" ¡Buenos días, [hero]!",
-            }
-        case 2:
-            {
-                english=" Good morning, [hero]!",
-                french=" Bonjour, [hero]!",
-                german=" Guten Morgen, [hero]!",
-                italian=" Buongiorno, [hero]!",
-                spanish=" ¡Buenos días, [hero]!",
-            }
-        default:
-            {
-                english=" Good morning, [hero]!",
-                french=" Bonjour, [hero]!",
-                german=" Guten Morgen, [hero]!",
-                italian=" Buongiorno, [hero]!",
-                spanish=" ¡Buenos días, [hero]!",
-            }
-    }
-    message_SwitchTalk ($PARTNER_TALK_KIND) {
-        case 1:
-            {
-                english=" Let\'s make it another great day!",
-                french=" Aujourd\'hui encore, faisons\nde notre mieux!",
-                german=" Auf einen weiteren tollen Tag!",
-                italian=" Diamoci dentro!",
-                spanish=" ¡A ver si hoy se nos da bien la\nexploración!",
-            }
-        case 2:
-            {
-                english=" Let\'s make it another great day!",
-                french=" Aujourd\'hui encore, faisons\nde notre mieux!",
-                german=" Auf einen weiteren tollen Tag!",
-                italian=" Diamoci dentro!",
-                spanish=" ¡A ver si hoy se nos da bien la\nexploración!",
-            }
-        default:
-            {
-                english=" Let\'s make it another great day!",
-                french=" Aujourd\'hui encore, faisons\nde notre mieux!",
-                german=" Auf einen weiteren tollen Tag!",
-                italian=" Diamoci dentro!",
-                spanish=" ¡A ver si hoy se nos da bien la\nexploración!",
-            }
-    }
-    message_Close();
-    screen2_FadeOut(1, 30);
+    //screen2_FadeOut(1, 30);
     back2_SetMode(0);
     end;
 }

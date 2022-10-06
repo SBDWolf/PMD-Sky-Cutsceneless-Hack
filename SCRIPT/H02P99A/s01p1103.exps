@@ -1,0 +1,29 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_OCEAN1, 0, 256);
+    back_SetGround(LEVEL_H02P99A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+
+    with (performer 0) {
+        MovePositionLives(1, 0);
+    }
+    WaitExecutePerformer(0);
+    bgm_PlayFadeIn(BGM_DO_YOUR_BEST_AS_ALWAYS, 0, 256);
+    dungeon_mode(177) = DMODE_OPEN_AND_REQUEST;
+    dungeon_mode(178) = DMODE_OPEN_AND_REQUEST;
+    dungeon_mode(99) = DMODE_OPEN_AND_REQUEST;
+    dungeon_mode(100) = DMODE_OPEN_AND_REQUEST;
+    dungeon_mode(101) = DMODE_OPEN_AND_REQUEST;
+    dungeon_mode(102) = DMODE_OPEN_AND_REQUEST;
+    $PERFORMANCE_PROGRESS_LIST[6] = 1;
+    $PERFORMANCE_PROGRESS_LIST[7] = 1;
+    $PERFORMANCE_PROGRESS_LIST[20] = 1;
+    $SCENARIO_BALANCE_FLAG = 6;
+    $SPECIAL_EPISODE_OPEN[4] = 1;
+    end;
+}

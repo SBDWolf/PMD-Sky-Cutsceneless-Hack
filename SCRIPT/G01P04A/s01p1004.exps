@@ -1,0 +1,74 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_CRYSTAL_CAVE, 0, 256);
+    back_SetGround(LEVEL_G01P04A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_BOTTOM_R_FACEINW);
+    message_FacePositionOffset(1, 0);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" [CS:P]Luminous Spring[CR]?",
+                french=" La [CS:P]Source Lumineuse[CR]?",
+                german=" [CS:P]Glitzerquelle[CR]?",
+                italian=" [CS:P]Sorgente Luccichio[CR]?",
+                spanish=" ¿[CS:P]Manantial Luminoso[CR]?",
+            }
+        case 2:
+            {
+                english=" [CS:P]Luminous Spring[CR]?",
+                french=" La [CS:P]Source Lumineuse[CR]?",
+                german=" [CS:P]Glitzerquelle[CR]?",
+                italian=" [CS:P]Sorgente Luccichio[CR]?",
+                spanish=" ¿[CS:P]Manantial Luminoso[CR]?",
+            }
+        default:
+            {
+                english=" [CS:P]Luminous Spring[CR]?",
+                french=" La [CS:P]Source Lumineuse[CR]?",
+                german=" [CS:P]Glitzerquelle[CR]?",
+                italian=" [CS:P]Sorgente Luccichio[CR]?",
+                spanish=" ¿[CS:P]Manantial Luminoso[CR]?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Yup! ♪[K] It was where Pokémon\nonce went to evolve.",
+        french=" Ouiii! ♪[K] C\'est à cet endroit que\nles Pokémon partaient autrefois pour évoluer.",
+        german=" Ja! ♪[K] Dort gingen einst die\nPokémon hin, um sich zu entwickeln.",
+        italian=" Sì! ♪[K] È lì che una volta i \nPokémon andavano a evolversi.",
+        spanish=" Sí. ♪[K] Allí es donde antaño\niban los Pokémon a evolucionar.",
+    });
+    message_Talk({
+        english=" But maybe because of the time\ntroubles we had...[K]no sunlight shines on the\nspring now.",
+        french=" Mais peut-être à cause des\ndérèglements temporels...[K] le soleil a cessé\nde briller sur la source.",
+        german=" Vielleicht scheint wegen der\nSchwierigkeiten, die wir mit der Zeit hatten,[K]\nkein Sonnenlicht mehr auf die Quelle.",
+        italian=" Ma forse a causa dei problemi\nlegati al tempo che abbiamo avuto...[K] adesso\nla luce del sole non raggiunge più la sorgente.",
+        spanish=" Aunque ya no brilla la luz del sol\nen el manantial.[K] Quizás debido a los problemas\ncon el tiempo...",
+    });
+    message_Talk({
+        english=" Now nothing can evolve there.",
+        french=" Maintenant, c\'est complètement\nimpossible d\'évoluer là-bas.",
+        german=" Im Moment kann sich dort nichts\nentwickeln.",
+        italian=" Non si può più evolvere\nnessuno lì.",
+        spanish=" El caso es que, ahora, ningún\nPokémon puede evolucionar allí.",
+    });
+    message_Close();
+    screen_FadeOut(1, 30);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    end;
+}
