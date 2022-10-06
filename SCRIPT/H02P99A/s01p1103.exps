@@ -1,6 +1,6 @@
 
 def 0 {
-    bgm_PlayFadeIn(BGM_OCEAN1, 0, 256);
+    //bgm_PlayFadeIn(BGM_OCEAN1, 0, 256);
     back_SetGround(LEVEL_H02P99A);
     supervision_StationCommon(0);
     supervision_Acting(0);

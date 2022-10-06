@@ -8,3 +8,4 @@ def 0 {
     main_EnterDungeon(-1, 0);
     end;
 }
+
