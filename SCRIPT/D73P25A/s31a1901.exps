@@ -1,0 +1,115 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_MAIN = scn[29, 20];
+    back_SetGround(LEVEL_D73P25A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_GOORIKII) {
+        SetPositionMark(Position<'m0', 28.5, 30.5>);
+    }
+    with (actor ACTOR_NPC_KUCHIITO) {
+        SetPositionMark(Position<'m1', 25.5, 30.5>);
+    }
+    with (actor ACTOR_NPC_KINOGASSA) {
+        SetPositionMark(Position<'m2', 31.5, 30.5>);
+    }
+    with (actor ACTOR_PLAYER_APPOINT) {
+        SetPositionMark(Position<'m4', 28.5, 37.5>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        SetPositionMark(Position<'m5', 31.5, 36.5>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        SetPositionMark(Position<'m6', 25.5, 36.5>);
+    }
+    
+    with (actor ACTOR_NPC_MASUKIPPA2) {
+        SetPositionMark(Position<'m7', 24.5, 26.5>);
+    }
+    with (actor ACTOR_NPC_MASUKIPPA3) {
+        SetPositionMark(Position<'m8', 32.5, 26.5>);
+    }
+    with (actor ACTOR_NPC_MASUKIPPA4) {
+        SetPositionMark(Position<'m10', 20.5, 29.5>);
+    }
+    with (actor ACTOR_NPC_MASUKIPPA5) {
+        SetPositionMark(Position<'m12', 36.5, 29.5>);
+    }    
+    with (actor ACTOR_NPC_MASUKIPPA) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_MASUKIPPA2) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_MASUKIPPA3) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_MASUKIPPA4) {
+        SetDirection(DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_MASUKIPPA5) {
+        SetDirection(DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_GOORIKII) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_KUCHIITO) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_KINOGASSA) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_SHEIMI) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER_APPOINT) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        SetAnimation(2);
+    }
+    screen_FadeIn(1, 30);
+
+
+
+
+    //with (performer 0) {
+        //MovePositionOffset(1, 0, 40);
+    //}
+
+
+    //with (performer 0) {
+        //MovePositionOffset(1, 0, -40);
+    //}
+
+
+
+
+
+
+
+    //with (actor ACTOR_NPC_NYUURA) {
+        //MovePositionOffset(33408, 0, -88);
+    //}
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(5);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    WaitSe(5143);
+    CallCommon(CORO_BOSS_WIPE_FUNC);
+    main_EnterDungeon(121, 30);
+    main_EnterDungeon(-1, 30);
+    hold;
+    end;
+}
