@@ -1,1 +1,1 @@
-{"running": true, "ssbs": [null, ["SCRIPT/D01P41A/enter00.ssb", "3fdd5fcf22a6f2eca975c9c670fca8e7cb8e8d23cc316c73db0d0cb5f3bf47fb"], null, ["SCRIPT/D01P41A/m01a0601.ssb", "b24f05cc212ee6756a66f1671c9361bd8d03cbeee5999fc4b004beb668d8a6f4"], null, null, null], "ssxs": [null, "SCRIPT/D01P41A/enter.sse", null, "SCRIPT/D01P41A/m01a0601.ssa"], "load_ssb_for": null}
+{"running": false, "ssbs": [null, null, null, null, null, null, null], "ssxs": [null, null, null, null], "load_ssb_for": null}

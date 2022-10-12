@@ -1,0 +1,43 @@
+
+def 0 {
+    debug_Print('LABEL_END');
+    JumpCommon(CORO_COMMON_ENTER);
+}
+
+def 1 for_actor(ACTOR_PLAYER) {
+    if ( $SCENARIO_MAIN_BIT_FLAG[4] ) {
+        §label_0;
+        debug_Print('LABEL_REBIRTH_PLAYER_START');
+        SetDirection(DIR_RIGHT);
+        SetAnimation(76);
+        Lock(0);
+        CallCommon(CORO_WAKEUP_FUNC);
+        CallCommon(CORO_LOOK_AROUND_DOWN_FUNC);
+        Lock(0);
+        end;
+    } else {
+        SetAnimation(2);
+        WaitScreenFade();
+        WaitScreenFadeAll();
+        end;
+    }
+}
+
+def 2 for_actor(ACTOR_ATTENDANT1) {
+    if ( $SCENARIO_MAIN_BIT_FLAG[4] ) {
+        debug_Print('LABEL_REBIRTH_ATTENDANT1_START');
+        SetDirection(DIR_LEFT);
+        SetAnimation(76);
+        Lock(10);
+        CallCommon(CORO_WAKEUP_FUNC);
+        CallCommon(CORO_LOOK_AROUND_FUNC);
+        Unlock(3);
+        Lock(10);
+        end;
+    } else {
+        SetAnimation(2);
+        WaitScreenFade();
+        WaitScreenFadeAll();
+        end;
+    }
+}

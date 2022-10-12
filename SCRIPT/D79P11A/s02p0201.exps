@@ -1,0 +1,49 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_MAIN = scn[29, 35];
+    back_SetGround(LEVEL_D79P11A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_ADVENTURE_NPC3) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_PLAYER_APPOINT) {
+        SetPositionMark(Position<'m0', 37.5, 34.5>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        SetPositionMark(Position<'m1', 40.5, 37>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        SetPositionMark(Position<'m2', 34.5, 37>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC3) {
+        SetPositionMark(Position<'m3', 37.5, 38.5>);
+    }
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        SetPositionMark(Position<'m5', 37.5, 36.5>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ADVENTURE_NPC3) {
+        SetAnimation(2);
+    }
+    back2_SetMode(0);
+    dungeon_mode(47) = DMODE_OPEN;
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_IN_THE_DEPTHS_OF_THE_PIT, 0, 256);
+    end;
+}

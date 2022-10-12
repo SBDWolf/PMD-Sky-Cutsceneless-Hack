@@ -1,0 +1,554 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_MAIN = scn[29, 38];
+    back_SetGround(LEVEL_P01P03A);
+    supervision_StationCommon(7);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_TREASURE_TOWN, 0, 256);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_HASSAMU, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" I am sincerely grateful for your\ncoming to my rescue.",
+        french=" Je vous suis extrêmement\nreconnaissant d\'avoir eu l\'amabilité de\nme secourir.",
+        german=" Ich bin euch aufrichtig dankbar,\ndass ihr zu meiner Rettung gekommen seid.",
+        italian=" Vi sono molto grato per\navermi salvato.",
+        spanish=" Os estoy muy agradecido por\nvuestra ayuda.",
+    });
+    message_Talk({
+        english=" If you hadn\'t come along, I very\nwell could have remained encased in ice\nforever.",
+        french=" Sans votre aide inopinée,\nj\'aurais pu demeurer emprisonné\ndans ma geôle de glace pour l\'éternité.",
+        german=" Wenn ihr nicht gekommen wärt,\nwäre ich wahrscheinlich ewig im Eis\neingeschlossen geblieben.",
+        italian=" Se non fosse stato per voi, \nprobabilmente sarei rimasto imprigionato nel \nghiaccio per l\'eternità.",
+        spanish=" Si no hubierais venido, podría\nhaberme quedado encerrado en hielo\nde por vida.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_HASSAMU) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_HASSAMU);
+    message_SetFace(ACTOR_NPC_HASSAMU, FACE_NORMAL, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" However, little did I expect to\nsee that decades have passed since my\nicebound predicament.",
+        french=" Néanmoins, je ne m\'attendais\nguère à demeurer ainsi figé plusieurs\ndizaines d\'années durant.",
+        german=" Trotzdem hätte ich kaum\nerwartet, dass meine eisbedingte Unpässlich-\nkeit mehrere Jahrzehnte andauern würde.",
+        italian=" Tuttavia, non pensavo che\nfossero passati decenni da quando sono stato\ncatturato.",
+        spanish=" No tenía muchas esperanzas ya.\nLlevaba décadas atrapado en el hielo.",
+    });
+    message_Talk({
+        english=" Why, it is as if I\'d traveled to\nan entirely different world.",
+        french=" Allons bon, c\'est comme si\nj\'avais traversé les âges et étais parvenu\ndans un monde complètement différent.",
+        german=" Meine Güte, es ist, als wäre ich\nin eine völlig andere Welt gereist.",
+        italian=" È come se fossi stato in un\nmondo completamente diverso.",
+        spanish=" Es como si hubiera viajado a un\nmundo totalmente distinto.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_HASSAMU) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_HASSAMU);
+    message_SetFace(ACTOR_NPC_HASSAMU, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Incidentally, I would like to\nsomehow repay you for saving my life.",
+        french=" A ce sujet, je souhaiterais\nardemment vous remercier pour m\'avoir\nsauvé la vie.",
+        german=" Im Übrigen würde ich euch für\ndie Rettung meines Lebens gerne in irgendeiner\nForm entschädigen.",
+        italian=" Tra l\'altro, vorrei ripagarvi in\nqualche modo per avermi salvato la vita.",
+        spanish=" Me gustaría compensaros de\nalgún modo por salvarme la vida.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8961);
+    with (actor ACTOR_NPC_HASSAMU) {
+        SetEffect(EFFECT_SWEAT_DROP, 3);
+    }
+    with (actor ACTOR_NPC_HASSAMU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_HASSAMU);
+    message_Talk({
+        english=" However, I find myself alone in\nan alien world, and without a single Poké to\nmy name.",
+        french=" En revanche, je suis désormais\nseul dans un monde qui m\'est inconnu, et j\'y\nai laissé jusqu\'à mon dernier Poké.",
+        german=" Allerdings finde ich mich gerade\nin einer fremden Welt wieder, ohne einen\neinzigen Poké mein Eigen zu nennen.",
+        italian=" Purtroppo mi trovo da solo in un\nmondo estraneo, senza neanche un soldo\nin tasca.",
+        spanish=" Pero me hallo en un mundo\nextraño y sin un solo Poké encima.",
+    });
+    message_Talk({
+        english=" I have but no idea how I could\npossibly repay you.",
+        french=" J\'ignore totalement comment\nje puis vous remercier.",
+        german=" Mir fehlt es an einer Idee, wie\nich euch entschädigen könnte.",
+        italian=" Non so proprio come\nsdebitarmi.",
+        spanish=" No sé cómo compensaros.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Oh, don\'t worry.[K] You don\'t need\nto thank us any more.",
+                french=" Oh, ne vous inquiétez pas.[K] Vous\nn\'avez pas besoin de nous remercier.",
+                german=" Oh, keine Sorge.[K] Du brauchst\nuns nicht weiter zu danken.",
+                italian=" Oh, non preoccuparti.[K] Non devi\nringraziarci oltre.",
+                spanish=" Oh, no te preocupes.[K] No tienes\npor qué darnos más las gracias.",
+            }
+        case 2:
+            {
+                english=" Oh, it\'s OK.[K] You don\'t need\nto thank us any more.",
+                french=" Oh, ne vous inquiétez pas.[K] Vous\nn\'avez pas besoin de nous remercier.",
+                german=" Oh, keine Sorge.[K] Du brauchst\nuns nicht weiter zu danken.",
+                italian=" Oh, non preoccuparti.[K] Non devi\nringraziarci oltre.",
+                spanish=" Oh, no te preocupes.[K] No tienes\npor qué darnos más las gracias.",
+            }
+        default:
+            {
+                english=" Oh, don\'t worry.[K] You\'ve already\nthanked us enough.",
+                french=" Oh, ne vous inquiétez pas.[K] Vous\nn\'avez pas besoin de nous remercier.",
+                german=" Oh, keine Sorge.[K] Du brauchst\nuns nicht weiter zu danken.",
+                italian=" Oh, non preoccuparti.[K] Non devi\nringraziarci oltre.",
+                spanish=" Oh, no te preocupes.[K] No tienes\npor qué darnos más las gracias.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_HASSAMU, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Hmm... However...",
+        french=" Hum... néanmoins...",
+        german=" Hmm... Trotzdem...",
+        italian=" Mmm... Tuttavia...",
+        spanish=" Hum... Sin embargo...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8965);
+    with (actor ACTOR_NPC_HASSAMU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_HASSAMU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_HASSAMU);
+    with (actor ACTOR_NPC_HASSAMU) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    message_Talk({
+        english=" Ah! Yes! That may do![K] Tell me,\nyou did say you were an exploration team, yes?",
+        french=" Ah, oui! Cela devrait vous\nseoir![K] Vous m\'avez dit que vous étiez une\néquipe d\'exploration, si je ne m\'abuse?",
+        german=" Ah! Ja! Das könnte reichen![K]\nDu sagtest, ihr seid ein Erkundungsteam, ja?",
+        italian=" Ah! Sì! Potrebbe andare![K] Avete\ndetto di essere una squadra d\'esplorazione,\ngiusto?",
+        spanish=" ¡Ah, ya sé![K] Me dijisteis que\nsois un equipo explorador, ¿verdad?",
+    });
+    WaitExecuteLives(ACTOR_NPC_HASSAMU);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Uh...[K] Yup.",
+                french=" Euh...[K] oui.",
+                german=" Äh...[K] Jep.",
+                italian=" Eh...[K] Sì.",
+                spanish=" Eh...[K] Sí.",
+            }
+        case 2:
+            {
+                english=" Uh...[K] Yes.",
+                french=" Euh...[K] oui.",
+                german=" Öh...[K] Ja.",
+                italian=" Eh...[K] Sì.",
+                spanish=" Eh...[K] Sí.",
+            }
+        default:
+            {
+                english=" Uh...[K] Yep.",
+                french=" Euh...[K] oui.",
+                german=" Öh...[K] Ja.",
+                italian=" Eh...[K] Sì.",
+                spanish=" Pues...[K] sí.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_HASSAMU, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Ah, very well! You see, though\nyou may find it unlikely, I was once upon a\ntime an explorer of some repute.",
+        french=" A la bonne heure! Bien que vous\npuissiez trouver cela saugrenu, sachez que\nje fus autrefois un explorateur de renom.",
+        german=" Ah, sehr gut! Seht ihr, auch\nwenn es euch unwahrscheinlich erscheint, ich\nwar früher selbst Erkunder von einigem Rang.",
+        italian=" Ah, molto bene! Vedete, anche\nse potrà sembrarvi strano, una volta ero un\nesploratore abbastanza famoso.",
+        spanish=" ¡Muy bien! Aunque os resulte\nextraño, yo también fui un explorador de\nrenombre en mis tiempos.",
+    });
+    message_Talk({
+        english=" Well, I\'ll have you know...[K]\nI am an honorary member of the Pokémon\nExploration Team Federation!",
+        french=" Oui, apprenez que...[K]\nje suis membre honoraire de la Fédération\ndes Equipes d\'Exploration!",
+        german=" Nun, ihr solltet wissen...[K]\nIch bin ein Ehrenmitglied des\nErkundungsteamverbands!",
+        italian=" Beh, voglio proprio dirvelo...[K]\nSono un membro onorario della Federazione\nSquadre d\'Esplorazione!",
+        spanish=" De hecho, soy...[K] miembro\nhonorario de la Federación de Exploradores\nPokémon.",
+    });
+    se_Play(8968);
+    with (actor ACTOR_NPC_HASSAMU) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_HASSAMU) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_HASSAMU);
+    with (actor ACTOR_NPC_HASSAMU) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(30);
+    se_Play(8961);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SWEAT_DROP, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROP, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" A what?[K] An honorary member?",
+                french=" Quoi?[K] Un membre honoraire?",
+                german=" Du bist was?[K] Ein Ehrenmitglied?",
+                italian=" Cosa?[K] Un membro onorario?",
+                spanish=" ¿Un qué?[K] ¿Miembro honorario?",
+            }
+        case 2:
+            {
+                english=" A what?[K] An honorary member?",
+                french=" Quoi?[K] Un membre honoraire?",
+                german=" Du bist was?[K] Ein Ehrenmitglied?",
+                italian=" Cosa?[K] Un membro onorario?",
+                spanish=" ¿Un qué?[K] ¿Miembro honorario?",
+            }
+        default:
+            {
+                english=" Pardon?[K] An honorary member?",
+                french=" Quoi?[K] Un membre honoraire?",
+                german=" Du bist was?[K] Ein Ehrenmitglied?",
+                italian=" Cosa?[K] Un membro onorario?",
+                spanish=" ¿Disculpa?[K] ¿Miembro honorario?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_HASSAMU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_HASSAMU) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_HASSAMU);
+    message_SetFace(ACTOR_NPC_HASSAMU, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Correct!",
+        french=" Précisément!",
+        german=" Korrekt!",
+        italian=" Esatto!",
+        spanish=" ¡Exacto!",
+    });
+    message_Talk({
+        english=" An honorary member, such as\nmyself, has the right to give special status to\nexemplary exploration teams.",
+        french=" Les membres honoraires tels que\nmoi sont habilités à donner un statut spécial\naux équipes d\'exploration exemplaires.",
+        german=" Ein Ehrenmitglied wie ich hat\ndas Recht, beispielhaften Erkundungsteams\neinen besonderen Status zu verleihen.",
+        italian=" Un membro onorario come me\nha il diritto di conferire uno stato speciale alle\nsquadre d\'esplorazione più meritevoli.",
+        spanish=" Los miembros honorarios como\nyo tenemos derecho a dar un estado especial\na los equipos de exploración más ejemplares.",
+    });
+    with (actor ACTOR_NPC_HASSAMU) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_HASSAMU);
+    message_Talk({
+        english=" And you fit the bill! Your plucky\ncourage during my rescue proves that you are\nmore than exemplary!",
+        french=" Et vous êtes de celles-là! Votre\ncourage sans faille durant mon sauvetage\na sans nul doute démontré votre valeur!",
+        german=" Und ihr eignet euch sehr gut!\nEure beherzte Courage während meiner Rettung\nbelegt eure Beispielhaftigkeit eindrucksvoll!",
+        italian=" E voi lo siete sicuramente! Il \ncoraggio dimostrato venendo a salvarmi\ntestimonia che siete una squadra esemplare!",
+        spanish=" ¡Así que hoy estáis de suerte!\n¡Vuestra gran valentía al rescatarme merece\nun premio!",
+    });
+    message_KeyWait();
+    with (actor ACTOR_NPC_HASSAMU) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_HASSAMU);
+    message_Talk({
+        english=" So, I confer upon you...\nthe Secret Rank!",
+        french=" Alors, je vous octroie...\nle Grade Secret!",
+        german=" Deswegen verleihe ich euch...\nden Geheim-Rang!",
+        italian=" Pertanto, vi conferisco...\nil Rango Segreto!",
+        spanish=" Así que os confiero... ¡el Rango\nSecreto!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_STUNNED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Huh?[K] Secret Rank?",
+                french=" Quoi?[K] Le Grade Secret?",
+                german=" Äh?[K] Geheim-Rang?",
+                italian=" Eh?[K] Rango Segreto?",
+                spanish=" ¿Qué?[K] ¿El Rango Secreto?",
+            }
+        case 2:
+            {
+                english=" What?[K] Secret Rank?",
+                french=" Quoi?[K] Le Grade Secret?",
+                german=" Was?[K] Geheim-Rang?",
+                italian=" Cosa?[K] Rango Segreto?",
+                spanish=" ¿Qué?[K] ¿El Rango Secreto?",
+            }
+        default:
+            {
+                english=" Pardon?[K] Secret Rank?",
+                french=" Quoi?[K] Le Grade Secret?",
+                german=" Wie bitte?[K] Geheim-Rang?",
+                italian=" Cosa?[K] Rango Segreto?",
+                spanish=" ¿Cómo?[K] ¿El Rango Secreto?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_HASSAMU, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Yes. An exploration team with\nthat rank is eligible to take Special Missions.",
+        french=" Tout à fait. Seule une équipe\nd\'exploration de ce grade peut effectuer\ndes Missions Spéciales.",
+        german=" Ja. Ein Erkundungsteam dieses\nRanges ist berechtigt, Spezialmissionen\ndurchzuführen.",
+        italian=" Sì. Una squadra d\'esplorazione\ndi tale rango può accettare degli Incarichi\nSpeciali.",
+        spanish=" Sí. Con este rango podréis\naceptar misiones especiales.",
+    });
+    message_Talk({
+        english=" Special Missions are highly\nconfidential jobs that come straight from the\nExploration Team Federation itself.",
+        french=" Les Missions Spéciales sont des\nmissions ultra-confidentielles qui proviennent\nde la Fédération des Equipes d\'Exploration.",
+        german=" Spezialmissionen sind streng\nvertrauliche Erkundungsjobs, die direkt vom\nErkundungsteamverband vergeben werden.",
+        italian=" Sono missioni strettamente\nconfidenziali assegnate direttamente\ndalla Federazione Squadre d\'Esplorazione.",
+        spanish=" Las misiones especiales son\ntareas confidenciales que provienen\ndirectamente de la Federación de Exploradores.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8962);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Highly confidential?[K]\nWhy all the secrecy?",
+                french=" Ultra-confidentielles?[K]\nPourquoi toutes ces précautions?",
+                german=" Streng vertraulich?[K]\nWozu die ganze Geheimnistuerei?",
+                italian=" Strettamente confidenziali?[K]\nPerché mai tutta questa segretezza?",
+                spanish=" ¿Confidenciales?[K]\n¿Y por qué tanto secretismo?",
+            }
+        case 2:
+            {
+                english=" Highly confidential?[K]\nI don\'t get it...",
+                french=" Ultra-confidentielles?[K]\nPourquoi toutes ces précautions?",
+                german=" Streng vertraulich?[K]\nVersteh ich nicht...",
+                italian=" Strettamente confidenziali?[K]\nMi sfugge qualcosa...",
+                spanish=" ¿Confidenciales?[K]\nNo lo pillo...",
+            }
+        default:
+            {
+                english=" Highly confidential?[K]\nI don\'t understand...",
+                french=" Ultra-confidentielles?[K]\nPourquoi toutes ces précautions?",
+                german=" Streng vertraulich?[K]\nWie bitte?",
+                italian=" Strettamente confidenziali?[K]\nNon capisco...",
+                spanish=" ¿Confidenciales?[K]\nNo lo entiendo...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_HASSAMU, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" You may not know now. But it\nwill become clear in due time.",
+        french=" Vous ne le saurez pas\naujourd\'hui, mais tout deviendra\nclair en temps voulu.",
+        german=" Ihr mögt es jetzt noch nicht\nwissen, aber das werdet ihr zu gegebener Zeit\nschon noch.",
+        italian=" Adesso non lo sapete. Ma più \navanti diventerà tutto più chiaro.",
+        spanish=" No os preocupéis, lo entenderéis\na su debido tiempo.",
+    });
+    message_Talk({
+        english=" I\'ll need to make a note of your\nnew rank on your Explorer Badge.",
+        french=" Je dois ajouter votre nouveau\ngrade sur votre Badge d\'Explorateur.",
+        german=" Ich muss euren neuen Rang auf\neurem Erkunderorden vermerken.",
+        italian=" Devo segnare il nuovo rango\nsulla vostra Targhetta dell\'esploratore.",
+        spanish=" Debo anotar el nuevo rango\nen vuestra Placa de Explorador.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_HASSAMU) {
+        MovePositionOffset(32972, 16, 16);
+    }
+    with (actor ACTOR_NPC_HASSAMU) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_HASSAMU);
+    Wait(30);
+    me_Play(9);
+    message_Mail({
+        english="[CN]The Secret Rank mark was added\n[CN]to the Explorer Badge!",
+        french="[CN]Le Grade Secret a été ajouté\n[CN]à votre Badge d\'Explorateur!",
+        german="[CN]Das Geheim-Rang-Abzeichen wurde\n[CN]dem Erkunderorden hinzugefügt!",
+        italian="[CN]Il Rango Segreto è stato \n[CN]aggiunto alla Targhetta dell\'esploratore!",
+        spanish="[CN]¡Se añadió el Rango Secreto\n[CN]a la Placa de Explorador!",
+    });
+    WaitMe(9);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_HASSAMU) {
+        MovePositionOffset(32972, -16, -16);
+    }
+    with (actor ACTOR_NPC_HASSAMU) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_HASSAMU);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" .....................",
+                french=" .....................",
+                german=" .....................",
+                italian=" .....................",
+                spanish=" ...",
+            }
+        case 2:
+            {
+                english=" .....................",
+                french=" .....................",
+                german=" .....................",
+                italian=" .....................",
+                spanish=" ...",
+            }
+        default:
+            {
+                english=" .....................",
+                french=" .....................",
+                german=" .....................",
+                italian=" .....................",
+                spanish=" ...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I don\'t have a clue what you did\nfor us, but...[K]thank you.",
+                french=" Je ne comprends pas du tout\nce que vous avez fait pour nous, mais bon...[K]\nmerci.",
+                german=" Ich habe keinen Schimmer, was\ndu für uns getan hast, aber...[K] danke schön.",
+                italian=" Non ho idea di cosa tu abbia\nfatto, ma...[K] grazie.",
+                spanish=" No tengo ni idea de qué has\nhecho, pero...[K] gracias.",
+            }
+        case 2:
+            {
+                english=" I don\'t know what this is about,\nbut...[K]thank you.",
+                french=" Je ne comprends pas du tout\nce que vous avez fait pour nous, mais bon...[K]\nmerci.",
+                german=" Ich habe keine Ahnung, was es\ndamit auf sich hat, aber...[K] danke schön.",
+                italian=" Non ho idea di cosa tu abbia\nfatto, ma...[K] grazie.",
+                spanish=" No tengo ni idea de qué has\nhecho, pero...[K] gracias.",
+            }
+        default:
+            {
+                english=" I have no idea what this is\nabout, but...[K]thank you.",
+                french=" Je ne comprends pas du tout\nce que vous avez fait pour nous, mais bon...[K]\nmerci.",
+                german=" Ich habe keine Ahnung, was es\ndamit auf sich hat, aber...[K] danke schön.",
+                italian=" Non ho idea di cosa tu abbia\nfatto, ma...[K] grazie.",
+                spanish=" No tengo ni idea de qué has\nhecho, pero...[K] gracias.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_HASSAMU, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Ah, it\'s the least that I could do.",
+        french=" Ah, mais! C\'est la moindre\ndes choses. Je suis votre obligé!",
+        german=" Ach, das war das Mindeste, was\nich für euch tun konnte.",
+        italian=" Ah, era il minimo che potessi\nfare.",
+        spanish=" Es lo mínimo que podía hacer.",
+    });
+    message_Talk({
+        english=" I shall never forget your valor\nand kindness in coming to my rescue!",
+        french=" Jamais je n\'oublierai votre\nvaleur et la compassion dont vous avez fait\npreuve en me portant secours!",
+        german=" Ich werde eure Tapferkeit und\nGüte, mich zu retten, niemals vergessen!",
+        italian=" Non dimenticherò mai il valore\ne la generosità che avete dimostrato venendo\na salvarmi!",
+        spanish=" ¡Nunca olvidaré vuestro valor\ny amabilidad al venir a rescatarme!",
+    });
+    message_Talk({
+        english=" I must be on my way.[K] Farewell!",
+        french=" Il me faut prendre congé.[K]\nAdieu!",
+        german=" Ich muss mich auf den Weg\nmachen.[K] Lebt wohl!",
+        italian=" Adesso devo andare.[K] Addio!",
+        spanish=" Ahora debo irme.[K] ¡Adiós!",
+    });
+    with (actor ACTOR_NPC_HASSAMU) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_HASSAMU);
+    message_Close();
+    with (actor ACTOR_NPC_HASSAMU) {
+        MovePositionOffset(33075, 180, 0);
+    }
+    Wait(10);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(32, 10, DIR_RIGHT);
+    }
+    Wait(10);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(32, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_HASSAMU);
+    Wait(60);
+    se_Play(8961);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SWEAT_DROP_SLOW, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROP_SLOW, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_STUNNED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" .....................",
+                french=" .....................",
+                german=" .....................",
+                italian=" .....................",
+                spanish=" ...",
+            }
+        case 2:
+            {
+                english=" .....................",
+                french=" .....................",
+                german=" .....................",
+                italian=" .....................",
+                spanish=" ...",
+            }
+        default:
+            {
+                english=" .....................",
+                french=" .....................",
+                german=" .....................",
+                italian=" .....................",
+                spanish=" ...",
+            }
+    }
+    message_Close();
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 60);
+    WaitBgm(BGM_TREASURE_TOWN);
+    $SCENARIO_MAIN = scn[29, 39];
+    $REQUEST_CLEAR_COUNT = 0;
+    switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+    end;
+}

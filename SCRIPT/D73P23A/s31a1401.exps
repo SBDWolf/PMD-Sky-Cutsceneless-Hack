@@ -1,0 +1,178 @@
+
+def 0 {
+    sound_Stop();
+    message_SetFace(ACTOR_NPC_SHEIMI, FACE_WORRIED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Oogh...\nIt\'s hard to make progress...",
+        french=" Ouille...\nPas facile...",
+        german=" Uff...\nEs ist hart, vorwärts zu kommen...",
+        italian=" Orgh...\nÈ difficile fare progressi...",
+        spanish=" Uf...\nCuesta mucho avanzar...",
+    });
+    message_KeyWait();
+    screen_FadeOutAll(1, 60);
+    message_CloseEnforce();
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    back_SetGround(LEVEL_D73P23A);
+    supervision_LoadStation(LEVEL_D73P23A, 'US31');
+    if ( scn($SCENARIO_MAIN) >= [29, 31] ) {
+        §label_23;
+        supervision_StationCommon(0);
+        supervision_StationCommon(9);
+        supervision_StationCommon(10);
+        supervision_Acting(0);
+        with (actor ACTOR_NPC_SHEIMI) {
+            SetPositionInitial();
+        }
+        with (actor ACTOR_ADVENTURE_NPC1) {
+            SetPositionInitial();
+        }
+        with (actor ACTOR_ADVENTURE_NPC2) {
+            SetPositionInitial();
+        }
+        with (actor ACTOR_NPC_SHEIMI) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ADVENTURE_NPC1) {
+            SetAnimation(2);
+        }
+        with (actor ACTOR_ADVENTURE_NPC2) {
+            SetAnimation(2);
+        }
+        with (performer 0) {
+            camera_SetMyself();
+        }
+        screen_FadeIn(1, 30);
+        bgm_PlayFadeIn(BGM_SKY_PEAK_PRAIRIE, 0, 256);
+        Wait(30);
+        if ( scn($SCENARIO_MAIN) == [29, 19] ) {
+            message_SetFace(ACTOR_NPC_SHEIMI, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+            message_Talk({
+                english=" [player]. Let\'s head to the\n5th Station Clearing!",
+                french=" [player]. Dirigeons-nous\nvers la trouée du 5[F:E] Relais!",
+                german=" [player], das nächste\nZiel ist die 5. Zwischenlagerlichtung!",
+                italian=" [player], raggiungiamo\nil Bivacco 5!",
+                spanish=" Vamos a la Base del Quinto\nPuerto, [player].",
+            });
+            message_Close();
+            end;
+        } elseif ( scn($SCENARIO_MAIN) == [29, 25] ) {
+            message_SetFace(ACTOR_NPC_SHEIMI, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+            message_Talk({
+                english=" If we don\'t hurry, [CS:N]Sneasel[CR] will...",
+                french=" Si on ne se dépêche pas,\n[CS:N]Farfuret[CR] va...",
+                german=" Wenn wir uns nicht beeilen,\nwird [CS:N]Sniebel[CR]...",
+                italian=" Se non ci sbrighiamo, [CS:N]Sneasel[CR]...",
+                spanish=" Si no nos damos prisa, [CS:N]Sneasel[CR]...",
+            });
+            message_Talk({
+                english=" Let\'s hurry to the\n8th Station Clearing!",
+                french=" Hâtons-nous vers la trouée\ndu 8[F:E] Relais!",
+                german=" Lasst uns schnell zur\n8. Zwischenlagerlichtung gehen!",
+                italian=" Presto, raggiungiamo\nil Bivacco 8!",
+                spanish=" ¡Vamos deprisa a la Base del\nOctavo Puerto!",
+            });
+            message_Close();
+            end;
+        } elseif ( scn($SCENARIO_MAIN) == [29, 30] ) {
+            message_SetFace(ACTOR_NPC_SHEIMI, FACE_WORRIED, FACE_POS_TOP_C_FACER);
+            message_Talk({
+                english=" Usually, [CS:N]Grimer[CR] and [CS:N]Muk[CR] should\nbe living farther down the mountain, I think...",
+                french=" Normalement, les [CS:N]Tadmorv[CR] et\nles [CS:N]Grotadmorv[CR] habitent plus bas sur la\nmontagne, je crois...",
+                german=" Gewöhnlich wohnen [CS:N]Sleima[CR] und\n[CS:N]Sleimok[CR] weiter unten am Berg...",
+                italian=" Di solito i [CS:N]Grimer[CR] e i [CS:N]Muk[CR] vivono\nnelle profondità della montagna, almeno credo...",
+                spanish=" Creo que los [CS:N]Grimer[CR] y [CS:N]Muk[CR]\nviven en la parte inferior de la montaña...",
+            });
+            message_SetFace(ACTOR_NPC_SHEIMI, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+            message_Talk({
+                english=" We need to do something about\nthe summit, no matter what!",
+                french=" Il faut qu\'on fasse quelque chose\nau sujet du sommet, peu importe quoi!",
+                german=" Wir müssen etwas mit dem\nGipfel machen, was auch immer es sein mag!",
+                italian=" Dobbiamo raggiungere la cima\na qualsiasi costo!",
+                spanish=" Tenemos que llegar a la cima\nsea como sea.",
+            });
+            message_Close();
+            end;
+        } else {
+            message_SetFace(ACTOR_NPC_SHEIMI, FACE_WORRIED, FACE_POS_TOP_C_FACER);
+            message_Talk({
+                english=" Yeah...\nLooks like it might be too difficult...",
+                french=" C\'est un peu\ndécourageant...",
+                german=" Hmmm...\nDie Sache könnte zu happig sein...",
+                italian=" Eh sì...\nSembra che sarà molto difficile...",
+                spanish=" La verdad es que...\ntal vez sea demasiado difícil...",
+            });
+            message_SetFace(ACTOR_NPC_SHEIMI, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+            message_Talk({
+                english=" But it will be amazing to reach\nthe summit after such hard work!",
+                french=" Mais alors, quelle satisfaction\nquand nous atteindrons le sommet\naprès tant d\'efforts!",
+                german=" Aber denkt daran, wie es sein\nwird, nach einem solchen Kraftakt den Gipfel\nzu erreichen!",
+                italian=" Ma sarà ancora più emozionante\nraggiungere la cima dopo aver faticato tanto!",
+                spanish=" ¡Pero será aún más gratificante\nllegar a la cima tras un arduo trabajo!",
+            });
+            message_Talk({
+                english=" We can\'t give up!\nLet\'s do our best!",
+                french=" On ne peut pas abandonner ici!\nCourage!",
+                german=" Wir dürfen nicht aufgeben!\nLasst uns unser Bestes geben!",
+                italian=" Non possiamo arrenderci!\nMettiamocela tutta!",
+                spanish=" ¡No podemos rendirnos!\n¡Vamos a por todas!",
+            });
+            message_Close();
+            end;
+        }
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 30] ) {
+        supervision_Station(7);
+        jump @label_23;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 29] ) {
+        supervision_Station(7);
+        jump @label_23;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 28] ) {
+        jump @label_23;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 27] ) {
+        supervision_Station(7);
+        jump @label_23;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 26] ) {
+        jump @label_23;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 25] ) {
+        supervision_Station(7);
+        supervision_Station(43);
+        jump @label_23;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 24] ) {
+        jump @label_23;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 23] ) {
+        supervision_Station(7);
+        supervision_Station(42);
+        supervision_Station(43);
+        jump @label_23;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 22] ) {
+        jump @label_23;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 21] ) {
+        supervision_Station(7);
+        supervision_Station(42);
+        jump @label_23;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 20] ) {
+        jump @label_23;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 19] ) {
+        supervision_Station(7);
+        supervision_Station(40);
+        supervision_Station(42);
+        jump @label_23;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 18] ) {
+        jump @label_23;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 17] ) {
+        supervision_Station(7);
+        supervision_Station(40);
+        supervision_Station(42);
+        jump @label_23;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 16] ) {
+        supervision_Station(7);
+        supervision_Station(40);
+        supervision_Station(41);
+        supervision_Station(42);
+        jump @label_23;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 15] || scn($SCENARIO_MAIN) >= [29, 14] || scn($SCENARIO_MAIN) >= [29, 13] || scn($SCENARIO_MAIN) >= [29, 12] || scn($SCENARIO_MAIN) >= [29, 11] || scn($SCENARIO_MAIN) >= [29, 10] || scn($SCENARIO_MAIN) >= [29, 8] ) {
+        jump @label_23;
+    } else {
+        jump @label_23;
+    }
+}

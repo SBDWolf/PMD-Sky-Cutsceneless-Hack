@@ -1,0 +1,29 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_HIDDEN_HIGHLAND, 0, 256);
+    back_SetGround(LEVEL_V26P01A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetActor(ACTOR_NPC_DAAKURAI);
+    message_Talk({
+        english=" I sabotaged [CS:P]Temporal Tower[CR].",
+        french=" C\'est moi qui ai saboté la [CS:P]Tour\ndu Temps[CR].",
+        german=" Ich habe den [CS:P]Zeitturm[CR] sabotiert.",
+        italian=" L\'ho sabotata.",
+        spanish=" Así que la saboteé.",
+    });
+    message_Talk({
+        english=" That would have eventually led\nto the destruction of time.[K] And ultimately, the\nplanet\'s paralysis.",
+        french=" Cela aurait dû conduire à\nla destruction du temps.[K] Et à terme,\nà la Paralysie de la Planète.",
+        german=" Irgendwann hätte das zur\nZerstörung der Zeit geführt.[K] Und letztendlich\nzur Lähmung des Planeten.",
+        italian=" Questo avrebbe causato la\ndistruzione del tempo.[K] E, alla fine, la paralisi\ndel pianeta.",
+        spanish=" Eso debería haber provocado\nla destrucción del tiempo.[K] Y, finalmente,\nla parálisis del planeta.",
+    });
+    message_Close();
+    screen_FadeOut(1, 30);
+    end;
+}
