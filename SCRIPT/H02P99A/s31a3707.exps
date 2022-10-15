@@ -1,0 +1,30 @@
+
+def 0 {
+    sound_Stop();
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V24P08A);
+    back_SetGround(LEVEL_H02P99A);
+    supervision_Acting(0);
+    supervision_StationCommon(0);
+    camera2_SetPositionMark(Position<'m0', 19, 15.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_PLAYER) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    camera_SetDefault();
+    screen2_FadeIn(0, 30);
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_DO_YOUR_BEST_AS_ALWAYS, 0, 256);
+    end;
+}

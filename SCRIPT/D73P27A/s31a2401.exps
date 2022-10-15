@@ -2,15 +2,6 @@
 def 0 {
     sound_Stop();
     $SCENARIO_MAIN = scn[29, 24];
-    message_SetFace(ACTOR_NPC_SHEIMI, FACE_NORMAL, FACE_POS_STANDARD);
-    message_Talk({
-        english=" Oh! I can see the tunnel![K]\nWe\'re almost to the 7th Station Clearing!\nJust a little more!",
-        french=" Oh! J\'aperçois la sortie![K]\nEncore un effort et nous atteindrons la\ntrouée du 7[F:E] Relais!",
-        german=" Oh, ich kann den Tunnel sehen![K]\nWir haben die 7. Zwischenlagerlichtung fast\nerreicht! Nur noch ein kleines Stück!",
-        italian=" Oh! Vedo il tunnel![K]\nSiamo in prossimità del Bivacco 7!\nAncora un piccolo sforzo!",
-        spanish=" ¡Ah, ya veo el túnel![K]\n¡Ya casi hemos llegado a la Base del Séptimo\nPuerto! ¡Hagamos un último esfuerzo!",
-    });
-    message_Close();
     back_SetGround(LEVEL_D73P27A);
     supervision_LoadStation(LEVEL_D73P27A, 'US31');
     supervision_Station(15);
@@ -43,6 +34,27 @@ def 0 {
     with (actor ACTOR_ADVENTURE_NPC2) {
         SetPositionInitial();
     }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        SetDirection(DIR_LEFT);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_NPC_KINOGASSA) {
+        SetDirection(DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_KUCHIITO) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_GOORIKII) {
+        SetDirection(DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_SHEIMI) {
+        SetDirection(DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_PLAYER_APPOINT) {
+        SetDirection(DIR_UPLEFT);
+    }
     with (actor ACTOR_NPC_NYUURA) {
         SetAnimation(22);
     }
@@ -64,267 +76,13 @@ def 0 {
     with (actor ACTOR_ADVENTURE_NPC2) {
         SetAnimation(2);
     }
-    with (actor ACTOR_NPC_SHEIMI) {
-        MovePositionMark(1, Position<'m0', 28.5, 34.5>);
-    }
-    with (actor ACTOR_PLAYER_APPOINT) {
-        MovePositionMark(1, Position<'m1', 28.5, 37.5>);
-    }
     with (actor ACTOR_ADVENTURE_NPC1) {
-        MovePositionMark(1, Position<'m2', 31.5, 38.5>);
+        SetPositionMark(Position<'m4', 31.5, 26.5>);
     }
     with (actor ACTOR_ADVENTURE_NPC2) {
-        MovePositionMark(1, Position<'m3', 25.5, 38.5>);
+        SetPositionMark(Position<'m5', 25.5, 30.5>);
     }
     screen_FadeIn(1, 30);
-    WaitExecuteLives(ACTOR_PLAYER_APPOINT);
-    with (actor ACTOR_NPC_SHEIMI) {
-        Turn2Direction(4, 10, DIR_UPLEFT);
-    }
-    with (actor ACTOR_PLAYER_APPOINT) {
-        Turn2Direction(4, 10, DIR_UPLEFT);
-    }
-    with (actor ACTOR_ADVENTURE_NPC1) {
-        Turn2Direction(4, 10, DIR_UPLEFT);
-    }
-    with (actor ACTOR_ADVENTURE_NPC2) {
-        Turn2Direction(4, 10, DIR_UP);
-    }
-    message_SetFace(ACTOR_NPC_SHEIMI, FACE_NORMAL, FACE_POS_BOTTOM_R_CENTER);
-    message_Talk({
-        english=" Wow, Team [CS:X]Frontier[CR]\nsure are quick...",
-        french=" Waouh, l\'Equipe [CS:X]Eclaireurs[CR]\nest vraiment rapide...",
-        german=" Wow, Team [CS:X]Grenzland[CR]\nist ganz schön schnell...",
-        italian=" Wow, il Team [CS:X]Pioniere[CR]\nè proprio veloce...",
-        spanish=" Caray, qué velocidad la del\n[CS:X]Equipo Frontera[CR]...",
-    });
-    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
-    with (performer 0) {
-        MovePositionOffset(1, 0, -24);
-    }
-    with (actor ACTOR_NPC_SHEIMI) {
-        MovePositionOffset(1, 0, -24);
-    }
-    Wait(7);
-    with (actor ACTOR_PLAYER_APPOINT) {
-        MovePositionOffset(1, 0, -24);
-    }
-    Wait(5);
-    with (actor ACTOR_ADVENTURE_NPC1) {
-        MovePositionOffset(1, 0, -24);
-    }
-    Wait(2);
-    with (actor ACTOR_ADVENTURE_NPC2) {
-        MovePositionOffset(1, 0, -24);
-    }
-    WaitExecuteLives(ACTOR_NPC_SHEIMI);
-    with (actor ACTOR_NPC_SHEIMI) {
-        Turn2Direction(4, 10, DIR_UPLEFT);
-    }
-    with (actor ACTOR_PLAYER_APPOINT) {
-        Turn2Direction(4, 10, DIR_UPLEFT);
-    }
-    with (actor ACTOR_ADVENTURE_NPC1) {
-        Turn2Direction(4, 10, DIR_UPLEFT);
-    }
-    with (actor ACTOR_ADVENTURE_NPC2) {
-        Turn2Direction(4, 10, DIR_UP);
-    }
-    se_Play(8978);
-    with (actor ACTOR_NPC_SHEIMI) {
-        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
-    }
-    with (actor ACTOR_NPC_SHEIMI) {
-        WaitEffect();
-    }
-    WaitExecuteLives(ACTOR_NPC_SHEIMI);
-    message_SetFace(ACTOR_NPC_SHEIMI, FACE_SURPRISED, FACE_POS_BOTTOM_R_CENTER);
-    message_Talk({
-        english=" What happened?!",
-        french=" Que s\'est-il passé?!",
-        german=" Was ist passiert?!?",
-        italian=" Che cos\'è successo?",
-        spanish=" ¡¿Qué ha ocurrido?!",
-    });
-    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
-    bgm_PlayFadeIn(BGM_GROWING_ANXIETY, 0, 256);
-    with (performer 0) {
-        MovePositionOffset(33152, 0, -56, -32, 0);
-    }
-    with (actor ACTOR_NPC_SHEIMI) {
-        MovePositionOffset(1, 0, -48, -16, -16);
-    }
-    Wait(10);
-    with (actor ACTOR_PLAYER_APPOINT) {
-        MovePositionOffset(1, 0, -48, -16, -16);
-    }
-    Wait(5);
-    with (actor ACTOR_ADVENTURE_NPC1) {
-        MovePositionMark(1, Position<'m4', 31.5, 26.5>);
-    }
-    Wait(2);
-    with (actor ACTOR_ADVENTURE_NPC2) {
-        MovePositionMark(1, Position<'m5', 25.5, 30.5>);
-    }
-    with (actor ACTOR_NPC_SHEIMI) {
-        Turn2Direction(4, 10, DIR_LEFT);
-    }
-    with (actor ACTOR_PLAYER_APPOINT) {
-        Turn2Direction(4, 10, DIR_UPLEFT);
-    }
-    with (actor ACTOR_ADVENTURE_NPC1) {
-        Turn2Direction(4, 10, DIR_LEFT);
-    }
-    with (actor ACTOR_ADVENTURE_NPC2) {
-        Turn2Direction(4, 10, DIR_UP);
-    }
-    WaitExecutePerformer(4);
-    with (actor ACTOR_NPC_KINOGASSA) {
-        Turn2Direction(4, 10, DIR_RIGHT);
-    }
-    WaitExecuteLives(ACTOR_NPC_KINOGASSA);
-    message_SetFace(ACTOR_NPC_KINOGASSA, FACE_WORRIED, FACE_POS_STANDARD);
-    message_Talk({
-        english=" I don\'t know, he had fainted\nbefore we got here...",
-        french=" Je ne sais pas, il était déjà\ninconscient quand nous sommes arrivés...",
-        german=" Kann ich nicht sagen. Er war\nschon ohnmächtig, als wir hier ankamen...",
-        italian=" Non lo so, era già in questo\nstato quando siamo arrivati...",
-        spanish=" Ni idea. Ya estaba debilitado\ncuando llegamos...",
-    });
-    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
-    with (actor ACTOR_NPC_KINOGASSA) {
-        Turn2Direction(4, 10, DIR_UPRIGHT);
-    }
-    WaitExecuteLives(ACTOR_NPC_KINOGASSA);
-    message_Talk({
-        english=" I don\'t know if it\'s because of\nthe cold or because he ran out of items,\nbut I do know this is dangerous.",
-        french=" Difficile de dire si c\'est à cause\ndu froid ou parce qu\'il n\'avait plus d\'objets,\nmais ceci est très préoccupant.",
-        german=" Ich weiß nicht, ob wegen der\nKälte oder weil er alle Items aufgebraucht\nhat. Auf jeden Fall ist er in Gefahr.",
-        italian=" Non so se sia stato a causa\ndel freddo o perché ha finito gli strumenti,\nma di certo questo posto è molto pericoloso.",
-        spanish=" No sé si habrá sido por el frío\no si se quedaría sin objetos, pero lo que sé\nes que esto es peligroso.",
-    });
-    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
-    with (actor ACTOR_NPC_SHEIMI) {
-        MovePositionOffset(1, -16, 0);
-    }
-    WaitExecutePerformer(311);
-    Wait(45);
-    message_SetFace(ACTOR_NPC_SHEIMI, FACE_DETERMINED, FACE_POS_BOTTOM_R_CENTER);
-    message_Talk({
-        english=" .........",
-        french=" ..........",
-        german=" ..........",
-        italian=" ..........",
-        spanish=" ...",
-    });
-    message_Talk({
-        english=" This isn\'t good at all...",
-        french=" Ce n\'est pas bon du tout...",
-        german=" Das ist wirklich nicht gut...",
-        italian=" Non va bene per niente...",
-        spanish=" Esto no pinta nada bien...",
-    });
-    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
-    with (actor ACTOR_NPC_SHEIMI) {
-        Turn2Direction(4, 10, DIR_DOWNLEFT);
-    }
-    WaitExecuteLives(ACTOR_NPC_SHEIMI);
-    message_SetFace(ACTOR_NPC_SHEIMI, FACE_NORMAL, FACE_POS_BOTTOM_R_CENTER);
-    message_Talk({
-        english=" I\'ll go get help.",
-        french=" Je vais chercher de l\'aide.",
-        german=" Ich werde Hilfe holen.",
-        italian=" Vado a cercare aiuto.",
-        spanish=" Iré a buscar ayuda.",
-    });
-    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
-    with (actor ACTOR_NPC_KUCHIITO) {
-        Turn2Direction(4, 10, DIR_DOWN);
-    }
-    WaitExecuteLives(ACTOR_NPC_KUCHIITO);
-    with (actor ACTOR_NPC_GOORIKII) {
-        Turn2Direction(4, 10, DIR_UPRIGHT);
-    }
-    WaitExecuteLives(ACTOR_NPC_GOORIKII);
-    se_Play(8964);
-    with (actor ACTOR_NPC_KUCHIITO) {
-        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
-    }
-    with (actor ACTOR_NPC_KUCHIITO) {
-        WaitEffect();
-    }
-    WaitExecuteLives(ACTOR_NPC_KUCHIITO);
-    message_SetFace(ACTOR_NPC_KUCHIITO, FACE_SURPRISED, FACE_POS_TOP_R_CENTER);
-    message_Talk({
-        english=" Huh? Who are you going to call\nfor help?!",
-        french=" Hein? Et qui comptes-tu appeler\nà l\'aide?",
-        german=" Wie bitte? Wen willst du denn\nzur Hilfe rufen?!?",
-        italian=" Eh? E chi vorresti chiamare?!",
-        spanish=" ¿Cómo? Pero... ¡¿a quién vas\na pedir ayuda?!",
-    });
-    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
-    with (actor ACTOR_NPC_SHEIMI) {
-        Turn2Direction(4, 10, DIR_UP);
-    }
-    WaitExecuteLives(ACTOR_NPC_SHEIMI);
-    message_SetFace(ACTOR_NPC_SHEIMI, FACE_NORMAL, FACE_POS_BOTTOM_R_CENTER);
-    message_Talk({
-        english=" There\'s a rescue expert at the\n8th Station Clearing.",
-        french=" Il y a un pro du sauvetage\nà la trouée du 8[F:E] Relais.",
-        german=" Ein Experte für Bergrettung lebt\nauf der 8. Zwischenlagerlichtung.",
-        italian=" Al Bivacco 8 c\'è un esperto di\nsoccorsi.",
-        spanish=" Hay un experto en rescates en\nla Base del Octavo Puerto.",
-    });
-    message_Talk({
-        english=" We don\'t call him for the little\nthings, but emergencies are different.",
-        french=" On ne le dérange pas pour des\nbroutilles, mais les urgences, c\'est différent.",
-        german=" Bei kleinen Vorfällen rufen wir\nihn nicht, aber Notfälle sind etwas anderes.",
-        italian=" Di solito non lo disturbiamo\nper delle sciocchezze, solo per situazioni\nd\'emergenza.",
-        spanish=" Normalmente no le molestaríamos\npor una nimiedad, pero esto es una emergencia.",
-    });
-    message_Talk({
-        english=" Could you please keep an eye on\n[CS:N]Sneasel[CR], Team [CS:X]Frontier[CR]?",
-        french=" Pourriez-vous garder un œil sur\n[CS:N]Farfuret[CR], Equipe [CS:X]Eclaireurs[CR]?",
-        german=" Könntet ihr auf [CS:N]Sniebel[CR]\nachtgeben, Team [CS:X]Grenzland[CR]?",
-        italian=" Potreste dare un\'occhiata\na [CS:N]Sneasel[CR], Team [CS:X]Pioniere[CR]?",
-        spanish=" ¿Os importa echarle un vistazo\na [CS:N]Sneasel[CR], [CS:X]Equipo Frontera[CR]?",
-    });
-    message_Talk({
-        english=" We\'re going ahead!",
-        french=" Nous, on continue!",
-        german=" Wir machen uns auf den Weg!",
-        italian=" Noi andiamo avanti!",
-        spanish=" ¡Así nos adelantamos!",
-    });
-    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
-    message_SetFace(ACTOR_NPC_KUCHIITO, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
-    message_Talk({
-        english=" I see. We\'re counting on you!",
-        french=" Soit. On compte sur vous!",
-        german=" Klaro. Wir zählen auf euch!",
-        italian=" Va bene. Contiamo su di voi!",
-        spanish=" De acuerdo, contamos\ncon vuestra ayuda.",
-    });
-    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
-    bgm_FadeOut(60);
-    Wait(30);
-    with (actor ACTOR_NPC_SHEIMI) {
-        Turn2Direction(4, 10, DIR_DOWNRIGHT);
-    }
-    WaitExecuteLives(ACTOR_NPC_SHEIMI);
-    with (actor ACTOR_PLAYER_APPOINT) {
-        Turn2Direction(4, 10, DIR_UPLEFT);
-    }
-    message_SetFace(ACTOR_NPC_SHEIMI, FACE_NORMAL, FACE_POS_TOP_C_FACER);
-    message_FacePositionOffset(0, 2);
-    message_Talk({
-        english=" Let\'s hurry, [player]!",
-        french=" Dépêchons-nous, [player]!",
-        german=" Wir müssen uns beeilen,\n[player]!",
-        italian=" Sbrighiamoci, [player]!",
-        spanish=" ¡Deprisa, [player]!",
-    });
-    message_Close();
     bgm_PlayFadeIn(BGM_SKY_PEAK_SNOWFIELD, 0, 256);
     end;
 }

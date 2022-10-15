@@ -6525,8 +6525,9 @@ coro EVENT_S31_27 {
 
 coro EVENT_S31_28 {
     CallCommon(CORO_SUBSCREEN_INIT);
-    supervision_ExecuteActingSub(LEVEL_D73P28A, 'S31A2801', 0);
-    supervision_ExecuteActingSub(LEVEL_D73P27A, 'S31A2802', 0);
+    $SCENARIO_MAIN = scn[29, 26];
+    //supervision_ExecuteActingSub(LEVEL_D73P28A, 'S31A2801', 0);
+    //supervision_ExecuteActingSub(LEVEL_D73P27A, 'S31A2802', 0);
     supervision_ExecuteActingSub(LEVEL_D73P28A, 'S31A2803', 0);
     CallCommon(CORO_EVENT_END_MAPIN_AE);
     main_SetGround(LEVEL_D73P28A);
@@ -6600,12 +6601,15 @@ coro EVENT_S31_37 {
     CallCommon(CORO_SUBSCREEN_INIT);
     adventure_log = 8;
     $PERFORMANCE_PROGRESS_LIST[26] = 1;
-    supervision_ExecuteActingSub(LEVEL_D73P41A, 'S31A3701', 0);
-    supervision_ExecuteActingSub(LEVEL_V37P02A, 'S31A3702', 0);
-    supervision_ExecuteActingSub(LEVEL_D73P31A, 'S31A3703', 0);
-    supervision_ExecuteActingSub(LEVEL_V37P03A, 'S31A3704', 0);
-    supervision_ExecuteActingSub(LEVEL_D73P31A, 'S31A3705', 0);
-    supervision_ExecuteActingSub(LEVEL_V37P03A, 'S31A3706', 0);
+    $REQUEST_CLEAR_COUNT = 0;
+    $SCENARIO_MAIN = scn[29, 31];
+    switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+    //supervision_ExecuteActingSub(LEVEL_D73P41A, 'S31A3701', 0);
+    //supervision_ExecuteActingSub(LEVEL_V37P02A, 'S31A3702', 0);
+    //supervision_ExecuteActingSub(LEVEL_D73P31A, 'S31A3703', 0);
+    //supervision_ExecuteActingSub(LEVEL_V37P03A, 'S31A3704', 0);
+    //supervision_ExecuteActingSub(LEVEL_D73P31A, 'S31A3705', 0);
+    //supervision_ExecuteActingSub(LEVEL_V37P03A, 'S31A3706', 0);
     supervision_ExecuteActingSub(LEVEL_H02P99A, 'S31A3707', 0);
     CallCommon(CORO_EVENT_END_MAPIN_AE);
     main_SetGround(LEVEL_H02P99A);

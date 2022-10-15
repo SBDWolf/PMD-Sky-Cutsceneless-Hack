@@ -1,0 +1,89 @@
+
+def 0 {
+    back2_SetMode(5);
+    back_SetGround(LEVEL_V37P03A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen2_FadeIn(0, 30);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_SHEIMI_FC, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" That\'s right. Flying is so\nmuch fun!",
+        french=" Exactement.\nVoler, c\'est tellement grisant!",
+        german=" Ganz genau. Und Fliegen macht\neine Menge Spaß!",
+        italian=" Esatto. Volare è proprio\ndivertente!",
+        spanish=" Eso es. ¡Volar es divertidísimo!",
+    });
+    message_Talk({
+        english=" It\'s not much, but this is\na gift from me to you!",
+        french=" Ce n\'est pas grand-chose,\nmais c\'est un cadeau de ma part!",
+        german=" Ist nicht viel, aber betrachtet\nes als ein Geschenk von mir an euch!",
+        italian=" Non è molto, ma questo\nè un piccolo regalo da parte mia!",
+        spanish=" No es mucho, pero os lo dedico\ncomo regalo de todo corazón.",
+    });
+    message_Talk({
+        english=" All right, let\'s soar down to the\nbase of the mountain!",
+        french=" Très bien, on décolle!\nRedescendons au pied de la montagne!",
+        german=" Alles klar, lasst uns den Berg\nhinuntersegeln!",
+        italian=" Forza, è ora di spiccare il volo\ne raggiungere la base della montagna!",
+        spanish=" De acuerdo, vamos volando al pie\nde la montaña.",
+    });
+    message_Talk({
+        english=" Hold on tight!",
+        french=" Accrochez-vous!",
+        german=" Gut festhalten!",
+        italian=" Tenetevi forte!",
+        spanish=" ¡Agarraos fuerte!",
+    });
+    message_Close();
+    se_Play(11019);
+    with (performer 0) {
+        MovePositionMark(10, Position<'m0', 16, 27.5>);
+    }
+    screen2_WhiteOut(0, 15);
+    screen_WhiteOutAll(1, 15);
+    screen_FadeOut(0, 0);
+    back2_SetMode(0);
+    WaitSe(11019);
+    screen2_FadeIn(0, 30);
+    screen_FadeInAll(1, 30);
+    Wait(60);
+    message_Narration(30, {
+        english="[CN]And so Team [team:],\n[CN]which had successfully climbed to the\n[CN][CS:P]Sky Peak[CR] Summit...",
+        french="[CN]Ainsi, l\'Equipe [team:],\n[CN]après avoir conquis le\n[CN][CS:P]Sommet du Pic Céleste[CR]...",
+        german="[CN]Team [team:] bedankte sich nach diesem\n[CN]erfolgreichen Ausflug zur [CS:P]Himmelsgipfelspitze[CR]\n[CN]vielmals beim lieben [CS:N]Shaymin[CR]...",
+        italian="[CN]E così il Team [team:],\n[CN]che era riuscito a conquistare la vetta\n[CN]del [CS:P]Picco del Cielo[CR]...",
+        spanish="[CN]De esta forma, tras subir\n[CN]con éxito a la [CS:P]Cumbre del Cielo[CR],\n[CN]el [CS:X]Equipo[CR] [team:]...",
+    });
+    message_Narration(30, {
+        english="[CN]Thanked [CS:N]Shaymin[CR]\n[CN]graciously and returned to Treasure Town.",
+        french="[CN]... remercia [CS:N]Shaymin[CR]\n[CN]pour son aide et retourna à Bourg-Trésor.",
+        german="[CN]Nach sicherem Flug kehrten\n[CN]alle nach Schatzstadt zurück.",
+        italian="[CN]... ringraziò profondamente [CS:N]Shaymin[CR]\n[CN]e tornò a Borgo Tesoro.",
+        spanish="[CN]Le dio las gracias gentilmente a [CS:N]Shaymin[CR]\n[CN]y volvió a Aldea Tesoro.",
+    });
+    message_Narration(30, {
+        english="[CN]And on the evening of the day they returned,\n[CN]there was a huge party at [CS:K]Spinda[CR]\'s Café...",
+        french="[CN]Et le soir même de leur retour,\n[CN]on organisa une grande fête au [CS:K]Café Spinda[CR]...",
+        german="[CN]Am Abend ihrer Rückkehr fand eine\n[CN]große Party im [CS:K]Pandir-Café[CR] statt.",
+        italian="[CN]E quella sera, quando arrivarono a casa,\n[CN]ci fu un\'enorme festa al Caffè di [CS:K]Spinda[CR]...",
+        spanish="[CN]La noche de su regreso se celebró\n[CN]una gran fiesta en la [CS:K]Cafetería Spinda[CR]...",
+    });
+    message_Narration(30, {
+        english="[CN]Everyone stayed up until dawn,\n[CN]discussing the exploration...",
+        french="[CN]Tout le monde resta jusqu\'aux aurores\n[CN]et on parla beaucoup de l\'exploration...",
+        german="[CN]Das Austauschen der Erlebnisse und Geschichten\n[CN]dauerte bis in die frühen Morgenstunden...",
+        italian="[CN]Rimasero tutti alzati fino a tardi\n[CN]a parlare dell\'esplorazione...",
+        spanish="[CN]Todos se quedaron despiertos hasta tarde\n[CN]hablando de la exploración...",
+    });
+    message_Close();
+    screen2_FadeOut(0, 30);
+    screen_FadeOut(1, 30);
+    back2_SetMode(0);
+    Wait(60);
+    switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+    end;
+}

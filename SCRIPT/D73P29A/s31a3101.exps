@@ -1,0 +1,59 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_MAIN = scn[29, 28];
+    back_SetGround(LEVEL_D73P29A);
+    supervision_LoadStation(LEVEL_D73P29A, 'US31');
+    supervision_Station(20);
+    supervision_StationCommon(9);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_SHEIMI) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_SHEIMI) {
+        SetPositionMark(Position<'m0', 28.5, 32.5>);
+    }
+    with (actor ACTOR_PLAYER_APPOINT) {
+        SetPositionMark(Position<'m1', 28.5, 37.5>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        SetPositionMark(Position<'m4', 34.5, 36.5>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        SetPositionMark(Position<'m5', 22.5, 36.5>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        SetDirection(DIR_UPLEFT);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        SetDirection(DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_SHEIMI) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_SHEIMI) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER_APPOINT) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        SetAnimation(2);
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_SKY_PEAK_FINAL_PASS, 0, 256);
+    end;
+}

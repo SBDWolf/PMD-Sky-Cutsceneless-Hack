@@ -1,0 +1,34 @@
+
+def 0 {
+    back2_SetMode(5);
+    back_SetGround(LEVEL_V37P02A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        MovePositionMark(32896, Position<'m0', 16, 35.5>);
+    }
+    bgm_PlayFadeIn(BGM_TIME_RESTORED, 0, 256);
+    supervision_SpecialActing(16, 20, 120);
+    supervision2_SpecialActing(16, 0, 0);
+    se_Play(11017);
+    screen2_FadeIn(0, 60);
+    screen_FadeIn(1, 60);
+    WaitExecutePerformer(0);
+    message_SetActor(ACTOR_NPC_KINOGASSA);
+    message_Talk({
+        english=" W-wow...",
+        french=" O-ouah...",
+        german=" B-boah...",
+        italian=" W-Wow...",
+        spanish=" Jo... qué fuerte...",
+    });
+    message_Close();
+    screen2_FadeOut(0, 60);
+    screen_FadeOut(1, 60);
+    supervision_SpecialActing(3, 0, 0);
+    supervision2_SpecialActing(3, 0, 0);
+    back2_SetMode(0);
+    end;
+}

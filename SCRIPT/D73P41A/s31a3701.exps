@@ -1,0 +1,893 @@
+
+def 0 {
+    sound_Stop();
+    $REQUEST_CLEAR_COUNT = 0;
+    $SCENARIO_MAIN = scn[29, 31];
+    back_SetGround(LEVEL_D73P41A);
+    supervision_Acting(2);
+    supervision_Acting(3);
+    supervision_Acting(4);
+    supervision_Acting(5);
+    supervision_Acting(6);
+    supervision_Acting(0);
+    supervision_Acting(1);
+    supervision_RemoveActing(2);
+    supervision_RemoveActing(3);
+    supervision_RemoveActing(4);
+    supervision_RemoveActing(5);
+    supervision_RemoveActing(6);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_BETOBETAA) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_BETOBETAA2) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_BETOBETON) {
+        SetAnimation(42);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_BETOBETAA3) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_BETOBETAA4) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_BETOBETON2) {
+        SetAnimation(42);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_BETOBETAA5) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_BETOBETON3) {
+        SetAnimation(42);
+    }
+    back_SetWeather(11);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    se_Play(8968);
+    with (actor ACTOR_NPC_BETOBETAA2) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETAA2) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_BETOBETAA2);
+    message_SetFace(ACTOR_NPC_BETOBETAA, FACE_PAIN, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" Uwaaaah!",
+        french=" Shlouarfff!",
+        german=" Uwaaaah!",
+        italian=" Aaaaaah!",
+        spanish=" ¡Uaaaaa!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_NPC_BETOBETAA4) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETAA4) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_BETOBETAA4);
+    message_SetFace(ACTOR_NPC_BETOBETAA, FACE_PAIN, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" So stroooong!",
+        french=" Trooop cochtauds!",
+        german=" So staaaark!",
+        italian=" Che foooooorti!",
+        spanish=" ¡Qué fuerteeees!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SHEIMI, FACE_NORMAL, FACE_POS_BOTTOM_L_CENTER);
+    message_Talk({
+        english=" Have you come to your senses\nyet, [CS:N]Grimer[CR] and [CS:N]Muk[CR]?",
+        french=" Alors, vous êtes revenus à la\nraison, les [CS:N]Tadmorv[CR] et les [CS:N]Grotadmorv[CR]?",
+        german=" Seid ihr endlich wieder zur\nVernunft gekommen, [CS:N]Sleima[CR] und [CS:N]Sleimok[CR]?",
+        italian=" Adesso siete tornati in voi,\n[CS:N]Grimer[CR] e [CS:N]Muk[CR]?",
+        spanish=" Escuchad, [CS:N]Grimer[CR] y [CS:N]Muk[CR],\n¿habéis entrado ya en razón?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_BETOBETAA) {
+        SetAnimation(2);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_BETOBETAA2) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_BETOBETON) {
+        SetAnimation(2);
+    }
+    Wait(2);
+    with (actor ACTOR_NPC_BETOBETAA3) {
+        SetAnimation(2);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_BETOBETAA4) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_BETOBETON2) {
+        SetAnimation(2);
+    }
+    Wait(7);
+    with (actor ACTOR_NPC_BETOBETAA5) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_BETOBETON3) {
+        SetAnimation(2);
+    }
+    Wait(10);
+    se_Play(8963);
+    with (actor ACTOR_NPC_BETOBETAA) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETAA3) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETAA4) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETON) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    Wait(7);
+    with (actor ACTOR_NPC_BETOBETON2) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETON3) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETAA2) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETAA5) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETAA5) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_BETOBETAA5);
+    message_SetFace(ACTOR_NPC_BETOBETAA, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" Huh?",
+        french=" Heinch?",
+        german=" Äh?",
+        italian=" Uh?",
+        spanish=" ¿Eh?",
+    });
+    message_Talk({
+        english=" H-huhhh?",
+        french=" Q-quoich?",
+        german=" Ä-ähhh?",
+        italian=" U-Uuuh?",
+        spanish=" ¿Eeeeh?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8969);
+    with (actor ACTOR_NPC_BETOBETAA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETAA3) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETAA4) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETON) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    Wait(7);
+    with (actor ACTOR_NPC_BETOBETON2) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETON3) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETAA2) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETAA5) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETAA5) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_BETOBETAA5);
+    message_SetFace(ACTOR_NPC_BETOBETAA, FACE_SURPRISED, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Oh! [CS:N]Shaymin[CR]!",
+        french=" Oh! [CS:N]Shaymin[CR]!",
+        german=" Oh! [CS:N]Shaymin[CR]!",
+        italian=" Oh! [CS:N]Shaymin[CR]!",
+        spanish=" ¡Oh! ¡[CS:N]Shaymin[CR]!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SHEIMI, FACE_NORMAL, FACE_POS_BOTTOM_L_CENTER);
+    message_Talk({
+        english=" What happened while I was\naway for so long?",
+        french=" Que s\'est-il passé ici\npendant mon absence?",
+        german=" Was ist nur während meiner\nAbwesenheit passiert?",
+        italian=" Cos\'è successo durante\nla mia lunga assenza?",
+        spanish=" ¿Qué es lo que ha sucedido\ndurante mi larga ausencia?",
+    });
+    message_Talk({
+        english=" You know that this isn\'t your\nhome, right?",
+        french=" Vous savez bien que ce n\'est\npas chez vous ici, pas vrai?",
+        german=" Ihr wisst doch, dass hier nicht\neuer Zuhause ist, oder?",
+        italian=" Lo sapete che non potete stare\nqui, vero?",
+        spanish=" Sabéis perfectamente que este\nno es vuestro hogar, ¿verdad?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8968);
+    with (actor ACTOR_NPC_BETOBETAA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETAA3) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETAA4) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETON) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    Wait(7);
+    with (actor ACTOR_NPC_BETOBETON2) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETON3) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETAA2) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETAA5) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETAA5) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_BETOBETAA5);
+    message_SetFace(ACTOR_NPC_BETOBETAA, FACE_SURPRISED, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" H-huhhh?\nThis is so our hoooome...",
+        french=" Heinch?\nMais ch\'est notre maijon...",
+        german=" Ä-ähhh?\nHier ist unser Zuhauuuse...",
+        italian=" U-Uuuh?\nQuesta è la nostra caaaaaasa...",
+        spanish=" ¿Eeeh? Sí que esss nuestro hogaaar...",
+    });
+    message_Talk({
+        english=" Seeee?\nIt\'s all dirty and griiiiiimy...",
+        french=" Regardez, ch\'est tout chale\net tout poicheux...",
+        german=" Seeeeht ihr?\nAlles dreckig und eeeeeklig...",
+        italian=" Veeedi?\nÈ tutto così sporco e viiiiiiscido...",
+        spanish=" ¿Lo ves? Está sucio y asquerosssooo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SHEIMI, FACE_WORRIED, FACE_POS_BOTTOM_L_CENTER);
+    message_Talk({
+        english=" Dirty and grimy...",
+        french=" \"Chale et poicheux\"...",
+        german=" Dreckig und eeeeeklig...",
+        italian=" Sporco e viiiiiiscido...",
+        spanish=" Sucio y asqueroso...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8978);
+    with (actor ACTOR_NPC_SHEIMI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_SHEIMI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_SHEIMI);
+    Wait(30);
+    bgm_PlayFadeIn(BGM_SYMPATHY, 0, 256);
+    Wait(20);
+    message_SetFace(ACTOR_NPC_SHEIMI, FACE_NORMAL, FACE_POS_BOTTOM_L_CENTER);
+    message_Talk({
+        english=" I see...",
+        french=" Je vois...",
+        german=" Ich verstehe...",
+        italian=" Capisco...",
+        spanish=" Entiendo...",
+    });
+    message_Talk({
+        english=" Nobody\'s come here for so long...",
+        french=" Ça fait si longtemps que\npersonne n\'est venu...",
+        german=" Hier ist schon lange\nniemand mehr gewesen...",
+        italian=" È da tanto tempo che da queste\nparti non arriva qualcuno...",
+        spanish=" Hacía tanto que nadie venía\npor aquí...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(20);
+    message_SetFace(ACTOR_NPC_SHEIMI, FACE_WORRIED, FACE_POS_BOTTOM_L_CENTER);
+    message_Talk({
+        english=" I\'m sorry, [CS:N]Grimer[CR] and [CS:N]Muk[CR].\nThis is the mountain summit.",
+        french=" Je suis désolée, les [CS:N]Tadmorv[CR]\net les [CS:N]Grotadmorv[CR]. Ici, c\'est le sommet de\nla montagne.",
+        german=" Es tut uns leid, [CS:N]Sleima[CR] und\n[CS:N]Sleimok[CR], aber das hier ist der Berggipfel.",
+        italian=" Mi spiace, [CS:N]Grimer[CR] e [CS:N]Muk[CR].\nQuesta è la cima della montagna.",
+        spanish=" [CS:N]Grimer[CR], [CS:N]Muk[CR], lo siento, pero\nesta es la cima de la montaña.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8968);
+    with (actor ACTOR_NPC_BETOBETAA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETAA3) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETAA4) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETON) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    Wait(7);
+    with (actor ACTOR_NPC_BETOBETON2) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETON3) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETAA2) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETAA5) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_BETOBETAA5) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_BETOBETAA5);
+    with (actor ACTOR_NPC_BETOBETAA2) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_BETOBETAA2);
+    message_SetFace(ACTOR_NPC_BETOBETAA, FACE_SURPRISED, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" H-huhhhh?!\nThe summit?!",
+        french=" Q-quoi qu\'est-che?!\nLe chommet?!",
+        german=" Ä-ähhh?!?\nDer Gipfel?!?",
+        italian=" U-Uuuh?!\nLa cima?!",
+        spanish=" ¡¿Eeeeeeh?!\n¡¿La cima?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_BETOBETAA, FACE_SURPRISED, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" It can\'t be...!",
+        french=" Impochible...!",
+        german=" Kann nicht sein!",
+        italian=" Non può esssere...!",
+        spanish=" ¡No es posible!...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SHEIMI, FACE_WORRIED, FACE_POS_BOTTOM_L_CENTER);
+    message_Talk({
+        english=" I think it fell into disrepair\nbecause nobody visited for so long...",
+        french=" Je pense qu\'il s\'est dégradé\nparce qu\'il a été laissé à l\'abandon\npendant si longtemps.",
+        german=" Anscheinend ist er verfallen,\nweil so lange keiner mehr hier gewesen ist...",
+        italian=" Credo sia finita in rovina\nperché nessuno vi ha messo piede\nper lungo tempo...",
+        spanish=" Supongo que está en tan mal estado\nporque nadie ha venido en mucho tiempo...",
+    });
+    message_Talk({
+        english=" But we can\'t leave the summit\nin this condition. Will you please return to your\nrightful home?",
+        french=" Mais nous ne pouvons pas\nlaisser le sommet dans cet état.\nAcceptez-vous de retourner chez vous?",
+        german=" Aber wir können den Gipfel\nnicht wieder so verlassen. Würdet ihr bitte\nzu eurem richtigen Zuhause zurückkehren?",
+        italian=" Ma non possiamo lasciare\nla cima in questo stato. Potreste tornare\nalla vostra vera casa?",
+        spanish=" Pero no podemos dejar que la cima\nsiga así. ¿Nos haréis el favor de volver\na vuestro legítimo hogar?",
+    });
+    message_Talk({
+        english=" Please? I\'m asking you.",
+        french=" S\'il vous plaît, je vous\nle demande.",
+        german=" Würdet ihr? Ich bitte euch.",
+        italian=" Vi prego.",
+        spanish=" Os lo pido por favor.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_BETOBETAA, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" Wh-what?\nThis is the summmmit?\nI didn\'t notiiiiice.",
+        french=" C-commench?\nCh\'est le chommet?\nCh\'avais pas remarchqué.",
+        german=" W-was?\nHier ist der Giiiipfel?\nHaben wir nicht bemeeeeerkt.",
+        italian=" Co-Cosa?\nQuesta è la ciiiiiima?\nNon l\'avevo notaaaaaato.",
+        spanish=" Entonces... ¿Estamos en la cima?\nNo me había dado cuentaaaa.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_BETOBETAA, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" Sorry, [CS:N]Shaymin[CR].",
+        french=" Déjolé, [CS:N]Shaymin[CR].",
+        german=" Entschuldige, [CS:N]Shaymin[CR].",
+        italian=" Scusaciii, [CS:N]Shaymin[CR].",
+        spanish=" Perdona, [CS:N]Shaymin[CR].",
+    });
+    message_Talk({
+        english=" We\'ll go home...",
+        french=" On r\'part chez nouch, alors...",
+        german=" Wir werden nach Hause gehen...",
+        italian=" Torneremo a caaasa...",
+        spanish=" Nos iremos a casa...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SHEIMI, FACE_HAPPY, FACE_POS_BOTTOM_L_CENTER);
+    message_Talk({
+        english=" All right. Thank you!",
+        french=" A la bonne heure, merci!",
+        german=" In Ordnung, ich danke euch!",
+        italian=" Bene, grazie mille!",
+        spanish=" De acuerdo, ¡muchas gracias!",
+    });
+    message_Talk({
+        english=" I\'ll come visit with a token of\nthanks later![K] Bye!",
+        french=" Je viendrai vous rendre visite\nplus tard avec un cadeau de remerciement![K]\nAu revoir!",
+        german=" Ich werde euch später ein\nZeichen meiner Dankbarkeit überbringen![K]\nWiedersehen!",
+        italian=" Più tardi verrò a trovarvi per\nringraziarvi come si deve![K] Arrivederci!",
+        spanish=" Ya volveré con un regalo como\nmuestra de agradecimiento.[K] ¡Adiós!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_BETOBETAA, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" OK. Bye-byyyye!",
+        french=" Cha marche! Chalut à touch!",
+        german=" Okay. Tschüüüüüss!",
+        italian=" Ok. Ciao ciaaao!",
+        spanish=" Muy bien, ¡adióoos!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_FadeOut(180);
+    with (actor ACTOR_NPC_BETOBETAA) {
+        Move2PositionOffset(32896, -88, 0);
+    }
+    with (actor ACTOR_NPC_BETOBETAA3) {
+        Move2PositionOffset(32896, 0, -88);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_BETOBETAA5) {
+        Move2PositionOffset(32896, 88, 0);
+    }
+    with (actor ACTOR_NPC_BETOBETON2) {
+        Move2PositionOffset(32896, -40, -88);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_BETOBETON3) {
+        Move2PositionOffset(32896, 40, -88);
+    }
+    Wait(7);
+    with (actor ACTOR_NPC_BETOBETAA2) {
+        Move2PositionOffset(32896, -40, -100);
+    }
+    with (actor ACTOR_NPC_BETOBETAA4) {
+        Move2PositionOffset(32896, 40, -100);
+    }
+    with (actor ACTOR_NPC_BETOBETON) {
+        Move2PositionOffset(32896, 0, -100);
+    }
+    WaitExecuteLives(ACTOR_NPC_BETOBETON);
+    supervision_RemoveActing(1);
+    with (performer 0) {
+        MovePositionMark(32896, Position<'m0', 31.5, 39.5>);
+    }
+    WaitExecutePerformer(0);
+    Wait(45);
+    with (actor ACTOR_NPC_SHEIMI) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    Wait(10);
+    with (actor ACTOR_PLAYER_APPOINT) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_SHEIMI);
+    }
+    Wait(5);
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_SHEIMI);
+    }
+    with (actor ACTOR_NPC_KUCHIITO) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_SHEIMI);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_GOORIKII) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_SHEIMI);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_SHEIMI);
+    }
+    with (actor ACTOR_NPC_KINOGASSA) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_SHEIMI);
+    }
+    WaitExecuteLives(ACTOR_NPC_SHEIMI);
+    message_SetFace(ACTOR_NPC_SHEIMI, FACE_NORMAL, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" Where were we...",
+        french=" Bon, où en étions-nous...",
+        german=" Wo waren wir gerade...",
+        italian=" Dove eravamo...",
+        spanish=" Bueno, ¿por dónde íbamos?...",
+    });
+    message_Talk({
+        english=" We have to clean this place up,\nrestore it...",
+        french=" Ah oui, il faut nettoyer cet\nendroit et tout remettre en ordre...",
+        german=" Wir müssen hier aufräumen\nund diesen Ort wiederherstellen...",
+        italian=" Dobbiamo pulire questo posto,\nrimetterlo a nuovo...",
+        spanish=" Tenemos que limpiar este sitio\npara devolverle todo su esplendor...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_KUCHIITO) {
+        Move2PositionOffset(32972, 16, -16);
+    }
+    WaitExecuteLives(ACTOR_NPC_KUCHIITO);
+    with (actor ACTOR_NPC_KUCHIITO) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_SHEIMI);
+    }
+    WaitExecuteLives(ACTOR_NPC_KUCHIITO);
+    message_SetFace(ACTOR_NPC_KUCHIITO, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" Restore it? It\'s so dirty, how\ncould we possibly...",
+        french=" Tout remettre en ordre? Avec\ntoute cette crasse, comment espères-tu...",
+        german=" Ihn wiederherstellen?\nEs ist so schmutzig, wie könnten wir...",
+        italian=" Rimetterlo a nuovo? Come\npossiamo fare, è talmente sporco...",
+        spanish=" ¿Su esplendor? Pero si está\nsucísimo. ¿Cómo vamos a...?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_SHEIMI) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_KUCHIITO);
+    }
+    WaitExecuteLives(ACTOR_NPC_SHEIMI);
+    message_SetFace(ACTOR_NPC_SHEIMI, FACE_NORMAL, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" We [CS:K]Shaymin[CR] have a special\npower to clean up the land by absorbing dirt\nand things.",
+        french=" Nous, les [CS:K]Shaymin[CR], nous avons\nun pouvoir spécial qui nous permet de nettoyer\nla nature en absorbant toute la saleté.",
+        german=" Wir [CS:K]Shaymin[CR] besitzen die Gabe,\nSchmutz und Staub zu absorbieren, und so das\nLand zu säubern.",
+        italian=" Noi [CS:K]Shaymin[CR] abbiamo un potere\nspeciale che ci permette di ripulire un luogo\nassorbendone lo sporco e i detriti.",
+        spanish=" Los [CS:K]Shaymin[CR] tenemos un poder\nespecial que nos permite regenerar la tierra\nabsorbiendo todo tipo de suciedad.",
+    });
+    message_Talk({
+        english=" Yet cleaning up this\nmess is no small task...",
+        french=" Ceci étant, même avec un tel\npouvoir, nettoyer un bazar pareil\nne va pas être une mince affaire...",
+        german=" Trotz alledem ist die Beseitigung\ndieses Drecks hier kein Zuckerschlecken...",
+        italian=" Detto questo, ripulire un simile\ndisastro non sarà facile...",
+        spanish=" Aun así, limpiar este desastre\nno será moco de pavo...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_SHEIMI) {
+        Turn2Direction(8, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_SHEIMI);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_SHEIMI, FACE_DETERMINED, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" Here goes nothing...",
+        french=" Tout doit disparaître...",
+        german=" Na, dann wollen wir mal...",
+        italian=" Ora ci provo...",
+        spanish=" Bueno, manos a la obra...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    supervision_Acting(2);
+    se_Play(11014);
+    with (object OBJECT_D73P41A1_413) {
+        SetOutputAttribute(1);
+    }
+    with (object OBJECT_D73P41A1_413) {
+        SetAnimation(17);
+    }
+    with (object OBJECT_D73P41A1_413) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_PLAYER_APPOINT) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_GOORIKII) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_KUCHIITO) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_PLAYER_APPOINT) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_PLAYER_APPOINT) {
+        Slide2PositionOffset(33075, 8, 8);
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        Slide2PositionOffset(33075, 8, 8);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_KUCHIITO) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_GOORIKII) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_KUCHIITO) {
+        Slide2PositionOffset(33075, -8, 0);
+    }
+    with (actor ACTOR_NPC_GOORIKII) {
+        Slide2PositionOffset(33075, -8, 8);
+    }
+    WaitExecuteLives(ACTOR_ADVENTURE_NPC1);
+    with (actor ACTOR_PLAYER_APPOINT) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        SetAnimation(2);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_KINOGASSA) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_KINOGASSA) {
+        Slide2PositionOffset(33075, 0, 8);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        Slide2PositionOffset(33075, 8, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_GOORIKII);
+    with (actor ACTOR_NPC_KUCHIITO) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_GOORIKII) {
+        SetAnimation(2);
+    }
+    WaitExecuteLives(ACTOR_NPC_KINOGASSA);
+    with (actor ACTOR_NPC_KINOGASSA) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        SetAnimation(2);
+    }
+    WaitExecuteObject(OBJECT_D73P41A1_413);
+    with (object OBJECT_D73P41A1_413) {
+        SetAnimation(18);
+    }
+    Wait(10);
+    with (object OBJECT_D73P41A1_413) {
+        SetAnimation(19);
+    }
+    with (object OBJECT_D73P41A1_413) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D73P41A1_413);
+    with (object OBJECT_D73P41A1_413) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_KINOGASSA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_KINOGASSA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_KINOGASSA);
+    message_SetFace(ACTOR_NPC_KINOGASSA, FACE_SURPRISED, FACE_POS_BOTTOM_L_CENTER);
+    message_FacePositionOffset(-1, 0);
+    message_Talk({
+        english=" Wow!!",
+        french=" Ouah!!",
+        german=" Boah!",
+        italian=" Wow!!!",
+        spanish=" ¡¡Guau!!",
+    });
+    bgm_PlayFadeIn(BGM_EARTHQUAKE1, 30, 256);
+    camera_SetEffect(2, 1, 33024);
+    with (actor ACTOR_NPC_SHEIMI) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_SHEIMI) {
+        SetDirection(DIR_DOWNRIGHT);
+    }
+    supervision_Acting(3);
+    with (object OBJECT_D73P41A3_415) {
+        SetOutputAttribute(4);
+    }
+    se_Play(11015);
+    with (object OBJECT_D73P41A3_415) {
+        SetAnimation(17);
+    }
+    with (object OBJECT_D73P41A3_415) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D73P41A3_415);
+    with (object OBJECT_D73P41A3_415) {
+        SetAnimation(2);
+    }
+    Wait(60);
+    message_CloseEnforce();
+    back_SetEffect(17, 180);
+    with (actor ACTOR_NPC_SHEIMI) {
+        SetDirection(DIR_DOWN);
+    }
+    supervision_Acting(4);
+    with (object OBJECT_D73P41A4_416) {
+        SetOutputAttribute(1);
+    }
+    with (object OBJECT_D73P41A4_416) {
+        SetAnimation(17);
+    }
+    with (object OBJECT_D73P41A4_416) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D73P41A4_416);
+    with (object OBJECT_D73P41A4_416) {
+        SetAnimation(3);
+    }
+    with (actor ACTOR_NPC_SHEIMI) {
+        SetDirection(DIR_DOWNRIGHT);
+    }
+    Wait(60);
+    message_SetFace(ACTOR_NPC_SHEIMI, FACE_DETERMINED, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" Get down, please!",
+        french=" Baissez-vous, je vous prie!",
+        german=" Duckt euch, bitte!",
+        italian=" State indietro, per favore!",
+        spanish=" Apartaos, por favor.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_APPOINT) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_GOORIKII) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_KUCHIITO) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_PLAYER_APPOINT) {
+        Slide2PositionOffset(33408, 8, 8);
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        Slide2PositionOffset(33408, 8, 8);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_KUCHIITO) {
+        Slide2PositionOffset(33408, -8, 0);
+    }
+    with (actor ACTOR_NPC_GOORIKII) {
+        Slide2PositionOffset(33408, -8, 8);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_KINOGASSA) {
+        Slide2PositionOffset(33408, 0, 8);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        Slide2PositionOffset(33408, 8, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_KINOGASSA);
+    se_Play(11016);
+    bgm2_PlayFadeIn(BGM_EARTHQUAKE3, 30, 256);
+    camera_SetEffect(1, 1, 33024);
+    supervision_Acting(5);
+    with (object OBJECT_D73P41A2_414) {
+        SetOutputAttribute(2);
+    }
+    with (object OBJECT_D73P41A2_414) {
+        SetAnimation(17);
+    }
+    with (object OBJECT_D73P41A2_414) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D73P41A2_414);
+    with (object OBJECT_D73P41A2_414) {
+        SetAnimation(2);
+    }
+    Wait(90);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(60);
+    with (object OBJECT_D73P41A3_415) {
+        Destroy();
+    }
+    with (object OBJECT_D73P41A2_414) {
+        SetAnimation(19);
+    }
+    with (object OBJECT_D73P41A2_414) {
+        WaitAnimation();
+    }
+    with (object OBJECT_D73P41A3_415) {
+        SetAnimation(19);
+    }
+    with (object OBJECT_D73P41A3_415) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D73P41A2_414);
+    with (object OBJECT_D73P41A2_414) {
+        Destroy();
+    }
+    WaitExecuteObject(OBJECT_D73P41A3_415);
+    with (object OBJECT_D73P41A3_415) {
+        Destroy();
+    }
+    bgm_FadeOut(30);
+    bgm2_FadeOut(30);
+    camera_SetEffect(0, 0, 0);
+    with (object OBJECT_D73P41A4_416) {
+        SetAnimation(11);
+    }
+    with (actor ACTOR_NPC_SHEIMI) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_SHEIMI) {
+        SetAnimation(2);
+    }
+    Wait(30);
+    with (actor ACTOR_PLAYER_APPOINT) {
+        SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_LEFT, 3);
+    }
+    with (actor ACTOR_NPC_KINOGASSA) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_GOORIKII) {
+        SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_RIGHT, 3);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_KUCHIITO) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    Wait(30);
+    with (actor ACTOR_NPC_SHEIMI) {
+        SetAnimation(23);
+    }
+    supervision_Acting(6);
+    with (object OBJECT_D73P41A4_416) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_D73P41A5_417) {
+        SetOutputAttribute(4);
+    }
+    with (object OBJECT_D73P41A5_417) {
+        SetAnimation(17);
+    }
+    with (object OBJECT_D73P41A5_417) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D73P41A5_417);
+    with (object OBJECT_D73P41A5_417) {
+        SetAnimation(19);
+    }
+    with (actor ACTOR_PLAYER_APPOINT) {
+        Slide2PositionOffset(33408, 8, 8);
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        Slide2PositionOffset(33408, 8, 8);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_KUCHIITO) {
+        Slide2PositionOffset(33408, -8, 0);
+    }
+    with (actor ACTOR_NPC_GOORIKII) {
+        Slide2PositionOffset(33408, -8, 8);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_KINOGASSA) {
+        Slide2PositionOffset(33408, 0, 8);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        Slide2PositionOffset(33408, 8, 0);
+    }
+    screen2_WhiteOut(0, 30);
+    screen_WhiteOut(1, 30);
+    Wait(160);
+    end;
+}

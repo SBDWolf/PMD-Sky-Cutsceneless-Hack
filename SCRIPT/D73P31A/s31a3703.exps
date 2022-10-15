@@ -1,0 +1,239 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_TIME_RESTORED, 0, 256);
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V24P08A);
+    back_SetGround(LEVEL_D73P31A);
+    supervision_Acting(0);
+    camera2_SetPositionMark(Position<'m0', 19, 15.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen2_FadeIn(0, 60);
+    screen_FadeIn(1, 60);
+    with (actor ACTOR_NPC_KUCHIITO) {
+        MovePositionMark(32896, Position<'m1', 25.5, 33.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_KUCHIITO);
+    with (actor ACTOR_NPC_KUCHIITO) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_NPC_GOORIKII) {
+        MovePositionMark(32896, Position<'m2', 24.5, 38.5>);
+    }
+    Wait(20);
+    with (actor ACTOR_PLAYER_APPOINT) {
+        MovePositionMark(32896, Position<'m3', 36, 37.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_KINOGASSA) {
+        Turn2Direction(8, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_KINOGASSA);
+    Wait(10);
+    with (actor ACTOR_NPC_KINOGASSA) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        MovePositionMark(32896, Position<'m4', 37.5, 42.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        MovePositionMark(32896, Position<'m5', 42.5, 35.5>);
+    }
+    with (actor ACTOR_NPC_GOORIKII) {
+        ExecuteCommon(CORO_LOOK_AROUND_LEFT_FUNC_SERIES, 0);
+    }
+    Wait(15);
+    with (actor ACTOR_PLAYER_APPOINT) {
+        ExecuteCommon(CORO_LOOK_AROUND_RIGHT_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_KINOGASSA);
+    with (actor ACTOR_NPC_KINOGASSA) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_KINOGASSA) {
+        SlidePositionMark(32896, Position<'m6', 30.5, 40.5>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    Wait(10);
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        ExecuteCommon(CORO_LOOK_AROUND_RIGHT_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_KINOGASSA);
+    with (actor ACTOR_NPC_KINOGASSA) {
+        SetAnimation(2);
+    }
+    message_SetFace(ACTOR_NPC_KUCHIITO, FACE_INSPIRED, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" This is the summit?\nIt\'s just such a change from what we\nwere looking at before...",
+        french=" Alors ça ressemble à ça,\nle sommet? Rien à voir avec tout à l\'heure...",
+        german=" Das ist also der Gipfel?\nEr hat sich wirklich verändert gegenüber\nder Müllkippe von zuvor...",
+        italian=" È questa la cima?\nÈ completamente cambiata rispetto\na prima...",
+        spanish=" ¿Seguimos estando en la cima?\nMenudo cambiazo, no se parece en nada a\nlo que se veía hace solo un momento...",
+    });
+    message_Talk({
+        english=" It\'s so beautiful...",
+        french=" C\'est tellement beau...",
+        german=" Er ist so schön...",
+        italian=" Che meraviglia...",
+        spanish=" Es precioso...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_KINOGASSA, FACE_INSPIRED, FACE_POS_BOTTOM_L_CENTER);
+    message_Talk({
+        english=" I\'ve never seen such beautiful\nscenery before...",
+        french=" Je n\'avais jamais vu de\npaysage aussi beau...",
+        german=" So eine schöne Aussicht sehe\nich zum ersten Mal...",
+        italian=" Non ho mai visto un panorama\ncosì bello...",
+        spanish=" Nunca había visto un paisaje\ntan hermoso...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_GOORIKII, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEOUTW);
+    message_Talk({
+        english=" .........",
+        french=" ..........",
+        german=" ..........",
+        italian=" ..........",
+        spanish=" ...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_SHEIMI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_SHEIMI);
+    message_SetFace(ACTOR_NPC_SHEIMI, FACE_HAPPY, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Congratulations on reaching\nthe summit!",
+        french=" Félicitations pour avoir atteint\nle sommet!",
+        german=" Meinen herzlichen Glückwunsch\nfür das Erreichen des Gipfels!",
+        italian=" Congratulazioni per aver\nraggiunto la cima!",
+        spanish=" ¡Enhorabuena por llegar\na la cima!",
+    });
+    message_Talk({
+        english=" This is the [CS:P]Sky Peak[CR] Summit!",
+        french=" Vous êtes au\n[CS:P]Sommet du Pic Céleste[CR]!",
+        german=" Dies ist die [CS:P]Himmelsgipfelspitze[CR]!",
+        italian=" Questa è la vetta\ndel [CS:P]Picco del Cielo[CR]!",
+        spanish=" ¡Esta es la [CS:P]Cumbre del Cielo[CR]!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_GOORIKII) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_GOORIKII);
+    with (actor ACTOR_NPC_GOORIKII) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    message_SetFace(ACTOR_NPC_GOORIKII, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEOUTW);
+    message_Talk({
+        english=" Wow!\nWe did it!!",
+        french=" Waouh!!\nOn a réussi!!",
+        german=" Wow!!!\nWir haben es geschafft!!!",
+        italian=" Wow!!!\nCe l\'abbiamo fatta!!!",
+        spanish=" ¡¡Qué fuerte!! ¡Lo hemos conseguido!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_GOORIKII) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_KINOGASSA) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    with (actor ACTOR_NPC_KINOGASSA) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    message_SetFace(ACTOR_NPC_KINOGASSA, FACE_INSPIRED, FACE_POS_BOTTOM_L_CENTER);
+    message_Talk({
+        english=" At last! We\'ve reached\nthe summit!",
+        french=" On a enfin atteint le sommet!",
+        german=" Endlich!\nWir haben den Gipfel erreicht!",
+        italian=" Finalmente abbiamo raggiunto\nla cima!",
+        spanish=" ¡Al fin hemos alcanzado la cima!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_KUCHIITO) {
+        MovePositionOffset(32972, 16, -16);
+    }
+    WaitExecuteLives(ACTOR_NPC_KUCHIITO);
+    with (actor ACTOR_NPC_KUCHIITO) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_KUCHIITO);
+    Wait(20);
+    se_Play(8978);
+    with (actor ACTOR_NPC_KUCHIITO) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_KUCHIITO) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_KUCHIITO);
+    with (actor ACTOR_NPC_KINOGASSA) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    message_SetFace(ACTOR_NPC_KUCHIITO, FACE_INSPIRED, FACE_POS_TOP_L_FACEINW);
+    message_FacePositionOffset(2, -2);
+    message_Talk({
+        english=" Hey, everyone! Look over here!",
+        french=" Hé, tout le monde!\nRegardez!",
+        german=" Hey, alle! Seht mal dort!",
+        italian=" Ehi! Venite tutti a dare\nun\'occhiata!",
+        spanish=" ¡Eh, mirad esto!",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_SHEIMI) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_GOORIKII) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    Wait(5);
+    with (actor ACTOR_PLAYER_APPOINT) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_KINOGASSA) {
+        Turn2Direction(4, 2, DIR_UP);
+    }
+    Wait(3);
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_ADVENTURE_NPC2);
+    with (actor ACTOR_NPC_KUCHIITO) {
+        MovePositionMark(1, Position<'m7', 27.5, 21.5>);
+    }
+    Wait(30);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m8', 31.5, 24.5>);
+    }
+    with (actor ACTOR_NPC_GOORIKII) {
+        MovePositionMark(1, Position<'m9', 28.5, 24.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_KINOGASSA) {
+        MovePositionMark(1, Position<'m10', 28.5, 37.5>, Position<'m11', 28.5, 32.5>, Position<'m12', 31.5, 24.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        MovePositionMark(1, Position<'m13', 39.5, 25.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        MovePositionMark(1, Position<'m14', 36.5, 24.5>);
+    }
+    with (actor ACTOR_PLAYER_APPOINT) {
+        MovePositionMark(1, Position<'m15', 34, 21.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_APPOINT);
+    Wait(45);
+    screen2_FadeOut(0, 30);
+    screen_FadeOut(1, 30);
+    back2_SetMode(0);
+    end;
+}
