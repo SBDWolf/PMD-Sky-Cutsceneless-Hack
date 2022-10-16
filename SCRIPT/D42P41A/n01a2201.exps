@@ -1,0 +1,148 @@
+
+def 0 {
+    sound_Stop();
+    back_SetDungeonBanner(125, 0);
+    screen_FadeIn(1, 16);
+    Wait(60);
+    screen_FadeOut(1, 16);
+    Wait(15);
+    back_SetGround(LEVEL_D42P41A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_ONE_FOR_ALL_ALL_FOR_ONE, 0, 256);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        MovePositionMark(33075, Position<'m0', 31.5, 36.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" All right![K] It\'s not over yet!",
+        french=" Très bien![K]\nOn va voir c\'qu\'on va voir!",
+        german=" Alles klar![K]\nEs ist noch nicht vorbei!",
+        italian=" Forza![K] Non è ancora finita!",
+        spanish=" ¡Venga![K] ¡Esto no se acaba aquí!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_HEIGANI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    message_SetFace(ACTOR_NPC_HEIGANI, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_FacePositionOffset(0, -2);
+    message_Talk({
+        english=" These guys are exceptionally\nstubborn. Hey, hey!",
+        french=" Saperlipopince! Ces types sont\ndu genre coriace!",
+        german=" Diese Typen sind unglaublich\nzäh. Hey, hey!",
+        italian=" Questi tipi sono davvero degli\nossi duri. Ehi, ehi!",
+        spanish=" Oye, estos tipos son muy duros\nde mollera.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8971);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(2);
+    }
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_FacePositionOffset(-3, 0);
+    message_Talk({
+        english=" We\'re HAVING a hard TIME\nwith THEM.",
+        french=" ILS nous DONNENT du FIL\nà RETORDRE!",
+        german=" DIE sind GANZ schön\nANSTRENGEND.",
+        italian=" Ce la STIAMO vedendo BRUTTA\ncontro di LORO.",
+        spanish=" Nos lo están poniendo difícil.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8974);
+    with (actor ACTOR_NPC_KIMAWARI) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_KIMAWARI);
+    message_SetFace(ACTOR_NPC_KIMAWARI, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_FacePositionOffset(0, -3);
+    message_Talk({
+        english=" But![K] We won\'t lose!",
+        french=" Mais zut![K]\nOn ne va pas se laisser faire comme ça!",
+        german=" Aber![K]\nWir werden nicht verlieren!",
+        italian=" Ma![K] Non perderemo!",
+        spanish=" Pero...[K] ¡No podemos perder!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_DETERMINED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Got it! Yup yup!",
+        french=" Bien reçu! Ouaip ouaip!",
+        german=" Verstanden! Jawollja!",
+        italian=" Nossignore! Già, già!",
+        spanish=" ¡Estoy de acuerdo, sí, señor!",
+    });
+    message_Talk({
+        english=" If I\'m there, I think it\'ll cause\nmore trouble if I help...",
+        french=" J\'vais p\'tête vous apporter plus\nd\'ennuis qu\'autre chose en restant\nà vos côtés...",
+        german=" Vielleicht verwirrt es nur,\nwenn ich mich da jetzt einmische...",
+        italian=" Forse la mia presenza sarà più\nd\'intralcio che d\'aiuto...",
+        spanish=" La verdad es que creo que si\nayudo no haré más que estorbar...",
+    });
+    message_Talk({
+        english=" But...[K] I should try my best\nand help fight!",
+        french=" Mais...[K] faut que j\'donne tout\nc\'que j\'ai pour vous aider à les battre!",
+        german=" Aber...[K] Ich sollte mein Bestes\ngeben und mithelfen!",
+        italian=" Però...[K] devo unirmi alla lotta\ne fare del mio meglio!",
+        spanish=" Pero...[K] debería ir a por todas\ny ayudar en el combate.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_YUKIKABURI);
+    with (actor ACTOR_NPC_YUKIKABURI) {
+        SetAnimation(2);
+    }
+    message_SetFace(ACTOR_NPC_YUKIKABURI, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Humph...[K] Even if you join in,\nnothing will change!",
+        french=" Humph...[K] Tu peux bien te joindre\nà eux, si ça t\'amuse. Ça ne changera\nrien du tout.",
+        german=" Grmpf...[K] Auch wenn du\nmitmachst, wird das gar nichts ändern!",
+        italian=" Bah...[K] Anche se ti unisci a loro,\nnon cambierà nulla!",
+        spanish=" ¡Ja![K] Por mucho que te unas\na ellos, no supondrá ninguna diferencia.",
+    });
+    message_Talk({
+        english=" Let\'s go!",
+        french=" A l\'attaque!",
+        german=" Los geht\'s!",
+        italian=" Andiamo!",
+        spanish=" ¡Vamos!",
+    });
+    message_Close();
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(5);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    WaitSe(5143);
+    se_Play(5136);
+    CallCommon(CORO_BOSS_WIPE_FUNC);
+    main_EnterDungeon(125, 30);
+    main_EnterDungeon(-1, 30);
+    hold;
+    end;
+}

@@ -1,0 +1,90 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_P01P01A);
+    supervision_Acting(0);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetAnimation(27);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_TREASURE_TOWN, 0, 256);
+    Wait(30);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetAnimation(28);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetAnimation(2);
+    }
+    Wait(15);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    Wait(20);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        ExecuteCommon(CORO_HEAD_SHAKE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    Wait(20);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SPECIAL2, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Sniff...[K] I came back...",
+        french=" Snif...[K] Retour au point d\'départ...",
+        german=" Schnief...[K] Da bin ich wieder...",
+        italian=" Sniff...[K] Non ce l\'ho fatta...",
+        spanish=" Jo...[K] Pues ya he vuelto...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_DETERMINED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" But while I\'m just sitting here,\neveryone is fighting that band of thieves\nfor me! Yup yup!",
+        french=" Mais pendant que j\'suis assis là\nà geindre, les gars sont en train d\'se battre\npour moi contre la bande de voleurs, pardi!",
+        german=" Und während ich hier nur\nherumsitze, bekämpfen alle anderen die\nDiebesbande für mich! Jawollja!",
+        italian=" Ma mentre io me ne sto\nfermo qui, gli altri stanno lottando contro\nquella banda di ladri per difendermi! Già, già!",
+        spanish=" Pero mientras estoy aquí de\nbrazos cruzados todos combaten contra esa\npanda de ladrones. ¡Sí, señor!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8962);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" ...[K]I wonder why everyone came\nall the way out here for me...",
+        french=" ...[K] Je m\'demande pourquoi\ny sont tous venus jusqu\'ici pour m\'secourir.",
+        german=" ...[K]Ich frage mich, weshalb sie\nfür mich den ganzen Weg gekommen sind...",
+        italian=" ...[K] Chissà perché sono venuti\ntutti fin qui per me...",
+        spanish=" Me pregunto...[K] por qué vendrían\ntodos hasta aquí por mí...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_DETERMINED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Anyway![K] I should hurry up and\nget in there too!",
+        french=" Assez bavassé![K] Faut qu\'j\'aille\nfiler un coup de main dare-dare!",
+        german=" Wie dem auch sei![K] Ich sollte\nmich beeilen und auch mitmachen!",
+        italian=" Ma non c\'è tempo ora![K] Devo\nsbrigarmi e aiutarli!",
+        spanish=" En fin...[K] ¡Debería darme prisa\ny echarles una mano!",
+    });
+    message_Close();
+    end;
+}

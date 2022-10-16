@@ -1,0 +1,100 @@
+
+def 0 {
+    sound_Stop();
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_PAIN, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Sniff...[K] It\'s too tough...",
+        french=" Snif...[K] C\'est trop balaise...",
+        german=" Schnief...[K]\nDas ist härter als erwartet...",
+        italian=" Sniff...[K] È così difficile...",
+        spanish=" Ay...[K] Es demasiado difícil...",
+    });
+    message_Talk({
+        english=" I\'ll have to try again...",
+        french=" Y va falloir que j\'réessaye...",
+        german=" Ich werde es noch\neinmal versuchen...",
+        italian=" Dovrò riprovarci...",
+        spanish=" Tendré que volver a intentarlo...",
+    });
+    message_KeyWait();
+    screen_FadeOutAll(1, 60);
+    message_CloseEnforce();
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    screen_FadeOut(1, 30);
+    back_SetGround(LEVEL_D42P21A);
+    supervision_Acting(0);
+    supervision_StationCommon(0);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetAnimation(27);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_DEEP_STAR_CAVE, 0, 256);
+    Wait(30);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetAnimation(28);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetAnimation(2);
+    }
+    Wait(15);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    Wait(20);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        ExecuteCommon(CORO_HEAD_SHAKE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    Wait(20);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SAD, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Sniff...[K]\nIt\'s too tough...[K] But...",
+        french=" Snif...[K]\nC\'est vachement dur...[K] Mais...",
+        german=" Schnüff...[K] Das ist so hart...[K]\nAber...",
+        italian=" Sniff...[K]\nÈ così difficile...[K] ma...",
+        spanish=" Buaa...[K]\nEs demasiado difícil...[K] Pero...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    Wait(10);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_DETERMINED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" This is my chance! Everyone\nworked so hard for me!",
+        french=" ... j\'peux pas laisser passer\ncette occasion! Les gars ont tout fait pour\nqu\'j\'y arrive!",
+        german=" Das ist meine Gelegenheit! Alle\nhaben sich solch eine Mühe für mich gegeben!",
+        italian=" ... questa è la mia occasione!\nLo devo fare per tutti i miei amici che\nsi sono impegnati così tanto per me!",
+        spanish=" ¡Esta es mi oportunidad! Todos\nse han esforzado mucho por mí.",
+    });
+    message_Talk({
+        english=" I can\'t just give up here! Nope!",
+        french=" J\'peux pas abandonner ici! Non!",
+        german=" Ich kann hier nicht aufgeben!\nAuf gar keinen Fall!",
+        italian=" Non posso mollare adesso!\nNossignore!",
+        spanish=" ¡No puedo rendirme ahora!",
+    });
+    message_Talk({
+        english=" I\'ll just have to gather up my\ncourage and try again!",
+        french=" Y faut que j\'rassemble mon\ncourage et que j\'m\'y remette!",
+        german=" Ich muss nur die Zähne\nzusammenbeißen und es noch einmal versuchen!",
+        italian=" Devo farmi coraggio\ne riprovare!",
+        spanish=" Voy a tener que armarme de\nvalor e intentarlo de nuevo.",
+    });
+    message_Close();
+    end;
+}

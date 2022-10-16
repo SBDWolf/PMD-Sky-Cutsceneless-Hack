@@ -1,0 +1,39 @@
+
+def 0 {
+    with (actor ACTOR_PLAYER_BIPPA) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_ResetActor();
+    message_Mail({
+        english="[CN]Would you like to go on?",
+        french="[CN]Voulez-vous poursuivre?",
+        german="[CN]Fortfahren?",
+        italian="[CN]Vuoi proseguire?",
+        spanish="[CN]¿Quieres continuar?",
+    });
+    switch ( message_SwitchMenu(0, 1) ) {
+        case menu({
+            english="Yes",
+            french="Oui",
+            german="Ja",
+            italian="Sì",
+            spanish="Sí",
+        }):
+        default:
+            §label_0;
+            message_Close();
+            main_EnterDungeon(124, 30);
+            main_EnterDungeon(-1, 30);
+            hold;
+        case menu({
+            english="No",
+            french="Non",
+            german="Nein",
+            italian="No",
+            spanish="No",
+        }):
+            message_Close();
+            end;
+    }
+}

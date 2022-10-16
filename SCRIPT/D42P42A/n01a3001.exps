@@ -1,0 +1,160 @@
+
+def 0 {
+    sound_Stop();
+    back_SetDungeonBanner(127, 0);
+    screen_FadeIn(1, 16);
+    Wait(60);
+    screen_FadeOut(1, 16);
+    Wait(15);
+    back_SetGround(LEVEL_D42P42A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_IN_THE_DEPTHS_OF_THE_PIT, 0, 256);
+    Wait(30);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        MovePositionMark(1, Position<'m0', 31.5, 31.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    Wait(10);
+    se_Play(8963);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Hey! [CS:N]Jirachi[CR]![K]\nI\'ve come back, yup yup!",
+        french=" Ohé! [CS:N]Jirachi[CR]![K]\nMe r\'voilà, pardi!",
+        german=" Hey! [CS:N]Jirachi[CR]![K]\nDa bin ich wieder, jawollja!",
+        italian=" Ehi! [CS:N]Jirachi[CR]![K]\nSono tornato, già, già!",
+        spanish=" ¡Eh, [CS:N]Jirachi[CR]![K]\n¡He vuelto, sí, señor!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_ResetActor();
+    message_Talk({
+        english=" ...Yaaaaaawwwwwnnnn...",
+        french=" ... Ouuuuuuaaaaaah...",
+        german=" ...Gäääääääähn...",
+        italian=" ... Yaaaaaawwwwwwnnn...",
+        spanish=" Aaaaaaaahm...",
+    });
+    bgm_FadeOut(60);
+    message_Talk({
+        english=" I\'m sleeeeeepy...[K] Yaaaaawn...",
+        french=" Siiiii fatigué...[K] Ouuuaaah...",
+        german=" Ich bin müüüüüde...[K] Gääääähn...",
+        italian=" Ho sooonnoooooo...[K] Yaaaaaawn...",
+        spanish=" Tengo sueeeeeeñooo...[K] Uaaaa...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    supervision_Acting(1);
+    se_Play(9224);
+    with (actor ACTOR_NPC_JIRAACHI) {
+        SetAnimation(25);
+    }
+    with (actor ACTOR_NPC_JIRAACHI) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_JIRAACHI);
+    with (actor ACTOR_NPC_JIRAACHI) {
+        SetAnimation(43);
+    }
+    WaitSe(9224);
+    bgm_PlayFadeIn(BGM_BEYOND_THE_DREAM, 0, 256);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_JIRAACHI, FACE_HAPPY, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" I\'m [CS:N]Jirachi[CR].[K]\nWho are you? Zzzz... Snorf...",
+        french=" Je suis [CS:N]Jirachi[CR].[K]\nQui es-tu? Zzzz... ron...",
+        german=" Ich bin [CS:N]Jirachi[CR].[K]\nWer bist du? Zzzzzz... Schnrmpf...",
+        italian=" Io sono [CS:N]Jirachi[CR].[K]\nE tu chi sei? Zzz... Ronf...",
+        spanish=" Soy [CS:N]Jirachi[CR].[K]\n¿Tú quién eres? Zzzz... Groonf...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SPECIAL2, FACE_POS_STANDARD);
+    message_Talk({
+        english=" I\'m [CS:Y]Bidoof[CR].[K] (That\'s what I\'ve\nbeen telling you since the beginning...)",
+        french=" J\'suis [CS:Y]Keunotor[CR].[K] (Il est bouché,\nma parole, j\'arrête pas d\'lui dire...)",
+        german=" Ich bin [CS:Y]Bidiza[CR].[K]\n(Merk dir das endlich mal...)",
+        italian=" Mi chiamo [CS:Y]Bidoof[CR].[K] (È dall\'inizio\nche mi chiede sempre la stessa cosa...)",
+        spanish=" Soy [CS:Y]Bidoof[CR].[K] (Me da que tiene\nun ligero problema de memoria...)",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JIRAACHI, FACE_HAPPY, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Hmmm...[K] I\'m still so sleeeepy...\nYaaaaawn...",
+        french=" Mmmh...[K] Encore siiiiii fatigué...\nOuuuuaaaah...",
+        german=" Hmmmmmmm...[K] Immer noch so\nmüüüüüüde... Gäääääähn...",
+        italian=" Mmmh...[K] Ho ancora tanto\nsooonnooo... Yaaaaaawn...",
+        spanish=" Hum...[K] Sigo teniendo sueñooo...\nAaaaahm...",
+    });
+    message_Talk({
+        english=" I tend to act strangely when I\nsleep and cause trouble all around me, so I\napologize again... Zzzz... Snorf...",
+        french=" J\'ai tendance à faire de drôles\nde choses dans mon sommeil et ça peut faire\ndes dégâts, alors, encore désolé... Zzz... ron...",
+        german=" Ich neige dazu, mich im Schlaf\nsonderbar zu benehmen und ganz schön was\nanzurichten. Entschuldige... Zzzz... Schnrmpf...",
+        italian=" Quando dormo mi capita di\nagire in maniera strana e combinare dei guai,\nquindi ti chiedo di nuovo scusa... Zzzz... Ronf...",
+        spanish=" Suelo actuar de forma extraña y\ndar problemas cuando duermo, pero no lo hago\naposta, lo siento... Zzzz... Groonf...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8961);
+    with (actor ACTOR_PLAYER_BIPPA) {
+        SetEffect(EFFECT_SWEAT_DROP, 3);
+    }
+    with (actor ACTOR_PLAYER_BIPPA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_BIPPA);
+    message_SetFace(ACTOR_PLAYER_BIPPA, FACE_SPECIAL2, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Ugh...\n(I thought this before, yup yup...)",
+        french=" Argh...\n(J\'m\'en étais rendu compte, pardi...)",
+        german=" Uff...\n(Na, lieber spät als gar nicht, jawollja...)",
+        italian=" Urgh...\n(Già lo sapevo, ohibò...)",
+        spanish=" Uf... (Pues menos mal que\nlo hace sin querer, porque suelta cada leche...)",
+    });
+    message_Talk({
+        english=" ... (He isn\'t really\nasleep, is he...? Sniff...)",
+        french=" ... (Mais y dort pas pour\nde vrai, si...? Snif...)",
+        german=" ...(Schläft es überhaupt\nwirklich? Schnief...)",
+        italian=" (Ma sta davvero dormendo o fa\nsolo finta...? Sniff...)",
+        spanish=" Jo... (A ver si me la está dando\ncon queso con eso de que duerme... Snif...)",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_FadeOut(60);
+    message_SetFace(ACTOR_NPC_JIRAACHI, FACE_HAPPY, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Ready...? Zzzz... Snorf...",
+        french=" Prêt...? Zzzz... ron...",
+        german=" Bereit? Zzzz... Schnrmpf...",
+        italian=" Sei pronto...? Zzzz... Ronf...",
+        spanish=" ¿Estás listo...? Zzzz... Groonf...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    WaitSe(5143);
+    CallCommon(CORO_BOSS_WIPE_FUNC);
+    main_EnterDungeon(127, 30);
+    main_EnterDungeon(-1, 30);
+    hold;
+    end;
+}

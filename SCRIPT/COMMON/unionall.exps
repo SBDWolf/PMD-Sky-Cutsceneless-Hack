@@ -5310,6 +5310,7 @@ coro EVENT_S02_04 {
 
 coro EVENT_S02_05 {
     CallCommon(CORO_SUBSCREEN_INIT);
+    //TODO: test this script with a party of 4
     supervision_ExecuteActingSub(LEVEL_D79P41A, 'S02P0501', 0);
     main_EnterDungeon(49, 30);
     main_EnterDungeon(-1, 30);
