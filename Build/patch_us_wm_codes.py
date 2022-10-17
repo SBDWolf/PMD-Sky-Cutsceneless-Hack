@@ -24,9 +24,9 @@ else:
     quit()
 newbyteswap = romcontents.replace(eu_byteswap, us_byteswap)
 try:
-    with open(sys.argv[1], "wb") as f:
+    with open(r".\modified\US.nds", "wb") as f:
         f.write(newbyteswap)
         print("Done.")
 except IOError:
-    print("Could not write to the specified file.")
+    print("Could not write the file.")
     quit()
