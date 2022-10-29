@@ -1,0 +1,211 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_S04P01A);
+    screen_FadeIn(1, 0);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Ugh...[K] That ended badly.",
+                french=" Argh...[K] Ça s\'est mal terminé.",
+                german=" Uff...[K] Das ging böse aus.",
+                italian=" Oh...[K] È finita male.",
+                spanish=" Uf...[K] No ha acabado nada bien.",
+            }
+        case 2:
+            {
+                english=" Ugh...[K] We didn\'t make it...",
+                french=" Argh...[K] Ça s\'est mal terminé.",
+                german=" Uff...[K] Nicht geschafft...",
+                italian=" Uff...[K] Non ce l\'abbiamo fatta.",
+                spanish=" Uf...[K] No lo logramos.",
+            }
+        default:
+            {
+                english=" Ugh...[K] We didn\'t get through...",
+                french=" Argh...[K] Ça s\'est mal terminé.",
+                german=" Uff...[K] Wir kamen nicht durch...",
+                italian=" Uh...[K] Non ce l\'abbiamo fatta.",
+                spanish=" Uf...[K] No ha ido muy bien.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hmm... This is tough...[K] Let\'s stop\nfor now and try again tomorrow.",
+                french=" Hum... Ce n\'est pas une mince\naffaire...[K] A chaque jour suffit sa peine.\nRetentons notre chance demain.",
+                german=" Hmm... Es ist schwer...[K] Lasst\nuns erst einmal eine Pause einlegen und dann\nmorgen weitermachen.",
+                italian=" Mmm... È dura...[K] Fermiamoci\nqui per oggi e riproviamo domani.",
+                spanish=" Hum... Esto no es fácil...[K]\nDejémoslo por hoy e intentémoslo de\nnuevo mañana.",
+            }
+        case 2:
+            {
+                english=" Hmm... This is tough...[K] Let\'s stop\nfor now and try again tomorrow.",
+                french=" Hum... Ce n\'est pas une mince\naffaire...[K] A chaque jour suffit sa peine.\nRetentons notre chance demain.",
+                german=" Hmm... Es ist schwer...[K] Lasst\nuns erst einmal eine Pause einlegen und dann\nmorgen weitermachen.",
+                italian=" Mmm... È dura...[K] Fermiamoci\nqui per oggi e riproviamo domani.",
+                spanish=" Hum... Esto no es fácil...[K]\nDejémoslo por hoy e intentémoslo de\nnuevo mañana.",
+            }
+        default:
+            {
+                english=" Hmm... This is tough...[K] Let\'s stop\nfor now and try again tomorrow.",
+                french=" Hum... Ce n\'est pas une mince\naffaire...[K] A chaque jour suffit sa peine.\nRetentons notre chance demain.",
+                german=" Hmm... Es ist schwer...[K] Lasst\nuns erst einmal eine Pause einlegen und dann\nmorgen weitermachen.",
+                italian=" Mmm... È dura...[K] Fermiamoci\nqui per oggi e riproviamo domani.",
+                spanish=" Hum... Esto no es fácil...[K]\nDejémoslo por hoy e intentémoslo de\nnuevo mañana.",
+            }
+    }
+    message_KeyWait();
+    screen_FadeOutAll(1, 60);
+    message_CloseEnforce();
+    Wait(60);
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    message_Narration(30, {
+        english="[CN]The next morning...",
+        french="[CN]Le lendemain matin...",
+        german="[CN]Am nächsten Morgen...",
+        italian="[CN]La mattina dopo...",
+        spanish="[CN]Al día siguiente...",
+    });
+    message_Close();
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V24P08A);
+    back_SetGround(LEVEL_H02P99A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    camera2_SetPositionMark(Position<'m0', 19, 15.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetDirection(DIR_LEFT);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(76);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(76);
+    }
+    bgm_PlayFadeIn(BGM_OCEAN1, 90, 256);
+    screen2_FadeIn(0, 30);
+    screen_FadeIn(1, 30);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(63);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitAnimation();
+    }
+    Wait(5);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(63);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    Wait(30);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Good morning, [hero]!",
+                french=" Bonjour, [hero]!",
+                german=" Guten Morgen, [hero]!",
+                italian=" Buongiorno, [hero]!",
+                spanish=" ¡Buenos días, [hero]!",
+            }
+        case 2:
+            {
+                english=" Good morning, [hero]!",
+                french=" Bonjour, [hero]!",
+                german=" Guten Morgen, [hero]!",
+                italian=" Buongiorno, [hero]!",
+                spanish=" ¡Buenos días, [hero]!",
+            }
+        default:
+            {
+                english=" Good morning, [hero]!",
+                french=" Bonjour, [hero]!",
+                german=" Guten Morgen, [hero]!",
+                italian=" Buongiorno, [hero]!",
+                spanish=" ¡Buenos días, [hero]!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Let\'s put an end to [CS:N]Darkrai[CR]\'s\nscheme this time!",
+                french=" Mettons un terme aux projets\nde [CS:N]Darkrai[CR], cette fois-ci!",
+                german=" Setzen wir dem Vorhaben von\n[CS:N]Darkrai[CR] diesmal ein Ende!",
+                italian=" Questa volta metteremo fine ai \npiani di [CS:N]Darkrai[CR]!",
+                spanish=" ¡Acabemos con [CS:N]Darkrai[CR] y su\nmalvado plan de una vez por todas!",
+            }
+        case 2:
+            {
+                english=" Let\'s put an end to [CS:N]Darkrai[CR]\'s\nscheme this time!",
+                french=" Mettons un terme aux projets\nde [CS:N]Darkrai[CR], cette fois-ci!",
+                german=" Setzen wir dem Vorhaben von\n[CS:N]Darkrai[CR] diesmal ein Ende!",
+                italian=" Questa volta metteremo fine ai \npiani di [CS:N]Darkrai[CR]!",
+                spanish=" ¡Acabemos con [CS:N]Darkrai[CR] y su\nmalvado plan de una vez por todas!",
+            }
+        default:
+            {
+                english=" Let\'s put an end to [CS:N]Darkrai[CR]\'s\nscheme this time!",
+                french=" Mettons un terme aux projets\nde [CS:N]Darkrai[CR], cette fois-ci!",
+                german=" Setzen wir dem Vorhaben von\n[CS:N]Darkrai[CR] diesmal ein Ende!",
+                italian=" Questa volta metteremo fine ai \npiani di [CS:N]Darkrai[CR]!",
+                spanish=" ¡Acabemos con [CS:N]Darkrai[CR] y su\nmalvado plan de una vez por todas!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" There\'s no giving up now,\n[hero]!",
+                french=" On n\'a pas le droit d\'abandonner\nmaintenant, [hero]!",
+                german=" Es gibt diesmal kein Aufgeben,\n[hero]!",
+                italian=" Non possiamo arrenderci adesso,\n[hero]!",
+                spanish=" ¡No podemos rendirnos ahora,\n[hero]!",
+            }
+        case 2:
+            {
+                english=" There\'s no giving up now,\n[hero]!",
+                french=" On n\'a pas le droit d\'abandonner\nmaintenant, [hero]!",
+                german=" Es gibt diesmal kein Aufgeben,\n[hero]!",
+                italian=" Non possiamo arrenderci adesso,\n[hero]!",
+                spanish=" ¡No podemos rendirnos ahora,\n[hero]!",
+            }
+        default:
+            {
+                english=" We can\'t give up now,\n[hero]!",
+                french=" On n\'a pas le droit d\'abandonner\nmaintenant, [hero]!",
+                german=" Wir können jetzt nicht aufgeben,\n[hero]!",
+                italian=" Non possiamo arrenderci adesso,\n[hero]!",
+                spanish=" ¡No podemos rendirnos ahora,\n[hero]!",
+            }
+    }
+    message_Close();
+    screen2_FadeOut(1, 30);
+    back2_SetMode(0);
+    end;
+}

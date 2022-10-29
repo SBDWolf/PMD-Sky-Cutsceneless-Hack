@@ -1,6 +1,7 @@
 
 def 0 {
     sound_Stop();
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
     back_SetGround(LEVEL_G01P04A);
     supervision_LoadStation(LEVEL_G01P04A, 'US03');
     supervision_StationCommon(0);
@@ -22,7 +23,6 @@ def 0 {
         camera_SetMyself();
     }
     screen_FadeIn(1, 30);
-    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD_REMIX, 0, 256);
     with (actor ACTOR_NPC_PERAPPU) {
         Turn2Direction(4, 10, DIR_DOWN);
     }
@@ -30,6 +30,5 @@ def 0 {
         MovePositionLives(1, 0);
     }
     WaitExecutePerformer(0);
-    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
     end;
 }

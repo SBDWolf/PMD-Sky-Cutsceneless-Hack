@@ -1,0 +1,393 @@
+
+def 0 {
+    sound_Stop();
+    message_Narration(30, {
+        english="[CN]The next morning...",
+        french="[CN]Le lendemain matin...",
+        german="[CN]Am nächsten Morgen...",
+        italian="[CN]La mattina dopo...",
+        spanish="[CN]Al día siguiente...",
+    });
+    message_Close();
+    bgm_PlayFadeIn(BGM_OCEAN1, 90, 256);
+    Wait(60);
+    message_SetActor(ACTOR_ATTENDANT1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hey, [hero].",
+                french=" Hé, [hero].",
+                german=" Hey, [hero].",
+                italian=" Ciao, [hero].",
+                spanish=" Oye, [hero].",
+            }
+        case 2:
+            {
+                english=" Hey, [hero].",
+                french=" Hé, [hero].",
+                german=" Hey, [hero].",
+                italian=" Ciao, [hero].",
+                spanish=" Oye, [hero].",
+            }
+        default:
+            {
+                english=" Hey, [hero].",
+                french=" Hé, [hero].",
+                german=" Hey, [hero].",
+                italian=" Ciao, [hero].",
+                spanish=" Oye, [hero].",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Come on, [hero].",
+                french=" Allez, [hero].",
+                german=" Komm schon, [hero].",
+                italian=" Forza, [hero].",
+                spanish=" Vamos, [hero].",
+            }
+        case 2:
+            {
+                english=" Come on, [hero].",
+                french=" Allez, [hero].",
+                german=" Komm schon, [hero].",
+                italian=" Forza, [hero].",
+                spanish=" Vamos, [hero].",
+            }
+        default:
+            {
+                english=" Come on, [hero].",
+                french=" Allez, [hero].",
+                german=" Komm schon, [hero].",
+                italian=" Forza, [hero].",
+                spanish=" Vamos, [hero].",
+            }
+    }
+    message_Close();
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V24P08A);
+    back_SetGround(LEVEL_H02P99A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    camera2_SetPositionMark(Position<'m0', 19, 15.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(62);
+    }
+    screen2_FadeIn(0, 30);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_EXPLANATION_FUNC_SERIES, 0);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Wake up, [hero].",
+                french=" Réveille-toi, [hero].",
+                german=" Aufwachen, [hero].",
+                italian=" Svegliati, [hero].",
+                spanish=" Despierta, [hero].",
+            }
+        case 2:
+            {
+                english=" Wake up, [hero].",
+                french=" Réveille-toi, [hero].",
+                german=" Aufwachen, [hero].",
+                italian=" Svegliati, [hero].",
+                spanish=" Despierta, [hero].",
+            }
+        default:
+            {
+                english=" Wake up, [hero].",
+                french=" Réveille-toi, [hero].",
+                german=" Aufwachen, [hero].",
+                italian=" Svegliati, [hero].",
+                spanish=" Despierta, [hero].",
+            }
+    }
+    message_KeyWait();
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_EXPLANATION_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(76);
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It\'s morning already.",
+                french=" C\'est le matin.",
+                german=" Es ist schon Morgen.",
+                italian=" È già mattina.",
+                spanish=" Ya es de día.",
+            }
+        case 2:
+            {
+                english=" It\'s morning already.",
+                french=" C\'est le matin.",
+                german=" Es ist schon Morgen.",
+                italian=" È già mattina.",
+                spanish=" Ya es de día.",
+            }
+        default:
+            {
+                english=" It\'s morning.",
+                french=" C\'est le matin.",
+                german=" Es ist Morgen.",
+                italian=" È già mattina.",
+                spanish=" Ya es de día.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(2);
+    with (actor ACTOR_PLAYER) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(30);
+    with (actor ACTOR_PLAYER) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(2);
+    with (actor ACTOR_PLAYER) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(2);
+    with (actor ACTOR_PLAYER) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(2);
+    with (actor ACTOR_PLAYER) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(45);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(63);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    Wait(30);
+    message_SetFace(ACTOR_PLAYER, FACE_PAIN, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Uh...[K] Uh-huh...)",
+                french="(Hum...[K] Hum...)",
+                german="(Mh...[K] Hm-mmm...)",
+                italian="(Eh...[K] Uh-huh...)",
+                spanish="(¿Eh?[K] Esto...)",
+            }
+        default:
+            {
+                english="(Uh...[K] Uh-huh...)",
+                french="(Hum...[K] Hum...)",
+                german="(Mh...[K] Hm-mmm...)",
+                italian="(Eh...[K] Uh-huh...)",
+                spanish="(¿Eh?[K] Esto...)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m1', 28, 27.5>);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_TOP_L_FACEOUTW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hey, look at this![K] The weather\'s\ngreat again!",
+                french=" Viens voir![K] Il fait encore\nbeau aujourd\'hui!",
+                german=" Hey, sieh dir das an![K] Das Wetter\nist wieder super!",
+                italian=" Ehi, dai un\'occhiata![K] C\'è di\nnuovo bel tempo!",
+                spanish=" ¡Mira![K] ¡Hace muy buen tiempo!",
+            }
+        case 2:
+            {
+                english=" Hey, look at this![K] The weather\'s\ngreat again!",
+                french=" Viens voir![K] Il fait encore\nbeau aujourd\'hui!",
+                german=" Hey, sieh dir das an![K] Das Wetter\nist wieder super!",
+                italian=" Ehi, dai un\'occhiata![K] C\'è di\nnuovo bel tempo!",
+                spanish=" ¡Mira![K] ¡Hace muy buen tiempo!",
+            }
+        default:
+            {
+                english=" Come look at this![K] The weather\'s\ngreat again!",
+                french=" Viens voir![K] Il fait encore\nbeau aujourd\'hui!",
+                german=" Hey, sieh dir das an![K] Das Wetter\nist wieder super!",
+                italian=" Ehi, dai un\'occhiata![K] C\'è di\nnuovo bel tempo!",
+                spanish=" ¡Mira![K] ¡Hace muy buen tiempo!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER, FACE_WORRIED, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(I...[K] I had a dream again.)",
+                french="(J\'ai...[K] j\'ai encore fait un rêve.)",
+                german="(Ich...[K] Ich hatte wieder diesen Traum.)",
+                italian="(Ho...[K] Ho sognato di nuovo.)",
+                spanish="(He vuelto...[K] He vuelto a tener ese sueño.)",
+            }
+        default:
+            {
+                english="(I...[K] I had a dream again.)",
+                french="(J\'ai...[K] j\'ai encore fait un rêve.)",
+                german="(Ich...[K] Ich hatte wieder diesen Traum.)",
+                italian="(Ho...[K] Ho sognato di nuovo.)",
+                spanish="(He vuelto...[K] He vuelto a tener ese sueño.)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(It felt strangely real for a dream, though.)",
+                french="(Pour un rêve, il avait l\'air tellement réel.)",
+                german="(Er fühlte sich allerdings seltsam realistisch\nan.)",
+                italian="(Ma sembrava molto realistico per\nessere un sogno.)",
+                spanish="(Parecía muy real.)",
+            }
+        default:
+            {
+                english="(It felt strangely real for a dream, though.)",
+                french="(Pour un rêve, il avait l\'air tellement réel.)",
+                german="(Er fühlte sich allerdings seltsam realistisch\nan.)",
+                italian="(Ma sembrava molto realistico per\nessere un sogno.)",
+                spanish="(Parecía muy real.)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(I was told...[K]I can\'t exist in this world.)",
+                french="(On m\'a dit...[K] que je n\'avais pas ma place dans\nce monde.)",
+                german="(Mir wurde gesagt,[K] dass ich in dieser Welt\nnicht existieren dürfe.)",
+                italian="(Mi è stato detto...[K] che non posso\nesistere in questo mondo.)",
+                spanish="(Me decía...[K] que no puedo existir en este\nmundo.)",
+            }
+        default:
+            {
+                english="(I was told...[K]I can\'t exist in this world.)",
+                french="(On m\'a dit...[K] que je n\'avais pas ma place dans\nce monde.)",
+                german="(Mir wurde gesagt,[K] dass ich in dieser Welt\nnicht existieren dürfe.)",
+                italian="(Mi è stato detto...[K] che non posso\nesistere in questo mondo.)",
+                spanish="(Me decía...[K] que no puedo existir en este\nmundo.)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(..................)",
+                french="(..................)",
+                german="(..................)",
+                italian="(..................)",
+                spanish="(...)",
+            }
+        default:
+            {
+                english="(..................)",
+                french="(..................)",
+                german="(..................)",
+                italian="(..................)",
+                spanish="(...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(In my dream...[K] [CS:N]Cresselia[CR] said...)",
+                french="(Dans mon rêve...[K] [CS:N]Cresselia[CR] disait...)",
+                german="(In meinem Traum...[K] [CS:N]Cresselia[CR]...)",
+                italian="(Nel mio sogno...[K] [CS:N]Cresselia[CR] ha detto...)",
+                spanish="(En el sueño...[K] [CS:N]Cresselia[CR]...)",
+            }
+        default:
+            {
+                english="(In my dream...[K] [CS:N]Cresselia[CR] said...)",
+                french="(Dans mon rêve...[K] [CS:N]Cresselia[CR] disait...)",
+                german="(In meinem Traum...[K] [CS:N]Cresselia[CR]...)",
+                italian="(Nel mio sogno...[K] [CS:N]Cresselia[CR] ha detto...)",
+                spanish="(En el sueño...[K] [CS:N]Cresselia[CR]...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(If the distortion in the fabric of space\nexpands...[K]the world will be ruined.)",
+                french="(... que si cette distorsion de la trame\nde l\'espace venait à s\'étendre...[K] le monde\nserait dévasté.)",
+                german="(Sie sagte, dass eine weitere Ausdehnung der\nVerzerrung im Raumgefüge...[K] die Welt\nzerstören würde.)",
+                italian="(Ha detto che se la distorsione nella struttura\ndello spazio continua...[K] il mondo sarà\nspacciato.)",
+                spanish="([CS:N]Cresselia[CR] me dijo que si la deformación\ndel espacio sigue aumentando...[K] el mundo\nacabaría por destruirse.)",
+            }
+        default:
+            {
+                english="(If the distortion in the fabric of space\nexpands...[K]the world will be ruined.)",
+                french="(... que si cette distorsion de la trame\nde l\'espace venait à s\'étendre...[K] le monde\nserait dévasté.)",
+                german="(Sie sagte, dass eine weitere Ausdehnung der\nVerzerrung im Raumgefüge...[K] die Welt\nzerstören würde.)",
+                italian="(Ha detto che se la distorsione nella struttura\ndello spazio continua...[K] il mondo sarà\nspacciato.)",
+                spanish="([CS:N]Cresselia[CR] me dijo que si la deformación\ndel espacio sigue aumentando...[K] el mundo\nacabaría por destruirse.)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8978);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    message_SetFace(ACTOR_PLAYER, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Oh! The distortion of space![K] We heard that\nsomewhere before!)",
+                french="(Oh! La distorsion de l\'espace![K] On a déjà\nentendu ça quelque part!)",
+                german="(Oh! Die Verzerrung des Raumes![K] Das haben\nwir irgendwo schon einmal gehört!)",
+                italian="(Oh! La distorsione dello spazio![K] Ne abbiamo\ngià sentito parlare!)",
+                spanish="(¡Ahora que recuerdo...![K] ¡Ya habíamos oído\nhablar de la deformación del espacio!)",
+            }
+        default:
+            {
+                english="(Oh! The distortion of space![K] We heard that\nsomewhere before!)",
+                french="(Oh! La distorsion de l\'espace![K] On a déjà\nentendu ça quelque part!)",
+                german="(Oh! Die Verzerrung des Raumes![K] Das haben\nwir irgendwo schon einmal gehört!)",
+                italian="(Oh! La distorsione dello spazio![K] Ne abbiamo\ngià sentito parlare!)",
+                spanish="(¡Ahora que recuerdo...![K] ¡Ya habíamos oído\nhablar de la deformación del espacio!)",
+            }
+    }
+    message_Close();
+    bgm_FadeOut(160);
+    screen2_FadeOut(0, 30);
+    screen_FadeOut(1, 30);
+    back2_SetMode(0);
+    end;
+}

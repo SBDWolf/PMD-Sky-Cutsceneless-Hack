@@ -1,0 +1,235 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_H02P99C);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    bgm_PlayFadeIn(BGM_OCEAN1, 90, 256);
+    screen_FadeChange(1, 30, 0, 192);
+    Wait(30);
+    message_SetFace(ACTOR_PLAYER, FACE_WORRIED, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(We were told why [partner] and I can\'t\nevolve yet.)",
+                french="(On nous a révélé, à [partner] et à moi,\npourquoi on ne pouvait pas évoluer.)",
+                german="(Es wurde uns erklärt, warum [partner]\nund ich uns noch nicht entwickeln können.)",
+                italian="(Poi ci è stato detto perché [partner] e io\nnon possiamo ancora evolverci.)",
+                spanish="(Entonces nos explicaron por qué [partner]\ny yo no podíamos evolucionar.)",
+            }
+        default:
+            {
+                english="(We were told why [partner] and I can\'t\nevolve yet.)",
+                french="(On nous a révélé, à [partner] et à moi,\npourquoi on ne pouvait pas évoluer.)",
+                german="(Es wurde uns erklärt, warum [partner]\nund ich uns noch nicht entwickeln können.)",
+                italian="(Poi ci è stato detto perché [partner] e io\nnon possiamo ancora evolverci.)",
+                spanish="(Entonces nos explicaron por qué [partner]\ny yo no podíamos evolucionar.)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(We were told that there was distortion in the\nfabric of space that prevented our evolution.)",
+                french="(Une distorsion dans la trame de l\'espace\nempêche notre évolution.)",
+                german="(Es hieß, die Verzerrung des Raumgefüges\nverhindere unsere Entwicklung.)",
+                italian="(Sembrerebbe che ci sia una distorsione della\nstruttura dello spazio che ci impedisce di\nevolverci.)",
+                spanish="(Parecía deberse a la deformación del\nespacio.)",
+            }
+        default:
+            {
+                english="(We were told that there was distortion in the\nfabric of space that prevented our evolution.)",
+                french="(Une distorsion dans la trame de l\'espace\nempêche notre évolution.)",
+                german="(Es hieß, die Verzerrung des Raumgefüges\nverhindere unsere Entwicklung.)",
+                italian="(Sembrerebbe che ci sia una distorsione della\nstruttura dello spazio che ci impedisce di\nevolverci.)",
+                spanish="(Parecía deberse a la deformación del\nespacio.)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(But what does \"a distortion in the fabric of\nspace\" mean?)",
+                french="(Mais c\'est quoi, une \"distorsion dans la trame\nde l\'espace\"?)",
+                german="(Aber was bedeutet das überhaupt?\nVerzerrung des Raumgefüges?)",
+                italian="(Ma cosa significa \"una distorsione della\nstruttura dello spazio\"?)",
+                spanish="(Pero, ¿qué será exactamente esa\n\"deformación del espacio\"?)",
+            }
+        default:
+            {
+                english="(But what does \"a distortion in the fabric of\nspace\" mean?)",
+                french="(Mais c\'est quoi, une \"distorsion dans la trame\nde l\'espace\"?)",
+                german="(Aber was bedeutet das überhaupt?\nVerzerrung des Raumgefüges?)",
+                italian="(Ma cosa significa \"una distorsione della\nstruttura dello spazio\"?)",
+                spanish="(Pero, ¿qué será exactamente esa\n\"deformación del espacio\"?)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Time is back to normal...[K]but maybe some\nthings are still out of whack.)",
+                french="(Le temps a repris son cours normal...[K] mais\npeut-être que quelque chose cloche\nencore.)",
+                german="(Die Zeit läuft wieder normal...[K] Aber eventuell\nsind noch andere Dinge aus der Balance\ngeraten.)",
+                italian="(Il tempo è tornato alla normalità...[K] ma forse\nalcune cose non sono ancora tornate a posto.)",
+                spanish="(El tiempo ha vuelto a la normalidad...[K] pero\nquizás aún haya otras alteraciones.)",
+            }
+        default:
+            {
+                english="(Time is back to normal...[K]but maybe some\nthings are still out of whack.)",
+                french="(Le temps a repris son cours normal...[K] mais\npeut-être que quelque chose cloche\nencore.)",
+                german="(Die Zeit läuft wieder normal...[K] Aber eventuell\nsind noch andere Dinge aus der Balance\ngeraten.)",
+                italian="(Il tempo è tornato alla normalità...[K] ma forse\nalcune cose non sono ancora tornate a posto.)",
+                spanish="(El tiempo ha vuelto a la normalidad...[K] pero\nquizás aún haya otras alteraciones.)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    screen_WhiteChange(1, 2, 256, 128);
+    Wait(2);
+    screen_WhiteChange(1, 2, 128, 256);
+    screen_WhiteChange(1, 2, 256, 128);
+    Wait(5);
+    screen_FadeChange(1, 2, 0, 192);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(10);
+    se_Play(6425);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_BOTTOM_L_FACEOUTW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Whoa! Lightning!",
+                french=" Ouah! Un éclair!",
+                german=" Uaah! Blitze!",
+                italian=" Waah! Fulmini!",
+                spanish=" ¡Aah! ¡Un relámpago!",
+            }
+        case 2:
+            {
+                english=" Waah! Lightning!",
+                french=" Ouah! Un éclair!",
+                german=" Aaaah! Blitze!",
+                italian=" Aaah! Fulmini!",
+                spanish=" ¡Aah! ¡Un relámpago!",
+            }
+        default:
+            {
+                english=" Waah! Lightning!",
+                french=" Ouah! Un éclair!",
+                german=" Aaaah! Blitze!",
+                italian=" Aaah! Fulmini!",
+                spanish=" ¡Aah! ¡Un relámpago!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" The storm looks like it\'s\ngetting closer.",
+                french=" On dirait bien que l\'orage se\nrapproche.",
+                german=" Der Sturm scheint näher zu\nkommen.",
+                italian=" Sembra che la tempesta si\nstia avvicinando.",
+                spanish=" Parece que la tormenta se\nacerca.",
+            }
+        case 2:
+            {
+                english=" I think the storm\'s\ngetting closer.",
+                french=" On dirait bien que l\'orage se\nrapproche.",
+                german=" Ich glaube, der Sturm kommt\nnäher.",
+                italian=" Sembra che la tempesta si\nstia avvicinando.",
+                spanish=" Parece que la tormenta se\nacerca.",
+            }
+        default:
+            {
+                english=" I think the storm\'s\ngetting closer.",
+                french=" On dirait bien que l\'orage se\nrapproche.",
+                german=" Ich glaube, der Sturm kommt\nnäher.",
+                italian=" Sembra che la tempesta si\nstia avvicinando.",
+                spanish=" Parece que la tormenta se\nacerca.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I\'m going to sleep now.",
+                french=" Il est temps d\'aller se coucher.",
+                german=" Ich lege mich jetzt schlafen.",
+                italian=" Cerchiamo di dormire, adesso.",
+                spanish=" Deberíamos irnos a dormir.",
+            }
+        case 2:
+            {
+                english=" We should get some sleep now.",
+                french=" Il est temps d\'aller se coucher.",
+                german=" Wir sollten versuchen, noch\neine Runde zu schlafen.",
+                italian=" Cerchiamo di dormire, adesso.",
+                spanish=" Deberíamos irnos a dormir.",
+            }
+        default:
+            {
+                english=" We should get some sleep now.",
+                french=" Il est temps d\'aller se coucher.",
+                german=" Wir sollten versuchen, noch\neine Runde zu schlafen.",
+                italian=" Cerchiamo di dormire, adesso.",
+                spanish=" Deberíamos irnos a dormir.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(71);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    Wait(30);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Good night, [hero].",
+                french=" Bonne nuit, [hero].",
+                german=" Gute Nacht, [hero].",
+                italian=" Buonanotte, [hero].",
+                spanish=" Buenas noches, [hero].",
+            }
+        case 2:
+            {
+                english=" Good night, [hero].",
+                french=" Bonne nuit, [hero].",
+                german=" Gute Nacht, [hero].",
+                italian=" Buonanotte, [hero].",
+                spanish=" Buenas noches, [hero].",
+            }
+        default:
+            {
+                english=" Good night, [hero].",
+                french=" Bonne nuit, [hero].",
+                german=" Gute Nacht, [hero].",
+                italian=" Buonanotte, [hero].",
+                spanish=" Buenas noches, [hero].",
+            }
+    }
+    message_Close();
+    bgm_FadeOut(120);
+    screen_FadeOut(1, 60);
+    WaitBgm(BGM_OCEAN1);
+    Wait(30);
+    end;
+}

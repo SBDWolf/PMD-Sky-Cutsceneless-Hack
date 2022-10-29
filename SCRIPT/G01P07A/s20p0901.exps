@@ -1,0 +1,467 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
+    with (actor ACTOR_NPC_SURIIPU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_SURIIPU) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_SURIIPU);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_SURIIPU);
+    }
+    message_SetFace(ACTOR_NPC_SURIIPU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Oh!",
+        french=" Oh!",
+        german=" Oh!",
+        italian=" Oh!",
+        spanish=" ¡Ah!",
+    });
+    message_Talk({
+        english=" Are you two ready to go into\nthe dream?",
+        french=" Voulez-vous aller dans le rêve?",
+        german=" Seid ihr zwei bereit,\nin den Traum zu gehen?",
+        italian=" È tutto pronto? Volete entrare\nnel sogno?",
+        spanish=" ¿Ya os habéis preparado?",
+    });
+    switch ( message_SwitchMenu(0, 1) ) {
+        case menu({
+            english="Ready",
+            french="Oui",
+            german="Ja",
+            italian="Sì",
+            spanish="Sí",
+        }):
+        default:
+            §label_0;
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            switch ( ProcessSpecial(PROCESS_SPECIAL_IS_TEAM_SETUP_HERO_AND_PARTNER_ONLY, 0, 0) ) {
+                case 1:
+                    §label_5;
+                    bgm_FadeOut(60);
+                    screen_FadeOut(1, 30);
+                    sound_Stop();
+                    $SCENARIO_MAIN = scn[29, 76];
+                    main_EnterDungeon(63, 0);
+                    switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+                    main_EnterDungeon(-1, 0);
+                    //supervision_ExecuteActing(LEVEL_D37P11A, 'S20P0902', 0);
+                    hold;
+                    end;
+                default:
+                    switch ( ProcessSpecial(PROCESS_SPECIAL_IS_TEAM_SETUP_PARTNER_AND_HERO_ONLY, 0, 0) ) {
+                        case 1:
+                            with (actor ACTOR_ATTENDANT1) {
+                                Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+                            }
+                            WaitExecuteLives(ACTOR_ATTENDANT1);
+                            message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+                            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                                case 1:
+                                    {
+                                        english=" Hold on a second, [hero].",
+                                        french=" Attends deux secondes,\n[hero].",
+                                        german=" Eine Sekunde, [hero].",
+                                        italian=" Aspetta un momento,\n[hero].",
+                                        spanish=" Espera un momento,\n[hero].",
+                                    }
+                                case 2:
+                                    {
+                                        english=" Hold on, [hero].",
+                                        french=" Attends deux secondes,\n[hero].",
+                                        german=" Warte mal, [hero].",
+                                        italian=" Aspetta un momento,\n[hero].",
+                                        spanish=" Espera un momento,\n[hero].",
+                                    }
+                                default:
+                                    {
+                                        english=" Hold on, [hero].",
+                                        french=" Attends deux secondes,\n[hero].",
+                                        german=" Warte mal, [hero].",
+                                        italian=" Aspetta un momento,\n[hero].",
+                                        spanish=" Espera un momento,\n[hero].",
+                                    }
+                            }
+                            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                            with (actor ACTOR_PLAYER) {
+                                Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+                            }
+                            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                                case 1:
+                                    {
+                                        english=" When we go into the [CS:P]nightmare[CR],\nyou should be the leader, [hero].",
+                                        french=" Quand nous serons dans le\n[CS:P]Cauchemar[CR], c\'est toi qui devrais être\nle meneur, [hero].",
+                                        german=" Wenn wir in den [CS:P]Albtraum[CR]\nhineingehen, solltest du der Anführer sein,\n[hero].",
+                                        italian=" [hero], dovresti fare tu\nda leader quando entreremo nell\'[CS:P]Incubo[CR].",
+                                        spanish=" Cuando entremos en la [CS:P]pesadilla[CR],\ntú deberías ir de líder, [hero].",
+                                    }
+                                case 2:
+                                    {
+                                        english=" When we go into the [CS:P]nightmare[CR],\nyou should be the leader, [hero].",
+                                        french=" Quand nous serons dans le\n[CS:P]Cauchemar[CR], c\'est toi qui devrais être\nle meneur, [hero].",
+                                        german=" Wenn wir in den [CS:P]Albtraum[CR]\nhineingehen, solltest du der Anführer sein,\n[hero].",
+                                        italian=" [hero], dovresti fare tu\nda leader quando entreremo nell\'[CS:P]Incubo[CR].",
+                                        spanish=" Cuando entremos en la [CS:P]pesadilla[CR],\ntú deberías ir de líder, [hero].",
+                                    }
+                                default:
+                                    {
+                                        english=" When we go into the [CS:P]nightmare[CR],\nyou should go as the leader, [hero]. ",
+                                        french=" Quand nous serons dans le\n[CS:P]Cauchemar[CR], c\'est toi qui devrais être\nle meneur, [hero].",
+                                        german=" Wenn wir in den [CS:P]Albtraum[CR]\nhineingehen, solltest du der Anführer sein,\n[hero].",
+                                        italian=" [hero], dovresti fare tu\nda leader quando entreremo nell\'[CS:P]Incubo[CR].",
+                                        spanish=" Cuando entremos en la [CS:P]pesadilla[CR],\ntú deberías ir de líder, [hero].",
+                                    }
+                            }
+                            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                                case 1:
+                                    {
+                                        english=" After all, that\'s the way we\'ve\nalways done it for important missions.",
+                                        french=" Après tout, c\'est comme ça que\nnous avons toujours fait pour les missions\nimportantes.",
+                                        german=" Immerhin haben wir es bei allen\nwichtigen Missionen so gemacht.",
+                                        italian=" In fondo, abbiamo sempre fatto\ncosì per le missioni importanti.",
+                                        spanish=" Al fin y al cabo, así vamos\nsiempre en las misiones importantes.",
+                                    }
+                                case 2:
+                                    {
+                                        english=" After all, that\'s the way we\'ve\nalways handled things on important missions.",
+                                        french=" Après tout, c\'est comme ça que\nnous avons toujours fait pour les missions\nimportantes.",
+                                        german=" Immerhin sind wir bei allen\nwichtigen Missionen so vorgegangen.",
+                                        italian=" In fondo, abbiamo sempre fatto\ncosì per le missioni importanti.",
+                                        spanish=" Al fin y al cabo, así vamos\nsiempre en las misiones importantes.",
+                                    }
+                                default:
+                                    {
+                                        english=" After all, we\'ve always gone on\nour important missions that way.",
+                                        french=" Après tout, c\'est comme ça que\nnous avons toujours fait pour les missions\nimportantes.",
+                                        german=" Immerhin haben wir uns bei allen\nwichtigen Missionen so aufgestellt.",
+                                        italian=" In fondo, abbiamo sempre fatto\ncosì per le missioni importanti.",
+                                        spanish=" Al fin y al cabo, así vamos\nsiempre en las misiones importantes.",
+                                    }
+                            }
+                            message_SwitchTalk ($PARTNER_TALK_KIND) {
+                                case 1:
+                                    {
+                                        english=" So I think that you should be the\nleader, [hero]...[K] What do you think?",
+                                        french=" Donc je pense que ça devrait\nêtre toi le meneur, [hero]...[K]\nQu\'est-ce que tu en penses?",
+                                        german=" Ich denke, du solltest die\nErkundung anführen, [hero]...[K]\nWas meinst du?",
+                                        italian=" Quindi, secondo me dovresti\nguidare tu la squadra, [hero]...[K] \nCosa ne pensi?",
+                                        spanish=" Creo que tú deberías liderar el\ngrupo, [hero]...[K] ¿Qué te parece?",
+                                    }
+                                case 2:
+                                    {
+                                        english=" So I think that you should be the\nleader, [hero]...[K] What do you think?",
+                                        french=" Donc je pense que ça devrait\nêtre toi le meneur, [hero]...[K]\nQu\'est-ce que tu en penses?",
+                                        german=" Ich denke, du solltest die\nErkundung anführen, [hero]...[K]\nWas meinst du?",
+                                        italian=" Quindi, secondo me dovresti\nguidare tu la squadra, [hero]...[K] \nCosa ne pensi?",
+                                        spanish=" Creo que tú deberías liderar el\ngrupo, [hero]...[K] ¿Qué te parece?",
+                                    }
+                                default:
+                                    {
+                                        english=" So I think that you should be the\nleader, [hero]...[K] What do you think?",
+                                        french=" Donc je pense que ça devrait\nêtre toi le meneur, [hero]...[K]\nQu\'est-ce que tu en penses?",
+                                        german=" Ich denke, du solltest die\nErkundung anführen, [hero]...[K]\nWas meinst du?",
+                                        italian=" Quindi, secondo me dovresti\nguidare tu la squadra, [hero]...[K] \nCosa ne pensi?",
+                                        spanish=" Creo que tú deberías liderar el\ngrupo, [hero]...[K] ¿Qué te parece?",
+                                    }
+                            }
+                            switch ( message_SwitchMenu(0, 1) ) {
+                                case menu({
+                                    english="Accept leadership",
+                                    french="Accepter d\'être le meneur",
+                                    german="Führung übernehmen",
+                                    italian="Accetta",
+                                    spanish="Aceptar liderazgo",
+                                }):
+                                default:
+                                    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                                    switch ( ProcessSpecial(PROCESS_SPECIAL_SET_TEAM_SETUP_HERO_AND_PARTNER_ONLY, 0, 0) ) { }
+                                    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+                                    message_SwitchTalk ($PARTNER_TALK_KIND) {
+                                        case 1:
+                                            {
+                                                english=" Cool![K] That\'s it, then! You\'re the\nleader, [hero]!",
+                                                french=" Super![K] Alors, ça marche!\nTu es le meneur, [hero]!",
+                                                german=" Cool![K] Abgemacht! Du bist der\nAnführer, [hero]!",
+                                                italian=" Benissimo![K] Allora è deciso! \nFarai da leader, [hero]!",
+                                                spanish=" ¡Guay![K] ¡Decidido! ¡Ahora estás\nal mando, [hero]!",
+                                            }
+                                        case 2:
+                                            {
+                                                english=" OK![K] That\'s settled, then! You\'re\nthe leader, [hero]!",
+                                                french=" Super![K] Alors, ça marche!\nTu es le meneur, [hero]!",
+                                                german=" Okay![K] Das wäre geregelt! Du\nbist der Anführer, [hero]!",
+                                                italian=" Benissimo![K] Allora è deciso! \nFarai da leader, [hero]!",
+                                                spanish=" ¡Guay![K] ¡Decidido! ¡Ahora estás\nal mando, [hero]!",
+                                            }
+                                        default:
+                                            {
+                                                english=" OK![K] You\'re the team leader,\n[hero]!",
+                                                french=" Super![K] Alors, ça marche!\nTu es le meneur, [hero]!",
+                                                german=" Okay![K] Du führst das Team an,\n[hero]!",
+                                                italian=" Benissimo![K] Allora è deciso! \nFarai da leader, [hero]!",
+                                                spanish=" ¡Guay![K] ¡Decidido! ¡Ahora estás\nal mando, [hero]!",
+                                            }
+                                    }
+                                    message_SwitchTalk ($PARTNER_TALK_KIND) {
+                                        case 1:
+                                            {
+                                                english=" Let\'s go! Into the [CS:P]nightmare[CR]!",
+                                                french=" Allons-y! Direction le\n[CS:P]Cauchemar[CR]!",
+                                                german=" Gehen wir! In den [CS:P]Albtraum[CR]!",
+                                                italian=" Forza! Entriamo \nnell\'[CS:P]Incubo[CR]!",
+                                                spanish=" ¡Vamos! ¡Adentrémonos en la\n[CS:P]pesadilla[CR]!",
+                                            }
+                                        case 2:
+                                            {
+                                                english=" Let\'s go! Into the [CS:P]nightmare[CR]!",
+                                                french=" Allons-y! Direction le\n[CS:P]Cauchemar[CR]!",
+                                                german=" Gehen wir! In den [CS:P]Albtraum[CR]!",
+                                                italian=" Forza! Entriamo \nnell\'[CS:P]Incubo[CR]!",
+                                                spanish=" ¡Vamos! ¡Adentrémonos en la\n[CS:P]pesadilla[CR]!",
+                                            }
+                                        default:
+                                            {
+                                                english=" Let\'s go! Into the [CS:P]nightmare[CR]!",
+                                                french=" Allons-y! Direction le\n[CS:P]Cauchemar[CR]!",
+                                                german=" Gehen wir! In den [CS:P]Albtraum[CR]!",
+                                                italian=" Forza! Entriamo \nnell\'[CS:P]Incubo[CR]!",
+                                                spanish=" ¡Vamos! ¡Adentrémonos en la\n[CS:P]pesadilla[CR]!",
+                                            }
+                                    }
+                                    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                                    with (actor ACTOR_ATTENDANT1) {
+                                        Turn2DirectionLives(4, 10, ACTOR_NPC_SURIIPU);
+                                    }
+                                    WaitExecuteLives(ACTOR_ATTENDANT1);
+                                    with (actor ACTOR_PLAYER) {
+                                        Turn2DirectionLives(4, 10, ACTOR_NPC_SURIIPU);
+                                    }
+                                    message_SwitchTalk ($PARTNER_TALK_KIND) {
+                                        case 1:
+                                            {
+                                                english=" All right, [CS:N]Drowzee[CR]![K]\nDo your thing!",
+                                                french=" Très bien, [CS:N]Soporifik[CR]![K]\nA toi de jouer!",
+                                                german=" Alles klar, [CS:N]Traumato[CR]![K]\nTu, was du tun musst!",
+                                                italian=" Forza, [CS:N]Drowzee[CR]![K]\nFai ciò che devi fare!",
+                                                spanish=" De acuerdo, ¡[CS:N]Drowzee[CR]![K]\n¡Contamos contigo!",
+                                            }
+                                        case 2:
+                                            {
+                                                english=" OK, [CS:N]Drowzee[CR]![K] It\'s your show!",
+                                                french=" Très bien, [CS:N]Soporifik[CR]![K]\nA toi de jouer!",
+                                                german=" Okay, [CS:N]Traumato[CR]![K] Dein Auftritt!",
+                                                italian=" Forza, [CS:N]Drowzee[CR]![K]\nFai ciò che devi fare!",
+                                                spanish=" De acuerdo, ¡[CS:N]Drowzee[CR]![K]\n¡Contamos contigo!",
+                                            }
+                                        default:
+                                            {
+                                                english=" All right, [CS:N]Drowzee[CR]![K]\nWe\'re counting on you!",
+                                                french=" Très bien, [CS:N]Soporifik[CR]![K]\nA toi de jouer!",
+                                                german=" Alles klar, [CS:N]Traumato[CR]![K]\nWir zählen auf dich!",
+                                                italian=" Forza, [CS:N]Drowzee[CR]![K]\nContiamo su di te!",
+                                                spanish=" De acuerdo, ¡[CS:N]Drowzee[CR]![K]\n¡Contamos contigo!",
+                                            }
+                                    }
+                                    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                                    jump @label_5;
+                                case menu({
+                                    english="Refuse",
+                                    french="Refuser",
+                                    german="Ablehnen",
+                                    italian="Rifiuta",
+                                    spanish="Rechazar",
+                                }):
+                                    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                                    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+                                    message_SwitchTalk ($PARTNER_TALK_KIND) {
+                                        case 1:
+                                            {
+                                                english=" Whoa![K] Hang on, we\'re going with\nme as leader?",
+                                                french=" Ouah![K] Attends, on n\'avait pas dit\nque ce serait toi le meneur?",
+                                                german=" Holla![K] Warte mal, wir gehen mit\nmir als Anführer?",
+                                                italian=" No![K] Aspetta! Faccio io\nda leader?",
+                                                spanish=" ¿Qué?[K] Espera, ¿voy yo de líder?",
+                                            }
+                                        case 2:
+                                            {
+                                                english=" What?[K] Wait, so I\'m going as\nthe leader?",
+                                                french=" Ouah![K] Attends, on n\'avait pas dit\nque ce serait toi le meneur?",
+                                                german=" Was?[K] Warte, also ich werde der\nAnführer sein?",
+                                                italian=" No![K] Aspetta! Faccio io\nda leader?",
+                                                spanish=" ¿Qué?[K] Espera, ¿voy yo de líder?",
+                                            }
+                                        default:
+                                            {
+                                                english=" What?[K] So I\'m going to go as\nthe leader?",
+                                                french=" Ouah![K] Attends, on n\'avait pas dit\nque ce serait toi le meneur?",
+                                                german=" Was?[K] Dann werde ich als\nAnführer des Teams gehen?",
+                                                italian=" No![K] Aspetta! Faccio io\nda leader?",
+                                                spanish=" ¿Qué?[K] Espera, ¿voy yo de líder?",
+                                            }
+                                    }
+                                    message_Close();
+                                    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_STANDARD);
+                                    message_SwitchTalk ($PARTNER_TALK_KIND) {
+                                        case 1:
+                                            {
+                                                english=" Hmm...[K] I don\'t feel confident\nabout doing that...",
+                                                french=" Hum...[K] Je ne me sens pas trop\nà la hauteur...",
+                                                german=" Hmm...[K] Ich fühle mich nicht\nganz wohl in dieser Rolle...",
+                                                italian=" Mmm...[K] Non me la sento\nproprio...",
+                                                spanish=" Hum...[K] No tengo tanta seguridad\ncomo para ir de líder...",
+                                            }
+                                        case 2:
+                                            {
+                                                english=" Hmm...[K] I don\'t have the\nconfidence to do that...",
+                                                french=" Hum...[K] Je ne me sens pas trop\nà la hauteur...",
+                                                german=" Hmm...[K] Dazu fehlt mir das\nSelbstvertrauen...",
+                                                italian=" Mmm...[K] Non me la sento\nproprio...",
+                                                spanish=" Hum...[K] No me siento tan seguro\ncomo para ir de líder...",
+                                            }
+                                        default:
+                                            {
+                                                english=" Hmm...[K] I don\'t feel confident\nenough to be the leader...",
+                                                french=" Hum...[K] Je ne me sens pas trop\nà la hauteur...",
+                                                german=" Hmm...[K] Ich fühle mich nicht\nselbstbewusst genug, um Anführer zu sein...",
+                                                italian=" Mmm...[K] Non me la sento\nproprio...",
+                                                spanish=" Hum...[K] No me siento tan segura\ncomo para ir de líder...",
+                                            }
+                                    }
+                                    message_SwitchTalk ($PARTNER_TALK_KIND) {
+                                        case 1:
+                                            {
+                                                english=" If we\'re going into the\n[CS:P]nightmare[CR], you should be the leader,\n[hero]...",
+                                                french=" Si nous allons dans le\n[CS:P]Cauchemar[CR], c\'est toi qui devrais être\nle meneur, [hero]...",
+                                                german=" Wenn wir in den [CS:P]Albtraum[CR]\nhineingehen, solltest du der Anführer sein,\n[hero].",
+                                                italian=" Se entriamo nell\'[CS:P]Incubo[CR],\ndovresti fare tu da leader, [hero]...",
+                                                spanish=" Si vamos a adentrarnos en la\n[CS:P]pesadilla[CR], creo que tú deberías liderar el\ngrupo, [hero]...",
+                                            }
+                                        case 2:
+                                            {
+                                                english=" If we\'re going into the\n[CS:P]nightmare[CR], you should be the leader,\n[hero]...",
+                                                french=" Si nous allons dans le\n[CS:P]Cauchemar[CR], c\'est toi qui devrais être\nle meneur, [hero]...",
+                                                german=" Wenn wir in den [CS:P]Albtraum[CR]\nhineingehen, solltest du der Anführer sein,\n[hero].",
+                                                italian=" Se entriamo nell\'[CS:P]Incubo[CR],\ndovresti fare tu da leader, [hero]...",
+                                                spanish=" Si vamos a adentrarnos en la\n[CS:P]pesadilla[CR], creo que tú deberías liderar el\ngrupo, [hero]...",
+                                            }
+                                        default:
+                                            {
+                                                english=" If we\'re going to go into the\n[CS:P]nightmare[CR], I think you should be the leader,\n[hero]...",
+                                                french=" Si nous allons dans le\n[CS:P]Cauchemar[CR], c\'est toi qui devrais être\nle meneur, [hero]...",
+                                                german=" Wenn wir in den [CS:P]Albtraum[CR]\nhineingehen, solltest du meiner Meinung nach\nder Anführer sein, [hero].",
+                                                italian=" Se entriamo nell\'[CS:P]Incubo[CR],\ndovresti fare tu da leader, [hero]...",
+                                                spanish=" Si vamos a adentrarnos en la\n[CS:P]pesadilla[CR], creo que tú deberías liderar el\ngrupo, [hero]...",
+                                            }
+                                    }
+                                    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                                    with (actor ACTOR_ATTENDANT1) {
+                                        Turn2DirectionLives(4, 10, ACTOR_NPC_SURIIPU);
+                                    }
+                                    WaitExecuteLives(ACTOR_ATTENDANT1);
+                                    with (actor ACTOR_PLAYER) {
+                                        Turn2DirectionLives(4, 10, ACTOR_NPC_SURIIPU);
+                                    }
+                                    §label_1;
+                                    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                                    message_SetFace(ACTOR_NPC_SURIIPU, FACE_NORMAL, FACE_POS_STANDARD);
+                                    message_Talk({
+                                        english=" I\'m all ready to send you into\nthe dream.",
+                                        french=" Je suis prêt à vous envoyer\ndans le rêve.",
+                                        german=" Ich bin jetzt bereit, euch in\nden Traum zu schicken.",
+                                        italian=" Sono pronto a farvi entrare\nnel sogno.",
+                                        spanish=" Estoy listo para enviaros al\nsueño.",
+                                    });
+                                    message_Talk({
+                                        english=" Tell me when you\'re ready.",
+                                        french=" Quand vous voudrez.",
+                                        german=" Lasst mich wissen, wenn ihr\nso weit seid.",
+                                        italian=" Avvertitemi quando avete\nultimato i preparativi.",
+                                        spanish=" Avisadme y empezaremos.",
+                                    });
+                                    message_Close();
+                                    end;
+                            }
+                            break;
+                        default:
+                            message_SetFace(ACTOR_NPC_SURIIPU, FACE_NORMAL, FACE_POS_STANDARD);
+                            message_Talk({
+                                english=" By the way...",
+                                french=" Au fait...",
+                                german=" Ach, übrigens...",
+                                italian=" Come dicevo prima...",
+                                spanish=" Por cierto...",
+                            });
+                            message_Talk({
+                                english=" [CS:N]Azurill[CR] is in a very delicate\nstate now.",
+                                french=" [CS:N]Azurill[CR] est dans un état\ncritique.",
+                                german=" [CS:N]Azurill[CR] ist jetzt in einem sehr\nkritischen Zustand.",
+                                italian=" Le condizioni di [CS:N]Azurill[CR] sono\nmolto delicate.",
+                                spanish=" [CS:N]Azurill[CR] está muy delicado ahora.",
+                            });
+                            message_Talk({
+                                english=" Judging by the resonations from\n[CS:N]Azurill[CR]\'s dream...",
+                                french=" A en juger d\'après les échos\ndu rêve d\'[CS:N]Azurill[CR]...",
+                                german=" Den Resonanzen des Traumes von\n[CS:N]Azurill[CR] nach zu urteilen...",
+                                italian=" A giudicare dalle onde che \nprovengono dal sogno di [CS:N]Azurill[CR]...",
+                                spanish=" A juzgar por las resonancias del\nsueño de [CS:N]Azurill[CR]...",
+                            });
+                            message_Talk({
+                                english=" I believe that only the two of\nyou should enter the [CS:P]nightmare[CR].[K] What do you\nthink of that plan?",
+                                french=" ... seuls deux Pokémon devraient\nentrer dans le [CS:P]Cauchemar[CR]: [hero]\net [partner].[K] Qu\'en pensez-vous?",
+                                german=" Nun, meiner Meinung nach solltet\nnur ihr beide den [CS:P]Albtraum[CR] betreten.[K] Was\nhaltet ihr von diesem Plan?",
+                                italian=" ... credo che solo voi due\ndovreste entrare nell\'[CS:P]Incubo[CR].[K] Cosa ne pensate?",
+                                spanish=" Creo que solo [hero] y\n[partner] deberían entrar en la [CS:P]pesadilla[CR].[K]\n¿Qué os parece?",
+                            });
+                            message_Talk({
+                                english=" Will just the two of you go into\nthe [CS:P]nightmare[CR]?",
+                                french=" Vous êtes d\'accord pour n\'entrer\nqu\'à deux dans ce [CS:P]Cauchemar[CR]?",
+                                german=" Geht nur ihr zwei in den\n[CS:P]Albtraum[CR] hinein?",
+                                italian=" Entrerete solo in due\nnell\'[CS:P]Incubo[CR]?",
+                                spanish=" ¿Os sentís capaces?",
+                            });
+                            switch ( message_SwitchMenu(0, 1) ) {
+                                case menu({
+                                    english="Go as a duo",
+                                    french="Partir à deux",
+                                    german="Als Duo gehen",
+                                    italian="Entrate in due",
+                                    spanish="Ir en pareja",
+                                }):
+                                default:
+                                    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                                    switch ( ProcessSpecial(PROCESS_SPECIAL_SET_TEAM_SETUP_HERO_AND_PARTNER_ONLY, 0, 0) ) { }
+                                    jump @label_5;
+                                case menu({
+                                    english="Don\'t enter the [CS:P]nightmare[CR]",
+                                    french="Ne pas entrer dans le [CS:P]Cauchemar[CR]",
+                                    german="Den [CS:P]Albtraum[CR] nicht betreten",
+                                    italian="Non entrare nell\'[CS:P]Incubo[CR]",
+                                    spanish="No entrar en la [CS:P]pesadilla[CR]",
+                                }):
+                                    jump @label_1;
+                            }
+                            break;
+                    }
+                    break;
+            }
+            break;
+        case menu({
+            english="Not yet",
+            french="Non",
+            german="Nein",
+            italian="No",
+            spanish="Aún no",
+        }):
+            jump @label_1;
+    }
+}

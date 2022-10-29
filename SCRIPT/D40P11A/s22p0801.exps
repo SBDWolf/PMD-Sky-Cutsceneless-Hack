@@ -1,0 +1,115 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_D40P11A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_DARK_CRATER, 0, 256);
+    with (actor ACTOR_NPC_KURESERIA) {
+        MovePositionMark(1, Position<'m0', 22.5, 24.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m1', 20.5, 26.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m2', 24.5, 26.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(15);
+    with (actor ACTOR_NPC_KURESERIA) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_KURESERIA);
+    message_SetFace(ACTOR_NPC_KURESERIA, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Let\'s hurry.",
+        french=" Dépêchons-nous.",
+        german=" Wir müssen uns beeilen.",
+        italian=" Affrettiamoci.",
+        spanish=" Démonos prisa.",
+    });
+    message_Talk({
+        english=" If [CS:N]Darkrai[CR]\'s scheme can\'t be\nstopped soon...",
+        french=" Si on ne met pas rapidement fin\naux exactions de [CS:N]Darkrai[CR]...",
+        german=" Wenn das Vorhaben von [CS:N]Darkrai[CR]\nnicht bald vereitelt werden kann...",
+        italian=" Se non fermiamo [CS:N]Darkrai[CR]...",
+        spanish=" Si no le paramos pronto los pies\na [CS:N]Darkrai[CR]...",
+    });
+    message_Talk({
+        english=" All the world\'s Pokémon will\nbecome imprisoned in a nightmare...",
+        french=" ... tous les Pokémon du monde\nse retrouveront à jamais emprisonnés\ndans un cauchemar...",
+        german=" Dann wird die ganze Welt der\nPokémon zur Gefangenen eines Albtraums.",
+        italian=" Se non lo fermiamo, tutti i\nPokémon del mondo saranno imprigionati in un\nincubo.",
+        spanish=" Todos los Pokémon del mundo\nquedarán atrapados en una pesadilla...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_DETERMINED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" This time, we have to do it!",
+                french=" Cette fois-ci, on doit réussir!",
+                german=" Diesmal müssen wir es\nschaffen!",
+                italian=" Questa volta dobbiamo farcela!",
+                spanish=" ¡Esta vez lo conseguiremos!",
+            }
+        case 2:
+            {
+                english=" This time, we\'ll get it done!",
+                french=" Cette fois-ci, on doit réussir!",
+                german=" Diesmal erledigen wir die Sache!",
+                italian=" Questa volta dobbiamo farcela!",
+                spanish=" ¡Esta vez lo conseguiremos!",
+            }
+        default:
+            {
+                english=" This time, we\'ll get it done!",
+                french=" Cette fois-ci, on doit réussir!",
+                german=" Diesmal erledigen wir die Sache!",
+                italian=" Questa volta dobbiamo farcela!",
+                spanish=" ¡Esta vez lo conseguiremos!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(71);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(71);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    Wait(30);
+    with (actor ACTOR_NPC_KURESERIA) {
+        MovePositionMark(1, Position<'m3', 22.5, 15.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m4', 22.5, 15.5>);
+    }
+    Wait(15);
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m5', 22.5, 15.5>);
+    }
+    Wait(30);
+    screen_FadeOut(1, 30);
+    main_EnterDungeon(67, 0);
+    switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+    main_EnterDungeon(-1, 0);
+    hold;
+    end;
+}

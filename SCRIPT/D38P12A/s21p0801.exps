@@ -1,0 +1,182 @@
+
+def 0 {
+    sound_Stop();
+    if ( scn($SCENARIO_MAIN) >= [29, 82] ) {
+        §label_0;
+        back_SetGround(LEVEL_S04P01A);
+        screen_FadeIn(1, 0);
+        message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" Ugh...[K] We couldn\'t get through...",
+                    french=" Argh...[K] On a lamentablement\néchoué...",
+                    german=" Uff...[K] Wir sind nicht\ndurchgekommen...",
+                    italian=" Ugh...[K] Non ce l\'abbiamo fatta...",
+                    spanish=" Uf...[K] No lo hemos logrado...",
+                }
+            case 2:
+                {
+                    english=" Ugh...[K] We couldn\'t break through.",
+                    french=" Argh...[K] On a lamentablement\néchoué...",
+                    german=" Uff...[K] Wir konnten uns nicht\ndurchsetzen.",
+                    italian=" Ugh...[K] Non ce l\'abbiamo fatta...",
+                    spanish=" Uf...[K] No lo hemos logrado...",
+                }
+            default:
+                {
+                    english=" Ugh...[K] We couldn\'t break through.",
+                    french=" Argh...[K] On a lamentablement\néchoué...",
+                    german=" Uff...[K] Wir konnten uns nicht\ndurchsetzen.",
+                    italian=" Ugh...[K] Non ce l\'abbiamo fatta...",
+                    spanish=" Uf...[K] No lo hemos logrado...",
+                }
+        }
+        message_KeyWait();
+        screen_FadeOutAll(1, 60);
+        message_CloseEnforce();
+        CallCommon(CORO_FADE_OUT_ALL_AFTER);
+        back_SetGround(LEVEL_D38P12A);
+        supervision_StationCommon(0);
+        supervision_Acting(0);
+        with (performer 0) {
+            camera_SetMyself();
+        }
+        screen_FadeIn(1, 30);
+        bgm_PlayFadeIn(BGM_CHASM_CAVE, 0, 256);
+        Wait(30);
+        WaitLockLives(5, ACTOR_PLAYER);
+        Unlock(5);
+        Wait(15);
+        Unlock(7);
+        Lock(3);
+        Wait(15);
+        with (actor ACTOR_PLAYER) {
+            Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+        }
+        Wait(15);
+        with (actor ACTOR_ATTENDANT1) {
+            SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+        }
+        message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" Hmm... We were a bit careless.",
+                    french=" Hum... On aurait dû rester\nsur nos gardes.",
+                    german=" Hmm... Wir waren zu sorglos.",
+                    italian=" Mmm... Non abbiamo fatto\nabbastanza attenzione.",
+                    spanish=" Hum... Hemos sido un poco\nimprudentes.",
+                }
+            case 2:
+                {
+                    english=" Hmm... We were a bit careless.",
+                    french=" Hum... On aurait dû rester\nsur nos gardes.",
+                    german=" Hmm... Wir waren zu sorglos.",
+                    italian=" Mmm... Non abbiamo fatto\nabbastanza attenzione.",
+                    spanish=" Hum... Hemos sido un poco\nimprudentes.",
+                }
+            default:
+                {
+                    english=" Hmm... We were a bit careless.",
+                    french=" Hum... On aurait dû rester\nsur nos gardes.",
+                    german=" Hmm... Wir waren zu sorglos.",
+                    italian=" Mmm... Non abbiamo fatto\nabbastanza attenzione.",
+                    spanish=" Hum... Hemos sido un poco\nimprudentes.",
+                }
+        }
+        message_Close();
+        with (actor ACTOR_ATTENDANT1) {
+            ExecuteCommon(CORO_LOOK_AROUND_LEFT_FUNC_SERIES, 0);
+        }
+        WaitExecuteLives(ACTOR_ATTENDANT1);
+        message_SetFace(ACTOR_ATTENDANT1, FACE_DETERMINED, FACE_POS_STANDARD);
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" If we stick around here, [CS:N]Palkia[CR]\ncould find us.",
+                    french=" Si on reste là, [CS:N]Palkia[CR] risque\nde retrouver notre trace.",
+                    german=" Wenn wir uns weiter hier\naufhalten, könnte [CS:N]Palkia[CR] uns finden.",
+                    italian=" Se rimaniamo qui, [CS:N]Palkia[CR]\npotrebbe trovarci.",
+                    spanish=" Si nos quedamos aquí, [CS:N]Palkia[CR]\nacabará por encontrarnos.",
+                }
+            case 2:
+                {
+                    english=" If we stay here, [CS:N]Palkia[CR] could\nfind us.",
+                    french=" Si on reste là, [CS:N]Palkia[CR] risque\nde retrouver notre trace.",
+                    german=" Wenn wir weiter hierbleiben,\nkönnte [CS:N]Palkia[CR] uns finden.",
+                    italian=" Se rimaniamo qui, [CS:N]Palkia[CR]\npotrebbe trovarci.",
+                    spanish=" Si nos quedamos aquí, [CS:N]Palkia[CR]\nacabará por encontrarnos.",
+                }
+            default:
+                {
+                    english=" We can\'t stay here, because\n[CS:N]Palkia[CR] could find us.",
+                    french=" Si on reste là, [CS:N]Palkia[CR] risque\nde retrouver notre trace.",
+                    german=" Wir können nicht hierbleiben.\n[CS:N]Palkia[CR] könnte uns finden.",
+                    italian=" Se rimaniamo qui, [CS:N]Palkia[CR]\npotrebbe trovarci.",
+                    spanish=" Si nos quedamos aquí, [CS:N]Palkia[CR]\nacabará por encontrarnos.",
+                }
+        }
+        CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+        }
+        WaitExecuteLives(ACTOR_PLAYER);
+        message_SetFace(ACTOR_ATTENDANT1, FACE_DETERMINED, FACE_POS_STANDARD);
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" Let\'s get away from here.",
+                    french=" Sauvons-nous d\'ici.",
+                    german=" Wir sollten schleunigst von hier\naufbrechen.",
+                    italian=" Dobbiamo andarcene.",
+                    spanish=" Hay que marcharse.",
+                }
+            case 2:
+                {
+                    english=" We need to get out of here\nright away.",
+                    french=" Sauvons-nous d\'ici.",
+                    german=" Wir müssen sofort von hier\nverschwinden.",
+                    italian=" Dobbiamo andarcene.",
+                    spanish=" Vámonos cuanto antes.",
+                }
+            default:
+                {
+                    english=" We should get away from here.",
+                    french=" Sauvons-nous d\'ici.",
+                    german=" Wir sollten von hier\nverschwinden.",
+                    italian=" Dobbiamo andarcene.",
+                    spanish=" Vámonos cuanto antes.",
+                }
+        }
+        message_Close();
+        end;
+    } else {
+        $SCENARIO_MAIN = scn[29, 82];
+        jump @label_0;
+    }
+}
+
+def 1 for_actor(ACTOR_PLAYER) {
+    SetDirection(DIR_RIGHT);
+    SetAnimation(76);
+    Lock(5);
+    CallCommon(CORO_WAKEUP_FUNC);
+    CallCommon(CORO_LOOK_AROUND_DOWN_FUNC);
+    Lock(6);
+    hold;
+}
+
+def 2 for_actor(ACTOR_ATTENDANT1) {
+    SetDirection(DIR_LEFT);
+    SetAnimation(76);
+    Lock(7);
+    CallCommon(CORO_WAKEUP_FUNC);
+    CallCommon(CORO_LOOK_AROUND_FUNC);
+    Unlock(3);
+    Lock(8);
+    hold;
+}

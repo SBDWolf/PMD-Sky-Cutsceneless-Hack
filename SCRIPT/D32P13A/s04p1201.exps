@@ -1,0 +1,172 @@
+
+def 0 {
+    with (actor ACTOR_PLAYER_APPOINT) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ADVENTURE_NPC3) {
+        SetAnimation(2);
+    }
+    bgm_PlayFadeIn(BGM_IN_THE_DEPTHS_OF_THE_PIT, 0, 256);
+    with (actor ACTOR_PLAYER_APPOINT) {
+        SetAnimation(2);
+    }
+    message_ResetActor();
+    message_Mail({
+        english="\n[CN][FT:1]STEEL[FT:0]",
+        french="\n[CN][FT:1]STEEL[FT:0]",
+        german="\n[CN][FT:1]STEEL[FT:0]",
+        italian="[CN][FT:1]STEEL[FT:0]",
+        spanish="\n[CN][FT:1]STEEL[FT:0]",
+    });
+    message_Mail({
+        english="[CN]Will you close your eyes?",
+        french="[CN]Voulez-vous fermer les yeux?",
+        german="[CN]Willst du deine Augen schließen?",
+        italian="[CN]Vuoi chiudere gli occhi?",
+        spanish="[CN]¿Vas a cerrar los ojos?",
+    });
+    switch ( message_SwitchMenu(0, 1) ) {
+        case menu({
+            english="Yes",
+            french="Oui",
+            german="Ja",
+            italian="Sì",
+            spanish="Sí",
+        }):
+        default:
+            §label_0;
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            bgm_FadeOut(90);
+            with (object OBJECT_D32P44A1_84) {
+                SetAnimation(2);
+            }
+            if ( not debug ) {
+                §label_2;
+                message_Close();
+                switch ( ProcessSpecial(PROCESS_SPECIAL_COUNT_ITEM_TYPE_IN_BAG, 418, 0) ) {
+                    case >= 1:
+                        switch ( ProcessSpecial(PROCESS_SPECIAL_COUNT_ITEM_TYPE_IN_BAG, 419, 0) ) {
+                            case >= 1:
+                                switch ( ProcessSpecial(PROCESS_SPECIAL_COUNT_ITEM_TYPE_IN_BAG, 404, 0) ) {
+                                    case >= 2:
+                                        switch ( ProcessSpecial(PROCESS_SPECIAL_COUNT_ITEM_TYPE_IN_BAG, 411, 0) ) {
+                                            case >= 1:
+                                                §label_3;
+                                                message_Close();
+                                                switch ( ProcessSpecial(PROCESS_SPECIAL_REMOVE_ITEMS_TYPE_IN_BAG, 418, 0) ) { }
+                                                switch ( ProcessSpecial(PROCESS_SPECIAL_REMOVE_ITEMS_TYPE_IN_BAG, 419, 0) ) { }
+                                                switch ( ProcessSpecial(PROCESS_SPECIAL_REMOVE_ITEMS_TYPE_IN_BAG, 404, 0) ) { }
+                                                switch ( ProcessSpecial(PROCESS_SPECIAL_REMOVE_ITEMS_TYPE_IN_BAG, 404, 0) ) { }
+                                                switch ( ProcessSpecial(PROCESS_SPECIAL_REMOVE_ITEMS_TYPE_IN_BAG, 411, 0) ) { }
+                                                screen_WhiteOut(1, 30);
+                                                supervision_Acting(0);
+                                                with (actor ACTOR_ADVENTURE_NPC1) {
+                                                    SetAnimation(4);
+                                                }
+                                                with (actor ACTOR_ADVENTURE_NPC2) {
+                                                    SetAnimation(4);
+                                                }
+                                                with (actor ACTOR_ADVENTURE_NPC3) {
+                                                    SetAnimation(4);
+                                                }
+                                                with (actor ACTOR_PLAYER_APPOINT) {
+                                                    SetPositionOffset(432, 0);
+                                                }
+                                                with (actor ACTOR_ADVENTURE_NPC1) {
+                                                    SetPositionOffset(432, 0);
+                                                }
+                                                with (actor ACTOR_ADVENTURE_NPC2) {
+                                                    SetPositionOffset(432, 0);
+                                                }
+                                                with (actor ACTOR_ADVENTURE_NPC3) {
+                                                    SetPositionOffset(432, 0);
+                                                }
+                                                screen_FadeIn(1, 15);
+                                                $SCENARIO_MAIN_BIT_FLAG[45] = 1;
+                                                bgm_PlayFadeIn(BGM_IN_THE_DEPTHS_OF_THE_PIT, 0, 256);
+                                                end;
+                                            default:
+                                                §label_4;
+                                                message_Close();
+                                                Wait(90);
+                                                with (object OBJECT_D32P44A1_84) {
+                                                    SetAnimation(1);
+                                                }
+                                                se_FadeOut(7948, 90);
+                                                message_Mail({
+                                                    english="[CN]Nothing happened...",
+                                                    french="[CN]Rien ne se produit...",
+                                                    german="[CN]Nichts geschieht...",
+                                                    italian="[CN]Non succede niente...",
+                                                    spanish="[CN]No ha pasado nada...",
+                                                });
+                                                message_Close();
+                                                bgm_PlayFadeIn(BGM_IN_THE_DEPTHS_OF_THE_PIT, 0, 256);
+                                                end;
+                                        }
+                                        break;
+                                    default:
+                                        jump @label_4;
+                                }
+                                break;
+                            default:
+                                jump @label_4;
+                        }
+                        break;
+                    default:
+                        jump @label_4;
+                }
+            } else {
+                message_Mail({
+                    english="[M:D2][CS:C]Debug: Unown Rock[CR]",
+                    french="[M:D2][CS:C]Debug: Unown Rock[CR]",
+                    german="[M:D2][CS:C]Debug: Unown Rock[CR]",
+                    italian="[M:D2][CS:C]Debug: Unown Rock[CR]",
+                    spanish="[M:D2][CS:C]Debug: Unown Rock[CR]",
+                });
+                switch ( message_SwitchMenu(0, 1) ) {
+                    case menu({
+                        english="In possession.",
+                        french="In possession.",
+                        german="Im Besitz.",
+                        italian="... in possesso.",
+                        spanish="In possession.",
+                    }):
+                        jump @label_3;
+                    case menu({
+                        english="Not in possession.",
+                        french="Not in possession.",
+                        german="Nicht im Besitz.",
+                        italian="... non in possesso.",
+                        spanish="Not in possession.",
+                    }):
+                        jump @label_4;
+                    case menu({
+                        english="Check",
+                        french="Check",
+                        german="Prüfen",
+                        italian="Controlla",
+                        spanish="Check",
+                    }):
+                    default:
+                        jump @label_2;
+                }
+            }
+            break;
+        case menu({
+            english="No",
+            french="Non",
+            german="Nein",
+            italian="No",
+            spanish="No",
+        }):
+            message_Close();
+            end;
+    }
+}

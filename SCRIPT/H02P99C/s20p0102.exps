@@ -1,0 +1,353 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_H02P99C);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    bgm_PlayFadeIn(BGM_OCEAN1, 90, 256);
+    screen_FadeChange(1, 60, 0, 192);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEOUTW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It sounds like a storm is coming.",
+                french=" On dirait qu\'un orage se prépare.",
+                german=" Hört sich an, als ob sich ein\nSturm zusammenbraut.",
+                italian=" Dal rumore si direbbe che sta\nper arrivare una tempesta.",
+                spanish=" Parece que va a haber tormenta.",
+            }
+        case 2:
+            {
+                english=" It sounds like a storm is coming.",
+                french=" On dirait qu\'un orage se prépare.",
+                german=" Klingt, als würde sich da ein\nSturm zusammenbrauen.",
+                italian=" Dal rumore si direbbe che sta\nper arrivare una tempesta.",
+                spanish=" Parece que va a haber tormenta.",
+            }
+        default:
+            {
+                english=" It sounds like a storm is coming.",
+                french=" On dirait qu\'un orage se prépare.",
+                german=" Klingt, als würde sich da ein\nSturm zusammenbrauen.",
+                italian=" Dal rumore si direbbe che sta\nper arrivare una tempesta.",
+                spanish=" Parece que va a haber tormenta.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" There hasn\'t been a storm in a\nlong time.",
+                french=" Ça fait longtemps qu\'il n\'y en a\npas eu.",
+                german=" Es hat lange keinen Sturm mehr\ngegeben.",
+                italian=" È da tanto che non ce n\'è una.",
+                spanish=" Ha pasado mucho tiempo desde\nla última tormenta.",
+            }
+        case 2:
+            {
+                english=" It\'s been a long time since the\nlast storm.",
+                french=" Ça fait longtemps qu\'il n\'y en a\npas eu.",
+                german=" Der letzte Sturm ist lange her.",
+                italian=" È da tanto che non ce n\'è una.",
+                spanish=" Ha pasado mucho tiempo desde\nla última tormenta.",
+            }
+        default:
+            {
+                english=" There hasn\'t been a storm in a\nlong time.",
+                french=" Ça fait longtemps qu\'il n\'y en a\npas eu.",
+                german=" Es hat lange keinen Sturm mehr\ngegeben.",
+                italian=" È da tanto che non ce n\'è una.",
+                spanish=" Ha pasado mucho tiempo desde\nla última tormenta.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It\'s been quiet for a good\nwhile now.",
+                french=" Tout est plutôt calme depuis\nquelque temps.",
+                german=" Es ist bereits seit einer ganzen\nWeile ruhig.",
+                italian=" C\'è bel tempo da un bel po\'.",
+                spanish=" Últimamente todo ha estado\nmuy tranquilo.",
+            }
+        case 2:
+            {
+                english=" It\'s been quiet for a good\nwhile now.",
+                french=" Tout est plutôt calme depuis\nquelque temps.",
+                german=" Es ist bereits seit einer ganzen\nWeile ruhig.",
+                italian=" C\'è bel tempo da un bel po\'.",
+                spanish=" Últimamente todo ha estado\nmuy tranquilo.",
+            }
+        default:
+            {
+                english=" It\'s been quiet for a good\nwhile now.",
+                french=" Tout est plutôt calme depuis\nquelque temps.",
+                german=" Es ist bereits seit einer ganzen\nWeile ruhig.",
+                italian=" C\'è bel tempo da un bel po\'.",
+                spanish=" Últimamente todo ha estado\nmuy tranquilo.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" So, in a way, a storm would be\nrefreshing.",
+                french=" En un sens, cet orage va nous\nfaire du bien.",
+                german=" Deswegen wäre es ganz\nerfrischend, einen Sturm zu sehen.",
+                italian=" Quindi, tanto per cambiare,\nun temporale mi farebbe piacere.",
+                spanish=" Ver una tormenta será\nrefrescante.",
+            }
+        case 2:
+            {
+                english=" So, in a way, a storm would be\nrefreshing.",
+                french=" En un sens, cet orage va nous\nfaire du bien.",
+                german=" Deswegen wäre es ganz\nerfrischend, einen Sturm zu sehen.",
+                italian=" Quindi, tanto per cambiare,\nun temporale mi farebbe piacere.",
+                spanish=" Ver una tormenta será\nrefrescante.",
+            }
+        default:
+            {
+                english=" So, in a way, a storm would be\nrefreshing.",
+                french=" En un sens, cet orage va nous\nfaire du bien.",
+                german=" Deswegen wäre es ganz\nerfrischend, einen Sturm zu sehen.",
+                italian=" Quindi, tanto per cambiare,\nun temporale mi farebbe piacere.",
+                spanish=" Ver una tormenta será\nrefrescante.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" You know, our big adventure...\nwhen we stopped the destruction of time...",
+                french=" Tu te souviens de notre grande\naventure? Tu sais, quand nous avons arrêté\nla destruction du temps...",
+                german=" Weißt du noch, unser großes\nAbenteuer, als wir die Zerstörung der Zeit\naufgehalten haben?",
+                italian=" Ti ricordi, durante la nostra \ngrande avventura, quando abbiamo fermato la\ndistruzione del tempo?",
+                spanish=" ¿Te acuerdas de nuestra gran\naventura... cuando detuvimos la destrucción\ndel tiempo?",
+            }
+        case 2:
+            {
+                english=" You know, our big adventure...\nwhen we stopped the destruction of time...",
+                french=" Tu te souviens de notre grande\naventure? Tu sais, quand nous avons arrêté\nla destruction du temps...",
+                german=" Weißt du noch, unser großes\nAbenteuer, als wir die Zerstörung der Zeit\naufgehalten haben?",
+                italian=" Ti ricordi, durante la nostra \ngrande avventura, quando abbiamo fermato la\ndistruzione del tempo?",
+                spanish=" ¿Te acuerdas de nuestra gran\naventura... cuando detuvimos la destrucción\ndel tiempo?",
+            }
+        default:
+            {
+                english=" You know, our big adventure...\nwhen we stopped the destruction of time...",
+                french=" Tu te souviens de notre grande\naventure? Tu sais, quand nous avons arrêté\nla destruction du temps...",
+                german=" Weißt du noch, unser großes\nAbenteuer, als wir die Zerstörung der Zeit\naufgehalten haben?",
+                italian=" Ti ricordi, durante la nostra \ngrande avventura, quando abbiamo fermato la\ndistruzione del tempo?",
+                spanish=" ¿Te acuerdas de nuestra gran\naventura... cuando detuvimos la destrucción\ndel tiempo?",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" It seems like it happened\nlong ago.",
+                french=" ... j\'ai l\'impression que c\'était\nil y a une éternité.",
+                german=" Es scheint so lange\nzurückzuliegen.",
+                italian=" Sembra che sia successo\ntanto tempo fa!",
+                spanish=" Parece ya tan lejano...",
+            }
+        case 2:
+            {
+                english=" It already feels like it happened\na long time ago.",
+                french=" ... j\'ai l\'impression que c\'était\nil y a une éternité.",
+                german=" Es scheint so weit in der\nVergangenheit zu liegen.",
+                italian=" Sembra che sia successo\ntanto tempo fa!",
+                spanish=" Parece ya tan lejano...",
+            }
+        default:
+            {
+                english=" It already feels like it happened\nlong ago.",
+                french=" ... j\'ai l\'impression que c\'était\nil y a une éternité.",
+                german=" Es scheint so weit in der\nVergangenheit zu liegen.",
+                italian=" Sembra che sia successo\ntanto tempo fa!",
+                spanish=" Parece ya tan lejano...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Yes, it does feel that way.)",
+                french="(Oui, j\'ai la même impression.)",
+                german="(Ja, so fühlt es sich an.)",
+                italian="(Sì, sembra davvero che sia\npassato un secolo.)",
+                spanish="(Es cierto.)",
+            }
+        default:
+            {
+                english="(Yes, it does feel that way.)",
+                french="(Oui, j\'ai la même impression.)",
+                german="(Ja, so fühlt es sich an.)",
+                italian="(Sì, sembra davvero che sia\npassato un secolo.)",
+                spanish="(Es cierto.)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Going to the future with [partner]...)",
+                french="(Le voyage dans le futur avec [partner]...)",
+                german="(Mit [partner] in die Zukunft zu reisen...)",
+                italian="(Quando io e [partner] abbiamo \nvisitato il futuro...)",
+                spanish="(El viaje al futuro con [partner]...)",
+            }
+        default:
+            {
+                english="(Going to the future with [partner]...)",
+                french="(Le voyage dans le futur avec [partner]...)",
+                german="(Mit [partner] in die Zukunft zu reisen...)",
+                italian="(Quando io e [partner] abbiamo \nvisitato il futuro...)",
+                spanish="(El viaje al futuro con [partner]...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Fighting [CS:N]Dialga[CR] at [CS:P]Temporal Tower[CR]...)",
+                french="(Le combat contre [CS:N]Dialga[CR] à la\n[CS:P]Tour du Temps[CR]...)",
+                german="([CS:N]Dialga[CR] beim [CS:P]Zeitturm[CR] zu bekämpfen...)",
+                italian="(Quando abbiamo affrontato [CS:N]Dialga[CR] alla \n[CS:P]Torre del Tempo[CR]...)",
+                spanish="(El enfrentamiento con [CS:N]Dialga[CR] en\nla [CS:P]Torre del Tiempo[CR]...)",
+            }
+        default:
+            {
+                english="(Fighting [CS:N]Dialga[CR] at [CS:P]Temporal Tower[CR]...)",
+                french="(Le combat contre [CS:N]Dialga[CR] à la\n[CS:P]Tour du Temps[CR]...)",
+                german="([CS:N]Dialga[CR] beim [CS:P]Zeitturm[CR] zu bekämpfen...)",
+                italian="(Quando abbiamo affrontato [CS:N]Dialga[CR] alla \n[CS:P]Torre del Tempo[CR]...)",
+                spanish="(El enfrentamiento con [CS:N]Dialga[CR] en\nla [CS:P]Torre del Tiempo[CR]...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Now that I think about it, it does feel like all\nthose things were a long time ago.)",
+                french="(Quand j\'y pense, j\'ai vraiment l\'impression que\nc\'était il y a longtemps.)",
+                german="(Wenn ich jetzt darüber nachdenke, fühlt es\nsich an, als läge das alles schon weit zurück.)",
+                italian="(Adesso che ci penso, sembra davvero che\nsia avvenuto molto tempo fa.)",
+                spanish="(Ahora que lo pienso, parece como si todo eso\nhubiera sucedido hace muchísimo tiempo.)",
+            }
+        default:
+            {
+                english="(Now that I think about it, it does feel like all\nthose things were a long time ago.)",
+                french="(Quand j\'y pense, j\'ai vraiment l\'impression que\nc\'était il y a longtemps.)",
+                german="(Wenn ich jetzt darüber nachdenke, fühlt es\nsich an, als läge das alles schon weit zurück.)",
+                italian="(Adesso che ci penso, sembra davvero che\nsia avvenuto molto tempo fa.)",
+                spanish="(Ahora que lo pienso, parece como si todo eso\nhubiera sucedido hace muchísimo tiempo.)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Now that time has returned to normal...[K] \nand peace has come to the world...)",
+                french="(Maintenant que le temps a repris son cours\nnormal...[K] et que le monde a retrouvé la paix...)",
+                german="(Jetzt, da die Zeit wieder normal fließt...[K] \nUnd wieder Frieden in diese Welt eingekehrt\nist...)",
+                italian="(Adesso che il tempo è tornato alla \nnormalità...[K] e la pace regna di \nnuovo sul mondo...)",
+                spanish="(Todo ha vuelto a la normalidad...[K]\nY la paz reina en este mundo...)",
+            }
+        default:
+            {
+                english="(Now that time has returned to normal...[K] \nand peace has come to the world...)",
+                french="(Maintenant que le temps a repris son cours\nnormal...[K] et que le monde a retrouvé la paix...)",
+                german="(Jetzt, da die Zeit wieder normal fließt...[K] \nUnd wieder Frieden in diese Welt eingekehrt\nist...)",
+                italian="(Adesso che il tempo è tornato alla \nnormalità...[K] e la pace regna di \nnuovo sul mondo...)",
+                spanish="(Todo ha vuelto a la normalidad...[K]\nY la paz reina en este mundo...)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8964);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(It reminds me that...[K]because time returned to\nnormal...)",
+                french="(Mais j\'y pense...[K] puisque le temps\na repris son cours...)",
+                german="(Hmm...[K] Das erinnert mich an etwas...)",
+                italian="(Tutto ciò mi ricorda che...[K] poiché il tempo\nscorre normalmente...)",
+                spanish="(Lo que me recuerda que...[K] una vez restaurado\nel tiempo...)",
+            }
+        default:
+            {
+                english="(It reminds me that...[K]because time returned to\nnormal...)",
+                french="(Mais j\'y pense...[K] puisque le temps\na repris son cours...)",
+                german="(Hmm...[K] Das erinnert mich an etwas...)",
+                italian="(Tutto ciò mi ricorda che...[K] poiché il tempo\nscorre normalmente...)",
+                spanish="(Lo que me recuerda que...[K] una vez restaurado\nel tiempo...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(It became possible for everyone to evolve at\n[CS:P]Luminous Spring[CR] again...)",
+                french="(Tout le monde a maintenant la possibilité\nd\'évoluer à nouveau à la [CS:P]Source Lumineuse[CR]...)",
+                german="(Da die Zeit wieder normal geht, kann sich\nwieder jeder in der [CS:P]Glitzerquelle[CR] entwickeln...)",
+                italian="(... tutti possono di nuovo evolversi alla\n[CS:P]Sorgente Luccichio[CR].)",
+                spanish="(Todo el mundo pudo evolucionar de nuevo en\nel [CS:P]Manantial Luminoso[CR]...)",
+            }
+        default:
+            {
+                english="(It became possible for everyone to evolve at\n[CS:P]Luminous Spring[CR] again...)",
+                french="(Tout le monde a maintenant la possibilité\nd\'évoluer à nouveau à la [CS:P]Source Lumineuse[CR]...)",
+                german="(Da die Zeit wieder normal geht, kann sich\nwieder jeder in der [CS:P]Glitzerquelle[CR] entwickeln...)",
+                italian="(... tutti possono di nuovo evolversi alla\n[CS:P]Sorgente Luccichio[CR].)",
+                spanish="(Todo el mundo pudo evolucionar de nuevo en\nel [CS:P]Manantial Luminoso[CR]...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Everyone but us, that is. We were told that\nwe can\'t evolve at [CS:P]Luminous Spring[CR]...)",
+                french="(Tout le monde sauf nous. C\'est ce que nous a\nrévélé la [CS:P]Source Lumineuse[CR]...)",
+                german="(Jeder außer uns natürlich. Uns wurde bei\nder [CS:P]Glitzerquelle[CR] gesagt,\ndass wir uns nicht entwickeln können...)",
+                italian="(Tutti tranne noi. Ci è stato detto che\nnoi non possiamo evolverci alla [CS:P]Sorgente\nLuccichio[CR]...)",
+                spanish="(Todos menos nosotros. Nos dijeron que no \npodríamos evolucionar allí...)",
+            }
+        default:
+            {
+                english="(Everyone but us, that is. We were told that\nwe can\'t evolve at [CS:P]Luminous Spring[CR]...)",
+                french="(Tout le monde sauf nous. C\'est ce que nous a\nrévélé la [CS:P]Source Lumineuse[CR]...)",
+                german="(Jeder außer uns natürlich. Uns wurde bei\nder [CS:P]Glitzerquelle[CR] gesagt,\ndass wir uns nicht entwickeln können...)",
+                italian="(Tutti tranne noi. Ci è stato detto che\nnoi non possiamo evolverci alla [CS:P]Sorgente\nLuccichio[CR]...)",
+                spanish="(Todos menos [partner] y yo. Nos dijeron\nque no podríamos evolucionar allí...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(I remember it clearly...)",
+                french="(Je m\'en souviens très bien...)",
+                german="(Ich erinnere mich noch genau.)",
+                italian="(Mi ricordo bene...)",
+                spanish="(Lo recuerdo perfectamente...)",
+            }
+        default:
+            {
+                english="(I remember it clearly...)",
+                french="(Je m\'en souviens très bien...)",
+                german="(Ich erinnere mich noch genau.)",
+                italian="(Mi ricordo bene...)",
+                spanish="(Lo recuerdo perfectamente...)",
+            }
+    }
+    message_Close();
+    bgm_FadeOut(180);
+    screen_FadeOut(1, 30);
+    end;
+}

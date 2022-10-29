@@ -1,0 +1,233 @@
+
+def 0 {
+    sound_Stop();
+    if ( scn($SCENARIO_MAIN) >= [29, 82] ) {
+        §label_0;
+        back_SetGround(LEVEL_S04P01A);
+        screen_FadeIn(1, 0);
+        message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" Urggh...[K] We couldn\'t do it...",
+                    french=" Argh...[K] Quelle défaite...",
+                    german=" Urks...[K] Wir haben es nicht\ngeschafft...",
+                    italian=" Urggh...[K] Non ce l\'abbiamo\nfatta...",
+                    spanish=" Uf...[K] No lo hemos logrado...",
+                }
+            case 2:
+                {
+                    english=" Urggh...[K] We came up short...",
+                    french=" Argh...[K] Quelle défaite...",
+                    german=" Urks...[K] Wir haben es nicht\ngeschafft...",
+                    italian=" Urggh...[K] C\'eravamo quasi...",
+                    spanish=" Uf...[K] No lo hemos logrado...",
+                }
+            default:
+                {
+                    english=" Urggh...[K] We couldn\'t do it...",
+                    french=" Argh...[K] Quelle défaite...",
+                    german=" Urks...[K] Wir haben es nicht\ngeschafft...",
+                    italian=" Urggh...[K] Non ce l\'abbiamo\nfatta...",
+                    spanish=" Uf...[K] No lo hemos logrado...",
+                }
+        }
+        message_KeyWait();
+        screen_FadeOutAll(1, 60);
+        message_CloseEnforce();
+        CallCommon(CORO_FADE_OUT_ALL_AFTER);
+        back_SetGround(LEVEL_D38P12A);
+        supervision_StationCommon(0);
+        supervision_Acting(0);
+        with (performer 0) {
+            camera_SetMyself();
+        }
+        screen_FadeIn(1, 30);
+        bgm_PlayFadeIn(BGM_CHASM_CAVE, 0, 256);
+        Wait(30);
+        WaitLockLives(5, ACTOR_PLAYER);
+        Unlock(5);
+        Wait(15);
+        Unlock(7);
+        Lock(3);
+        Wait(15);
+        with (actor ACTOR_PLAYER) {
+            Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+        }
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+        }
+        Wait(15);
+        with (actor ACTOR_ATTENDANT1) {
+            SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+        }
+        message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" Urk![K] This is rough...",
+                    french=" Argh![K] Ça commence\nà se corser...",
+                    german=" Uff![K] Ganz schön hart...",
+                    italian=" Uh![K] È davvero dura...",
+                    spanish=" Esto...[K] es muy difícil...",
+                }
+            case 2:
+                {
+                    english=" Urk![K] This is so hard...",
+                    french=" Argh![K] Ça commence\nà se corser...",
+                    german=" Uff![K] Das ist so hart...",
+                    italian=" Uh![K] È così difficile...",
+                    spanish=" Esto...[K] es muy difícil...",
+                }
+            default:
+                {
+                    english=" Urk![K] This is difficult...",
+                    french=" Argh![K] Ça commence\nà se corser...",
+                    german=" Uff![K] Sehr schwierig...",
+                    italian=" Uh![K] È difficile...",
+                    spanish=" Esto...[K] es muy difícil...",
+                }
+        }
+        CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2Direction(4, 10, DIR_UP);
+        }
+        Wait(60);
+        message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_STANDARD);
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" But we have to keep struggling\nto the very end...",
+                    french=" ... mais nous devons faire\nfront... jusqu\'au bout...",
+                    german=" Aber wir müssen bis zum\nbitteren Ende kämpfen...",
+                    italian=" Ma dobbiamo mettercela tutta\nfino alla fine.",
+                    spanish=" Pero tenemos que luchar hasta\nel final...",
+                }
+            case 2:
+                {
+                    english=" But we have no choice. We have\nto keep struggling to the end.",
+                    french=" ... mais nous devons faire\nfront... jusqu\'au bout...",
+                    german=" Aber uns bleibt keine Wahl. Wir\nmüssen bis zum Ende kämpfen.",
+                    italian=" Ma dobbiamo mettercela tutta\nfino alla fine.",
+                    spanish=" Pero no tenemos elección. Hay\nque luchar hasta el final.",
+                }
+            default:
+                {
+                    english=" But we have no other choice.\nWe have to keep struggling to the end.",
+                    french=" ... mais nous devons faire\nfront... jusqu\'au bout...",
+                    german=" Aber uns bleibt keine andere\nWahl. Wir müssen bis zum Ende kämpfen.",
+                    italian=" Ma dobbiamo mettercela tutta\nfino alla fine.",
+                    spanish=" Pero no tenemos elección. Hay\nque luchar hasta el final.",
+                }
+        }
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" We have to force [CS:N]Palkia[CR] to tell\nus what we need to know!",
+                    french=" De gré ou de force, il faut que\n[CS:N]Palkia[CR] nous dise ce qu\'on veut savoir!",
+                    german=" Wir müssen [CS:N]Palkia[CR] zwingen,\nuns zu sagen, was wir wissen müssen!",
+                    italian=" Dobbiamo farci dire da [CS:N]Palkia[CR] \nquello che sa!",
+                    spanish=" ¡Hay que obligar a [CS:N]Palkia[CR] a que\nnos cuente lo que necesitamos saber!",
+                }
+            case 2:
+                {
+                    english=" We have to force [CS:N]Palkia[CR] to tell\nus what we need to know!",
+                    french=" De gré ou de force, il faut que\n[CS:N]Palkia[CR] nous dise ce qu\'on veut savoir!",
+                    german=" Wir müssen [CS:N]Palkia[CR] zwingen,\nuns zu sagen, was wir wissen müssen!",
+                    italian=" Dobbiamo farci dire da [CS:N]Palkia[CR] \nquello che sa!",
+                    spanish=" ¡Hay que obligar a [CS:N]Palkia[CR] a que\nnos cuente lo que necesitamos saber!",
+                }
+            default:
+                {
+                    english=" We have to force [CS:N]Palkia[CR] to tell\nus what we need to know!",
+                    french=" De gré ou de force, il faut que\n[CS:N]Palkia[CR] nous dise ce qu\'on veut savoir!",
+                    german=" Wir müssen [CS:N]Palkia[CR] zwingen,\nuns zu sagen, was wir wissen müssen!",
+                    italian=" Dobbiamo farci dire da [CS:N]Palkia[CR] \nquello che sa!",
+                    spanish=" ¡Hay que obligar a [CS:N]Palkia[CR] a que\nnos cuente lo que necesitamos saber!",
+                }
+        }
+        CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+        with (actor ACTOR_ATTENDANT1) {
+            Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+        }
+        WaitExecuteLives(ACTOR_ATTENDANT1);
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" We really have to find a way\nout of here!",
+                    french=" Il faut qu\'on trouve la sortie!\nCoûte que coûte!",
+                    german=" Wir müssen wirklich einen Weg\nhier heraus finden!",
+                    italian=" Dobbiamo assolutamente trovare\nun modo per uscire da qui!",
+                    spanish=" ¡Hay que encontrar una salida!",
+                }
+            case 2:
+                {
+                    english=" We really have to find a way\nout of here!",
+                    french=" Il faut qu\'on trouve la sortie!\nCoûte que coûte!",
+                    german=" Wir müssen wirklich einen Weg\nhier heraus finden!",
+                    italian=" Dobbiamo assolutamente trovare\nun modo per uscire da qui!",
+                    spanish=" ¡Hay que encontrar una salida!",
+                }
+            default:
+                {
+                    english=" We really have to find a way\nout of here!",
+                    french=" Il faut qu\'on trouve la sortie!\nCoûte que coûte!",
+                    german=" Wir müssen wirklich einen Weg\nhier heraus finden!",
+                    italian=" Dobbiamo assolutamente trovare\nun modo per uscire da qui!",
+                    spanish=" ¡Hay que encontrar una salida!",
+                }
+        }
+        message_SwitchTalk ($PARTNER_TALK_KIND) {
+            case 1:
+                {
+                    english=" Let\'s roll, [hero]!",
+                    french=" En route, [hero]!",
+                    german=" Legen wir los, [hero]!",
+                    italian=" Andiamo, [hero]!",
+                    spanish=" ¡Vamos allá, [hero]!",
+                }
+            case 2:
+                {
+                    english=" Let\'s go, [hero]!",
+                    french=" En route, [hero]!",
+                    german=" Legen wir los, [hero]!",
+                    italian=" Andiamo, [hero]!",
+                    spanish=" ¡Vamos allá, [hero]!",
+                }
+            default:
+                {
+                    english=" Let\'s go, [hero]!",
+                    french=" En route, [hero]!",
+                    german=" Legen wir los, [hero]!",
+                    italian=" Andiamo, [hero]!",
+                    spanish=" ¡Vamos allá, [hero]!",
+                }
+        }
+        message_Close();
+        end;
+    } else {
+        $SCENARIO_MAIN = scn[29, 82];
+        jump @label_0;
+    }
+}
+
+def 1 for_actor(ACTOR_PLAYER) {
+    SetDirection(DIR_RIGHT);
+    SetAnimation(76);
+    Lock(5);
+    CallCommon(CORO_WAKEUP_FUNC);
+    CallCommon(CORO_LOOK_AROUND_DOWN_FUNC);
+    Lock(6);
+    hold;
+}
+
+def 2 for_actor(ACTOR_ATTENDANT1) {
+    SetDirection(DIR_RIGHT);
+    SetAnimation(76);
+    Lock(7);
+    CallCommon(CORO_WAKEUP_FUNC);
+    CallCommon(CORO_LOOK_AROUND_FUNC);
+    Unlock(3);
+    Lock(8);
+    hold;
+}

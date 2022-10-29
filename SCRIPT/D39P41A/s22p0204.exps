@@ -1,0 +1,649 @@
+
+def 0 {
+    back_SetGround(LEVEL_D39P41A);
+    supervision_Acting(0);
+    supervision_Acting(1);
+    supervision_Acting(3);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_DAAKURAI) {
+        SetAnimation(22);
+    }
+    with (actor ACTOR_NPC_DAAKURAI) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_DAAKURAI);
+    screen_FadeIn(1, 15);
+    Wait(30);
+    se_Play(8968);
+    with (actor ACTOR_NPC_PARUKIA) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (performer 0) {
+        MovePositionOffset(33408, 0, 8);
+    }
+    with (actor ACTOR_NPC_PARUKIA) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_PARUKIA) {
+        SlidePositionOffset(33408, 16, 0);
+    }
+    with (actor ACTOR_PLAYER) {
+        SlidePositionOffset(33408, 0, 8);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SlidePositionOffset(33408, 0, 8);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Waaaaah!",
+                french=" Ouaaah!",
+                german=" Uaaaaah!",
+                italian=" Waaaaah!",
+                spanish=" ¡Aaaaah!",
+            }
+        case 2:
+            {
+                english=" Waaaaah!",
+                french=" Ouaaah!",
+                german=" Uaaaaah!",
+                italian=" Aaaaaah!",
+                spanish=" ¡Aaaaah!",
+            }
+        default:
+            {
+                english=" Waaaaah!",
+                french=" Ouaaah!",
+                german=" Uaaaaah!",
+                italian=" Aaaaaah!",
+                spanish=" ¡Aaaaah!",
+            }
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    WaitExecuteLives(ACTOR_NPC_PARUKIA);
+    with (actor ACTOR_NPC_PARUKIA) {
+        SetAnimation(2);
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8973);
+    with (actor ACTOR_NPC_PARUKIA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_PARUKIA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_PARUKIA);
+    message_SetFace(ACTOR_NPC_PARUKIA, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_FacePositionOffset(0, 3);
+    message_Talk({
+        english=" WHAT?! WHAT IS THIS?!\nWHO IS THIS?!",
+        french=" QUOI?! QU\'EST-CE QUE C\'EST?!\nQUI VA LA?!",
+        german=" WAS?!? WAS IST DAS HIER?!?\nWER IST DAS?!?",
+        italian=" COSA?! COSA SUCCEDE?!\nCHI C\'È?!",
+        spanish=" ¿QUÉ? ¿QUIÉN ERES TÚ?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5135);
+    with (actor ACTOR_NPC_KURESERIA) {
+        SetAnimation(25);
+    }
+    with (actor ACTOR_NPC_KURESERIA) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_KURESERIA);
+    supervision_RemoveActing(1);
+    Wait(20);
+    supervision_Acting(2);
+    with (actor ACTOR_NPC_KURESERIA) {
+        SetAnimation(26);
+    }
+    with (actor ACTOR_NPC_KURESERIA) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_KURESERIA);
+    with (actor ACTOR_NPC_KURESERIA) {
+        SetAnimation(2);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_KURESERIA) {
+        SetAnimation(12);
+    }
+    with (actor ACTOR_NPC_KURESERIA) {
+        WaitAnimation();
+    }
+    Wait(15);
+    se_Play(5126);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    with (actor ACTOR_NPC_DAAKURAI) {
+        SetAnimation(11);
+    }
+    with (actor ACTOR_NPC_DAAKURAI) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_DAAKURAI) {
+        SlidePositionMark(33408, Position<'m0', 46.5, 37.5>);
+    }
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    with (actor ACTOR_NPC_PARUKIA) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_DAAKURAI);
+    with (actor ACTOR_NPC_DAAKURAI) {
+        SetAnimation(44);
+    }
+    with (actor ACTOR_NPC_KURESERIA) {
+        SetAnimation(2);
+    }
+    Wait(30);
+    message_SetFace(ACTOR_NPC_KURESERIA, FACE_NORMAL, FACE_POS_BOTTOM_L_CENTER);
+    message_FacePositionOffset(-1, 0);
+    message_Talk({
+        english=" Excellent! I was just in time!",
+        french=" Excellent! J\'arrive juste\nà temps!",
+        german=" Hervorragend! Ich bin genau\nrechtzeitig gekommen!",
+        italian=" Eccellente! Sono arrivata appena\nin tempo!",
+        spanish=" ¡Excelente! ¡Llego justo a\ntiempo!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DAAKURAI) {
+        SetAnimation(43);
+    }
+    Wait(20);
+    bgm_PlayFadeIn(BGM_RISING_FEAR, 0, 256);
+    message_SetFaceOnly(ACTOR_NPC_DAAKURAI, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Blast you...[K] [CS:N]Cresselia[CR]!",
+        french=" Sois maudite, [K][CS:N]Cresselia[CR]!",
+        german=" Zum Kuckuck mit dir...[K] [CS:N]Cresselia[CR]!",
+        italian=" Maledetta [K][CS:N]Cresselia[CR]!",
+        spanish=" Maldición...[K] ¡[CS:N]Cresselia[CR]!",
+    });
+    message_Talk({
+        english=" I\'ve been foiled! Just as I was about to\ndispose of those meddlers once and for all!",
+        french=" Tous mes plans si savamment élaborés...\nen vain! Alors que j\'étais à deux doigts de les\nrayer de la carte pour de bon!",
+        german=" Mein Plan wurde durchkreuzt! Gerade als\nich diese zwei Einmischer ein für alle Mal\nloswerden wollte!",
+        italian=" Mi hanno fermato! Proprio mentre\nstavo per sbarazzarmi di loro una volta\nper tutte!",
+        spanish=" ¡Has frustrado mis planes! ¡Ahora que\niba a rematar el asunto!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_KURESERIA, FACE_NORMAL, FACE_POS_BOTTOM_L_CENTER);
+    message_FacePositionOffset(-1, 0);
+    message_Talk({
+        english=" Please listen, [hero],\n[partner], and [CS:N]Palkia[CR].",
+        french=" [hero], [partner] et\n[CS:N]Palkia[CR], écoutez-moi, s\'il vous plaît.",
+        german=" Hört bitte zu, [hero],\n[partner] und [CS:N]Palkia[CR].",
+        italian=" Ascoltatemi, [hero],\n[partner] e [CS:N]Palkia[CR].",
+        spanish=" Escuchadme bien, [hero],\n[partner] y [CS:N]Palkia[CR].",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PARUKIA) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_PARUKIA);
+    message_Talk({
+        english=" You have been misled all\nthis time!",
+        french=" On vous a dupés de bout en bout!",
+        german=" Ihr seid die ganze Zeit an der\nNase herumgeführt worden!",
+        italian=" Siete stati ingannati per\ntutto questo tempo...",
+        spanish=" ¡Habéis sido engañados!",
+    });
+    message_Talk({
+        english=" By [CS:N]Darkrai[CR] there!",
+        french=" Et le responsable, le voilà: c\'est\n[CS:N]Darkrai[CR]!",
+        german=" Von [CS:N]Darkrai[CR] dort!",
+        italian=" Da [CS:N]Darkrai[CR]!",
+        spanish=" ¡Por [CS:N]Darkrai[CR]!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8968);
+    with (actor ACTOR_NPC_PARUKIA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_NPC_PARUKIA, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_FacePositionOffset(0, 3);
+    message_Talk({
+        english=" WHAT?!",
+        french=" QUOI?!",
+        german=" WAS?!?",
+        italian=" COSA?!",
+        spanish=" ¡¿QUÉ?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_KURESERIA, FACE_NORMAL, FACE_POS_BOTTOM_L_CENTER);
+    message_FacePositionOffset(-1, 0);
+    message_Talk({
+        english=" The [CS:N]Cresselia[CR] you thought you\nknew until now...[K]was not me!",
+        french=" La [CS:N]Cresselia[CR] que vous croyiez\nconnaître jusque-là...[K] ce n\'était pas moi!",
+        german=" Die [CS:N]Cresselia[CR], die ihr bis jetzt\nzu kennen glaubtet...[K] Das war nicht ich!",
+        italian=" La [CS:N]Cresselia[CR] che avete visto\nfinora...[K] non ero io!",
+        spanish=" La [CS:N]Cresselia[CR] que creíais\nconocer...[K] ¡no era yo!",
+    });
+    message_Talk({
+        english=" That false [CS:N]Cresselia[CR] was nothing\nmore than an illusion made by [CS:N]Darkrai[CR]!",
+        french=" Cette fausse [CS:N]Cresselia[CR] n\'était\nqu\'une illusion créée par [CS:N]Darkrai[CR]!",
+        german=" Die falsche [CS:N]Cresselia[CR] war nichts\nals eine Illusion von [CS:N]Darkrai[CR]!",
+        italian=" Quella finta [CS:N]Cresselia[CR] era solo\nun\'illusione creata da [CS:N]Darkrai[CR]!",
+        spanish=" ¡Esa falsa [CS:N]Cresselia[CR] era una\nilusión creada por [CS:N]Darkrai[CR]!",
+    });
+    message_Talk({
+        english=" It was merely a mockery of me!",
+        french=" Rien qu\'une imposture,\nune mascarade!",
+        german=" Es war nur ein Trugbild\nmeiner selbst!",
+        italian=" Una mera presa in giro!",
+        spanish=" ¡Una farsa!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8973);
+    with (actor ACTOR_NPC_PARUKIA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_NPC_PARUKIA, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_FacePositionOffset(0, 3);
+    message_Talk({
+        english=" WHAT?!",
+        french=" QUOI?!",
+        german=" WAS?!?",
+        italian=" COSA?!",
+        spanish=" ¡¿QUÉ?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" The [CS:N]Cresselia[CR] we knew up to\nnow...[K]was just a fake?!",
+                french=" La [CS:N]Cresselia[CR] que nous avons\nconnue jusque-là...[K] n\'était qu\'une imposture?!",
+                german=" Die [CS:N]Cresselia[CR], die wir bis jetzt\nkannten...[K] Das war nur eine Fälschung?!?",
+                italian=" La [CS:N]Cresselia[CR] che abbiamo \nincontrato finora...[K] era finta?!",
+                spanish=" La [CS:N]Cresselia[CR] con la que hemos\ntratado hasta ahora...[K] ¿era una impostora?",
+            }
+        case 2:
+            {
+                english=" The [CS:N]Cresselia[CR] we knew up to\nnow...[K]was just a fake?!",
+                french=" La [CS:N]Cresselia[CR] que nous avons\nconnue jusque-là...[K] n\'était qu\'une imposture?!",
+                german=" Die [CS:N]Cresselia[CR], die wir bis jetzt\nkannten...[K] Das war nur eine Fälschung?!?",
+                italian=" La [CS:N]Cresselia[CR] che abbiamo \nincontrato finora...[K] era finta?!",
+                spanish=" La [CS:N]Cresselia[CR] con la que hemos\ntratado hasta ahora...[K] ¿era una impostora?",
+            }
+        default:
+            {
+                english=" The [CS:N]Cresselia[CR] we knew up to\nnow...[K]was just a fake?!",
+                french=" La [CS:N]Cresselia[CR] que nous avons\nconnue jusque-là...[K] n\'était qu\'une imposture?!",
+                german=" Die [CS:N]Cresselia[CR], die wir bis jetzt\nkannten...[K] Das war nur eine Fälschung?!?",
+                italian=" La [CS:N]Cresselia[CR] che abbiamo \nincontrato finora...[K] era finta?!",
+                spanish=" La [CS:N]Cresselia[CR] con la que hemos\ntratado hasta ahora...[K] ¿era una impostora?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PARUKIA) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_PARUKIA);
+    message_SetFace(ACTOR_NPC_KURESERIA, FACE_NORMAL, FACE_POS_BOTTOM_L_CENTER);
+    message_FacePositionOffset(-1, 0);
+    message_Talk({
+        english=" [CS:N]Darkrai[CR]!",
+        french=" [CS:N]Darkrai[CR]!",
+        german=" [CS:N]Darkrai[CR]!",
+        italian=" [CS:N]Darkrai[CR]!",
+        spanish=" ¡[CS:N]Darkrai[CR]!",
+    });
+    message_Talk({
+        english=" Using an illusory duplicate of me\nto deceive others...[K]is so typical of you!",
+        french=" Te servir d\'un pantin à mon\nimage pour duper les autres...[K] voilà qui ne\nm\'étonne pas de toi!",
+        german=" Eine Kopie von mir in Form einer\nIllusion zu verwenden, um andere zu\ntäuschen...[K] Das ist so typisch für dich!",
+        italian=" Hai usato un\'illusione con le mie \nsembianze per ingannare gli altri...[K] Cos\'altro\nci si poteva aspettare da te?",
+        spanish=" Usar un duplicado de mí para\nengañar a los demás...[K] ¡es típico de ti!",
+    });
+    message_Talk({
+        english=" But you usually never bring your\nactual self out of hiding![K] You normally operate\nunder cover of darkness!",
+        french=" Mais tu n\'as pas pour habitude\nde te montrer au grand jour![K] Tu es plutôt\ndu genre à tirer les ficelles dans l\'ombre!",
+        german=" Sonst bringst du dein wahres\nSelbst nicht zum Vorschein![K] Normalerweise\nagierst du im Schutz der Dunkelheit!",
+        italian=" Ma di solito non ti mostri mai![K]\nTi piace agire nell\'oscurità!",
+        spanish=" ¡Aunque, normalmente, no te\nmuestras en persona![K] ¡Trabajas al amparo\nde la oscuridad!",
+    });
+    message_Talk({
+        english=" That you\'d personally emerge\nfrom the shadows to dispose of these two...",
+        french=" Que tu te montres en personne\npour éliminer ces deux-là...",
+        german=" Dass du persönlich aus dem\nSchatten hervorkommst, um die beiden zu\nbeseitigen...",
+        italian=" Il fatto che tu sia emerso\ndall\'oscurità per occuparti di questi due\nPokémon...",
+        spanish=" Que hayas salido de entre las\nsombras para acabar con estos Pokémon...",
+    });
+    message_Talk({
+        english=" That is so very unlike you!",
+        french=" ... voilà qui est très étonnant\nde ta part!",
+        german=" Das sieht dir überhaupt nicht\nähnlich!",
+        italian=" ... non è per niente da te!",
+        spanish=" ¡No es propio de ti!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_DAAKURAI, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" .....................",
+        french=" .....................",
+        german=" .....................",
+        italian=" .....................",
+        spanish=" ...",
+    });
+    message_Talk({
+        english=" You two, behind [CS:N]Cresselia[CR]...",
+        french=" Vous deux, qui vous cachez\nderrière [CS:N]Cresselia[CR]...",
+        german=" Ihr beide, hinter [CS:N]Cresselia[CR]...",
+        italian=" Voi due, dietro [CS:N]Cresselia[CR]...",
+        spanish=" Eh, parejita. No os escondáis\ndetrás de [CS:N]Cresselia[CR]...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8974);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Wh-what, us?",
+                french=" Q-qui, nous?",
+                german=" W-was, wir?",
+                italian=" C-Chi, noi?",
+                spanish=" ¿Qui... quién, nosotros? ",
+            }
+        case 2:
+            {
+                english=" Wh-what, us?",
+                french=" Q-qui, nous?",
+                german=" W-was, wir?",
+                italian=" C-Chi, noi?",
+                spanish=" ¿Qui... quién, nosotros? ",
+            }
+        default:
+            {
+                english=" Wh-what, us?",
+                french=" Q-qui, nous?",
+                german=" W-was, wir?",
+                italian=" C-Chi, noi?",
+                spanish=" ¿Qui... quién, nosotros? ",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_DAAKURAI, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Correct.[K] Pay close attention.",
+        french=" Exact.[K] Faites bien attention.",
+        german=" Korrekt.[K] Passt gut auf.",
+        italian=" Esatto.[K] Fate molta attenzione.",
+        spanish=" Quién si no.[K] Prestad atención.",
+    });
+    message_Talk({
+        english=" Now, the one truly responsible\nfor exploiting the space distortion...?[K]\nFor shrouding the world in nightmare...?",
+        french=" L\'unique responsable de la\ndistorsion spatiale...[K] grâce à qui ce cauchemar\na recouvert le monde tel un linceul...",
+        german=" Also, der einzig Verantwortliche\nfür die Ausweitung der Raumverzerrung...[K]\nFür die Einhüllung der Welt in einen Albtraum...",
+        italian=" L\'unico veramente responsabile\nper la distorsione del tempo?[K] Per aver\navvolto il mondo in un incubo?",
+        spanish=" El verdadero responsable de\nla deformación del espacio...[K] y de intentar\natrapar al mundo en una pesadilla...",
+    });
+    message_Talk({
+        english=" It is my doing.[K] Mine alone.",
+        french=" ... c\'est moi.[K] Et moi seul.",
+        german=" Das bin ich! Es ist mein Werk.[K]\nMeins allein.",
+        italian=" Sono io.[K] È tutto merito mio.",
+        spanish=" Soy yo.[K] Todo es obra mía. Solo\nmía.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8968);
+    with (actor ACTOR_NPC_PARUKIA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Huh?![K] Wh-what did you say?!",
+                french=" Hein?![K] Tu peux répéter?!",
+                german=" Was?!?[K] W-was hast du\ngesagt?!?",
+                italian=" Eh?![K] C-Cosa hai detto?!",
+                spanish=" ¡¿Eh?![K] ¡¿Qué has dicho?!",
+            }
+        case 2:
+            {
+                english=" What?![K] What did you say?!",
+                french=" Hein?![K] Tu peux répéter?!",
+                german=" Was?!?[K] W-was hast du\ngesagt?!?",
+                italian=" Come?![K] Cosa hai detto?!",
+                spanish=" ¡¿Eh?![K] ¡¿Qué has dicho?!",
+            }
+        default:
+            {
+                english=" What?![K] What did you say?!",
+                french=" Hein?![K] Tu peux répéter?!",
+                german=" Was?!?[K] W-was hast du\ngesagt?!?",
+                italian=" Come?![K] Cosa hai detto?!",
+                spanish=" ¡¿Eh?![K] ¡¿Qué has dicho?!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_DAAKURAI, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" You are more than welcome to\ntry and stop me.",
+        french=" Tentez donc de m\'arrêter, si\nvous en avez le pouvoir.",
+        german=" Ihr seid herzlich dazu\neingeladen zu versuchen, mich aufzuhalten.",
+        italian=" Potete benissimo provare \na fermarmi.",
+        spanish=" Ahora intentad detenerme si\npodéis.",
+    });
+    message_Talk({
+        english=" Come to me in the [CS:P]Dark Crater[CR].",
+        french=" Rendez-vous au [CS:P]Cratère\nObscur[CR].",
+        german=" Kommt zu mir in den\n[CS:P]Dunkelkrater[CR].",
+        italian=" Venite al [CS:P]Cratere Oscuro[CR].",
+        spanish=" Venid a buscarme. Estaré\nen el [CS:P]Cráter Oscuro[CR].",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_KURESERIA, FACE_NORMAL, FACE_POS_BOTTOM_L_CENTER);
+    message_FacePositionOffset(-1, 0);
+    message_Talk({
+        english=" You\'re not getting away,\n[CS:N]Darkrai[CR]!",
+        french=" Tu ne t\'en tireras pas comme ça,\n[CS:N]Darkrai[CR]!",
+        german=" Du kommst nicht davon,\n[CS:N]Darkrai[CR]!",
+        italian=" Non ti farò scappare, [CS:N]Darkrai[CR]!",
+        spanish=" ¡No escaparás, [CS:N]Darkrai[CR]!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_KURESERIA) {
+        MovePositionOffset(33152, 0, -32);
+    }
+    Wait(15);
+    se_Play(7183);
+    bgm_FadeOut(60);
+    with (actor ACTOR_NPC_DAAKURAI) {
+        SetOutputAttribute(2);
+    }
+    supervision_Acting(4);
+    Wait(10);
+    screen_FadeOut(1, 15);
+    supervision_RemoveActing(3);
+    Wait(40);
+    screen_FadeIn(0, 15);
+    with (object OBJECT_D39P41A1_90) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_D39P41A1_90) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D39P41A1_90);
+    with (object OBJECT_D39P41A1_90) {
+        Destroy();
+    }
+    Wait(30);
+    se_Play(8973);
+    with (actor ACTOR_NPC_PARUKIA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_KURESERIA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" [CS:N]D-Darkrai[CR] vanished?!",
+                french=" [CS:N]D-Darkrai[CR] a disparu?!",
+                german=" [CS:N]D-Darkrai[CR] ist verschwunden?!?",
+                italian=" [CS:N]D-Darkrai[CR] è scomparso?!",
+                spanish=" [CS:N]Darkrai[CR]... ¿Se ha esfumado?",
+            }
+        case 2:
+            {
+                english=" [CS:N]D-Darkrai[CR] vanished?!",
+                french=" [CS:N]D-Darkrai[CR] a disparu?!",
+                german=" [CS:N]D-Darkrai[CR] ist verschwunden?!?",
+                italian=" [CS:N]D-Darkrai[CR] è scomparso?!",
+                spanish=" [CS:N]Darkrai[CR]... ¿Se ha esfumado?",
+            }
+        default:
+            {
+                english=" [CS:N]D-Darkrai[CR] vanished?!",
+                french=" [CS:N]D-Darkrai[CR] a disparu?!",
+                german=" [CS:N]D-Darkrai[CR] ist verschwunden?!?",
+                italian=" [CS:N]D-Darkrai[CR] è scomparso?!",
+                spanish=" [CS:N]Darkrai[CR]... ¿Se ha esfumado?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetActor(ACTOR_NPC_DAAKURAI);
+    message_Talk({
+        english=" You cannot catch me, [CS:N]Cresselia[CR]...",
+        french=" Tu ne peux m\'attraper,\n[CS:N]Cresselia[CR].",
+        german=" Du fängst mich nicht,\n[CS:N]Cresselia[CR]...",
+        italian=" Non puoi prendermi, [CS:N]Cresselia[CR].",
+        spanish=" [CS:N]Cresselia[CR], nunca lograrás\natraparme...",
+    });
+    message_Talk({
+        english=" ...Not ever.",
+        french=" Jamais tu ne le pourras.",
+        german=" Niemals.",
+        italian=" Non ci riuscirai mai.",
+        spanish=" Nunca.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        ExecuteCommon(CORO_LOOK_AROUND_LEFT_FUNC_SERIES, 0);
+    }
+    Wait(12);
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    Wait(7);
+    with (actor ACTOR_NPC_PARUKIA) {
+        ExecuteCommon(CORO_LOOK_AROUND_DOWN_FUNC_SERIES, 0);
+    }
+    message_Talk({
+        english=" You two...[K] I shall be waiting in\nthe [CS:P]Dark Crater[CR].",
+        french=" Vous deux...[K] je vous attendrai\nau [CS:P]Cratère Obscur[CR].",
+        german=" Ihr zwei.[K] Ich werde im \n[CS:P]Dunkelkrater[CR] warten.",
+        italian=" Voi due...[K] Vi aspetto al [CS:P]Cratere[CR]\n[CS:P]Oscuro[CR].",
+        spanish=" Pareja...[K] Os estaré esperando en\nel [CS:P]Cráter Oscuro[CR].",
+    });
+    WaitExecuteLives(ACTOR_NPC_PARUKIA);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" ...[K][CS:P]Dark[CR]...[K] [CS:P]Crater[CR]...",
+                french=" ...[K] Le [CS:P]Cratère[CR]...[K] [CS:P]Obscur[CR]...",
+                german=" ...[K][CS:P]Dunkelkrater[CR]...",
+                italian=" ...[K] [CS:P]Cratere[CR]...[K] [CS:P]Oscuro[CR]...",
+                spanish=" En el...[K] [CS:P]Cráter[CR]...[K] [CS:P]Oscuro[CR]...",
+            }
+        case 2:
+            {
+                english=" ...[K][CS:P]Dark[CR]...[K] [CS:P]Crater[CR]...",
+                french=" ...[K] Le [CS:P]Cratère[CR]...[K] [CS:P]Obscur[CR]...",
+                german=" ...[K][CS:P]Dunkelkrater[CR]...",
+                italian=" ...[K] [CS:P]Cratere[CR]...[K] [CS:P]Oscuro[CR]...",
+                spanish=" En el...[K] [CS:P]Cráter[CR]...[K] [CS:P]Oscuro[CR]...",
+            }
+        default:
+            {
+                english=" ...[K][CS:P]Dark[CR]...[K] [CS:P]Crater[CR]...",
+                french=" ...[K] Le [CS:P]Cratère[CR]...[K] [CS:P]Obscur[CR]...",
+                german=" ...[K][CS:P]Dunkelkrater[CR]...",
+                italian=" ...[K] [CS:P]Cratere[CR]...[K] [CS:P]Oscuro[CR]...",
+                spanish=" En el...[K] [CS:P]Cráter[CR]...[K] [CS:P]Oscuro[CR]...",
+            }
+    }
+    message_Close();
+    screen_FadeOut(1, 90);
+    Wait(30);
+    $SCENARIO_MAIN_BIT_FLAG[8] = 1;
+    $COMPULSORY_SAVE_POINT = 26;
+    CallCommon(CORO_HANYOU_SAVE_FUNC);
+    end;
+}

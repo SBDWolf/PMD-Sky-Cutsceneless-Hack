@@ -1,0 +1,533 @@
+
+def 0 {
+    sound_Stop();
+    $ATTENDANT2_KIND = 0;
+    $SCENARIO_MAIN = scn[29, 47];
+    back_SetGround(LEVEL_D01P11A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    bgm2_PlayFadeIn(BGM_OCEAN1, 90, 256);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionOffset(1, -140, 0);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionOffset(1, -140, 0);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        MovePositionOffset(32896, -80, 0);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Come on, [CS:N]Manaphy[CR]. Over here.",
+                french=" Viens, [CS:N]Manaphy[CR]. Par ici.",
+                german=" Komm schon, [CS:N]Manaphy[CR].\nHier drüben.",
+                italian=" Forza, [CS:N]Manaphy[CR]. Di qua.",
+                spanish=" Vamos, [CS:N]Manaphy[CR]. Por aquí.",
+            }
+        case 2:
+            {
+                english=" Come on, [CS:N]Manaphy[CR]. Over here.",
+                french=" Viens, [CS:N]Manaphy[CR]. Par ici.",
+                german=" Komm schon, [CS:N]Manaphy[CR].\nHier drüben.",
+                italian=" Forza, [CS:N]Manaphy[CR]. Di qua.",
+                spanish=" Vamos, [CS:N]Manaphy[CR]. Por aquí.",
+            }
+        default:
+            {
+                english=" Come on, [CS:N]Manaphy[CR]. Over here.",
+                french=" Viens, [CS:N]Manaphy[CR]. Par ici.",
+                german=" Komm schon, [CS:N]Manaphy[CR].\nHier drüben.",
+                italian=" Forza, [CS:N]Manaphy[CR]. Di qua.",
+                spanish=" Vamos, [CS:N]Manaphy[CR]. Por aquí.",
+            }
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (performer 0) {
+        MovePositionMark(32972, Position<'m0', 63, 25.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m1', 66, 24.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m2', 66, 26.5>);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        MovePositionMark(32972, Position<'m3', 66, 25.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m4', 60, 20.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m5', 60, 23.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_MANAFI);
+    with (actor ACTOR_NPC_MANAFI) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_MANAFI);
+    Wait(15);
+    se_Play(8978);
+    with (actor ACTOR_NPC_MANAFI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_MANAFI);
+    message_SetFace(ACTOR_NPC_MANAFI, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" !!!",
+        french=" !!!",
+        german=" !!!",
+        italian=" !!!",
+        spanish=" (!)",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m6', 63, 23>);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        MovePositionMark(1, Position<'m7', 66, 20.5>);
+    }
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_MANAFI);
+    bgm_PlayFadeIn(BGM_HEARTWARMING, 0, 256);
+    with (actor ACTOR_NPC_MANAFI) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_MANAFI);
+    message_SetFace(ACTOR_NPC_MANAFI, FACE_JOYOUS, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Kyakya! ♪ Kyakya! ♪",
+        french=" Hi hi hi hi hi! ♪ Kyakya! ♪",
+        german=" Kyakya! ♪ Kyakya! ♪",
+        italian=" Kyakya! ♪ Kyakya! ♪",
+        spanish=" ¡Kyakya! ♪ ¡Kyakya! ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" [CS:N]Manaphy[CR], this is the sea. Sea...",
+                french=" [CS:N]Manaphy[CR], c\'est la mer. La mer...",
+                german=" [CS:N]Manaphy[CR], das ist das Meer.\nMeer...",
+                italian=" [CS:N]Manaphy[CR], questo è il mare...",
+                spanish=" [CS:N]Manaphy[CR], esto es el mar.\nEl mar...",
+            }
+        case 2:
+            {
+                english=" [CS:N]Manaphy[CR], this is the sea. Sea...",
+                french=" [CS:N]Manaphy[CR], c\'est la mer. La mer...",
+                german=" [CS:N]Manaphy[CR], das ist das Meer.\nMeer...",
+                italian=" [CS:N]Manaphy[CR], questo è il mare...",
+                spanish=" [CS:N]Manaphy[CR], esto es el mar.\nEl mar...",
+            }
+        default:
+            {
+                english=" [CS:N]Manaphy[CR], this is the sea. Sea...",
+                french=" [CS:N]Manaphy[CR], c\'est la mer. La mer...",
+                german=" [CS:N]Manaphy[CR], das ist das Meer.\nMeer...",
+                italian=" [CS:N]Manaphy[CR], questo è il mare...",
+                spanish=" [CS:N]Manaphy[CR], esto es el mar.\nEl mar...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_MANAFI) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    WaitExecuteLives(ACTOR_NPC_MANAFI);
+    with (actor ACTOR_NPC_MANAFI) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    Wait(15);
+    se_Play(8962);
+    with (actor ACTOR_NPC_MANAFI) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_MANAFI);
+    message_SetFace(ACTOR_NPC_MANAFI, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Sea?",
+        french=" Mer?",
+        german=" Meer?",
+        italian=" Mare?",
+        spanish=" ¿Mar?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" That\'s right, sea.[K] That\'s where\nyou came from.",
+                french=" C\'est ça, la mer.[K] C\'est de là\nque tu viens.",
+                german=" Jawohl, das Meer.[K] Dort kommst\ndu her.",
+                italian=" Esatto, mare.[K] È da lì che vieni\ntu.",
+                spanish=" Sí, el mar.[K] De ahí es de donde\nhas venido.",
+            }
+        case 2:
+            {
+                english=" That\'s right, sea.[K] That\'s where\nyou came from.",
+                french=" C\'est ça, la mer.[K] C\'est de là\nque tu viens.",
+                german=" Jawohl, das Meer.[K] Dort kommst\ndu her.",
+                italian=" Esatto, mare.[K] È da lì che vieni\ntu.",
+                spanish=" Sí, el mar.[K] De ahí es de donde\nhas venido.",
+            }
+        default:
+            {
+                english=" That\'s right, sea.[K] That\'s where\nyou came from.",
+                french=" C\'est ça, la mer.[K] C\'est de là\nque tu viens.",
+                german=" Jawohl, das Meer.[K] Dort kommst\ndu her.",
+                italian=" Esatto, mare.[K] È da lì che vieni\ntu.",
+                spanish=" Sí, el mar.[K] De ahí es de donde\nhas venido.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_MANAFI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_MANAFI);
+    message_SetFace(ACTOR_NPC_MANAFI, FACE_JOYOUS, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Sea! Sea!",
+        french=" La mer! La mer!",
+        german=" Meer! Meer!",
+        italian=" Mare! Mare!",
+        spanish=" ¡Mar! ¡Mar!",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_MANAFI) {
+        MovePositionOffset(1, -28, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_MANAFI);
+    with (actor ACTOR_NPC_MANAFI) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    message_Talk({
+        english=" [partner]! ♪",
+        french=" [partner]! ♪",
+        german=" [partner]! ♪",
+        italian=" [partner]! ♪",
+        spanish=" ¡[partner]! ♪",
+    });
+    with (actor ACTOR_NPC_MANAFI) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SlidePositionOffset(1, 0, -8);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SetDirection(DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SlidePositionOffset(1, -8, -8);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SlidePositionOffset(1, -16, 0);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SetDirection(DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SlidePositionOffset(1, -12, 8);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SetDirection(DIR_RIGHT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SlidePositionOffset(1, 0, 16);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SetDirection(DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SlidePositionOffset(1, 8, 8);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SlidePositionOffset(1, 8, 0);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    message_CloseEnforce();
+    Wait(10);
+    message_Talk({
+        english=" [hero]! ♪",
+        french=" [hero]! ♪",
+        german=" [hero]! ♪",
+        italian=" [hero]! ♪",
+        spanish=" ¡[hero]! ♪",
+    });
+    with (actor ACTOR_NPC_MANAFI) {
+        SlidePositionOffset(1, 8, 0);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SetDirection(DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SlidePositionOffset(1, 8, 8);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SetDirection(DIR_LEFT);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SlidePositionOffset(1, 0, 12);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SetDirection(DIR_UPLEFT);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SlidePositionOffset(1, -8, 8);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SlidePositionOffset(1, -16, 0);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SetDirection(DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SlidePositionOffset(1, -8, -8);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SetDirection(DIR_RIGHT);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SlidePositionOffset(1, 0, -16);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SetDirection(DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SlidePositionOffset(1, 8, -8);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SlidePositionOffset(1, 16, 0);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        MovePositionOffset(1, 24, 0);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_MANAFI);
+    with (actor ACTOR_NPC_MANAFI) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    Wait(15);
+    with (actor ACTOR_NPC_MANAFI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_MANAFI);
+    message_CloseEnforce();
+    Wait(10);
+    message_Talk({
+        english=" Sea! Sea!",
+        french=" La mer! La mer!",
+        german=" Meer! Meer!",
+        italian=" Mare! Mare!",
+        spanish=" ¡Mar! ¡Mar!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_HAPPY, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Ha, [hero].[K] [CS:N]Manaphy[CR]\nseems to be really happy.",
+                french=" Ha, [hero].[K] [CS:N]Manaphy[CR]\na l\'air vraiment heureux.",
+                german=" Ha, [hero].[K] [CS:N]Manaphy[CR]\nscheint wirklich glücklich zu sein.",
+                italian=" Ah, [hero].[K] [CS:N]Manaphy[CR]\nsembra davvero contento.",
+                spanish=" Bueno, [hero].\nAl parecer...[K] [CS:N]Manaphy[CR] está muy contento.",
+            }
+        case 2:
+            {
+                english=" Ha, [hero].[K] [CS:N]Manaphy[CR]\'s\nreally happy.",
+                french=" Ha, [hero].[K] [CS:N]Manaphy[CR]\na l\'air vraiment heureux.",
+                german=" Ha, [hero].[K] [CS:N]Manaphy[CR]\nist wirklich glücklich.",
+                italian=" Ah, [hero].[K] [CS:N]Manaphy[CR]\nsembra davvero contento.",
+                spanish=" Bueno, [hero].\nAl parecer...[K] [CS:N]Manaphy[CR] está muy contento.",
+            }
+        default:
+            {
+                english=" Ha, [hero].[K] [CS:N]Manaphy[CR]\'s\nreally happy to be here.",
+                french=" Ha, [hero].[K] [CS:N]Manaphy[CR]\na l\'air vraiment heureux.",
+                german=" Ha, [hero].[K] [CS:N]Manaphy[CR]\nist wirklich glücklich.",
+                italian=" Ah, [hero].[K] [CS:N]Manaphy[CR]\nsembra davvero contento.",
+                spanish=" Bueno, [hero].\nAl parecer...[K] [CS:N]Manaphy[CR] está muy contento.",
+            }
+    }
+    message_KeyWait();
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I\'m glad we brought him down to\nthe beach.",
+                french=" On a bien fait de l\'emmener\nà la plage.",
+                german=" Ich bin froh, dass wir es zum\nStrand mitgenommen haben.",
+                italian=" Abbiamo fatto bene a portarlo \nin spiaggia.",
+                spanish=" Me alegro de haberle traído a la\nplaya.",
+            }
+        case 2:
+            {
+                english=" It\'s great we brought him down\nto the beach.",
+                french=" On a bien fait de l\'emmener\nà la plage.",
+                german=" Ich bin froh, dass wir es zum\nStrand mitgenommen haben.",
+                italian=" Abbiamo fatto bene a portarlo \nin spiaggia.",
+                spanish=" Me alegro de haberle traído a la\nplaya.",
+            }
+        default:
+            {
+                english=" I\'m glad we brought him down to\nthe beach.",
+                french=" On a bien fait de l\'emmener\nà la plage.",
+                german=" Ich bin froh, dass wir es zum\nStrand mitgenommen haben.",
+                italian=" Abbiamo fatto bene a portarlo \nin spiaggia.",
+                spanish=" Me alegro de haberle traído a la\nplaya.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_MANAFI) {
+        MovePositionOffset(32972, 0, -24);
+    }
+    Wait(15);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_MANAFI);
+    with (actor ACTOR_NPC_MANAFI) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_MANAFI);
+    message_SetFace(ACTOR_NPC_MANAFI, FACE_HAPPY, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Sea! ♪ Sea! ♪",
+        french=" La mer! ♪ La mer! ♪",
+        german=" Meer! ♪ Meer! ♪",
+        italian=" Mare! ♪ Mare! ♪",
+        spanish=" ¡Mar! ♪ ¡Mar! ♪",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_MANAFI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_MANAFI);
+    Wait(60);
+    with (actor ACTOR_NPC_MANAFI) {
+        Turn2Direction(4, 2, DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        Turn2Direction(4, 2, DIR_UP);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        Turn2Direction(4, 2, DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        Turn2Direction(4, 2, DIR_UP);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    bgm_FadeOut(180);
+    bgm2_FadeOut(180);
+    screen_FadeOut(1, 90);
+    WaitBgm(BGM_OCEAN1);
+    Wait(90);
+    message_Narration(30, {
+        english="[CN]And so [CS:N]Manaphy[CR], [hero], and\n[CN][partner] played until sunset.",
+        french="[CN]Et c\'est ainsi que [CS:N]Manaphy[CR], [hero] et\n[CN][partner] jouèrent jusqu\'au crépuscule.",
+        german="[CN]Und so spielten [CS:N]Manaphy[CR], [hero] und\n[CN][partner], bis die Sonne unterging.",
+        italian="[CN][CS:N]Manaphy[CR], [hero] e\n[CN][partner] giocano fino al tramonto.",
+        spanish="[CN]Y [CS:N]Manaphy[CR], [hero] y\n[CN][partner] jugaron hasta el atardecer.",
+    });
+    message_Narration(30, {
+        english="[CN]That night...",
+        french="[CN]Cette nuit-là...",
+        german="[CN]In dieser Nacht...",
+        italian="[CN]Quella notte...",
+        spanish="[CN]Esa noche...",
+    });
+    message_Close();
+    Wait(30);
+    end;
+}

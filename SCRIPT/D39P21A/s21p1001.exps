@@ -1,0 +1,170 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_S04P01A);
+    screen_FadeIn(1, 0);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Ugh...[K] That wasn\'t so good...",
+                french=" Argh...[K] Quel échec...",
+                german=" Uff...[K] Das war nicht so gut...",
+                italian=" Ugh...[K] Non è andata molto\nbene...",
+                spanish=" Uf...[K] ¡Menuda chapuza!",
+            }
+        case 2:
+            {
+                english=" Ugh...[K] That wasn\'t so great.",
+                french=" Argh...[K] Quel échec...",
+                german=" Uff...[K] Das war nicht so toll.",
+                italian=" Ugh...[K] Non è andata molto\nbene...",
+                spanish=" Uf...[K] ¡Menuda actuación!",
+            }
+        default:
+            {
+                english=" Ugh...[K] We goofed...",
+                french=" Argh...[K] Quel échec...",
+                german=" Uff...[K] Das war nicht so gut...",
+                italian=" Ugh...[K] Abbiamo fallito...",
+                spanish=" Uf...[K] ¡Qué mal!",
+            }
+    }
+    message_KeyWait();
+    screen_FadeOutAll(1, 60);
+    message_CloseEnforce();
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    back_SetGround(LEVEL_D39P21A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_SEALED_RUIN, 0, 256);
+    Wait(30);
+    WaitLockLives(5, ACTOR_PLAYER);
+    Unlock(5);
+    Wait(15);
+    Unlock(7);
+    Lock(3);
+    Wait(15);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Urk! This is really tough...",
+                french=" Argh! C\'est vraiment plus\ndifficile que prévu...",
+                german=" Uff! Das war knüppelhart...",
+                italian=" Ah! È davvero dura...",
+                spanish=" Cuesta avanzar...",
+            }
+        case 2:
+            {
+                english=" Urk! This is harsh going...",
+                french=" Argh! C\'est vraiment plus\ndifficile que prévu...",
+                german=" Uff! Ganz schön raue Gangart...",
+                italian=" Ah! È davvero dura...",
+                spanish=" Cuesta avanzar...",
+            }
+        default:
+            {
+                english=" Urk! This isn\'t so easy...",
+                french=" Argh! C\'est vraiment plus\ndifficile que prévu...",
+                german=" Uff! Das ist nicht so einfach...",
+                italian=" Ah! Non è così facile...",
+                spanish=" No es fácil seguir adelante...",
+            }
+    }
+    message_Close();
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" But if we stick around here,\n[CS:N]Palkia[CR] could attack us again.",
+                french=" Mais si on reste dans les\nparages, [CS:N]Palkia[CR] risque de nous attaquer\nà nouveau.",
+                german=" Aber wenn wir hierbleiben,\nkönnte [CS:N]Palkia[CR] uns wieder angreifen.",
+                italian=" Ma se rimaniamo qui,\n[CS:N]Palkia[CR] potrebbe attaccarci di nuovo.",
+                spanish=" Pero si nos quedamos aquí,\n[CS:N]Palkia[CR] podría volver a atacarnos.",
+            }
+        case 2:
+            {
+                english=" But if we stay here, [CS:N]Palkia[CR] could\nattack us again.",
+                french=" Mais si on reste dans les\nparages, [CS:N]Palkia[CR] risque de nous attaquer\nà nouveau.",
+                german=" Aber wenn wir hierbleiben,\nkönnte [CS:N]Palkia[CR] uns wieder angreifen.",
+                italian=" Ma se rimaniamo qui,\n[CS:N]Palkia[CR] potrebbe attaccarci di nuovo.",
+                spanish=" Pero si nos quedamos aquí,\n[CS:N]Palkia[CR] podría volver a atacarnos.",
+            }
+        default:
+            {
+                english=" But if we stay here, [CS:N]Palkia[CR] could\nattack us again.",
+                french=" Mais si on reste dans les\nparages, [CS:N]Palkia[CR] risque de nous attaquer\nà nouveau.",
+                german=" Aber wenn wir hierbleiben,\nkönnte [CS:N]Palkia[CR] uns wieder angreifen.",
+                italian=" Ma se rimaniamo qui,\n[CS:N]Palkia[CR] potrebbe attaccarci di nuovo.",
+                spanish=" Pero si nos quedamos aquí,\n[CS:N]Palkia[CR] podría volver a atacarnos.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Let\'s move it, [hero]!",
+                french=" Allez, on bouge, [hero]!",
+                german=" Los geht\'s, [hero]!",
+                italian=" Muoviamoci, [hero]!",
+                spanish=" ¡Hay que moverse, [hero]!",
+            }
+        case 2:
+            {
+                english=" Let\'s hustle, [hero]!",
+                french=" Allez, on bouge, [hero]!",
+                german=" Lassen es uns angehen,\n[hero]!",
+                italian=" Muoviamoci, [hero]!",
+                spanish=" ¡Hay que moverse, [hero]!",
+            }
+        default:
+            {
+                english=" Let\'s hurry, [hero]!",
+                french=" Allez, on bouge, [hero]!",
+                german=" Beeilung, [hero]!",
+                italian=" Muoviamoci, [hero]!",
+                spanish=" ¡Deprisa, [hero]!",
+            }
+    }
+    message_Close();
+    end;
+}
+
+def 1 for_actor(ACTOR_PLAYER) {
+    SetDirection(DIR_RIGHT);
+    SetAnimation(76);
+    Lock(5);
+    CallCommon(CORO_WAKEUP_FUNC);
+    CallCommon(CORO_LOOK_AROUND_DOWN_FUNC);
+    Lock(6);
+    hold;
+}
+
+def 2 for_actor(ACTOR_ATTENDANT1) {
+    SetDirection(DIR_RIGHT);
+    SetAnimation(76);
+    Lock(7);
+    CallCommon(CORO_WAKEUP_FUNC);
+    CallCommon(CORO_LOOK_AROUND_FUNC);
+    Unlock(3);
+    Lock(8);
+    hold;
+}

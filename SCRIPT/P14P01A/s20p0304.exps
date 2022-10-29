@@ -1,0 +1,33 @@
+
+def 0 {
+    back_SetGround(LEVEL_P14P01A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (object OBJECT_P14P01A1_153) {
+        SetAnimation(2);
+    }
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_EmptyActor();
+    message_Talk({
+        english="[CN]Why can you not evolve...?",
+        french="[CN]Pourquoi ne peux-tu pas évoluer...?",
+        german="[CN]Warum du dich nicht entwickeln kannst?",
+        italian="[CN]Perché non puoi evolverti?",
+        spanish="[CN]¿Que por qué no puedes evolucionar tú?",
+    });
+    message_Talk({
+        english="[CN]It may be influenced by a distortion\n[CN]in the fabric of space...",
+        french="[CN]Peut-être est-ce dû à une distorsion\n[CN]dans la trame de l\'espace...",
+        german="[CN]Vielleicht hat die Verzerrung des\n[CN]Raumgefüges etwas damit zu tun...",
+        italian="[CN]Potrebbe essere dovuto a una \n[CN]distorsione della struttura dello spazio...",
+        spanish="[CN]Podría deberse a\n[CN]una deformación del espacio...",
+    });
+    message_Close();
+    screen_FadeOut(1, 30);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    end;
+}

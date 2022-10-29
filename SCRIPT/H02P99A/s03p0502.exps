@@ -1,0 +1,22 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_H02P99A);
+    supervision_StationCommon(0);
+    supervision_LoadStation(LEVEL_H02P99A, 'US03');
+    supervision_Station(15);
+    supervision_Station(20);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetDirection(DIR_RIGHT);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetDirection(DIR_LEFT);
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_DO_YOUR_BEST_AS_ALWAYS, 0, 256);
+    end;
+}

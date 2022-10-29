@@ -1,0 +1,241 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_D32P31A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (object OBJECT_D32P44A3_86) {
+        SetAnimation(9);
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    se_Play(7950);
+    with (object OBJECT_D32P44A3_86) {
+        SetAnimation(17);
+    }
+    with (object OBJECT_D32P44A3_86) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D32P44A3_86);
+    with (object OBJECT_D32P44A3_86) {
+        SetAnimation(2);
+    }
+    with (object OBJECT_D32P44A3_86) {
+        SetOutputAttribute(4);
+    }
+    Wait(60);
+    with (object OBJECT_D32P44A3_86) {
+        MovePositionMark(32844, Position<'m0', 22.5, 32>);
+    }
+    WaitExecuteObject(OBJECT_D32P44A3_86);
+    Wait(30);
+    se_FadeOut(7950, 90);
+    message_Mail({
+        english="[CN]A mysterious light\n[CN]enveloped [player]!",
+        french="[CN]Une lumière mystérieuse\n[CN]enveloppe [player]!",
+        german="[CN]Ein mysteriöses Licht\n[CN]umhüllt [player]!",
+        italian="[CN]Una luce misteriosa\n[CN]avvolge [player]!",
+        spanish="[CN]¡Una luz misteriosa\n[CN]ha envuelto a [player]!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    WaitSe(7950);
+    se_Play(7951);
+    with (object OBJECT_D32P44A3_86) {
+        SetAnimation(19);
+    }
+    with (object OBJECT_D32P44A3_86) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D32P44A3_86);
+    with (object OBJECT_D32P44A3_86) {
+        Destroy();
+    }
+    message_Mail({
+        english="[CN]The guardian\'s permission was granted!",
+        french="[CN]Le gardien vous accorde le droit de continuer!",
+        german="[CN]Der Torwächter gewährt seine Erlaubnis!",
+        italian="[CN]Hai ottenuto il permesso del guardiano!",
+        spanish="[CN]¡Has conseguido el permiso del guardián!",
+    });
+    WaitSe(7951);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    if ( scn($SCENARIO_MAIN) < [29, 67] ) {
+        §label_0;
+        with (performer 0) {
+            MovePositionMark(1, Position<'m1', 22.5, 20.5>);
+        }
+        WaitExecutePerformer(0);
+        Wait(30);
+        se_Play(7187);
+        camera_SetEffect(2, 2, 33280);
+        Wait(10);
+        supervision_RemoveActing(0);
+        supervision_Acting(1);
+        camera_SetEffect(2, 2, 33280);
+        Wait(15);
+        camera_SetEffect(0, 0, 0);
+        Wait(30);
+        with (performer 0) {
+            MovePositionMark(1, Position<'m2', 76.5, 33.5>);
+        }
+        WaitExecutePerformer(0);
+        Wait(15);
+        with (actor ACTOR_PLAYER_APPOINT) {
+            MovePositionMark(1, Position<'m3', 76.5, 15.5>);
+        }
+        Wait(10);
+        with (actor ACTOR_ADVENTURE_NPC1) {
+            MovePositionMark(1, Position<'m4', 76.5, 15.5>);
+        }
+        Wait(10);
+        with (actor ACTOR_ADVENTURE_NPC2) {
+            MovePositionMark(1, Position<'m5', 76.5, 15.5>);
+        }
+        with (actor ACTOR_ADVENTURE_NPC3) {
+            MovePositionMark(1, Position<'m6', 76.5, 15.5>);
+        }
+        Wait(30);
+        screen_FadeOut(1, 30);
+        end;
+    } else {
+        switch ( random(100) ) {
+            case < 50:
+                bgm_PlayFadeIn(BGM_IN_THE_DEPTHS_OF_THE_PIT, 0, 256);
+                Wait(15);
+                message_Mail({
+                    english="[CN]........................",
+                    french="[CN]........................",
+                    german="[CN]........................",
+                    italian="[CN]........................",
+                    spanish="[CN]...",
+                });
+                message_Mail({
+                    english="[CN]A voice echoed from somewhere...",
+                    french="[CN]Une voix retentit de nulle part...",
+                    german="[CN]Eine Stimme schallt von irgendwoher...",
+                    italian="[CN]Si sente una voce echeggiare in lontananza...",
+                    spanish="[CN]Un eco proveniente de algún lugar...",
+                });
+                CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                se_Play(7175);
+                with (performer 3) {
+                    SetEffect(EFFECT_WHITE_LIGHT_ENGULFING_OUT, 3);
+                }
+                Wait(15);
+                supervision_Acting(2);
+                Wait(15);
+                WaitExecutePerformer(3);
+                with (performer 3) {
+                    SetEffect(EFFECT_NONE, 3);
+                }
+                Wait(15);
+                message_SetFace(ACTOR_NPC_REJIAISU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+                message_Talk({
+                    english=" I AM [CS:N]REGICE[CR]...",
+                    french=" JE SUIS [CS:N]REGICE[CR]...",
+                    german=" ICH BIN [CS:N]REGICE[CR]...",
+                    italian=" IO SONO [CS:N]REGICE[CR]...",
+                    spanish=" YO SOY [CS:N]REGICE[CR]...",
+                });
+                message_Talk({
+                    english=" I PLEDGE...SERVICE TO YOU...",
+                    french=" JE VOUS DOIS... ALLEGEANCE...",
+                    german=" ICH VERSPRECHE, DIR ZU\nDIENEN...",
+                    italian=" MI IMPEGNO A... SERVIRTI...",
+                    spanish=" PROMETO SERVIROS...",
+                });
+                §label_4;
+                CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                switch ( ProcessSpecial(PROCESS_SPECIAL_PREPARE_MENU_ACCEPT_TEAM_MEMBER, 1, 0) ) { }
+                switch ( message_Menu(MENU_ACCEPT_TEAM_MEMBER) ) {
+                    case 1:
+                        CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                        me_Play(5);
+                        message_Mail({
+                            english="[CN][c_name:NPC_NEW_FRIEND] joined the team!",
+                            french="[CN][c_name:NPC_NEW_FRIEND] rejoint l\'équipe!",
+                            german="[CN][c_name:NPC_NEW_FRIEND] gehört nun zum Team.",
+                            italian="[CN][c_name:NPC_NEW_FRIEND] si unisce alla squadra!",
+                            spanish="[CN]¡[c_name:NPC_NEW_FRIEND] se ha unido al equipo!",
+                        });
+                        WaitMe(5);
+                        CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                        bgm_FadeOut(30);
+                        se_Play(7183);
+                        with (performer 3) {
+                            SetEffect(EFFECT_WHITE_LIGHT_ENGULFING, 3);
+                        }
+                        Wait(10);
+                        with (actor ACTOR_NPC_REJIAISU) {
+                            Destroy();
+                        }
+                        Wait(15);
+                        WaitExecutePerformer(3);
+                        with (performer 3) {
+                            SetEffect(EFFECT_NONE, 3);
+                        }
+                        Wait(30);
+                        jump @label_0;
+                    case 2:
+                    default:
+                        CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                        message_Mail({
+                            english="[CN]Are you sure?[K]\n[CN]You\'re sure you won\'t accept\n[CN]this potential new member?",
+                            french="[CN]Etes-vous sûr?[K]\n[CN]Vous ne voulez vraiment pas\n[CN]accepter cette nouvelle recrue?",
+                            german="[CN]Bist du sicher?[K]\n[CN]Möchtest du dieses potenzielle neue\n[CN]Mitglied wirklich abweisen?",
+                            italian="[CN]Davvero?[K]\n[CN]Confermi di non voler accettare\n[CN]questo potenziale nuovo membro?",
+                            spanish="[CN]¿Seguro?[K]\n[CN]¿Seguro que prefieres que no\n[CN]se incorpore al equipo?",
+                        });
+                        switch ( message_SwitchMenu(0, 1) ) {
+                            case menu({
+                                english="Reconsider",
+                                french="Reconsidérer",
+                                german="Überdenken",
+                                italian="Ripensaci",
+                                spanish="Reconsiderar",
+                            }):
+                                jump @label_4;
+                            case menu({
+                                english="Refuse",
+                                french="Refuser",
+                                german="Ablehnen",
+                                italian="Rifiuta",
+                                spanish="Rechazar",
+                            }):
+                            default:
+                                CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                                message_Mail({
+                                    english="[CN][player] turned down\n[CN][CS:N]Regice[CR]\'s offer to join.",
+                                    french="[CN][player] refuse l\'offre\n[CN]de [CS:N]Regice[CR].",
+                                    german="[CN][player] lehnt das Beitrittsangebot von\n[CN][CS:N]Regice[CR] ab.",
+                                    italian="[CN][player] rifiuta\n[CN]l\'offerta di [CS:N]Regice[CR].",
+                                    spanish="[CN][player] declinó el ofrecimiento de\n[CN][CS:N]Regice[CR].",
+                                });
+                                message_Close();
+                                bgm_FadeOut(30);
+                                se_Play(7183);
+                                with (performer 3) {
+                                    SetEffect(EFFECT_WHITE_LIGHT_ENGULFING, 3);
+                                }
+                                Wait(10);
+                                with (actor ACTOR_NPC_REJIAISU) {
+                                    Destroy();
+                                }
+                                Wait(15);
+                                WaitExecutePerformer(3);
+                                with (performer 3) {
+                                    SetEffect(EFFECT_NONE, 3);
+                                }
+                                Wait(30);
+                                jump @label_0;
+                        }
+                        break;
+                }
+                break;
+            default:
+                jump @label_0;
+        }
+    }
+}

@@ -6,7 +6,6 @@ def 0 {
     supervision_LoadStation(LEVEL_G01P04A, 'UM08');
     supervision_Station(2);
     supervision_Acting(0);
-    supervision_Acting(1);
     with (actor ACTOR_NPC_PERAPPU) {
         SetPositionInitial();
     }
@@ -16,7 +15,6 @@ def 0 {
     with (performer 0) {
         camera_SetMyself();
     }
-    supervision_RemoveActing(1);
     with (actor ACTOR_ATTENDANT1) {
         SetEffect(EFFECT_NONE, 3);
     }

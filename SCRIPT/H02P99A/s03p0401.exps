@@ -1,0 +1,153 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_MAIN = scn[29, 43];
+    message_Narration(30, {
+        english="[CN]The next morning...",
+        french="[CN]Le lendemain matin...",
+        german="[CN]Am nächsten Morgen...",
+        italian="[CN]La mattina dopo...",
+        spanish="[CN]Al día siguiente...",
+    });
+    message_Close();
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V24P08A);
+    back_SetGround(LEVEL_H02P99A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    camera2_SetPositionMark(Position<'m0', 19, 15.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetDirection(DIR_LEFT);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(76);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(76);
+    }
+    screen2_FadeIn(0, 30);
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_DO_YOUR_BEST_AS_ALWAYS, 0, 256);
+    Wait(30);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(63);
+    }
+    Wait(5);
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(63);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    Wait(30);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Morning, [hero]!",
+                french=" Bonjour, [hero]!",
+                german=" Morgen, [hero]!",
+                italian=" Buongiorno, [hero]!",
+                spanish=" ¡Buenos días, [hero]!",
+            }
+        case 2:
+            {
+                english=" Good morning, [hero]!",
+                french=" Bonjour, [hero]!",
+                german=" Guten Morgen, [hero]!",
+                italian=" Buongiorno, [hero]!",
+                spanish=" ¡Buenos días, [hero]!",
+            }
+        default:
+            {
+                english=" Good morning, [hero]!",
+                french=" Bonjour, [hero]!",
+                german=" Guten Morgen, [hero]!",
+                italian=" Buongiorno, [hero]!",
+                spanish=" ¡Buenos días, [hero]!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" [CS:N]Manaphy[CR] is waiting for us at the\nguild. The poor little guy\'s hungry.",
+                french=" [CS:N]Manaphy[CR] nous attend à la Guilde.\nCe pauvre petit a faim.",
+                german=" [CS:N]Manaphy[CR] wartet auf uns in der\nGilde. Das arme kleine Kerlchen hat Hunger.",
+                italian=" [CS:N]Manaphy[CR] ci aspetta alla Gilda. \nIl piccolo sarà affamato.",
+                spanish=" [CS:N]Manaphy[CR] nos espera en el\n[CS:N]Pokégremio[CR]. El pobre está hambriento.",
+            }
+        case 2:
+            {
+                english=" [CS:N]Manaphy[CR] is waiting for us at the\nguild. The poor little guy\'s hungry.",
+                french=" [CS:N]Manaphy[CR] nous attend à la Guilde.\nCe pauvre petit a faim.",
+                german=" [CS:N]Manaphy[CR] wartet auf uns in der\nGilde. Das arme kleine Kerlchen hat Hunger.",
+                italian=" [CS:N]Manaphy[CR] ci aspetta alla Gilda. \nIl piccolo sarà affamato.",
+                spanish=" [CS:N]Manaphy[CR] nos espera en el\n[CS:N]Pokégremio[CR]. El pobre está hambriento.",
+            }
+        default:
+            {
+                english=" [CS:N]Manaphy[CR] is waiting for us at the\nguild. The poor little guy\'s hungry.",
+                french=" [CS:N]Manaphy[CR] nous attend à la Guilde.\nCe pauvre petit a faim.",
+                german=" [CS:N]Manaphy[CR] wartet auf uns in der\nGilde. Das arme kleine Kerlchen hat Hunger.",
+                italian=" [CS:N]Manaphy[CR] ci aspetta alla Gilda. \nIl piccolo sarà affamato.",
+                spanish=" [CS:N]Manaphy[CR] nos espera en el\n[CS:N]Pokégremio[CR]. El pobre está hambriento.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Let\'s go give a [CS:I]Blue Gummi[CR] to\n[CS:N]Manaphy[CR].",
+                french=" Allons offrir une [CS:I]Gelée Bleue[CR]\nà [CS:N]Manaphy[CR].",
+                german=" Los, gehen wir zu [CS:N]Manaphy[CR] und\ngeben ihm ein [CS:I]Blaugummi[CR].",
+                italian=" Andiamo a dare una [CS:I]Gommablu[CR] a\n[CS:N]Manaphy[CR].",
+                spanish=" Vamos a darle una [CS:I]Gomi Azul[CR]\na [CS:N]Manaphy[CR].",
+            }
+        case 2:
+            {
+                english=" Let\'s go to the guild and give\na [CS:I]Blue Gummi[CR] to [CS:N]Manaphy[CR].",
+                french=" Allons offrir une [CS:I]Gelée Bleue[CR]\nà [CS:N]Manaphy[CR].",
+                german=" Lass uns zur Gilde gehen und\n[CS:N]Manaphy[CR] ein [CS:I]Blaugummi[CR] geben.",
+                italian=" Andiamo a dare una [CS:I]Gommablu[CR] a\n[CS:N]Manaphy[CR].",
+                spanish=" Vamos a darle una [CS:I]Gomi Azul[CR]\na [CS:N]Manaphy[CR].",
+            }
+        default:
+            {
+                english=" Let\'s go to the guild and give\na [CS:I]Blue Gummi[CR] to [CS:N]Manaphy[CR].",
+                french=" Allons offrir une [CS:I]Gelée Bleue[CR]\nà [CS:N]Manaphy[CR].",
+                german=" Lass uns zur Gilde gehen und\n[CS:N]Manaphy[CR] ein [CS:I]Blaugummi[CR] geben.",
+                italian=" Andiamo a dare una [CS:I]Gommablu[CR] a\n[CS:N]Manaphy[CR].",
+                spanish=" Vamos a darle una [CS:I]Gomi Azul[CR]\na [CS:N]Manaphy[CR].",
+            }
+    }
+    message_Close();
+    screen2_FadeOut(1, 30);
+    back2_SetMode(0);
+    end;
+}

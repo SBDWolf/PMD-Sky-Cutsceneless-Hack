@@ -1,0 +1,110 @@
+
+def 0 {
+    sound_Stop();
+    se_Play(8198);
+    screen_WhiteOut(1, 30);
+    back_SetGround(LEVEL_D39P41A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    Wait(45);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    se_Play(8978);
+    with (actor ACTOR_NPC_PARUKIA) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_PARUKIA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_PARUKIA);
+    message_SetFace(ACTOR_NPC_PARUKIA, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" THEY...DISAPPEARED?",
+        french=" LES PROFANATEURS ONT...\nDISPARU?",
+        german=" SIE... SIND VERSCHWUNDEN?",
+        italian=" DOVE... SONO?",
+        spanish=" HAN... ¿DESAPARECIDO?",
+    });
+    message_Talk({
+        english=" NO! THEY HAVE MERELY FLED!",
+        french=" NON! SIMPLEMENT PRIS\nLA FUITE!",
+        german=" NEIN! SIE SIND NUR GEFLOHEN!",
+        italian=" NO! SE LA SONO SVIGNATA!",
+        spanish=" ¡NO! ¡HAN HUIDO!",
+    });
+    message_Talk({
+        english=" I HAD ALMOST DISPOSED OF\nTHEM FOREVER...[K] SO BE IT.",
+        french=" ET J\'ETAIS SUR LE POINT DE\nLES ELIMINER POUR TOUJOURS...[K] SOIT.",
+        german=" ICH HATTE SIE BEINAHE FÜR\nIMMER BESEITIGT...[K] SO SEI ES.",
+        italian=" ERO QUASI RIUSCITO A \nLIBERARMENE PER SEMPRE...[K] E SIA.",
+        spanish=" CASI HABÍA TERMINADO DE\nUNA VEZ POR TODAS...[K] PUES QUE ASÍ\nSEA.",
+    });
+    message_Talk({
+        english=" BUT THEY CAN NEVER ESCAPE\n[CS:P]SPACIAL RIFT[CR]!",
+        french=" MAIS LA [CS:P]FAILLE SPATIALE[CR] SERA\nLEUR TOMBEAU!",
+        german=" ABER SIE KÖNNEN NIEMALS AUS\nDER [CS:P]RAUMSPALTE[CR] ENTKOMMEN!",
+        italian=" MA NON RIUSCIRANNO MAI A \nLASCIARE LA [CS:P]VALLE DIMENSIONALE[CR]!",
+        spanish=" ¡NUNCA LOGRARÁN ESCAPAR\nDE LA [CS:P]GRIETA ESPACIAL[CR]!",
+    });
+    message_Talk({
+        english=" I WILL HUNT THEM DOWN...[K]\nAND BE DONE WITH THEM! ONCE AND FOR ALL!",
+        french=" JE LES TRAQUERAI...[K]\nET JE LES ANEANTIRAI! UNE FOIS POUR\nTOUTES!",
+        german=" ICH WERDE SIE ZUR STRECKE\nBRINGEN...[K] UND SIE EIN FÜR ALLE MAL FERTIG\nMACHEN!",
+        italian=" DARÒ LORO LA CACCIA...[K]\nE MI SBARAZZERÒ DI LORO! UNA VOLTA PER\nTUTTE!",
+        spanish=" NO SE ME ESCAPARÁN...[K]\n¡Y ACABARÉ CON ESTO PARA SIEMPRE!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PARUKIA) {
+        SetAnimation(25);
+    }
+    with (actor ACTOR_NPC_PARUKIA) {
+        WaitAnimation();
+    }
+    se_Play(8200);
+    supervision_Acting(1);
+    with (object OBJECT_H02P99C5_120) {
+        SetOutputAttribute(1);
+    }
+    with (object OBJECT_H02P99C5_120) {
+        SetAnimation(17);
+    }
+    with (object OBJECT_H02P99C5_120) {
+        WaitAnimation();
+    }
+    Wait(10);
+    message_SetActor(ACTOR_NPC_PARUKIA);
+    message_Talk({
+        english=" GRRR-OOOOOOOO!",
+        french=" GRRR-OOOOOOOO!",
+        german=" GRRR-OOOOOOOO!",
+        italian=" GRRR-OOOOOOOO!",
+        spanish=" ¡GRRR!",
+    });
+    WaitExecuteLives(ACTOR_NPC_PARUKIA);
+    with (actor ACTOR_NPC_PARUKIA) {
+        Destroy();
+    }
+    WaitExecuteObject(OBJECT_H02P99C5_120);
+    with (object OBJECT_H02P99C5_120) {
+        SetAnimation(4);
+    }
+    Wait(10);
+    message_CloseEnforce();
+    with (object OBJECT_H02P99C5_120) {
+        SetAnimation(22);
+    }
+    with (object OBJECT_H02P99C5_120) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_H02P99C5_120);
+    with (object OBJECT_H02P99C5_120) {
+        Destroy();
+    }
+    Wait(30);
+    screen_FadeOut(1, 30);
+    Wait(60);
+    WaitSe(8200);
+    end;
+}

@@ -1,0 +1,455 @@
+
+def 0 {
+    sound_Stop();
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V01P03B);
+    back_SetGround(LEVEL_D01P11B);
+    supervision_Acting(0);
+    camera2_SetPositionMark(Position<'m0', 33, 9.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    bgm2_PlayFadeIn(BGM_OCEAN1, 90, 256);
+    screen2_FadeIn(0, 60);
+    screen_FadeIn(1, 60);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" The Guildmaster and I decided to\ninvite [CS:N]Walrein[CR] from the Northern Sea.",
+        french=" Le Maître de la Guilde et\nmoi-même avons décidé de convier\n[CS:N]Kaimorse[CR] de la Mer du Nord.",
+        german=" Der Gildenmeister und ich haben\nentschieden, [CS:N]Walraisa[CR] aus dem Nordmeer\neinzuladen.",
+        italian=" Il Capitano e io abbiamo deciso \ndi invitare [CS:N]Walrein[CR] dal Mare Settentrionale.",
+        spanish=" El Gran Bluff y yo hemos\ninvitado a [CS:N]Walrein[CR], del Mar del Norte.",
+    });
+    message_Talk({
+        english=" We felt that [CS:N]Walrein[CR] would be\nideal for looking after [CS:N]Manaphy[CR].",
+        french=" Nous pensons que [CS:N]Kaimorse[CR]\nsera le Pokémon idéal pour s\'occuper de\n[CS:N]Manaphy[CR].",
+        german=" Unser Gefühl sagte uns, dass\n[CS:N]Walraisa[CR] die richtige Wahl sein würde, um\nauf [CS:N]Manaphy[CR] aufzupassen.",
+        italian=" Abbiamo pensato che [CS:N]Walrein[CR] \nè il Pokémon ideale per occuparsi di [CS:N]Manaphy[CR].",
+        spanish=" Pensamos que [CS:N]Walrein[CR] podría\nocuparse de [CS:N]Manaphy[CR] como es debido.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_TODOZERUGA, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Aye.[K] I\'ve heard all I need to\nhear from your [CS:N]Wigglytuff[CR].",
+        french=" En effet.[K] [CS:N]Grodoudou[CR] m\'a expliqué\ntout ce que je devais savoir à ce sujet.",
+        german=" Ja.[K] Euer [CS:N]Knuddeluff[CR] hat mir\nalles erzählt, was ich wissen muss.",
+        italian=" Già.[K] [CS:N]Wigglytuff[CR] mi ha\nspiegato tutto.",
+        spanish=" Sí.[K] [CS:N]Wigglytuff[CR] ya me ha puesto\nal corriente de todo.",
+    });
+    message_Talk({
+        english=" You\'ve my word. I\'ll take full\nresponsibility for raising [CS:N]Manaphy[CR].",
+        french=" Vous avez ma parole. Je prends\nla responsabilité d\'élever [CS:N]Manaphy[CR].",
+        german=" Ihr habt mein Wort. Ich\nübernehme die volle Verantwortung für die\nErziehung von [CS:N]Manaphy[CR].",
+        italian=" Avete la mia parola. Mi occuperò\na tempo pieno di [CS:N]Manaphy[CR].",
+        spanish=" Tenéis mi palabra. Me encargaré\nde criar a [CS:N]Manaphy[CR].",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Take good care of the little guy.",
+                french=" Prends bien soin de ce petit\ngars, d\'accord?",
+                german=" Pass gut auf das kleine Kerlchen\nauf.",
+                italian=" Prenditi cura di questo cucciolo.",
+                spanish=" Cuídalo bien.",
+            }
+        case 2:
+            {
+                english=" Please take good care of the\nlittle guy.",
+                french=" Prends bien soin de ce petit\ngars, d\'accord?",
+                german=" Bitte pass gut auf das kleine\nKerlchen auf.",
+                italian=" Prenditi cura di questo cucciolo.",
+                spanish=" Cuídalo bien, por favor.",
+            }
+        default:
+            {
+                english=" Please take good care of the\nlittle cutie.",
+                french=" Prends bien soin de ce petit\ngars, d\'accord?",
+                german=" Bitte pass gut auf das kleine\nKerlchen auf.",
+                italian=" Prenditi cura di questo cucciolo.",
+                spanish=" Cuídalo bien, por favor.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    bgm_PlayFadeIn(BGM_IN_THE_HANDS_OF_FATE, 0, 256);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" [CS:N]Manaphy[CR].[K] From now on, I want\nyou to be good and obey [CS:N]Walrein[CR].",
+                french=" [CS:N]Manaphy[CR].[K] Maintenant, sois bien\ngentil et écoute toujours [CS:N]Kaimorse[CR].",
+                german=" [CS:N]Manaphy[CR].[K] Ich möchte,\ndass du jetzt artig bist und [CS:N]Walraisa[CR]\ngehorchst.",
+                italian=" [CS:N]Manaphy[CR].[K] D\'ora in poi voglio\nche tu faccia il bravo e obbedisca a [CS:N]Walrein[CR].",
+                spanish=" [CS:N]Manaphy[CR].[K] A partir de ahora,\nquiero que te portes bien y obedezcas a\n[CS:N]Walrein[CR].",
+            }
+        case 2:
+            {
+                english=" [CS:N]Manaphy[CR].[K] From now on, I want\nyou to be good and listen to [CS:N]Walrein[CR].",
+                french=" [CS:N]Manaphy[CR].[K] Maintenant, sois bien\ngentil et écoute toujours [CS:N]Kaimorse[CR].",
+                german=" [CS:N]Manaphy[CR].[K] Ich möchte,\ndass du jetzt artig bist und [CS:N]Walraisa[CR]\ngehorchst.",
+                italian=" [CS:N]Manaphy[CR].[K] D\'ora in poi voglio\nche tu faccia il bravo e obbedisca a [CS:N]Walrein[CR].",
+                spanish=" [CS:N]Manaphy[CR].[K] A partir de ahora,\nquiero que te portes bien y obedezcas a\n[CS:N]Walrein[CR].",
+            }
+        default:
+            {
+                english=" [CS:N]Manaphy[CR].[K] From now on, I want\nyou to be good and listen to [CS:N]Walrein[CR].",
+                french=" [CS:N]Manaphy[CR].[K] Maintenant, sois bien\ngentil et écoute toujours [CS:N]Kaimorse[CR].",
+                german=" [CS:N]Manaphy[CR].[K] Ich möchte,\ndass du jetzt artig bist und [CS:N]Walraisa[CR]\ngehorchst.",
+                italian=" [CS:N]Manaphy[CR].[K] D\'ora in poi voglio\nche tu faccia il bravo e obbedisca a [CS:N]Walrein[CR].",
+                spanish=" [CS:N]Manaphy[CR].[K] A partir de ahora,\nquiero que te portes bien y obedezcas a\n[CS:N]Walrein[CR].",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" And grow strong and healthy in\nthe sea...",
+                french=" Et grandis en bonne santé dans\nla mer...",
+                german=" Und dass du im Meer groß und\nstark wirst!",
+                italian=" E cresci forte e in salute\nnel mare...",
+                spanish=" Y que crezcas, sano y fuerte,\nen el mar...",
+            }
+        case 2:
+            {
+                english=" And grow strong and healthy in\nthe sea...",
+                french=" Et grandis en bonne santé dans\nla mer...",
+                german=" Und dass du im Meer groß und\nstark wirst!",
+                italian=" E cresci forte e in salute\nnel mare...",
+                spanish=" Y que crezcas, sano y fuerte,\nen el mar...",
+            }
+        default:
+            {
+                english=" And grow strong and healthy in\nthe sea...",
+                french=" Et grandis en bonne santé dans\nla mer...",
+                german=" Und dass du im Meer groß und\nstark wirst!",
+                italian=" E cresci forte e in salute\nnel mare...",
+                spanish=" Y que crezcas, sano y fuerte,\nen el mar...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8962);
+    with (actor ACTOR_NPC_MANAFI) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    message_SetFace(ACTOR_NPC_MANAFI, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" ?",
+        french=" ?",
+        german=" ?",
+        italian=" ?",
+        spanish=" (?)",
+    });
+    with (actor ACTOR_NPC_MANAFI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_MANAFI);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_TEARY_EYED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Urf...[K] As you get older...[K]\nDon\'t forget us...",
+                french=" Ah...[K] Et même en grandissant...\nne nous oublie pas...",
+                german=" Hmpf...[K] Wenn du älter\nwirst...[K] Vergiss uns nicht...",
+                italian=" Uh...[K] Crescendo...[K]\nnon scordarti di noi...",
+                spanish=" Glup...[K] Cuando crezcas...[K]\nNo nos olvides...",
+            }
+        case 2:
+            {
+                english=" Urf...[K] As you get older...[K]\nDon\'t forget us...",
+                french=" Ah...[K] Et même en grandissant...\nne nous oublie pas...",
+                german=" Hmpf...[K] Wenn du älter\nwirst...[K] Vergiss uns nicht...",
+                italian=" Uh...[K] Crescendo...[K]\nnon scordarti di noi...",
+                spanish=" Glup...[K] Cuando crezcas...[K]\nNo nos olvides...",
+            }
+        default:
+            {
+                english=" Urf...[K] As you get older...[K]\nPlease don\'t forget us...",
+                french=" Ah...[K] Et même en grandissant...\nne nous oublie pas...",
+                german=" Hmpf...[K] Wenn du älter\nwirst...[K] Vergiss uns nicht...",
+                italian=" Uh...[K] Crescendo...[K]\nnon scordarti di noi...",
+                spanish=" Esto...[K] Cuando crezcas...[K]\nNo nos olvides...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_MANAFI) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_MANAFI);
+    se_Play(8963);
+    with (actor ACTOR_NPC_MANAFI) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    message_SetFace(ACTOR_NPC_MANAFI, FACE_STUNNED, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" ...?[K] [partner]?",
+        french=" ...?[K] [partner]?",
+        german=" ...[K][partner]?",
+        italian=" ...?[K] [partner]?",
+        spanish=" ¿Eh?[K] ¿[partner]?",
+    });
+    with (actor ACTOR_NPC_MANAFI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_MANAFI);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_MANAFI) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_MANAFI);
+    message_SetFace(ACTOR_NPC_MANAFI, FACE_STUNNED, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" ...[hero]?",
+        french=" ... [hero]?",
+        german=" ...[hero]?",
+        italian=" [hero]?",
+        spanish=" ¿[hero]?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_STUNNED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" .....................",
+        french=" .....................",
+        german=" .....................",
+        italian=" .....................",
+        spanish=" ...",
+    });
+    message_Talk({
+        english=" Prolonging this will only make\nit worse...",
+        french=" Faire durer ce moment ne va\npas arranger les choses...",
+        german=" Es wird nur schlimmer, je länger\nwir es herauszögern...",
+        italian=" Tirarla per le lunghe ci farà\nsolo sentire peggio...",
+        spanish=" No servirá de nada prolongarlo...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    message_Talk({
+        english=" [CS:N]Walrein[CR], please...",
+        french=" [CS:N]Kaimorse[CR], je te prie...",
+        german=" [CS:N]Walraisa[CR], bitte...\n",
+        italian=" [CS:N]Walrein[CR], per favore...",
+        spanish=" [CS:N]Walrein[CR], por favor...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_TODOZERUGA) {
+        Turn2Direction(8, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_TODOZERUGA);
+    message_SetFace(ACTOR_NPC_TODOZERUGA, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Aye.",
+        french=" Oui.",
+        german=" Ja.",
+        italian=" Sì.",
+        spanish=" Sí.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_TODOZERUGA) {
+        Turn2Direction(8, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_TODOZERUGA);
+    message_Talk({
+        english=" We\'re going, [CS:N]Manaphy[CR].",
+        french=" Nous partons, [CS:N]Manaphy[CR].",
+        german=" Wir gehen, [CS:N]Manaphy[CR].",
+        italian=" Andiamo, [CS:N]Manaphy[CR].",
+        spanish=" Nos vamos, [CS:N]Manaphy[CR].",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_MANAFI) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_MANAFI);
+    Wait(20);
+    se_Play(8962);
+    with (actor ACTOR_NPC_MANAFI) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_MANAFI);
+    message_SetFace(ACTOR_NPC_MANAFI, FACE_STUNNED, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" ...?",
+        french=" ...?",
+        german=" ...",
+        italian=" ...?",
+        spanish=" (?)",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_TODOZERUGA) {
+        MovePositionOffset(32896, -16, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_TODOZERUGA);
+    se_Play(8974);
+    with (actor ACTOR_NPC_MANAFI) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_MANAFI);
+    message_SetFace(ACTOR_NPC_MANAFI, FACE_SURPRISED, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" ...???",
+        french=" ...???",
+        german=" ......",
+        italian=" ...???",
+        spanish=" (!) (?)",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_MANAFI) {
+        Turn2Direction(1, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_MANAFI);
+    se_Play(8972);
+    with (actor ACTOR_NPC_MANAFI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_MANAFI);
+    message_Talk({
+        english=" ...[hero]?",
+        french=" ... [hero]?",
+        german=" ...[hero]?",
+        italian=" ... [hero]?",
+        spanish=" ¿[hero]?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_MANAFI) {
+        Turn2Direction(1, 10, DIR_DOWNLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_MANAFI);
+    se_Play(8972);
+    with (actor ACTOR_NPC_MANAFI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_MANAFI);
+    message_SetFace(ACTOR_NPC_MANAFI, FACE_SURPRISED, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" ...[partner]?",
+        french=" ... [partner]?",
+        german=" ...[partner]?",
+        italian=" ... [partner]?",
+        spanish=" ¿[partner]?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_TODOZERUGA) {
+        Turn2Direction(8, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_TODOZERUGA);
+    Wait(30);
+    with (actor ACTOR_NPC_TODOZERUGA) {
+        SetAnimation(42);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SetAnimation(48);
+    }
+    with (actor ACTOR_NPC_TODOZERUGA) {
+        SlidePositionOffset(32896, 0, -104);
+    }
+    with (actor ACTOR_NPC_MANAFI) {
+        SlidePositionOffset(32896, 0, -104);
+    }
+    message_SetWaitMode(180, 90);
+    message_SetFace(ACTOR_NPC_MANAFI, FACE_CRYING, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" ...[hero]![K] ...[partner]!",
+        french=" ... [hero]![K]\n... [partner]!",
+        german=" ...[hero]![K] ...[partner]!",
+        italian=" ... [hero]![K] \n... [partner]!",
+        spanish=" ¡Eh, [hero]!\n[K]¡[partner]!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetWaitMode(32767, 32767);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_TEARY_EYED, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Sniffle...",
+                french=" Snif...",
+                german=" Schnief...",
+                italian=" Sniff...",
+                spanish=" Snif...",
+            }
+        case 2:
+            {
+                english=" Sniffle...",
+                french=" Snif...",
+                german=" Schnief...",
+                italian=" Sniff...",
+                spanish=" Snif...",
+            }
+        default:
+            {
+                english=" Sniffle...",
+                french=" Snif...",
+                german=" Schnief...",
+                italian=" Sniff...",
+                spanish=" Snif...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Take care...[K] [CS:N]Manaphy[CR].",
+                french=" Prends bien soin de toi...[K]\n[CS:N]Manaphy[CR].",
+                german=" Lebe wohl...[K] [CS:N]Manaphy[CR].",
+                italian=" Abbi cura di te...[K] [CS:N]Manaphy[CR].",
+                spanish=" Cuídate...[K] [CS:N]Manaphy[CR].",
+            }
+        case 2:
+            {
+                english=" Take care...[K] [CS:N]Manaphy[CR].",
+                french=" Prends bien soin de toi...[K]\n[CS:N]Manaphy[CR].",
+                german=" Lebe wohl...[K] [CS:N]Manaphy[CR].",
+                italian=" Abbi cura di te...[K] [CS:N]Manaphy[CR].",
+                spanish=" Cuídate...[K] [CS:N]Manaphy[CR].",
+            }
+        default:
+            {
+                english=" Take care...[K] [CS:N]Manaphy[CR].",
+                french=" Prends bien soin de toi...[K]\n[CS:N]Manaphy[CR].",
+                german=" Lebe wohl...[K] [CS:N]Manaphy[CR].",
+                italian=" Abbi cura di te...[K] [CS:N]Manaphy[CR].",
+                spanish=" Cuídate...[K] [CS:N]Manaphy[CR].",
+            }
+    }
+    message_Close();
+    bgm_FadeOut(180);
+    bgm2_FadeOut(180);
+    screen2_FadeOut(0, 90);
+    screen_FadeOut(1, 90);
+    back2_SetMode(0);
+    Wait(30);
+    WaitBgm(BGM_IN_THE_HANDS_OF_FATE);
+    WaitBgm2(BGM_OCEAN1);
+    end;
+}

@@ -5437,8 +5437,10 @@ coro EVENT_S03_08 {
 
 coro EVENT_S03_09 {
     CallCommon(CORO_SUBSCREEN_INIT);
-    supervision_ExecuteActingSub(LEVEL_D01P11A, 'S03P0901', 0);
-    supervision_ExecuteActingSub(LEVEL_H02P99C, 'S03P0902', 0);
+    $ATTENDANT2_KIND = 0;
+    $SCENARIO_MAIN = scn[29, 47];
+    //supervision_ExecuteActingSub(LEVEL_D01P11A, 'S03P0901', 0);
+    //supervision_ExecuteActingSub(LEVEL_H02P99C, 'S03P0902', 0);
     supervision_ExecuteActingSub(LEVEL_H02P99A, 'S03P0903', 0);
     CallCommon(CORO_EVENT_END_MAPIN);
     main_SetGround(LEVEL_H02P99A);
@@ -5471,7 +5473,8 @@ coro EVENT_S03_12 {
 
 coro EVENT_S03_13 {
     CallCommon(CORO_SUBSCREEN_INIT);
-    supervision_ExecuteActingSub(LEVEL_D01P11A, 'S03P1301', 0);
+    $SCENARIO_MAIN = scn[29, 49];
+    //supervision_ExecuteActingSub(LEVEL_D01P11A, 'S03P1301', 0);
     supervision_ExecuteActingSub(LEVEL_H02P99A, 'S03P1302', 0);
     CallCommon(CORO_EVENT_END_MAPIN);
     main_SetGround(LEVEL_H02P99A);
@@ -5509,10 +5512,12 @@ coro EVENT_S03_16 {
 
 coro EVENT_S03_17_20 {
     CallCommon(CORO_SUBSCREEN_INIT);
-    supervision_ExecuteActingSub(LEVEL_D35P41A, 'S03P1701', 0);
-    supervision_ExecuteActingSub(LEVEL_H02P99A, 'S03P2001', 0);
-    supervision_ExecuteActingSub(LEVEL_H01P99A, 'S03P2002', 0);
-    supervision_ExecuteActingSub(LEVEL_D01P11B, 'S03P2003', 0);
+    $SCENARIO_MAIN = scn[29, 52];
+    switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+    //supervision_ExecuteActingSub(LEVEL_D35P41A, 'S03P1701', 0);
+    //supervision_ExecuteActingSub(LEVEL_H02P99A, 'S03P2001', 0);
+    //supervision_ExecuteActingSub(LEVEL_H01P99A, 'S03P2002', 0);
+    //supervision_ExecuteActingSub(LEVEL_D01P11B, 'S03P2003', 0);
     supervision_ExecuteActingSub(LEVEL_H02P99A, 'S03P2004', 0);
     CallCommon(CORO_EVENT_END_MAPIN);
     main_SetGround(LEVEL_H02P99A);
@@ -5575,7 +5580,7 @@ coro EVENT_S04_05 {
 
 coro EVENT_S04_06_07 {
     CallCommon(CORO_SUBSCREEN_INIT);
-    supervision_ExecuteActingSub(LEVEL_D32P31A, 'S04P0601', 0);
+    //supervision_ExecuteActingSub(LEVEL_D32P31A, 'S04P0601', 0);
     if ( scn($SCENARIO_MAIN) >= [29, 60] ) {
         main_EnterGround(LEVEL_D32P12A, 30);
         end;
@@ -5613,7 +5618,7 @@ coro EVENT_S04_10 {
 
 coro EVENT_S04_11 {
     CallCommon(CORO_SUBSCREEN_INIT);
-    supervision_ExecuteActingSub(LEVEL_D32P32A, 'S04P1101', 0);
+    //supervision_ExecuteActingSub(LEVEL_D32P32A, 'S04P1101', 0);
     main_EnterGround(LEVEL_D32P13A, 30);
     end;
 }
@@ -5636,7 +5641,8 @@ coro EVENT_S04_13 {
 
 coro EVENT_S04_14 {
     CallCommon(CORO_SUBSCREEN_INIT);
-    supervision_ExecuteActingSub(LEVEL_D32P33A, 'S04P1401', 0);
+    $SCENARIO_MAIN = scn[29, 65];
+    //supervision_ExecuteActingSub(LEVEL_D32P33A, 'S04P1401', 0);
     main_EnterDungeon(60, 30);
     main_EnterDungeon(-1, 30);
     hold;
@@ -5683,8 +5689,12 @@ coro EVENT_S04_19 {
     CallCommon(CORO_SUBSCREEN_INIT);
     adventure_log = 5;
     $PERFORMANCE_PROGRESS_LIST[19] = 1;
-    supervision_ExecuteActingSub(LEVEL_D32P44A, 'S04P1901', 0);
-    supervision_ExecuteActingSub(LEVEL_D32P14A, 'S04P1902', 0);
+    //supervision_ExecuteActingSub(LEVEL_D32P44A, 'S04P1901', 0);
+    //supervision_ExecuteActingSub(LEVEL_D32P14A, 'S04P1902', 0);
+    dungeon_mode(70) = DMODE_OPEN_AND_REQUEST;
+    $SCENARIO_MAIN = scn[29, 67];
+    $REQUEST_CLEAR_COUNT = 0;
+    switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
     JumpCommon(CORO_EVENT_HA_SAME);
 }
 
@@ -5863,11 +5873,12 @@ coro EVENT_S12_21 {
 
 coro EVENT_S20_01 {
     CallCommon(CORO_SUBSCREEN_INIT);
-    supervision_ExecuteActingSub(LEVEL_V03P05C, 'S20P0101', 0);
-    supervision_ExecuteActingSub(LEVEL_H02P99C, 'S20P0102', 0);
-    supervision_ExecuteActingSub(LEVEL_P14P01A, 'S20P0103', 0);
-    supervision_ExecuteActingSub(LEVEL_H02P99C, 'S20P0104', 0);
-    supervision_ExecuteActingSub(LEVEL_V03P11A, 'S20P0106', 0);
+    $SCENARIO_MAIN = scn[29, 69];
+    //supervision_ExecuteActingSub(LEVEL_V03P05C, 'S20P0101', 0);
+    //supervision_ExecuteActingSub(LEVEL_H02P99C, 'S20P0102', 0);
+    //supervision_ExecuteActingSub(LEVEL_P14P01A, 'S20P0103', 0);
+    //supervision_ExecuteActingSub(LEVEL_H02P99C, 'S20P0104', 0);
+    //supervision_ExecuteActingSub(LEVEL_V03P11A, 'S20P0106', 0);
     supervision_ExecuteActingSub(LEVEL_H02P99A, 'S20P0107', 0);
     CallCommon(CORO_EVENT_END_MAPIN);
     main_SetGround(LEVEL_H02P99A);
@@ -5877,9 +5888,10 @@ coro EVENT_S20_01 {
 
 coro EVENT_S20_02 {
     CallCommon(CORO_SUBSCREEN_INIT);
-    supervision_ExecuteActingSub(LEVEL_H02P99C, 'S20P0201', 0);
-    supervision_ExecuteActingSub(LEVEL_S02P01A, 'S20P0202', 0);
-    supervision_ExecuteActingSub(LEVEL_H02P99C, 'S20P0203', 0);
+    $SCENARIO_MAIN = scn[29, 70];
+    //supervision_ExecuteActingSub(LEVEL_H02P99C, 'S20P0201', 0);
+    //supervision_ExecuteActingSub(LEVEL_S02P01A, 'S20P0202', 0);
+    //supervision_ExecuteActingSub(LEVEL_H02P99C, 'S20P0203', 0);
     supervision_ExecuteActingSub(LEVEL_H02P99A, 'S20P0204', 0);
     CallCommon(CORO_EVENT_END_MAPIN);
     main_SetGround(LEVEL_H02P99A);
@@ -5889,10 +5901,11 @@ coro EVENT_S20_02 {
 
 coro EVENT_S20_03 {
     CallCommon(CORO_SUBSCREEN_INIT);
-    supervision_ExecuteActingSub(LEVEL_H02P99C, 'S20P0301', 0);
-    supervision_ExecuteActingSub(LEVEL_S02P01A, 'S20P0302', 0);
-    supervision_ExecuteActingSub(LEVEL_H02P99A, 'S20P0303', 0);
-    supervision_ExecuteActingSub(LEVEL_P14P01A, 'S20P0304', 0);
+    $SCENARIO_MAIN = scn[29, 71];
+    //supervision_ExecuteActingSub(LEVEL_H02P99C, 'S20P0301', 0);
+    //supervision_ExecuteActingSub(LEVEL_S02P01A, 'S20P0302', 0);
+    //supervision_ExecuteActingSub(LEVEL_H02P99A, 'S20P0303', 0);
+    //supervision_ExecuteActingSub(LEVEL_P14P01A, 'S20P0304', 0);
     supervision_ExecuteActingSub(LEVEL_H02P99A, 'S20P0305', 0);
     CallCommon(CORO_EVENT_END_MAPIN);
     main_SetGround(LEVEL_H02P99A);
@@ -5902,10 +5915,11 @@ coro EVENT_S20_03 {
 
 coro EVENT_S20_04_05 {
     CallCommon(CORO_SUBSCREEN_INIT);
-    supervision_ExecuteActingSub(LEVEL_H01P99A, 'S20P0401', 0);
-    supervision_ExecuteActingSub(LEVEL_G01P07A, 'S20P0501', 0);
-    supervision_ExecuteActingSub(LEVEL_D03P41A, 'S20P0502', 0);
-    supervision_ExecuteActingSub(LEVEL_D03P11A, 'S20P0503', 0);
+    $SCENARIO_MAIN = scn[29, 72];
+    //supervision_ExecuteActingSub(LEVEL_H01P99A, 'S20P0401', 0);
+    //supervision_ExecuteActingSub(LEVEL_G01P07A, 'S20P0501', 0);
+    //supervision_ExecuteActingSub(LEVEL_D03P41A, 'S20P0502', 0);
+    //supervision_ExecuteActingSub(LEVEL_D03P11A, 'S20P0503', 0);
     supervision_ExecuteActingSub(LEVEL_G01P07A, 'S20P0504', 0);
     CallCommon(CORO_EVENT_END_MAPIN);
     main_SetGround(LEVEL_G01P07A);
@@ -5917,6 +5931,8 @@ coro EVENT_S20_06 {
     CallCommon(CORO_SUBSCREEN_INIT);
     supervision_ExecuteActingSub(LEVEL_D36P11A, 'S20P0601', 0);
     switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+    
+    //are these redundant?
     main_EnterDungeon(62, 30);
     main_EnterDungeon(-1, 30);
     hold;
@@ -5935,7 +5951,11 @@ coro EVENT_S20_07_08 {
         end;
     } else {
         $PERFORMANCE_PROGRESS_LIST[5] = 1;
-        supervision_ExecuteActingSub(LEVEL_D36P41A, 'S20P0701', 0);
+        switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+        $SCENARIO_MAIN_BIT_FLAG[8] = 1;
+        $COMPULSORY_SAVE_POINT = 24;
+        $SCENARIO_MAIN = scn[29, 75];
+        //supervision_ExecuteActingSub(LEVEL_D36P41A, 'S20P0701', 0);
         jump @label_528;
     }
 }
@@ -5956,18 +5976,20 @@ coro EVENT_S20_10 {
 
 coro EVENT_S20_11 {
     CallCommon(CORO_SUBSCREEN_INIT);
-    supervision_ExecuteActingSub(LEVEL_D37P41A, 'S20P1101', 0);
+    //supervision_ExecuteActingSub(LEVEL_D37P41A, 'S20P1101', 0);
+    switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
     $SCENARIO_MAIN = scn[29, 77];
     JumpCommon(CORO_EVENT_DIVIDE);
 }
 
 coro EVENT_S21_01 {
     CallCommon(CORO_SUBSCREEN_INIT);
-    supervision_ExecuteActingSub(LEVEL_G01P07A, 'S21P0101', 0);
-    supervision_ExecuteActingSub(LEVEL_H02P99C, 'S21P0102', 0);
-    supervision_ExecuteActingSub(LEVEL_H02P99C, 'S21P0103', 0);
-    supervision_ExecuteActingSub(LEVEL_H02P99A, 'S21P0104', 0);
-    supervision_ExecuteActingSub(LEVEL_H02P99C, 'S21P0105', 0);
+    $SCENARIO_MAIN = scn[29, 78];
+    //supervision_ExecuteActingSub(LEVEL_G01P07A, 'S21P0101', 0);
+    //supervision_ExecuteActingSub(LEVEL_H02P99C, 'S21P0102', 0);
+    //supervision_ExecuteActingSub(LEVEL_H02P99C, 'S21P0103', 0);
+    //supervision_ExecuteActingSub(LEVEL_H02P99A, 'S21P0104', 0);
+    //supervision_ExecuteActingSub(LEVEL_H02P99C, 'S21P0105', 0);
     supervision_ExecuteActingSub(LEVEL_H02P99C, 'S21P0106', 0);
     CallCommon(CORO_EVENT_END_MAPIN);
     main_SetGround(LEVEL_H02P99C);
@@ -5977,13 +5999,14 @@ coro EVENT_S21_01 {
 
 coro EVENT_S21_02 {
     CallCommon(CORO_SUBSCREEN_INIT);
-    supervision_ExecuteActingSub(LEVEL_H01P99D, 'S21P0201', 0);
-    supervision_ExecuteActingSub(LEVEL_H01P99E, 'S21P0202', 0);
-    supervision_ExecuteActingSub(LEVEL_H01P99E, 'S21P0203', 0);
-    supervision_ExecuteActingSub(LEVEL_H01P99E, 'S21P0204', 0);
-    supervision_ExecuteActingSub(LEVEL_H01P99E, 'S21P0205', 0);
-    supervision_ExecuteActingSub(LEVEL_D28P44A, 'S21P0206', 0);
-    supervision_ExecuteActingSub(LEVEL_H01P99E, 'S21P0207', 0);
+    $SCENARIO_MAIN = scn[29, 79];
+    //supervision_ExecuteActingSub(LEVEL_H01P99D, 'S21P0201', 0);
+    //supervision_ExecuteActingSub(LEVEL_H01P99E, 'S21P0202', 0);
+    //supervision_ExecuteActingSub(LEVEL_H01P99E, 'S21P0203', 0);
+    //supervision_ExecuteActingSub(LEVEL_H01P99E, 'S21P0204', 0);
+    //supervision_ExecuteActingSub(LEVEL_H01P99E, 'S21P0205', 0);
+    //supervision_ExecuteActingSub(LEVEL_D28P44A, 'S21P0206', 0);
+    //supervision_ExecuteActingSub(LEVEL_H01P99E, 'S21P0207', 0);
     supervision_ExecuteActingSub(LEVEL_H02P99A, 'S21P0208', 0);
     CallCommon(CORO_EVENT_END_MAPIN);
     main_SetGround(LEVEL_H02P99A);
@@ -5993,15 +6016,19 @@ coro EVENT_S21_02 {
 
 coro EVENT_S21_03 {
     CallCommon(CORO_SUBSCREEN_INIT);
-    supervision_ExecuteActingSub(LEVEL_D01P11A, 'S21P0301', 0);
+    $SCENARIO_MAIN = scn[29, 80];
+    //supervision_ExecuteActingSub(LEVEL_D01P11A, 'S21P0301', 0);
     JumpCommon(CORO_EVENT_S21_04_06);
 }
 
 coro EVENT_S21_04_06 {
     WaitScreenFade();
-    supervision_ExecuteActingSub(LEVEL_H01P99A, 'S21P0401', 0);
-    supervision_ExecuteActingSub(LEVEL_H02P99C, 'S21P0501', 0);
-    supervision_ExecuteActingSub(LEVEL_D38P11A, 'S21P0502', 0);
+    switch ( ProcessSpecial(PROCESS_SPECIAL_SET_TEAM_SETUP_HERO_AND_PARTNER_ONLY, 0, 0) ) { }
+    $PERFORMANCE_PROGRESS_LIST[5] = 0;
+    dungeon_mode(64) = DMODE_OPEN;
+    //supervision_ExecuteActingSub(LEVEL_H01P99A, 'S21P0401', 0);
+    //supervision_ExecuteActingSub(LEVEL_H02P99C, 'S21P0501', 0);
+    //supervision_ExecuteActingSub(LEVEL_D38P11A, 'S21P0502', 0);
     supervision_ExecuteActingSub(LEVEL_D38P12A, 'S21P0601', 0);
     CallCommon(CORO_EVENT_END_MAPIN);
     main_SetGround(LEVEL_D38P12A);
@@ -6088,17 +6115,19 @@ coro EVENT_S22_01_04 {
             case 25:
                 §label_535;
                 $SCENARIO_MAIN_BIT_FLAG[8] = 0;
-                supervision_ExecuteActingSub(LEVEL_D39P32A, 'S22P0201', 0);
-                supervision_ExecuteActingSub(LEVEL_S04P01A, 'S22P0202', 0);
-                supervision_ExecuteActingSub(LEVEL_D39P32A, 'S22P0203', 0);
-                supervision_ExecuteActingSub(LEVEL_D39P41A, 'S22P0204', 0);
+                //supervision_ExecuteActingSub(LEVEL_D39P32A, 'S22P0201', 0);
+                //supervision_ExecuteActingSub(LEVEL_S04P01A, 'S22P0202', 0);
+                //supervision_ExecuteActingSub(LEVEL_D39P32A, 'S22P0203', 0);
+                //supervision_ExecuteActingSub(LEVEL_D39P41A, 'S22P0204', 0);
+                $SCENARIO_MAIN_BIT_FLAG[8] = 1;
+                $COMPULSORY_SAVE_POINT = 26;
                 §label_536;
                 $SCENARIO_MAIN_BIT_FLAG[8] = 0;
-                supervision_ExecuteActingSub(LEVEL_T01P01A, 'S22P0301', 0);
-                supervision_ExecuteActingSub(LEVEL_D37P41A, 'S22P0302', 0);
-                supervision_ExecuteActingSub(LEVEL_T01P01A, 'S22P0303', 0);
-                supervision_ExecuteActingSub(LEVEL_D39P41A, 'S22P0304', 0);
-                supervision_ExecuteActingSub(LEVEL_T01P01A, 'S22P0305', 0);
+                //supervision_ExecuteActingSub(LEVEL_T01P01A, 'S22P0301', 0);
+                //supervision_ExecuteActingSub(LEVEL_D37P41A, 'S22P0302', 0);
+                //supervision_ExecuteActingSub(LEVEL_T01P01A, 'S22P0303', 0);
+                //supervision_ExecuteActingSub(LEVEL_D39P41A, 'S22P0304', 0);
+                //supervision_ExecuteActingSub(LEVEL_T01P01A, 'S22P0305', 0);
                 supervision_ExecuteActingSub(LEVEL_H01P99A, 'S22P0401', 0);
                 $PERFORMANCE_PROGRESS_LIST[5] = 1;
                 CallCommon(CORO_EVENT_END_MAPIN);
@@ -6109,7 +6138,10 @@ coro EVENT_S22_01_04 {
                 jump @label_536;
             default:
                 §label_534;
-                supervision_ExecuteActingSub(LEVEL_D39P41A, 'S22P0101', 0);
+                switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+                $SCENARIO_MAIN_BIT_FLAG[8] = 1;
+                $COMPULSORY_SAVE_POINT = 25;
+                //supervision_ExecuteActingSub(LEVEL_D39P41A, 'S22P0101', 0);
                 jump @label_535;
         }
     } else {
@@ -6126,7 +6158,12 @@ coro EVENT_S22_05 {
 
 coro EVENT_S22_06 {
     CallCommon(CORO_SUBSCREEN_INIT);
-    supervision_ExecuteActingSub(LEVEL_D40P11A, 'S22P0601', 0);
+    //supervision_ExecuteActingSub(LEVEL_D40P11A, 'S22P0601', 0);
+    main_EnterDungeon(67, 0);
+    switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+    main_EnterDungeon(-1, 0);
+    
+    //this was here already... is this redundant?
     switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
     main_EnterDungeon(67, 30);
     main_EnterDungeon(-1, 30);

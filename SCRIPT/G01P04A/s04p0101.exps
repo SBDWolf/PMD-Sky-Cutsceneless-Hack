@@ -1,0 +1,140 @@
+
+def 0 {
+    $SCENARIO_MAIN = scn[29, 55];
+    back_SetGround(LEVEL_G01P04A);
+    supervision_LoadStation(LEVEL_G01P04A, 'US04');
+    supervision_Station(8);
+    supervision_Station(10);
+    supervision_StationCommon(0);
+    supervision_StationCommon(99);
+    supervision_Acting(0);
+    supervision_Acting(1);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    back2_SetMode(0);
+    dungeon_mode(54) = DMODE_OPEN;
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetPositionMark(Position<'m27', 28.5, 27.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetPositionMark(Position<'m28', 42.5, 25.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetPositionMark(Position<'m29', 38.5, 25.5>);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetPositionMark(Position<'m30', 28.5, 35.5>);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetPositionMark(Position<'m31', 25.5, 35.5>);
+    }
+    with (actor ACTOR_NPC_PUKURIN) {
+        SetPositionMark(Position<'m32', 56.5, 24.5>);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetPositionMark(Position<'m33', 44.5, 35.5>);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetPositionMark(Position<'m34', 41.5, 37.5>);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetPositionMark(Position<'m35', 41.5, 34.5>);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetPositionMark(Position<'m36', 56.5, 27.5>);
+    }
+    with (actor ACTOR_NPC_GUREGGURU) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetDirection(DIR_LEFT);
+    }
+    with (actor ACTOR_NPC_DIGUDA) {
+        SetDirection(DIR_RIGHT);
+    }
+    with (actor ACTOR_NPC_PUKURIN) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetDirection(DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetDirection(DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_NPC_DAGUTORIO) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_PUKURIN) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    camera_SetDefault();
+    //item_Set(0, 408, 0);
+    //switch ( message_Menu(MENU_GIVE_ITEM) ) { }
+    //item_Set(0, 402, 0);
+    //switch ( message_Menu(MENU_GIVE_ITEM) ) { }
+    //item_Set(0, 404, 0);
+    //switch ( message_Menu(MENU_GIVE_ITEM) ) { }
+    //item_Set(0, 417, 0);
+    //switch ( message_Menu(MENU_GIVE_ITEM) ) { }
+    //item_Set(0, 414, 0);
+    //switch ( message_Menu(MENU_GIVE_ITEM) ) { }
+    //item_Set(0, 402, 0);
+    //switch ( message_Menu(MENU_GIVE_ITEM) ) { }
+    //item_Set(0, 410, 0);
+    //switch ( message_Menu(MENU_GIVE_ITEM) ) { }
+    //item_Set(0, 418, 0);
+    //switch ( message_Menu(MENU_GIVE_ITEM) ) { }
+    //item_Set(0, 419, 0);
+    //switch ( message_Menu(MENU_GIVE_ITEM) ) { }
+    //item_Set(0, 404, 0);
+    //switch ( message_Menu(MENU_GIVE_ITEM) ) { }
+    //item_Set(0, 404, 0);
+    //switch ( message_Menu(MENU_GIVE_ITEM) ) { }
+    //item_Set(0, 411, 0);
+    //switch ( message_Menu(MENU_GIVE_ITEM) ) { }
+    screen_FadeIn(1, 30);
+    end;
+}

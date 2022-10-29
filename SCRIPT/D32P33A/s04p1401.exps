@@ -1,0 +1,397 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_MAIN = scn[29, 65];
+    back_SetGround(LEVEL_D32P33A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (object OBJECT_D32P44A5_88) {
+        SetAnimation(9);
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    se_Play(7950);
+    with (object OBJECT_D32P44A5_88) {
+        SetAnimation(17);
+    }
+    with (object OBJECT_D32P44A5_88) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D32P44A5_88);
+    with (object OBJECT_D32P44A5_88) {
+        SetAnimation(2);
+    }
+    with (object OBJECT_D32P44A5_88) {
+        SetOutputAttribute(4);
+    }
+    Wait(60);
+    with (object OBJECT_D32P44A5_88) {
+        MovePositionMark(32844, Position<'m0', 22.5, 32>);
+    }
+    WaitExecuteObject(OBJECT_D32P44A5_88);
+    Wait(30);
+    se_FadeOut(7950, 90);
+    message_Mail({
+        english="[CN]A mysterious light\n[CN]enveloped [player]!",
+        french="[CN]Une lumière mystérieuse\n[CN]enveloppe [player]!",
+        german="[CN]Ein mysteriöses Licht\n[CN]umhüllt [player]!",
+        italian="[CN]Una luce misteriosa\n[CN]avvolge [player]!",
+        spanish="[CN]¡Una luz misteriosa\n[CN]ha envuelto a [player]!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    WaitSe(7950);
+    se_Play(7951);
+    with (object OBJECT_D32P44A5_88) {
+        SetAnimation(19);
+    }
+    with (object OBJECT_D32P44A5_88) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D32P44A5_88);
+    with (object OBJECT_D32P44A5_88) {
+        Destroy();
+    }
+    message_Mail({
+        english="[CN]The guardian\'s permission was granted!",
+        french="[CN]Le gardien vous accorde le droit de continuer!",
+        german="[CN]Der Torwächter gewährt seine Erlaubnis!",
+        italian="[CN]Hai ottenuto il permesso del guardiano!",
+        spanish="[CN]¡Has conseguido el permiso del guardián!",
+    });
+    WaitSe(7951);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m1', 22.5, 20.5>);
+    }
+    WaitExecutePerformer(0);
+    Wait(30);
+    se_Play(7187);
+    camera_SetEffect(2, 2, 33280);
+    Wait(10);
+    supervision_RemoveActing(0);
+    supervision_Acting(1);
+    camera_SetEffect(2, 2, 33280);
+    Wait(15);
+    camera_SetEffect(0, 0, 0);
+    Wait(30);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m2', 76.5, 33.5>);
+    }
+    WaitExecutePerformer(0);
+    Wait(15);
+    se_Play(7175);
+    with (performer 4) {
+        SetEffect(644, 3);
+    }
+    with (performer 5) {
+        SetEffect(644, 3);
+    }
+    with (performer 6) {
+        SetEffect(644, 3);
+    }
+    with (performer 6) {
+        WaitEffect();
+    }
+    Wait(30);
+    supervision_Acting(2);
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetAnimation(22);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetAnimation(22);
+    }
+    with (actor ACTOR_NPC_MIMIROPPU) {
+        SetAnimation(22);
+    }
+    WaitExecutePerformer(6);
+    with (performer 0) {
+        MovePositionOffset(1, 0, -16);
+    }
+    WaitExecutePerformer(0);
+    WaitSe(7175);
+    se_Play(8967);
+    with (actor ACTOR_PLAYER_APPOINT) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ADVENTURE_NPC3) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER_APPOINT) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_APPOINT);
+    with (actor ACTOR_NPC_MIMIROPPU) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_MIMIROPPU) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_MIMIROPPU) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_MIMIROPPU) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_MIMIROPPU);
+    with (actor ACTOR_NPC_SAANAITO) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_SAANAITO) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_SAANAITO) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_SAANAITO) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    message_SetFace(ACTOR_NPC_MIMIROPPU, FACE_PAIN, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(-1, -1);
+    message_Talk({
+        english=" Urr... Urgh...",
+        french=" Ah... Argh...",
+        german=" Argh... Uff...",
+        italian=" Urr... Urgh...",
+        spanish=" Grrr...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetAnimation(23);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_MIMIROPPU) {
+        SetAnimation(23);
+    }
+    Wait(7);
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetAnimation(23);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_SAANAITO);
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_MIMIROPPU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_MIMIROPPU) {
+        SetDirection(DIR_LEFT);
+    }
+    bgm_PlayFadeIn(BGM_IN_THE_DEPTHS_OF_THE_PIT, 0, 256);
+    message_SetFace(ACTOR_NPC_MIMIROPPU, FACE_PAIN, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(-1, -1);
+    message_Talk({
+        english=" Wh-what happened to us...?",
+        french=" Qu\'est-ce qui nous est arrivé...?",
+        german=" W-was ist mit uns geschehen?",
+        italian=" C-Cosa ci è successo...?",
+        spanish=" ¿Qué... qué nos ha pasado?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8978);
+    with (actor ACTOR_NPC_MIMIROPPU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_MIMIROPPU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_MIMIROPPU);
+    message_SetFace(ACTOR_NPC_MIMIROPPU, FACE_SURPRISED, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(-1, -1);
+    message_Talk({
+        english=" Oh![K] We were fighting [CS:N]Registeel[CR]\nhere...[K] Then [CS:N]Medicham[CR] got into trouble...",
+        french=" Oh![K] Nous étions en train\nd\'affronter [CS:N]Registeel[CR]...[K] et puis [CS:N]Charmina[CR]\na eu des ennuis...",
+        german=" Oh![K] Wir haben hier mit [CS:N]Registeel[CR]\ngekämpft...[K] Dann ist [CS:N]Meditalis[CR] in\nSchwierigkeiten geraten...",
+        italian=" Oh![K] Stavamo affrontando\n[CS:N]Registeel[CR] qui...[K] Poi [CS:N]Medicham[CR] è finita nei\nguai...",
+        spanish=" ¡Oh![K] Estábamos luchando con\n[CS:N]Registeel[CR] aquí...[K] y [CS:N]Medicham[CR] estaba en\napuros...",
+    });
+    message_SetFace(ACTOR_NPC_MIMIROPPU, FACE_WORRIED, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(-1, -1);
+    message_Talk({
+        english=" ...[K]After that, I just don\'t know.\nI don\'t know what came next.",
+        french=" ...[K] Après ça, je ne me souviens\nplus de rien. Je ne sais pas ce qui s\'est passé\nensuite.",
+        german=" ...[K]Aber ich weiß einfach nicht,\nwas danach passiert ist.",
+        italian=" ...[K] Dopo, non lo so.\nNon so cosa è successo dopo.",
+        spanish=" No recuerdo...[K] No recuerdo\nqué pasó después.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(30);
+    with (actor ACTOR_NPC_MIMIROPPU) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_MIMIROPPU);
+    with (actor ACTOR_NPC_SAANAITO) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_CHAAREMU);
+    message_SetFace(ACTOR_NPC_MIMIROPPU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(-1, -1);
+    message_Talk({
+        english=" I can see that you saved us\nthough, Team [team:].",
+        french=" Je constate que vous nous avez\nsauvées, chère Equipe [team:].",
+        german=" Ich muss allerdings anerkennen,\ndass ihr uns gerettet habt, Team [team:].",
+        italian=" Ma vedo che ci avete salvate,\nTeam [team:].",
+        spanish=" Pero nos habéis salvado, [CS:X]Equipo[CR]\n[team:].",
+    });
+    message_Talk({
+        english=" Thank you! We were in a bind!",
+        french=" Merci beaucoup! Nous étions\ndans le pétrin.",
+        german=" Danke! Wir sind echt in\nVerlegenheit geraten.",
+        italian=" Grazie! Eravamo \ndavvero alle strette.",
+        spanish=" Gracias, encantos.\nEstábamos en un buen aprieto.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_CHAAREMU);
+    message_SetFace(ACTOR_NPC_CHAAREMU, FACE_WORRIED, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" We owe you one, Team\n[team:].",
+        french=" Nous vous devons une fière\nchandelle, chère Equipe [team:].",
+        german=" Wir schulden euch etwas, Team\n[team:].",
+        italian=" Siamo in debito con voi,\nTeam [team:].",
+        spanish=" Os debemos una, [CS:X]Equipo[CR]\n[team:].",
+    });
+    message_Talk({
+        english=" If you didn\'t show up in time to\nsave us, that would\'ve been it for us.",
+        french=" Sans votre intervention, c\'en\nétait fini de nous.",
+        german=" Wärt ihr nicht rechtzeitig\ngekommen, wäre es das für uns wohl gewesen.",
+        italian=" Se non ci aveste salvate in \ntempo, per noi sarebbe stata la fine.",
+        spanish=" Si no hubierais llegado justo\nen ese momento, no sé qué habría\npasado...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SAANAITO, FACE_WORRIED, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" That is so true.",
+        french=" C\'est bien vrai.",
+        german=" Da ist was Wahres dran.",
+        italian=" Proprio così.",
+        spanish=" Cierto.",
+    });
+    message_Talk({
+        english=" I\'m afraid we can never repay\nyou for this...",
+        french=" J\'ai bien peur que nous ne\npuissions vous rendre la pareille...",
+        german=" Ich fürchte, wir werden euch\nniemals angemessen dafür entlohnen können...",
+        italian=" Temo che non potremo mai\nripagarvi...",
+        spanish=" Creo que nunca podremos\nrecompensaros por...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8978);
+    with (actor ACTOR_NPC_MIMIROPPU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_MIMIROPPU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_MIMIROPPU);
+    message_SetFace(ACTOR_NPC_MIMIROPPU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(-1, -1);
+    message_Talk({
+        english=" I know!",
+        french=" Je sais!",
+        german=" Da fällt mir etwas ein!",
+        italian=" Un attimo!",
+        spanish=" ¡Ya sé!",
+    });
+    message_Talk({
+        english=" How about letting us back you\nup at some point, Team [team:]?",
+        french=" Et si nous vous apportions\nnotre concours, Equipe [team:]? Qu\'en\ndites-vous?",
+        german=" Wie wäre es, wenn wir euch\nirgendwann einmal helfen würden,\nTeam [team:]?",
+        italian=" Cosa ne dite se vi diamo una\nmano, Team [team:]?",
+        spanish=" ¿Y si os vamos cubriendo\nlas espaldas, [CS:X]Equipo[CR] [team:]?",
+    });
+    message_Talk({
+        english=" Yes, I think we\'ve already failed\non our own exploration.",
+        french=" Oui, il semble de toute façon\nque nous ayons échoué dans notre propre\nexploration.",
+        german=" Ja, ich glaube, auf unserer\neigenen Erkundung sind wir bereits gescheitert.",
+        italian=" Sì, penso che la nostra\nesplorazione ormai sia fallita.",
+        spanish=" Total, ya hemos fracasado en\nnuestra expedición.",
+    });
+    message_SetFace(ACTOR_NPC_MIMIROPPU, FACE_HAPPY, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(-1, -1);
+    message_Talk({
+        english=" Tee-hee! Don\'t worry! We won\'t\ntry to steal your glory. Or your treasure!",
+        french=" Hi hi! Pas d\'inquiétude! Nous\nn\'avons pas l\'intention de vous voler la vedette.\nOu le trésor, d\'ailleurs!",
+        german=" Hihi! Keine Sorge! Wir wollen\neuren Ruhm nicht stehlen. Oder euren Schatz!",
+        italian=" Eeh-eeh! Non preoccupatevi! Non\nvi ruberemo il merito. E nemmeno il tesoro!",
+        spanish=" ¡Ji, ji! ¡No os preocupéis!\n¡No os quitaremos la gloria! ¡Ni el tesoro!",
+    });
+    message_Talk({
+        english=" Let\'s go![K] Our goal can\'t be far\noff now!",
+        french=" Allons-y![K] Notre objectif ne doit\nplus être très loin!",
+        german=" Gehen wir![K] Unser Ziel kann nicht\nmehr weit sein!",
+        italian=" Andiamo![K] Ormai il nostro\nobiettivo non dovrebbe essere molto lontano!",
+        spanish=" ¡Sigamos![K] ¡No podemos estar\nlejos!",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_MIMIROPPU) {
+        MovePositionMark(1, Position<'m3', 76.5, 15.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        MovePositionMark(1, Position<'m4', 76.5, 15.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_SAANAITO) {
+        MovePositionMark(1, Position<'m5', 76.5, 15.5>);
+    }
+    with (actor ACTOR_PLAYER_APPOINT) {
+        MovePositionMark(1, Position<'m6', 76.5, 15.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        MovePositionMark(1, Position<'m7', 76.5, 15.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        MovePositionMark(1, Position<'m8', 76.5, 15.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_ADVENTURE_NPC3) {
+        MovePositionMark(1, Position<'m9', 76.5, 15.5>);
+    }
+    Wait(15);
+    bgm_FadeOut(60);
+    screen_FadeOut(1, 30);
+    WaitBgm(BGM_IN_THE_DEPTHS_OF_THE_PIT);
+    end;
+}

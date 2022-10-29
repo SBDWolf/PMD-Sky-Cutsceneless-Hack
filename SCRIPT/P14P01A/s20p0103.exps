@@ -1,0 +1,188 @@
+
+def 0 {
+    back_SetGround(LEVEL_P14P01A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (object OBJECT_P14P01A1_153) {
+        SetAnimation(2);
+    }
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_TOP_L_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Why can\'t I evolve?",
+                french=" Pourquoi je ne peux pas\névoluer?",
+                german=" Warum kann ich mich nicht\nentwickeln?",
+                italian=" Perché io non posso?",
+                spanish=" ¿Por qué yo no puedo\nevolucionar?",
+            }
+        case 2:
+            {
+                english=" Why can\'t I evolve?",
+                french=" Pourquoi je ne peux pas\névoluer?",
+                german=" Warum kann ich mich nicht\nentwickeln?",
+                italian=" Perché io non posso?",
+                spanish=" ¿Por qué yo no puedo\nevolucionar?",
+            }
+        default:
+            {
+                english=" Why can\'t I evolve?",
+                french=" Pourquoi je ne peux pas\névoluer?",
+                german=" Warum kann ich mich nicht\nentwickeln?",
+                italian=" Perché io non posso?",
+                spanish=" ¿Por qué yo no puedo\nevolucionar?",
+            }
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_EmptyActor();
+    message_Talk({
+        english="[CN]Why can you not evolve...?",
+        french="[CN]Pourquoi ne peux-tu pas évoluer...?",
+        german="[CN]Warum du dich nicht entwickeln kannst?",
+        italian="[CN]Perché non puoi evolverti?",
+        spanish="[CN]¿Que por qué no puedes evolucionar tú?",
+    });
+    message_Talk({
+        english="[CN]It may be influenced by a distortion\n[CN]in the fabric of space...",
+        french="[CN]Peut-être est-ce dû à une distorsion\n[CN]dans la trame de l\'espace...",
+        german="[CN]Vielleicht hat die Verzerrung des\n[CN]Raumgefüges etwas damit zu tun...",
+        italian="[CN]Potrebbe essere dovuto a una \n[CN]distorsione della struttura dello spazio...",
+        spanish="[CN]Podría deberse a\n[CN]una deformación del espacio...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_TOP_L_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Distortion?[K] The fabric of space?",
+                french=" Une distorsion?[K] Dans la trame\nde l\'espace?",
+                german=" Verzerrung?[K] Das Raumgefüge?",
+                italian=" Distorsione?[K] Della struttura \ndello spazio?",
+                spanish=" ¿Deformación?[K] ¿Del espacio?",
+            }
+        case 2:
+            {
+                english=" Distortion?[K] The fabric of space?",
+                french=" Une distorsion?[K] Dans la trame\nde l\'espace?",
+                german=" Verzerrung?[K] Das Raumgefüge?",
+                italian=" Distorsione?[K] Della struttura\ndello spazio?",
+                spanish=" ¿Deformación?[K] ¿Del espacio?",
+            }
+        default:
+            {
+                english=" Distortion?[K] The fabric of space?",
+                french=" Une distorsion?[K] Dans la trame\nde l\'espace?",
+                german=" Verzerrung?[K] Das Raumgefüge?",
+                italian=" Distorsione?[K] Della struttura\ndello spazio?",
+                spanish=" ¿Deformación?[K] ¿Del espacio?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_EmptyActor();
+    message_Talk({
+        english="[CN]Why that should be, I do not know...",
+        french="[CN]Quelle en est la cause, je l\'ignore...",
+        german="[CN]Ich weiß nicht, warum das so sein könnte...",
+        italian="[CN]Il motivo, non lo conosco...",
+        spanish="[CN]No sé por qué...",
+    });
+    message_Talk({
+        english="[CN]But your presence...[K]is somehow related\n[CN]to the distortion of space itself.",
+        french="[CN]Mais ta présence...[K] est liée\n[CN]à la distorsion elle-même.",
+        german="[CN]Aber deine Existenz...[K] Sie hängt\n[CN]irgendwie mit der Verzerrung des Raumes\n[CN]selbst zusammen.",
+        italian="[CN]Tuttavia, la tua presenza...[K] è in qualche modo\n[CN]collegata alla distorsione dello spazio.",
+        spanish="[CN]Pero tu presencia...[K] está de algún modo\n[CN]relacionada con la deformación del espacio.",
+    });
+    message_Talk({
+        english="[CN]And as a result of that,\n[CN]you cannot evolve...",
+        french="[CN]Il en résulte que\n[CN]tu ne peux évoluer...",
+        german="[CN]Und als Folge daraus\n[CN]kannst du dich nicht entwickeln...",
+        italian="[CN]Di conseguenza,\n[CN]non puoi evolverti...",
+        spanish="[CN]Y por eso...\n[CN]no puedes evolucionar.",
+    });
+    message_Talk({
+        english="[CN]No.[K] It is not only you...[K]\n[CN]There is yet another...",
+        french="[CN]Non.[K] Pas seulement toi...[K]\n[CN]Il y a encore quelqu\'un d\'autre...",
+        german="[CN]Nein.[K] Es trifft nicht nur dich...[K]\n[CN]Es gibt noch ein anderes Pokémon...",
+        italian="[CN]No.[K] Non sei solo tu.[K]\n[CN]C\'è un altro Pokémon...",
+        spanish="[CN]Y...[K] no solo tú...[K]\n[CN]Hay alguien más...",
+    });
+    message_Talk({
+        english="[CN]The one behind you...[K]is also\n[CN]forbidden its evolution.",
+        french="[CN]Le Pokémon derrière toi...[K] est\n[CN]également interdit d\'évolution.",
+        german="[CN]Das Pokémon hinter dir...[K] Auch ihm\n[CN]bleibt eine Entwicklung versagt.",
+        italian="[CN]Quello dietro di te...[K] anche a quel Pokémon\n[CN]l\'evoluzione è preclusa.",
+        spanish="[CN]Detrás de ti...[K] Ese Pokémon\n[CN]tampoco puede evolucionar.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_RINGUMA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_RINGUMA2) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_RINGUMA2) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_RINGUMA2);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_RINGUMA) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_RINGUMA2) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_RINGUMA2);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_TOP_L_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Huh?! [hero] too?!",
+                french=" Hein?! [hero] aussi?!",
+                german=" Huch?!? [hero] auch?!?",
+                italian=" Eh?! Anche [hero]?!",
+                spanish=" ¡¿Quéee?! ¿[hero]\ntampoco?",
+            }
+        case 2:
+            {
+                english=" What?! [hero] too?!",
+                french=" Hein?! [hero] aussi?!",
+                german=" Was?!? [hero] auch?!?",
+                italian=" Cosa?! Anche [hero]?!",
+                spanish=" ¡¿Quéee?! ¿[hero]\ntampoco?",
+            }
+        default:
+            {
+                english=" What?! [hero] too?!",
+                french=" Hein?! [hero] aussi?!",
+                german=" Was?!? [hero] auch?!?",
+                italian=" Cosa?! Anche [hero]?!",
+                spanish=" ¡¿Quéee?! ¿[hero]\ntampoco?",
+            }
+    }
+    message_Close();
+    screen_FadeOut(1, 30);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    end;
+}

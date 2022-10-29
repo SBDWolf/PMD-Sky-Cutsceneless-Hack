@@ -1,0 +1,26 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_MAIN = scn[29, 87];
+    back_SetGround(LEVEL_H01P99A);
+    supervision_StationCommon(0);
+    supervision_LoadStation(LEVEL_H01P99A, 'US22');
+    supervision_Station(10);
+    supervision_Acting(0);
+    Wait(1);
+    with (actor ACTOR_NPC_KURESERIA) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_KURESERIA) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_KURESERIA) {
+        SetDirection(DIR_RIGHT);
+    }
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    bgm_PlayFadeIn(BGM_OCEAN1, 90, 256);
+    screen_FadeIn(1, 30);
+    end;
+}

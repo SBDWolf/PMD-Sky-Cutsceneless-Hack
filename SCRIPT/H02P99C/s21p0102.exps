@@ -1,0 +1,533 @@
+
+def 0 {
+    sound_Stop();
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V02P06A);
+    camera2_SetPositionMark(Position<'m0', 19.5, 16.5>);
+    screen2_FadeIn(1, 60);
+    Wait(150);
+    screen2_FadeOut(1, 60);
+    back2_SetMode(0);
+    back_SetGround(LEVEL_H02P99C);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    bgm_PlayFadeIn(BGM_OCEAN1, 90, 256);
+    screen_FadeIn(1, 60);
+    Wait(30);
+    se_Play(8972);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Urk![K] When we were back at\nthe guild...",
+                french=" Argh![K] Tout à l\'heure,\nà la Guilde...",
+                german=" Uff![K] Als wir in der\nGilde waren...",
+                italian=" Uh![K] Quando eravamo alla\nGilda...",
+                spanish=" ¡Uf![K] Cuando regresamos al\n[CS:N]Pokégremio[CR]...",
+            }
+        case 2:
+            {
+                english=" Urk![K] When we were back at\nthe guild...",
+                french=" Argh![K] Tout à l\'heure,\nà la Guilde...",
+                german=" Uff![K] Als wir in der\nGilde waren...",
+                italian=" Uh![K] Quando eravamo alla\nGilda...",
+                spanish=" ¡Uf![K] Cuando regresamos al\n[CS:N]Pokégremio[CR]...",
+            }
+        default:
+            {
+                english=" Urk![K] When we were back at\nthe guild...",
+                french=" Argh![K] Tout à l\'heure,\nà la Guilde...",
+                german=" Uff![K] Als wir in der\nGilde waren...",
+                italian=" Uh![K] Quando eravamo alla\nGilda...",
+                spanish=" ¡Uf![K] Cuando regresamos al\n[CS:N]Pokégremio[CR]...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" [CS:N]Drowzee[CR] asked us if we knew\nhow the distortion of space could be stopped...",
+                french=" ... quand [CS:N]Soporifik[CR] nous\na demandé si nous savions comment enrayer\nla distorsion de l\'espace...",
+                german=" Als [CS:N]Traumato[CR] uns fragte, ob wir\nwüssten, wie die Verzerrung des Raumes\naufzuhalten sei...",
+                italian=" ... [CS:N]Drowzee[CR] ci ha chiesto se\nsapevamo come fermare la distorsione dello\nspazio...",
+                spanish=" [CS:N]Drowzee[CR] nos preguntó si\nsabíamos cómo detener la deformación\ndel espacio...",
+            }
+        case 2:
+            {
+                english=" [CS:N]Drowzee[CR] asked us if we knew\nhow the distortion of space could be stopped...",
+                french=" ... quand [CS:N]Soporifik[CR] nous\na demandé si nous savions comment enrayer\nla distorsion de l\'espace...",
+                german=" Als [CS:N]Traumato[CR] uns fragte, ob wir\nwüssten, wie die Verzerrung des Raumes\naufzuhalten sei...",
+                italian=" ... [CS:N]Drowzee[CR] ci ha chiesto se\nsapevamo come fermare la distorsione dello\nspazio...",
+                spanish=" [CS:N]Drowzee[CR] nos preguntó si\nsabíamos cómo detener la deformación\ndel espacio...",
+            }
+        default:
+            {
+                english=" [CS:N]Drowzee[CR] asked us if we knew\nhow the distortion of space could be stopped...",
+                french=" ... quand [CS:N]Soporifik[CR] nous\na demandé si nous savions comment enrayer\nla distorsion de l\'espace...",
+                german=" Als [CS:N]Traumato[CR] uns fragte, ob wir\nwüssten, wie die Verzerrung des Raumes\naufzuhalten sei...",
+                italian=" ... [CS:N]Drowzee[CR] ci ha chiesto se\nsapevamo come fermare la distorsione dello\nspazio...",
+                spanish=" [CS:N]Drowzee[CR] nos preguntó si\nsabíamos cómo detener la deformación\ndel espacio...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I lied! I didn\'t even think twice\nabout it!",
+                french=" ... j\'ai menti! Sans même\nréfléchir!",
+                german=" Ich habe gelogen! Ohne mit der\nWimper zu zucken!",
+                italian=" Io ho mentito! Non ci ho\npensato due volte!",
+                spanish=" ¡Le mentí! ¡Ni siquiera dudé!",
+            }
+        case 2:
+            {
+                english=" I lied! I didn\'t even think twice\nabout it!",
+                french=" ... j\'ai menti! Sans même\nréfléchir!",
+                german=" Ich habe gelogen! Ohne mit der\nWimper zu zucken!",
+                italian=" Io ho mentito! Non ci ho\npensato due volte!",
+                spanish=" ¡Le mentí! ¡Ni siquiera dudé!",
+            }
+        default:
+            {
+                english=" I lied! I didn\'t even think twice\nabout it!",
+                french=" ... j\'ai menti! Sans même\nréfléchir!",
+                german=" Ich habe gelogen! Ohne mit der\nWimper zu zucken!",
+                italian=" Io ho mentito! Non ci ho\npensato due volte!",
+                spanish=" ¡Le mentí! ¡Ni siquiera dudé!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" As we know, there is a way to\nstop the distortion!",
+                french=" On le sait, il n\'y a qu\'un seul\nmoyen d\'annuler la distorsion!",
+                german=" Wie wir wissen, gibt es einen\nWeg, die Verzerrung zu stoppen!",
+                italian=" Come ben sappiamo, un modo c\'è\nper fermare la distorsione!",
+                spanish=" Por lo que sabemos, sí hay un\nmodo de detener la deformación...",
+            }
+        case 2:
+            {
+                english=" As we know, there is a way to\nstop the distortion!",
+                french=" On le sait, il n\'y a qu\'un seul\nmoyen d\'annuler la distorsion!",
+                german=" Wie wir wissen, gibt es einen\nWeg, die Verzerrung zu stoppen!",
+                italian=" Come ben sappiamo, un modo c\'è\nper fermare la distorsione!",
+                spanish=" Por lo que sabemos, sí hay un\nmodo de detener la deformación...",
+            }
+        default:
+            {
+                english=" As we know, there is a way to\nstop the distortion!",
+                french=" On le sait, il n\'y a qu\'un seul\nmoyen d\'annuler la distorsion!",
+                german=" Wie wir wissen, gibt es einen\nWeg, die Verzerrung zu stoppen!",
+                italian=" Come ben sappiamo, un modo c\'è\nper fermare la distorsione!",
+                spanish=" Por lo que sabemos, sí hay un\nmodo de detener la deformación...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" And that way is for us to\ndisappear from this world.",
+                french=" Et pour ça, il faut que nous\ndisparaissions de ce monde.",
+                german=" Dazu müssten wir einfach aus\ndieser Welt verschwinden.",
+                italian=" Per farlo, dobbiamo sparire da\nquesto mondo.",
+                spanish=" Y es desaparecer de este mundo.",
+            }
+        case 2:
+            {
+                english=" The only solution is for us to\ndisappear from this world.",
+                french=" Et pour ça, il faut que nous\ndisparaissions de ce monde.",
+                german=" Die einzige Lösung wäre, dass\nwir von dieser Welt verschwänden.",
+                italian=" Per farlo, dobbiamo sparire da\nquesto mondo.",
+                spanish=" Y es desaparecer de este mundo.",
+            }
+        default:
+            {
+                english=" We have to disappear from the\nworld to do it.",
+                french=" Et pour ça, il faut que nous\ndisparaissions de ce monde.",
+                german=" Dazu müssten wir einfach aus\ndieser Welt verschwinden.",
+                italian=" Per farlo, dobbiamo sparire da\nquesto mondo.",
+                spanish=" Y es desaparecer de este mundo.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" How am I supposed to say\nsomething like that?",
+                french=" Je n\'ai pas pu leur annoncer\nune chose pareille!",
+                german=" Wie hätte ich so etwas nur\nsagen sollen?",
+                italian=" Come faccio a dire una cosa\ndel genere?",
+                spanish=" ¿Cómo iba a decir algo así?",
+            }
+        case 2:
+            {
+                english=" I just couldn\'t bring myself to\nsay it.",
+                french=" Je n\'ai pas pu leur annoncer\nune chose pareille!",
+                german=" Ich konnte mich nicht\nüberwinden, das zu sagen.",
+                italian=" Come faccio a dire una cosa\ndel genere?",
+                spanish=" He sido incapaz de decirlo.",
+            }
+        default:
+            {
+                english=" How could I say that about us?",
+                french=" Je n\'ai pas pu leur annoncer\nune chose pareille!",
+                german=" Wie hätte ich das über uns\nsagen sollen?",
+                italian=" Come faccio a dire una cosa\ndel genere?",
+                spanish=" ¿Cómo iba a decir algo así?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(20);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_BOTTOM_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" ...[K]But...",
+                french=" ...[K] Mais...",
+                german=" ...[K]Aber...",
+                italian=" ...[K] Ma...",
+                spanish=" Pero...[K] Pero...",
+            }
+        case 2:
+            {
+                english=" ...[K]But...",
+                french=" ...[K] Mais...",
+                german=" ...[K]Aber...",
+                italian=" ...[K] Ma...",
+                spanish=" Pero...[K] Pero...",
+            }
+        default:
+            {
+                english=" ...[K]But...",
+                french=" ...[K] Mais...",
+                german=" ...[K]Aber...",
+                italian=" ...[K] Ma...",
+                spanish=" Pero...[K] Pero...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Is this a secret that I won\'t be\nable to hide from everyone?",
+                french=" Est-ce que j\'aurais vraiment dû\nen parler à tout le monde?",
+                german=" Werde ich so ein Geheimnis\ngeheim halten können?",
+                italian=" Finirò col dirlo a tutti?",
+                spanish=" A lo mejor debería habérselo\ncontado a todos...",
+            }
+        case 2:
+            {
+                english=" Is this something I really must\ntell everyone about?",
+                french=" Est-ce que j\'aurais vraiment dû\nen parler à tout le monde?",
+                german=" Ist das etwas, das ich jedem auf\ndie Nase binden muss?",
+                italian=" È una cosa che devo\ndavvero rivelare a tutti?",
+                spanish=" A lo mejor debería habérselo\ncontado a todos...",
+            }
+        default:
+            {
+                english=" Should I have told everyone?\nIs that the right thing to do?",
+                french=" Est-ce que j\'aurais vraiment dû\nen parler à tout le monde?",
+                german=" Hätte ich es allen erzählen\nsollen? Wäre das richtig gewesen?",
+                italian=" Dovrei dirlo a tutti?\nÈ la cosa giusta da fare?",
+                spanish=" A lo mejor debería habérselo\ncontado a todos...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER, FACE_SAD, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(...............)",
+                french="(...............)",
+                german="(...............)",
+                italian="(...............)",
+                spanish="(...)",
+            }
+        default:
+            {
+                english="(...............)",
+                french="(...............)",
+                german="(...............)",
+                italian="(...............)",
+                spanish="(...)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(8, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(60);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(8, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(60);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" ...[K]Hey, [hero]...",
+                french=" ...[K] Dis, [hero]...",
+                german=" ...[K]Hey, [hero]...",
+                italian=" ...[K] Ehi, [hero].",
+                spanish=" Eh...[K] Oye, [hero]...",
+            }
+        case 2:
+            {
+                english=" ...[K]Hey, [hero]...",
+                french=" ...[K] Dis, [hero]...",
+                german=" ...[K]Hey, [hero]...",
+                italian=" ...[K] Ehi, [hero].",
+                spanish=" Eh...[K] Oye, [hero]...",
+            }
+        default:
+            {
+                english=" ...[K]Hey, [hero]...",
+                french=" ...[K] Dis, [hero]...",
+                german=" ...[K]Hey, [hero]...",
+                italian=" ...[K] Ehi, [hero].",
+                spanish=" Eh...[K] Oye, [hero]...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" What are we supposed to\ndo now?",
+                french=" Qu\'est-ce qu\'on fait\nmaintenant?",
+                german=" Was sollen wir jetzt bloß tun?",
+                italian=" Cosa facciamo adesso?",
+                spanish=" Y ahora, ¿qué hacemos?",
+            }
+        case 2:
+            {
+                english=" What should we do now?",
+                french=" Qu\'est-ce qu\'on fait\nmaintenant?",
+                german=" Was sollen wir denn jetzt\nmachen?",
+                italian=" Cosa facciamo adesso?",
+                spanish=" ¿Qué vamos a hacer ahora?",
+            }
+        default:
+            {
+                english=" What are we supposed to\ndo now?",
+                french=" Qu\'est-ce qu\'on fait\nmaintenant?",
+                german=" Was sollen wir jetzt bloß tun?",
+                italian=" Cosa facciamo adesso?",
+                spanish=" ¿Qué vamos a hacer ahora?",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" If we were to disappear...",
+                french=" Si on devait disparaître...",
+                german=" Wenn wir verschwänden...",
+                italian=" Se sparissimo...",
+                spanish=" Si desaparecemos...",
+            }
+        case 2:
+            {
+                english=" If we were to disappear...",
+                french=" Si on devait disparaître...",
+                german=" Wenn wir verschwänden...",
+                italian=" Se sparissimo...",
+                spanish=" Si desaparecemos...",
+            }
+        default:
+            {
+                english=" If we were to disappear...",
+                french=" Si on devait disparaître...",
+                german=" Wenn wir verschwänden...",
+                italian=" Se sparissimo...",
+                spanish=" Si desaparecemos...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Would the world be saved?",
+                french=" ... le monde serait sauvé?",
+                german=" Ob die Welt dann gerettet wäre?",
+                italian=" ... pensi che il mondo si\nsalverebbe?",
+                spanish=" ¿Se salvará el mundo?",
+            }
+        case 2:
+            {
+                english=" Would the world be saved?",
+                french=" ... le monde serait sauvé?",
+                german=" Ob die Welt dann gerettet wäre?",
+                italian=" ... pensi che il mondo si\nsalverebbe?",
+                spanish=" ¿Se salvará el mundo?",
+            }
+        default:
+            {
+                english=" Would the world be saved?",
+                french=" ... le monde serait sauvé?",
+                german=" Ob die Welt dann gerettet wäre?",
+                italian=" ... pensi che il mondo si\nsalverebbe?",
+                spanish=" ¿Se salvará el mundo?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(8, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(30);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" ...[K]In that case...[K]maybe that\'s\nthe best thing to do...",
+                french=" ...[K] Dans ce cas...[K] c\'est peut-être\nla meilleure chose à faire...",
+                german=" ...[K]In diesem Fall...[K] wäre es\nvielleicht das Beste, was wir tun könnten...",
+                italian=" ...[K] In tal caso...[K] forse sarebbe\nla cosa migliore da fare...",
+                spanish=" Si...[K] Si fuera así...[K] Tal vez\nno nos quede otra opción...",
+            }
+        case 2:
+            {
+                english=" ...[K]In that case...[K]maybe that\'s\nthe best thing to do...",
+                french=" ...[K] Dans ce cas...[K] c\'est peut-être\nla meilleure chose à faire...",
+                german=" ...[K]In diesem Fall...[K] wäre es\nvielleicht das Beste, was wir tun könnten...",
+                italian=" ...[K] In tal caso...[K] forse sarebbe\nla cosa migliore da fare...",
+                spanish=" Entonces...[K] De ser así...[K] quizás\nsea la mejor opción...",
+            }
+        default:
+            {
+                english=" ...[K]In that case...[K]maybe that\'s\nthe best thing to do...",
+                french=" ...[K] Dans ce cas...[K] c\'est peut-être\nla meilleure chose à faire...",
+                german=" ...[K]In diesem Fall...[K] wäre es\nvielleicht das Beste, was wir tun könnten...",
+                italian=" ...[K] In tal caso...[K] forse sarebbe\nla cosa migliore da fare...",
+                spanish=" Entonces...[K] De ser así...[K] quizás\nsea la mejor opción...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8973);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    message_SetFace(ACTOR_PLAYER, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Oh, [partner]!)",
+                french="(Oh, [partner]!)",
+                german="(Oh, [partner]!)",
+                italian="(Oh, [partner]!)",
+                spanish="(¡Lo siento, [partner]!)",
+            }
+        default:
+            {
+                english="(Oh, [partner]!)",
+                french="(Oh, [partner]!)",
+                german="(Oh, [partner]!)",
+                italian="(Oh, [partner]!)",
+                spanish="(¡Lo siento, [partner]!)",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    se_Play(8972);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Arrgh! I can\'t take this!",
+                french=" Argh! C\'est insupportable!",
+                german=" Arrgh! Ich halte das nicht aus!",
+                italian=" Arrgh! È troppo per me!",
+                spanish=" ¡Qué impotencia! ¡No lo\nsoporto!",
+            }
+        case 2:
+            {
+                english=" Arrgh! I can\'t take this!",
+                french=" Argh! C\'est insupportable!",
+                german=" Arrgh! Ich halte das nicht aus!",
+                italian=" Arrgh! È troppo per me!",
+                spanish=" ¡Qué impotencia! ¡No lo\nsoporto!",
+            }
+        default:
+            {
+                english=" Arrgh! I\'ve had enough!",
+                french=" Argh! C\'est insupportable!",
+                german=" Arrgh! Ich halte das nicht aus!",
+                italian=" Arrgh! È troppo per me!",
+                spanish=" ¡Qué impotencia! ¡No lo\nsoporto!",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I\'m tired from all this\nworrying...",
+                french=" Tous ces soucis m\'ont\ncomplètement épuisé...",
+                german=" Ich habe diese Probleme satt...",
+                italian=" Non ce la faccio più, \ntutte queste preoccupazioni...",
+                spanish=" Me he cansado de tantos\nproblemas...",
+            }
+        case 2:
+            {
+                english=" All this worrying\'s made me\ntired...",
+                french=" Tous ces soucis m\'ont\ncomplètement épuisé...",
+                german=" All diese Sorgen machen mich\nmüde...",
+                italian=" Non ce la faccio più, \ntutte queste preoccupazioni...",
+                spanish=" Me he cansado de tantos\nproblemas...",
+            }
+        default:
+            {
+                english=" I feel drained from all this\nworrying...",
+                french=" Tous ces soucis m\'ont\ncomplètement épuisée...",
+                german=" Ich fühle mich ausgelaugt von\nden ganzen Sorgen...",
+                italian=" Non ce la faccio più, \ntutte queste preoccupazioni...",
+                spanish=" Me he cansado de tantos\nproblemas...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Let\'s get some sleep,\n[hero].",
+                french=" Reposons-nous, [hero].",
+                german=" Legen wir uns schlafen,\n[hero].",
+                italian=" È meglio andare a dormire,\n[hero].",
+                spanish=" Durmamos un rato,\n[hero].",
+            }
+        case 2:
+            {
+                english=" Let\'s get some sleep,\n[hero].",
+                french=" Reposons-nous, [hero].",
+                german=" Legen wir uns schlafen,\n[hero].",
+                italian=" È meglio andare a dormire,\n[hero].",
+                spanish=" Durmamos un rato,\n[hero].",
+            }
+        default:
+            {
+                english=" Let\'s get some sleep,\n[hero].",
+                french=" Reposons-nous, [hero].",
+                german=" Legen wir uns schlafen,\n[hero].",
+                italian=" È meglio andare a dormire,\n[hero].",
+                spanish=" Durmamos un rato,\n[hero].",
+            }
+    }
+    message_Close();
+    bgm_FadeOut(180);
+    screen_FadeOut(1, 90);
+    WaitBgm(BGM_OCEAN1);
+    end;
+}

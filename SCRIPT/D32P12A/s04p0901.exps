@@ -1,0 +1,149 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_MAIN = scn[29, 61];
+    back_SetGround(LEVEL_D32P12A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    Wait(1);
+    with (actor ACTOR_PLAYER_APPOINT) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_ADVENTURE_NPC3) {
+        SetPositionInitial();
+    }
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_IN_THE_DEPTHS_OF_THE_PIT, 0, 256);
+    with (actor ACTOR_PLAYER_APPOINT) {
+        Move2PositionMark(1, Position<'m0', 28.5, 42.5>);
+    }
+    Wait(15);
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        Move2PositionMark(1, Position<'m1', 31.5, 44.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        Move2PositionMark(1, Position<'m2', 25.5, 44.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_ADVENTURE_NPC3) {
+        Move2PositionMark(1, Position<'m3', 28.5, 46.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_APPOINT);
+    se_Play(8978);
+    with (actor ACTOR_PLAYER_APPOINT) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER_APPOINT) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_APPOINT);
+    Wait(10);
+    message_Mail({
+        english="[CN]There is something in\n[CN]front of the stone marker.",
+        french="[CN]Il y a quelque chose\n[CN]au pied de la stèle.",
+        german="[CN]Da ist etwas\n[CN]vor dem Steinwegweiser.",
+        italian="[CN]C\'è qualcosa di fronte\n[CN]alla Stele.",
+        spanish="[CN]Hay algo enfrente de la losa.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m4', 28.5, 35.5>);
+    }
+    with (actor ACTOR_PLAYER_APPOINT) {
+        Move2PositionMark(1, Position<'m5', 28.5, 33.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        Move2PositionMark(1, Position<'m6', 31.5, 35.5>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        Move2PositionMark(1, Position<'m7', 25.5, 35.5>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC3) {
+        Move2PositionMark(1, Position<'m8', 28.5, 37.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_APPOINT);
+    with (object OBJECT_G01P01A2_94) {
+        Destroy();
+    }
+    Wait(15);
+    message_ResetActor();
+    message_Mail({
+        english="[CN]It appears to be a letter.",
+        french="[CN]C\'est une lettre.",
+        german="[CN]Es scheint ein Brief zu sein.",
+        italian="[CN]Sembra trattarsi di una lettera.",
+        spanish="[CN]Parece una carta.",
+    });
+    message_Mail({
+        english="[CN][player] read the letter.",
+        french="[CN][player] lit la lettre.",
+        german="[CN][player] liest den Brief.",
+        italian="[CN][player] legge la lettera.",
+        spanish="[CN][player] ha leído la carta.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_Mail({
+        english="\"To Team [team:]:\"",
+        french="\"Chère Equipe [team:]:",
+        german="[F:S2]An Team [team:]:[F:E2]",
+        italian="\"Al Team [team:]:\"",
+        spanish="\"Al [CS:X]Equipo[CR] [team:]:\"",
+    });
+    message_Mail({
+        english="\"As we promised earlier, we have already\nsolved this mystery. We\'re going on ahead.\"",
+        french="Comme nous vous l\'avions promis, nous avons\ndéjà résolu cette énigme. Nous avons pris une\nlongueur d\'avance.",
+        german="[F:S2]Wie versprochen haben wir\ndieses Rätsel schon gelöst. Wir gehen weiter\nvoraus.[F:E2]",
+        italian="\"Come promesso, abbiamo già risolto questo\nmistero. Stiamo proseguendo.\"",
+        spanish="\"Tal y como prometimos, hemos resuelto el\nmisterio y seguimos adelante.\"",
+    });
+    message_Mail({
+        english="\"This is a race to see who can get the treasure\nfirst, you know!\"\n                               - Team [CS:X]Charm[CR] -",
+        french="C\'est une véritable course au trésor, nous\nespérons que vous vous en rendez compte!\"\n                               - L\'Equipe [CS:X]Charme[CR] -",
+        german="[F:S2]Bei diesem Rennen wird sich\nzeigen, wer die besseren Schatzjäger sind![F:E2]\n                               - Team [CS:X]Charme[CR] -",
+        italian="\"Questa è una gara per vedere quale delle due\nsquadre arriverà per prima al tesoro!\"\n                               - Team [CS:X]Malia[CR] -",
+        spanish="\"¡Esto es una carrera para ver quién\nencuentra primero el tesoro!\"\n                      Firmado: [CS:X]Equipo Carisma[CR].",
+    });
+    message_Close();
+    Wait(15);
+    se_Play(8961);
+    with (actor ACTOR_PLAYER_APPOINT) {
+        SetEffect(EFFECT_SWEAT_DROP, 3);
+    }
+    with (actor ACTOR_PLAYER_APPOINT) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_APPOINT);
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        MovePositionMark(1, Position<'m9', 31.5, 35.5>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        MovePositionMark(1, Position<'m10', 25.5, 35.5>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC3) {
+        MovePositionMark(1, Position<'m11', 28.5, 37.5>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_ADVENTURE_NPC3) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_ADVENTURE_NPC1);
+    WaitExecuteLives(ACTOR_ADVENTURE_NPC2);
+    WaitExecuteLives(ACTOR_ADVENTURE_NPC3);
+    end;
+}

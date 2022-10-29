@@ -1,0 +1,194 @@
+
+def 0 {
+    back_SetGround(LEVEL_H02P99C);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetDirection(DIR_LEFT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(62);
+    }
+    WaitSe(6403);
+    screen_FadeIn(0, 5);
+    with (actor ACTOR_PLAYER) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    message_SetFace(ACTOR_PLAYER, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="Gasp!",
+                french="Gloups!",
+                german="Schluck!",
+                italian="Gasp!",
+                spanish="¡Ah!",
+            }
+        default:
+            {
+                english="Gasp!",
+                french="Gloups!",
+                german="Schluck!",
+                italian="Gasp!",
+                spanish="¡Ah!",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="...[K]Wh-what was that?",
+                french="...[K] Qu... qu\'est-ce que c\'était?",
+                german="...[K]W-was war das denn?",
+                italian="...[K] C-Cosa è stato?",
+                spanish="¿Qué...?[K] ¿Qué ha sido eso?",
+            }
+        default:
+            {
+                english="...[K]Wh-what was that?",
+                french="...[K] Qu... qu\'est-ce que c\'était?",
+                german="...[K]W-was war das denn?",
+                italian="...[K] C-Cosa è stato?",
+                spanish="¿Qué...?[K] ¿Qué ha sido eso?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_PlayFadeIn(BGM_OCEAN1, 90, 256);
+    with (actor ACTOR_PLAYER) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(30);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(30);
+    message_SetFace(ACTOR_PLAYER, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="[partner] is...[K]asleep.",
+                french="[partner]...[K] dort à poings fermés.",
+                german="[partner]...[K] schläft.",
+                italian="[partner] sta...[K] dormendo.",
+                spanish="[partner] está...[K] durmiendo.",
+            }
+        default:
+            {
+                english="[partner] is...[K]asleep.",
+                french="[partner]...[K] dort à poings fermés.",
+                german="[partner]...[K] schläft.",
+                italian="[partner] sta...[K] dormendo.",
+                spanish="[partner] está...[K] durmiendo.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(30);
+    message_SetFace(ACTOR_PLAYER, FACE_WORRIED, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="I guess...[K]that was a dream...?",
+                french="Je suppose...[K] que ce n\'était qu\'un rêve...",
+                german="Ich nehme an,[K] das war ein Traum?",
+                italian="Sarà stato...[K] un sogno?",
+                spanish="Supongo...[K] que estaría soñando...",
+            }
+        default:
+            {
+                english="I guess...[K]that was a dream...?",
+                french="Je suppose...[K] que ce n\'était qu\'un rêve...",
+                german="Ich nehme an,[K] das war ein Traum?",
+                italian="Sarà stato...[K] un sogno?",
+                spanish="Supongo...[K] que estaría soñando...",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="What a strange dream, though.",
+                french="Mais quel rêve étrange.",
+                german="Was für ein seltsamer Traum noch dazu.",
+                italian="Ma che sogno strano.",
+                spanish="Qué sueño más raro.",
+            }
+        default:
+            {
+                english="What a strange dream, though.",
+                french="Mais quel rêve étrange.",
+                german="Was für ein seltsamer Traum noch dazu.",
+                italian="Ma che sogno strano.",
+                spanish="Qué sueño más raro.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(30);
+    message_SetFace(ACTOR_PLAYER, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="Well, there\'s nothing I can do about that...",
+                french="Eh bien, il n\'y a pas grand-chose à y faire...",
+                german="Na ja, da kann ich wohl nichts machen...",
+                italian="Beh, non c\'è niente che io possa fare...",
+                spanish="Bueno, qué le vamos a hacer...",
+            }
+        default:
+            {
+                english="Well, there\'s nothing I can do about that...",
+                french="Eh bien, il n\'y a pas grand-chose à y faire...",
+                german="Na ja, da kann ich wohl nichts machen...",
+                italian="Beh, non c\'è niente che io possa fare...",
+                spanish="Bueno, qué le vamos a hacer...",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="It\'s not even dawn...[K] I\'ll get more sleep.",
+                french="Il ne fait pas encore jour...[K] Je vais dormir\nencore un peu.",
+                german="Es ist noch nicht einmal Morgen...[K] Ich lege\nmich noch mal schlafen.",
+                italian="Non è ancora l\'alba...[K] Dormirò ancora un po\'.",
+                spanish="Aún no ha amanecido...[K] Seguiré durmiendo.",
+            }
+        default:
+            {
+                english="It\'s not even dawn...[K] I\'ll get more sleep.",
+                french="Il ne fait pas encore jour...[K] Je vais dormir\nencore un peu.",
+                german="Es ist noch nicht einmal Morgen...[K] Ich lege\nmich noch mal schlafen.",
+                italian="Non è ancora l\'alba...[K] Dormirò ancora un po\'.",
+                spanish="Aún no ha amanecido...[K] Seguiré durmiendo.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(30);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(76);
+    }
+    Wait(60);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(62);
+    }
+    Wait(60);
+    bgm_FadeOut(180);
+    screen_FadeOut(1, 90);
+    WaitBgm(BGM_OCEAN1);
+    Wait(60);
+    end;
+}

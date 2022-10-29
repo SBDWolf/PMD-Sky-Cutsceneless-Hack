@@ -1,0 +1,162 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_IN_THE_HANDS_OF_FATE, 0, 256);
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V21P02B);
+    back_SetGround(LEVEL_H01P99E);
+    supervision_Acting(0);
+    camera2_SetPositionMark(Position<'m0', 20, 18.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    bgm2_ChangeVolume(140, 190);
+    screen2_FadeIn(0, 30);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_TOP_L_CENTER);
+    message_FacePositionOffset(-1, -1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" That was it...",
+                french=" C\'était bien ça...",
+                german=" Das war es...",
+                italian=" È andata così.",
+                spanish=" Así es...",
+            }
+        case 2:
+            {
+                english=" That was it...",
+                french=" C\'était bien ça...",
+                german=" Das war es...",
+                italian=" È andata così.",
+                spanish=" Así es...",
+            }
+        default:
+            {
+                english=" That was it...",
+                french=" C\'était bien ça...",
+                german=" Das war es...",
+                italian=" È andata così.",
+                spanish=" Así es...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I could be brave because you\nwere always with me, [hero]...",
+                french=" Si j\'ai réussi à faire preuve de\ncourage, c\'est parce que tu étais toujours\nà mes côtés, [hero]...",
+                german=" Ich konnte tapfer sein, weil du\nimmer bei mir warst, [hero]...",
+                italian=" Sono riuscito ad essere\ncoraggioso perché tu eri sempre al mio fianco,\n[hero]...",
+                spanish=" Fui valiente porque tú siempre\nestuviste a mi lado, [hero]...",
+            }
+        case 2:
+            {
+                english=" I managed to be brave because\nyou were always with me, [hero]...",
+                french=" Si j\'ai réussi à faire preuve de\ncourage, c\'est parce que tu étais toujours\nà mes côtés, [hero]...",
+                german=" Ich schaffte es, tapfer zu\nbleiben, weil du immer bei mir warst,\n[hero]...",
+                italian=" Sono riuscito ad essere\ncoraggioso perché tu eri sempre al mio fianco,\n[hero]...",
+                spanish=" Fui valiente porque tú siempre\nestuviste a mi lado, [hero]...",
+            }
+        default:
+            {
+                english=" I managed to be brave because\nyou were always with me, [hero]...",
+                french=" Si j\'ai réussi à faire preuve de\ncourage, c\'est parce que tu étais toujours\nà mes côtés, [hero]...",
+                german=" Ich schaffte es, tapfer zu\nbleiben, weil du immer bei mir warst,\n[hero]...",
+                italian=" Sono riuscita ad essere\ncoraggiosa perché tu eri sempre al mio fianco,\n[hero]...",
+                spanish=" Fui valiente porque tú siempre\nestuviste a mi lado, [hero]...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" That was when I finally\nunderstood that.",
+                french=" C\'est à ce moment-là que j\'ai\nfini par comprendre.",
+                german=" Das habe ich dann endgültig\nverstanden.",
+                italian=" È stato allora che l\'ho \nfinalmente capito.",
+                spanish=" Fue entonces cuando por fin lo\ncomprendí.",
+            }
+        case 2:
+            {
+                english=" That was when I finally\nrealized that.",
+                french=" C\'est à ce moment-là que j\'ai\nfini par comprendre.",
+                german=" Das wurde mir dann endgültig\nklar.",
+                italian=" È stato allora che l\'ho \nfinalmente capito.",
+                spanish=" Fue entonces cuando por fin lo\ncomprendí.",
+            }
+        default:
+            {
+                english=" That was when I finally\nrealized that.",
+                french=" C\'est à ce moment-là que j\'ai\nfini par comprendre.",
+                german=" Das wurde mir dann endgültig\nklar.",
+                italian=" È stato allora che l\'ho \nfinalmente capito.",
+                spanish=" Fue entonces cuando por fin lo\ncomprendí.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" And that\'s what I told [CS:N]Grovyle[CR].",
+                french=" C\'est ce que j\'ai répondu\nà [CS:N]Massko[CR].",
+                german=" Und das habe ich [CS:N]Reptain[CR] gesagt.",
+                italian=" Ed è quello che ho detto a\n[CS:N]Grovyle[CR].",
+                spanish=" Y eso fue lo que le dije a\n[CS:N]Grovyle[CR].",
+            }
+        case 2:
+            {
+                english=" And that\'s what I told [CS:N]Grovyle[CR].",
+                french=" C\'est ce que j\'ai répondu\nà [CS:N]Massko[CR].",
+                german=" Und das habe ich [CS:N]Reptain[CR] gesagt.",
+                italian=" Ed è quello che ho detto a\n[CS:N]Grovyle[CR].",
+                spanish=" Y eso fue lo que le dije a\n[CS:N]Grovyle[CR].",
+            }
+        default:
+            {
+                english=" And that\'s what I told [CS:N]Grovyle[CR].",
+                french=" C\'est ce que j\'ai répondu\nà [CS:N]Massko[CR].",
+                german=" Und das habe ich [CS:N]Reptain[CR] gesagt.",
+                italian=" Ed è quello che ho detto a\n[CS:N]Grovyle[CR].",
+                spanish=" Y eso fue lo que le dije a\n[CS:N]Grovyle[CR].",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(32896, Position<'m1', 22, 16.5>);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    Wait(45);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_TOP_LC_FACEOUTW);
+    message_FacePositionOffset(-1, -1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Just before we lost [CS:N]Grovyle[CR] in\nthe [CS:P]Hidden Land[CR]...",
+                french=" Juste avant qu\'il ne disparaisse\ndans les [CS:P]Terres Illusoires[CR]...",
+                german=" Kurz bevor wir [CS:N]Reptain[CR] im\n[CS:P]Verborgenen Land[CR] verloren haben...",
+                italian=" Poco prima di perdere [CS:N]Grovyle[CR]\nnella [CS:P]Terra Nascosta[CR]...",
+                spanish=" Sí, justo antes de que nos\nseparáramos de él en la [CS:P]Tierra Oculta[CR]...",
+            }
+        case 2:
+            {
+                english=" Just before we lost [CS:N]Grovyle[CR] in\nthe [CS:P]Hidden Land[CR]...",
+                french=" Juste avant qu\'il ne disparaisse\ndans les [CS:P]Terres Illusoires[CR]...",
+                german=" Kurz bevor wir [CS:N]Reptain[CR] im\n[CS:P]Verborgenen Land[CR] verloren haben...",
+                italian=" Poco prima di perdere [CS:N]Grovyle[CR]\nnella [CS:P]Terra Nascosta[CR]...",
+                spanish=" Sí, justo antes de que nos\nseparáramos de él en la [CS:P]Tierra Oculta[CR]...",
+            }
+        default:
+            {
+                english=" Just before we lost [CS:N]Grovyle[CR] in\nthe [CS:P]Hidden Land[CR]...",
+                french=" Juste avant qu\'il ne disparaisse\ndans les [CS:P]Terres Illusoires[CR]...",
+                german=" Kurz bevor wir [CS:N]Reptain[CR] im\n[CS:P]Verborgenen Land[CR] verloren haben...",
+                italian=" Poco prima di perdere [CS:N]Grovyle[CR]\nnella [CS:P]Terra Nascosta[CR]...",
+                spanish=" Sí, justo antes de que nos\nseparáramos de él en la [CS:P]Tierra Oculta[CR]...",
+            }
+    }
+    message_Close();
+    bgm2_ChangeVolume(140, 0);
+    screen2_FadeOut(0, 30);
+    screen_FadeOut(1, 30);
+    back2_SetMode(0);
+    end;
+}

@@ -1,0 +1,154 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_IN_THE_HANDS_OF_FATE, 0, 256);
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V21P02B);
+    back_SetGround(LEVEL_H01P99E);
+    supervision_Acting(0);
+    camera2_SetPositionMark(Position<'m0', 20, 18.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    bgm2_ChangeVolume(140, 190);
+    screen2_FadeIn(0, 30);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_TOP_L_CENTER);
+    message_FacePositionOffset(-1, -1);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I didn\'t give up when we were\ntrying to escape from the future.",
+                french=" Je n\'ai pas baissé les bras quand\nnous avons essayé de nous échapper du futur.",
+                german=" Ich habe nicht aufgegeben, als\nwir versuchten, aus der Zukunft zu fliehen.",
+                italian=" Non mi sono arreso quando\nstavamo cercando di scappare dal futuro.",
+                spanish=" No desistí cuando estábamos\nintentando escapar del futuro.",
+            }
+        case 2:
+            {
+                english=" I didn\'t give up when we were\ntrying to escape from the future.",
+                french=" Je n\'ai pas baissé les bras quand\nnous avons essayé de nous échapper du futur.",
+                german=" Ich habe nicht aufgegeben, als\nwir versuchten, aus der Zukunft zu fliehen.",
+                italian=" Non mi sono arreso quando\nstavamo cercando di scappare dal futuro.",
+                spanish=" No desistí cuando estábamos\nintentando escapar del futuro.",
+            }
+        default:
+            {
+                english=" I didn\'t give up when we were\ntrying to escape from the future.",
+                french=" Je n\'ai pas baissé les bras quand\nnous avons essayé de nous échapper du futur.",
+                german=" Ich habe nicht aufgegeben, als\nwir versuchten, aus der Zukunft zu fliehen.",
+                italian=" Non mi sono arresa quando\nstavamo cercando di scappare dal futuro.",
+                spanish=" No desistí cuando estábamos\nintentando escapar del futuro.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I guess [CS:N]Grovyle[CR] thought that\nwas strange.",
+                french=" [CS:N]Massko[CR] a trouvé ça étrange.",
+                german=" [CS:N]Reptain[CR] fand das vermutlich\nseltsam.",
+                italian=" Immagino che [CS:N]Grovyle[CR] abbia\npensato che fosse strano.",
+                spanish=" Supongo que a [CS:N]Grovyle[CR] le\npareció extraño.",
+            }
+        case 2:
+            {
+                english=" I guess that struck [CS:N]Grovyle[CR] as\nbeing strange.",
+                french=" [CS:N]Massko[CR] a trouvé ça étrange.",
+                german=" Das muss [CS:N]Reptain[CR] als seltsam\nerachtet haben.",
+                italian=" Immagino che [CS:N]Grovyle[CR] abbia\npensato che fosse strano.",
+                spanish=" Supongo que a [CS:N]Grovyle[CR] le\nextrañó.",
+            }
+        default:
+            {
+                english=" I guess [CS:N]Grovyle[CR] thought that\nwas strange.",
+                french=" [CS:N]Massko[CR] a trouvé ça étrange.",
+                german=" [CS:N]Reptain[CR] fand das vermutlich\nseltsam.",
+                italian=" Immagino che [CS:N]Grovyle[CR] abbia\npensato che fosse strano.",
+                spanish=" Supongo que a [CS:N]Grovyle[CR] le\npareció extraño.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" That\'s why [CS:N]Grovyle[CR] asked me\nwhy I wouldn\'t give up...",
+                french=" C\'est pour ça qu\'il m\'a demandé\npourquoi je ne baissais pas les bras...",
+                german=" Darum fragte mich [CS:N]Reptain[CR] wohl,\nwarum ich nicht aufgeben wollte...",
+                italian=" È per questo che [CS:N]Grovyle[CR] mi\nha chiesto perché non ho ceduto.",
+                spanish=" Y por eso me preguntó por qué\nme negué a rendirme...",
+            }
+        case 2:
+            {
+                english=" That\'s why [CS:N]Grovyle[CR] asked me\nwhy I refused to give up...",
+                french=" C\'est pour ça qu\'il m\'a demandé\npourquoi je ne baissais pas les bras...",
+                german=" Darum fragte mich [CS:N]Reptain[CR] wohl,\nwarum ich mich weigerte aufzugeben...",
+                italian=" È per questo che [CS:N]Grovyle[CR] mi\nha chiesto perché non ho ceduto.",
+                spanish=" Y por eso me preguntó por qué\nme negué a rendirme...",
+            }
+        default:
+            {
+                english=" That\'s why [CS:N]Grovyle[CR] asked me\nwhy I wouldn\'t give up...",
+                french=" C\'est pour ça qu\'il m\'a demandé\npourquoi je ne baissais pas les bras...",
+                german=" Darum fragte mich [CS:N]Reptain[CR] wohl,\nwarum ich nicht aufgeben wollte...",
+                italian=" È per questo che [CS:N]Grovyle[CR] mi\nha chiesto perché non ho ceduto.",
+                spanish=" Y por eso me preguntó por qué\nme negué a rendirme...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" But I didn\'t have an answer.\nI didn\'t know why I was brave then.",
+                french=" Mais je n\'avais pas de réponse.\nJe ne savais pas pourquoi.",
+                german=" Aber ich hatte keine Antwort.\nIch wusste nicht, warum ich damals so tapfer\nwar.",
+                italian=" Ma non sapevo cosa rispondere.\nNon so come ho fatto ad essere così\ncoraggioso.",
+                spanish=" Pero no supe responderle.\nNo sabía por qué fui tan valiente.",
+            }
+        case 2:
+            {
+                english=" But I didn\'t know how to answer.\nI didn\'t know why I was brave then.",
+                french=" Mais je n\'avais pas de réponse.\nJe ne savais pas pourquoi.",
+                german=" Aber ich hatte keine Antwort.\nIch wusste nicht, warum ich damals so mutig\nwar.",
+                italian=" Ma non sapevo cosa rispondere.\nNon so come ho fatto ad essere così\ncoraggioso.",
+                spanish=" Pero no supe responderle.\nNo sabía por qué fui tan valiente.",
+            }
+        default:
+            {
+                english=" But I didn\'t know how to answer.\nI didn\'t know how I managed to stay brave.",
+                french=" Mais je n\'avais pas de réponse.\nJe ne savais pas pourquoi.",
+                german=" Aber ich hatte keine Antwort.\nIch wusste nicht, warum ich damals so tapfer\nbleiben konnte.",
+                italian=" Ma non sapevo cosa rispondere.\nNon so come ho fatto ad essere così\ncoraggiosa.",
+                spanish=" Pero no supe responderle.\nNo sabía por qué fui tan valiente.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" But I thought about it, and I\nbegan to understand something...",
+                french=" J\'y ai réfléchi et j\'ai commencé\nà comprendre quelque chose...",
+                german=" Aber ich habe darüber\nnachgedacht und begann zu verstehen...\n",
+                italian=" Ma pensandoci, ho iniziato\na capire qualcosa...",
+                spanish=" Pero, al pensar en ello, empecé\na comprender...",
+            }
+        case 2:
+            {
+                english=" But I thought about it, and I\nbegan to realize something...",
+                french=" J\'y ai réfléchi et j\'ai commencé\nà comprendre quelque chose...",
+                german=" Aber ich habe darüber\nnachgedacht und begann zu verstehen...\n",
+                italian=" Ma pensandoci, ho iniziato\na capire qualcosa...",
+                spanish=" Pero, al pensar en ello, empecé\na comprender...",
+            }
+        default:
+            {
+                english=" But I thought about it, and I\nbegan to realize something...",
+                french=" J\'y ai réfléchi et j\'ai commencé\nà comprendre quelque chose...",
+                german=" Aber ich habe darüber\nnachgedacht und begann zu verstehen...\n",
+                italian=" Ma pensandoci, ho iniziato\na capire qualcosa...",
+                spanish=" Pero, al pensar en ello, empecé\na comprender...",
+            }
+    }
+    message_Close();
+    bgm2_ChangeVolume(140, 0);
+    screen2_FadeOut(0, 30);
+    screen_FadeOut(1, 30);
+    back2_SetMode(0);
+    end;
+}

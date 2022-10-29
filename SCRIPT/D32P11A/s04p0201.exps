@@ -1,0 +1,38 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_MAIN = scn[29, 57];
+    back_SetGround(LEVEL_D32P11A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_PLAYER_APPOINT) {
+        SetPositionMark(Position<'m0', 28.5, 36.5>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        SetPositionMark(Position<'m1', 31.5, 38.5>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        SetPositionMark(Position<'m2', 25.5, 38.5>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC3) {
+        SetPositionMark(Position<'m3', 28.5, 39.5>);
+    }
+    with (actor ACTOR_PLAYER_APPOINT) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        SetDirection(DIR_UPLEFT);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        SetDirection(DIR_UPRIGHT);
+    }
+    with (actor ACTOR_ADVENTURE_NPC3) {
+        SetDirection(DIR_UP);
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_AEGIS_CAVE, 0, 256);
+    end;
+}

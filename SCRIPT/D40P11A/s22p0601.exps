@@ -1,0 +1,111 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_D40P11A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    bgm_PlayFadeIn(BGM_ON_THE_CEILING, 90, 128);
+    bgm_ChangeVolume(0, 128);
+    screen_FadeIn(1, 30);
+    with (actor ACTOR_NPC_KURESERIA) {
+        MovePositionMark(1, Position<'m0', 22.5, 24.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m1', 20.5, 26.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m2', 24.5, 26.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    Wait(15);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" So this is the entrance to the\n[CS:P]Dark Crater[CR]...",
+                french=" Voici donc l\'entrée du [CS:P]Cratère\nObscur[CR]...",
+                german=" Das ist also der Eingang zum\n[CS:P]Dunkelkrater[CR]...",
+                italian=" Quindi questo è l\'ingresso del\n[CS:P]Cratere Oscuro[CR]...",
+                spanish=" Así que esta es la entrada al\n[CS:P]Cráter Oscuro[CR]...",
+            }
+        case 2:
+            {
+                english=" So this is the entrance to the\n[CS:P]Dark Crater[CR]...",
+                french=" Voici donc l\'entrée du [CS:P]Cratère\nObscur[CR]...",
+                german=" Das ist also der Eingang zum\n[CS:P]Dunkelkrater[CR]...",
+                italian=" Quindi questo è l\'ingresso del\n[CS:P]Cratere Oscuro[CR]...",
+                spanish=" Así que esta es la entrada al\n[CS:P]Cráter Oscuro[CR]...",
+            }
+        default:
+            {
+                english=" So this is the entrance to the\n[CS:P]Dark Crater[CR]...",
+                french=" Voici donc l\'entrée du [CS:P]Cratère\nObscur[CR]...",
+                german=" Das ist also der Eingang zum\n[CS:P]Dunkelkrater[CR]...",
+                italian=" Quindi questo è l\'ingresso del\n[CS:P]Cratere Oscuro[CR]...",
+                spanish=" Así que esta es la entrada al\n[CS:P]Cráter Oscuro[CR]...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_KURESERIA) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_KURESERIA);
+    message_SetFace(ACTOR_NPC_KURESERIA, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Here we face [CS:N]Darkrai[CR].[K] There is\nno telling what he has in store for us.",
+        french=" Apprêtons-nous à affronter\n[CS:N]Darkrai[CR].[K] Qui sait ce qu\'il nous réserve?",
+        german=" Hier stellen wir uns [CS:N]Darkrai[CR].[K]\nKeiner kann sagen, was dieses Pokémon für\nuns bereithält.",
+        italian=" È qui che dobbiamo affrontare\n[CS:N]Darkrai[CR].[K] Non possiamo\nsapere che accoglienza ci ha preparato.",
+        spanish=" Aquí nos enfrentaremos a\n[CS:N]Darkrai[CR].[K] A saber qué sorpresas nos tiene\npreparadas.",
+    });
+    message_Talk({
+        english=" We must proceed with the\nutmost care!",
+        french=" Nous devons agir avec la plus\ngrande prudence!",
+        german=" Wir müssen mit\ngrößtmöglicher Vorsicht vorgehen!",
+        italian=" Dobbiamo procedere con molta \ncautela!",
+        spanish=" ¡Hay que ir con muchísimo\ncuidado!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(71);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(71);
+    }
+    with (actor ACTOR_PLAYER) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER);
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    Wait(30);
+    with (actor ACTOR_NPC_KURESERIA) {
+        MovePositionMark(1, Position<'m3', 22.5, 15.5>);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionMark(1, Position<'m4', 22.5, 15.5>);
+    }
+    Wait(15);
+    with (actor ACTOR_PLAYER) {
+        MovePositionMark(1, Position<'m5', 22.5, 15.5>);
+    }
+    Wait(30);
+    bgm_FadeOut(60);
+    screen_FadeOut(1, 30);
+    WaitBgm(BGM_ON_THE_CEILING);
+    main_EnterDungeon(67, 0);
+    switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+    main_EnterDungeon(-1, 0);
+    hold;
+    end;
+}

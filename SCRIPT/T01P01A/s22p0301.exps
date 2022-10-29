@@ -1,0 +1,582 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_T01P01A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    CallCommon(CORO_FADE_OUT_ALL_BEFORE);
+    screen_FadeInAll(1, 30);
+    Wait(20);
+    se_Play(8972);
+    with (actor ACTOR_NPC_RURIRI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_RURIRI) {
+        MovePositionMark(1, Position<'m0', 44.5, 24.5>);
+    }
+    with (actor ACTOR_NPC_MARIRU) {
+        MovePositionMark(1, Position<'m1', 42.5, 24.5>);
+    }
+    message_SetFace(ACTOR_NPC_RURIRI, FACE_TEARY_EYED, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" [CS:N]Marill[CR]!",
+        french=" [CS:N]Marill[CR]!",
+        german=" [CS:N]Marill[CR]!",
+        italian=" [CS:N]Marill[CR]!",
+        spanish=" ¡[CS:N]Marill[CR]!",
+    });
+    WaitExecuteLives(ACTOR_NPC_RURIRI);
+    with (actor ACTOR_NPC_RURIRI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_RURIRI);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_MARIRU, FACE_TEARY_EYED, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" [CS:N]Azurill[CR]! That\'s great![K] You woke\nup from your nightmare!",
+        french=" [CS:N]Azurill[CR]! C\'est génial![K] Tu es enfin\nréveillé! Tu es sorti de ce cauchemar!",
+        german=" [CS:N]Azurill[CR]! Das ist toll![K] Du bist aus\ndeinem Albtraum aufgewacht!",
+        italian=" [CS:N]Azurill[CR]! Fantastico![K] Ti sei\nsvegliato dal tuo incubo!",
+        spanish=" ¡[CS:N]Azurill[CR]! ¡Fantástico![K] ¡Has \ndespertado de la pesadilla!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_RURIRI) {
+        SetAnimation(23);
+    }
+    with (actor ACTOR_NPC_RURIRI) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_RURIRI);
+    with (actor ACTOR_NPC_RURIRI) {
+        SetAnimation(2);
+    }
+    message_SetFace(ACTOR_NPC_RURIRI, FACE_TEARY_EYED, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Yup!",
+        french=" Ouaip!",
+        german=" Ja!",
+        italian=" Sì!",
+        spanish=" ¡Sí!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_MARIRU) {
+        SetOutputAttribute(4);
+    }
+    with (actor ACTOR_NPC_MARIRU) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_MARIRU);
+    with (actor ACTOR_NPC_MARIRU) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_MARIRU);
+    with (actor ACTOR_NPC_RURIRI) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    message_SetFace(ACTOR_NPC_MARIRU, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" You did it, Miss [CS:N]Cresselia[CR]![K]\nThank you so much!",
+        french=" Vous avez réussi, Mademoiselle\n[CS:N]Cresselia[CR]![K] Merci de tout cœur!",
+        german=" Das waren Sie, Frau [CS:N]Cresselia[CR]![K]\nVielen, vielen Dank!",
+        italian=" Ce l\'ha fatta, signorina\n[CS:N]Cresselia[CR]![K] Grazie mille!",
+        spanish=" ¡Lo lograste, [CS:N]Cresselia[CR]![K]\n¡Muchas gracias!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_RURIRI) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_NPC_RURIRI, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" And Mister [CS:N]Drowzee[CR] too!",
+        french=" Et merci à vous aussi, Monsieur\n[CS:N]Soporifik[CR]!",
+        german=" Und auch Herr [CS:N]Traumato[CR]!",
+        italian=" E grazie anche a lei, signor\n[CS:N]Drowzee[CR]!",
+        spanish=" ¡Y [CS:N]Drowzee[CR], gracias a ti\ntambién!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_MARIRU) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER_PARTNER);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER_PARTNER);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_PUKURIN) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_KURESERIA) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    se_Play(8978);
+    with (actor ACTOR_NPC_SURIIPU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_SURIIPU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_SURIIPU);
+    message_SetFace(ACTOR_NPC_SURIIPU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Huh?! Me?!",
+        french=" Hein?! Moi?!",
+        german=" Äh? Ich?!?",
+        italian=" Eh?! A me?!",
+        spanish=" ¿Eh? ¿A mí?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_RURIRI) {
+        MovePositionMark(1, Position<'m2', 46.5, 27.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_MARIRU) {
+        MovePositionMark(1, Position<'m3', 46.5, 25.5>);
+    }
+    with (actor ACTOR_PLAYER) {
+        MovePositionOffset(1, -24, 0);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        MovePositionOffset(1, 0, -24);
+    }
+    with (actor ACTOR_NPC_RURIRI) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    with (actor ACTOR_NPC_MARIRU) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_RURIRI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_NPC_RURIRI, FACE_NORMAL, FACE_POS_BOTTOM_C_FACER);
+    message_FacePositionOffset(-2, 0);
+    message_Talk({
+        english=" Thank you very much,\nMister [CS:N]Drowzee[CR]!",
+        french=" Merci beaucoup, Monsieur\n[CS:N]Soporifik[CR]!",
+        german=" Vielen Dank,\nHerr [CS:N]Traumato[CR]!",
+        italian=" Grazie mille, signor\n[CS:N]Drowzee[CR]!",
+        spanish=" ¡Muchas gracias, Sr. [CS:N]Drowzee[CR]!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_MARIRU, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Mister [CS:N]Drowzee[CR]![K] I have to thank\nyou too!",
+        french=" Monsieur [CS:N]Soporifik[CR]![K] Moi aussi,\nje dois vous remercier!",
+        german=" Herr [CS:N]Traumato[CR]![K] Ich muss Ihnen\nauch danken!",
+        italian=" Signor [CS:N]Drowzee[CR]![K] Anche io la\ndevo ringraziare!",
+        spanish=" ¡[CS:N]Drowzee[CR]![K] ¡Te lo agradezco!",
+    });
+    message_Talk({
+        english=" You stayed to take care of\n[CS:N]Azurill[CR] this whole time...",
+        french=" Vous avez passé tout ce temps\nau chevet d\'[CS:N]Azurill[CR]...",
+        german=" Sie sind die ganze Zeit bei\n[CS:N]Azurill[CR] geblieben, um auf ihn aufzupassen...",
+        italian=" È rimasto a prendersi cura di\n[CS:N]Azurill[CR] per tutto questo tempo.",
+        spanish=" Has cuidado de [CS:N]Azurill[CR] todo\neste tiempo...",
+    });
+    message_Talk({
+        english=" Thank you so very much!",
+        french=" Du fond du cœur, merci!",
+        german=" Ganz herzlichen Dank!",
+        italian=" Grazie mille!",
+        spanish=" ¡Muchas gracias!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_NPC_SURIIPU) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_SURIIPU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_SURIIPU);
+    message_SetFace(ACTOR_NPC_SURIIPU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Well...[K]shucks, it\'s the least I\ncould do.",
+        french=" Eh ben...[K] mince! C\'était bien\nla moindre des choses.",
+        german=" Och![K] Nicht doch! Das war das \nMindeste, was ich tun konnte.",
+        italian=" Beh...[K] È il minimo che \npotessi fare.",
+        spanish=" Bueno...[K] Es lo menos que podía\nhacer, caramba.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_FacePositionOffset(0, 2);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hey, [CS:N]Cresselia[CR].[K] What happened\nto [CS:N]Palkia[CR]?",
+                french=" Dis, [CS:N]Cresselia[CR].[K] Qu\'est-il arrivé\nà [CS:N]Palkia[CR]?",
+                german=" Hey, [CS:N]Cresselia[CR].[K] Was ist mit\n[CS:N]Palkia[CR] geschehen?",
+                italian=" Ehi, [CS:N]Cresselia[CR].[K] Cosa è successo\na [CS:N]Palkia[CR]?",
+                spanish=" Oye, [CS:N]Cresselia[CR].[K] ¿Qué ha pasado\ncon [CS:N]Palkia[CR]?",
+            }
+        case 2:
+            {
+                english=" Listen, [CS:N]Cresselia[CR].[K] What happened\nto [CS:N]Palkia[CR]?",
+                french=" Dis, [CS:N]Cresselia[CR].[K] Qu\'est-il arrivé\nà [CS:N]Palkia[CR]?",
+                german=" Hör mal, [CS:N]Cresselia[CR].[K] Was ist mit\n[CS:N]Palkia[CR] geschehen?",
+                italian=" Ehi, [CS:N]Cresselia[CR].[K] Cosa è successo\na [CS:N]Palkia[CR]?",
+                spanish=" Oye, [CS:N]Cresselia[CR].[K] ¿Qué ha pasado\ncon [CS:N]Palkia[CR]?",
+            }
+        default:
+            {
+                english=" Say, [CS:N]Cresselia[CR].[K] What happened\nto [CS:N]Palkia[CR]?",
+                french=" Dis, [CS:N]Cresselia[CR].[K] Qu\'est-il arrivé\nà [CS:N]Palkia[CR]?",
+                german=" Sag mal, [CS:N]Cresselia[CR].[K] Was ist mit\n[CS:N]Palkia[CR] passiert?",
+                italian=" Ehi, [CS:N]Cresselia[CR].[K] Cosa è successo\na [CS:N]Palkia[CR]?",
+                spanish=" Oye, [CS:N]Cresselia[CR].[K] ¿Qué ha pasado\ncon [CS:N]Palkia[CR]?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_KURESERIA) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_KURESERIA);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_KURESERIA);
+    }
+    with (actor ACTOR_NPC_PUKURIN) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_KURESERIA);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_KURESERIA);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_KURESERIA);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_KURESERIA);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_RURIRI) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_KURESERIA);
+    }
+    with (actor ACTOR_NPC_MARIRU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_KURESERIA);
+    }
+    with (actor ACTOR_NPC_SURIIPU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_KURESERIA);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_KURESERIA);
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    Wait(10);
+    message_SetFace(ACTOR_NPC_KURESERIA, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_FacePositionOffset(0, -2);
+    message_Talk({
+        english=" [CS:N]Palkia[CR] is immersed within\n[CS:P]Spacial Rift[CR]...",
+        french=" [CS:N]Palkia[CR] se trouve au cœur\nde la [CS:P]Faille Spatiale[CR]...",
+        german=" [CS:N]Palkia[CR] ist in der\n[CS:P]Raumspalte[CR] untergetaucht...",
+        italian=" [CS:N]Palkia[CR] è nella\n[CS:P]Valle Dimensionale[CR]...",
+        spanish=" [CS:N]Palkia[CR] se encuentra en la\n[CS:P]Grieta Espacial[CR]...",
+    });
+    message_Talk({
+        english=" Where he\'s attempting to take\ncare of the distortion of space.",
+        french=" Il essaie de remédier à\nla distorsion de l\'espace.",
+        german=" Dort will es sich um die\nVerzerrung des Raumes kümmern.",
+        italian=" Sta cercando di occuparsi della\ndistorsione dello spazio.",
+        spanish=" Está intentando arreglar la\ndeformación del espacio.",
+    });
+    message_Talk({
+        english=" As the being that governs space\nitself, he is staking his pride on success.",
+        french=" En tant que maître de l\'espace,\nc\'est sa fierté qui est en jeu.",
+        german=" Als das Wesen, das den Raum\nselbst beherrscht, liegt ihm der Erfolg sehr\nam Herzen.",
+        italian=" Dal momento che è l\'essere che\ngoverna lo spazio, per lui è una questione di\norgoglio.",
+        spanish=" Su labor, como guardián del\nespacio, está en juego.",
+    });
+    message_Talk({
+        english=" Given that duty, I would not\nexpect to see him manifest here again.",
+        french=" Il a fort à faire, alors il y a\npeu de chances qu\'on le revoie par ici.",
+        german=" Die Bürde dieser Aufgabe wird\nes hier nicht mehr so schnell erscheinen\nlassen.",
+        italian=" Poiché è molto occupato,\nnon penso che lo rivedremo qui.",
+        spanish=" Así que no creo que vuelva\npor aquí.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5122);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(22);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_JOYOUS, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Well done! How remarkable!",
+        french=" Beau travail! C\'est remarquable!",
+        german=" Sehr gut! Beeindruckend!",
+        italian=" Ben fatto! Davvero ammirevole!",
+        spanish=" ¡Bien! ¡Bien hecho!",
+    });
+    message_Talk({
+        english=" It\'s truly quite marvelous![K]\nMarvelous indeed, [CS:N]Cresselia[CR]! ♪",
+        french=" En vérité, c\'est merveilleux![K]\nOui, vraiment merveilleux, [CS:N]Cresselia[CR]! ♪",
+        german=" Das ist echt fabelhaft![K]\nWirklich fabelhaft, [CS:N]Cresselia[CR]! ♪",
+        italian=" È davvero meraviglioso![K]\nMeraviglioso, [CS:N]Cresselia[CR]! ♪",
+        spanish=" ¡Es maravilloso![K] ¡Maravilloso,\n[CS:N]Cresselia[CR]! ♪",
+    });
+    message_Talk({
+        english=" We\'d heard of your power to\ndispel darkness, but only in rumor.",
+        french=" Nous avions entendu parler de\nvotre faculté à dissiper l\'ombre, mais\nseulement par ouï-dire.",
+        german=" Wir hatten von deiner Macht,\ndie Dunkelheit zu vertreiben, gehört. Aber nur\ngerüchteweise.",
+        italian=" Avevamo sentito del tuo potere\ndi scacciare l\'oscurità, ma pensavamo che\nfossero solo voci.",
+        spanish=" Habíamos oído hablar de tus\npoderes, pero solo en rumores.",
+    });
+    message_Talk({
+        english=" But it was all true! ♪[K] I must\nsay, this is completely marvelous!",
+        french=" Il s\'avère que tout était\nvrai! ♪[K] Je dois dire que c\'est proprement\nmerveilleux!",
+        german=" Und es hat alles gestimmt! ♪[K]\nIch muss zugeben, das ist total fantastisch!",
+        italian=" Ma era tutto vero! ♪[K] Devo\nammettere che è proprio meraviglioso!",
+        spanish=" ¡Pero era cierto! ♪[K] ¡Realmente\nmaravilloso!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_FacePositionOffset(0, 2);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" I understand...[K] You used your\npower when we were in [CS:N]Palkia[CR]\'s nightmare.",
+                french=" Je comprends...[K] Tu t\'es servie\nde ton pouvoir quand on était dans\nle cauchemar de [CS:N]Palkia[CR].",
+                german=" Ich verstehe.[K] Du hast deine\nMacht eingesetzt, als du in dem Albtraum von\n[CS:N]Palkia[CR] warst.",
+                italian=" Ho capito...[K] Hai usato il tuo\npotere quando eravamo nell\'incubo di [CS:N]Palkia[CR].",
+                spanish=" Ahora lo entiendo...[K] Usaste tus\npoderes en la pesadilla de [CS:N]Palkia[CR].",
+            }
+        case 2:
+            {
+                english=" I understand...[K] You used your\npower when we were in [CS:N]Palkia[CR]\'s nightmare.",
+                french=" Je comprends...[K] Tu t\'es servie\nde ton pouvoir quand on était dans\nle cauchemar de [CS:N]Palkia[CR].",
+                german=" Ich verstehe.[K] Du hast deine\nMacht eingesetzt, als du in dem Albtraum von\n[CS:N]Palkia[CR] warst.",
+                italian=" Ho capito...[K] Hai usato il tuo\npotere quando eravamo nell\'incubo di [CS:N]Palkia[CR].",
+                spanish=" Ahora lo entiendo...[K] Usaste tus\npoderes en la pesadilla de [CS:N]Palkia[CR].",
+            }
+        default:
+            {
+                english=" I understand...[K] You used your\npower when we were in [CS:N]Palkia[CR]\'s nightmare.",
+                french=" Je comprends...[K] Tu t\'es servie\nde ton pouvoir quand on était dans\nle cauchemar de [CS:N]Palkia[CR].",
+                german=" Ich verstehe.[K] Du hast deine\nMacht eingesetzt, als du in dem Albtraum von\n[CS:N]Palkia[CR] warst.",
+                italian=" Ho capito...[K] Hai usato il tuo\npotere quando eravamo nell\'incubo di [CS:N]Palkia[CR].",
+                spanish=" Ahora lo entiendo...[K] Usaste tus\npoderes en la pesadilla de [CS:N]Palkia[CR].",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" That\'s how you pulled [CS:N]Palkia[CR]\nand us out of the nightmare.",
+                french=" C\'est comme ça que tu as pu\nnous sortir du cauchemar, [CS:N]Palkia[CR] et nous.",
+                german=" Auf diese Weise hast du [CS:N]Palkia[CR]\nund uns aus dem Albtraum geholt.",
+                italian=" È così che hai trascinato [CS:N]Palkia[CR]\ne noi fuori dall\'incubo.",
+                spanish=" Así lograste sacarnos con [CS:N]Palkia[CR]\nde esa horrible pesadilla.",
+            }
+        case 2:
+            {
+                english=" That\'s how you pulled [CS:N]Palkia[CR]\nand us out of the nightmare.",
+                french=" C\'est comme ça que tu as pu\nnous sortir du cauchemar, [CS:N]Palkia[CR] et nous.",
+                german=" Auf diese Weise hast du [CS:N]Palkia[CR]\nund uns aus dem Albtraum geholt.",
+                italian=" È così che hai trascinato [CS:N]Palkia[CR]\ne noi fuori dall\'incubo.",
+                spanish=" Así lograste sacarnos con [CS:N]Palkia[CR]\nde esa horrible pesadilla.",
+            }
+        default:
+            {
+                english=" That\'s how you pulled [CS:N]Palkia[CR]\nand us out of the nightmare.",
+                french=" C\'est comme ça que tu as pu\nnous sortir du cauchemar, [CS:N]Palkia[CR] et nous.",
+                german=" Auf diese Weise hast du [CS:N]Palkia[CR]\nund uns aus dem Albtraum geholt.",
+                italian=" È così che hai trascinato [CS:N]Palkia[CR]\ne noi fuori dall\'incubo.",
+                spanish=" Así lograste sacarnos con [CS:N]Palkia[CR]\nde esa horrible pesadilla.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_PlayFadeIn(BGM_WELCOME_TO_THE_WORLD_OF_POKEMON, 0, 256);
+    message_SetFace(ACTOR_NPC_KURESERIA, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_FacePositionOffset(0, -2);
+    message_Talk({
+        english=" Indeed.[K] I do have the power to\ndispel darkness...",
+        french=" En effet.[K] J\'ai la faculté\nde dissiper l\'ombre...",
+        german=" So ist es.[K] Ich habe tatsächlich\ndie Macht, Dunkelheit zu vertreiben...",
+        italian=" È vero.[K] Ho il potere di \ndissipare l\'oscurità.",
+        spanish=" Efectivamente.[K] Tengo el poder\nde disipar la oscuridad...",
+    });
+    message_Talk({
+        english=" It lets me dispel nightmares and\nawaken those in deepest sleep.",
+        french=" ... ce qui me permet de chasser\nles cauchemars et de tirer les Pokémon du\nplus profond des sommeils.",
+        german=" Sie lässt mich Albträume\nverjagen und Schläfer aus ihrem tiefsten\nSchlaf wecken.",
+        italian=" Mi permette di scacciare gli\nincubi e svegliare i Pokémon dai sonni più\nprofondi.",
+        spanish=" Puedo disipar las pesadillas y\ndespertar a los que sueñan profundamente.",
+    });
+    message_Talk({
+        english=" [CS:N]Darkrai[CR] stands as an opposite\nto my being. He has the power to enshroud\nthose who sleep in nightmare.",
+        french=" [CS:N]Darkrai[CR] est mon exact opposé.\nIl a le pouvoir de séquestrer ceux qui dorment\ndans un cauchemar.",
+        german=" Das Wesen von [CS:N]Darkrai[CR] ist das\nGegenteil von meinem. Es hat die Macht, die\nSchlafenden in Albträume zu hüllen.",
+        italian=" [CS:N]Darkrai[CR] ha il potere opposto.\nRiesce a imprigionare negli incubi coloro che\ndormono.",
+        spanish=" [CS:N]Darkrai[CR] es mi rival. Tiene\nel poder de sumir en pesadillas a los que\nduermen.",
+    });
+    message_Talk({
+        english=" [partner].[K] And, [hero].",
+        french=" [partner].[K] Et [hero].",
+        german=" [partner].[K] Und [hero].",
+        italian=" [partner].[K] E [hero].",
+        spanish=" [partner].[K] [hero]...",
+    });
+    message_Talk({
+        english=" Do you recall where you met my\nimpostor?",
+        french=" Vous vous souvenez où vous\navez fait la connaissance de mon double?",
+        german=" Erinnert ihr euch, wo ihr meinen\nbetrügerischen Nachmacher getroffen habt?",
+        italian=" Vi ricordate dove avete \nincontrato la finta me stessa?",
+        spanish=" ¿Os acordáis de cómo\nconocisteis a la impostora?",
+    });
+    message_Talk({
+        english=" The impostor, that is to say, the\nfirst [CS:N]Cresselia[CR] you met...",
+        french=" Par double, j\'entends la première\n[CS:N]Cresselia[CR] que vous ayez connue...",
+        german=" Die falsche [CS:N]Cresselia[CR], die ihr\ngetroffen habt...",
+        italian=" L\'impostore, cioè la prima \n[CS:N]Cresselia[CR] che avete incontrato...",
+        spanish=" Es decir, la primera [CS:N]Cresselia[CR]...",
+    });
+    message_Talk({
+        english=" Those encounters were always\nwithin dreams, weren\'t they?",
+        french=" Chaque fois que vous l\'avez vue,\nc\'était en rêve, n\'est-ce pas?",
+        german=" Diese Begegnungen fanden immer\nin Träumen statt, oder nicht?",
+        italian=" Quegli incontri sono sempre \navvenuti nei sogni, giusto?",
+        spanish=" Os encontrasteis siempre en\nsueños, ¿verdad?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8967);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_TOP_L_CENTER);
+    message_FacePositionOffset(0, 2);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" ...That\'s...[K] That\'s true!",
+                french=" ... C\'est...[K] c\'est vrai!",
+                german=" ...Das...[K] Das stimmt!",
+                italian=" È...[K] È vero!",
+                spanish=" Eh...[K] ¡Es verdad!",
+            }
+        case 2:
+            {
+                english=" ...That\'s...[K] That\'s true!",
+                french=" ... C\'est...[K] c\'est vrai!",
+                german=" ...Das...[K] Das stimmt!",
+                italian=" È...[K] È vero!",
+                spanish=" Eh...[K] ¡Es verdad!",
+            }
+        default:
+            {
+                english=" ...That\'s...[K] That\'s true!",
+                french=" ... C\'est...[K] c\'est vrai!",
+                german=" ...Das...[K] Das stimmt!",
+                italian=" È...[K] È vero!",
+                spanish=" Eh...[K] ¡Es verdad!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER, FACE_SURPRISED, FACE_POS_BOTTOM_L_CENTER);
+    message_FacePositionOffset(-1, 0);
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(It\'s true...)",
+                french="(C\'est vrai...)",
+                german="(Es stimmt.)",
+                italian="(È vero...)",
+                spanish="(Es verdad...)",
+            }
+        default:
+            {
+                english="(It\'s true...)",
+                french="(C\'est vrai...)",
+                german="(Es stimmt.)",
+                italian="(È vero...)",
+                spanish="(Es verdad...)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(The first time was in a dream.)",
+                french="(La première fois, c\'était dans un rêve.)",
+                german="(Das erste Mal war in einem Traum.)",
+                italian="(La prima volta è stato in un sogno.)",
+                spanish="(La primera vez fue en un sueño.)",
+            }
+        default:
+            {
+                english="(The first time was in a dream.)",
+                french="(La première fois, c\'était dans un rêve.)",
+                german="(Das erste Mal war in einem Traum.)",
+                italian="(La prima volta è stato in un sogno.)",
+                spanish="(La primera vez fue en un sueño.)",
+            }
+    }
+    message_SwitchMonologue ($HERO_TALK_KIND) {
+        case 4:
+            {
+                english="(Then later on, come to think of it...)",
+                french="(Mais par la suite, réflexion faite...)",
+                german="(Und später, wenn ich so darüber nachdenke...)",
+                italian="(Poi, adesso che ci penso...)",
+                spanish="(Y después también, ahora que lo pienso...)",
+            }
+        default:
+            {
+                english="(Then later on, come to think of it...)",
+                french="(Mais par la suite, réflexion faite...)",
+                german="(Und später, wenn ich so darüber nachdenke...)",
+                italian="(Poi, adesso che ci penso...)",
+                spanish="(Y después también, ahora que lo pienso...)",
+            }
+    }
+    message_Close();
+    screen_FadeOutAll(1, 30);
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    end;
+}

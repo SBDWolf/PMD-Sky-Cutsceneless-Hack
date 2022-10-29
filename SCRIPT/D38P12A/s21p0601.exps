@@ -1,0 +1,83 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_MAIN = scn[29, 81];
+    back_SetGround(LEVEL_D38P12A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_PLAYER) {
+        SetDirection(DIR_LEFT);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetDirection(DIR_RIGHT);
+    }
+    with (actor ACTOR_PLAYER) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetAnimation(2);
+    }
+    //WaitLockLives(5, ACTOR_PLAYER);
+    screen_FadeIn(1, 30);
+    //Unlock(5);
+    //Wait(10);
+    //Unlock(8);
+    //Lock(3);
+    //Unlock(6);
+    //Wait(10);
+    //Unlock(9);
+    //Lock(3);
+
+    bgm_PlayFadeIn(BGM_CHASM_CAVE, 0, 256);
+    end;
+}
+
+def 1 for_actor(ACTOR_PLAYER) {
+    SetDirection(DIR_UP);
+    SetAnimation(72);
+    ResetFunctionAttribute(256);
+    Lock(5);
+    SlidePositionMark(6, Position<'m0', 32, 27.5>);
+    SetFunctionAttribute(256);
+    SetAnimation(11);
+    se_Play(7939);
+    SlideHeight(2, 12);
+    Wait(2);
+    SlideHeight(2, 0);
+    SetDirection(DIR_RIGHT);
+    SetAnimation(68);
+    Wait(60);
+    Lock(6);
+    SetAnimation(63);
+    WaitAnimation();
+    SetAnimation(2);
+    Lock(7);
+    hold;
+}
+
+def 2 for_actor(ACTOR_ATTENDANT1) {
+    SetDirection(DIR_UP);
+    SetAnimation(72);
+    ResetFunctionAttribute(256);
+    Lock(8);
+    SlidePositionMark(6, Position<'m1', 28, 27.5>);
+    SetFunctionAttribute(256);
+    SetAnimation(11);
+    SlideHeight(2, 12);
+    Wait(2);
+    SlideHeight(2, 0);
+    SetDirection(DIR_LEFT);
+    SetAnimation(68);
+    Wait(45);
+    Unlock(3);
+    Lock(9);
+    SetAnimation(63);
+    WaitAnimation();
+    SetAnimation(2);
+    Unlock(3);
+    Lock(10);
+    hold;
+}

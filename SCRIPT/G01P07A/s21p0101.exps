@@ -1,0 +1,730 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_MAIN = scn[29, 78];
+    back_SetGround(LEVEL_G01P07A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_RURIRI) {
+        SetAnimation(45);
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(-3, -1);
+    message_Talk({
+        english=" ...I see.[K] So you encountered\n[CS:N]Cresselia[CR].",
+        french=" ... Je vois.[K] Ainsi vous avez\nrencontré [CS:N]Cresselia[CR].",
+        german=" ...Ich verstehe.[K] Ihr seid also\n[CS:N]Cresselia[CR] begegnet.",
+        italian=" ... Capisco.[K] Quindi avete \nincontrato [CS:N]Cresselia[CR].",
+        spanish=" Ajá.[K] Así que os encontrasteis\ncon [CS:N]Cresselia[CR].",
+    });
+    message_Talk({
+        english=" And she said that [CS:N]Azurill[CR]\'s\nnightmare is caused by the distortion in the\nfabric of space.",
+        french=" Et elle a dit que le cauchemar\nd\'[CS:N]Azurill[CR] était causé par la distorsion\ndans la trame de l\'espace.",
+        german=" Und sie sagte, dass der Albtraum\nvon [CS:N]Azurill[CR] durch eine Verzerrung im \nRaumgefüge verursacht werde.",
+        italian=" E vi ha detto che l\'incubo di \n[CS:N]Azurill[CR] è causato dalla distorsione della\nstruttura dello spazio.",
+        spanish=" Y os dijo que la pesadilla de\n[CS:N]Azurill[CR] se debe a la deformación del\nespacio.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Yup.",
+                french=" Oui.",
+                german=" Jep.",
+                italian=" Sì.",
+                spanish=" Sí.",
+            }
+        case 2:
+            {
+                english=" Yes.",
+                french=" Oui.",
+                german=" Ja.",
+                italian=" Sì.",
+                spanish=" Sí.",
+            }
+        default:
+            {
+                english=" Yep.",
+                french=" Oui.",
+                german=" Jep.",
+                italian=" Sì.",
+                spanish=" Sí.",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(-3, -1);
+    message_Talk({
+        english=" If nothing is done about it...[K]\nall Pokémon will join [CS:N]Azurill[CR] in unending sleep.",
+        french=" Si rien n\'y est fait...[K] tous\nles Pokémon rejoindront [CS:N]Azurill[CR] dans\nun sommeil sans fin.",
+        german=" Wenn sich nichts daran\nändert...[K] Dann werden alle Pokémon genau wie\n[CS:N]Azurill[CR] in einen unendlichen Schlaf versinken.",
+        italian=" Se nessuno fa niente...[K]\ntutti i Pokémon faranno la fine di [CS:N]Azurill[CR].",
+        spanish=" Si no hacemos nada...[K] todos los\nPokémon entrarán, como [CS:N]Azurill[CR], en un sueño\neterno.",
+    });
+    message_Talk({
+        english=" That is what [CS:N]Cresselia[CR] said?",
+        french=" C\'est bien ce que [CS:N]Cresselia[CR]\na dit?",
+        german=" Das hat [CS:N]Cresselia[CR] gesagt?",
+        italian=" È questo che vi ha \ndetto [CS:N]Cresselia[CR]?",
+        spanish=" ¿Eso fue lo que dijo [CS:N]Cresselia[CR]?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_BOTTOM_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Yup...",
+                french=" Oui...",
+                german=" Jep...",
+                italian=" Già...",
+                spanish=" Sí...",
+            }
+        case 2:
+            {
+                english=" Yes...",
+                french=" Oui...",
+                german=" Ja...",
+                italian=" Sì...",
+                spanish=" Sí...",
+            }
+        default:
+            {
+                english=" Yep...",
+                french=" Oui...",
+                german=" Jep...",
+                italian=" Già...",
+                spanish=" Sí...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5122);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(22);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(2);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_SURPRISED, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(-3, -1);
+    message_Talk({
+        english=" Squawk! If that\'s all true...[K] \nthis is terrible trouble, to be sure!",
+        french=" Couac! Si c\'est vrai...[K]\nla situation est très grave!",
+        german=" Kreisch! Wenn das alles\nstimmt,[K] haben wir ein schlimmes Problem!",
+        italian=" Squack! Se è tutto vero...[K] \nsiamo proprio nei guai, poco ma sicuro!",
+        spanish=" ¡Cruac! Si es eso cierto...[K]\n¡la situación es muy grave!",
+    });
+    message_Talk({
+        english=" We\'ve got to do something!",
+        french=" Nous devons faire quelque chose!",
+        german=" Wir müssen etwas tun!",
+        italian=" Dobbiamo fare qualcosa!",
+        spanish=" ¡Tenemos que hacer algo!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_PlayFadeIn(BGM_I_SAW_SOMETHING_AGAIN, 0, 256);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_BOTTOM_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" So [CS:N]Chatot[CR], what do you know\nabout [CS:N]Cresselia[CR]?",
+                french=" [CS:N]Pijako[CR], qu\'est-ce que tu sais\nsur [CS:N]Cresselia[CR]?",
+                german=" Also, [CS:N]Plaudagei[CR], was weißt du\nüber [CS:N]Cresselia[CR]?",
+                italian=" [CS:N]Chatot[CR], cosa sai di\n[CS:N]Cresselia[CR]?",
+                spanish=" [CS:N]Chatot[CR], ¿qué sabes de\n[CS:N]Cresselia[CR]?",
+            }
+        case 2:
+            {
+                english=" So [CS:N]Chatot[CR], what do you know\nabout [CS:N]Cresselia[CR]?",
+                french=" [CS:N]Pijako[CR], qu\'est-ce que tu sais\nsur [CS:N]Cresselia[CR]?",
+                german=" Also, [CS:N]Plaudagei[CR], was weißt du\nüber [CS:N]Cresselia[CR]?",
+                italian=" [CS:N]Chatot[CR], cosa sai di\n[CS:N]Cresselia[CR]?",
+                spanish=" [CS:N]Chatot[CR], ¿qué sabes de\n[CS:N]Cresselia[CR]?",
+            }
+        default:
+            {
+                english=" So [CS:N]Chatot[CR], what do you know\nabout [CS:N]Cresselia[CR]?",
+                french=" [CS:N]Pijako[CR], qu\'est-ce que tu sais\nsur [CS:N]Cresselia[CR]?",
+                german=" Also, [CS:N]Plaudagei[CR], was weißt du\nüber [CS:N]Cresselia[CR]?",
+                italian=" [CS:N]Chatot[CR], cosa sai di\n[CS:N]Cresselia[CR]?",
+                spanish=" [CS:N]Chatot[CR], ¿qué sabes de\n[CS:N]Cresselia[CR]?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(-3, -1);
+    message_Talk({
+        english=" I know of the Pokémon...[K]but only\nfrom rumors.",
+        french=" J\'en ai entendu parler...[K] mais ce\nne sont que des rumeurs.",
+        german=" Ich weiß von diesem\nPokémon...[K] Aber nur vom Hörensagen.",
+        italian=" Conosco il Pokémon...[K] ma solo\ndi fama.",
+        spanish=" He oído algo...[K] pero no son más\nque rumores.",
+    });
+    message_Talk({
+        english=" It is said [CS:N]Cresselia[CR] appears\nonly during the night of the quarter moon.",
+        french=" On dit que [CS:N]Cresselia[CR] apparaît\npendant les nuits où la lune se montre en\nquartiers.",
+        german=" Es heißt, [CS:N]Cresselia[CR] erscheine nur\nin der Nacht des Viertelmondes.",
+        italian=" Si dice che [CS:N]Cresselia[CR] appaia\nsolo nelle notti di quarto di luna.",
+        spanish=" Se dice que [CS:N]Cresselia[CR] aparece\nsolamente durante el cuarto creciente.",
+    });
+    message_Talk({
+        english=" It is also said that this Pokémon\ncan heal others\' emotional scars simply with\nthe gentle light from her body.",
+        french=" On dit aussi que ce Pokémon\npeut apaiser le chagrin avec la douce lumière\nqui émane de son corps.",
+        german=" Es heißt weiter, sie könne\nemotionale Wunden anderer Pokémon einfach\nmit dem sanften Licht ihres Körpers heilen.",
+        italian=" Si dice anche che questo\nPokémon sia in grado di curare le ferite \nemotive degli altri grazie alla sua luce.",
+        spanish=" También se rumorea que puede\ncurar daños emocionales con la luz que\nemana de su cuerpo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_BOTTOM_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Urk![K] She didn\'t seem so kindly...",
+                french=" Argh![K] Elle ne semblait pas\nsi aimable l\'autre fois...",
+                german=" Uff![K] Sie machte keinen so\nfreundlichen Eindruck...",
+                italian=" Uh![K] Non mi è sembrata\ncosì gentile...",
+                spanish=" ¡Uf![K] Pues no parecía muy\nsimpática...",
+            }
+        case 2:
+            {
+                english=" Urk![K] She didn\'t seem so kindly...",
+                french=" Argh![K] Elle ne semblait pas\nsi aimable l\'autre fois...",
+                german=" Uff![K] Sie machte keinen so\nfreundlichen Eindruck...",
+                italian=" Uh![K] Non mi è sembrata\ncosì gentile...",
+                spanish=" ¡Uf![K] Pues no parecía muy\nsimpática...",
+            }
+        default:
+            {
+                english=" Urk![K] She didn\'t seem so kindly...",
+                french=" Argh![K] Elle ne semblait pas\nsi aimable l\'autre fois...",
+                german=" Uff![K] Sie machte keinen so\nfreundlichen Eindruck...",
+                italian=" Uh![K] Non mi è sembrata\ncosì gentile...",
+                spanish=" ¡Uf![K] Pues no parecía muy\nsimpática...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(-3, -1);
+    message_Talk({
+        english=" There is one more thing about\n[CS:N]Cresselia[CR].",
+        french=" Encore une chose sur [CS:N]Cresselia[CR].",
+        german=" Noch eine Sache über [CS:N]Cresselia[CR].",
+        italian=" C\'è un\'altra cosa.",
+        spanish=" También se dice que [CS:N]Cresselia[CR]...",
+    });
+    message_Talk({
+        english=" This Pokémon is said to possess\na mystical power that can banish darkness.",
+        french=" On dit que ce Pokémon possède\nun pouvoir mystique capable de bannir\nl\'ombre.",
+        german=" Man sagt, dieses Pokémon habe\neine mystische Kraft, die Dunkelheit\nbannen könne.",
+        italian=" Si mormora che questo Pokémon\nabbia un potere magico in grado di scacciare\nl\'oscurità.",
+        spanish=" Tiene un poder místico capaz\nde desterrar la oscuridad.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_BOTTOM_L_FACEINW);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" The power to banish darkness...",
+                french=" La puissance de bannir l\'ombre...",
+                german=" Die Kraft, Dunkelheit zu bannen...",
+                italian=" Il potere di scacciare \nl\'oscurità...",
+                spanish=" El poder de desterrar la\noscuridad...",
+            }
+        case 2:
+            {
+                english=" The power to banish darkness...",
+                french=" La puissance de bannir l\'ombre...",
+                german=" Die Kraft, Dunkelheit zu bannen...",
+                italian=" Il potere di scacciare \nl\'oscurità...",
+                spanish=" El poder de desterrar la\noscuridad...",
+            }
+        default:
+            {
+                english=" The power to banish darkness...",
+                french=" La puissance de bannir l\'ombre...",
+                german=" Die Kraft, Dunkelheit zu bannen...",
+                italian=" Il potere di scacciare \nl\'oscurità...",
+                spanish=" El poder de desterrar la\noscuridad...",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8971);
+    with (actor ACTOR_NPC_HEIGANI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_HEIGANI);
+    message_SetFace(ACTOR_NPC_HEIGANI, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" Hey, hey! So let\'s get this\nstraight.[K] If we don\'t do something...",
+        french=" Eh dis donc! Je veux être sûr\nde bien comprendre.[K] Si on ne fait rien...",
+        german=" Hey, hey! Nur, damit ich es nicht\nfalsch verstehe.[K] Wenn wir nichts\nunternehmen...",
+        italian=" Ehi, ehi! Fatemi capire.[K]\nSe non facciamo qualcosa...",
+        spanish=" ¡Oye, oye! A ver si me aclaro...[K]\nSi no hacemos algo...",
+    });
+    message_Talk({
+        english=" All the Pokémon in the world\nare going to fall asleep forever?",
+        french=" ... tous les Pokémon du monde\nvont s\'endormir pour l\'éternité?",
+        german=" Dann werden alle Pokémon der\nWelt für immer einschlafen?",
+        italian=" ... tutti i Pokémon del mondo\nsi addormenteranno per sempre?",
+        spanish=" ¿Todos los Pokémon de este\nmundo se quedarán dormidos para toda\nla eternidad?",
+    });
+    message_Talk({
+        english=" Hey, hey! That means we have to\ndo something now to fix the space distortion!",
+        french=" Eh dis donc! Ça veut dire qu\'il\nfaut faire quelque chose tout de suite\npour résoudre ce problème de distorsion!",
+        german=" Hey, hey! Das bedeutet, wir\nmüssen jetzt etwas tun, um die Verzerrung des\nRaumes zu beheben!",
+        italian=" Ehi, ehi! Significa che dobbiamo\nsubito metterci all\'opera per sistemare la \ndistorsione dello spazio!",
+        spanish=" ¡Oye, oye! ¡Hay que hacer algo\npara arreglar la deformación del espacio!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SURIIPU, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Hey, [partner].",
+        french=" Dis, [partner].",
+        german=" Hey, [partner].",
+        italian=" Ehi, [partner].",
+        spanish=" Oye, [partner].",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_SURIIPU);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_SURIIPU);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    with (actor ACTOR_NPC_PUKURIN) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_SURIIPU);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_SURIIPU);
+    }
+    with (actor ACTOR_NPC_MARIRU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_SURIIPU);
+    }
+    WaitExecuteLives(ACTOR_NPC_MARIRU);
+    Wait(15);
+    message_Talk({
+        english=" Did [CS:N]Cresselia[CR] say anything\nabout...",
+        french=" Est-ce que [CS:N]Cresselia[CR] a dit...",
+        german=" Sagte [CS:N]Cresselia[CR] zufällig\netwas von...",
+        italian=" [CS:N]Cresselia[CR] vi ha detto\nqualcosa...",
+        spanish=" ¿Dijo [CS:N]Cresselia[CR] algo sobre...?",
+    });
+    message_Talk({
+        english=" how the distortion of space can\nbe stopped?",
+        french=" ... comment on pouvait annuler\nla distorsion?",
+        german=" Nun, sagte sie etwas darüber,\nwie die Verzerrung des Raumes aufgehalten\nwerden kann?",
+        italian=" Vi ha detto come arrestare la\ndistorsione dello spazio?",
+        spanish=" ¿Cómo se podría detener esa\ndeformación del espacio?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8973);
+    with (actor ACTOR_PLAYER) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SURPRISED, FACE_POS_TOP_L_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Wh-what?! Er...[K]how to stop the\ndistortion of space?!",
+                french=" Qu... quoi?! Euh...[K] Comment\nannuler la distorsion de l\'espace?!",
+                german=" W-was?!?[K] Wie man die\nVerzerrung des Raumes aufhalten kann?!?",
+                italian=" C-Cosa?! Ehm...[K] Come fermare\nla distorsione dello spazio?!",
+                spanish=" ¿Quéee? Esto...[K] ¿Sobre cómo\ndetener la deformación del espacio?",
+            }
+        case 2:
+            {
+                english=" Wh-what?! Er...[K]how to stop the\ndistortion of space?!",
+                french=" Qu... quoi?! Euh...[K] Comment\nannuler la distorsion de l\'espace?!",
+                german=" W-was?!?[K] Wie man die\nVerzerrung des Raumes aufhalten kann?!?",
+                italian=" C-Cosa?! Ehm...[K] Come fermare\nla distorsione dello spazio?!",
+                spanish=" ¿Quéee? Esto...[K] ¿Sobre cómo\ndetener la deformación del espacio?",
+            }
+        default:
+            {
+                english=" Wh-what?! Er...[K]how to stop the\ndistortion of space?!",
+                french=" Qu... quoi?! Euh...[K] Comment\nannuler la distorsion de l\'espace?!",
+                german=" W-was?!?[K] Wie man die\nVerzerrung des Raumes aufhalten kann?!?",
+                italian=" C-Cosa?! Ehm...[K] Come fermare\nla distorsione dello spazio?!",
+                spanish=" ¿Quéee? Esto...[K] ¿Sobre cómo\ndetener la deformación del espacio?",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_NPC_SURIIPU) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_SURIIPU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_SURIIPU);
+    message_SetFace(ACTOR_NPC_SURIIPU, FACE_SIGH, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Waaah![K] Wh-why are you jumpy?",
+        french=" Ouah![K] Mais pourquoi êtes-vous\nsi fébriles, vous deux?",
+        german=" Uaaah![K] Warum bist du so\nhibbelig?",
+        italian=" Waaah![K] Perché \ntanto nervosismo?",
+        spanish=" ¡Eh![K] ¿Por qué tantos nervios?",
+    });
+    message_Talk({
+        english=" D-did I ask something weird...?",
+        french=" Euh... est-ce que ma question\nvous paraît déplacée...?",
+        german=" H-hab ich dich irgendwas\nSeltsames gefragt?",
+        italian=" H-Ho chiesto \nqualcosa di strano...?",
+        spanish=" ¿He preguntado algo extraño?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_ATTENDANT1);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_SAD, FACE_POS_TOP_L_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" N-no. It\'s nothing you said.",
+                french=" Non... non. Ça n\'a rien à voir.",
+                german=" N-nein. Das hat nichts mit dem\nGesagten zu tun.",
+                italian=" N-No. Non ha niente a che vedere\ncon quello che hai detto.",
+                spanish=" No... No te preocupes.\nNo ha sido por lo que has dicho.",
+            }
+        case 2:
+            {
+                english=" N-no. It\'s not what you said.",
+                french=" Non... non. Ça n\'a rien à voir.",
+                german=" N-nein. Das hat nichts mit dem\nzu tun, was du gesagt hast.",
+                italian=" N-No. Non ha niente a che vedere\ncon quello che hai detto.",
+                spanish=" No... No te preocupes.\nNo ha sido por lo que has dicho.",
+            }
+        default:
+            {
+                english=" N-no. It isn\'t anything you said.",
+                french=" Non... non. Ça n\'a rien à voir.",
+                german=" N-nein. Das Gesagte hat nichts\ndamit zu tun.",
+                italian=" N-No. Non ha niente a che vedere\ncon quello che hai detto.",
+                spanish=" No... No te preocupes.\nNo ha sido por lo que has dicho.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Sorry.[K] I was just thinking about\nsomething else...",
+                french=" Désolé.[K] Je pensais à autre\nchose...",
+                german=" Tut mir leid.[K] Ich habe gerade an\netwas anderes gedacht...",
+                italian=" Scusa.[K] Stavo pensando a \nun\'altra cosa...",
+                spanish=" Lo siento.[K] Estaba pensando en\notra cosa...",
+            }
+        case 2:
+            {
+                english=" Sorry.[K] I was thinking about\nsomething else...",
+                french=" Désolé.[K] Je pensais à autre\nchose...",
+                german=" Tut mir leid.[K] Ich habe gerade an\netwas anderes gedacht...",
+                italian=" Scusa.[K] Stavo pensando a \nun\'altra cosa...",
+                spanish=" Lo siento.[K] Estaba pensando en\notra cosa...",
+            }
+        default:
+            {
+                english=" I\'m sorry.[K] I was thinking about\nsomething else...",
+                french=" Désolée.[K] Je pensais à autre\nchose...",
+                german=" Tut mir leid.[K] Ich habe gerade an\netwas anderes gedacht...",
+                italian=" Scusa.[K] Stavo pensando a \nun\'altra cosa...",
+                spanish=" Lo siento.[K] Estaba pensando en\notra cosa...",
+            }
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_WORRIED, FACE_POS_TOP_L_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" So, uh...[K]a way of stopping the\ndistortion of space...",
+                french=" Alors, euh...[K] le moyen d\'annuler\nla distorsion de l\'espace...",
+                german=" So, ähem...[K] Ein Weg, um die\nVerzerrung des Raumes aufzuhalten...",
+                italian=" Quindi, eh...[K] Un modo per\nfermare la distorsione dello spazio...",
+                spanish=" Entonces...[K] queréis saber si dijo\nalgo acerca de cómo detener la deformación\ndel espacio...",
+            }
+        case 2:
+            {
+                english=" So, uh...[K]a way of stopping the\ndistortion of space...",
+                french=" Alors, euh...[K] le moyen d\'annuler\nla distorsion de l\'espace...",
+                german=" So, ähem...[K] Ein Weg, um die\nVerzerrung des Raumes aufzuhalten...",
+                italian=" Quindi, eh...[K] Un modo per\nfermare la distorsione dello spazio...",
+                spanish=" Entonces...[K] queréis saber si dijo\nalgo acerca de cómo detener la deformación\ndel espacio...",
+            }
+        default:
+            {
+                english=" So, uh...[K]a way of stopping the\ndistortion of space...",
+                french=" Alors, euh...[K] le moyen d\'annuler\nla distorsion de l\'espace...",
+                german=" So, ähem...[K] Ein Weg, um die\nVerzerrung des Raumes aufzuhalten...",
+                italian=" Quindi, eh...[K] Un modo per\nfermare la distorsione dello spazio...",
+                spanish=" Entonces...[K] queréis saber si dijo\nalgo acerca de cómo detener la deformación\ndel espacio...",
+            }
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_TOP_L_CENTER);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" ........................",
+                french=" ........................",
+                german=" ........................",
+                italian=" ........................",
+                spanish=" ...",
+            }
+        case 2:
+            {
+                english=" ........................",
+                french=" ........................",
+                german=" ........................",
+                italian=" ........................",
+                spanish=" ...",
+            }
+        default:
+            {
+                english=" ........................",
+                french=" ........................",
+                german=" ........................",
+                italian=" ........................",
+                spanish=" ...",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Hmm...[K] Nope! I don\'t remember\n[CS:N]Cresselia[CR] saying a single thing about that!",
+                french=" Hum...[K] Non! Je ne me rappelle\npas que [CS:N]Cresselia[CR] ait dit quoi que ce soit\nà propos de ça!",
+                german=" Hmm...[K] Nö! Ich erinnere mich\nnicht, dass [CS:N]Cresselia[CR] etwas dazu gesagt hätte!",
+                italian=" Mmm...[K] No! [CS:N]Cresselia[CR] non ha\ndetto niente al riguardo!",
+                spanish=" Hum...[K] ¡No! ¡No recuerdo que\n[CS:N]Cresselia[CR] dijera nada de eso!",
+            }
+        case 2:
+            {
+                english=" Hmm...[K] Nope! I don\'t remember\n[CS:N]Cresselia[CR] saying a single thing about that!",
+                french=" Hum...[K] Non! Je ne me rappelle\npas que [CS:N]Cresselia[CR] ait dit quoi que ce soit\nà propos de ça!",
+                german=" Hmm...[K] Nö! Ich erinnere mich\nnicht, dass [CS:N]Cresselia[CR] etwas dazu gesagt hätte!",
+                italian=" Mmm...[K] No! [CS:N]Cresselia[CR] non ha\ndetto niente al riguardo!",
+                spanish=" Hum...[K] ¡No! ¡No recuerdo que\n[CS:N]Cresselia[CR] dijera nada de eso!",
+            }
+        default:
+            {
+                english=" Hmm...[K] Nope! I don\'t remember\n[CS:N]Cresselia[CR] saying a single thing about that!",
+                french=" Hum...[K] Non! Je ne me rappelle\npas que [CS:N]Cresselia[CR] ait dit quoi que ce soit\nà propos de ça!",
+                german=" Hmm...[K] Nö! Ich erinnere mich\nnicht, dass [CS:N]Cresselia[CR] etwas dazu gesagt hätte!",
+                italian=" Mmm...[K] No! [CS:N]Cresselia[CR] non ha\ndetto niente al riguardo!",
+                spanish=" Hum...[K] ¡No! ¡No recuerdo que\n[CS:N]Cresselia[CR] dijera nada de eso!",
+            }
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SURIIPU, FACE_SIGH, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Ah, I see...[K] That is unfortunate...",
+        french=" Ah, je vois...[K] Dommage...",
+        german=" Ah, verstehe...[K] Das ist\nbedauerlich...",
+        italian=" Ah, capisco...[K] Peccato...",
+        spanish=" En fin...[K] Qué lástima...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_FadeOut(120);
+    with (actor ACTOR_NPC_PUKURIN) {
+        MovePositionOffset(32896, 4, 4);
+    }
+    WaitExecuteLives(ACTOR_NPC_PUKURIN);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" Well, anyway! ♪",
+        french=" Enfin bref! ♪",
+        german=" Na ja, was soll\'s! ♪",
+        italian=" Beh, non scoraggiamoci! ♪",
+        spanish=" ¡Bueno! ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PUKURIN);
+    }
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PUKURIN);
+    }
+    with (actor ACTOR_NPC_CHIRIIN) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PUKURIN);
+    }
+    with (actor ACTOR_NPC_SURIIPU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PUKURIN);
+    }
+    with (actor ACTOR_NPC_HEIGANI) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PUKURIN);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PUKURIN);
+    }
+    with (actor ACTOR_NPC_MARIRU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PUKURIN);
+    }
+    WaitExecuteLives(ACTOR_NPC_MARIRU);
+    Wait(15);
+    message_Talk({
+        english=" Let\'s look into the distortion\nof space together! ♪",
+        french=" Nous devons enquêter sur\nla distorsion de l\'espace tous ensemble! ♪",
+        german=" Schauen wir uns die Verzerrung\ndes Raumes einmal gemeinsam an! ♪",
+        italian=" Dobbiamo occuparci del \nproblema tutti insieme! ♪",
+        spanish=" ¡Investiguemos todos juntos\nla deformación del espacio! ♪",
+    });
+    message_Talk({
+        english=" If we don\'t, we won\'t be able to\nstop the nightmare from spreading! ♪",
+        french=" Sinon, nous ne pourrons pas\nempêcher le cauchemar de s\'étendre! ♪",
+        german=" Wenn wir das nicht tun, können\nwir die Ausbreitung des Albtraums nicht\nverhindern! ♪",
+        italian=" Se non lo facciamo, non saremo\nin grado di fermare la diffusione\ndell\'incubo! ♪",
+        spanish=" ¡Si no, no lograremos detener\nel avance de la pesadilla! ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PUKURIN) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_PUKURIN);
+    message_Talk({
+        english=" [CS:N]Chatot[CR]!",
+        french=" [CS:N]Pijako[CR]!",
+        german=" [CS:N]Plaudagei[CR]!",
+        italian=" [CS:N]Chatot[CR]!",
+        spanish=" ¡[CS:N]Chatot[CR]!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_SURPRISED, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(-3, -1);
+    message_Talk({
+        english=" Y-yes, Guildmaster!",
+        french=" Oui... oui, Maître!",
+        german=" J-ja, Gildenmeister!",
+        italian=" S-Sì, Capitano!",
+        spanish=" ¡Sí, Gran Bluff...!",
+    });
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    with (actor ACTOR_PLAYER) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_BIPPA);
+    Wait(15);
+    se_Play(5122);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(26);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_PERAPPU);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(-3, -1);
+    message_Talk({
+        english=" All right, everyone![K] We\'ll\ndisband for the day.",
+        french=" Ecoutez, vous autres![K] Vous\npouvez disposer pour l\'instant.",
+        german=" Alles klar, Leute![K] Wir gehen für\nheute auseinander.",
+        italian=" Molto bene, gente![K] È tutto\nper oggi.",
+        spanish=" ¡De acuerdo![K] Ya podemos irnos.",
+    });
+    message_Talk({
+        english=" And starting tomorrow, you are\nto individually investigate the distortion\nof space itself!",
+        french=" A partir de demain, vous allez\ntous enquêter sur la distorsion de l\'espace!",
+        german=" Und ab morgen forscht jeder\nindividuell nach, was es mit der Verzerrung\ndes Raumes selbst auf sich hat!",
+        italian=" E da domani, il vostro\ncompito sarà indagare sulla distorsione\ndello spazio!",
+        spanish=" Y a partir de mañana todos a\ninvestigar. ¡Cada uno por su cuenta!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_BIPPA) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_BIPPA);
+    message_SetFace(ACTOR_NPC_BIPPA, FACE_NORMAL, FACE_POS_BOTTOM_L_FACEINW);
+    message_Talk({
+        english=" Yup yup! Will do!",
+        french=" Ouaip ouaip! J\'ai tout pigé!",
+        german=" Jawollja! Wird erledigt!",
+        italian=" Già, già! Va bene!",
+        spanish=" ¡Sí, señor! ¡A la orden!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_FacePositionOffset(-3, -1);
+    message_Talk({
+        english=" All right, dismissed!",
+        french=" Très bien, rompez!",
+        german=" Alles klar, wegtreten!",
+        italian=" D\'accordo, potete andare!",
+        spanish=" ¡De acuerdo, retiraos!",
+    });
+    message_Close();
+    screen_FadeOut(1, 60);
+    Wait(60);
+    end;
+}

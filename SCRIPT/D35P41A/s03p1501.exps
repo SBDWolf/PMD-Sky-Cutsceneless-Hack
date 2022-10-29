@@ -1,0 +1,64 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_MAIN = scn[29, 51];
+    back_SetGround(LEVEL_D35P41A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_GYARADOSU) {
+        SetAnimation(18);
+    }
+    screen_FadeIn(1, 30);
+    //with (actor ACTOR_PLAYER_APPOINT) {
+        //MovePositionMark(1, Position<'m0', 43.5, 52.5>);
+    //}
+    //with (actor ACTOR_ADVENTURE_NPC1) {
+        //MovePositionMark(1, Position<'m1', 46.5, 55>);
+    //}
+    //with (actor ACTOR_ADVENTURE_NPC2) {
+        //MovePositionMark(1, Position<'m2', 40.5, 54.5>);
+    //}
+    //with (actor ACTOR_ADVENTURE_NPC3) {
+        //MovePositionMark(1, Position<'m3', 43.5, 56.5>);
+    //}
+    //with (performer 0) {
+        //MovePositionMark(1, Position<'m4', 43.5, 40.5>);
+    //}
+    //with (actor ACTOR_NPC_GYARADOSU) {
+        //MovePositionMark(33408, Position<'m9', 43.5, 39.5>);
+    //}
+    //with (actor ACTOR_PLAYER_APPOINT) {
+        //MovePositionOffset(1, 0, -8);
+    //}
+    //with (actor ACTOR_ADVENTURE_NPC1) {
+        //MovePositionOffset(1, 0, -8);
+    //}
+    //with (actor ACTOR_ADVENTURE_NPC2) {
+        //MovePositionOffset(1, 0, -8);
+    //}
+    //with (actor ACTOR_ADVENTURE_NPC3) {
+        //MovePositionOffset(1, 0, -8);
+    //}
+    //with (performer 0) {
+        //MovePositionOffset(1, 0, 24);
+    //}
+    //with (actor ACTOR_NPC_GYARADOSU) {
+        //SetAnimation(18);
+    //}
+    camera_SetEffect(0, 0, 0);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    WaitSe(5143);
+    se_Play(5136);
+    CallCommon(CORO_BOSS_WIPE_FUNC);
+    end;
+}
