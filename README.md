@@ -2,7 +2,7 @@
 
 A Hack of Pokémon Mystery Dungeon: Explorers of Sky that removes cutscenes while keeping gameplay as intact as possible.
 
-At the moment, only the Any% portion, Bidoof's Wish and a small portion of the post-game are finished.
+At the moment, only the Any% portion, the post-game up to Darkrai, and Bidoof's Wish are finished.
 
 Known issues:
 
