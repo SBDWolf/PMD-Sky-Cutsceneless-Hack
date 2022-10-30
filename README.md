@@ -12,7 +12,7 @@ The source is just the files used by Skytemple.
 
 To install:
 
-- Acquire a European ROM of PMD Sky;
+- Acquire a clean European ROM of PMD Sky (note: roms labelled BAHAMUT won't work);
 - Use Flips or xdelta to apply the patch of your choosing to the ROM.
 
 If using xdeltaUI, you might get weird error messages trying to apply these out of the box. This is caused the version of xdeltaUI that you find online sometimes making use of an old version of the patcher. If you're having problem in trying to apply the patch, try following these steps:
