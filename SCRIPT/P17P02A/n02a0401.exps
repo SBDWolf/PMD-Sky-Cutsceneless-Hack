@@ -1,0 +1,37 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_HEARTWARMING, 0, 256);
+    supervision_Acting(0);
+    with (actor ACTOR_NPC_PUKURIN_PAPA) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_PUKURIN_MAMA) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        MovePositionMark(1, Position<'m0', 31.5, 35.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    if ( scn($SCENARIO_SIDE) == [41, 3] ) {
+        §label_0;
+        bgm_FadeOut(60);
+        screen_FadeOut(1, 60);
+        Wait(30);
+        §label_3;
+        end;
+    } elseif ( scn($SCENARIO_SIDE) == [42, 0] ) {
+        bgm_FadeOut(60);
+        screen_FadeOut(1, 30);
+        jump @label_3;
+    } else {
+        bgm_FadeOut(30);
+        screen_FadeOut(1, 30);
+        jump @label_3;
+    }
+}

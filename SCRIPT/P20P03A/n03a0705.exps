@@ -1,0 +1,240 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_P20P03A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_BEYOND_THE_DREAM, 0, 256);
+    Wait(60);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m0', 25.5, 35.5>);
+    }
+    WaitExecutePerformer(0);
+    Wait(15);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    message_SetFace(ACTOR_PLAYER_PUPURIN, FACE_STUNNED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Wow! Amazing! ♪",
+        french=" Ouah! Incroyable! ♪",
+        german=" Oh! Wahnsinn! ♪",
+        italian=" Wow! Grandioso! ♪",
+        spanish=" ¡Guau! ¡Cómo mola! ♪",
+    });
+    message_Talk({
+        english=" There\'s so much treasure! ♪\nMaster! ♪",
+        french=" Il y a tant de trésors! ♪\nMaître! ♪",
+        german=" Dort sind noch viel mehr\nSchätze! ♪ Meister! ♪",
+        italian=" Ci sono un sacco di tesori! ♪\nMaestro! ♪",
+        spanish=" ¡Hay un montón de tesoros, ♪\nmaestro! ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(15);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    message_SetFace(ACTOR_NPC_AAMARUDO, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" All right.[K] Let\'s take it all back\nwith us.",
+        french=" Très bien.[K] On ramène tout ça\navec nous.",
+        german=" Na gut.[K]\nLass uns alles mitnehmen.",
+        italian=" Bene.[K] Prendiamoli tutti quanti.",
+        spanish=" Bueno...[K] Vamos a llevárnoslos\ntodos.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    Wait(10);
+    message_SetFace(ACTOR_PLAYER_PUPURIN, FACE_HAPPY, FACE_POS_STANDARD);
+    message_Talk({
+        english=" All right! ♪",
+        french=" D\'accord! ♪",
+        german=" Au fein! ♪",
+        italian=" Ok! ♪",
+        spanish=" ¡Muy bien! ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(15);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    Wait(10);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        MovePositionMark(33152, Position<'m1', 23.5, 24.5>);
+    }
+    with (performer 0) {
+        MovePositionMark(32896, Position<'m2', 25.5, 29.5>);
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        MovePositionMark(32896, Position<'m3', 27.5, 31>);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    Wait(15);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    WaitExecutePerformer(0);
+    Wait(15);
+    message_SetFace(ACTOR_NPC_AAMARUDO, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" ... (He\'s really something,\nthis kid.)",
+        french=" ... (Ce n\'est vraiment pas\nn\'importe qui, ce gamin.)",
+        german=" ...(Das ist mir wirklich\neiner, dieser Kleine.)",
+        italian=" ... (Questo bambino\nè prodigioso.)",
+        spanish=" Hum... (Este crío es un fuera\nde serie.)",
+    });
+    message_Talk({
+        english=" (We\'ve been exploring together\nfor a while...)",
+        french=" (Ça fait quelque temps\nmaintenant qu\'on part en exploration\nensemble...)",
+        german=" (Jetzt sind wir schon eine Weile\ngemeinsam auf Erkundungen unterwegs...)",
+        italian=" (È passato un bel po\' di tempo\nda quando è diventato il mio apprendista...)",
+        spanish=" (Ya llevamos un tiempo\nexplorando juntos...)",
+    });
+    message_Talk({
+        english=" (I\'ve never seen anyone with a\nnatural sense for exploring like he has.)",
+        french=" (Je n\'ai jamais vu quelqu\'un\nd\'aussi doué pour l\'exploration.)",
+        german=" (Und ich bin mir sicher: Ich\nhabe noch nie jemanden mit derart\nausgeprägtem Erkunder-Instinkt getroffen.)",
+        italian=" (... e non ho mai visto nessuno\ncon un senso dell\'esplorazione così sviluppato.)",
+        spanish=" (Nunca antes había visto a nadie\ncon tal talento natural para explorar.)",
+    });
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        MovePositionMark(33152, Position<'m4', 28, 24.5>);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    message_Talk({
+        english=" ...[K] (I\'m sure...)",
+        french=" ...[K] (J\'en suis sûr...)",
+        german=" ...[K](Ich bin mir sicher...)",
+        italian=" ...[K] (Sono sicuro...)",
+        spanish=" Hum...[K] (Estoy seguro...)",
+    });
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Move2PositionMark(33152, Position<'m5', 28, 20.5>);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    message_Talk({
+        english=" (I\'m sure that this kid...[K]is\nsome kind of exploration prodigy.)",
+        french=" (Ce gamin...[K] est un vrai\nsurdoué de l\'exploration.)",
+        german=" (Ich bin mir sicher, dass dieser\nBengel...[K] eine Art Erkunder-Wunderkind\nsein muss.)",
+        italian=" (Sono sicuro che questo\nbambino...[K] sia una specie di genio\ndell\'esplorazione.)",
+        spanish=" (Estoy seguro de que este crío...[K]\ntiene un talento prodigioso como explorador.)",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(15);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Move2PositionMark(33152, Position<'m6', 25.5, 23>);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_JOYOUS, 3);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    message_SetFace(ACTOR_PLAYER_PUPURIN, FACE_HAPPY, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Master, what are you doing?[K]\nHurry, hurry! ♪",
+        french=" Maître, vous faites quoi?[K]\nVite, vite, allez! ♪",
+        german=" Meister, was machst du denn?[K]\nBeeilung, Beeilung! ♪",
+        italian=" Maestro, che stai facendo?[K]\nPresto, presto! ♪",
+        spanish=" Maestro, ¿qué haces?[K]\n¡Venga, date prisa! ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(15);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    se_Play(8978);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_AAMARUDO);
+    message_SetFace(ACTOR_NPC_AAMARUDO, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Y-yeah...[K] I\'m on my way.",
+        french=" Heu... oui...[K] J\'arrive.",
+        german=" J-ja...[K] Ich komme ja schon.",
+        italian=" S-Sì...[K] Arrivo.",
+        spanish=" Sí...[K] Ya voy.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (performer 0) {
+        MovePositionMark(32896, Position<'m7', 25.5, 18>);
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        MovePositionMark(32972, Position<'m8', 25.5, 18>);
+    }
+    Wait(20);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        MovePositionMark(1, Position<'m9', 23, 18.5>);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    Wait(5);
+    bgm_FadeOut(150);
+    screen_FadeOut(1, 90);
+    Wait(60);
+    end;
+}

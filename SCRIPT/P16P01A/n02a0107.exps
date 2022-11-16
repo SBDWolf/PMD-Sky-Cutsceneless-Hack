@@ -1,0 +1,123 @@
+
+def 0 {
+    sound_Stop();
+    message_Narration(30, {
+        english="[CN]Way back when...",
+        french="[CN]Ça remonte à l\'époque...",
+        german="[CN]Damals...",
+        italian="[CN]Si tratta di tanto tempo fa...",
+        spanish="[CN]Hace mucho, cuando...",
+    });
+    message_Narration(30, {
+        english="[CN]Yep... That was back\n[CN]when I was still a small child...",
+        french="[CN]... et oui... à l\'époque de ma prime enfance...",
+        german="[CN]Ja... Damals war ich noch\n[CN]sehr klein...",
+        italian="[CN]Eh sì... quando ero ancora piccolo...",
+        spanish="[CN]Era aún un pequeñajo...",
+    });
+    message_Narration(30, {
+        english="[CN]I wasn\'t [CS:N]Wigglytuff[CR] yet...\n[CN]This was back when I was still an [CS:Y]Igglybuff[CR].",
+        french="[CN]Je n\'étais pas encore [CS:N]Grodoudou[CR]...\n[CN]A cet époque, j\'étais encore un [CS:Y]Toudoudou[CR].",
+        german="[CN]Ich war noch kein [CS:N]Knuddeluff[CR]...\n[CN]Damals war ich noch ein [CS:Y]Fluffeluff[CR].",
+        italian="[CN]Non ero ancora diventato [CS:N]Wigglytuff[CR]...\n[CN]Risale tutto ai tempi in cui ero [CS:Y]Igglybuff[CR].",
+        spanish="[CN]Todavía no era [CS:N]Wigglytuff[CR]...\n[CN]Estoy hablando de cuando aún era un [CS:Y]Igglybuff[CR].",
+    });
+    message_Close();
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V24P08A);
+    back_SetGround(LEVEL_P16P01A);
+    supervision_Acting(0);
+    camera2_SetPositionMark(Position<'m0', 19, 15.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        MovePositionMark(32857, Position<'m1', 14, 20.5>);
+    }
+    WaitLockLives(5, ACTOR_NPC_UPAA);
+    Unlock(5);
+    WaitLockLives(10, ACTOR_NPC_MUCHUURU);
+    Unlock(10);
+    WaitLockLives(15, ACTOR_NPC_SUBOMII);
+    Unlock(15);
+    bgm_PlayFadeIn(BGM_HEARTWARMING, 0, 256);
+    screen2_FadeIn(0, 30);
+    screen_FadeIn(1, 30);
+    message_SetWaitMode(190, 80);
+    message_Mail({
+        english="[CN]There everyone lived an easy life...",
+        french="[CN]On avait la belle vie...",
+        german="[CN]Wir lebten alle ein einfaches Leben...",
+        italian="[CN]Allora vivevo in maniera semplice\n[CN]e spensierata...",
+        spanish="[CN]La vida entonces era sencilla...",
+    });
+    message_KeyWait();
+    message_Mail({
+        english="[CN]It was a very peaceful prairie...",
+        french="[CN]Il y avait une paisible prairie...",
+        german="[CN]In einer friedlichen Ebene...",
+        italian="[CN]... in una magnifica prateria.",
+        spanish="[CN]Vivía en una pradera muy tranquila...",
+    });
+    message_Close();
+    screen_FadeOut(1, 30);
+    message_SetWaitMode(32767, 32767);
+    end;
+}
+
+def 1 for_actor(ACTOR_NPC_UPAA) {
+    SetAnimation(2);
+    Lock(5);
+    SetEffect(EFFECT_JOYOUS, 3);
+    SetAnimation(4);
+    Wait(148);
+    SetAnimation(2);
+    SetEffect(EFFECT_NONE, 3);
+    Wait(20);
+    SetEffect(EFFECT_NONE, 3);
+    SetEffect(EFFECT_LAUGHING, 3);
+    SetAnimation(5);
+    Wait(80);
+    SetEffect(EFFECT_JOYOUS, 3);
+    MovePositionMark(33075, Position<'m2', 0.5, 17>);
+    Destroy();
+}
+
+def 2 for_actor(ACTOR_NPC_MUCHUURU) {
+    SetAnimation(2);
+    Lock(10);
+    SetEffect(EFFECT_JOYOUS, 3);
+    Wait(4);
+    SetAnimation(5);
+    Wait(144);
+    SetAnimation(2);
+    SetEffect(EFFECT_NONE, 3);
+    Wait(80);
+    CallCommon(CORO_JUMP_HAPPY_FUNC);
+    Turn2Direction(4, 10, DIR_RIGHT);
+    Wait(150);
+    Turn2Direction(4, 10, DIR_LEFT);
+    Wait(15);
+    CallCommon(CORO_JUMP_ANGRY_FUNC);
+    Wait(15);
+    MovePositionMark(33075, Position<'m3', 0, 19>);
+    Destroy();
+}
+
+def 3 for_actor(ACTOR_NPC_SUBOMII) {
+    SetAnimation(2);
+    Lock(15);
+    SetEffect(EFFECT_JOYOUS, 3);
+    Wait(8);
+    SetAnimation(4);
+    Wait(140);
+    SetAnimation(2);
+    SetEffect(EFFECT_NONE, 3);
+    Wait(40);
+    SetEffect(EFFECT_NONE, 3);
+    SetEffect(EFFECT_LAUGHING, 3);
+    SetAnimation(5);
+    Wait(80);
+    MovePositionMark(33075, Position<'m4', 0.5, 21>);
+    Destroy();
+}

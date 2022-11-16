@@ -1,0 +1,42 @@
+
+def 0 {
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_PUKURIN_PAPA) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_PUKURIN_MAMA) {
+        SetAnimation(2);
+    }
+    message_ResetActor();
+    message_Mail({
+        english="[CN]Where will you go?",
+        french="[CN]Où voulez-vous aller?",
+        german="[CN]Wohin gehst du?",
+        italian="[CN]Dove vuoi andare?",
+        spanish="[CN]¿Adónde quieres ir?",
+    });
+    message_Close();
+    switch ( main_EnterAdventure(32767, 30) ) {
+        case 0:
+            §label_0;
+            message_Close();
+            switch ( main_EnterAdventure(251, 30) ) { }
+            hold;
+            end;
+        default:
+            message_Close();
+            with (actor ACTOR_NPC_PUKURIN_PAPA) {
+                SetAnimation(4);
+            }
+            with (actor ACTOR_NPC_PUKURIN_MAMA) {
+                SetAnimation(4);
+            }
+            end;
+    }
+}

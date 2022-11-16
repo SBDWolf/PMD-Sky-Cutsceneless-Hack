@@ -1,0 +1,41 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_HEARTWARMING, 0, 256);
+    back_SetGround(LEVEL_P16P01A);
+    supervision_LoadStation(LEVEL_P16P01A, 'UN02');
+    supervision_Station(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_MUCHUURU) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_SUBOMII) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_UPAA) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_UPAA) {
+        SetPositionMark(Position<'m0', 26.5, 18>);
+    }
+    with (actor ACTOR_NPC_MUCHUURU) {
+        SetPositionMark(Position<'m1', 28.5, 19>);
+    }
+    with (actor ACTOR_NPC_SUBOMII) {
+        SetPositionMark(Position<'m2', 30.5, 18>);
+    }
+    with (actor ACTOR_NPC_MUCHUURU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_SUBOMII) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_UPAA) {
+        SetAnimation(2);
+    }
+    camera_SetDefault();
+    screen_FadeIn(1, 30);
+    end;
+}

@@ -1,0 +1,154 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_A_FUN_EXPLORATION, 0, 256);
+    back_SetGround(LEVEL_P19P02A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    se_Play(6667);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetAnimation(25);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetOutputAttribute(2);
+    }
+    supervision_Acting(1);
+    with (object OBJECT_P19P02A2_386) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    Wait(50);
+    back_SetBackEffect(4);
+    with (object OBJECT_P19P02A1_385) {
+        SetAnimation(9);
+    }
+    Wait(15);
+    message_Mail({
+        english="[CN]We would open up the map and look\n[CN]for a place to explore.",
+        french="[CN]Nous déroulions la carte et nous cherchions\n[CN]un endroit à explorer.",
+        german="[CN]Wir schlugen gemeinsam die Karte auf,\n[CN]um einen Ort zum Erkunden auszuwählen.",
+        italian="[CN]Aprivamo la mappa e cercavamo\n[CN]un posto da esplorare.",
+        spanish="[CN]Abríamos el mapa y buscábamos\n[CN]un lugar para explorar.",
+    });
+    message_Close();
+    back_SetBackEffect(5);
+    with (object OBJECT_P19P02A1_385) {
+        SetAnimation(1);
+    }
+    se_Play(8978);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    message_SetFace(ACTOR_PLAYER_PUPURIN, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Hey, Master...[K] Let\'s explore\nthis place today! ♪",
+        french=" Hé, Maître...[K] Allons explorer\ncet endroit aujourd\'hui! ♪",
+        german=" Hey, Meister...[K] Lass uns heute\ndiesen Ort gemeinsam erkunden! ♪",
+        italian=" Ehi, maestro...[K] Andiamo\na esplorare questo posto oggi! ♪",
+        spanish=" Oye, maestro...[K] ¡Vamos a explorar\neste sitio hoy! ♪",
+    });
+    message_Talk({
+        english=" This place...[K]labeled \"The End of\nthe World\"! ♪",
+        french=" Cet endroit...[K] appelé\n\"Le Bout du Monde\"! ♪",
+        german=" Diesen Ort[K] namens [F:S2]Das Ende\nder Welt[F:E2]! ♪",
+        italian=" Questo posto...[K] che si chiama\n\"La Fine del Mondo\"! ♪",
+        spanish=" Este sitio que se llama...[K] \"El fin\ndel mundo\". ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8971);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        SetEffect(EFFECT_ANGRY, 3);
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    message_SetFace(ACTOR_NPC_AAMARUDO, FACE_ANGRY, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Come on! There is no way we\ncould go to such a place.",
+        french=" Allons, allons! Nous n\'avons\naucun moyen de nous rendre dans\nun tel endroit.",
+        german=" Nun mach aber mal halblang! So\neinen Ort können wir gar nicht erkunden.",
+        italian=" Insomma! Come puoi pensare\ndi andare in un posto simile?!",
+        spanish=" ¡Qué dices! No podemos ir\na un sitio así.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(15);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        SetAnimation(12);
+    }
+    Wait(10);
+    supervision_RemoveActing(1);
+    Wait(5);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetOutputAttribute(1);
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        SetEffect(EFFECT_ANGRY, 3);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    Wait(100);
+    back_SetBackEffect(4);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        PauseEffect(94);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        PauseEffect(93);
+    }
+    with (object OBJECT_P19P02A1_385) {
+        SetAnimation(9);
+    }
+    Wait(15);
+    message_Mail({
+        english="[CN]We\'d decide where to go together like\n[CN]two old friends...",
+        french="[CN]Nous décidions ensemble de l\'endroit où\n[CN]aller, comme de vieux amis...",
+        german="[CN]Wir entschieden uns Tag für Tag gemeinsam\n[CN]für einen Ort. Wie zwei alte Freunde...",
+        italian="[CN]Decidevamo insieme quali luoghi\n[CN]esplorare, come due vecchi amici...",
+        spanish="[CN]Decidíamos adónde ir juntos, como\n[CN]dos viejos amigos...",
+    });
+    message_Mail({
+        english="[CN]And then head out exploring right away...",
+        french="[CN]Puis, on partait l\'explorer sur-le-champ...",
+        german="[CN]Und machten uns gleich danach\n[CN]auf die Erkundung...",
+        italian="[CN]E poi partivamo subito a esplorare...",
+        spanish="[CN]Y nos íbamos a explorar de inmediato...",
+    });
+    message_Close();
+    screen_FadeOut(1, 30);
+    end;
+}

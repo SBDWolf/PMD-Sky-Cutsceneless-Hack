@@ -1,0 +1,39 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_HEARTWARMING, 0, 256);
+    back_SetGround(LEVEL_P17P01A);
+    supervision_Acting(0);
+    camera2_SetPositionMark(Position<'m0', 19, 15.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        MovePositionMark(32857, Position<'m1', 19, 15>);
+    }
+    screen2_FadeIn(0, 30);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetWaitMode(190, 80);
+    message_Mail({
+        english="[CN]I was raised in that little house...",
+        french="[CN]Et dans cette prairie,\n[CN]la petite maison où je fus élevé...",
+        german="[CN]Ich wuchs in diesem kleinen Haus auf...",
+        italian="[CN]Abitavo in una piccola casetta...",
+        spanish="[CN]Me crie en una casita...",
+    });
+    message_KeyWait();
+    message_Mail({
+        english="[CN]I lived happily there with my parents.",
+        french="[CN]Je vécus des années heureuses, là,\n[CN]avec mes parents.",
+        german="[CN]Fröhlich, zusammen mit meinen Eltern.",
+        italian="[CN]... accudito amorevolmente dai miei genitori.",
+        spanish="[CN]Era de lo más feliz viviendo con mis padres.",
+    });
+    message_Close();
+    WaitExecutePerformer(0);
+    screen2_FadeOut(0, 30);
+    screen_FadeOut(1, 30);
+    back2_SetMode(0);
+    message_SetWaitMode(32767, 32767);
+    end;
+}

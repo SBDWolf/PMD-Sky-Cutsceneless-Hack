@@ -1,0 +1,221 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_HEARTWARMING, 0, 256);
+    back_SetGround(LEVEL_P16P01A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        MovePositionMark(1, Position<'m0', 26.5, 19.5>);
+    }
+    with (performer 0) {
+        MovePositionMark(32896, Position<'m1', 28, 20.5>);
+    }
+    Wait(20);
+    with (actor ACTOR_NPC_JUPETTA) {
+        MovePositionMark(1, Position<'m2', 35.5, 18>);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_SUKORUPI) {
+        MovePositionMark(1, Position<'m3', 37.5, 21>);
+    }
+    with (actor ACTOR_NPC_JUPETTA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    se_Play(8968);
+    Wait(2);
+    with (actor ACTOR_NPC_SUKORUPI) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_JUPETTA) {
+        MovePositionMark(32972, Position<'m4', 32.5, 18>);
+    }
+    with (actor ACTOR_NPC_SUKORUPI) {
+        MovePositionMark(32972, Position<'m5', 34.5, 21>);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPETTA);
+    with (actor ACTOR_NPC_JUPETTA) {
+        MovePositionMark(32896, Position<'m6', 30, 18>);
+    }
+    with (actor ACTOR_NPC_SUKORUPI) {
+        MovePositionMark(32896, Position<'m7', 32, 21>);
+    }
+    WaitExecutePerformer(0);
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    with (actor ACTOR_NPC_JUPETTA) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    message_SetFace(ACTOR_NPC_JUPETTA, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Hey! [CS:Y]Igglybuff[CR]!",
+        french=" Hé! [CS:Y]Toudoudou[CR]!",
+        german=" Hey! [CS:Y]Fluffeluff[CR]!",
+        italian=" Ehi! [CS:Y]Igglybuff[CR]!",
+        spanish=" ¡Oye, [CS:Y]Igglybuff[CR]!",
+    });
+    message_Talk({
+        english=" W-were you OK after that?!",
+        french=" T-tu t\'en es bien tiré?!",
+        german=" I-ist noch alles gut gelaufen?!?",
+        italian=" H-Hai avuto problemi dopo...\nquella cosa?!",
+        spanish=" ¡¿Fue todo bien después\nde lo que pasó?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    message_SetFace(ACTOR_PLAYER_PUPURIN, FACE_HAPPY, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Yep. ♪",
+        french=" Voui. ♪",
+        german=" Ja. ♪",
+        italian=" No no. ♪",
+        spanish=" Sí. ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(15);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_JUPETTA) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    Wait(6);
+    with (actor ACTOR_NPC_SUKORUPI) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_SUKORUPI);
+    se_Play(8972);
+    with (actor ACTOR_NPC_JUPETTA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_SUKORUPI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_SUKORUPI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_SUKORUPI);
+    message_SetFace(ACTOR_NPC_SUKORUPI, FACE_WORRIED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" I can\'t believe you got away!",
+        french=" J\'arrive pas à croire que tu aies\nréussi à t\'échapper!",
+        german=" Ich kann kaum glauben, dass du\nentkommen bist!",
+        italian=" Non riesco a credere che tu sia\nriuscito a salvarti!",
+        spanish=" ¡Es increíble que lograras huir!",
+    });
+    message_Talk({
+        english=" I thought maybe you got eaten by\nthat monster...",
+        french=" Je pensais que tu t\'étais fait\ngober tout cru par ce monstre...",
+        german=" Ich dachte schon, du wurdest\nvon dem Monster verspeist...",
+        italian=" Pensavo che quel mostro\nti avesse divorato...",
+        spanish=" Pensaba que igual el monstruo\nte habría devorado...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    se_Play(8962);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    message_SetFace(ACTOR_PLAYER_PUPURIN, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" ???[K] What monster?[K] I don\'t know\nwhat you\'re talking about.",
+        french=" ???[K] Bah, quel monstre?[K]\nJe vois pas de quoi tu parles.",
+        german=" ...[K]Welches Monster?[K] Ich\nweiß nicht, wovon du sprichst.",
+        italian=" ???[K] Quale mostro?[K] Non so\ndi cosa stiate parlando.",
+        spanish=" ¡¿Eh?![K] ¿Qué monstruo?[K] No sé\nde qué me hablas.",
+    });
+    message_Talk({
+        english=" I made a friend. ♪",
+        french=" Je me suis fait un copain. ♪",
+        german=" Ich habe einen neuen Freund\ngefunden. ♪",
+        italian=" Io ho trovato un nuovo\namico. ♪",
+        spanish=" Ayer hice un nuevo amigo. ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8968);
+    with (actor ACTOR_NPC_JUPETTA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_JUPETTA) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_SUKORUPI) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_SUKORUPI) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_SUKORUPI);
+    message_SetFace(ACTOR_NPC_JUPETTA, FACE_SURPRISED, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" F-friend?",
+        french=" Un... un copain?",
+        german=" E-einen Freund?",
+        italian=" A-Amico?",
+        spanish=" ¿Un... amigo?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    message_SetFace(ACTOR_PLAYER_PUPURIN, FACE_HAPPY, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Yep--a friend. ♪",
+        french=" Voui, voui, un copain. ♪",
+        german=" Ja, einen Freund. ♪",
+        italian=" Sì... Un amico. ♪",
+        spanish=" Pues sí, un amigo. ♪",
+    });
+    message_Talk({
+        english=" I\'m headed out to play with my\nfriend again today. ♪[K] See you! ♪",
+        french=" Et aujourd\'hui je retourne\njouer avec mon copain. ♪[K] A plus! ♪",
+        german=" Ich bin gerade auf dem Weg,\nwieder mit ihm zu spielen. ♪[K] Bis dann! ♪",
+        italian=" Proprio adesso stavo andando\na giocare di nuovo con lui. ♪[K] Ciao, ciao! ♪",
+        spanish=" Y hoy voy a volver a jugar\ncon él. ♪[K] ¡Hasta luego! ♪",
+    });
+    message_Close();
+    Wait(15);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        MovePositionOffset(1, 180, 0);
+    }
+    Wait(15);
+    with (actor ACTOR_NPC_SUKORUPI) {
+        Turn2Direction(16, 1, DIR_RIGHT);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_JUPETTA) {
+        Turn2Direction(16, 2, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_JUPETTA);
+    Wait(20);
+    bgm_FadeOut(60);
+    screen2_FadeOut(0, 30);
+    screen_FadeOut(1, 30);
+    back2_SetMode(0);
+    Wait(30);
+    switch ( main_EnterAdventure(250, 30) ) { }
+    end;
+}

@@ -1,0 +1,232 @@
+
+def 0 {
+    sound_Stop();
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V02P06A);
+    supervision_Acting(0);
+    camera2_SetPositionMark(Position<'m0', 19, 16.5>);
+    screen2_FadeIn(1, 60);
+    Wait(150);
+    screen2_FadeOut(1, 60);
+    back2_SetMode(0);
+    back_SetGround(LEVEL_P17P02C);
+    supervision_Acting(0);
+    camera2_SetPositionMark(Position<'m1', 19, 16.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    supervision_Acting(1);
+    with (object OBJECT_P17P02C1_547) {
+        SetAnimation(1);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetAnimation(42);
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_GOODNIGHT, 0, 256);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_PUKURIN_MAMA, FACE_HAPPY, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" Sleep now sweet, little child. ♪[K]\nYou are truly adorable. ♪",
+        french=" Fais dodo, maintenant,\nmon garçon. ♪[K]\nTu es vraiment trop mignon. ♪",
+        german=" Schlafe, mein Kind, und träume\nsüß. ♪[K] Ach, was bist du knuddelig. ♪",
+        italian=" Dormi piccino. ♪[K]\nDormi tesoro. ♪",
+        spanish=" Duérmete chiquitín, duérmete ya. ♪[K]\nNaninonino, naninoná. ♪",
+    });
+    message_Talk({
+        english=" Sleep now sweet, little child. ♪",
+        french=" Fais dodo, maintenant,\nmon garçon. ♪",
+        german=" Schlafe, mein Kind,\nund träume süß. ♪",
+        italian=" La tua mammina, ti cullerà. ♪",
+        spanish=" Duérmete chiquitín, duérmete ya. ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetActor(ACTOR_PLAYER_PUPURIN);
+    message_Talk({
+        english=" ...[K]Mmmmmm... [K]Mmmmmmmm...",
+        french=" ...[K] ZZzzzmmmm... [K]Zzzzmmmm...",
+        german=" ...[K]Mmmmmm... [K]Mmmmmmmm...",
+        italian=" ...[K] Ronf... fiii...[K] Ronf.. fiii...",
+        spanish=" Zz...[K] Zzz...[K] Zzzzzz...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    WaitExecuteObject(OBJECT_P17P02C1_547);
+    with (object OBJECT_P17P02C1_547) {
+        Destroy();
+    }
+    message_SetFace(ACTOR_NPC_PUKURIN_MAMA, FACE_NORMAL, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" ...[K]All right, he\'s sleeping.",
+        french=" ...[K] C\'est bon, il s\'est endormi.",
+        german=" ...[K]So, gut. Er schläft jetzt.",
+        italian=" ...[K] Bene, si è addormentato.",
+        spanish=" Bueno...[K] Muy bien, ya está dormido.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PUKURIN_MAMA) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    message_SetFace(ACTOR_NPC_PUKURIN_MAMA, FACE_WORRIED, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Hey, [CS:N]Papa[CR].[K] I\'ve been worried\nabout something...",
+        french=" Dis, [CS:N]Papa[CR].[K]\nQuelque chose me préoccupe...",
+        german=" Hey, [CS:N]Papa[CR].[K] Ich habe mir wegen\neiner Sache Gedanken gemacht...",
+        italian=" Ehi, [CS:N]papà[CR].[K] C\'è qualcosa che mi\npreoccupa un po\'...",
+        spanish=" Oye, cariño...[K] Hay algo que me preocupa.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PUKURIN_PAPA) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    message_SetFace(ACTOR_NPC_PUKURIN_PAPA, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" Huh?[K] What is it, [CS:N]Mama[CR]?",
+        french=" Hein?[K] Quoi donc, [CS:N]Maman[CR]?",
+        german=" Ehrlich?[K] Worüber denn, [CS:N]Mama[CR]?",
+        italian=" Uh?[K] Che succede, [CS:N]mamma[CR]?",
+        spanish=" ¿Y eso?[K] ¿De qué se trata?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_FadeOut(150);
+    with (performer 0) {
+        Move2PositionMark(32972, Position<'m2', 34, 26>);
+    }
+    with (actor ACTOR_NPC_PUKURIN_MAMA) {
+        Move2PositionMark(1, Position<'m3', 32, 26>);
+    }
+    with (actor ACTOR_NPC_PUKURIN_PAPA) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_PUKURIN_MAMA) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    WaitExecutePerformer(0);
+    WaitExecuteLives(ACTOR_NPC_PUKURIN_MAMA);
+    Wait(20);
+    bgm2_PlayFadeIn(BGM_FIRE_CRACKLING3, 30, 256);
+    Wait(15);
+    message_SetFace(ACTOR_NPC_PUKURIN_MAMA, FACE_WORRIED, FACE_POS_BOTTOM_L_CENTER);
+    message_FacePositionOffset(3, -5);
+    message_Talk({
+        english=" I heard from [CS:Y]Igglybuff[CR]\'s\nfriends today...",
+        french=" Les amis de [CS:Y]Toudoudou[CR] m\'ont\nraconté aujourd\'hui...",
+        german=" Die Freunde von [CS:Y]Fluffeluff[CR] haben\nmir heute etwas erzählt.",
+        italian=" Oggi, gli amici di [CS:Y]Igglybuff[CR]...",
+        spanish=" Los amigos de [CS:Y]Igglybuff[CR] me han dicho...",
+    });
+    message_Talk({
+        english=" [CS:Y]Igglybuff[CR][K] is being manipulated\nby some bullies.",
+        french=" ... qu\'une bande de brutes[K]\nle manipule.",
+        german=" [CS:Y]Fluffeluff[CR][K] wurde von ein paar\nSchlitzohren ausgenutzt.",
+        italian=" ... mi hanno detto che dei\nprepotenti si approfittano di lui.",
+        spanish=" Que [CS:Y]Igglybuff[CR]...[K] se deja manipular\npor unos abusones.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PUKURIN_PAPA, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Some bullies?",
+        french=" Une bande de brutes?",
+        german=" Schlitzohren, wie?",
+        italian=" Dei prepotenti?",
+        spanish=" ¿Unos abusones?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PUKURIN_MAMA, FACE_WORRIED, FACE_POS_BOTTOM_L_CENTER);
+    message_FacePositionOffset(3, -5);
+    message_Talk({
+        english=" Yeah.[K] [CS:Y]Igglybuff[CR]\'s friends came\nto talk to me about it...",
+        french=" Oui.[K] Les amis de [CS:Y]Toudoudou[CR]\nsont venus m\'en parler.",
+        german=" Genau.[K] Die Freunde von\n[CS:Y]Fluffeluff[CR] kamen, um mir davon zu\nberichten...",
+        italian=" Sì.[K] Me lo hanno raccontato\ngli amici di [CS:Y]Igglybuff[CR]...",
+        spanish=" Sí.[K] Los amiguitos de [CS:Y]Igglybuff[CR]\nhan venido a decírmelo...",
+    });
+    message_Talk({
+        english=" Hey, [CS:N]Papa[CR].[K] You don\'t think\nhe\'d become like them, do you?",
+        french=" Dis, [CS:N]Papa[CR].[K] Tu penses qu\'ils\nrisquent d\'avoir une mauvaise influence\nsur lui?",
+        german=" Sag, [CS:N]Papa[CR],[K] meinst du, dass er\ndadurch schlechte Manieren annehmen und so\nwie die Schlitzohren werden könnte?",
+        italian=" Ehi, [CS:N]papà[CR].[K] Pensi che possa\ndiventare come loro?",
+        spanish=" Cariño,[K] no crees que acabe\nvolviéndose como ellos, ¿verdad?",
+    });
+    message_Talk({
+        english=" Sometimes, I really have no clue\nwhat that child is thinking...",
+        french=" Parfois, cet enfant me\ndéconcerte complètement...",
+        german=" Manchmal frage ich mich, was\nim Kopf dieses Kindes wohl so vor sich geht...",
+        italian=" A volte non so cosa passi\nper la testa di quel ragazzo...",
+        spanish=" A veces no tengo ni idea de lo\nque le pasa por la cabeza...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_NPC_PUKURIN_MAMA) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_PUKURIN_MAMA) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_PUKURIN_MAMA);
+    message_SetFace(ACTOR_NPC_PUKURIN_MAMA, FACE_WORRIED, FACE_POS_BOTTOM_L_CENTER);
+    message_FacePositionOffset(3, -5);
+    message_Talk({
+        english=" So I\'m a little worried...",
+        french=" Alors, je suis un peu inquiète...",
+        german=" Ich mache mir ein\nwenig Sorgen...",
+        italian=" Quindi sono un po\' preoccupata...",
+        spanish=" Y eso me tiene algo preocupada.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PUKURIN_PAPA, FACE_WORRIED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Yeah...[K] That does seem\ntroublesome...",
+        french=" Mmoui...[K] Ça a l\'air préoccupant,\nen effet...",
+        german=" Ja...[K] Das ist in der Tat\nbesorgniserregend...",
+        italian=" Già...[K] Non c\'è da stare molto\ntranquilli...",
+        spanish=" Sí,[K] la verdad es que es un poco\npreocupante.",
+    });
+    message_Talk({
+        english=" But...",
+        french=" Mais...",
+        german=" Aber...",
+        italian=" Però...",
+        spanish=" Pero...",
+    });
+    message_SetFace(ACTOR_NPC_PUKURIN_PAPA, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" But I think it\'s all right.",
+        french=" ... je pense qu\'il ne faut\npas s\'en faire.",
+        german=" Aber ich denke, es ist okay.",
+        italian=" Penso che non ci siano problemi.",
+        spanish=" Creo que no pasará nada.",
+    });
+    message_Talk({
+        english=" [CS:Y]Igglybuff[CR] is still so cheerful...",
+        french=" [CS:Y]Toudoudou[CR] est toujours\naussi joyeux...",
+        german=" [CS:Y]Fluffeluff[CR] ist immer\nso gutgelaunt und aufgekratzt...",
+        italian=" [CS:Y]Igglybuff[CR] è sempre\ncosì allegro...",
+        spanish=" [CS:Y]Igglybuff[CR] siempre está tan contento.",
+    });
+    message_Talk({
+        english=" No matter how he may seem,\ndeep down, he has a good heart.",
+        french=" Il a bon cœur, je ne me fais pas\nde souci pour lui.",
+        german=" Ganz gleich, welchen Eindruck er\nauf andere macht, im Grunde seines Herzens\nist er rein und gut.",
+        italian=" Le apparenze non contano...\nLui ha un\'indole buona e gentile.",
+        spanish=" Pase lo que pase, en el fondo\ntiene un corazón de oro.",
+    });
+    message_Talk({
+        english=" Besides...[K] Didn\'t we have this\ndiscussion before...",
+        french=" En plus...[K] il me semble qu\'on en\na déjà discuté par le passé...",
+        german=" Und ganz nebenbei...[K] Hatten wir\ndiese Diskussion nicht schon einmal...",
+        italian=" E poi...[K] Abbiamo già affrontato\nquesto discorso in passato...",
+        spanish=" Además,[K] creo que ya habíamos\nhablado de este tema.",
+    });
+    message_Talk({
+        english=" Back when...[K] I climbed that\nmountain with [CS:Y]Igglybuff[CR]. On our way home...",
+        french=" Le jour où...[K] j\'ai gravi cette\nmontagne avec [CS:Y]Toudoudou[CR].\nQuand on est rentrés...",
+        german=" Damals,[K] als ich zusammen mit\n[CS:Y]Fluffeluff[CR] auf den Berg gestiegen bin?\nAuf unserem Rückweg...",
+        italian=" È stato quando...[K] ho scalato\nquella montagna con [CS:Y]Igglybuff[CR]. Tornando\na casa...",
+        spanish=" Cuando...[K] subí a aquella montaña con\n[CS:Y]Igglybuff[CR]. De camino a casa...",
+    });
+    message_Close();
+    bgm2_FadeOut(60);
+    screen_FadeOut(1, 60);
+    end;
+}

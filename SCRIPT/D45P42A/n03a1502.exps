@@ -1,0 +1,30 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_D45P42A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        SetAnimation(2);
+    }
+    screen_FadeIn(0, 30);
+    screen_FadeInAll(1, 30);
+    bgm_Stop();
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(5);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    WaitSe(5143);
+    CallCommon(CORO_BOSS_WIPE_FUNC);
+    main_EnterDungeon(132, 30);
+    main_EnterDungeon(-1, 30);
+    hold;
+    end;
+}

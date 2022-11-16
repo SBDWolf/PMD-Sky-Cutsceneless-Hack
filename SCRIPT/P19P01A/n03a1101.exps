@@ -1,0 +1,70 @@
+
+def 0 {
+    sound_Stop();
+    message_SetFace(ACTOR_NPC_AAMARUDO, FACE_WORRIED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Hmmm...[K] Just as I suspected.\nThis is a bit difficult...",
+        french=" Mmmh...[K] Je m\'en doutais.\nC\'est un peu difficile...",
+        german=" Hmmm...[K] Ganz wie befürchtet.\nDas ist schwieriger als erwartet...",
+        italian=" Uhmmm...[K] È difficile, proprio\ncome immaginavo...",
+        spanish=" Hum...[K] Tal como sospechaba,\nesto es algo difícil...",
+    });
+    message_Talk({
+        english=" We should try again.",
+        french=" On devrait refaire une tentative.",
+        german=" Versuchen wir es noch einmal.",
+        italian=" Dobbiamo riprovarci.",
+        spanish=" Deberíamos volver a intentarlo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_PUPURIN, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Yep. ♪",
+        french=" Voui. ♪",
+        german=" Au ja. ♪",
+        italian=" Sì. ♪",
+        spanish=" Vale. ♪",
+    });
+    message_KeyWait();
+    screen_FadeOutAll(1, 60);
+    message_CloseEnforce();
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    back_SetGround(LEVEL_P19P01A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    bgm_PlayFadeIn(BGM_A_FUN_EXPLORATION, 0, 256);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_AAMARUDO, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Let\'s try again today.",
+        french=" Essayons encore aujourd\'hui.",
+        german=" Lass es uns heute auf ein Neues\nversuchen.",
+        italian=" Riproviamoci subito.",
+        spanish=" Será mejor que\nvolvamos a intentarlo hoy.",
+    });
+    message_Talk({
+        english=" Once you\'re ready, we\'ll go.",
+        french=" Quand tu es prêt, on y va.",
+        german=" Wir werden aufbrechen, sobald\ndu fertig bist.",
+        italian=" Quando sei pronto, andiamo.",
+        spanish=" Nos iremos cuando estés listo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    message_SetFace(ACTOR_PLAYER_PUPURIN, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Yep, Master. ♪",
+        french=" Voui, Maître. ♪",
+        german=" Okay, Meister. ♪",
+        italian=" Sì, maestro. ♪",
+        spanish=" Vale, maestro. ♪",
+    });
+    message_Close();
+    end;
+}

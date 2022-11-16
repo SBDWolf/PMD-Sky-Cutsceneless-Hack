@@ -1,0 +1,612 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_SIDE = scn[42, 9];
+    back_SetDungeonBanner(132, 0);
+    screen_FadeIn(1, 16);
+    Wait(60);
+    screen_FadeOut(1, 16);
+    Wait(15);
+    back_SetGround(LEVEL_D45P31A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    Wait(1);
+    with (object OBJECT_D45P31A1_376) {
+        SetAnimation(9);
+    }
+    with (object OBJECT_D45P31A2_377) {
+        SetAnimation(9);
+    }
+    with (object OBJECT_D45P31A3_378) {
+        SetAnimation(9);
+    }
+    with (object OBJECT_D45P31A4_379) {
+        SetAnimation(9);
+    }
+    with (object OBJECT_D45P31A1_376) {
+        SetAnimation(1);
+    }
+    Wait(5);
+    with (object OBJECT_D45P31A2_377) {
+        SetAnimation(1);
+    }
+    Wait(3);
+    with (object OBJECT_D45P31A3_378) {
+        SetAnimation(1);
+    }
+    Wait(3);
+    with (object OBJECT_D45P31A4_379) {
+        SetAnimation(1);
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_IN_THE_DEPTHS_OF_THE_PIT, 0, 256);
+    Wait(30);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        MovePositionMark(1, Position<'m0', 23, 31.5>);
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        MovePositionMark(1, Position<'m1', 27.5, 31.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        ExecuteCommon(CORO_LOOK_AROUND_RIGHT_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    se_Play(8962);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    message_SetFace(ACTOR_PLAYER_PUPURIN, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" This is...?",
+        french=" C\'est...?",
+        german=" Ist dies...",
+        italian=" Questa è...?",
+        spanish=" ¿Es esto...?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_AAMARUDO, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" This seems to be the deepest\npart of the dungeon.",
+        french=" On dirait que c\'est l\'endroit le\nplus profond du donjon.",
+        german=" Dies ist anscheinend der tiefste\nTeil des Dungeons.",
+        italian=" Sembra essere la parte\npiù profonda del dungeon.",
+        spanish=" Parece ser la zona más\nprofunda del territorio.",
+    });
+    message_Talk({
+        english=" Make sure you\'re prepared.[K] You\ndon\'t know what awaits you ahead.",
+        french=" Assure-toi d\'être bien préparé.[K]\nTu ne sais pas ce qui nous attend plus loin.",
+        german=" Mach dich bereit und sei auf der\nHut.[K] Du kannst nie wissen, was dich erwartet.",
+        italian=" Tieniti pronto.[K] Non sappiamo\ncosa ci attende da qui in poi.",
+        spanish=" Asegúrate de que estás listo.[K]\nNunca se sabe lo que puede estar esperándonos.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    Wait(15);
+    se_Play(8964);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    message_SetFace(ACTOR_PLAYER_PUPURIN, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Oh![K] There\'s a door over there!",
+        french=" Oh![K] Il y a une porte là-bas!",
+        german=" Oh![K] Dort ist eine Tür!",
+        italian=" Oh![K] C\'è una porta laggiù!",
+        spanish=" ¡Anda![K] ¡Ahí hay una puerta!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m2', 25.5, 24>);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        MovePositionMark(1, Position<'m3', 23, 23>);
+    }
+    Wait(15);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        MovePositionMark(1, Position<'m4', 27.5, 23>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    Wait(15);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        ExecuteCommon(CORO_LOOK_AROUND_LEFT_FUNC_SERIES, 0);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_AAMARUDO);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    message_SetFace(ACTOR_PLAYER_PUPURIN, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Torches are burning all around...",
+        french=" Il y a des torches qui brûlent\ntout autour...",
+        german=" Brennende Fackeln rundherum...",
+        italian=" Delle torce accese intorno...",
+        spanish=" Hay antorchas por todas partes...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_AAMARUDO);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    message_SetFace(ACTOR_PLAYER_PUPURIN, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Master,[K] is there some kind of\ntrick to opening the door here too?",
+        french=" Maître,[K] pour ouvrir cette porte,\nil y a un truc aussi?",
+        german=" Meister,[K] gibt es auch hier einen\nbestimmten Trick, um die Tür zu öffnen?",
+        italian=" Maestro,[K] che ci sia anche qui\nuna specie di congegno da attivare per aprire\nla porta?",
+        spanish=" Maestro...[K] ¿Esta puerta también\ntiene trampa?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER_PUPURIN);
+    }
+    WaitExecuteLives(ACTOR_NPC_AAMARUDO);
+    message_SetFace(ACTOR_NPC_AAMARUDO, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" You\'ve really learned\na lot, Junior.",
+        french=" Tu as vraiment beaucoup\nappris, petit.",
+        german=" Du hast wirklich viel\ndazugelernt, Junior.",
+        italian=" Bravo, piccolo. Hai fatto\ndavvero molti progressi.",
+        spanish=" Has aprendido muchísimo, peque.",
+    });
+    message_Talk({
+        english=" That\'s right.[K] These torches\nmust provide the solution to the puzzle of\nopening the door.",
+        french=" C\'est juste.[K] Ces torches sont la\nclé dans la résolution de cette énigme.\nElles nous permettront d\'ouvrir cette porte.",
+        german=" Ich denke schon.[K] Diese Fackeln\nmüssen der Schlüssel zum Mechanismus sein,\nder die Tür öffnet.",
+        italian=" Proprio così.[K] Queste torce\ndevono essere la chiave per risolvere\nl\'enigma che ci consentirà di aprire la porta.",
+        spanish=" Eso es.[K] Las antorchas nos darán\nla clave del acertijo que abre la puerta.",
+    });
+    message_Talk({
+        english=" Furthermore, this is a very\ncommon type of puzzle.",
+        french=" Sache en outre que ce type\nd\'énigme est courant.",
+        german=" Darüber hinaus ist dies ein sehr\nverbreiteter Mechanismus.",
+        italian=" Inoltre si tratta di un enigma\nmolto comune.",
+        spanish=" Además, este tipo de acertijo\nes muy común.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_PUPURIN, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" What should we do?",
+        french=" Qu\'est-ce qu\'il faut faire?",
+        german=" Was müssen wir tun?",
+        italian=" Cosa facciamo?",
+        spanish=" ¿Qué hacemos?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_AAMARUDO, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" It\'s simple.",
+        french=" C\'est élémentaire.",
+        german=" Das ist einfach.",
+        italian=" Semplice.",
+        spanish=" Muy sencillo.",
+    });
+    message_Talk({
+        english=" If we blow out all the torches,\nthe door will open.[K] Watch!",
+        french=" Si nous éteignons toutes\nles torches, la porte s\'ouvrira.[K] Regarde!",
+        german=" Wenn wir alle Fackeln\nlöschen, wird sich die Tür öffnen.[K]\nSieh mal!",
+        italian=" Se spegniamo tutte le torce,\nla porta si aprirà.[K] Guarda!",
+        spanish=" Si apagamos todas las antorchas,\nla puerta se abrirá.[K] ¡Observa mi ingenio!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_FadeOut(120);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        MovePositionMark(1, Position<'m5', 23.5, 20>);
+    }
+    WaitExecuteLives(ACTOR_NPC_AAMARUDO);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_AAMARUDO);
+    message_SetFace(ACTOR_NPC_AAMARUDO, FACE_NORMAL, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" Here goes![K] [CS:M]Water Gun[CR]!",
+        french=" Et hop![K] [CS:M]Pistolet à O[CR]!",
+        german=" Hier kommt [K][CS:M]Aquaknarre[CR]!",
+        italian=" Ecco qua![K] [CS:M]Pistolacqua[CR]!",
+        spanish=" ¡Ahí va![K] ¡[CS:M]Pistola Agua[CR]!",
+    });
+    message_Close();
+    se_Play(9735);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        WaitAnimation();
+    }
+    Wait(2);
+    supervision_Acting(2);
+    with (object OBJECT_D45P31A6_549) {
+        SetOutputAttribute(4);
+    }
+    with (object OBJECT_D45P31A6_549) {
+        SetAnimation(17);
+    }
+    Wait(8);
+    supervision_Acting(3);
+    with (object OBJECT_D45P31A6_548) {
+        SetOutputAttribute(4);
+    }
+    with (object OBJECT_D45P31A6_548) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_D45P31A6_548) {
+        Slide2PositionOffset(33408, -20, 0);
+    }
+    WaitExecuteObject(OBJECT_D45P31A6_548);
+    with (object OBJECT_D45P31A6_548) {
+        SetAnimation(21);
+    }
+    with (object OBJECT_D45P31A6_548) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D45P31A6_548);
+    with (object OBJECT_D45P31A6_548) {
+        SetOutputAttribute(128);
+    }
+    WaitExecuteLives(ACTOR_NPC_AAMARUDO);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        SetAnimation(2);
+    }
+    with (object OBJECT_D45P31A1_376) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_D45P31A1_376) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D45P31A1_376);
+    with (object OBJECT_D45P31A1_376) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        Move2PositionMark(33152, Position<'m6', 28.5, 26>);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Turn2Direction(16, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_AAMARUDO);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_AAMARUDO);
+    se_Play(9735);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        WaitAnimation();
+    }
+    Wait(2);
+    with (object OBJECT_D45P31A6_549) {
+        SetPositionLives(293);
+    }
+    with (object OBJECT_D45P31A6_549) {
+        SetPositionOffset(4, -8);
+    }
+    with (object OBJECT_D45P31A6_549) {
+        SetAnimation(17);
+    }
+    Wait(8);
+    with (object OBJECT_D45P31A6_548) {
+        SetPositionLives(293);
+    }
+    with (object OBJECT_D45P31A6_548) {
+        SetPositionOffset(16, 0);
+    }
+    with (object OBJECT_D45P31A6_548) {
+        ResetOutputAttribute(128);
+    }
+    with (object OBJECT_D45P31A6_548) {
+        SetAnimation(19);
+    }
+    with (object OBJECT_D45P31A6_548) {
+        Slide2PositionOffset(33408, 8, 8);
+    }
+    WaitExecuteObject(OBJECT_D45P31A6_548);
+    with (object OBJECT_D45P31A6_548) {
+        SetAnimation(21);
+    }
+    with (object OBJECT_D45P31A6_548) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D45P31A6_548);
+    with (object OBJECT_D45P31A6_548) {
+        SetOutputAttribute(128);
+    }
+    WaitExecuteLives(ACTOR_NPC_AAMARUDO);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        SetAnimation(2);
+    }
+    with (object OBJECT_D45P31A4_379) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_D45P31A4_379) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D45P31A4_379);
+    with (object OBJECT_D45P31A4_379) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        MovePositionMark(33152, Position<'m7', 23.5, 29>);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Turn2Direction(16, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_AAMARUDO);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_AAMARUDO);
+    se_Play(9735);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        WaitAnimation();
+    }
+    Wait(2);
+    with (object OBJECT_D45P31A6_549) {
+        SetPositionLives(293);
+    }
+    with (object OBJECT_D45P31A6_549) {
+        SetPositionOffset(-4, -8);
+    }
+    with (object OBJECT_D45P31A6_549) {
+        SetAnimation(17);
+    }
+    Wait(8);
+    with (object OBJECT_D45P31A6_548) {
+        SetPositionLives(293);
+    }
+    with (object OBJECT_D45P31A6_548) {
+        SetPositionOffset(-12, -16);
+    }
+    with (object OBJECT_D45P31A6_548) {
+        ResetOutputAttribute(128);
+    }
+    with (object OBJECT_D45P31A6_548) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_D45P31A6_548) {
+        Slide2PositionOffset(33408, -20, 0);
+    }
+    WaitExecuteObject(OBJECT_D45P31A6_548);
+    with (object OBJECT_D45P31A6_548) {
+        SetAnimation(21);
+    }
+    with (object OBJECT_D45P31A6_548) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D45P31A6_548);
+    with (object OBJECT_D45P31A6_548) {
+        SetOutputAttribute(128);
+    }
+    WaitExecuteLives(ACTOR_NPC_AAMARUDO);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        SetAnimation(2);
+    }
+    with (object OBJECT_D45P31A3_378) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_D45P31A3_378) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D45P31A3_378);
+    with (object OBJECT_D45P31A3_378) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        Move2PositionMark(33152, Position<'m8', 27.5, 23>);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Turn2Direction(16, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_AAMARUDO);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_AAMARUDO);
+    se_Play(9735);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        WaitAnimation();
+    }
+    Wait(2);
+    with (object OBJECT_D45P31A6_549) {
+        SetPositionLives(293);
+    }
+    with (object OBJECT_D45P31A6_549) {
+        SetPositionOffset(4, -12);
+    }
+    with (object OBJECT_D45P31A6_549) {
+        SetAnimation(17);
+    }
+    Wait(8);
+    with (object OBJECT_D45P31A6_548) {
+        SetPositionLives(293);
+    }
+    with (object OBJECT_D45P31A6_549) {
+        ResetOutputAttribute(1);
+    }
+    with (object OBJECT_D45P31A6_548) {
+        SetPositionOffset(16, -20);
+    }
+    with (object OBJECT_D45P31A6_548) {
+        ResetOutputAttribute(128);
+    }
+    with (object OBJECT_D45P31A6_548) {
+        SetAnimation(20);
+    }
+    with (object OBJECT_D45P31A6_548) {
+        Slide2PositionOffset(33408, 16, -20);
+    }
+    WaitExecuteObject(OBJECT_D45P31A6_548);
+    with (object OBJECT_D45P31A6_548) {
+        SetAnimation(21);
+    }
+    with (object OBJECT_D45P31A6_548) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D45P31A6_548);
+    with (object OBJECT_D45P31A6_548) {
+        SetOutputAttribute(128);
+    }
+    supervision_RemoveActing(2);
+    supervision_RemoveActing(3);
+    WaitExecuteLives(ACTOR_NPC_AAMARUDO);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        SetAnimation(2);
+    }
+    with (object OBJECT_D45P31A2_377) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_D45P31A2_377) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D45P31A2_377);
+    with (object OBJECT_D45P31A2_377) {
+        Destroy();
+    }
+    Wait(90);
+    se_Play(5131);
+    camera_SetEffect(2, 1, 33024);
+    Wait(60);
+    message_SetFace(ACTOR_NPC_AAMARUDO, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" All right![K] The door should\nopen now!",
+        french=" Parfait![K] La porte devrait\ns\'ouvrir maintenant!",
+        german=" Sehr gut![K] Die Tür sollte sich\njetzt öffnen!",
+        italian=" Bene![K] Ora la porta dovrebbe\naprirsi!",
+        spanish=" Muy bien.[K] La puerta debería\nestar abierta ya.",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_AAMARUDO) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_AAMARUDO);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    Wait(60);
+    se_FadeOut(5131, 90);
+    Wait(60);
+    camera_SetEffect(0, 0, 0);
+    Wait(60);
+    se_Play(8962);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_AAMARUDO);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    message_SetFace(ACTOR_PLAYER_PUPURIN, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Huh?[K] Master, the door\nisn\'t opening!",
+        french=" Hein?[K] Maître, la porte ne\ns\'ouvre pas!",
+        german=" Huch![K] Meister, die Tür\nöffnet sich aber nicht!",
+        italian=" Eh?[K] Maestro, la porta è ancora\nchiusa!",
+        spanish=" ¿Eh?[K] Pues no se abre, maestro.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_AAMARUDO);
+    message_SetFace(ACTOR_NPC_AAMARUDO, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Why...[K] Why not?",
+        french=" Pour...[K] pourquoi?",
+        german=" Hmm...[K] Warum nur nicht?",
+        italian=" Come...[K] Come mai?",
+        spanish=" Esto...[K] ¿Por qué no?\n¡Si eso nunca falla!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(9732);
+    supervision_Acting(1);
+    with (object OBJECT_D45P31A5_380) {
+        SetOutputAttribute(2);
+    }
+    with (object OBJECT_D45P31A5_380) {
+        SetAnimation(17);
+    }
+    with (object OBJECT_D45P31A5_380) {
+        WaitAnimation();
+    }
+    Wait(5);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetAnimation(11);
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        SetAnimation(11);
+    }
+    WaitExecuteLives(ACTOR_NPC_AAMARUDO);
+    Wait(45);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        SlidePositionOffset(4, 0, 20);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SlidePositionOffset(4, 0, 20);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        Destroy();
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Destroy();
+    }
+    screen_FadeOut(1, 5);
+    se_Play(7938);
+    message_SetFace(ACTOR_NPC_AAMARUDO, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Uwaaaaaaaahhhhhhhhhhhhhhh!!!!!",
+        french=" Yaaaaaaaaaaaaaaaaaaaah!!!!!",
+        german=" Uwaaaaaaaah!!!",
+        italian=" Uaaaaaaaaahhhhhhhhhhhhhhh!!!!!!",
+        spanish=" ¡¡¡Uaaaah!!!",
+    });
+    WaitSe(7938);
+    message_CloseEnforce();
+    end;
+}

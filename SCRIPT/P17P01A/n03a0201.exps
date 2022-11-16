@@ -1,0 +1,282 @@
+
+def 0 {
+    $SCENARIO_SIDE = scn[42, 1];
+    bgm_PlayFadeIn(BGM_HEARTWARMING, 0, 256);
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V24P08A);
+    back_SetGround(LEVEL_P17P01A);
+    supervision_Acting(0);
+    camera2_SetPositionMark(Position<'m0', 19, 15.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen2_FadeIn(0, 30);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    supervision_Acting(1);
+    se_Play(9729);
+    with (object OBJECT_P17P01A1_397) {
+        SetAnimation(17);
+    }
+    with (actor ACTOR_NPC_SUBOMII) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_UPAA) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_MUCHUURU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_UPAA) {
+        MovePositionMark(1, Position<'m1', 24.5, 18.5>);
+    }
+    with (actor ACTOR_NPC_SUBOMII) {
+        MovePositionMark(1, Position<'m2', 26.5, 16>);
+    }
+    with (actor ACTOR_NPC_MUCHUURU) {
+        MovePositionMark(1, Position<'m3', 28.5, 19>);
+    }
+    with (object OBJECT_P17P01A1_397) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_P17P01A1_397);
+    with (object OBJECT_P17P01A1_397) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_P17P01A1_397) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_P17P01A1_397);
+    Wait(15);
+    supervision_Acting(2);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        MovePositionOffset(32896, 0, 24);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    se_Play(9730);
+    with (object OBJECT_P17P01A1_397) {
+        SetAnimation(19);
+    }
+    with (object OBJECT_P17P01A1_397) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_P17P01A1_397);
+    with (object OBJECT_P17P01A1_397) {
+        Destroy();
+    }
+    WaitExecuteLives(ACTOR_NPC_MUCHUURU);
+    se_Play(8978);
+    with (actor ACTOR_NPC_SUBOMII) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_UPAA) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_MUCHUURU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_MUCHUURU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_MUCHUURU);
+    message_SetFace(ACTOR_NPC_SUBOMII, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Oh! [CS:Y]Igglybuff[CR]!",
+        french=" Oh! [CS:Y]Toudoudou[CR]!",
+        german=" Oh! [CS:Y]Fluffeluff[CR]!",
+        italian=" Oh! [CS:Y]Igglybuff[CR]!",
+        spanish=" ¡Eh, [CS:Y]Igglybuff[CR]!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    message_SetFace(ACTOR_NPC_MUCHUURU, FACE_WORRIED, FACE_POS_TOP_R_FACEINW);
+    message_FacePositionOffset(0, 2);
+    message_Talk({
+        english=" [CS:Y]Igglybuff[CR], I heard that you\nwent out exploring with the bullies...",
+        french=" [CS:Y]Toudoudou[CR], paraît que tu es\nparti en exploration avec la bande de brutes...",
+        german=" [CS:Y]Fluffeluff[CR], ich habe gehört, dass\ndu mit den Schlitzohren auf Erkundung warst...",
+        italian=" Ho sentito che hai fatto\nun\'esplorazione con quei prepotenti...",
+        spanish=" [CS:Y]Igglybuff[CR], he oído que te fuiste\na explorar con esos abusones...",
+    });
+    message_Talk({
+        english=" Was it all right?",
+        french=" Ça s\'est bien passé?",
+        german=" Wie war es?",
+        italian=" È andato tutto bene?",
+        spanish=" ¿Fue todo bien?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_PUPURIN, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Yeah. ♪ I was fine. ♪",
+        french=" Voui, voui. ♪ Tout s\'est\nbien passé. ♪",
+        german=" Ja. ♪ Es war schön. ♪",
+        italian=" Sì. ♪ Benissimo. ♪",
+        spanish=" Sí. ♪ Todo bien. ♪",
+    });
+    message_Talk({
+        english=" Everyone went home in the\nmiddle of it. ♪",
+        french=" Tout le monde est retourné à la\nmaison à mi-chemin. ♪",
+        german=" Alle sind mittendrin nach\nHause gegangen. ♪",
+        italian=" Ma gli altri sono tornati a casa\nproprio sul più bello. ♪",
+        spanish=" Todos se fueron a casa antes\nde que acabáramos. ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_UPAA) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_SUBOMII) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_MUCHUURU) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_MUCHUURU);
+    Wait(60);
+    with (actor ACTOR_NPC_UPAA) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_SUBOMII) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_MUCHUURU) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_MUCHUURU);
+    with (actor ACTOR_NPC_MUCHUURU) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    message_SetFace(ACTOR_NPC_MUCHUURU, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_FacePositionOffset(0, 2);
+    message_Talk({
+        english=" Smooches! That\'s good!",
+        french=" Smack! Ça, c\'est bien!",
+        german=" Knutsch! Gut so!",
+        italian=" Smooches! Sono contenta!",
+        spanish=" ¡Eso está bien, sí, sí!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SUBOMII, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" We were worried about you.",
+        french=" On s\'est fait du mouron pour toi.",
+        german=" Wir haben uns Sorgen\num dich gemacht.",
+        italian=" Eravamo così preoccupati per te.",
+        spanish=" Estábamos preocupados por ti.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_UPAA, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Hey, [CS:Y]Igglybuff[CR]![K]\nLet\'s play together today. ♪",
+        french=" Hé, [CS:Y]Toudoudou[CR]![K]\nOn joue ensemble aujourd\'hui? ♪",
+        german=" Hey, [CS:Y]Fluffeluff[CR]![K]\nLass uns heute zusammen spielen. ♪",
+        italian=" Ehi, [CS:Y]Igglybuff[CR]![K]\nGiochiamo insieme oggi. ♪",
+        spanish=" ¡Oye, [CS:Y]Igglybuff[CR]![K]\nVamos a jugar todos juntos. ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_PUPURIN, FACE_WORRIED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Hmm...[K] Sorry.[K] I\'ve already\ngot plans for today.",
+        french=" Mmh...[K] Désolé.[K] J\'ai déjà quelque\nchose de prévu.",
+        german=" Hmm...[K] Tut mir leid.[K]\nIch habe heute bereits etwas vor.",
+        italian=" Mmmh...[K] Mi dispiace.[K] Ho già\nun impegno.",
+        spanish=" Hum...[K] No puedo.[K] Es que hoy ya\ntengo planes, lo siento.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8962);
+    with (actor ACTOR_NPC_SUBOMII) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_SUBOMII) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_SUBOMII);
+    message_SetFace(ACTOR_NPC_SUBOMII, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Plans? Where are you going?",
+        french=" Quelque chose de prévu?\nOù tu vas?",
+        german=" Du hast etwas vor? Wohin willst\ndu denn?",
+        italian=" Un impegno? E dove vai?",
+        spanish=" ¿Que tienes planes? ¿Adónde vas?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    message_SetFace(ACTOR_PLAYER_PUPURIN, FACE_HAPPY, FACE_POS_STANDARD);
+    message_Talk({
+        english=" [CS:P]Murky Forest[CR]. ♪",
+        french=" Dans la [CS:P]Forêt Glauque[CR]. ♪",
+        german=" In den [CS:P]Trübwald[CR]. ♪",
+        italian=" Nella [CS:P]Foresta Tenebrosa[CR]. ♪",
+        spanish=" Al [CS:P]Bosque Oscuro[CR]. ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(15);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    se_Play(8968);
+    with (actor ACTOR_NPC_UPAA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_SUBOMII) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_MUCHUURU) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_MUCHUURU);
+    message_SetFace(ACTOR_NPC_MUCHUURU, FACE_SURPRISED, FACE_POS_TOP_R_FACEINW);
+    message_FacePositionOffset(0, 2);
+    message_Talk({
+        english=" Whaaat?![K] [CS:P]Murky Forest[CR]?!",
+        french=" Quoiiii?![K] La [CS:P]Forêt Glauque[CR]?!",
+        german=" Waaas?!?[K] In den [CS:P]Trübwald[CR]?!?",
+        italian=" Cooosa?![K] La [CS:P]Foresta Tenebrosa[CR]?!",
+        spanish=" ¡¿Quéee?![K] ¿Al [CS:P]Bosque Oscuro[CR]?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_PUPURIN, FACE_HAPPY, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Yup. ♪[K] See you later! ♪",
+        french=" Ben oui. ♪[K] A plus! ♪",
+        german=" Genau. ♪[K] Bis später! ♪",
+        italian=" Già. ♪[K] Ci vediamo! ♪",
+        spanish=" Sí. ♪[K] ¡Hasta luego! ♪",
+    });
+    message_Close();
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        MovePositionOffset(1, 180, 0);
+    }
+    Wait(20);
+    with (actor ACTOR_NPC_UPAA) {
+        Turn2Direction(16, 10, DIR_RIGHT);
+    }
+    Wait(8);
+    with (actor ACTOR_NPC_SUBOMII) {
+        Turn2Direction(16, 2, DIR_RIGHT);
+    }
+    Wait(8);
+    with (actor ACTOR_NPC_MUCHUURU) {
+        Turn2Direction(16, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_MUCHUURU);
+    Wait(20);
+    screen_FadeOut(1, 30);
+    end;
+}

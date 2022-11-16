@@ -1,0 +1,82 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_GUILDMASTER_WIGGLYTUFF, 0, 256);
+    back_SetGround(LEVEL_P19P01A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        SetAnimation(2);
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        MovePositionMark(1, Position<'m0', 28.5, 24>);
+    }
+    Wait(6);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        MovePositionMark(1, Position<'m1', 28.5, 27>);
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        Turn2Direction(4, 1, DIR_UPRIGHT);
+    }
+    Wait(4);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    se_Play(8978);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    message_SetFace(ACTOR_PLAYER_PUPURIN, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Oh! There\'s an opening in the\nrock here, deep in the forest!",
+        french=" Oh! Il y a une ouverture dans\nce gros rocher, au cœur de la forêt!",
+        german=" Oh! Ein Höhleneingang inmitten\ndes Waldes!",
+        italian=" Oh! In questo punto della foresta\nc\'è una caverna!",
+        spanish=" ¡Anda! ¡Pero si hay una cueva aquí,\nen el corazón del bosque!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_AAMARUDO) {
+        Turn2Direction(4, 1, DIR_DOWN);
+    }
+    Wait(4);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    Wait(10);
+    message_SetFaceOnly(ACTOR_NPC_AAMARUDO, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" We\'re going in.",
+        french=" C\'est par là qu\'on entre.",
+        german=" Rein da.",
+        italian=" Vieni, entriamo.",
+        spanish=" Vamos a entrar.",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_AAMARUDO) {
+        Move2PositionMark(1, Position<'m2', 37.5, 18.5>);
+    }
+    Wait(6);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        MovePositionOffset(1, 0, -24);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_PUPURIN);
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        Move2PositionMark(1, Position<'m3', 37, 18.5>);
+    }
+    Wait(30);
+    bgm_FadeOut(150);
+    screen_FadeOut(1, 60);
+    Wait(60);
+    end;
+}

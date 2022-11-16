@@ -1,0 +1,34 @@
+
+def 0 {
+    $SCENARIO_SIDE = scn[42, 5];
+    sound_Stop();
+    switch ( ProcessSpecial(PROCESS_SPECIAL_SET_TEAM_SETUP_HERO_AND_PARTNER_ONLY, 0, 0) ) { }
+    back2_SetMode(0);
+    back_SetGround(LEVEL_P19P01A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetPositionMark(Position<'m1', 31.5, 26>);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_AAMARUDO) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER_PUPURIN) {
+        SetAnimation(2);
+    }
+    bgm_PlayFadeIn(BGM_A_FUN_EXPLORATION, 0, 256);
+    screen_FadeIn(1, 30);
+    end;
+}

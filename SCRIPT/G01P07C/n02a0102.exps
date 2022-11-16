@@ -1,0 +1,19 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_G01P07C);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_HERO_FIRST) {
+        SetAnimation(62);
+    }
+    with (actor ACTOR_NPC_PARTNER_FIRST) {
+        SetAnimation(62);
+    }
+    screen_FadeChange(1, 60, 0, 192);
+    Wait(150);
+    screen_FadeOut(1, 60);
+    end;
+}
