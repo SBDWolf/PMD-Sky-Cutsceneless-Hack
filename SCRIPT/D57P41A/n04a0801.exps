@@ -1,0 +1,43 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_SIDE = scn[43, 3];
+    back_SetGround(LEVEL_D57P41A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+   with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetPositionMark(Position<'m0', 28.5, 30.5>);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetAnimation(2);
+    }
+    with (object OBJECT_D57P41A1_440) {
+        SetAnimation(3);
+    }
+    with (object OBJECT_D57P41A1_441) {
+        SetAnimation(2);
+    }
+    with (object OBJECT_D57P41A1_442) {
+        SetAnimation(1);
+    }
+    //this might be necessary to let the screen time to fade in properly or something
+    //Wait(10);
+    screen_FadeIn(1, 30);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(5);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    WaitSe(5143);
+    CallCommon(CORO_BOSS_WIPE_FUNC);
+    main_EnterDungeon(159, 30);
+    main_EnterDungeon(-1, 30);
+    hold;
+    end;
+}

@@ -1,0 +1,12 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_G01P04A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
+    end;
+}

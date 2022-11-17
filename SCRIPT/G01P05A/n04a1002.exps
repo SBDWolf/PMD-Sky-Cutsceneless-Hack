@@ -1,0 +1,103 @@
+
+def 0 {
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V34P01A);
+    back_SetGround(LEVEL_G01P05A);
+    supervision_Acting(0);
+    camera2_SetPositionMark(Position<'m0', 16.5, 16.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    Wait(1);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetPositionMark(Position<'m1', 24.5, 29.5>);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetDirection(DIR_UPLEFT);
+    }
+    with (actor ACTOR_NPC_PERAPPU) {
+        SetDirection(DIR_LEFT);
+    }
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        SetAnimation(25);
+    }
+    screen2_FlushOut(1, 0, 8, 0, 0, 0);
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    screen2_FadeIn(0, 30);
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_RISING_FEAR, 0, 128);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" His alias is the Invincible\n[CS:N]Haunter[CR].",
+        french=" On le surnomme\n\"[CS:N]Spectrum[CR] l\'Invincible\".",
+        german=" Er ist auch bekannt als\n[F:S2]Der unbesiegbare [CS:N]Alpollo[CR][F:E2].",
+        italian=" È anche conosciuto come\nl\'invincibile [CS:N]Haunter[CR].",
+        spanish=" Se apoda \"[CS:N]Haunter[CR], el Invencible\".",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" I-invincible?",
+        french=" L\'In... l\'Invincible?",
+        german=" U-unbesiegbar?",
+        italian=" I-Invincibile?",
+        spanish=" ¿In... Invencible?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JIBAKOIRU, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" ZZZT! That\'s right. ZZZT!",
+        french=" ZZZT! Précisément. ZZZT!",
+        german=" ZZZT! Stimmt genau. ZZZT!",
+        italian=" ZZZT! Esatto. ZZZT!",
+        spanish=" ¡Bzz! Exacto. ¡Bzz!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    message_SetFace(ACTOR_NPC_JIBAKOIRU, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" ZZZT! It doesn\'t matter how\nmany times you knock him out, he always\ngets right back up, good as new. ZZZT!",
+        french=" ZZZT! On a beau le mettre K.O.,\nil finit toujours par se relever sans la\nmoindre égratignure. ZZZT!",
+        german=" ZZZT! Egal, wie oft man ihn K.O.\ngehen lässt, er taucht immer wieder auf,\nals wäre nichts geschehen. ZZZT!",
+        italian=" ZZZT! Per quante volte finisca\nKO, sembra che riesca sempre a rimettersi\nin piedi, come se niente fosse. ZZZT!",
+        spanish=" ¡Bzz! No importa cuántas veces\nlo dejes fuera de combate... Siempre se pone\nen pie, fresco como una rosa. ¡Bzz!",
+    });
+    message_Talk({
+        english=" ZZZT! He must be invincible,\nthat [CS:N]Haunter[CR]! ZZZT!",
+        french=" ZZZT! Il est invincible,\nce [CS:N]Spectrum[CR], précisément! ZZZT!",
+        german=" ZZZT! Dieser [CS:N]Alpollo[CR] scheint\nwirklich unbesiegbar! ZZZT!",
+        italian=" ZZZT! È proprio invincibile,\nquell\'[CS:N]Haunter[CR]! ZZZT!",
+        spanish=" ¡Bzz! ¡Así que ese [CS:N]Haunter[CR]\ntiene que ser invencible! ¡Bzz!",
+    });
+    message_Talk({
+        english=" ZZZT! That\'s why we haven\'t\nbeen able to catch him! ZZZT!",
+        french=" ZZZT! C\'est ce qui explique\nnotre difficulté à l\'attraper! ZZZT!",
+        german=" ZZZT! Deswegen konnten wir ihn\nbisher noch nicht dingfest machen! ZZZT!",
+        italian=" ZZZT! È questo il motivo per cui\nnon siamo ancora riusciti a catturarlo! ZZZT!",
+        spanish=" ¡Bzz! Por eso no hemos podido\ncapturarlo. ¡Bzz!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" ... (An invincible Pokémon...[K]\n[CS:N]Haunter[CR]...)",
+        french=" ... (Un Pokémon invincible du\nnom de... [K][CS:N]Spectrum[CR]...)",
+        german=" ...(Ein unbesiegbares Pokémon...[K]\n[CS:N]Alpollo[CR]...)",
+        italian=" ... (Un Pokémon invincibile...[K]\n[CS:N]Haunter[CR]...)",
+        spanish=" Uf... (Un Pokémon invencible...[K]\n[CS:N]Haunter[CR]...)",
+    });
+    message_Close();
+    screen2_WhiteOut(0, 30);
+    screen_WhiteOut(1, 30);
+    back2_SetMode(0);
+    screen2_FlushIn(1, 0, 1, 0, 0, 0);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    end;
+}

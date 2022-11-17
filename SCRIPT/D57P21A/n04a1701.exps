@@ -1,0 +1,42 @@
+
+def 0 {
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    message_Mail({
+        english="[CN]Would you like to go on?",
+        french="[CN]Voulez-vous continuer?",
+        german="[CN]Fortfahren?",
+        italian="[CN]Vuoi proseguire?",
+        spanish="[CN]¿Quieres continuar?",
+    });
+    switch ( message_SwitchMenu(0, 1) ) {
+        case menu({
+            english="Yes",
+            french="Oui",
+            german="Ja",
+            italian="Sì",
+            spanish="Sí",
+        }):
+        default:
+            §label_0;
+            message_Close();
+            $SCENARIO_SIDE = scn[43, 8];
+            //bgm_FadeOut(60);
+            screen_FadeOut(1, 60);
+            //screen_FadeOutAll(1, 60);
+            main_EnterDungeon(163, 30);
+            main_EnterDungeon(-1, 30);
+            hold;
+        case menu({
+            english="No",
+            french="Non",
+            german="Nein",
+            italian="No",
+            spanish="No",
+        }):
+            message_Close();
+            end;
+    }
+}

@@ -1,0 +1,127 @@
+
+def 0 {
+    sound_Stop();
+    if ( not debug ) {
+        §label_0;
+        $SCENARIO_SIDE = scn[43, 1];
+        end;
+    } else {
+        message_Notice({
+            english="[M:D2][CS:C]Start from where?[CR]",
+            french="[M:D2][CS:C]Start from where?[CR]",
+            german="[M:D2][CS:C]Start from where?[CR]",
+            italian="[M:D2][CS:C]Start from where?[CR]",
+            spanish="[M:D2][CS:C]Start from where?[CR]",
+        });
+        switch ( message_SwitchMenu(0, 1) ) {
+            case menu({
+                english="[M:D2]Beginning",
+                french="[M:D2]Beginning",
+                german="[M:D2]Beginning",
+                italian="[M:D2]Beginning",
+                spanish="[M:D2]Beginning",
+            }):
+            default:
+                message_Close();
+                jump @label_0;
+            case menu({
+                english="[M:D2]SectionA",
+                french="[M:D2]SectionA",
+                german="[M:D2]SectionA",
+                italian="[M:D2]SectionA",
+                spanish="[M:D2]SectionA",
+            }):
+                message_Close();
+                $SCENARIO_SIDE = scn[43, 1];
+                main_EnterGround(LEVEL_P01P01A, 30);
+                hold;
+            case menu({
+                english="[M:D2]SectionB",
+                french="[M:D2]SectionB",
+                german="[M:D2]SectionB",
+                italian="[M:D2]SectionB",
+                spanish="[M:D2]SectionB",
+            }):
+                message_Close();
+                $SCENARIO_SIDE = scn[43, 2];
+                main_EnterGround(LEVEL_P01P01A, 30);
+                hold;
+            case menu({
+                english="[M:D2]SectionC",
+                french="[M:D2]SectionC",
+                german="[M:D2]SectionC",
+                italian="[M:D2]SectionC",
+                spanish="[M:D2]SectionC",
+            }):
+                message_Close();
+                $SCENARIO_SIDE = scn[43, 4];
+                main_EnterGround(LEVEL_P01P01A, 30);
+                hold;
+            case menu({
+                english="[M:D2]SectionD",
+                french="[M:D2]SectionD",
+                german="[M:D2]SectionD",
+                italian="[M:D2]SectionD",
+                spanish="[M:D2]SectionD",
+            }):
+                message_Close();
+                $SCENARIO_SIDE = scn[43, 6];
+                main_EnterGround(LEVEL_P01P01A, 30);
+                hold;
+            case menu({
+                english="[M:D2]SpringCaveMidpoint",
+                french="[M:D2]SpringCaveMidpoint",
+                german="[M:D2]SpringCaveMidpoint",
+                italian="[M:D2]SpringCaveMidpoint",
+                spanish="[M:D2]SpringCaveMidpoint",
+            }):
+                message_Close();
+                $SCENARIO_SIDE = scn[43, 7];
+                main_EnterGround(LEVEL_D57P21A, 30);
+                hold;
+            case menu({
+                english="[M:D2]SpringCaveDepths2ndTry",
+                french="[M:D2]SpringCaveDepths2ndTry",
+                german="[M:D2]SpringCaveDepths2ndTry",
+                italian="[M:D2]SpringCaveDepths2ndTry",
+                spanish="[M:D2]SpringCaveDepths2ndTry",
+            }):
+                message_Close();
+                $SCENARIO_SIDE = scn[43, 8];
+                main_EnterGround(LEVEL_D57P21A, 30);
+                hold;
+            case menu({
+                english="[M:D2]SectionF",
+                french="[M:D2]SectionF",
+                german="[M:D2]SectionF",
+                italian="[M:D2]SectionF",
+                spanish="[M:D2]SectionF",
+            }):
+                message_Close();
+                $SCENARIO_SIDE = scn[43, 9];
+                main_EnterGround(LEVEL_P01P01A, 30);
+                hold;
+            case menu({
+                english="[M:D2]TALK-N04-01",
+                french="[M:D2]TALK-N04-01",
+                german="[M:D2]TALK-N04-01",
+                italian="[M:D2]TALK-N04-01",
+                spanish="[M:D2]TALK-N04-01",
+            }):
+                $SCENARIO_SIDE = scn[43, 1];
+                §label_11;
+                message_Close();
+                main_EnterGround(LEVEL_P01P01A, 30);
+                hold;
+            case menu({
+                english="[M:D2]TALK-N04-02",
+                french="[M:D2]TALK-N04-02",
+                german="[M:D2]TALK-N04-02",
+                italian="[M:D2]TALK-N04-02",
+                spanish="[M:D2]TALK-N04-02",
+            }):
+                $SCENARIO_SIDE = scn[43, 2];
+                jump @label_11;
+        }
+    }
+}

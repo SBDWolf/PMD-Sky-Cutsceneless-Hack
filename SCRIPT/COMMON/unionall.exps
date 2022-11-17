@@ -7322,11 +7322,11 @@ coro EVENT_N04_01 {
     CallCommon(CORO_DEBUG_FLAG_SETTING_KIMAWARI);
     CallCommon(CORO_SUBSCREEN_INIT);
     supervision_ExecuteActingSub(LEVEL_G01P01C, 'N04A0101', 0);
-    supervision_ExecuteActingSub(LEVEL_G01P09C, 'N04A0102', 0);
-    supervision_ExecuteActingSub(LEVEL_S04P01A, 'N04A0103', 0);
-    supervision_ExecuteActingSub(LEVEL_G01P05A, 'N04A0104', 0);
-    supervision_ExecuteActingSub(LEVEL_G01P01A, 'N04A0105', 0);
-    supervision_ExecuteActingSub(LEVEL_G01P05A, 'N04A0106', 0);
+    //supervision_ExecuteActingSub(LEVEL_G01P09C, 'N04A0102', 0);
+    //supervision_ExecuteActingSub(LEVEL_S04P01A, 'N04A0103', 0);
+    //supervision_ExecuteActingSub(LEVEL_G01P05A, 'N04A0104', 0);
+    //supervision_ExecuteActingSub(LEVEL_G01P01A, 'N04A0105', 0);
+    //supervision_ExecuteActingSub(LEVEL_G01P05A, 'N04A0106', 0);
     supervision_ExecuteActingSub(LEVEL_G01P04A, 'N04A0107', 0);
     CallCommon(CORO_EVENT_END_MAPIN);
     main_SetGround(LEVEL_G01P04A);
@@ -7403,9 +7403,12 @@ coro EVENT_N04_09 {
 coro EVENT_N04_10 {
     CallCommon(CORO_DEBUG_FLAG_SETTING_KIMAWARI);
     CallCommon(CORO_SUBSCREEN_INIT);
-    supervision_ExecuteActingSub(LEVEL_D57P41A, 'N04A1001', 0);
-    supervision_ExecuteActingSub(LEVEL_G01P05A, 'N04A1002', 0);
-    supervision_ExecuteActingSub(LEVEL_D57P41A, 'N04A1003', 0);
+    $SCENARIO_SIDE = scn[43, 4];
+    main_EnterDungeon(160, 30);
+    main_EnterDungeon(-1, 30);
+    //supervision_ExecuteActingSub(LEVEL_D57P41A, 'N04A1001', 0);
+    //supervision_ExecuteActingSub(LEVEL_G01P05A, 'N04A1002', 0);
+    //supervision_ExecuteActingSub(LEVEL_D57P41A, 'N04A1003', 0);
     CallCommon(CORO_EVENT_END_FREE);
     end;
 }
@@ -7437,9 +7440,12 @@ coro EVENT_N04_13 {
 coro EVENT_N04_14 {
     CallCommon(CORO_DEBUG_FLAG_SETTING_KIMAWARI);
     CallCommon(CORO_SUBSCREEN_INIT);
-    supervision_ExecuteActingSub(LEVEL_D57P42A, 'N04A1401', 0);
-    supervision_ExecuteActingSub(LEVEL_D57P42A, 'N04A1402', 0);
-    supervision_ExecuteActingSub(LEVEL_D57P42A, 'N04A1403', 0);
+    $SCENARIO_SIDE = scn[43, 6];
+    main_EnterDungeon(162, 30);
+    main_EnterDungeon(-1, 30);
+    //supervision_ExecuteActingSub(LEVEL_D57P42A, 'N04A1401', 0);
+    //supervision_ExecuteActingSub(LEVEL_D57P42A, 'N04A1402', 0);
+    //supervision_ExecuteActingSub(LEVEL_D57P42A, 'N04A1403', 0);
     CallCommon(CORO_EVENT_END_FREE);
     end;
 }
@@ -7491,9 +7497,10 @@ coro EVENT_N04_19 {
 coro EVENT_N04_20 {
     CallCommon(CORO_DEBUG_FLAG_SETTING_KIMAWARI);
     CallCommon(CORO_SUBSCREEN_INIT);
-    supervision_ExecuteActingSub(LEVEL_D57P43A, 'N04A2001', 0);
-    supervision_ExecuteActingSub(LEVEL_D57P41A, 'N04A2002', 0);
-    supervision_ExecuteActingSub(LEVEL_D57P43A, 'N04A2003', 0);
+    $SCENARIO_SIDE = scn[43, 9];
+    //supervision_ExecuteActingSub(LEVEL_D57P43A, 'N04A2001', 0);
+    //supervision_ExecuteActingSub(LEVEL_D57P41A, 'N04A2002', 0);
+    //supervision_ExecuteActingSub(LEVEL_D57P43A, 'N04A2003', 0);
     supervision_ExecuteActingSub(LEVEL_D57P44A, 'N04A2004', 0);
     CallCommon(CORO_EVENT_END_FREE);
     end;
@@ -7548,12 +7555,17 @@ coro EVENT_N04_25 {
 coro EVENT_N04_26 {
     CallCommon(CORO_DEBUG_FLAG_SETTING_KIMAWARI);
     CallCommon(CORO_SUBSCREEN_INIT);
-    supervision_ExecuteActingSub(LEVEL_D57P44A, 'N04A2601', 0);
-    supervision_ExecuteActingSub(LEVEL_G01P01A, 'N04A2602', 0);
-    supervision_ExecuteActingSub(LEVEL_G01P03A, 'N04A2603', 0);
-    supervision_ExecuteActingSub(LEVEL_G01P01C, 'N04A2604', 0);
-    supervision_ExecuteActingSub(LEVEL_G01P09C, 'N04A2605', 0);
-    supervision_ExecuteActingSub(LEVEL_S04P01A, 'N04A2606', 0);
+    $SPECIAL_EPISODE_TYPE = 32767;
+    adventure_log = 1002;
+    switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
+    switch ( message_Menu(MENU_SAVE_MENU) ) { }
+    switch ( ProcessSpecial(24, 0, 0) ) { }
+    //supervision_ExecuteActingSub(LEVEL_D57P44A, 'N04A2601', 0);
+    //supervision_ExecuteActingSub(LEVEL_G01P01A, 'N04A2602', 0);
+    //supervision_ExecuteActingSub(LEVEL_G01P03A, 'N04A2603', 0);
+    //supervision_ExecuteActingSub(LEVEL_G01P01C, 'N04A2604', 0);
+    //supervision_ExecuteActingSub(LEVEL_G01P09C, 'N04A2605', 0);
+    //supervision_ExecuteActingSub(LEVEL_S04P01A, 'N04A2606', 0);
     end;
 }
 

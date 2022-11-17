@@ -1,0 +1,640 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_G01P05A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD_REMIX, 0, 256);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        MovePositionMark(1, Position<'m0', 25.5, 30.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    se_Play(8978);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_LEFT, 3);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Huh?[K] Officer [CS:N]Magnezone[CR]!",
+        french=" Tiens?[K] Shérif [CS:N]Magnézone[CR]!",
+        german=" Huch![K]\nOberwachtmeister [CS:N]Magnezone[CR]!",
+        italian=" Uh?[K] Commissario [CS:N]Magnezone[CR]!",
+        spanish=" ¿Eh?[K] ¡Agente [CS:N]Magnezone[CR]!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JIBAKOIRU, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" ZZZT! Hello, [CS:Y]Sunflora[CR]. ZZZT!",
+        french=" ZZZT! Bonjour, [CS:Y]Héliatronc[CR].\nZZZT!",
+        german=" ZZZT! Hallo, [CS:Y]Sonnflora[CR]. ZZZT!",
+        italian=" ZZZT! Salve, [CS:Y]Sunflora[CR]. ZZZT!",
+        spanish=" ¡Bzz! Hola, [CS:Y]Sunflora[CR]. ¡Bzz!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" Officer [CS:N]Magnezone[CR] has come\nhere to ask a favor.",
+        french=" Le shérif [CS:N]Magnézone[CR] est venu\nnous demander une faveur.",
+        german=" Oberwachtmeister [CS:N]Magnezone[CR]\nbesucht uns wegen eines speziellen Anliegens.",
+        italian=" Il Commissario [CS:N]Magnezone[CR]\nè venuto qui perché gli serve un favore.",
+        spanish=" El agente [CS:N]Magnezone[CR] ha venido\na pedirnos un favor.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    se_Play(8962);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" A favor?",
+        french=" Une faveur?",
+        german=" Ein spezielles Anliegen?",
+        italian=" Un favore?",
+        spanish=" O sea... ¿Que viene a pedirnos\nayuda?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JIBAKOIRU, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" ZZZT! That\'s right. ZZZT!",
+        french=" ZZZT! En effet. ZZZT!",
+        german=" ZZZT! Stimmt genau. ZZZT!",
+        italian=" ZZZT! Esatto. ZZZT!",
+        spanish=" ¡Bzz! Eso es. ¡Bzz!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    message_SetFace(ACTOR_NPC_JIBAKOIRU, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" ZZZT! The truth is we\'ve had\nsome difficulty capturing an outlaw... ZZZT!",
+        french=" ZZZT! La vérité, c\'est que\nnous éprouvons quelque difficulté à attraper\nun certain hors-la-loi... ZZZT!",
+        german=" ZZZT! Wir haben in letzter Zeit\nleider Probleme mit der Festnahme eines\nbestimmten Ganovens gehabt... ZZZT!",
+        italian=" ZZZT! A dire il vero, abbiamo\nqualche difficoltà a catturare un ricercato...\nZZZT!",
+        spanish=" ¡Bzz! Tenemos ciertas dificultades\npara capturar a un malhechor... ¡Bzz!",
+    });
+    message_Talk({
+        english=" ZZZT! We\'ve tried everything,\nbut we haven\'t been able to catch him. ZZZT!",
+        french=" ZZZT! Nous avons tout essayé\npour le coincer, mais en vain. ZZZT!",
+        german=" ZZZT! Wir haben alles versucht,\naber es nicht geschafft, ihn zu fangen. ZZZT!",
+        italian=" ZZZT! Le abbiamo provate tutte,\nma non siamo stati in grado di prenderlo.\nZZZT!",
+        spanish=" ¡Bzz! Lo hemos intentado todo,\npero no ha habido forma de capturarlo. ¡Bzz!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(9985);
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        SetAnimation(23);
+    }
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_JIBAKOIRU);
+    WaitSe(9985);
+    message_SetFace(ACTOR_NPC_JIBAKOIRU, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" ZZZT! This is the outlaw in\nquestion. ZZZT!",
+        french=" ZZZT! Voici le hors-la-loi\nen question. ZZZT!",
+        german=" ZZZT! Um diesen Ganoven\ngeht es. ZZZT!",
+        italian=" ZZZT! Ecco il ricercato\nin questione. ZZZT!",
+        spanish=" ¡Bzz! Este es el malhechor\nen cuestión. ¡Bzz!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Move2PositionMark(1, Position<'m1', 24.5, 29.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V34P01A);
+    camera2_SetPositionMark(Position<'m2', 16.5, 16.5>);
+    screen2_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" .........",
+        french=" .........",
+        german=" ..........",
+        italian=" ..........",
+        spanish=" ...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JIBAKOIRU, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" ZZZT! His name is [CS:N]Haunter[CR].[K] He\'s\nan \"[CS:I]S[CR:0]\" rank outlaw. ZZZT!",
+        french=" ZZZT! Son nom est [CS:N]Spectrum[CR].[K]\nC\'est un hors-la-loi classé \"[CS:I]S[CR:0]\". ZZZT!",
+        german=" ZZZT! Sein Name ist [CS:N]Alpollo[CR].[K] Er\nist ein Ganove der Kategorie [F:S2][CS:I]S[CR:0][F:E2]. ZZZT!",
+        italian=" ZZZT! Il suo nome è [CS:N]Haunter[CR].[K]\nÈ un ricercato di rango \"[CS:I]S[CR:0]\". ZZZT!",
+        spanish=" ¡Bzz! Se llama [CS:N]Haunter[CR].[K] Es un\nmalhechor de rango \"[CS:I]S[CR:0]\". ¡Bzz!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" His alias is the Invincible\n[CS:N]Haunter[CR].",
+        french=" On le surnomme\n\"[CS:N]Spectrum[CR] l\'Invincible\".",
+        german=" Er ist auch bekannt als\n[F:S2]Der unbesiegbare [CS:N]Alpollo[CR][F:E2].",
+        italian=" È anche conosciuto come\nl\'invincibile [CS:N]Haunter[CR].",
+        spanish=" Se apoda \"[CS:N]Haunter[CR], el Invencible\".",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" I-invincible?",
+        french=" L\'In... l\'Invincible?",
+        german=" U-unbesiegbar?",
+        italian=" I-Invincibile?",
+        spanish=" ¿In... Invencible?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_JIBAKOIRU, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" ZZZT! That\'s right. ZZZT!",
+        french=" ZZZT! Précisément. ZZZT!",
+        german=" ZZZT! Stimmt genau. ZZZT!",
+        italian=" ZZZT! Esatto. ZZZT!",
+        spanish=" ¡Bzz! Exacto. ¡Bzz!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    message_SetFace(ACTOR_NPC_JIBAKOIRU, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" ZZZT! It doesn\'t matter how\nmany times you knock him out, he always\ngets right back up, good as new. ZZZT!",
+        french=" ZZZT! On a beau le mettre K.O.,\nil finit toujours par se relever sans la\nmoindre égratignure. ZZZT!",
+        german=" ZZZT! Egal, wie oft man ihn K.O.\ngehen lässt, er taucht immer wieder auf,\nals wäre nichts geschehen. ZZZT!",
+        italian=" ZZZT! Per quante volte finisca\nKO, sembra che riesca sempre a rimettersi\nin piedi, come se niente fosse. ZZZT!",
+        spanish=" ¡Bzz! No importa cuántas veces\nlo dejes fuera de combate... Siempre se pone\nen pie, fresco como una rosa. ¡Bzz!",
+    });
+    message_Talk({
+        english=" ZZZT! He must be invincible,\nthat [CS:N]Haunter[CR]! ZZZT!",
+        french=" ZZZT! Il est invincible,\nce [CS:N]Spectrum[CR], précisément! ZZZT!",
+        german=" ZZZT! Dieser [CS:N]Alpollo[CR] scheint\nwirklich unbesiegbar! ZZZT!",
+        italian=" ZZZT! È proprio invincibile,\nquell\'[CS:N]Haunter[CR]! ZZZT!",
+        spanish=" ¡Bzz! ¡Así que ese [CS:N]Haunter[CR]\ntiene que ser invencible! ¡Bzz!",
+    });
+    message_Talk({
+        english=" ZZZT! That\'s why we haven\'t\nbeen able to catch him! ZZZT!",
+        french=" ZZZT! C\'est ce qui explique\nnotre difficulté à l\'attraper! ZZZT!",
+        german=" ZZZT! Deswegen konnten wir ihn\nbisher noch nicht dingfest machen! ZZZT!",
+        italian=" ZZZT! È questo il motivo per cui\nnon siamo ancora riusciti a catturarlo! ZZZT!",
+        spanish=" ¡Bzz! Por eso no hemos podido\ncapturarlo. ¡Bzz!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" ... (An invincible Pokémon...[K]\n[CS:N]Haunter[CR]...)",
+        french=" ... ([CS:N]Spectrum[CR]...[K] l\'Invincible...)",
+        german=" ...(Ein unbesiegbares Pokémon...[K]\n[CS:N]Alpollo[CR]...)",
+        italian=" ... (Un Pokémon invincibile...[K]\n[CS:N]Haunter[CR]...)",
+        spanish=" Hum... (Así que [CS:N]Haunter[CR]...[K]\nes un Pokémon invencible...)",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        SetAnimation(24);
+    }
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_JIBAKOIRU);
+    with (actor ACTOR_NPC_JIBAKOIRU) {
+        SetAnimation(2);
+    }
+    screen2_FadeOut(1, 30);
+    back2_SetMode(0);
+    with (actor ACTOR_NPC_PERAPPU) {
+        Turn2Direction(8, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SlidePositionMark(32896, Position<'m3', 25.5, 30.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    Wait(30);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" That\'s why Officer [CS:N]Magnezone[CR]\nhas come to ask the guild to send out one of\nour best explorers. ♪",
+        french=" Voilà pourquoi le shérif\n[CS:N]Magnézone[CR] est venu solliciter l\'aide\ndes meilleurs explorateurs de la Guilde. ♪",
+        german=" Also kam Oberwachtmeister\n[CS:N]Magnezone[CR], um die Dienste eines erfahrenen\nErkunders der Gilde in Anspruch zu nehmen. ♪",
+        italian=" Ecco perché il Commissario\n[CS:N]Magnezone[CR] è qui. Vorrebbe affidare l\'incarico\na uno dei nostri migliori esploratori. ♪",
+        spanish=" Por eso el agente [CS:N]Magnezone[CR]\nha venido a pedir al [CS:N]Pokégremio[CR] que enviemos\na uno de nuestros mejores exploradores. ♪",
+    });
+    message_Talk({
+        english=" The Guildmaster has made\na recommendation to the officer...",
+        french=" Le Maître a recommandé\nquelqu\'un au shérif...",
+        german=" Der Gildenmeister hat dem\nOberwachtmeister jemanden empfohlen...",
+        italian=" Il Capitano ha raccomandato\nqualcuno in particolare...",
+        spanish=" El Gran Bluff ha presentado una\nrecomendación al agente...",
+    });
+    message_Talk({
+        english=" [CS:Y]Sunflora[CR],[K] you\'re the\nrecommendation! ♪",
+        french=" Et ce quelqu\'un...[K]\nc\'est toi, [CS:Y]Héliatronc[CR]! ♪",
+        german=" [CS:Y]Sonnflora[CR],[K] diese Empfehlung\nbist du! ♪",
+        italian=" [CS:Y]Sunflora[CR],[K] si tratta di te! ♪",
+        spanish=" [CS:Y]Sunflora[CR],[K] te ha recomendado a ti. ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8969);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Whaaat!?[K] M-me?!",
+        french=" Quoiiii!?[K] M-moi?!",
+        german=" Waaaas?!?[K] I-ich?!?",
+        italian=" Cooosa?![K] I-Io?!",
+        spanish=" ¿¡Quéee!?[K] ¡¿Quién... yo?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" [CS:Y]Sunflora[CR], your abilities stand out\nabove the rest of the apprentices. ♪",
+        french=" [CS:Y]Héliatronc[CR], tes compétences\ndépassent celles de tous les autres\napprentis. ♪",
+        german=" [CS:Y]Sonnflora[CR], deine Fähigkeiten\nüberragen die der anderen Lehrlinge. ♪",
+        italian=" [CS:Y]Sunflora[CR], le tue capacità\nsuperano di gran lunga quelle di tutti\ngli altri apprendisti della Gilda. ♪",
+        spanish=" [CS:Y]Sunflora[CR], tus habilidades\nte hacen destacar del resto de aprendices. ♪",
+    });
+    message_Talk({
+        english=" I have faith in you too. ♪",
+        french=" J\'ai foi en toi. ♪",
+        german=" Auch ich glaube an dich! ♪",
+        italian=" Anch\'io ho fiducia in te. ♪",
+        spanish=" Confío plenamente en ti. ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_SIGH, FACE_POS_STANDARD);
+    message_Talk({
+        english=" G-Guildmaster...[K] I...\n(Oh my gosh! Guildmaster!)",
+        french=" M-Maître...[K] Je...\n(Ben mince alors! Maître!)",
+        german=" Gildenmeister...[K] I-ich...\n(Auweia! Gildenmeister!)",
+        italian=" C-Capitano...[K] Io...\n(Shock! Il Capitano!)",
+        spanish=" Gran... Gran Bluff...[K] Yo...\n(¡Pero qué fuerte! ¡Gran Bluff!)",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_WORRIED, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" However...[K]there\'s no other\nPokémon that can go with you.",
+        french=" Cependant...[K] aucun autre\nPokémon ne peut t\'accompagner.",
+        german=" Es gibt da ein Problem...[K]\nLeider gibt es kein Pokémon, das dich\nbegleiten könnte.",
+        italian=" Tuttavia...[K] nessun altro Pokémon\npuò accompagnarti.",
+        spanish=" Sin embargo...[K] no hay ningún\nPokémon que pueda acompañarte.",
+    });
+    message_Talk({
+        english=" Everyone else is very busy with\nguild assignments...",
+        french=" Les autres ont trop de travail\nà la Guilde...",
+        german=" Alle anderen sind mit ihren\nGildenpflichten beschäftigt...",
+        italian=" Sono tutti molto impegnati\ncon i loro incarichi...",
+        spanish=" Todos los demás están muy\nocupados con las tareas del [CS:N]Pokégremio[CR]...",
+    });
+    message_Talk({
+        english=" Leaving only the newcomers...[K]\nSpeaking of the newcomers...",
+        french=" Seules les nouvelles recrues\nseraient disponibles...[K] A ce sujet...",
+        german=" Allein die Neuankömmlinge\nwären da...[K] Apropos Neuankömmlinge...",
+        italian=" Rimangono solo i nuovi arrivati...[K]\nE a proposito di loro...",
+        spanish=" Solo queda esa pareja nueva...[K]\nPor cierto, hablando de la pareja...",
+    });
+    message_Talk({
+        english=" We already sent\nTeam [team:] out to explore\nthe waterfall...",
+        french=" Nous avons déjà envoyé\nl\'Equipe [team:] explorer la cascade...",
+        german=" Wir haben Team [team:]\nzur Erkundung des Wasserfalls geschickt...",
+        italian=" Abbiamo già inviato il Team\n[team:] a esplorare la cascata...",
+        spanish=" Ya hemos mandado al [CS:X]Equipo[CR]\n[team:] a explorar la cascada...",
+    });
+    message_Talk({
+        english=" And [CS:N]Bidoof[CR] isn\'t experienced\nenough and could be too much of a burden...",
+        french=" Et [CS:N]Keunotor[CR] n\'a pas assez\nd\'expérience, il te ralentirait plus\nqu\'autre chose...",
+        german=" Und [CS:N]Bidiza[CR] ist schlichtweg nicht\nerfahren genug. Er kann das noch nicht...",
+        italian=" Mentre [CS:N]Bidoof[CR] non ha\nl\'esperienza necessaria e potrebbe\ncrearti più problemi che altro...",
+        spanish=" Y [CS:N]Bidoof[CR] no cuenta con suficiente\nexperiencia y podría ser una carga...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8975);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" It\'s all right, [CS:N]Chatot[CR]!",
+        french=" C\'est entendu, [CS:N]Pijako[CR]!",
+        german=" Ist schon in Ordnung, [CS:N]Plaudagei[CR]!",
+        italian=" Va bene, [CS:N]Chatot[CR]!",
+        spanish=" ¡No pasa nada, [CS:N]Chatot[CR]!",
+    });
+    message_Talk({
+        english=" I\'ll head out on my own!",
+        french=" Je m\'en occuperai seule!",
+        german=" Ich schaffe das schon allein!",
+        italian=" Andrò per conto mio!",
+        spanish=" ¡Ya voy yo sola!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PERAPPU, FACE_WORRIED, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" Yes, we don\'t like to burden you\nlike this...[K] But we\'re counting on you.",
+        french=" Oui, nous ne voulons pas te\ncharger d\'un trop lourd fardeau...[K]\nMais nous comptons sur toi.",
+        german=" Gut. Wir möchten dir nur nicht\nzu viel zumuten...[K] Aber wir zählen auf dich.",
+        italian=" Bene. Non vorremmo affidarti\nun incarico così gravoso...[K] ma contiamo\nsu di te.",
+        spanish=" No nos gusta tener que darte\ndemasiado trabajo...[K] Pero confiamos en ti.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    message_SetFace(ACTOR_NPC_JIBAKOIRU, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" ZZZT! [CS:N]Haunter[CR] has escaped to\n[CS:P]Spring Cave[CR]. ZZZT!",
+        french=" ZZZT! [CS:N]Spectrum[CR] s\'est enfui vers\nla [CS:P]Caverne Source[CR]. ZZZT!",
+        german=" ZZZT! [CS:N]Alpollo[CR] ist in die\n[CS:P]Quellhöhle[CR] entkommen. ZZZT!",
+        italian=" ZZZT! [CS:N]Haunter[CR] è fuggito\nnella [CS:P]Grotta Sorgente[CR]. ZZZT!",
+        spanish=" ¡Bzz! [CS:N]Haunter[CR] ha huido a la\n[CS:P]Cueva Fuente[CR]. ¡Bzz!",
+    });
+    message_Talk({
+        english=" ZZZT! According to [CS:N]Magnemite[CR]\'s\nreport, he just took refuge there... ZZZT!",
+        french=" ZZZT! A en croire le rapport de\n[CS:N]Magnéti[CR], c\'est là qu\'il s\'est réfugié... ZZZT!",
+        german=" ZZZT! Dem [CS:N]Magnetilo[CR]-Report\nzufolge hält er sich dort versteckt... ZZZT!",
+        italian=" ZZZT! In base al rapporto\ndi [CS:N]Magnemite[CR], si è rifugiato lì dentro... ZZZT!",
+        spanish=" ¡Bzz! Según el informe de\n[CS:N]Magnemite[CR], se ha refugiado allí... ¡Bzz!",
+    });
+    message_Talk({
+        english=" ZZZT! If you go now, I think you\nshould be able to catch up to him without\ntrouble. ZZZT!",
+        french=" ZZZT! En partant maintenant,\nje pense que tu devrais pouvoir l\'intercepter\nsans problème. ZZZT!",
+        german=" ZZZT! Wenn du dich jetzt\naufmachst, solltest du ihn ohne Probleme\neinholen können. ZZZT!",
+        italian=" ZZZT! Se parti subito, dovresti\nriuscire a raggiungerlo senza problemi. ZZZT!",
+        spanish=" ¡Bzz! Si vas ahora, creo que\ndeberías poder alcanzarlo sin problemas. ¡Bzz!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" [CS:P]Spring Cave[CR], huh?[K] Got it!",
+        french=" La [CS:P]Caverne Source[CR], hein?[K]\nBien compris!",
+        german=" Die [CS:P]Quellhöhle[CR] also?[K]\nKein Problem!",
+        italian=" La [CS:P]Grotta Sorgente[CR], eh?[K] Capito!",
+        spanish=" La [CS:P]Cueva Fuente[CR], ¿eh?[K]\n¡Entendido!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_HAPPY, FACE_POS_STANDARD);
+    message_Talk({
+        english=" OK. I\'m on my way, Guildmaster!",
+        french=" D\'accord, je pars\nsur-le-champ, Maître!",
+        german=" Gut, bin schon unterwegs,\nGildenmeister!",
+        italian=" Ok. Io vado, Capitano!",
+        spanish=" De acuerdo, me pongo en camino,\nGran Bluff.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_FadeOut(120);
+    with (performer 0) {
+        MovePositionOffset(1, 0, 12);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        MovePositionOffset(1, 0, 12);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Just a moment!",
+        french=" Un dernier mot!",
+        german=" Einen Moment noch!",
+        italian=" Un attimo!",
+        spanish=" ¡Un momento!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(4, 2, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    se_Play(8962);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Yes?",
+        french=" Oui?",
+        german=" Ja, bitte?",
+        italian=" Sì?",
+        spanish=" ¿Sí?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" [CS:P]Spring Cave[CR] is close to the\nHot Spring...[K] That is...",
+        french=" La [CS:P]Caverne Source[CR] est proche\nde la Source Chaude...[K] Ce qui signifie...",
+        german=" Die [CS:P]Quellhöhle[CR] ist in der Nähe\nder Heißen Quelle...[K] Das heißt...",
+        italian=" La [CS:P]Grotta Sorgente[CR] è vicina\nalla Sorgente Termale...[K] e ciò significa che...",
+        spanish=" La [CS:P]Cueva Fuente[CR] está cerca de\nla Terma...[K] Es decir...",
+    });
+    message_Talk({
+        english=" Lava flows below it...[K] So the\nlikelihood there are Fire-type Pokémon is\npretty high...",
+        french=" ... que de la lave s\'écoule sous\nle sol...[K] Donc, il est fort probable que tu\ny trouves des Pokémon de type Feu...",
+        german=" Unter ihr fließt Lava...[K]\nAlso ist die Wahrscheinlichkeit, dort auf\nFeuer-Pokémon zu treffen, recht hoch.",
+        italian=" ... al di sotto di essa scorre\ndella lava...[K] Quindi è molto probabile che\nvi siano dei Pokémon di tipo Fuoco...",
+        spanish=" Que bajo ella fluye lava...[K] Así\nque la probabilidad de que haya Pokémon de\ntipo Fuego es bastante elevada...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" .........",
+        french=" .........",
+        german=" ..........",
+        italian=" ..........",
+        spanish=" ...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" One more thing.",
+        french=" Autre chose.",
+        german=" Noch etwas.",
+        italian=" Ancora una cosa.",
+        spanish=" Una cosa más.",
+    });
+    message_Talk({
+        english=" [CS:N]Haunter[CR] is a Poison-type\nPokémon.",
+        french=" [CS:N]Spectrum[CR] est un Pokémon\nde type Poison.",
+        german=" [CS:N]Alpollo[CR] ist ein\nGift-Pokémon.",
+        italian=" [CS:N]Haunter[CR] è un Pokémon\ndi tipo Veleno.",
+        spanish=" [CS:N]Haunter[CR] es un Pokémon\nde tipo Veneno.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_PAIN, FACE_POS_STANDARD);
+    message_Talk({
+        english=" .........",
+        french=" .........",
+        german=" ..........",
+        italian=" ..........",
+        spanish=" ...",
+    });
+    message_Talk({
+        english=" Are you...[K]talking about\ntype matchup...?",
+        french=" Vous...[K] vous voulez parler\nde l\'efficacité des types...?",
+        german=" Du sprichst die...[K] verschiedenen\nPokémon-Typen an?",
+        italian=" Ti stai riferendo...[K]\nalle combinazioni tra i tipi...?",
+        spanish=" ¿Me estás advirtiendo...[K]\nde la combinación de tipos?...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Yes.",
+        french=" Oui.",
+        german=" Genau.",
+        italian=" Sì.",
+        spanish=" Sí.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_PAIN, FACE_POS_STANDARD);
+    message_Talk({
+        english=" ... (I\'m a Grass-type Pokémon...[K]\nSo...)",
+        french=" ... (Je suis un Pokémon de type\nPlante...[K] Donc...)",
+        german=" ...(Ich bin ein\nPflanzen-Pokémon...[K] Das heißt...)",
+        italian=" ... (Io sono un Pokémon\ndi tipo Erba...[K] quindi...)",
+        spanish=" Hum... (Soy un Pokémon de tipo\nPlanta...[K] Así que...)",
+    });
+    message_Talk({
+        english=" (Fire- and Poison-type attacks...[K]\nare very effective against me...)",
+        french=" (... les attaques de type Feu\net Poison...[K] sont très efficaces contre moi...)",
+        german=" (Angriffe vom Typ Feuer sowie\nvom Typ Gift...[K] richten bei mir\ngroßen Schaden an.)",
+        italian=" (Gli attacchi sferrati da quelli\ndi tipo Fuoco e Veleno...[K] sono molto efficaci\ncontro di me...)",
+        spanish=" (Los ataques de tipo Fuego y\nVeneno...[K] son muy eficaces contra mí...)",
+    });
+    message_Talk({
+        english=" (I don\'t think there will only\nbe poorly matched Pokémon at [CS:P]Spring Cave[CR]...[K]\nBut...)",
+        french=" (Il y aura certainement des\nPokémon qui auront un avantage sur moi à\nla [CS:P]Caverne Source[CR]...)",
+        german=" (Ich glaube ja kaum, dass in der\n[CS:P]Quellhöhle[CR] nur...[K] schwache Pokémon auf mich\nlauern.)",
+        italian=" (Non penso che nella [CS:P]Grotta[CR]\n[CS:P]Sorgente[CR] incontrerò solo Pokémon con una\ncombinazione a me sfavorevole...[K] però...)",
+        spanish=" (No creo que solo haya Pokémon\npeligrosos para mí en la [CS:P]Cueva Fuente[CR]...[K]\nPero...)",
+    });
+    message_Talk({
+        english=" (It would be dangerous to fight\nwithout caution...)",
+        french=" (Il serait dangereux de ne pas\nen tenir compte lors des combats...)",
+        german=" (Ich sollte Vorsicht walten\nlassen. Alles andere wäre leichtsinnig.)",
+        italian=" (... sarebbe pericoloso lanciarsi\nin una lotta in maniera sconsiderata...)",
+        spanish=" (Sería arriesgado combatir\nsin la máxima precaución...)",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Since it\'s you, [CS:Y]Sunflora[CR], I think\nyou\'ll be all right...",
+        french=" [CS:Y]Héliatronc[CR], je suis sûr\nque tout ira bien pour toi...",
+        german=" Da du diesen Auftrag erledigst,\n[CS:Y]Sonnflora[CR], nehme ich an, dass es keine\ngrößeren Probleme geben dürfte...",
+        italian=" Poiché si tratta di te, [CS:Y]Sunflora[CR],\nsono sicuro che andrà tutto bene...",
+        spanish=" Tratándose de ti, [CS:Y]Sunflora[CR], sé\nque no va a pasarte nada...",
+    });
+    message_Talk({
+        english=" But I\'m making sure,\njust in case. ♪",
+        french=" Mais je préfère te prévenir,\njuste au cas où. ♪",
+        german=" Ich gehe nur auf Nummer\nsicher. Man weiß ja nie! ♪",
+        italian=" Ma non voglio lasciare nulla\nal caso. ♪",
+        spanish=" Pero quería asegurarme de que\nestás al corriente, por si acaso. ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_HAPPY, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Yes. Thank you very much! (This\nis a request from the Guildmaster. I mustn\'t\nshow any sign of weakness!)",
+        french=" Oui. Merci beaucoup! (C\'est une\nrequête qui émane du Maître lui-même. Je ne\npeux pas me permettre un signe de faiblesse!)",
+        german=" Ja. Vielen Dank dafür! (Das ist\nein persönlicher Auftrag des Gildenmeisters.\nIch darf keine Schwäche zeigen!)",
+        italian=" Sì, grazie mille! (Questa è\nuna richiesta del Capitano. Non devo dare\nsegni di debolezza!)",
+        spanish=" Sí, ¡te lo agradezco! (Es una\npetición directa del Gran Bluff, ¡no puedo\nmostrar ningún signo de debilidad!)",
+    });
+    message_Talk({
+        english=" As long as I\'m prepared, I\'ll be\nfine![K] It will be an easy victory!",
+        french=" Du moment que je me prépare\ncorrectement, ça ira![K] C\'est dans la poche!",
+        german=" Solange ich mich gut vorbereiten\nkann, dürfte es kein Problem sein![K] Das wird\nein leichter Sieg werden!",
+        italian=" Se mi preparo bene, non ci\nsaranno problemi![K] Ce la farò di sicuro!",
+        spanish=" Mientras esté preparada, todo\nirá bien.[K] ¡Esto está chupado!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_HAPPY, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Yep. ♪[K] Do your best! ♪",
+        french=" Oui. ♪[K] Fais de ton mieux! ♪",
+        german=" Ja. ♪[K] Du machst das schon! ♪",
+        italian=" Sì! ♪[K] Metticela tutta! ♪",
+        spanish=" Sí. ♪[K] ¡A por todas! ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_HAPPY, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Yep!",
+        french=" Oui!",
+        german=" Genau!",
+        italian=" Certo!",
+        spanish=" ¡Eso haré!",
+    });
+    message_Close();
+    screen_FadeOut(1, 60);
+    Wait(30);
+    end;
+}

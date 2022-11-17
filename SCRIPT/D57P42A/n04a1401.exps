@@ -1,0 +1,1719 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_SIDE = scn[43, 6];
+    back_SetGround(LEVEL_D57P42A);
+    supervision_Acting(5);
+    supervision_Acting(6);
+    supervision_Acting(7);
+    supervision_Acting(0);
+    supervision_RemoveActing(5);
+    supervision_RemoveActing(6);
+    supervision_RemoveActing(7);
+    with (object OBJECT_D57P41A1_440) {
+        SetAnimation(3);
+    }
+    with (object OBJECT_D57P41A1_441) {
+        SetAnimation(2);
+    }
+    with (object OBJECT_D57P41A1_442) {
+        SetAnimation(1);
+    }
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        SetPositionMark(Position<'m0', 28.5, 27.5>);
+    }
+    bgm_PlayFadeIn(BGM_HEAVY_WIND2, 30, 256);
+    screen_FadeIn(0, 30);
+    Wait(15);
+    se_Play(5121);
+    with (actor ACTOR_NPC_GOOSUTO) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_GOOSUTO) {
+        SlidePositionOffset(33408, 0, -8);
+    }
+    with (actor ACTOR_NPC_GOOSUTO) {
+        SetAnimation(22);
+    }
+    message_SetFace(ACTOR_NPC_GOOSUTO, FACE_PAIN, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Ugh!",
+        french=" Argh!",
+        german=" Uff!",
+        italian=" Urgh!",
+        spanish=" ¡Uf!",
+    });
+    WaitExecuteLives(ACTOR_NPC_GOOSUTO);
+    message_Close();
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    message_SetFace(ACTOR_NPC_GOOSUTO, FACE_PAIN, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" GAAAAAAAAAAAaaaaaaaaaaaah!!!",
+        french=" OUAAAAAAAAAAaaaaaaaaaaaah!!!",
+        german=" GAAAAAAAAAAAaaaaaaaaaaaah!!!",
+        italian=" GAAAAAAAAAaaaaaaaaaaaah!!!",
+        spanish=" ¡¡¡Aaaaaaah!!!",
+    });
+    message_Close();
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(5);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    WaitSe(5143);
+    with (actor ACTOR_NPC_GOOSUTO) {
+        SetAnimation(23);
+    }
+    with (actor ACTOR_NPC_GOOSUTO) {
+        WaitAnimation();
+    }
+    Wait(3);
+    se_Play(9987);
+    WaitExecuteLives(ACTOR_NPC_GOOSUTO);
+    with (actor ACTOR_NPC_GOOSUTO) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    Wait(60);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" ...[K]Anyway...",
+        french=" ...[K] Enfin...",
+        german=" ...[K]Immerhin...",
+        italian=" ...[K] Bene...",
+        spanish=" Hum...[K] En fin...",
+    });
+    message_Talk({
+        english=" I managed to knock him out...",
+        french=" J\'ai fini par le mettre K.O...",
+        german=" Ich habe es geschafft.\nEr ist K.O. gegangen...",
+        italian=" Sono riuscita a sconfiggerlo...",
+        spanish=" He conseguido tumbarlo...",
+    });
+    message_Talk({
+        english=" But...",
+        french=" Mais...",
+        german=" Aber...",
+        italian=" Ma...",
+        spanish=" Pero...",
+    });
+    message_Close();
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    bgm_FadeOut(60);
+    se_Play(9990);
+    supervision_Acting(1);
+    with (object OBJECT_P09P01A2_144) {
+        SetOutputAttribute(1);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetAnimation(29);
+    }
+    Wait(10);
+    screen_WhiteOut(1, 15);
+    Wait(20);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Oh my gosh!",
+        french=" Ben mince alors!",
+        german=" Auweia!",
+        italian=" Shock!",
+        spanish=" ¡Jo, pero qué fuerte!",
+    });
+    message_Close();
+    supervision_RemoveActing(1);
+    with (actor ACTOR_NPC_GOOSUTO) {
+        SetAnimation(2);
+    }
+    Wait(60);
+    screen_FadeIn(1, 30);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetAnimation(2);
+    }
+    se_Play(8968);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(1, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetAnimation(5);
+    }
+    with (performer 0) {
+        MovePositionOffset(33408, 0, 16);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SlidePositionOffset(33408, 0, 16);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetAnimation(2);
+    }
+    bgm_PlayFadeIn(BGM_RISING_FEAR, 0, 256);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" A-[K]again!",
+        french=" En-[K]encore!",
+        german=" Sch-[K]schon wieder!",
+        italian=" D-[K]Di nuovo?!",
+        spanish=" O sea...[K] ¡Otra vez!",
+    });
+    message_Talk({
+        english=" I really thought I knocked him\nout this time!",
+        french=" J\'étais pourtant sûre de l\'avoir\nmis K.O. cette fois!",
+        german=" Ich dachte, diesmal wäre es das\nendgültig gewesen!",
+        italian=" Questa volta pensavo di avercela\nfatta per davvero!",
+        spanish=" ¡Pensaba que esta vez lo había\ntumbado de verdad!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_GOOSUTO) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    message_SetFace(ACTOR_NPC_GOOSUTO, FACE_SIGH, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" GAH HA HA HA HA HA![K]\nGAH HA HA HA HA HA HA HA HA!!",
+        french=" OUAH HA HA HA HA HA![K]\nOUAH HA HA HA HA HA HA HA HA!!",
+        german=" GAHAHAHAHAHAHAHAHA![K]\nGAHAHAHAHAHAHAHAHAHAHAHAHA!!!",
+        italian=" GAH AH AH AH AH AH AH AH AH![K]\nGAH AH AH AH AH AH AH AH AH AH AH AH!!!",
+        spanish=" ¡Jua, ja, ja, ja, ja, ja![K]\n¡Juaaa, ja, ja, ja, ja, ja, ja, ja, ja!",
+    });
+    message_KeyWait();
+    with (actor ACTOR_NPC_GOOSUTO) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    message_Talk({
+        english=" It doesn\'t matter how many\ntimes you knock me out! Your efforts\nare useless!",
+        french=" Tu peux bien me mettre K.O.\nun nombre incalculable de fois, peu importe!\nTes efforts sont vains!",
+        german=" Ganz egal, wie häufig du mich\numhaust! Deine Anstrengungen sind\nvollkommen umsonst!",
+        italian=" Non importa quanto ci provi!\nI tuoi sforzi sono inutili, non mi batterai mai!",
+        spanish=" Da igual las veces que me tumbes.\n¡Te esfuerzas en vano!",
+    });
+    message_Talk({
+        english=" I\'m invincible!",
+        french=" Je suis invincible!",
+        german=" Ich bin unbesiegbar!",
+        italian=" Sono invincibile!",
+        spanish=" ¡Soy invencible!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        WaitEffect();
+    }
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_STUNNED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Ooogh...[K] Why...",
+        french=" Oooh...[K] Mais pourquoi...?",
+        german=" Uuuuff...[K] Warum nur...",
+        italian=" Urgh...[K] Ma come...",
+        spanish=" Uuuf...[K] Por qué...",
+    });
+    message_Talk({
+        english=" Why is it...",
+        french=" Pourquoi est-ce que...",
+        german=" Warum ist...",
+        italian=" Come...",
+        spanish=" No lo entiendo...",
+    });
+    message_Talk({
+        english=" Why is it [CS:N]Haunter[CR] is still so\nfull of energy, even after being knocked out...",
+        french=" Pourquoi [CS:N]Spectrum[CR] est-il\ntoujours en pleine forme même après\navoir été mis K.O.?",
+        german=" Warum ist [CS:N]Alpollo[CR] immer noch\nso voller Energie, direkt nach einem K.O.?",
+        italian=" Come fa quell\'[CS:N]Haunter[CR] ad avere\nancora così tante energie dopo essere\nfinito al tappeto?",
+        spanish=" ¿Por qué sigue [CS:N]Haunter[CR] lleno de\nenergía, cuando se acaba de debilitar?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(9988);
+    supervision_Acting(5);
+    with (object OBJECT_D57P42A1_443) {
+        SetOutputAttribute(1);
+    }
+    with (object OBJECT_D57P42A1_443) {
+        SetAnimation(17);
+    }
+    with (object OBJECT_D57P42A1_443) {
+        WaitAnimation();
+    }
+    Wait(20);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(1, 10, DIR_LEFT);
+    }
+    WaitExecuteObject(OBJECT_D57P42A1_443);
+    supervision_Acting(2);
+    with (object OBJECT_D57P42A1_443) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        SetAnimation(4);
+    }
+    se_Play(9988);
+    supervision_Acting(6);
+    with (object OBJECT_D57P42A1_444) {
+        SetOutputAttribute(1);
+    }
+    with (object OBJECT_D57P42A1_444) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_D57P42A1_444) {
+        WaitAnimation();
+    }
+    Wait(20);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(1, 2, DIR_RIGHT);
+    }
+    WaitExecuteObject(OBJECT_D57P42A1_444);
+    supervision_Acting(3);
+    with (object OBJECT_D57P42A1_444) {
+        Destroy();
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        SetAnimation(4);
+    }
+    se_Play(8968);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(1, 2, DIR_LEFT);
+    }
+    Wait(10);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(1, 1, DIR_RIGHT);
+    }
+    Wait(30);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(1, 2, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    se_Play(8972);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        WaitEffect();
+    }
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_SURPRISED, FACE_POS_BOTTOM_C_FACEL);
+    message_Talk({
+        english=" Waaah![K] Wh-what is it?!",
+        french=" Ouaaah![K] Qu\'est-ce que\nc\'est que ça?!",
+        german=" Waaah![K] W-was ist das?!?",
+        italian=" Uaaah![K] C-Che succede?!\nCosa sono questi?",
+        spanish=" ¡Uaaah![K] ¡¿Qué... Qué pasa?!",
+    });
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        MovePositionOffset(32896, 8, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_MAGUMAGGU);
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        MovePositionOffset(32896, -8, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_MAGUMAGGU2);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(1, 1, DIR_RIGHT);
+    }
+    Wait(10);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(1, 2, DIR_LEFT);
+    }
+    Wait(20);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(1, 1, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    se_Play(8972);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    message_SetFace(ACTOR_NPC_GOOSUTO, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" These are [CS:N]Slugma[CR]!",
+        french=" Des [CS:N]Limagma[CR]!",
+        german=" Das sind [CS:N]Schneckmag[CR]!",
+        italian=" Questi sono [CS:N]Slugma[CR]!",
+        spanish=" Son [CS:N]Slugma[CR].",
+    });
+    message_Talk({
+        english=" I thought you\'d keep\nfollowing me...",
+        french=" Je pensais bien que tu\ncontinuerais à me suivre...",
+        german=" Ich rechnete damit, dass du mir\nimmer weiter folgst...",
+        italian=" Sapevo che avresti continuato\na inseguirmi...",
+        spanish=" Me imaginé que ibas a continuar\nsiguiéndome...",
+    });
+    message_Talk({
+        english=" So I hired them in advance...",
+        french=" Alors j\'ai prévu le coup et j\'ai\nappelé du renfort...",
+        german=" Also habe ich sie im Vorhinein\num Hilfe gebeten.",
+        italian=" Così ho chiesto loro di darmi\nuna mano...",
+        spanish=" Así que me adelanté a tus intenciones\ny les pedí que me echaran una mano...",
+    });
+    message_Talk({
+        english=" They are Fire-type Pokémon!",
+        french=" Ce sont des Pokémon\nde type Feu!",
+        german=" Es sind Feuer-Pokémon!",
+        italian=" Sono Pokémon di tipo Fuoco!",
+        spanish=" Son Pokémon de tipo Fuego.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8968);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_SURPRISED, FACE_POS_BOTTOM_C_FACER);
+    message_Talk({
+        english=" ...! (Fire type!)",
+        french=" ...! (De type Feu!)",
+        german=" Aaaah! (Feuer-Pokémon!)",
+        italian=" ...! (Di tipo Fuoco!)",
+        spanish=" ¡¿Qué...?! (¡De tipo Fuego!)",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        MovePositionOffset(32896, 8, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_MAGUMAGGU);
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        MovePositionOffset(32896, -8, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_MAGUMAGGU2);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(1, 2, DIR_LEFT);
+    }
+    Wait(10);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(1, 1, DIR_RIGHT);
+    }
+    Wait(30);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(1, 2, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    message_SetFace(ACTOR_NPC_MAGUMAGGU, FACE_ANGRY, FACE_POS_STANDARD);
+    message_Talk({
+        english=" GURURURURURURU...",
+        french=" GRRRRRRROAAAOUH...",
+        german=" GURURURURURURU...",
+        italian=" GURURURURURURU...",
+        spanish=" Gurururu...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_MAGUMAGGU, FACE_ANGRY, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" GURURURURURU!",
+        french=" GRRRRRRROAAAOUH!",
+        german=" GURURURURURU!",
+        italian=" GURURURURURU!",
+        spanish=" ¡Gururu!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_PAIN, FACE_POS_BOTTOM_C_FACEL);
+    message_Talk({
+        english=" .........",
+        french=" .........",
+        german=" ..........",
+        italian=" ..........",
+        spanish=" ...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_GOOSUTO) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    message_SetFace(ACTOR_NPC_GOOSUTO, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" GAH HA HA HA HA![K]\nThey can burn you with their fire!",
+        french=" OUAH HA HA HA HA![K]\nIls peuvent te brûler avec leur feu!",
+        german=" GAHAHAHAHA![K]\nSie können dich mit ihrem Feuer verbrennen!",
+        italian=" GAH AH AH AH![K]\nLe loro fiamme ti arrostiranno per bene!",
+        spanish=" ¡Jua, ja, ja, ja, ja![K]\n¡Van a chamuscarte un poco los pétalos!",
+    });
+    message_KeyWait();
+    with (actor ACTOR_NPC_GOOSUTO) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    message_Talk({
+        english=" See ya!",
+        french=" A la revoyure!",
+        german=" Bis dann!",
+        italian=" Ci vediamo!",
+        spanish=" ¡Nos vemos!",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_GOOSUTO) {
+        Turn2Direction(8, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_GOOSUTO);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(1, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    se_Play(8967);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Hey! Don\'t run away!",
+        french=" Hé! Ne t\'enfuis pas!",
+        german=" Hey! Lauf nicht davon!",
+        italian=" Ehi! Non scappare!",
+        spanish=" ¡Eh, no huyas!",
+    });
+    message_Close();
+    with (performer 0) {
+        MovePositionMark(1, Position<'m1', 28.5, 24.5>);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        MovePositionMark(1, Position<'m2', 28.5, 24.5>);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        Turn2Direction(8, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        Turn2Direction(8, 10, DIR_UPLEFT);
+    }
+    bgm_FadeOut(60);
+    se_Play(9991);
+    with (actor ACTOR_NPC_GOOSUTO) {
+        SetOutputAttribute(64);
+    }
+    back_SetEffect(12, 60);
+    with (actor ACTOR_NPC_GOOSUTO) {
+        MovePositionOffset(32896, 0, -64);
+    }
+    WaitBackEffect();
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    WaitExecuteLives(ACTOR_NPC_GOOSUTO);
+    with (actor ACTOR_NPC_GOOSUTO) {
+        Destroy();
+    }
+    WaitSe(9994);
+    bgm_PlayFadeIn(BGM_OH_NO, 0, 256);
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        Move2PositionMark(33408, Position<'m3', 24, 24.5>);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        Move2PositionMark(33408, Position<'m4', 33, 24.5>);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER_KIMAWARI);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER_KIMAWARI);
+    }
+    WaitExecuteLives(ACTOR_NPC_MAGUMAGGU2);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(1, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    se_Play(8968);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(1, 1, DIR_RIGHT);
+    }
+    Wait(10);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(1, 2, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    se_Play(8972);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_SURPRISED, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" ...! (Was I...unprepared?!)",
+        french=" ...! (Je ne suis peut-être\npas assez bien préparée?!)",
+        german=" Iiiek! (War ich...\nunvorbereitet?!?)",
+        italian=" ...! (Non me l\'aspettavo!)",
+        spanish=" ¡Horror! (¡¿Acaso...\nno estaba bien preparada?!)",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(9995);
+    supervision_Acting(8);
+    supervision_Acting(9);
+    with (object OBJECT_D57P42A3_458) {
+        SetOutputAttribute(4);
+    }
+    with (object OBJECT_D57P42A3_458) {
+        SetAnimation(17);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        WaitAnimation();
+    }
+    Wait(4);
+    supervision_Acting(7);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetOutputAttribute(2);
+    }
+    with (object OBJECT_D57P42A2_445) {
+        Move2PositionLives(33408, 7);
+    }
+    with (object OBJECT_D57P42A2_446) {
+        Move2PositionLives(33408, 7);
+    }
+    with (object OBJECT_D57P42A2_445) {
+        SetAnimation(1);
+    }
+    with (object OBJECT_D57P42A2_446) {
+        SetAnimation(1);
+    }
+    WaitExecuteObject(OBJECT_D57P42A2_445);
+    supervision_RemoveActing(8);
+    supervision_RemoveActing(9);
+    WaitExecuteLives(ACTOR_NPC_MAGUMAGGU2);
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        SetAnimation(4);
+    }
+    with (object OBJECT_D57P42A2_445) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_D57P42A2_446) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_D57P42A2_445) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D57P42A2_445);
+    with (object OBJECT_D57P42A2_445) {
+        SetOutputAttribute(128);
+    }
+    with (object OBJECT_D57P42A2_446) {
+        Destroy();
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        ResetOutputAttribute(2);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(692, 0);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetAnimation(5);
+    }
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_SURPRISED, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" Oh my gosh![K]\nI got burned!",
+        french=" Ben mince alors![K]\nJe brûle!",
+        german=" Auweia![K] Ich brenne!",
+        italian=" Shock![K]\nMi hanno colpita!",
+        spanish=" ¡Aaaayyy![K]\n¡Me he churruscado todaaa!",
+    });
+    message_Talk({
+        english=" Hot hot hot hot hot hot hot!!",
+        french=" C\'est chaud c\'est chaud\nc\'est chaud c\'est chaud c\'est chaud!!",
+        german=" Heißheißheißheißheißheiß!!!",
+        italian=" BRUCIABRUCIABRUCIABrucia\nBruciaBruciaBruciaBruciaBruciaBRUCIA!!!",
+        spanish=" ¡¡Quema, quema, quema, quema!!",
+    });
+    message_Close();
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_NONE, 0);
+    }
+    camera_SetDefault();
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        Turn2Direction(32, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Move2PositionMark(33408, Position<'m5', 23, 28.5>, Position<'m6', 23.5, 35.5>, Position<'m7', 27.5, 32.5>);
+    }
+    Wait(20);
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        Move2PositionMark(33408, Position<'m8', 23.5, 35.5>, Position<'m9', 27.5, 32.5>, Position<'m10', 32.5, 35.5>, Position<'m11', 38, 33.5>);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Move2PositionMark(33408, Position<'m12', 32.5, 35.5>, Position<'m13', 38, 30.5>);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        Move2PositionMark(33152, Position<'m14', 35, 27.5>);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_MAGUMAGGU2);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        SetAnimation(4);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    se_Play(9995);
+    supervision_Acting(8);
+    with (object OBJECT_D57P42A3_458) {
+        SetPositionLives(365);
+    }
+    with (object OBJECT_D57P42A3_458) {
+        SetPositionOffset(4, 4);
+    }
+    with (object OBJECT_D57P42A3_458) {
+        SetOutputAttribute(4);
+    }
+    with (object OBJECT_D57P42A3_458) {
+        SetAnimation(17);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Slide2PositionOffset(3, -40, 12);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    with (object OBJECT_D57P42A2_445) {
+        SetPositionMark(Position<'m15', 35.5, 27.5>);
+    }
+    with (object OBJECT_D57P42A2_445) {
+        ResetOutputAttribute(128);
+    }
+    with (object OBJECT_D57P42A2_445) {
+        Move2PositionOffset(33408, 24, 24);
+    }
+    with (object OBJECT_D57P42A2_445) {
+        SetAnimation(1);
+    }
+    message_SetFace(ACTOR_NPC_MAGUMAGGU, FACE_ANGRY, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" GOOOooooohhhh!",
+        french=" GROUaaaoooooh!",
+        german=" GOOOoooooh!",
+        italian=" GUOOOoooooohhh!",
+        spanish=" ¡Grooo!",
+    });
+    with (object OBJECT_D57P42A3_458) {
+        SetOutputAttribute(128);
+    }
+    WaitExecuteLives(ACTOR_NPC_MAGUMAGGU2);
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        SetAnimation(4);
+    }
+    WaitExecuteObject(OBJECT_D57P42A2_445);
+    with (object OBJECT_D57P42A2_445) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_D57P42A2_445) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D57P42A2_445);
+    with (object OBJECT_D57P42A2_445) {
+        SetOutputAttribute(128);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Oh my gosh!",
+        french=" Zut de zut!",
+        german=" Auweia!",
+        italian=" Shock!",
+        spanish=" ¡Aaayy!",
+    });
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetAnimation(5);
+    }
+    message_Close();
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Move2PositionMark(33408, Position<'m16', 29, 35.5>, Position<'m17', 27.5, 32.5>, Position<'m18', 23.5, 35.5>);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        Move2PositionMark(33408, Position<'m19', 29, 35.5>, Position<'m20', 27.5, 32.5>, Position<'m21', 23.5, 35.5>, Position<'m22', 23, 28.5>);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Move2PositionMark(33408, Position<'m23', 23, 28.5>, Position<'m24', 34, 28.5>);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        Move2PositionMark(33408, Position<'m25', 30, 28.5>);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        Move2PositionMark(33152, Position<'m26', 38, 28.5>);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        SetAnimation(4);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    se_Play(9995);
+    with (object OBJECT_D57P42A3_458) {
+        SetPositionLives(364);
+    }
+    with (object OBJECT_D57P42A3_458) {
+        SetPositionOffset(-4, -4);
+    }
+    with (object OBJECT_D57P42A3_458) {
+        ResetOutputAttribute(128);
+    }
+    with (object OBJECT_D57P42A3_458) {
+        SetOutputAttribute(4);
+    }
+    with (object OBJECT_D57P42A3_458) {
+        SetAnimation(17);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Slide2PositionOffset(3, 0, 24);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    with (object OBJECT_D57P42A2_445) {
+        SetPositionMark(Position<'m27', 37.5, 28.5>);
+    }
+    with (object OBJECT_D57P42A2_445) {
+        ResetOutputAttribute(128);
+    }
+    with (object OBJECT_D57P42A2_445) {
+        Move2PositionOffset(33408, -32, 0);
+    }
+    with (object OBJECT_D57P42A2_445) {
+        SetAnimation(1);
+    }
+    message_SetFace(ACTOR_NPC_MAGUMAGGU, FACE_ANGRY, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" GOOOOOooooooohhhhhh!",
+        french=" GROUAAAAAAAooooooooooh!",
+        german=" GOOOOOoooooooh!",
+        italian=" GUOOOOOOoooooohhhhhh!",
+        spanish=" ¡Grooo!",
+    });
+    with (object OBJECT_D57P42A3_458) {
+        SetOutputAttribute(128);
+    }
+    WaitExecuteLives(ACTOR_NPC_MAGUMAGGU);
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        SetAnimation(4);
+    }
+    WaitExecuteObject(OBJECT_D57P42A2_445);
+    with (object OBJECT_D57P42A2_445) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_D57P42A2_445) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D57P42A2_445);
+    with (object OBJECT_D57P42A2_445) {
+        SetOutputAttribute(128);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Oh my gosh!",
+        french=" Mince alors!",
+        german=" Auweia!",
+        italian=" Shock!",
+        spanish=" ¡Aaaayy!",
+    });
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetAnimation(5);
+    }
+    message_Close();
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Move2PositionMark(33408, Position<'m28', 29, 35.5>, Position<'m29', 23.5, 35.5>, Position<'m30', 23, 28.5>);
+    }
+    Wait(15);
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        Move2PositionMark(33408, Position<'m31', 29, 35.5>, Position<'m32', 23.5, 35.5>, Position<'m33', 23, 28.5>, Position<'m34', 25, 27.5>);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Move2PositionMark(33408, Position<'m35', 28, 24.5>);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        Move2PositionMark(33408, Position<'m36', 32, 24.5>);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(1, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        SetAnimation(4);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    se_Play(9995);
+    with (object OBJECT_D57P42A3_458) {
+        SetPositionLives(364);
+    }
+    with (object OBJECT_D57P42A3_458) {
+        SetPositionOffset(-4, -4);
+    }
+    with (object OBJECT_D57P42A3_458) {
+        ResetOutputAttribute(128);
+    }
+    with (object OBJECT_D57P42A3_458) {
+        SetOutputAttribute(4);
+    }
+    with (object OBJECT_D57P42A3_458) {
+        SetAnimation(17);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Slide2PositionOffset(3, 12, 24);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    with (object OBJECT_D57P42A2_445) {
+        SetPositionMark(Position<'m37', 31.5, 24.5>);
+    }
+    with (object OBJECT_D57P42A2_445) {
+        ResetOutputAttribute(128);
+    }
+    with (object OBJECT_D57P42A2_445) {
+        Move2PositionOffset(33408, -32, 0);
+    }
+    with (object OBJECT_D57P42A2_445) {
+        SetAnimation(1);
+    }
+    message_SetFace(ACTOR_NPC_MAGUMAGGU, FACE_ANGRY, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" GAAAAAaaaaah!!",
+        french=" GAAAAAaaaaah!!",
+        german=" GAAAAAaaaaah!!!",
+        italian=" GUAAAAAAaaaaaah!!",
+        spanish=" ¡¡Gruaaaaah!!",
+    });
+    with (object OBJECT_D57P42A3_458) {
+        Destroy();
+    }
+    WaitExecuteLives(ACTOR_NPC_MAGUMAGGU);
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        SetAnimation(4);
+    }
+    WaitExecuteObject(OBJECT_D57P42A2_445);
+    with (object OBJECT_D57P42A2_445) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_D57P42A2_445) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_D57P42A2_445);
+    with (object OBJECT_D57P42A2_445) {
+        SetOutputAttribute(128);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Oh my gosh!",
+        french=" Ben mince alors!",
+        german=" Auweia!",
+        italian=" Shock!",
+        spanish=" ¡Aaaayy!",
+    });
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetAnimation(5);
+    }
+    message_Close();
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(438, 3);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        MovePositionMark(33408, Position<'m38', 30, 41.5>, Position<'m39', 38.5, 41.5>, Position<'m40', 38.5, 23.5>, Position<'m41', 22.5, 23.5>);
+    }
+    Wait(15);
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        MovePositionMark(33408, Position<'m42', 30, 41.5>, Position<'m43', 38.5, 41.5>, Position<'m44', 38.5, 23.5>, Position<'m45', 22.5, 23.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        MovePositionMark(33408, Position<'m46', 30, 41.5>, Position<'m47', 38.5, 41.5>, Position<'m48', 38.5, 23.5>, Position<'m49', 22.5, 23.5>);
+    }
+    message_SetActor(ACTOR_PLAYER_KIMAWARI);
+    message_Talk({
+        english=" Oh my gosh!\nOh my gosh!\nOh my gosh!",
+        french=" Mince alors! Mince alors!\nMince alors!",
+        german=" Auweia!\nAuweia!\nAuweia!",
+        italian=" Shock!\nShock!\nShock!",
+        spanish=" ¡Aaayy! ¡Pupa, pupaaa!\n¡Uf, uf, uf, uf!",
+    });
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Move2PositionMark(33408, Position<'m50', 22, 33.5>);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        MovePositionMark(33408, Position<'m51', 22, 33.5>, Position<'m52', 32, 35.5>);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        MovePositionMark(33408, Position<'m53', 22, 33.5>, Position<'m54', 32, 31.5>);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Move2PositionMark(33408, Position<'m55', 37, 33.5>);
+    }
+    with (performer 0) {
+        SetPositionLives(7);
+    }
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        MovePositionMark(33408, Position<'m56', 35.5, 33.5>);
+    }
+    Wait(20);
+    message_CloseEnforce();
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(1, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SlidePositionOffset(33408, 8, 0);
+    }
+    se_Play(8968);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_WORRIED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Uhhn...huhhn...",
+        french=" Ouuufff... ouuufff...",
+        german=" Pffff... Pfffffff...",
+        italian=" Anf... Anf...",
+        spanish=" Uf... Uf...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        MovePositionOffset(32896, 8, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_MAGUMAGGU);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SlidePositionOffset(1, 8, 0);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        MovePositionOffset(32896, 8, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetAnimation(2);
+    }
+    WaitExecuteLives(ACTOR_NPC_MAGUMAGGU2);
+    se_Play(8972);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    message_SetFace(ACTOR_NPC_MAGUMAGGU, FACE_ANGRY, FACE_POS_STANDARD);
+    message_Talk({
+        english=" GURURURURU!",
+        french=" GRRRRRRROAAAOUH!",
+        german=" GURURURURU!",
+        italian=" GURURURURU!",
+        spanish=" ¡Gurururu!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Oh my gosh! I\'m losing hope!",
+        french=" Ben mince alors! Je ne sais plus\nquoi faire!",
+        german=" Auweia! Es ist hoffnungslos!",
+        italian=" Shock! Non ce la farò mai!",
+        spanish=" ¡Jo, qué mal! ¡Lo llevo claro!",
+    });
+    message_Talk({
+        english=" HELP!",
+        french=" A L\'AIDE!",
+        german=" HILFE!",
+        italian=" AIUTO!",
+        spanish=" ¡Socorro!",
+    });
+    se_Play(8972);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    message_Close();
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        WaitAnimation();
+    }
+    Wait(10);
+    bgm_FadeOut(30);
+    screen_WhiteOut(1, 5);
+    supervision_Acting(4);
+    se_Play(7180);
+    WaitSe(7180);
+    screen_FadeIn(1, 15);
+    Wait(15);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(12);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        WaitAnimation();
+    }
+    se_Play(5121);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    with (performer 0) {
+        MovePositionOffset(33408, -8, 0);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        SetAnimation(14);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        SlidePositionOffset(33408, -24, 0);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        SetAnimation(14);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        SlidePositionOffset(33408, -24, 0);
+    }
+    message_SetFace(ACTOR_NPC_MAGUMAGGU, FACE_SIGH, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Bugyaaaaaaaah!",
+        french=" Bleurghblaaaaah!",
+        german=" Bugyaaaaaaaah!",
+        italian=" Bugaaaaaaaaah!",
+        spanish=" ¡Bruuuuuaaaaaaar!",
+    });
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(2);
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8967);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    bgm_PlayFadeIn(BGM_ONE_FOR_ALL_ALL_FOR_ONE, 0, 256);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" ...! ([CS:N]L[CR]-[CS:N]Loudred[CR]?!)",
+        french=" ...! ([CS:N]R[CR]-[CS:N]Ramboum[CR]?!)",
+        german=" ...([CS:N]K-Krakeelo[CR]?!?)",
+        italian=" ...! ([CS:N]L-Loudred[CR]?!)",
+        spanish=" ¡Qué ven mis ojos!\n(¡¿[CS:N]Lo[CR]... [CS:N]Loudred[CR]?!)",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8971);
+    camera_SetEffect(2, 2, 33536);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(19);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(2);
+    }
+    camera_SetEffect(0, 0, 0);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_ANGRY, 3);
+    }
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_ANGRY, FACE_POS_BOTTOM_C_FACEL);
+    message_FacePositionOffset(1, -1);
+    message_Talk({
+        english=" Ugaaaaah!",
+        french=" Yaaaa-taaa!",
+        german=" Ugaaaaah!",
+        italian=" Ugaaaaaah!",
+        spanish=" ¡Largo de aquí!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (performer 0) {
+        MovePositionOffset(2, -24, 0);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        MovePositionOffset(2, -24, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(12);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        WaitAnimation();
+    }
+    Wait(5);
+    se_Play(5121);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        SetAnimation(14);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        SlidePositionOffset(33408, -32, 0);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        SetAnimation(14);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        SlidePositionOffset(33408, -32, 0);
+    }
+    se_Play(5121);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    WaitExecuteLives(ACTOR_NPC_MAGUMAGGU2);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_MAGUMAGGU2);
+    message_SetFace(ACTOR_NPC_MAGUMAGGU, FACE_SIGH, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" Gyah!",
+        french=" Bleurgh!",
+        german=" Gyah!",
+        italian=" Guah!",
+        spanish=" ¡Giah!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_MAGUMAGGU, FACE_SIGH, FACE_POS_STANDARD);
+    message_Talk({
+        english=" GYAAAAaaaaaaaah!!",
+        french=" BLEURGHblaaaaah!",
+        german=" GYAAAAaaaaaaaah!!!",
+        italian=" GUAAAaaaaaaaaah!!",
+        spanish=" ¡¡Giaaaaaaaaaaah!!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU) {
+        MovePositionOffset(33408, 0, -120);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_MAGUMAGGU2) {
+        MovePositionOffset(33408, 0, 120);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2Direction(8, 10, DIR_UP);
+    }
+    Wait(5);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(8, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    Wait(120);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m57', 35.5, 33.5>);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER_KIMAWARI);
+    }
+    WaitExecutePerformer(0);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(8, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    se_Play(8972);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" A-are you ALL RIGHT, [CS:Y]Sunflora[CR]?",
+        french=" Tout va BIEN, [CS:Y]Héliatronc[CR]?",
+        german=" G-geht ES dir GUT, [CS:Y]Sonnflora[CR]?",
+        italian=" T-Tutto BENE, [CS:Y]Sunflora[CR]?",
+        spanish=" ¿Es... estás bien, [CS:Y]Sunflora[CR]?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Y-yeah... (Y-you saved me...)",
+        french=" Heu oui... (T-tu viens\nde me sauver...)",
+        german=" J-ja...\n(D-du hast mich gerettet...)",
+        italian=" S-Sì... (M-Mi hai salvata...)",
+        spanish=" Esto... sí... (Me ha salvado...)",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" I-is that SO?[K] GOOD.",
+        french=" C\'est VRAI?[K] PARFAIT.",
+        german=" W-wirklich?[K] GUT.",
+        italian=" D-DAVVERO?[K] BENE.",
+        spanish=" ¿De verdad?[K] Menos mal.",
+    });
+    message_Talk({
+        english=" Anyway...[K] It\'s not LIKE you to\nFALL BEHIND those guys like THAT.",
+        french=" C\'est drôle...[K] ÇA ne te\nressemble PAS de te laisser IMPORTUNER\ncomme ÇA.",
+        german=" Komisch...[K] SIEHT dir GAR nicht\nÄHNLICH, mit DENEN so viel ÄRGER zu haben.",
+        italian=" Però...[K] Non è da TE farti\nMETTERE SOTTO da SIMILI tipi.",
+        spanish=" En fin...[K] No es propio de ti\ndejarte atosigar por tipos así.",
+    });
+    message_Talk({
+        english=" Then AGAIN, you DID just\ntake a LOT of DAMAGE.",
+        french=" Et POURTANT, tu as PRIS un\nPAQUET de DEGATS.",
+        german=" ABER du HAST ganz schön\netwas ABBEKOMMEN.",
+        italian=" EPPURE, hai subito MOLTI DANNI.",
+        spanish=" Pero bueno, la verdad es que\nhas recibido un montón de daño.",
+    });
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_JOYOUS, FACE_POS_STANDARD);
+    message_Talk({
+        english=" On THAT note, I just GOT here,\nso I\'m doing FINE![K] Ha ha ha!",
+        french=" Mais MOI, je viens d\'arriver\nalors je vais BIEN![K] Ha ha ha!",
+        german=" DAHER ist es wohl GUT, dass ich\nhier RECHTZEITIG aufgetaucht bin![K] Das FREUT\nmich! Hahaha!",
+        italian=" A proposito, io SONO appena\narrivato QUI, quindi sto BENE![K] Ah ah ah!",
+        spanish=" Por cierto, yo acabo de llegar,\nasí que estoy como una rosa.[K] ¡Ja, ja, ja!",
+    });
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    Wait(15);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_WORRIED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" B-but...[K] Why are you here,\n[CS:N]Loudred[CR]?",
+        french=" M-mais...[K] que fais-tu là,\n[CS:N]Ramboum[CR]?",
+        german=" A-aber...[K] Warum bist du hier,\n[CS:N]Krakeelo[CR]?",
+        italian=" M-Ma...[K] Cosa ci fai qui,\n[CS:N]Loudred[CR]?",
+        spanish=" Pe... pero...[K] ¿Qué haces aquí,\n[CS:N]Loudred[CR]?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8962);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Huh?[K] WHY?",
+        french=" Hein?[K] CE que je FAIS là?",
+        german=" Häh?[K] WARUM?",
+        italian=" Uh?[K] COSA ci faccio?",
+        spanish=" ¿Eh?[K] ¿Que qué hago aquí?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8978);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_RIGHT, 3);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" OH...",
+        french=" OH...",
+        german=" OH...",
+        italian=" OH...",
+        spanish=" Pues...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    se_Play(8972);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_STUNNED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" N-no REASON. It\'s not because\nI was WORRIED about you, [CS:Y]Sunflora[CR]!",
+        french=" R-rien de SPECIAL. Ce n\'est PAS\nparce que j\'étais INQUIET pour toi, [CS:Y]Héliatronc[CR]!",
+        german=" K-kein bestimmter GRUND. Vor\nallem NICHT, weil ICH mir SORGEN um DICH\ngemacht HÄTTE, [CS:Y]Sonnflora[CR]!",
+        italian=" N-Non c\'è NESSUN motivo. E non\nè perché ero PREOCCUPATO per te, [CS:Y]Sunflora[CR]!",
+        spanish=" Pues... nada. No vayas a pensar\nque me tenías preocupado, [CS:Y]Sunflora[CR].",
+    });
+    message_Talk({
+        english=" [CS:N]Chatot[CR] ASKED me to come CHECK\non you. That\'s the ONLY reason!",
+        french=" C\'est juste parce que [CS:N]Pijako[CR] m\'a\ndemandé de VENIR voir COMMENT tu allais.\nRIEN de PLUS!",
+        german=" [CS:N]Plaudagei[CR] hat MICH gebeten,\nauf DICH aufzupassen. Das ist der EINZIGE\nGrund!",
+        italian=" [CS:N]Chatot[CR] mi ha CHIESTO di venire\na CONTROLLARE, ecco PERCHÉ!",
+        spanish=" [CS:N]Chatot[CR] me pidió que viniera\na ver cómo te iba. ¡Eso es todo!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8964);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_LEFT, 3);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" ...! (Only because [CS:N]Chatot[CR]\nasked you to!?)",
+        french=" ...! (Juste parce que [CS:N]Pijako[CR]\nle lui a demandé!?)",
+        german=" ...(Nur weil es dir [CS:N]Plaudagei[CR]\naufgetragen hat?!?)",
+        italian=" ...! (Solo perché [CS:N]Chatot[CR] te l\'ha\nchiesto?!)",
+        spanish=" Entiendo... (¿O sea que solo has\nvenido porque [CS:N]Chatot[CR] te lo ha pedido?)",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_FadeOut(60);
+    se_Play(8971);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_ANGRY, 3);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_DETERMINED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Humph! What\'s that?",
+        french=" Humph! Sérieusement?",
+        german=" Humpf! Was soll das?",
+        italian=" Umpf! Ma cosa credi?",
+        spanish=" ¡Jum! Pues muy bien.",
+    });
+    message_Talk({
+        english=" You only helped me once, so don\'t\nget carried away!",
+        french=" Tu ne m\'as aidée qu\'une seule\nfois, alors ne t\'emballe pas!",
+        german=" Gut, du hast mir vielleicht\ngeholfen, aber das hat nichts zu bedeuten!",
+        italian=" Mi hai aiutata solo una volta,\nquindi non metterti in testa strane idee!",
+        spanish=" Solo me has ayudado una vez,\nasí que no te lo creas tanto.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    se_Play(8969);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    Wait(5);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    se_Play(8971);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_ANGRY, 3);
+    }
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_ANGRY, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Wh...[K] What\'s WITH that\nATTITUDE?!",
+        french=" Que...[K] AH, tu le PRENDS\ncomme ÇA?!",
+        german=" W-[K]was IST das für eine\nEINSTELLUNG?!?",
+        italian=" Ma...[K] Che ATTEGGIAMENTO è\nQUESTO?!",
+        spanish=" Pe...[K] ¡¿pero a qué viene\nesa actitud?!",
+    });
+    message_Talk({
+        english=" GOT IT![K] I\'m NOT HELPING\nanymore!",
+        french=" PARFAIT![K] Dans ce CAS,\nne COMPTE plus sur mon AIDE!",
+        german=" ICH VERSTEHE![K] Ich werde NICHT\nMEHR helfen!",
+        italian=" VA BENE![K] Non ti AIUTERÒ mai\nPIÙ!",
+        spanish=" ¡Pues vale![K] ¡Ya no te ayudo\nmás, hale!",
+    });
+    message_Talk({
+        english=" I\'m NOT helping YOU AGAIN![K]\nHUMPH!",
+        french=" Tu peux COURIR pour que je\nT\'AIDE ENCORE![K] HUMPH!",
+        german=" Ich werde DIR NICHT noch\neinmal helfen![K] HUMPF!",
+        italian=" HAI capito? SCORDATELO![K]\nUMPF!",
+        spanish=" ¡No pienso volver a ayudarte![K]\n¡Jum!",
+    });
+    se_Play(8971);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        MovePositionOffset(33075, 0, 120);
+    }
+    Wait(15);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        Turn2Direction(32, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    Wait(90);
+    bgm2_PlayFadeIn(BGM_HEAVY_WIND2, 120, 256);
+    with (performer 0) {
+        MovePositionOffset(32896, 32, 0);
+    }
+    WaitExecutePerformer(0);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetAnimation(28);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_STUNNED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Humph...",
+        french=" Bouh...",
+        german=" Humpf...",
+        italian=" Uff...",
+        spanish=" Bah...",
+    });
+    message_Talk({
+        english=" Oh, now I\'ve done it...[K] After all,\nwe weren\'t speaking to each other...",
+        french=" Cette fois, c\'est irrécupérable...[K]\nBon, on ne se parlait déjà plus trop...",
+        german=" Oh, jetzt habe ich es doch\ngetan...[K] Eigentlich sprechen wir ja nicht mehr\nmiteinander...",
+        italian=" Oh, che sciocca sono stata...[K]\nÈ vero, era da tanto che non ci rivolgevamo\nla parola...",
+        spanish=" Jo, qué tonta, la he fastidiado\naún más...[K] Aunque ya ni nos hablábamos...",
+    });
+    message_Talk({
+        english=" But honestly, I was happy\nto see him.",
+        french=" Mais honnêtement, j\'ai été\nheureuse de le voir.",
+        german=" Aber ganz im Ernst, ich war\nfroh, ihn hier zu sehen.",
+        italian=" Ma a essere onesta ero felice\ndi vederlo.",
+        spanish=" Pero tengo que admitir que\nme he puesto supercontenta al verlo.",
+    });
+    message_Talk({
+        english=" I really wanted to thank him...",
+        french=" Je voulais vraiment\nle remercier...",
+        german=" Ich wollte ihm wirklich danken...",
+        italian=" Avrei voluto davvero\nringraziarlo...",
+        spanish=" Quería darle las gracias...",
+    });
+    message_Talk({
+        english=" But...[K] For some reason, I just\ncouldn\'t say it...",
+        french=" Mais...[K] les mots ne sont\ntout simplement pas sortis...",
+        german=" Aber...[K] Aus irgendeinem Grund\nhabe ich es einfach nicht geschafft...",
+        italian=" Però...[K] per qualche ragione\nnon ci sono riuscita...",
+        spanish=" Pero...[K] no me ha salido decírselo,\nno sé por qué...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetAnimation(2);
+    }
+    se_Play(8972);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        ExecuteCommon(CORO_HEAD_SHAKE_FUNC_SERIES, 0);
+    }
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_STUNNED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Oh, forget it![K] I\'m mad at myself\nfor not being able to say it...",
+        french=" Ben mince alors![K] J\'aurais\ndû le lui dire...",
+        german=" Ach, vergiss es![K] Ich bin sauer\nauf mich selbst dafür, dass ich es nicht\nfertiggebracht habe...",
+        italian=" Oh, accidenti![K] Sono così\narrabbiata con me stessa per non\nessere riuscita a dirgli niente...",
+        spanish=" ¡Jo, qué rabia![K] Ya me vale, mira\nque no poder decírselo...",
+    });
+    message_Talk({
+        english=" Just then...",
+        french=" Mais enfin...",
+        german=" Dieses Mal...",
+        italian=" Poco fa...",
+        spanish=" Pero, ahora que lo pienso...",
+    });
+    message_Close();
+    bgm2_FadeOut(60);
+    screen_WhiteOut(1, 30);
+    Wait(30);
+    end;
+}

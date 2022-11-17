@@ -1,0 +1,89 @@
+
+def 0 {
+    back_SetGround(LEVEL_D57P42A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (object OBJECT_D57P41A1_440) {
+        SetAnimation(3);
+    }
+    with (object OBJECT_D57P41A1_441) {
+        SetAnimation(2);
+    }
+    with (object OBJECT_D57P41A1_442) {
+        SetAnimation(1);
+    }
+    with (performer 0) {
+        SetPositionMark(Position<'m0', 35.5, 33.5>);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetDirection(DIR_RIGHT);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetDirection(DIR_LEFT);
+    }
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" A-are you ALL RIGHT, [CS:Y]Sunflora[CR]?",
+        french=" Tout va BIEN, [CS:Y]Héliatronc[CR]?",
+        german=" G-geht ES dir GUT, [CS:Y]Sonnflora[CR]?",
+        italian=" T-Tutto BENE, [CS:Y]Sunflora[CR]?",
+        spanish=" ¿Es... estás bien, [CS:Y]Sunflora[CR]?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Y-yeah... (Y-you saved me...)",
+        french=" Heu oui... (T-tu viens\nde me sauver...)",
+        german=" J-ja...\n(D-du hast mich gerettet...)",
+        italian=" S-Sì... (M-Mi hai salvata...)",
+        spanish=" Esto... sí... (Me ha salvado...)",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" I-is that SO?[K] GOOD.",
+        french=" C\'est VRAI?[K] PARFAIT.",
+        german=" W-wirklich?[K] GUT.",
+        italian=" D-DAVVERO?[K] BENE.",
+        spanish=" ¿De verdad?[K] Menos mal.",
+    });
+    message_Talk({
+        english=" Anyway...[K] It\'s not LIKE you to\nFALL BEHIND those guys like THAT.",
+        french=" C\'est drôle...[K] ÇA ne te\nressemble PAS de te laisser IMPORTUNER\ncomme ÇA.",
+        german=" Komisch...[K] SIEHT dir GAR nicht\nÄHNLICH, mit DENEN so viel ÄRGER zu haben.",
+        italian=" Però...[K] Non è da TE farti\nMETTERE SOTTO da SIMILI tipi.",
+        spanish=" En fin...[K] No es propio de ti\ndejarte atosigar por tipos así.",
+    });
+    message_Talk({
+        english=" Then AGAIN, you DID just\ntake a LOT of DAMAGE.",
+        french=" Et POURTANT, tu as PRIS un\nPAQUET de DEGATS.",
+        german=" ABER du HAST ganz schön\netwas ABBEKOMMEN.",
+        italian=" EPPURE, hai subito MOLTI DANNI.",
+        spanish=" Pero bueno, la verdad es que\nhas recibido un montón de daño.",
+    });
+    message_SetFace(ACTOR_NPC_DOGOOMU, FACE_JOYOUS, FACE_POS_STANDARD);
+    message_Talk({
+        english=" On THAT note, I just GOT here,\nso I\'m doing FINE![K] Ha ha ha!",
+        french=" Mais MOI, je viens d\'arriver\nalors je vais BIEN![K] Ha ha ha!",
+        german=" DAHER ist es wohl GUT, dass ich\nhier RECHTZEITIG aufgetaucht bin![K] Das FREUT\nmich! Hahaha!",
+        italian=" A proposito, io SONO appena\narrivato QUI, quindi sto BENE![K] Ah ah ah!",
+        spanish=" Por cierto, yo acabo de llegar,\nasí que estoy como una rosa.[K] ¡Ja, ja, ja!",
+    });
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    Wait(15);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    screen_WhiteOut(1, 60);
+    Wait(30);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    end;
+}

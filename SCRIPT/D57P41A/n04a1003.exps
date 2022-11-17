@@ -1,0 +1,218 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_RISING_FEAR, 0, 128);
+    back_SetGround(LEVEL_D57P41A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (object OBJECT_D57P41A1_440) {
+        SetAnimation(3);
+    }
+    with (object OBJECT_D57P41A1_441) {
+        SetAnimation(2);
+    }
+    with (object OBJECT_D57P41A1_442) {
+        SetAnimation(1);
+    }
+    bgm_ChangeVolume(60, 256);
+    screen2_FadeIn(0, 30);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    screen2_FadeOut(0, 1);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" ... (Invincible...[K][CS:N]Haunter[CR]!)",
+        french=" ... ([CS:N]Spectrum[CR]...[K] l\'Invincible!)",
+        german=" ...(Unbesiegbarer...[K] [CS:N]Alpollo[CR]!)",
+        italian=" ... (L\'invincibile...[K][CS:N]Haunter[CR]!)",
+        spanish=" Ay... ([CS:N]Haunter[CR] es...[K] ¡invencible!)",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_GOOSUTO, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Heh heh heh!",
+        french=" Hé hé hé!",
+        german=" Hehehe!",
+        italian=" Eh eh eh!",
+        spanish=" ¡Je, je, je!",
+    });
+    message_Talk({
+        english=" It doesn\'t matter how much\ndamage I receive. It doesn\'t faze me at all.",
+        french=" Peu importe la quantité de\ndégâts qu\'on m\'inflige. Ça ne m\'affecte pas\nle moins du monde.",
+        german=" Ganz egal, wie viel Schaden ich\nabbekomme. Das macht mir gar nichts aus!",
+        italian=" Per quanti colpi io subisca,\nnon ricevo nessun danno.",
+        spanish=" Por más daño que reciba,\nno me hace ni un rasguño.",
+    });
+    message_Talk({
+        english=" Compared to you... You feel the\ndamage from battles.",
+        french=" Alors que toi... tu subis des\ndommages pendant un combat.",
+        german=" Anders als bei dir... Du kriegst\nim Kampf ordentlich was ab.",
+        italian=" Tu invece non hai questa\ncapacità.",
+        spanish=" Mírate a ti... Tú recibes daño\nen combate.",
+    });
+    message_Talk({
+        english=" And eventually you\'ll\nget tired...[K] And you know who will fall\nto the ground first...",
+        french=" Et au bout du compte tu\nte fatigues...[K] Et on sait tous les deux\nqui s\'écroulera en premier...",
+        german=" Und letzten Endes wirst du\nermüden...[K] Daher weißt du bereits, wer von\nuns beiden heute zuerst aufgeben wird...",
+        italian=" Alla fine sarai troppo stanca...[K]\nE a quel punto sappiamo bene entrambi\nchi andrà KO per primo...",
+        spanish=" Al final te acabarás cansando...[K]\nY quien morderá el polvo primero...",
+    });
+    message_Talk({
+        english=" It will be you![K]\nAnd all explorers who come after me\nand try to catch me!",
+        french=" Toi![K]\nC\'est la même chose pour tous ceux\nqui essayent de m\'arrêter!",
+        german=" Und zwar du![K] So wie alle\nanderen Erkunder, die hier waren und\nversuchten, mich zu stellen!",
+        italian=" Tu![K] E lo stesso destino attende\ntutti gli esploratori che mi danno la caccia\nper fermarmi!",
+        spanish=" ¡Vas a ser tú![K]\n¡Y cualquier explorador que venga\na intentar capturarme!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        WaitEffect();
+    }
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_STUNNED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Ooohhhh...",
+        french=" Ooooooh...",
+        german=" Oooh...",
+        italian=" Ooohhh...",
+        spanish=" Jo...",
+    });
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_GOOSUTO, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Get it?!",
+        french=" Pigé?!",
+        german=" Verstehst du?!?",
+        italian=" Hai capito adesso?!",
+        spanish=" ¡¿Lo captas ya?!",
+    });
+    message_Talk({
+        english=" It\'s impossible to catch me!",
+        french=" Personne ne peut m\'attraper!",
+        german=" Mich zu fassen ist unmöglich!",
+        italian=" Catturarmi è impossibile!",
+        spanish=" ¡Es imposible atraparme!",
+    });
+    message_Talk({
+        english=" You should just give up already!",
+        french=" Tu ferais bien mieux\nd\'abandonner tout de suite!",
+        german=" Nun gib schon endlich auf!",
+        italian=" Lascia perdere, è meglio!",
+        spanish=" ¡Deberías rendirte de una vez!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_FadeOut(150);
+    with (actor ACTOR_NPC_GOOSUTO) {
+        Turn2Direction(8, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_GOOSUTO);
+    Wait(15);
+    se_Play(9991);
+    with (actor ACTOR_NPC_GOOSUTO) {
+        SetOutputAttribute(64);
+    }
+    back_SetEffect(12, 60);
+    with (actor ACTOR_NPC_GOOSUTO) {
+        MovePositionOffset(32896, 0, -64);
+    }
+    WaitBackEffect();
+    WaitExecuteLives(ACTOR_NPC_GOOSUTO);
+    with (actor ACTOR_NPC_GOOSUTO) {
+        Destroy();
+    }
+    bgm2_PlayFadeIn(BGM_HEAVY_WIND2, 60, 256);
+    WaitSe(9994);
+    Wait(30);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_STUNNED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" .........",
+        french=" .........",
+        german=" ..........",
+        italian=" ..........",
+        spanish=" ...",
+    });
+    message_Talk({
+        english=" ..............",
+        french=" ..............",
+        german=" ...............",
+        italian=" ...............",
+        spanish=" ... ...",
+    });
+    message_Talk({
+        english=" .........................",
+        french=" .........................",
+        german=" .........................",
+        italian=" .........................",
+        spanish=" ... ... ...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8971);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_ANGRY, 3);
+    }
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_ANGRY, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Oh my gosh![K] I\'m not\nlistening to you!",
+        french=" Ben mince alors![K] Cause toujours!",
+        german=" Auweia![K] Ich werde dir einfach\nnicht mehr zuhören!",
+        italian=" Shock![K] Non ho intenzione\ndi ascoltarti!",
+        spanish=" ¡Jo, pero qué dices![K] ¡Pues no\nme da la gana de hacerte caso!",
+    });
+    message_Talk({
+        english=" Do you think a little setback like\nthis is enough to get me to give up?!",
+        french=" Tu crois qu\'un petit contretemps\ncomme ça suffit pour me faire abandonner?!",
+        german=" Du denkst, ein kleiner\nRückschlag wie dieser reicht aus, damit ich\naufgebe?!?",
+        italian=" Pensi che un piccolo\ncontrattempo del genere sia sufficiente\nper scoraggiarmi?!",
+        spanish=" ¡¿En serio crees que me voy a\nrendir por un contratiempo de nada?!",
+    });
+    message_Talk({
+        english=" I will chase you down and arrest\nyou, just you wait and see!",
+        french=" Je te pourchasserai et je finirai\npar t\'arrêter, tu ne perds rien pour attendre!",
+        german=" Ich werde dich weiter jagen und\nam Ende festnehmen! Da kannst du sicher sein!",
+        italian=" Non smetterò di darti la caccia\ne alla fine ti arresterò! Aspetta e vedrai!",
+        spanish=" Pienso capturarte y arrestarte,\n¡espera y verás!",
+    });
+    message_Close();
+    se_Play(8971);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_KIMAWARI);
+    Wait(60);
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    Wait(45);
+    message_SetFace(ACTOR_PLAYER_KIMAWARI, FACE_WORRIED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" ...[K]But...",
+        french=" ...[K] Mais...",
+        german=" ...[K]Nur...",
+        italian=" ...[K] Ma...",
+        spanish=" Hum...[K] Pero...",
+    });
+    message_Talk({
+        english=" Why...[K]why is he invincible...",
+        french=" Pourquoi...[K]\npourquoi est-il invincible...?",
+        german=" Warum...[K]\nWarum ist er unbesiegbar?",
+        italian=" Come...[K] Come mai non riesco\na sconfiggerlo...?",
+        spanish=" Por qué...[K] Por qué será invencible...",
+    });
+    message_Close();
+    bgm2_FadeOut(120);
+    screen_FadeOut(1, 90);
+    WaitBgm2(BGM_HEAVY_WIND2);
+    main_EnterDungeon(160, 30);
+    main_EnterDungeon(-1, 30);
+    hold;
+    end;
+}

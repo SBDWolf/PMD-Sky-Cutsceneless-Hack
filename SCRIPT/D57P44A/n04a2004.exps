@@ -1,0 +1,92 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_D57P44A);
+    supervision_Acting(0);
+    supervision_Acting(1);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (object OBJECT_D57P44A1_453) {
+        SetOutputAttribute(8);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetEffect(692, 0);
+    }
+    with (actor ACTOR_PLAYER_KIMAWARI) {
+        SetEffect(692, 0);
+    }
+    with (actor ACTOR_NPC_GOOSUTO) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_GOOSUTO2) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_GOOSUTO3) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(2);
+    }
+    screen_FadeIn(1, 30);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(5);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    WaitSe(5143);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_DOGOOMU);
+    with (actor ACTOR_NPC_DOGOOMU) {
+        SetAnimation(5);
+    }
+    message_Close();
+    with (actor ACTOR_NPC_DOGOOMU) {
+        MovePositionOffset(3, -48, 0, 96, 0, -96, 0, 96, 0);
+    }
+    CallCommon(CORO_BOSS_WIPE_FUNC);
+    main_EnterDungeon(164, 30);
+    main_EnterDungeon(-1, 30);
+    hold;
+    end;
+}
+
+def 1 for_actor(ACTOR_PLAYER_KIMAWARI) {
+    SetAnimation(2);
+    Lock(5);
+    SetEffect(692, 0);
+    CallCommon(CORO_JUMP_SURPRISE_FUNC);
+    SetAnimation(5);
+    Lock(6);
+    CallCommon(CORO_JUMP_ANGRY_FUNC);
+    §label_1;
+    forever {
+        MovePositionMark(33408, Position<'m2', 26, 32.5>);
+        switch ( $EVENT_LOCAL ) {
+            case 1:
+                break_loop;
+                break;
+            default:
+                MovePositionMark(33408, Position<'m3', 33, 32.5>);
+                switch ( $EVENT_LOCAL ) {
+                    case 1:
+                        break_loop;
+                        break;
+                    default:
+                        continue;  // may be redundant
+                }
+                break;
+        }
+    }
+    §label_0;
+    MovePositionMark(33408, Position<'m4', 29.5, 32.5>);
+    Turn2DirectionLives(4, 10, ACTOR_NPC_GOOSUTO);
+    Lock(7);
+    hold;
+}

@@ -1,0 +1,16 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_G01P01A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    bgm_PlayFadeIn(BGM_OCEAN2, 60, 256);
+    screen_FadeIn(1, 60);
+    Wait(150);
+    bgm_FadeOut(60);
+    screen_FadeOut(1, 60);
+    end;
+}
