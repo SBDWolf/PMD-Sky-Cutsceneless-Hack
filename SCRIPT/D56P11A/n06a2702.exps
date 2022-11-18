@@ -1,0 +1,7 @@
+def 0 {
+    sound_Stop();
+    $SIDE06_ROOM[0] = 1;
+    back_SetGround(LEVEL_D56P11A);
+    supervision_StationCommon(0);
+    end;
+}

@@ -1,0 +1,95 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_SIDE = scn[45, 7];
+    back_SetGround(LEVEL_D55P41A);
+    supervision_Acting(0);
+    supervision_Acting(1);
+    supervision_Acting(2);
+    supervision_Acting(3);
+    //with (object OBJECT_D55P41A1_466) {
+        //SetAnimation(12);
+    //}
+
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetAnimation(27);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetAnimation(24);
+    }
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetAnimation(24);
+    }
+    with (object OBJECT_D55P41A1_465) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_D55P41A1_466) {
+        SetAnimation(21);
+    }
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SlidePositionOffset(33152, 0, 2);
+    }
+    Wait(30);
+    //Wait(1);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        SetPositionMark(Position<'m3', 31.5, 32>);
+    }
+    with (actor ACTOR_NPC_KODORA) {
+        SetPositionMark(Position<'m5', 34, 34.5>);
+    }
+    with (actor ACTOR_NPC_KODORA2) {
+        SetPositionMark(Position<'m6', 38.5, 33.5>);
+    }
+    with (actor ACTOR_NPC_KODORA3) {
+        SetPositionMark(Position<'m7', 41, 31.5>);
+    }
+    with (actor ACTOR_NPC_KODORA4) {
+        SetPositionMark(Position<'m9', 29, 34.5>);
+    }
+    with (actor ACTOR_NPC_KODORA5) {
+        SetPositionMark(Position<'m10', 25, 33.5>);
+    }
+    with (actor ACTOR_NPC_KODORA6) {
+        SetPositionMark(Position<'m11', 22, 31.5>);
+    }
+    with (actor ACTOR_NPC_BOSUGODORA) {
+        SetPositionMark(Position<'m12', 31.5, 24>);
+    }
+    with (actor ACTOR_NPC_KODORA) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_NPC_KODORA2) {
+        SetDirection(DIR_UPLEFT);
+    }
+    with (actor ACTOR_NPC_KODORA3) {
+        SetDirection(DIR_UPLEFT);
+    }
+    with (actor ACTOR_NPC_KODORA4) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_NPC_KODORA5) {
+        SetDirection(DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_KODORA6) {
+        SetDirection(DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_BOSUGODORA) {
+        SetDirection(DIR_DOWN);
+    }
+    screen_FadeIn(0, 30);
+    bgm_PlayFadeIn(BGM_TEAM_CHARMS_THEME, 0, 256);
+    supervision_SpecialActing(24, 0, 0);
+    supervision_SpecialActing(25, 0, 0);
+    se_Play(10249);
+    supervision_SpecialActing(26, 0, 0);
+    Wait(120);
+    screen_WhiteOutAll(1, 30);
+    supervision_SpecialActing(3, 0, 0);
+    main_EnterDungeon(152, 30);
+    main_EnterDungeon(-1, 30);
+    hold;
+    end;
+}

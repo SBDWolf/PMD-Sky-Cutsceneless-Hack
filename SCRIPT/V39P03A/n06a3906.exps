@@ -1,0 +1,165 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_TIME_GEAR_REMIX, 0, 256);
+    back_SetGround(LEVEL_V39P03A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    back_SetEffect(7, 0);
+    CallCommon(CORO_FADE_OUT_ALL_BEFORE);
+    with (object OBJECT_V39P03A1_438) {
+        SetAnimation(2);
+    }
+    with (object OBJECT_V39P03A2_439) {
+        SetAnimation(1);
+    }
+    screen_FadeInAll(0, 60);
+    se_Play(9736);
+    WaitFadeIn();
+    Wait(30);
+    message_SetFace(ACTOR_PLAYER_CHARMS, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Th-this is![K] There\'s something\nfloating in the sky and shining!",
+        french=" Regardez![K] Il y a un truc brillant\nqui flotte dans l\'air!",
+        german=" D-das ist...[K] Da schwebt etwas\nam Himmel und leuchtet!",
+        italian=" M-Ma![K] C\'è qualcosa che fluttua\nnell\'aria e risplende!",
+        spanish=" ¡Qué fuerte![K] ¡Hay algo brillante\nque flota en el techo!",
+    });
+    message_Talk({
+        english=" It\'s an incredibly\nmysterious scene...",
+        french=" Cet objet est nimbé\nde mystère...",
+        german=" Was für ein unglaublich\ngeheimnisvoller Anblick...",
+        italian=" È una visione incredibilmente\nmisteriosa...",
+        spanish=" Esta escena es increíblemente\nmisteriosa...",
+    });
+    message_SetFace(ACTOR_PLAYER_CHARMS, FACE_INSPIRED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" But it\'s so...[K]it\'s so pretty...",
+        french=" Et il est si...[K] éblouissant...",
+        german=" Aber so...[K] so schön...",
+        italian=" Ma è così...[K] È così bella...",
+        spanish=" A la par que...[K] hermosa...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SAANAITO, FACE_INSPIRED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Yes, very...",
+        french=" C\'est le moins qu\'on puisse dire.",
+        german=" Ja, sehr...",
+        italian=" Sì, molto...",
+        spanish=" Sí, mucho...",
+    });
+    message_Talk({
+        english=" It\'s emitting this blue-green\nradiance from its center...",
+        french=" Son centre émet une lueur\nbleu-vert...",
+        german=" Aus der Mitte strahlt dieser\nblaugrüne Schein...",
+        italian=" Dal centro si irradia un bagliore\nblu e verde...",
+        spanish=" Ese resplandor turquesa\nproviene del centro...",
+    });
+    message_Talk({
+        english=" That light is illuminating the\nwhole cave...",
+        french=" ... qui illumine toute la caverne...",
+        german=" Die ganze Höhle erstrahlt in\nseinem Licht...",
+        italian=" Quella luce illumina l\'intera\ncaverna...",
+        spanish=" Esa luz ilumina toda la cueva...",
+    });
+    message_Talk({
+        english=" This is very beautiful...",
+        french=" Magnifique...",
+        german=" Das ist sehr schön...",
+        italian=" È meraviglioso...",
+        spanish=" Es hermosísimo...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_CHAAREMU, FACE_INSPIRED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" It\'s just fascinating...",
+        french=" Fascinant...",
+        german=" Einfach faszinierend...",
+        italian=" È davvero incantevole...",
+        spanish=" Me parece fascinante...",
+    });
+    message_Talk({
+        english=" I\'ve never seen anything like it\nbefore...[K] But...",
+        french=" C\'est la première fois que\nje vois une telle chose...[K] Mais...",
+        german=" Etwas Vergleichbares habe ich\nnoch nie gesehen...[K] Aber...",
+        italian=" Non ho mai visto niente di simile\nprima d\'ora...[K] ma...",
+        spanish=" Nunca había visto nada\nigual...[K] Pero...",
+    });
+    message_Talk({
+        english=" But this thing...[K]\nWhat is it exactly?",
+        french=" Mais cet objet...[K] Qu\'est-ce\nque c\'est au juste?",
+        german=" Aber was...[K] ist dieses Ding\ngenau?",
+        italian=" Ma questo...[K]\nChe cos\'è esattamente?",
+        spanish=" Pero, esta cosa...[K]\n¿Qué es exactamente?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_MANYUURA, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" You don\'t know?",
+        french=" Quelle ignorance!",
+        german=" Das wisst ihr nicht?",
+        italian=" Non lo sai?",
+        spanish=" ¿No lo sabes?",
+    });
+    message_Talk({
+        english=" It\'s a Time Gear.",
+        french=" C\'est un Rouage du Temps.",
+        german=" Das ist ein Zahnrad der Zeit.",
+        italian=" È un Ingranaggio del Tempo.",
+        spanish=" Es un Engranaje del Tiempo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_CHARMS, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Huh?![K] A Time Gear?!",
+        french=" Quoi?![K] Un Rouage du Temps?!",
+        german=" Echt?!?[K] Ein Zahnrad der Zeit?!?",
+        italian=" Uh?![K] Un Ingranaggio del Tempo?!",
+        spanish=" ¡¿Eh?![K] ¡¿Un Engranaje del Tiempo?!",
+    });
+    message_Talk({
+        english=" Th-this is?!",
+        french=" Sans blague?!",
+        german=" W-wirklich?!?",
+        italian=" È-È questo?!",
+        spanish=" ¡¿Es... Es esto?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SAANAITO, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" This is the first time I\'ve\nseen it too...",
+        french=" Moi aussi, c\'est la première fois\nque j\'en vois un...",
+        german=" Das ist auch bei mir das erste\nMal, dass ich so etwas sehe.",
+        italian=" È la prima volta che ne vedo\nuno...",
+        spanish=" También es la primera vez que\nyo veo uno...",
+    });
+    message_Talk({
+        english=" This is...",
+        french=" Ainsi donc...",
+        german=" Das ist...",
+        italian=" Questo è...",
+        spanish=" Es...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_METAMON, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" ...This is... Yes...[K] This is\na Time Gear.",
+        french=" ... Ainsi donc... C\'est...[K] Oui,\nil s\'agit d\'un Rouage du Temps.",
+        german=" ...Das ist... Ja...[K] Das ist\nein Zahnrad der Zeit.",
+        italian=" Questo è... Sì...[K] Questo\nè un Ingranaggio del Tempo.",
+        spanish=" Sí, eso es...[K] Es un Engranaje del Tiempo.",
+    });
+    message_Talk({
+        english=" To protect this...[K] That\'s why\nI\'m here.",
+        french=" Si je suis ici...[K] c\'est pour le\nprotéger.",
+        german=" Es zu beschützen...[K] Das ist\nmeine Aufgabe.",
+        italian=" Per proteggerlo...[K] Ecco perché\nsono qui.",
+        spanish=" Por eso estoy aquí...[K] Para protegerlo.",
+    });
+    message_Close();
+    screen_FadeOutAll(1, 60);
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    end;
+}

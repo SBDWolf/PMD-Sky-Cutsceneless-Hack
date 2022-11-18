@@ -1,0 +1,203 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_D56P11A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (object OBJECT_D56P11A2_534) {
+        SetAnimation(10);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetOutputAttribute(2);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetOutputAttribute(2);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetOutputAttribute(2);
+    }
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_ILLUSION_STONE_CHAMBER, 0, 256);
+    Wait(30);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        MovePositionMark(1, Position<'m0', 35.5, 26.5>, Position<'m1', 27.5, 26.5>);
+    }
+    Wait(15);
+    with (actor ACTOR_PLAYER_CHARMS) {
+        MovePositionMark(1, Position<'m2', 37, 24.5>, Position<'m3', 31.5, 24.5>);
+    }
+    Wait(9);
+    with (actor ACTOR_NPC_SAANAITO) {
+        MovePositionMark(1, Position<'m4', 35.5, 26.5>, Position<'m5', 35.5, 26.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_CHAAREMU);
+    se_Play(8963);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_CHARMS);
+    Wait(2);
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_LEFT, 3);
+    }
+    WaitExecuteLives(ACTOR_NPC_SAANAITO);
+    Wait(2);
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_SAANAITO);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        ExecuteCommon(CORO_LOOK_AROUND_RIGHT_FUNC_SERIES, 0);
+    }
+    Wait(15);
+    with (actor ACTOR_PLAYER_CHARMS) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    Wait(12);
+    with (actor ACTOR_NPC_SAANAITO) {
+        ExecuteCommon(CORO_LOOK_AROUND_LEFT_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_SAANAITO);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_SAANAITO);
+    }
+    Wait(6);
+    with (actor ACTOR_PLAYER_CHARMS) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_CHAAREMU);
+    }
+    Wait(9);
+    with (actor ACTOR_NPC_SAANAITO) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_CHAAREMU);
+    }
+    WaitExecuteLives(ACTOR_NPC_SAANAITO);
+    message_SetFace(ACTOR_NPC_CHAAREMU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Back where we started...",
+        french=" De retour au point de départ...",
+        german=" Wieder dort, wo wir\nangefangen haben...",
+        italian=" Siamo di nuovo al punto\ndi partenza...",
+        spanish=" Otra vez en el punto de partida...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SAANAITO, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" We\'re right back here again...",
+        french=" Encore et toujours cet endroit...",
+        german=" Wir sind schon wieder hier\nherausgekommen...",
+        italian=" Siamo tornate di nuovo qui...",
+        spanish=" Volvemos a estar aquí...",
+    });
+    message_Close();
+    se_Play(8975);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetEffect(EFFECT_ANGRY, 3);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_CHAAREMU);
+    message_SetFace(ACTOR_NPC_CHAAREMU, FACE_ANGRY, FACE_POS_STANDARD);
+    message_Talk({
+        english=" ...What did you expect?",
+        french=" ... A quoi vous attendiez-vous?",
+        german=" ...Was habt ihr erwartet?",
+        italian=" Che ti aspettavi?",
+        spanish=" ¿Qué esperabas...?",
+    });
+    message_Talk({
+        english=" We went in the same entrance\nas before!",
+        french=" Nous avons pris la même\nentrée que tout à l\'heure!",
+        german=" Wir haben denselben Eingang\nwie zuvor gewählt!",
+        italian=" Abbiamo scelto la stessa entrata\ndi prima!",
+        spanish=" ¡Si hemos ido por el mismo\ncamino que antes!",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_CHAAREMU) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER_CHARMS);
+    }
+    WaitExecuteLives(ACTOR_NPC_CHAAREMU);
+    message_SetFace(ACTOR_NPC_CHAAREMU, FACE_ANGRY, FACE_POS_STANDARD);
+    message_Talk({
+        english=" [CS:Y]Lopunny[CR]![K]\nAren\'t you going to try the other entrance?",
+        french=" [CS:Y]Lockpin[CR]![K]\nTu ne veux pas essayer l\'autre entrée?",
+        german=" [CS:Y]Schlapor[CR]![K] Willst du diesmal\nnicht den anderen Eingang ausprobieren?",
+        italian=" [CS:Y]Lopunny[CR]![K]\nNon dovremmo provare l\'altra entrata?",
+        spanish=" ¡[CS:Y]Lopunny[CR]![K]\n¿No piensas probar por la otra entrada?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_CHARMS, FACE_HAPPY, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" Huh?[K] That was interesting.",
+        french=" Hein?[K] Intéressant.",
+        german=" Hmmm...[K] Das war interessant.",
+        italian=" Uh?[K] Non è interessante?",
+        spanish=" ¿Eh?[K] Interesante...",
+    });
+    message_Talk({
+        english=" I seem to be a\nbit confused. [M:H8]",
+        french=" Je me sens un peu perdue. [M:H8]",
+        german=" Ich bin wohl ein wenig\nverwirrt. [M:H8]",
+        italian=" Sembra che mi sia confusa\nun po\'. [M:H8]",
+        spanish=" Creo que estoy un poco\nconfusa. [M:H8]",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8975);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_CHAAREMU);
+    message_SetFace(ACTOR_NPC_CHAAREMU, FACE_ANGRY, FACE_POS_STANDARD);
+    message_Talk({
+        english=" This isn\'t interesting at all!",
+        french=" Ça n\'a rien d\'intéressant!",
+        german=" Das ist überhaupt nicht\ninteressant!",
+        italian=" Non è per nulla interessante!",
+        spanish=" ¡A mí no me parece\nnada interesante!",
+    });
+    message_Talk({
+        english=" This time, select a different\nentrance already! Gee whiz!",
+        french=" Prenons l\'autre entrée! Allez,\nen piste!",
+        german=" Wähle dieses Mal endlich den\nanderen Eingang! Du Held!",
+        italian=" Questa volta scegli l\'altra\nentrata! Forza!",
+        spanish=" ¡Más te vale que esta vez elijas\notra entrada! ¡Jo, es que ya te vale!",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_CHAAREMU);
+    with (actor ACTOR_PLAYER_CHARMS) {
+        ResetOutputAttribute(2);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        ResetOutputAttribute(2);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        ResetOutputAttribute(2);
+    }
+    end;
+}

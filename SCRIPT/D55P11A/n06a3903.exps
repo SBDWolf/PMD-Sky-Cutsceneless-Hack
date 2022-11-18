@@ -1,0 +1,133 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_ILLUSION_STONE_CHAMBER, 0, 256);
+    back_SetGround(LEVEL_D55P11A);
+    supervision_StationCommon(0);
+    supervision_StationCommon(1);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_METAMON_OTACHI) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_METAMON_OTACHI) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetAnimation(2);
+    }
+    with (performer 0) {
+        SetPositionMark(Position<'m0', 34.5, 36.5>);
+    }
+    with (actor ACTOR_NPC_METAMON_OTACHI) {
+        SetPositionMark(Position<'m1', 34.5, 37.5>);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetPositionMark(Position<'m2', 30, 31.5>);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetPositionMark(Position<'m3', 39, 31.5>);
+    }
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetPositionMark(Position<'m4', 34.5, 31.5>);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_METAMON_OTACHI) {
+        SetDirection(DIR_UP);
+    }
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_METAMON_OTACHI, FACE_SAD, FACE_POS_STANDARD);
+    message_Talk({
+        english=" After watching you...[K]\nI feel like I can trust you, so...",
+        french=" Maintenant que j\'ai vu ça...[K]\nje sais que vous êtes dignes de confiance...",
+        german=" Nachdem ich euch gesehen habe...[K]\nIch bin sicher, dass ich euch vertrauen kann...",
+        italian=" Dopo avervi visto...[K]\nSento di potermi fidare di voi, quindi...",
+        spanish=" Después de ver algo así...[K]\nCreo que puedo confiar en vosotras, así que...",
+    });
+    message_Talk({
+        english=" I have a request.",
+        french=" Aussi, j\'aimerais vous demander\nquelque chose.",
+        german=" Ich habe eine Bitte an euch.",
+        italian=" ... avrei una richiesta da fare.",
+        spanish=" Tengo algo que pediros.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER_CHARMS) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_CHARMS);
+    message_SetFace(ACTOR_PLAYER_CHARMS, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" A request?",
+        french=" Quoi donc?",
+        german=" Eine Bitte?",
+        italian=" Una richiesta?",
+        spanish=" ¿De qué se trata?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_METAMON_OTACHI, FACE_SAD, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Yes.[K] Team [CS:X]AWD[CR]...",
+        french=" L\'Equipe [CS:X]DDA[CR]...",
+        german=" Ja.[K] Team [CS:X]SPA[CR]...",
+        italian=" Sì.[K] Il Team [CS:X]AWD[CR]...",
+        spanish=" Pues...[K] El [CS:X]Equipo WAD[CR]...",
+    });
+    message_Talk({
+        english=" Team [CS:X]AWD[CR] needs to be punished.",
+        french=" L\'Equipe [CS:X]DDA[CR] mérite\nune bonne correction.",
+        german=" Team [CS:X]SPA[CR] hat eine Lektion\nverdient.",
+        italian=" Il Team [CS:X]AWD[CR] deve essere\npunito.",
+        spanish=" El [CS:X]Equipo WAD[CR] merece un castigo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(20);
+    message_Mail({
+        english="[CN]The one who asked us to punish\n[CN]Team [CS:X]AWD[CR]...",
+        french="[CN]Ce Pokémon qui nous a demandé de donner\n[CN]une bonne leçon à l\'Equipe [CS:X]DDA[CR]...",
+        german="[CN]Das Pokémon, das uns gegen\n[CN]Team [CS:X]SPA[CR] aufgehetzt hat...",
+        italian="[CN]Chi ci ha chiesto di punire\n[CN]il Team [CS:X]AWD[CR]...",
+        spanish="[CN]El que nos pidió que castigáramos al\n[CN][CS:X]Equipo WAD[CR]...",
+    });
+    message_Mail({
+        english="[CN]That [CS:N]Sentret[CR] too...",
+        french="[CN]Ce [CS:N]Fouinette[CR]...",
+        german="[CN]Dieser [CS:N]Wiesor[CR]...",
+        italian="[CN]Quel [CS:N]Sentret[CR]...",
+        spanish="[CN]Es decir, aquel [CS:N]Sentret[CR]...",
+    });
+    message_Mail({
+        english="[CN]They were really...[K]you?",
+        french="[CN]En réalité, c\'était...[K] toi?",
+        german="[CN]In Wirklichkeit...[K]\n[CN]Warst du das?",
+        italian="[CN]Eri...[K] tu?",
+        spanish="[CN]En realidad...[K] ¿eras tú?",
+    });
+    message_Close();
+    screen_WhiteOut(1, 30);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    end;
+}

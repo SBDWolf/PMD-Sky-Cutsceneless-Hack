@@ -1,0 +1,174 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_ILLUSION_STONE_CHAMBER, 0, 256);
+    back_SetGround(LEVEL_D54P11A);
+    supervision_StationCommon(0);
+    supervision_StationCommon(1);
+    supervision_Acting(0);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_METAMON_KIREIHANA) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_METAMON_KIREIHANA) {
+        SetAnimation(2);
+    }
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetPositionMark(Position<'m0', 31.5, 28.5>);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetPositionMark(Position<'m1', 35.5, 30.5>);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetPositionMark(Position<'m2', 27.5, 30.5>);
+    }
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetDirection(DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetDirection(DIR_UPLEFT);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetDirection(DIR_RIGHT);
+    }
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_CHAAREMU, FACE_HAPPY, FACE_POS_STANDARD);
+    message_Talk({
+        english=" All right, let\'s do our best and\nget through this jungle! ♪",
+        french=" Faisons de notre mieux pour\ntraverser cette jungle au plus vite! ♪",
+        german=" Na gut. Lasst uns unser Bestes\ngeben und diesen Dschungel durchqueren! ♪",
+        italian=" Ok, mettiamocela tutta\ne usciamo da questa giungla! ♪",
+        spanish=" Bueno, vamos a darlo todo, hay\nque atravesar esta selva. ♪",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetEffect(EFFECT_LAUGHING, 3);
+    }
+    Wait(90);
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    message_ResetActor();
+    message_Talk({
+        english=" U-um...",
+        french=" Hum hum...",
+        german=" Ä-ähem...",
+        italian=" U-Uhm...",
+        spanish=" E... ejem...",
+    });
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    Wait(6);
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    Wait(4);
+    with (actor ACTOR_PLAYER_CHARMS) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    Wait(6);
+    with (actor ACTOR_NPC_SAANAITO) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_SAANAITO);
+    message_Close();
+    with (actor ACTOR_NPC_METAMON_KIREIHANA) {
+        MovePositionMark(1, Position<'m3', 31.5, 24.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_METAMON_KIREIHANA);
+    message_SetFace(ACTOR_NPC_SAANAITO, FACE_WORRIED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Wh-who are you?",
+        french=" Qui es-tu?",
+        german=" W-wer bist du?",
+        italian=" C-Chi sei tu?",
+        spanish=" ¿Qui... quién eres?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFaceOnly(ACTOR_NPC_METAMON_KIREIHANA, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" I\'m [CS:N]Bellossom[CR].[K]\nI live in this jungle.",
+        french=" Je m\'appelle [CS:N]Joliflor[CR].[K]\nJe vis dans cette jungle.",
+        german=" Ich bin [CS:N]Blubella[CR].[K]\nIch lebe in diesem Dschungel.",
+        italian=" Mi chiamo [CS:N]Bellossom[CR].[K]\nVivo in questa giungla.",
+        spanish=" Soy [CS:N]Bellossom[CR].[K]\nVivo en esta selva.",
+    });
+    message_SetFace(ACTOR_NPC_METAMON_KIREIHANA, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" If you\'re talking about the\ntreasure in [CS:P]Boulder Quarry[CR]...",
+        french=" Si vous parlez du trésor de la\n[CS:P]Carrière Rocher[CR]...",
+        german=" Falls ihr gerade über den\nSchatz im [CS:P]Geröllbruch[CR] gesprochen habt...",
+        italian=" Se state parlando del tesoro\ndella [CS:P]Cava Rocciosa[CR]...",
+        spanish=" Si estáis hablando del tesoro\ndel [CS:P]Roquedal[CR]...",
+    });
+    message_Talk({
+        english=" You really should give up.",
+        french=" ... vous feriez mieux\nd\'abandonner.",
+        german=" Gebt besser auf.",
+        italian=" ... fareste meglio a lasciar\nperdere.",
+        spanish=" Será mejor que lo olvidéis.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(20);
+    message_Mail({
+        english="[CN]Was it back then...",
+        french="[CN]Ainsi donc...",
+        german="[CN]Damals...",
+        italian="[CN]È stato allora...",
+        spanish="[CN]Fue entonces...",
+    });
+    message_Mail({
+        english="[CN]When we were warned earlier in\n[CN][CS:P]Southern Jungle[CR]...",
+        french="[CN]... ce Pokémon qui a tenté de nous dissuader\n[CN]dans la [CS:P]Jungle Méridionale[CR]...",
+        german="[CN]Als wir gewarnt wurden, im\n[CN][CS:P]Süddschungel[CR]...",
+        italian="[CN]Quando abbiamo ricevuto quell\'avvertimento\n[CN]nella [CS:P]Giungla Meridionale[CR]...",
+        spanish="[CN]Cuando nos avisaron en la\n[CN][CS:P]Selva Meridional[CR]...",
+    });
+    message_Mail({
+        english="[CN]That [CS:N]Bellossom[CR] and...",
+        french="[CN]Ce [CS:N]Joliflor[CR] et...",
+        german="[CN]War es damals? Jene [CS:N]Blubella[CR] und...",
+        italian="[CN]Quel [CS:N]Bellossom[CR] e...",
+        spanish="[CN]Ese [CS:N]Bellossom[CR] y...",
+    });
+    message_Close();
+    screen_WhiteOut(1, 30);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    end;
+}

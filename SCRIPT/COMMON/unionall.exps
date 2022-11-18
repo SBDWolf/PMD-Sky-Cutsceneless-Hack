@@ -7573,9 +7573,9 @@ coro EVENT_N06_01_02 {
     CallCommon(CORO_DEBUG_FLAG_SETTING_CHARMS);
     CallCommon(CORO_SUBSCREEN_INIT);
     supervision_ExecuteActingSub(LEVEL_S04P01A, 'N06A0101', 0);
-    supervision_ExecuteActingSub(LEVEL_P26P01A, 'N06A0102', 0);
-    supervision_ExecuteActingSub(LEVEL_P27P01A, 'N06A0103', 0);
-    supervision_ExecuteActingSub(LEVEL_S04P01A, 'N06A0104', 0);
+    //supervision_ExecuteActingSub(LEVEL_P26P01A, 'N06A0102', 0);
+    //supervision_ExecuteActingSub(LEVEL_P27P01A, 'N06A0103', 0);
+    //supervision_ExecuteActingSub(LEVEL_S04P01A, 'N06A0104', 0);
     supervision_ExecuteActingSub(LEVEL_D54P11A, 'N06A0201', 0);
     CallCommon(CORO_EVENT_END_MAPIN);
     main_SetGround(LEVEL_D54P11A);
@@ -7606,15 +7606,18 @@ coro EVENT_N06_05_07 {
     CallCommon(CORO_SUBSCREEN_INIT);
     if ( scn($SCENARIO_SIDE) == [45, 3] ) {
         §label_554;
-        supervision_ExecuteActingSub(LEVEL_V39P02A, 'N06A0601', 0);
+        //supervision_ExecuteActingSub(LEVEL_V39P02A, 'N06A0601', 0);
         supervision_ExecuteActingSub(LEVEL_D55P11A, 'N06A0701', 0);
         CallCommon(CORO_EVENT_END_MAPIN);
         main_SetGround(LEVEL_D55P11A);
         supervision_ExecuteStationCommon(LEVEL_D55P11A, 1);
         end;
     } else {
-        supervision_ExecuteActingSub(LEVEL_D54P31A, 'N06A0501', 0);
-        supervision_ExecuteActingSub(LEVEL_D54P32A, 'N06A0502', 0);
+        $SCENARIO_SIDE = scn[45, 3];
+        //supervision_ExecuteActingSub(LEVEL_D54P31A, 'N06A0501', 0);
+        //supervision_ExecuteActingSub(LEVEL_D54P32A, 'N06A0502', 0);
+        $SCENARIO_MAIN_BIT_FLAG[8] = 1;
+        $COMPULSORY_SAVE_POINT_SIDE = 5;
         jump @label_554;
     }
 }
@@ -7712,7 +7715,7 @@ coro EVENT_N06_17 {
 coro EVENT_N06_18_19 {
     CallCommon(CORO_DEBUG_FLAG_SETTING_CHARMS);
     CallCommon(CORO_SUBSCREEN_INIT);
-    supervision_ExecuteActingSub(LEVEL_D55P41A, 'N06A1801', 0);
+    //supervision_ExecuteActingSub(LEVEL_D55P41A, 'N06A1801', 0);
     supervision_ExecuteActingSub(LEVEL_D56P11A, 'N06A1901', 0);
     CallCommon(CORO_EVENT_END_MAPIN);
     main_SetGround(LEVEL_D56P11A);
@@ -7816,7 +7819,10 @@ coro EVENT_N06_28 {
         supervision_ExecuteStationCommon(LEVEL_D56P11A, 1);
         end;
     } else {
-        supervision_ExecuteActingSub(LEVEL_D56P12A, 'N06A2802', 0);
+        main_EnterDungeon(155, 30);
+        switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
+        main_EnterDungeon(-1, 30);
+        //supervision_ExecuteActingSub(LEVEL_D56P12A, 'N06A2802', 0);
         hold;
     }
 }
@@ -7915,15 +7921,19 @@ coro EVENT_N06_38 {
 coro EVENT_N06_39 {
     CallCommon(CORO_DEBUG_FLAG_SETTING_CHARMS);
     CallCommon(CORO_SUBSCREEN_INIT);
-    supervision_ExecuteActingSub(LEVEL_D56P41A, 'N06A3901', 0);
-    supervision_ExecuteActingSub(LEVEL_D54P11A, 'N06A3902', 0);
-    supervision_ExecuteActingSub(LEVEL_D55P11A, 'N06A3903', 0);
-    supervision_ExecuteActingSub(LEVEL_D56P41A, 'N06A3904', 0);
-    supervision_ExecuteActingSub(LEVEL_P28P01A, 'N06A3905', 0);
-    supervision_ExecuteActingSub(LEVEL_V39P03A, 'N06A3906', 0);
-    supervision_ExecuteActingSub(LEVEL_P28P01A, 'N06A3907', 0);
-    supervision_ExecuteActingSub(LEVEL_D55P11A, 'N06A3908', 0);
-    supervision_ExecuteActingSub(LEVEL_S04P01A, 'N06A3909', 0);
+    //supervision_ExecuteActingSub(LEVEL_D56P41A, 'N06A3901', 0);
+    //supervision_ExecuteActingSub(LEVEL_D54P11A, 'N06A3902', 0);
+    //supervision_ExecuteActingSub(LEVEL_D55P11A, 'N06A3903', 0);
+    //supervision_ExecuteActingSub(LEVEL_D56P41A, 'N06A3904', 0);
+    //supervision_ExecuteActingSub(LEVEL_P28P01A, 'N06A3905', 0);
+    //supervision_ExecuteActingSub(LEVEL_V39P03A, 'N06A3906', 0);
+    //supervision_ExecuteActingSub(LEVEL_P28P01A, 'N06A3907', 0);
+    //supervision_ExecuteActingSub(LEVEL_D55P11A, 'N06A3908', 0);
+    //supervision_ExecuteActingSub(LEVEL_S04P01A, 'N06A3909', 0);
+                            $SPECIAL_EPISODE_TYPE = 32767;
+                            adventure_log = 1003;
+                            switch ( message_Menu(MENU_SAVE_MENU) ) { }
+                            switch ( ProcessSpecial(24, 0, 0) ) { }
     end;
 }
 

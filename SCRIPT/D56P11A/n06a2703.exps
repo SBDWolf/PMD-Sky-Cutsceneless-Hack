@@ -1,0 +1,93 @@
+
+def 0 {
+    $SCENARIO_SIDE = scn[45, 9];
+    supervision_Acting(0);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetPositionMark(Position<'m3', 35, 24>);
+    }
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetDirection(DIR_LEFT);
+    }
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetAnimation(2);
+    }
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_ILLUSION_STONE_CHAMBER, 0, 256);
+    end;
+}
+
+def 1 for_actor(ACTOR_NPC_PUKURIN) {
+    SetAnimation(2);
+    Lock(5);
+    MovePositionMark(33152, Position<'m4', 31.5, 24.5>);
+    SetEffect(EFFECT_LAUGHING, 3);
+    Lock(6);
+    SetEffect(EFFECT_NONE, 3);
+    Lock(7);
+    Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    CallCommon(CORO_LOOK_AROUND_FUNC);
+    SetEffect(EFFECT_LAUGHING, 3);
+    Lock(8);
+    SetEffect(EFFECT_NONE, 3);
+    WaitEffect();
+    Lock(9);
+    SetEffect(EFFECT_QUESTION_MARK, 3);
+    Turn2DirectionLives(4, 10, ACTOR_NPC_CHAAREMU);
+    Wait(10);
+    Lock(10);
+    Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    CallCommon(CORO_LOOK_AROUND_FUNC);
+    Turn2DirectionLives(4, 10, ACTOR_NPC_CHAAREMU);
+    Lock(11);
+    Turn2Direction(4, 10, DIR_UPLEFT);
+    Wait(50);
+    Turn2Direction(4, 10, DIR_UPRIGHT);
+    Wait(50);
+    Turn2Direction(4, 10, DIR_UPLEFT);
+    Lock(12);
+    Turn2Direction(4, 10, DIR_DOWNLEFT);
+    Wait(90);
+    SetAnimation(5);
+    SetEffect(EFFECT_APPLE_ON_HEAD, 3);
+    §label_1;
+    forever {
+        Turn2Direction(8, 1, DIR_UP);
+        Wait(20);
+        switch ( $EVENT_LOCAL ) {
+            case 1:
+                break_loop;
+                break;
+            default:
+                Turn2Direction(8, 1, DIR_DOWN);
+                Wait(20);
+                switch ( $EVENT_LOCAL ) {
+                    case 1:
+                        break_loop;
+                        break;
+                    default:
+                        continue;  // may be redundant
+                }
+                break;
+        }
+    }
+    §label_0;
+    Turn2Direction(8, 1, DIR_UP);
+    SetEffect(EFFECT_NONE, 3);
+    Lock(13);
+    hold;
+}

@@ -1,0 +1,170 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_S04P01A);
+    screen_FadeIn(1, 0);
+    message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Urk! That was no good!",
+                french=" Argh! Quel échec!",
+                german=" Umpf! Das war nicht gut!",
+                italian=" Uff! È andata male!",
+                spanish=" ¡Qué desastre!",
+            }
+        case 2:
+            {
+                english=" Urk! We didn\'t do so well!",
+                french=" Argh! Quel échec!",
+                german=" Umpf! Das lief nicht gut!",
+                italian=" Uh! Non è andata molto bene!",
+                spanish=" ¡No damos una!",
+            }
+        default:
+            {
+                english=" Urk! That wasn\'t so good.",
+                french=" Argh! Quel échec!",
+                german=" Umpf! Das war nicht so gut.",
+                italian=" Uff! È andata male!",
+                spanish=" ¡Tenemos que hacerlo mejor!",
+            }
+    }
+    message_KeyWait();
+    screen_FadeOutAll(1, 60);
+    message_CloseEnforce();
+    CallCommon(CORO_FADE_OUT_ALL_AFTER);
+    back_SetGround(LEVEL_D26P21A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    WaitLockLives(5, ACTOR_PLAYER);
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_LOWER_BRINE_CAVE, 0, 256);
+    Wait(30);
+    Unlock(5);
+    Wait(15);
+    Unlock(7);
+    Lock(3);
+    Wait(15);
+    with (actor ACTOR_PLAYER) {
+        Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+    }
+    Wait(15);
+    with (actor ACTOR_ATTENDANT1) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_ATTENDANT1) {
+        WaitEffect();
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_PAIN, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" Ugh! This is pretty rough.",
+                french=" Argh! Ça se corse.",
+                german=" Uff! Das ist echt brutal.",
+                italian=" Uh! È piuttosto dura.",
+                spanish=" Esto es muy complicado.",
+            }
+        case 2:
+            {
+                english=" Ugh! This is pretty difficult!",
+                french=" Argh! Ça se corse.",
+                german=" Uff! Das ist echt schwierig!",
+                italian=" Uh! È piuttosto difficile.",
+                spanish=" Esto resulta muy difícil.",
+            }
+        default:
+            {
+                english=" Ugh! This is kind of rough!",
+                french=" Argh! Ça se corse.",
+                german=" Uff! Das ist ganz schön rau!",
+                italian=" Uh! È piuttosto difficile.",
+                spanish=" Esto no es nada fácil.",
+            }
+    }
+    message_SetFace(ACTOR_ATTENDANT1, FACE_NORMAL, FACE_POS_STANDARD);
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" But I\'m worried about [CS:N]Chatot[CR].\nWe can\'t waste any time.",
+                french=" Mais je me fais un sang d\'encre\npour [CS:N]Pijako[CR]. Il n\'y a pas une minute à perdre.",
+                german=" Aber ich mache mir Sorgen um\n[CS:N]Plaudagei[CR]. Wir dürfen keine Zeit verlieren.",
+                italian=" Ma sono preoccupato per [CS:N]Chatot[CR].\nNon possiamo perdere tempo.",
+                spanish=" Pero me preocupa [CS:N]Chatot[CR].\nNo podemos perder el tiempo.",
+            }
+        case 2:
+            {
+                english=" But I\'m worried about [CS:N]Chatot[CR].\nWe have to hurry.",
+                french=" Mais je me fais un sang d\'encre\npour [CS:N]Pijako[CR]. Il n\'y a pas une minute à perdre.",
+                german=" Aber ich mache mir Sorgen um\n[CS:N]Plaudagei[CR]. Wir müssen uns beeilen.",
+                italian=" Ma sono preoccupato per [CS:N]Chatot[CR].\nDobbiamo sbrigarci.",
+                spanish=" Pero me preocupa [CS:N]Chatot[CR].\nNo podemos perder el tiempo.",
+            }
+        default:
+            {
+                english=" But I\'m worried about [CS:N]Chatot[CR].\nWe\'ve got to hurry.",
+                french=" Mais je me fais un sang d\'encre\npour [CS:N]Pijako[CR]. Il n\'y a pas une minute à perdre.",
+                german=" Aber ich mache mir Sorgen um\n[CS:N]Plaudagei[CR]. Jetzt ist Eile geboten.",
+                italian=" Ma sono preoccupata per [CS:N]Chatot[CR].\nDobbiamo sbrigarci.",
+                spanish=" Pero me preocupa [CS:N]Chatot[CR].\nNo podemos perder el tiempo.",
+            }
+    }
+    message_SwitchTalk ($PARTNER_TALK_KIND) {
+        case 1:
+            {
+                english=" There\'s no giving up!",
+                french=" On ne peut pas baisser les bras!",
+                german=" Aufgegeben wird nicht!",
+                italian=" Diamoci dentro!",
+                spanish=" ¡No podemos rendirnos!",
+            }
+        case 2:
+            {
+                english=" There\'s no giving up!",
+                french=" On ne peut pas baisser les bras!",
+                german=" Aufgegeben wird nicht!",
+                italian=" Diamoci dentro!",
+                spanish=" ¡No podemos rendirnos!",
+            }
+        default:
+            {
+                english=" There\'s no giving up!",
+                french=" On ne peut pas baisser les bras!",
+                german=" Aufgegeben wird nicht!",
+                italian=" Diamoci dentro!",
+                spanish=" ¡No podemos rendirnos!",
+            }
+    }
+    message_Close();
+    end;
+}
+
+def 1 for_actor(ACTOR_PLAYER) {
+    SetPositionInitial();
+    SetDirection(DIR_RIGHT);
+    SetAnimation(76);
+    Lock(5);
+    CallCommon(CORO_WAKEUP_FUNC);
+    CallCommon(CORO_LOOK_AROUND_DOWN_FUNC);
+    Lock(6);
+    hold;
+}
+
+def 2 for_actor(ACTOR_ATTENDANT1) {
+    SetPositionInitial();
+    SetDirection(DIR_LEFT);
+    SetAnimation(76);
+    Lock(7);
+    CallCommon(CORO_WAKEUP_FUNC);
+    CallCommon(CORO_LOOK_AROUND_FUNC);
+    Unlock(3);
+    Lock(8);
+    hold;
+}

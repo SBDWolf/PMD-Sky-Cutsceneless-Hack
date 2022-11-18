@@ -1,0 +1,154 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_P28P01A);
+    supervision_Acting(1);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (object OBJECT_V03P06A2_216) {
+        SetAnimation(3);
+    }
+    with (object OBJECT_V03P06A2_216) {
+        SetOutputAttribute(1024);
+    }
+    with (object OBJECT_V03P06A1_212) {
+        SetAnimation(3);
+    }
+    bgm2_PlayFadeIn(BGM_CAVE_AMBIANCE, 0, 256);
+    screen_FadeIn(1, 30);
+    with (actor ACTOR_NPC_METAMON) {
+        MovePositionMark(1, Position<'m0', 19.5, 20>);
+    }
+    Wait(8);
+    with (actor ACTOR_PLAYER_CHARMS) {
+        MovePositionMark(1, Position<'m1', 19.5, 22.5>);
+    }
+    Wait(6);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        MovePositionMark(1, Position<'m2', 19.5, 27.5>, Position<'m3', 16, 22.5>);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_SAANAITO) {
+        MovePositionMark(1, Position<'m4', 19.5, 27.5>, Position<'m5', 23, 22.5>);
+    }
+    Wait(60);
+    with (actor ACTOR_NPC_MANYUURA) {
+        MovePositionMark(1, Position<'m6', 19.5, 25.5>);
+    }
+    Wait(9);
+    with (actor ACTOR_NPC_AABOKKU) {
+        MovePositionMark(1, Position<'m7', 19.5, 28.5>, Position<'m8', 15.5, 25.5>);
+    }
+    Wait(8);
+    with (actor ACTOR_NPC_DORAPION) {
+        MovePositionMark(1, Position<'m9', 19.5, 28.5>, Position<'m10', 23.5, 25.5>);
+    }
+    Wait(15);
+    with (actor ACTOR_NPC_PUKURIN) {
+        MovePositionMark(1, Position<'m11', 19.5, 28>);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_METAMON);
+    }
+    Wait(2);
+    with (actor ACTOR_NPC_SAANAITO) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_METAMON);
+    }
+    WaitExecuteLives(ACTOR_NPC_SAANAITO);
+    with (actor ACTOR_NPC_AABOKKU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_METAMON);
+    }
+    with (actor ACTOR_NPC_METAMON) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_DORAPION) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_METAMON);
+    }
+    WaitExecuteLives(ACTOR_NPC_DORAPION);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_METAMON, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" We\'ve arrived.",
+        french=" Nous y voilà.",
+        german=" Da sind wir auch schon.",
+        italian=" Siamo arrivati.",
+        spanish=" Ya hemos llegado.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m12', 19.5, 24.5>);
+    }
+    bgm2_FadeOut(60);
+    se_Play(8968);
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_CHAAREMU);
+    with (actor ACTOR_NPC_DORAPION) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_DORAPION) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_DORAPION);
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_MANYUURA) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    Wait(6);
+    with (actor ACTOR_NPC_AABOKKU) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_PUKURIN) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_PUKURIN) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_PUKURIN);
+    WaitExecutePerformer(0);
+    bgm_PlayFadeIn(BGM_TIME_GEAR_REMIX, 0, 256);
+    message_SetFace(ACTOR_NPC_MANYUURA, FACE_SURPRISED, FACE_POS_BOTTOM_L_CENTER);
+    message_Talk({
+        english=" Huh?!",
+        french=" Hein?!",
+        german=" Huch!",
+        italian=" Uh?!",
+        spanish=" ¡¿Eh?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_DORAPION, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Waaah!",
+        french=" Ouaaah!",
+        german=" Waaah!",
+        italian=" Uaaah!",
+        spanish=" ¡Ooooh!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_AABOKKU, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Wh-what\'ssssss...[K]thisssssss?\nWhat\'sss thisssss light?!",
+        french=" Sssette...[K] lumière!\nD\'où vient-elle?",
+        german=" W-wasss issst dassss?[K]\nDiesssesss Licht?!?",
+        italian=" C-Cossssss\'è...[K] quessssssta?\nChe cosss\'è quessssssta luce?!",
+        spanish=" ¿Qué...[K] esss esssto?\n¡¿Qué esss esssa luz?!",
+    });
+    message_Close();
+    screen_FadeOut(1, 30);
+    end;
+}

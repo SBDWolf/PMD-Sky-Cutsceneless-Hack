@@ -1,0 +1,61 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_SIDE = scn[45, 13];
+    back_SetGround(LEVEL_D56P41A);
+    supervision_Acting(0);
+    supervision_Acting(1);
+    Wait(1);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (performer 0) {
+        SetPositionMark(Position<'m7', 28.5, 26.5>);
+    }
+    with (object OBJECT_D56P41A1_452) {
+        SetAnimation(10);
+    }
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetPositionMark(Position<'m11', 28.5, 22.5>);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetPositionMark(Position<'m12', 32, 21.5>);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetPositionMark(Position<'m13', 25, 21.5>);
+    }
+    with (actor ACTOR_NPC_MANYUURA) {
+        SetPositionMark(Position<'m8', 28.5, 28>);
+    }
+    with (actor ACTOR_NPC_DORAPION) {
+        SetPositionMark(Position<'m9', 33, 28.5>);
+    }
+    with (actor ACTOR_NPC_AABOKKU) {
+        SetPositionMark(Position<'m10', 24, 29>);
+    }
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetAnimation(24);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetAnimation(24);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetAnimation(27);
+    }
+    Wait(10);
+    screen_FadeIn(0, 30);
+    bgm_PlayFadeIn(BGM_TEAM_CHARMS_THEME, 0, 256);
+    supervision_SpecialActing(24, 0, 0);
+    supervision_SpecialActing(25, 0, 0);
+    se_Play(10249);
+    supervision_SpecialActing(26, 0, 0);
+    Wait(120);
+    screen_WhiteOutAll(1, 30);
+    supervision_SpecialActing(3, 0, 0);
+    main_EnterDungeon(157, 30);
+    main_EnterDungeon(-1, 30);
+    end;
+}

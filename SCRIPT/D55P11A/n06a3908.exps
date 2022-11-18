@@ -1,0 +1,1115 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_D55P11A);
+    supervision_StationCommon(0);
+    supervision_Acting(1);
+    supervision_Acting(0);
+    supervision_RemoveActing(1);
+    WaitLockLives(5, ACTOR_PLAYER_CHARMS);
+    WaitLockLives(10, ACTOR_NPC_CHAAREMU);
+    WaitLockLives(15, ACTOR_NPC_SAANAITO);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_RANDOM_DUNGEON_THEME3, 0, 256);
+    message_SetFace(ACTOR_NPC_MANYUURA, FACE_NORMAL, FACE_POS_BOTTOM_R_CENTER);
+    message_Talk({
+        english=" By the way, we\'re not finished\nwith you.",
+        french=" Au fait, on n\'en a pas fini\navec vous...",
+        german=" Da fällt mir gerade etwas ein:\nMit euch sind wir noch nicht fertig!",
+        italian=" Comunque abbiamo un conto\nin sospeso con voi.",
+        spanish=" Por cierto, aún no hemos\nacabado con vosotras.",
+    });
+    message_Talk({
+        english=" The next time we see you...[K]\nWe\'re not going to go easy on you...",
+        french=" A notre prochaine rencontre...[K]\non sera sans pitié...",
+        german=" Wenn wir euch das nächste Mal\nbegegnen...[K] Macht euch auf etwas gefasst!",
+        italian=" La prossima volta che\nci incontreremo...[K] non ve la caverete\ncosì facilmente...",
+        spanish=" La próxima vez que os veamos...[K]\nno vamos a ser tan blandos...",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_MANYUURA) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_MANYUURA);
+    message_SetFace(ACTOR_NPC_MANYUURA, FACE_NORMAL, FACE_POS_BOTTOM_R_CENTER);
+    message_Talk({
+        english=" [CS:N]Arbok[CR]! [CS:N]Drapion[CR]![K]\nLet\'s go!",
+        french=" [CS:N]Arbok[CR]! [CS:N]Drascore[CR]![K]\nOn y va!",
+        german=" [CS:N]Arbok[CR]! [CS:N]Piondragi[CR]![K]\nWir brechen auf!",
+        italian=" [CS:N]Arbok[CR]! [CS:N]Drapion[CR]![K]\nAndiamo!",
+        spanish=" Venga, [CS:N]Arbok[CR], [CS:N]Drapion[CR].[K]\nNos vamos.",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_MANYUURA) {
+        MovePositionMark(1, Position<'m0', 34.5, 62.5>);
+    }
+    with (performer 0) {
+        MovePositionMark(1, Position<'m1', 34.5, 38>);
+    }
+    Wait(45);
+    with (actor ACTOR_NPC_AABOKKU) {
+        MovePositionMark(1, Position<'m2', 30, 40>);
+    }
+    Wait(45);
+    with (actor ACTOR_NPC_DORAPION) {
+        MovePositionMark(1, Position<'m3', 39, 39.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_AABOKKU);
+    with (actor ACTOR_NPC_AABOKKU) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_AABOKKU);
+    WaitExecuteLives(ACTOR_NPC_DORAPION);
+    with (actor ACTOR_NPC_DORAPION) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_NPC_DORAPION);
+    message_SetFace(ACTOR_NPC_AABOKKU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Next time, we\'ll beat you up!",
+        french=" La prochaine fois, on vous\nterrassssera!",
+        german=" Beim nächsssten Mal machen\nwir euch fertig! Ssss-sss...",
+        italian=" La prosssssima volta, vi\nbatteremo!",
+        spanish=" La próxima vez osss vamosss\na machacar.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_DORAPION, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Remember that!",
+        french=" Souvenez-vous-en!",
+        german=" Denkt daran!",
+        italian=" Ricordatevelo!",
+        spanish=" ¡Que no se os olvide!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_AABOKKU) {
+        MovePositionMark(1, Position<'m4', 30, 62>);
+    }
+    Wait(45);
+    with (actor ACTOR_NPC_DORAPION) {
+        MovePositionMark(1, Position<'m5', 39, 62>);
+    }
+    Wait(20);
+    message_SetFace(ACTOR_PLAYER_CHARMS, FACE_HAPPY, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Hee-hee![K]\nIt\'s a date! [M:H8]",
+        french=" Hi hi![K] Les filles, on a\nun rancard! [M:H8]",
+        german=" Hi-hi![K]\nAbgemacht! [M:H8]",
+        italian=" Ih ih![K] Affare fatto! [M:H8]",
+        spanish=" ¡Ji, ji![K] ¡Os estaremos\nesperando sentadas! [M:H8]",
+    });
+    message_Close();
+    with (performer 0) {
+        MovePositionMark(1, Position<'m6', 34.5, 29.5>);
+    }
+    WaitExecutePerformer(0);
+    Wait(15);
+    message_SetFace(ACTOR_NPC_CHAAREMU, FACE_WORRIED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Phew...[K] So the treasure here\nwas just the Time Gear...",
+        french=" Pfiou...[K] Alors c\'était ce Rouage\ndu Temps, le trésor...",
+        german=" Puh...[K] Also war der einzige\nSchatz hier dieses Zahnrad der Zeit.",
+        italian=" Fiuuu...[K] Quindi il tesoro non era\naltro che un Ingranaggio del Tempo...",
+        spanish=" Uf...[K] Así que el tesoro era\nsolo el Engranaje del Tiempo...",
+    });
+    with (actor ACTOR_NPC_PUKURIN) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_CHAAREMU);
+    }
+    Unlock(15);
+    Unlock(5);
+    message_Talk({
+        english=" Up until now we\'ve gotten every\ntreasure we\'ve aimed for...",
+        french=" Jusqu\'à aujourd\'hui, aucun trésor\nn\'avait réussi à nous échapper...",
+        german=" Bis zu diesem Zeitpunkt haben\nwir jeden Schatz bekommen, auf den wir aus\nwaren...",
+        italian=" Finora abbiamo conquistato tutti\ni tesori che ci interessavano...",
+        spanish=" Hasta ahora habíamos conseguido\ntodos los tesoros que queríamos...",
+    });
+    message_Close();
+    Unlock(10);
+    WaitLockLives(11, ACTOR_NPC_CHAAREMU);
+    message_SetFace(ACTOR_NPC_CHAAREMU, FACE_WORRIED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Yeah...[K] This time we\'ve found\nsomething even we can\'t take...",
+        french=" Et voilà...[K] voilà qu\'on tombe\nsur un objet qu\'on ne peut même pas\ns\'approprier...",
+        german=" Ja...[K] Und dieses Mal haben wir\neinen Schatz gefunden, den selbst wir nicht\nmitnehmen können...",
+        italian=" Già...[K] E questa volta abbiamo\ntrovato qualcosa che non possiamo nemmeno\nprendere...",
+        spanish=" Ya...[K] Pero esta vez hemos\nhallado algo que ni nosotras podemos tener...",
+    });
+    message_Talk({
+        english=" No way...",
+        french=" C\'est hors de question...",
+        german=" Auf keinen Fall...",
+        italian=" Peccato...",
+        spanish=" Mejor dejarlo aquí...",
+    });
+    message_Close();
+    WaitLockLives(16, ACTOR_NPC_SAANAITO);
+    WaitLockLives(6, ACTOR_PLAYER_CHARMS);
+    message_SetFace(ACTOR_NPC_SAANAITO, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" It has to be this way.",
+        french=" Nous ne pouvons rien faire.",
+        german=" Das muss so sein.",
+        italian=" È giusto così.",
+        spanish=" Así es como debe ser.",
+    });
+    message_Talk({
+        english=" There are some things in this\nworld that you just can\'t take.",
+        french=" Certaines choses en ce monde\ndoivent rester sacrées.",
+        german=" Es gibt Dinge in dieser Welt, die\nman nicht an sich nehmen kann.",
+        italian=" Ci sono delle cose al mondo\nche non possono essere prese.",
+        spanish=" Hay ciertas cosas en esta vida\nque no nos corresponden.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_CHARMS, FACE_NORMAL, FACE_POS_BOTTOM_R_CENTER);
+    message_Talk({
+        english=" Even though we can\'t take the\ntreasure with us, I\'d call this a success.\nWouldn\'t you?",
+        french=" Même si on ne peut pas\nemporter ce trésor avec nous, cette aventure\nreste un succès, vous ne croyez pas?",
+        german=" Doch obwohl wir diesen Schatz\nnicht mit uns nehmen können, würde ich die\nErkundung als Erfolg bewerten. Nicht wahr?",
+        italian=" Anche se non possiamo portare\nvia questo tesoro, la nostra avventura è\nstata comunque un successo. Non credete?",
+        spanish=" Aunque no podamos llevarnos el\ntesoro, diría que la aventura ha sido un éxito,\n¿no creéis?",
+    });
+    message_Talk({
+        english=" We even had a more than fair\nfight against the villainous Team [CS:X]AWD[CR].",
+        french=" Nous avons fait un beau combat\ncontre l\'infâme Equipe [CS:X]DDA[CR].",
+        german=" Wir haben sogar einen fairen\nKampf gegen das gemeine Team [CS:X]SPA[CR] gehabt.",
+        italian=" Abbiamo anche avuto l\'occasione\ndi affrontare quei tipacci del Team [CS:X]AWD[CR].",
+        spanish=" Hasta tuvimos un combate con\nel malvado [CS:X]Equipo WAD[CR].",
+    });
+    message_Close();
+    Unlock(11);
+    se_Play(8978);
+    WaitLockLives(12, ACTOR_NPC_CHAAREMU);
+    message_SetFace(ACTOR_NPC_CHAAREMU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Oh! That\'s right!",
+        french=" C\'est bien vrai!",
+        german=" Oh! Das stimmt!",
+        italian=" Oh! Giusto!",
+        spanish=" ¡Anda, pues tienes razón!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SAANAITO, FACE_HAPPY, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Besides, that beautiful and\nprecious Time Gear...",
+        french=" En plus, nous avons eu l\'occasion\nde poser nos yeux sur un Rouage du Temps...",
+        german=" Und so ein schönes und\nwertvolles Zahnrad der Zeit...",
+        italian=" Inoltre, quel bellissimo\ne prezioso Ingranaggio del Tempo...",
+        spanish=" Y encima ese precioso y\nvaliosísimo Engranaje del Tiempo...",
+    });
+    message_Talk({
+        english=" We saw one for the first time,\ndidn\'t we?!",
+        french=" ... pour la toute première fois\nde notre vie, n\'est-ce pas?",
+        german=" Wir alle haben es zum ersten\nMal gesehen, nicht wahr?!?",
+        italian=" Beh, per la prima volta\nne abbiamo visto uno, no?!",
+        spanish=" ¡Hemos visto uno por primera\nvez! ¡Qué pasada!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_CHAAREMU, FACE_HAPPY, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Oh yeah![K] That\'s right!",
+        french=" Mais oui![K] Tu as raison!",
+        german=" Oh ja![K] Das stimmt!",
+        italian=" Oh sì![K] È vero!",
+        spanish=" ¡Sí, sí![K] ¡Cómo mola!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_CHARMS, FACE_HAPPY, FACE_POS_BOTTOM_R_CENTER);
+    message_Talk({
+        english=" Yep. ♪ That\'s right! ♪",
+        french=" Exact. ♪ \nÇa en valait la peine! ♪",
+        german=" Ja. ♪ Ganz genau! ♪",
+        italian=" Sì. ♪ Giusto! ♪",
+        spanish=" Sí. ♪ ¡Es genial! ♪",
+    });
+    Unlock(12);
+    WaitLockLives(13, ACTOR_NPC_CHAAREMU);
+    with (actor ACTOR_NPC_PUKURIN) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER_CHARMS);
+    }
+    message_SetFace(ACTOR_PLAYER_CHARMS, FACE_NORMAL, FACE_POS_BOTTOM_R_CENTER);
+    message_Talk({
+        english=" And we made it successfully\nthrough the maze that has stumped so many\nothers before us...",
+        french=" Sans compter que nous avons\ntriomphé du labyrinthe qui en a découragé\ntant d\'autres avant nous...",
+        german=" Und wir haben das Labyrinth,\ndas so viele vor uns abgehalten hat,\nerfolgreich durchquert.",
+        italian=" E poi abbiamo trovato l\'uscita di\nquel labirinto così complicato. Prima di noi\nnon c\'era mai riuscito nessuno...",
+        spanish=" Y logramos atravesar el laberinto\ndonde tantos otros se han perdido antes\nque nosotras...",
+    });
+    message_SetFace(ACTOR_PLAYER_CHARMS, FACE_HAPPY, FACE_POS_BOTTOM_R_CENTER);
+    message_Talk({
+        english=" I knew it. ♪ We are...[K]the best,\naren\'t we? [M:H8]",
+        french=" Je le savais. ♪ Nous sommes\net nous resterons...[K] les meilleures,\npas vrai? [M:H8]",
+        german=" Ich wusste es. ♪ Wir sind...[K]\ndie Besten, nicht? [M:H8]",
+        italian=" Lo sapevo. ♪ Siamo...[K]\nle migliori, vero? [M:H8]",
+        spanish=" Lo sabía. ♪ Somos...[K]\nlas mejores, ¿a que sí? [M:H8]",
+    });
+    message_Close();
+    Unlock(6);
+    Unlock(13);
+    Unlock(16);
+    Wait(6);
+    with (actor ACTOR_NPC_PUKURIN) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER_CHARMS);
+    }
+    message_SetFace(ACTOR_NPC_CHAAREMU, FACE_HAPPY, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Uwahahahahaha!",
+        french=" Ha ha ha ha!",
+        german=" Uwahahahahaha!",
+        italian=" Uahahahahah!",
+        spanish=" ¡Ji, ji, ji, ji!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SAANAITO, FACE_HAPPY, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Uhuhuhuhuhuhu!",
+        french=" Hé hé hé hé!",
+        german=" Uhuhuhuhuhuhu!",
+        italian=" Uhuhuhuhuhuh!",
+        spanish=" ¡Ju, ju, ju, ju, ju!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_CHARMS, FACE_HAPPY, FACE_POS_BOTTOM_R_CENTER);
+    message_Talk({
+        english=" Hah-hah-hah! Hah-hah-hah!",
+        french=" Hi hi hi hi!",
+        german=" Hahaha! Hahaha!",
+        italian=" Ah-ah-ah! Ah-ah-ah!",
+        spanish=" ¡Ja, ja, ja! ¡Ja, ja, ja!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8961);
+    with (actor ACTOR_NPC_PUKURIN) {
+        SetEffect(EFFECT_SWEAT_DROP, 3);
+    }
+    with (actor ACTOR_NPC_PUKURIN) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_PUKURIN);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_HAPPY, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Um...[K] That\'s great everyone. ♪",
+        french=" Hum...[K] Super, les filles. ♪",
+        german=" Ähem...[K] Wirklich großartig,\nalle miteinander. ♪",
+        italian=" Uhm...[K] È fantastico, gente. ♪",
+        spanish=" Hum...[K] Es genial. ♪",
+    });
+    message_Close();
+    $EVENT_LOCAL = 1;
+    WaitLockLives(7, ACTOR_PLAYER_CHARMS);
+    WaitLockLives(14, ACTOR_NPC_CHAAREMU);
+    WaitLockLives(17, ACTOR_NPC_SAANAITO);
+    with (actor ACTOR_NPC_SAANAITO) {
+        MovePositionOffset(1, 12, 0);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        MovePositionOffset(1, -12, 0);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PUKURIN);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PUKURIN);
+    }
+    Wait(3);
+    with (actor ACTOR_PLAYER_CHARMS) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PUKURIN);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_CHARMS);
+    Wait(15);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Well, I\'m headed home now.",
+        french=" Bon, il est temps de rentrer\nchez moi.",
+        german=" Aber gut, ich mache mich dann\nmal auf den Weg.",
+        italian=" Bene, ora me ne torno a casa.",
+        spanish=" Bueno, yo me voy a casa.",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_SAANAITO) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER_CHARMS);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER_CHARMS);
+    }
+    WaitExecuteLives(ACTOR_NPC_CHAAREMU);
+    bgm_FadeOut(150);
+    message_SetFace(ACTOR_PLAYER_CHARMS, FACE_NORMAL, FACE_POS_BOTTOM_R_CENTER);
+    message_Talk({
+        english=" [CS:N]Gardevoir[CR], [CS:N]Medicham[CR].",
+        french=" [CS:N]Gardevoir[CR], [CS:N]Charmina[CR].",
+        german=" [CS:N]Guardevoir[CR] und [CS:N]Meditalis[CR].",
+        italian=" [CS:N]Gardevoir[CR], [CS:N]Medicham[CR].",
+        spanish=" [CS:N]Gardevoir[CR], [CS:N]Medicham[CR].",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SAANAITO, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Yes.",
+        french=" Oui.",
+        german=" Ja.",
+        italian=" Sì.",
+        spanish=" Sí.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_CHAAREMU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Got it.",
+        french=" Bien reçu.",
+        german=" Okay.",
+        italian=" Ricevuto.",
+        spanish=" Entendido.",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_SAANAITO) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PUKURIN);
+    }
+    WaitExecuteLives(ACTOR_NPC_CHAAREMU);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PUKURIN);
+    }
+    WaitExecuteLives(ACTOR_NPC_CHAAREMU);
+    Wait(10);
+    with (actor ACTOR_NPC_PUKURIN) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_CHAAREMU);
+    }
+    WaitExecuteLives(ACTOR_NPC_PUKURIN);
+    Wait(20);
+    with (actor ACTOR_NPC_PUKURIN) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_SAANAITO);
+    }
+    WaitExecuteLives(ACTOR_NPC_PUKURIN);
+    Wait(20);
+    with (actor ACTOR_NPC_PUKURIN) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER_CHARMS);
+    }
+    WaitExecuteLives(ACTOR_NPC_PUKURIN);
+    Wait(15);
+    se_Play(8962);
+    with (actor ACTOR_NPC_PUKURIN) {
+        SetEffect(EFFECT_QUESTION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_PUKURIN) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_PUKURIN);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Huh?[K] What\'s with everyone?",
+        french=" Hein?[K] Qu\'y a-t-il?",
+        german=" Bitte?[K] Was ist mit euch allen?",
+        italian=" Uh?[K] Che vi succede?",
+        spanish=" ¿Eh?[K] ¿Qué sucede?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_CHAAREMU, FACE_HAPPY, FACE_POS_STANDARD);
+    message_Talk({
+        english=" [CS:N]Wigglytuff[CR].[K] You\'re not half bad!",
+        french=" [CS:N]Grodoudou[CR].[K] Tu es plutôt doué,\ndans ton genre!",
+        german=" [CS:N]Knuddeluff[CR].[K] Du bist gar nicht\nso übel!",
+        italian=" [CS:N]Wigglytuff[CR].[K] Non sei niente male!",
+        spanish=" [CS:N]Wigglytuff[CR]...[K] ¡Molas bastante!",
+    });
+    message_Talk({
+        english=" We\'ve got a better opinion of\nyou now!",
+        french=" Nous avons une meilleure opinion\nde toi, à présent!",
+        german=" Du erschienst uns am Anfang\nganz schön wunderlich, aber letztendlich bist\ndu ein wirklich toller Kerl!",
+        italian=" Abbiamo un\'opinione migliore\ndi te adesso!",
+        spanish=" Nuestra opinión de ti\nha mejorado lo suyo.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Huh?",
+        french=" Pardon?",
+        german=" Bitte was?",
+        italian=" Uh?",
+        spanish=" ¿Eh?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SAANAITO, FACE_HAPPY, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" You saw through [CS:N]Ditto[CR]\'s\ntreasure-chest disguise...",
+        french=" Tu as reconnu [CS:N]Métamorph[CR] alors\nqu\'il était déguisé en coffre au trésor...",
+        german=" Du hast den Schatztruhen-Trick\nvon [CS:N]Ditto[CR] durchschaut.",
+        italian=" Hai smascherato [CS:N]Ditto[CR] dopo\nche si era trasformato in forziere...",
+        spanish=" Descubriste el disfraz de cofre\nde [CS:N]Ditto[CR]...",
+    });
+    message_Talk({
+        english=" You\'re really cool!",
+        french=" Tu assures un max!",
+        german=" Das war wirklich großartig!",
+        italian=" Sei davvero forte!",
+        spanish=" ¡Eres sensacional!",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_PUKURIN) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_SAANAITO);
+    }
+    WaitExecuteLives(ACTOR_NPC_PUKURIN);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" I-is that so...?[K] I see...",
+        french=" V-vous trouvez...?[K] Je vois...",
+        german=" Findet ihr?[K] Nun ja...",
+        italian=" D-Dite sul serio...?[K] Ok...",
+        spanish=" ¿E... eso pensáis?[K] Ah, vaya...",
+    });
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_HAPPY, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Hee-hee-hee-hee...",
+        french=" Hé hé hé...",
+        german=" Hi-hi-hi-hi...",
+        italian=" Eh eh eh eh eh...",
+        spanish=" Ji, ji, ji, ji...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_CHARMS, FACE_NORMAL, FACE_POS_BOTTOM_R_CENTER);
+    message_Talk({
+        english=" So...[K] What will you do next,\n[CS:N]Wigglytuff[CR]?",
+        french=" Alors...[K] quels sont tes projets,\n[CS:N]Grodoudou[CR]?",
+        german=" Nun denn...[K] Was wirst du als\nNächstes machen, [CS:N]Knuddeluff[CR]?",
+        italian=" Allora...[K] Cosa farai adesso,\n[CS:N]Wigglytuff[CR]?",
+        spanish=" Bueno...[K] ¿Cuál será\ntu próxima aventura, [CS:N]Wigglytuff[CR]?",
+    });
+    with (actor ACTOR_NPC_PUKURIN) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER_CHARMS);
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    WaitExecuteLives(ACTOR_NPC_PUKURIN);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Huh?[K] Next?",
+        french=" Hein?[K] Projets?",
+        german=" Wie?[K] Als Nächstes?",
+        italian=" Uh?[K] Cosa farò?",
+        spanish=" ¿Eh?[K] ¿La próxima?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_CHARMS, FACE_NORMAL, FACE_POS_BOTTOM_R_CENTER);
+    message_Talk({
+        english=" Yes, next. ♪",
+        french=" Oui, tes projets. ♪",
+        german=" Ja, hiernach. ♪",
+        italian=" Sì. ♪",
+        spanish=" Sí, claro. ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_WORRIED, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" I wonder...[K] I don\'t really have\nany plans...",
+        french=" Euh, je ne sais pas trop...[K] Je n\'ai\naucun projet pour l\'instant...",
+        german=" Ich weiß nicht...[K] Ich habe keine\nkonkreten Pläne.",
+        italian=" A dire il vero...[K] Non ho\nnessun progetto in mente...",
+        spanish=" Ahora que lo dices...[K] No tengo\nplanes, la verdad...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SAANAITO, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Well, if you\'d like...[K]you could\nalways come explore with us?",
+        french=" Eh bien, si tu n\'as rien d\'autre\nde prévu...[K] tu peux toujours nous accompagner\ndans nos explorations...",
+        german=" Nun, wenn du magst...[K] Wie wäre\nes, mit uns auf Erkundung zu kommen?",
+        italian=" Beh, se ti va...[K] potresti\nesplorare insieme a noi...",
+        spanish=" Bueno, pues si quieres...[K] puedes\nvenirte a explorar con nosotras, ¿no?",
+    });
+    with (actor ACTOR_NPC_PUKURIN) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_SAANAITO);
+    }
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    WaitExecuteLives(ACTOR_NPC_PUKURIN);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" With you?",
+        french=" Vous accompagner?",
+        german=" Mit euch?",
+        italian=" Insieme a voi?",
+        spanish=" ¿Con vosotras?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SAANAITO, FACE_HAPPY, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Yes, with us.[K] What do you think?",
+        french=" Oui, pourquoi pas?[K] Qu\'en dis-tu?",
+        german=" Ja, mit uns.[K] Wie findest du das?",
+        italian=" Sì.[K] Che ne pensi?",
+        spanish=" Sí, eso mismo.[K] ¿Qué te parece?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_WORRIED, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Hmmm...[K] What should I do...?",
+        french=" Hum...[K] Ça mérite réflexion...",
+        german=" Hmmm...[K]\nWas soll ich nur machen?",
+        italian=" Mmmh...[K] Non so che dire...",
+        spanish=" Hum...[K] ¿Qué hago?...",
+    });
+    message_Talk({
+        english=" It would be fun exploring\nwith you...",
+        french=" Ce serait amusant d\'explorer\navec vous...",
+        german=" Es würde Spaß machen, mit\neuch gemeinsam zu erkunden.",
+        italian=" Mi piacerebbe esplorare\ninsieme a voi...",
+        spanish=" Sería divertido explorar\ncon vosotras...",
+    });
+    message_Talk({
+        english=" But I\'ve never explored with\nanyone other than my master...",
+        french=" ... mais je ne suis jamais parti\nen exploration avec quelqu\'un d\'autre que\nmon maître...",
+        german=" Aber ich war noch nie mit\njemand anderem außer meinem Meister\nauf Erkundung...",
+        italian=" Ma l\'unico con cui sia mai\nandato in esplorazione è il mio maestro...",
+        spanish=" Pero nunca he explorado con\nnadie que no fuera mi maestro...",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_SAANAITO) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER_CHARMS);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER_CHARMS);
+    }
+    WaitExecuteLives(ACTOR_NPC_SAANAITO);
+    message_SetFace(ACTOR_NPC_SAANAITO, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" [CS:Y]Lopunny[CR]. That thing...",
+        french=" [CS:Y]Lockpin[CR]. C\'est le moment\nou jamais de sortir le fameux objet...",
+        german=" [CS:Y]Schlapor[CR]. Dieses Ding...",
+        italian=" [CS:Y]Lopunny[CR]. Quella cosa...",
+        spanish=" [CS:Y]Lopunny[CR]. Se me ocurre...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_CHARMS) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_SAANAITO);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_CHARMS);
+    message_SetFace(ACTOR_PLAYER_CHARMS, FACE_NORMAL, FACE_POS_BOTTOM_R_CENTER);
+    message_Talk({
+        english=" I\'m on it, [CS:N]Gardevoir[CR].",
+        french=" Tu lis dans mes pensées,\n[CS:N]Gardevoir[CR].",
+        german=" Ja, genau, [CS:N]Guardevoir[CR].",
+        italian=" Ho capito, [CS:N]Gardevoir[CR].",
+        spanish=" Buena idea, [CS:N]Gardevoir[CR].",
+    });
+    message_Close();
+    with (actor ACTOR_PLAYER_CHARMS) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PUKURIN);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_CHARMS);
+    with (actor ACTOR_NPC_SAANAITO) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PUKURIN);
+    }
+    Wait(6);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_PUKURIN);
+    }
+    message_SetFace(ACTOR_PLAYER_CHARMS, FACE_HAPPY, FACE_POS_BOTTOM_R_CENTER);
+    message_Talk({
+        english=" Hey, ummm... ♪\n[CS:N]Wigglytuff[CR]. [M:H8]",
+        french=" Ecoute... ♪ [CS:N]Grodoudou[CR]. [M:H8]",
+        german=" Hey, hmmm... ♪\n[CS:N]Knuddeluff[CR]. [M:H8]",
+        italian=" Ehi, uhmmm... ♪ [CS:N]Wigglytuff[CR]. [M:H8]",
+        spanish=" Oye, estooo... ♪ [CS:N]Wigglytuff[CR]. [M:H8]",
+    });
+    with (actor ACTOR_NPC_PUKURIN) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER_CHARMS);
+    }
+    WaitExecuteLives(ACTOR_NPC_PUKURIN);
+    message_Talk({
+        english=" If you were to come exploring\nwith us...",
+        french=" Si tu venais explorer avec\nnous...",
+        german=" Wenn du mit uns auf Erkundung\ngehen würdest...",
+        italian=" Se decidi di unirti alla nostra\nsquadra d\'esplorazione...",
+        spanish=" Si te vienes a explorar\ncon nosotras...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_CHARMS) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_CHARMS);
+    Wait(6);
+    with (actor ACTOR_PLAYER_CHARMS) {
+        MovePositionOffset(32896, 0, -12);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_CHARMS);
+    se_Play(6410);
+    supervision_Acting(1);
+    with (object OBJECT_P03P02A1_128) {
+        SetAnimation(9);
+    }
+    Wait(15);
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SlidePositionOffset(32896, 0, 12);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_CHARMS);
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetAnimation(2);
+    }
+    Wait(15);
+    message_SetFace(ACTOR_PLAYER_CHARMS, FACE_HAPPY, FACE_POS_BOTTOM_R_CENTER);
+    message_Talk({
+        english=" We could give you this. Would\nyou like that? [M:H8]",
+        french=" ... on pourrait te donner ça,\nen échange. Ça te plairait? [M:H8]",
+        german=" Könnten wir dir das hier\nanbieten. Wie wäre das? [M:H8]",
+        italian=" ... ti daremo questa. Che ne\ndici? [M:H8]",
+        spanish=" Te daremos esto. ¿Qué te parece? [M:H8]",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8978);
+    with (actor ACTOR_NPC_PUKURIN) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_PUKURIN) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_PUKURIN);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_SURPRISED, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Oooh!",
+        french=" Oooh!",
+        german=" Oooh!",
+        italian=" Oooh!",
+        spanish=" ¡Anda!",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_PUKURIN) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_PUKURIN);
+    with (actor ACTOR_NPC_PUKURIN) {
+        SetAnimation(5);
+    }
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_SIGH, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" I-it\'s a...[K]Perfect Apple! ♪",
+        french=" Une...[K] une Pomme Parfaite! ♪",
+        german=" E-ein...[K] Perfekter Apfel! ♪",
+        italian=" È-È una...[K] Mela Perfetta! ♪",
+        spanish=" ¡E... es una...[K] Manzana\nPerfecta! ♪",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_CHARMS, FACE_NORMAL, FACE_POS_BOTTOM_R_CENTER);
+    message_Talk({
+        english=" But...",
+        french=" Cependant...",
+        german=" Aber...",
+        italian=" Ma...",
+        spanish=" Pero...",
+    });
+    message_Close();
+    with (actor ACTOR_PLAYER_CHARMS) {
+        MovePositionOffset(1, 0, -12);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_CHARMS);
+    se_Play(8710);
+    Wait(9);
+    supervision_RemoveActing(1);
+    Wait(9);
+    with (actor ACTOR_NPC_PUKURIN) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SlidePositionOffset(1, 0, 12);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_CHARMS);
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetAnimation(2);
+    }
+    message_SetFace(ACTOR_PLAYER_CHARMS, FACE_HAPPY, FACE_POS_BOTTOM_R_CENTER);
+    message_Talk({
+        english=" I haven\'t decided if I\'m giving it\nto you yet. ♪",
+        french=" ... je ne sais pas si je vais te\nla donner tout de suite. ♪",
+        german=" Ich bin mir noch nicht sicher,\nob ich ihn dir wirklich geben soll. ♪",
+        italian=" Non ho ancora deciso se te\nla darò. ♪",
+        spanish=" Aún no he decidido\nsi te la doy o no. ♪",
+    });
+    se_Play(8968);
+    with (actor ACTOR_NPC_PUKURIN) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_PUKURIN) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_PUKURIN) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_PUKURIN);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_PlayFadeIn(BGM_TEAM_CHARMS_THEME, 0, 256);
+    message_SetWaitMode(180, 90);
+    message_SetFace(ACTOR_NPC_CHAAREMU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Let\'s get something straight...[K]\nWe\'re all pretty fast moving.",
+        french=" Que les choses soient claires...[K]\nOn n\'est pas du genre à traîner la patte.",
+        german=" Eine Sache noch...[K] Wie du\ngemerkt hast, sind wir alle ziemlich auf Zack.",
+        italian=" Facciamo così...[K] Noi tre siamo\ntutte molto veloci.",
+        spanish=" Vamos a dejar algo claro...[K]\nNosotras somos muy veloces.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetWaitMode(210, 60);
+    message_SetFace(ACTOR_NPC_SAANAITO, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Do you think you could keep up\nwith us?",
+        french=" Es-tu capable de suivre\nle rythme?",
+        german=" Glaubst du, du kannst mit\nunserem Tempo mithalten?",
+        italian=" Pensi di riuscire a starci dietro?",
+        spanish=" ¿Crees que podrás seguirnos\nel ritmo?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetWaitMode(120, 60);
+    message_SetFace(ACTOR_PLAYER_CHARMS, FACE_NORMAL, FACE_POS_BOTTOM_R_CENTER);
+    message_Talk({
+        english=" What do you think?[K]\nHow about a race?",
+        french=" Qu\'en penses-tu?[K] Et si nous\nfaisions la course?",
+        german=" Nun ja?!?[K] Wie wäre es mit\neinem Rennen?",
+        italian=" Che ne dici?[K]\nFacciamo una gara?",
+        spanish=" ¿Cómo lo ves?[K]\n¿Echamos una carrera?",
+    });
+    message_KeyWait();
+    message_SetWaitMode(45, 45);
+    message_Talk({
+        english=" 3...[K] 2...[K] 1...[K] GO!",
+        french=" 3...[K] 2...[K] 1...[K] PARTEZ!",
+        german=" 3...[K] 2...[K] 1...[K] LOS!",
+        italian=" 3...[K] 2...[K] 1...[K] VIA!",
+        spanish=" 3...[K] 2...[K] 1...[K] ¡YA!",
+    });
+    message_Close();
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetAnimation(25);
+    }
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SlidePositionMark(3, Position<'m7', 34.5, 38>);
+    }
+    Wait(6);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetAnimation(27);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SlidePositionMark(3, Position<'m8', 30, 35.5>);
+    }
+    Wait(6);
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetAnimation(28);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        SlidePositionMark(3, Position<'m9', 39, 35.5>);
+    }
+    Wait(6);
+    with (actor ACTOR_PLAYER_CHARMS) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_CHARMS);
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetAnimation(25);
+    }
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SlidePositionMark(3, Position<'m10', 34.5, 45.5>);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetAnimation(27);
+    }
+    WaitExecuteLives(ACTOR_NPC_CHAAREMU);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SlidePositionMark(3, Position<'m11', 30, 43>);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetAnimation(28);
+    }
+    WaitExecuteLives(ACTOR_NPC_SAANAITO);
+    with (actor ACTOR_NPC_SAANAITO) {
+        SlidePositionMark(3, Position<'m12', 39, 42.5>);
+    }
+    Wait(30);
+    with (actor ACTOR_NPC_PUKURIN) {
+        ExecuteCommon(CORO_JUMP_HAPPY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_PUKURIN);
+    message_SetWaitMode(90, 45);
+    message_SetFace(ACTOR_NPC_PUKURIN, FACE_SIGH, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" Yay![K] GO! GO!",
+        french=" Youpla![K] PARTEZ! PARTEZ!",
+        german=" Juchhu![K] LOS! LOS!",
+        italian=" Evviva![K] VIA! VIA!",
+        spanish=" ¡Yupi![K] ¡Vamos, vamos!",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_PUKURIN) {
+        MovePositionMark(33408, Position<'m13', 34.5, 62>);
+    }
+    Wait(30);
+    screen_FadeOut(1, 30);
+    Wait(40);
+    message_SetWaitMode(150, 60);
+    message_Explanation({
+        english="[CN]I\'ll go everywhere! ♪",
+        french="[CN]Je vous suivrai n\'importe où! ♪",
+        german="[CN]Ich werde überall hingehen! ♪",
+        italian="[CN]Vi raggiungerò! ♪",
+        spanish="[CN]¡Iré a cualquier sitio! ♪",
+    });
+    message_Explanation({
+        english="[CN]YOOM...TAH!",
+        french="[CN]TA-DAAAAAA!",
+        german="[CN]LUUUU... FIIII!",
+        italian="[CN]BADABUM!",
+        spanish="[CN]¡Genial!",
+    });
+    message_Close();
+    message_SetWaitMode(32767, 32767);
+    screen_FadeOut(1, 30);
+    Wait(20);
+    end;
+}
+
+def 1 for_actor(ACTOR_PLAYER_CHARMS) {
+    SetAnimation(2);
+    Lock(5);
+    Wait(6);
+    Turn2DirectionLives(4, 10, ACTOR_NPC_CHAAREMU);
+    Lock(6);
+    Wait(6);
+    Turn2Direction(4, 10, DIR_UP);
+    SetEffect(EFFECT_LAUGHING, 3);
+    §label_1;
+    forever {
+        switch ( $EVENT_LOCAL ) {
+            case 1:
+                break_loop;
+                break;
+            default:
+                WaitRandom(18, 21);
+                switch ( $EVENT_LOCAL ) {
+                    case 1:
+                        break_loop;
+                        break;
+                    default:
+                        Turn2DirectionLives(4, 10, ACTOR_NPC_SAANAITO);
+                        WaitRandom(12, 30);
+                        switch ( $EVENT_LOCAL ) {
+                            case 1:
+                                break_loop;
+                                break;
+                            default:
+                                Turn2DirectionLives(4, 10, ACTOR_NPC_CHAAREMU);
+                                WaitRandom(18, 21);
+                                switch ( $EVENT_LOCAL ) {
+                                    case 1:
+                                        break_loop;
+                                        break;
+                                    default:
+                                        SetEffect(EFFECT_NONE, 3);
+                                        WaitEffect();
+                                        SetEffect(EFFECT_JOYOUS, 3);
+                                        CallCommon(CORO_JUMP_HAPPY_FUNC);
+                                        Turn2DirectionLives(4, 10, ACTOR_NPC_CHAAREMU);
+                                        WaitRandom(12, 30);
+                                        Turn2DirectionLives(4, 10, ACTOR_NPC_SAANAITO);
+                                        CallCommon(CORO_JUMP_HAPPY_FUNC);
+                                        SetEffect(EFFECT_NONE, 3);
+                                        WaitEffect();
+                                        SetEffect(EFFECT_LAUGHING, 3);
+                                        switch ( $EVENT_LOCAL ) {
+                                            case 1:
+                                                break_loop;
+                                                break;
+                                            default:
+                                                continue;  // may be redundant
+                                        }
+                                        break;
+                                }
+                                break;
+                        }
+                        break;
+                }
+                break;
+        }
+    }
+    §label_0;
+    SetEffect(EFFECT_NONE, 3);
+    Lock(7);
+    hold;
+}
+
+def 2 for_actor(ACTOR_NPC_CHAAREMU) {
+    SetPositionInitial();
+    SetAnimation(2);
+    Lock(10);
+    SetAnimation(26);
+    WaitAnimation();
+    Lock(11);
+    SetAnimation(2);
+    SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    WaitEffect();
+    Turn2DirectionLives(4, 10, ACTOR_NPC_SAANAITO);
+    Lock(12);
+    Turn2DirectionLives(4, 10, ACTOR_PLAYER_CHARMS);
+    Lock(13);
+    MovePositionOffset(1, 14, 0);
+    Wait(20);
+    SetEffect(EFFECT_LAUGHING, 3);
+    Turn2DirectionLives(4, 10, ACTOR_PLAYER_CHARMS);
+    §label_3;
+    forever {
+        switch ( $EVENT_LOCAL ) {
+            case 1:
+                break_loop;
+                break;
+            default:
+                WaitRandom(12, 30);
+                Turn2DirectionLives(4, 10, ACTOR_NPC_SAANAITO);
+                switch ( $EVENT_LOCAL ) {
+                    case 1:
+                        break_loop;
+                        break;
+                    default:
+                        SetEffect(EFFECT_NONE, 3);
+                        WaitEffect();
+                        SetEffect(EFFECT_JOYOUS, 3);
+                        WaitRandom(18, 24);
+                        CallCommon(CORO_JUMP_HAPPY_FUNC);
+                        switch ( $EVENT_LOCAL ) {
+                            case 1:
+                                break_loop;
+                                break;
+                            default:
+                                WaitRandom(12, 30);
+                                Turn2DirectionLives(4, 10, ACTOR_PLAYER_CHARMS);
+                                SetEffect(EFFECT_NONE, 3);
+                                WaitEffect();
+                                SetEffect(EFFECT_LAUGHING, 3);
+                                switch ( $EVENT_LOCAL ) {
+                                    case 1:
+                                        break_loop;
+                                        break;
+                                    default:
+                                        WaitRandom(18, 24);
+                                        CallCommon(CORO_JUMP_HAPPY_FUNC);
+                                        SetEffect(EFFECT_NONE, 3);
+                                        WaitEffect();
+                                        SetEffect(EFFECT_JOYOUS, 3);
+                                        switch ( $EVENT_LOCAL ) {
+                                            case 1:
+                                                break_loop;
+                                                break;
+                                            default:
+                                                continue;  // may be redundant
+                                        }
+                                        break;
+                                }
+                                break;
+                        }
+                        break;
+                }
+                break;
+        }
+    }
+    §label_2;
+    SetEffect(EFFECT_NONE, 3);
+    Lock(14);
+    hold;
+}
+
+def 3 for_actor(ACTOR_NPC_SAANAITO) {
+    SetPositionInitial();
+    SetAnimation(2);
+    Lock(15);
+    Turn2DirectionLives(4, 10, ACTOR_NPC_CHAAREMU);
+    Lock(16);
+    Wait(15);
+    MovePositionOffset(1, -14, 0);
+    Wait(2);
+    SetEffect(EFFECT_LAUGHING, 3);
+    Wait(9);
+    Turn2DirectionLives(4, 10, ACTOR_PLAYER_CHARMS);
+    §label_5;
+    forever {
+        switch ( $EVENT_LOCAL ) {
+            case 1:
+                break_loop;
+                break;
+            default:
+                WaitRandom(18, 21);
+                Turn2DirectionLives(4, 10, ACTOR_NPC_CHAAREMU);
+                switch ( $EVENT_LOCAL ) {
+                    case 1:
+                        break_loop;
+                        break;
+                    default:
+                        WaitRandom(12, 27);
+                        Turn2DirectionLives(4, 10, ACTOR_PLAYER_CHARMS);
+                        switch ( $EVENT_LOCAL ) {
+                            case 1:
+                                break_loop;
+                                break;
+                            default:
+                                WaitRandom(18, 21);
+                                Turn2DirectionLives(4, 10, ACTOR_NPC_CHAAREMU);
+                                SetEffect(EFFECT_NONE, 3);
+                                WaitEffect();
+                                SetEffect(EFFECT_JOYOUS, 3);
+                                CallCommon(CORO_JUMP_HAPPY_FUNC);
+                                switch ( $EVENT_LOCAL ) {
+                                    case 1:
+                                        break_loop;
+                                        break;
+                                    default:
+                                        WaitRandom(12, 27);
+                                        Turn2DirectionLives(4, 10, ACTOR_PLAYER_CHARMS);
+                                        switch ( $EVENT_LOCAL ) {
+                                            case 1:
+                                                break_loop;
+                                                break;
+                                            default:
+                                                WaitRandom(18, 21);
+                                                Turn2DirectionLives(4, 10, ACTOR_NPC_CHAAREMU);
+                                                switch ( $EVENT_LOCAL ) {
+                                                    case 1:
+                                                        break_loop;
+                                                        break;
+                                                    default:
+                                                        WaitRandom(12, 27);
+                                                        Turn2DirectionLives(4, 10, ACTOR_PLAYER_CHARMS);
+                                                        SetEffect(EFFECT_NONE, 3);
+                                                        WaitEffect();
+                                                        SetEffect(EFFECT_LAUGHING, 3);
+                                                        CallCommon(CORO_JUMP_HAPPY_FUNC);
+                                                        switch ( $EVENT_LOCAL ) {
+                                                            case 1:
+                                                                break_loop;
+                                                                break;
+                                                            default:
+                                                                continue;  // may be redundant
+                                                        }
+                                                        break;
+                                                }
+                                                break;
+                                        }
+                                        break;
+                                }
+                                break;
+                        }
+                        break;
+                }
+                break;
+        }
+    }
+    §label_4;
+    SetEffect(EFFECT_NONE, 3);
+    Lock(17);
+    hold;
+}

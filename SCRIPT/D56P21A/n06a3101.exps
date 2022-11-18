@@ -1,0 +1,47 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_SIDE = scn[45, 11];
+    back_SetGround(LEVEL_D56P21A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetPositionInitial();
+    }
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetPositionMark(Position<'m0', 28.5, 34.5>);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetPositionMark(Position<'m2', 24.5, 36.5>);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetPositionMark(Position<'m4', 32.5, 36.5>);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    with (actor ACTOR_PLAYER_CHARMS) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_PLAYER_CHARMS) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_CHAAREMU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_SAANAITO) {
+        SetAnimation(2);
+    }
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_DEEP_LIMESTONE_CAVERN, 0, 256);
+    end;
+}
