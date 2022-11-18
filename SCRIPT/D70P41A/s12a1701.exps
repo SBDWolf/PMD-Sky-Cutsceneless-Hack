@@ -1,0 +1,180 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_D70P41A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    item_Set(0, 64, 0);
+    switch ( message_Menu(MENU_GIVE_ITEM) ) {
+        case 2:
+            §label_1;
+            switch ( random(100) ) {
+                case < 50:
+                    with (actor ACTOR_PLAYER_APPOINT) {
+                        SetAnimation(5);
+                    }
+                    with (actor ACTOR_PLAYER_APPOINT) {
+                        SlidePositionOffset(1, 0, 36);
+                    }
+                    WaitExecuteLives(ACTOR_PLAYER_APPOINT);
+                    with (actor ACTOR_PLAYER_APPOINT) {
+                        SetAnimation(2);
+                    }
+                    Wait(30);
+                    se_Play(7175);
+                    with (performer 4) {
+                        SetEffect(EFFECT_WHITE_LIGHT_ENGULFING_OUT, 3);
+                    }
+                    Wait(15);
+                    supervision_Acting(2);
+                    Wait(15);
+                    WaitExecutePerformer(4);
+                    with (performer 4) {
+                        SetEffect(EFFECT_NONE, 3);
+                    }
+                    Wait(15);
+                    bgm_PlayFadeIn(BGM_IN_THE_DEPTHS_OF_THE_PIT, 0, 256);
+                    message_Mail({
+                        english="[CN]Oh?[K]\n[CN][CS:N]Mew[CR] is saying something.",
+                        french="[CN]Oh![K]\n[CN][CS:N]Mew[CR] vous parle.",
+                        german="[CN]Oh?[K]\n[CN][CS:N]Mew[CR] will etwas sagen.",
+                        italian="[CN]Oh?[K]\n[CN][CS:N]Mew[CR] sta dicendo qualcosa.",
+                        spanish="[CN]¿Qué?[K]\n[CN][CS:N]Mew[CR] está diciendo algo.",
+                    });
+                    message_Mail({
+                        english="[CN]It seemed to develop a kinship\n[CN]with [player] while battling!",
+                        french="[CN]Il semble qu\'il ait développé\n[CN]des affinités avec [player]\n[CN]lors du combat!",
+                        german="[CN]Es scheint eine Verbindung mit [player]\n[CN]während des Kämpfens entwickelt zu haben!",
+                        italian="[CN]Sembra che abbia sviluppato un\'affinità\n[CN]con [player] durante la lotta!",
+                        spanish="[CN]¡Parece haber desarrollado una afinidad\n[CN]con [player] mientras estaba luchando!",
+                    });
+                    message_Mail({
+                        english="[CN]It says that it wants\n[CN]to join the team!",
+                        french="[CN]Il dit qu\'il veut\n[CN]rejoindre votre équipe!",
+                        german="[CN]Es sagt, es möchte gerne\n[CN]dem Team beitreten!",
+                        italian="[CN]Sta dicendo che vuole\n[CN]unirsi alla squadra!",
+                        spanish="[CN]¡Dice que quiere\n[CN]unirse al equipo!",
+                    });
+                    §label_6;
+                    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                    switch ( ProcessSpecial(PROCESS_SPECIAL_PREPARE_MENU_ACCEPT_TEAM_MEMBER, 15, 0) ) { }
+                    switch ( message_Menu(MENU_ACCEPT_TEAM_MEMBER) ) {
+                        case 1:
+                            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                            me_Play(5);
+                            message_Mail({
+                                english="[CN][c_name:NPC_NEW_FRIEND] joined the team!",
+                                french="[CN][c_name:NPC_NEW_FRIEND] rejoint l\'équipe!",
+                                german="[CN][c_name:NPC_NEW_FRIEND] gehört nun zum Team.",
+                                italian="[CN][c_name:NPC_NEW_FRIEND] si unisce alla squadra!",
+                                spanish="[CN]¡[c_name:NPC_NEW_FRIEND] se ha unido al equipo!",
+                            });
+                            WaitMe(5);
+                            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                            bgm_FadeOut(30);
+                            se_Play(7183);
+                            with (performer 4) {
+                                SetEffect(EFFECT_WHITE_LIGHT_ENGULFING, 3);
+                            }
+                            Wait(10);
+                            with (actor ACTOR_NPC_MYUU) {
+                                Destroy();
+                            }
+                            Wait(15);
+                            WaitExecutePerformer(4);
+                            with (performer 4) {
+                                SetEffect(EFFECT_NONE, 3);
+                            }
+                            Wait(30);
+                            WaitSe(7183);
+                            §label_3;
+                            screen_FadeOut(1, 60);
+                            Wait(30);
+                            $SCENARIO_MAIN_BIT_FLAG[38] = 0;
+                            if ( $SCENARIO_MAIN_BIT_FLAG[33] || $SCENARIO_MAIN_BIT_FLAG[34] || $SCENARIO_MAIN_BIT_FLAG[35] || $SCENARIO_MAIN_BIT_FLAG[36] || $SCENARIO_MAIN_BIT_FLAG[37] || $SCENARIO_MAIN_BIT_FLAG[38] || $SCENARIO_MAIN_BIT_FLAG[39] ) {
+                                §label_8;
+                                end;
+                            } else {
+                                $PERFORMANCE_PROGRESS_LIST[21] = 1;
+                                jump @label_8;
+                            }
+                            break;
+                        case 2:
+                        default:
+                            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                            message_Mail({
+                                english="[CN]Are you sure?[K]\n[CN]You\'re sure you won\'t accept\n[CN]this potential new member?",
+                                french="[CN]Etes-vous sûr?[K]\n[CN]Vous ne voulez vraiment pas\n[CN]accepter cette nouvelle recrue?",
+                                german="[CN]Bist du sicher?[K]\n[CN]Möchtest du dieses potenzielle neue\n[CN]Mitglied wirklich abweisen?",
+                                italian="[CN]Davvero?[K]\n[CN]Confermi di non voler accettare\n[CN]questo potenziale nuovo membro?",
+                                spanish="[CN]¿Seguro?[K]\n[CN]¿Seguro que prefieres que no\n[CN]se incorpore al equipo?",
+                            });
+                            switch ( message_SwitchMenu(0, 1) ) {
+                                case menu({
+                                    english="Reconsider",
+                                    french="Reconsidérer",
+                                    german="Überdenken",
+                                    italian="Ripensaci",
+                                    spanish="Reconsiderar",
+                                }):
+                                    jump @label_6;
+                                case menu({
+                                    english="Refuse",
+                                    french="Refuser",
+                                    german="Ablehnen",
+                                    italian="Rifiuta",
+                                    spanish="Rechazar",
+                                }):
+                                default:
+                                    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                                    message_Mail({
+                                        english="[CN][CS:N]Mew[CR] was turned down\n[CN]as a team member.",
+                                        french="[CN]Vous avez refusé l\'offre\n[CN]de [CS:N]Mew[CR].",
+                                        german="[CN][CS:N]Mew[CR] wird\n[CN]als Team-Mitglied abgelehnt.",
+                                        italian="[CN]Non hai accettato [CS:N]Mew[CR] come nuovo membro\n[CN]della squadra.",
+                                        spanish="[CN]Has rechazado el ofrecimiento de [CS:N]Mew[CR]\n[CN]de formar parte del equipo.",
+                                    });
+                                    message_Close();
+                                    bgm_FadeOut(30);
+                                    se_Play(7183);
+                                    with (performer 4) {
+                                        SetEffect(EFFECT_WHITE_LIGHT_ENGULFING, 3);
+                                    }
+                                    Wait(10);
+                                    with (actor ACTOR_NPC_MYUU) {
+                                        Destroy();
+                                    }
+                                    Wait(15);
+                                    WaitExecutePerformer(4);
+                                    with (performer 4) {
+                                        SetEffect(EFFECT_NONE, 3);
+                                    }
+                                    Wait(30);
+                                    WaitSe(7183);
+                                    jump @label_3;
+                            }
+                            break;
+                    }
+                    break;
+                default:
+                    jump @label_3;
+            }
+            break;
+        default:
+            Wait(10);
+            me_Play(9);
+            message_Mail({
+                english="[CN][player] obtained\n[CN]a [CS:I]Grass Cornet[CR], one of\n[CN]the seven treasures!",
+                french="[CN][player] obtient\n[CN]une [CS:I]Phytocorne[CR],\n[CN]un des sept trésors!",
+                german="[CN][player] erhält das\n[CN][CS:I]Wiesenhorn[CR], einen der\n[CN]sieben Schätze!",
+                italian="[CN][player] ottiene\n[CN]la [CS:I]Cornettaerba[CR], uno dei\n[CN]sette tesori!",
+                spanish="[CN][player] ha obtenido\n[CN]la [CS:I]Herbicorneta[CR],\n[CN]¡uno de los siete tesoros!",
+            });
+            WaitMe(9);
+            message_Close();
+            jump @label_1;
+    }
+}

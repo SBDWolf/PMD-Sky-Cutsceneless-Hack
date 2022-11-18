@@ -1,0 +1,59 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_D70P41A);
+    supervision_Acting(0);
+    supervision_Acting(1);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_PLAYER_APPOINT) {
+        SetPositionMark(Position<'m0', 49.5, 42.5>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        SetPositionMark(Position<'m1', 52.5, 44.5>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        SetPositionMark(Position<'m2', 46.5, 44.5>);
+    }
+    with (actor ACTOR_ADVENTURE_NPC3) {
+        SetPositionMark(Position<'m3', 49.5, 46.5>);
+    }
+    with (actor ACTOR_PLAYER_APPOINT) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_ADVENTURE_NPC3) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_PLAYER_APPOINT) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ADVENTURE_NPC1) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ADVENTURE_NPC2) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_ADVENTURE_NPC3) {
+        SetAnimation(2);
+    }
+    screen_FadeIn(1, 30);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    WaitSe(5143);
+    CallCommon(CORO_BOSS_WIPE_FUNC);
+    end;
+}
