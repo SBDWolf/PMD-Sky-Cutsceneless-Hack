@@ -1,0 +1,39 @@
+
+def 0 {
+    back_SetGround(LEVEL_H01P99A);
+    switch ( ProcessSpecial(PROCESS_SPECIAL_IS_RECURITABLE_IN_TEAM, 18, 0) ) {
+        case 1:
+            §label_0;
+            supervision_Acting(0);
+            supervision_Acting(1);
+            supervision_Acting(2);
+            with (performer 0) {
+                camera_SetMyself();
+            }
+            with (actor ACTOR_PLAYER) {
+                SetPositionMark(Position<'m0', 39.5, 25.5>);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                SetPositionMark(Position<'m1', 39.5, 22.5>);
+            }
+            with (actor ACTOR_PLAYER) {
+                SetDirection(DIR_RIGHT);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                SetDirection(DIR_RIGHT);
+            }
+            with (actor ACTOR_PLAYER) {
+                SetAnimation(2);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                SetAnimation(2);
+            }
+            bgm_PlayFadeIn(BGM_OCEAN1, 90, 256);
+            screen_FadeIn(1, 30);
+            end;
+        default:
+            supervision_LoadStation(LEVEL_H01P99A, 'US23');
+            supervision_Station(2);
+            jump @label_0;
+    }
+}

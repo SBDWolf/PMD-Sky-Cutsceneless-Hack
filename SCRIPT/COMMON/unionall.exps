@@ -5736,8 +5736,10 @@ coro EVENT_S04_24 {
 coro EVENT_S11_01 {
     CallCommon(CORO_SUBSCREEN_INIT);
     supervision_ExecuteActingSub(LEVEL_H01P99A, 'C00A1001', 0);
-    supervision_ExecuteActingSub(LEVEL_H02P99A, 'C00A1101', 0);
-    supervision_ExecuteActingSub(LEVEL_H02P99A, 'S11P0101', 0);
+    $SCENARIO_MAIN = scn[29, 98];
+    dungeon_mode(72) = DMODE_OPEN_AND_REQUEST;
+    //supervision_ExecuteActingSub(LEVEL_H02P99A, 'C00A1101', 0);
+    //supervision_ExecuteActingSub(LEVEL_H02P99A, 'S11P0101', 0);
     supervision_ExecuteActingSub(LEVEL_H01P99A, 'S11P0102', 0);
     CallCommon(CORO_EVENT_END_MAPIN);
     main_SetGround(LEVEL_H01P99A);
@@ -6270,8 +6272,9 @@ coro EVENT_S22_14_15 {
 
 coro EVENT_S23_01 {
     CallCommon(CORO_SUBSCREEN_INIT);
-    supervision_ExecuteActingSub(LEVEL_H01P99A, 'S23P0101', 0);
-    supervision_ExecuteActingSub(LEVEL_D01P11A, 'S23P0102', 0);
+    $SCENARIO_MAIN = scn[29, 94];
+    //supervision_ExecuteActingSub(LEVEL_H01P99A, 'S23P0101', 0);
+    //supervision_ExecuteActingSub(LEVEL_D01P11A, 'S23P0102', 0);
     supervision_ExecuteActingSub(LEVEL_H02P99A, 'S23P0103', 0);
     CallCommon(CORO_EVENT_END_MAPIN);
     main_SetGround(LEVEL_H02P99A);
@@ -6986,6 +6989,7 @@ coro EVENT_N01_31 {
     supervision_ExecuteActingSub(LEVEL_D42P42A, 'N01A3101', 0);
     //supervision_ExecuteActingSub(LEVEL_G01P04A, 'N01A3102', 0);
     //supervision_ExecuteActingSub(LEVEL_S04P01A, 'N01A3103', 0);
+    switch ( message_Menu(MENU_STAFF_CREDITS4) ) { }
     $SPECIAL_EPISODE_TYPE = 32767;
     adventure_log = 1000;
     switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
@@ -7290,6 +7294,7 @@ coro EVENT_N03_17 {
     CallCommon(CORO_SUBSCREEN_INIT);
     $SCENARIO_SIDE = scn[42, 10];
     $SCENARIO_SIDE = scn[42, 11];
+    switch ( message_Menu(MENU_STAFF_CREDITS4) ) { }
     $SPECIAL_EPISODE_TYPE = 32767;
     adventure_log = 1001;
     switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
@@ -7555,6 +7560,7 @@ coro EVENT_N04_25 {
 coro EVENT_N04_26 {
     CallCommon(CORO_DEBUG_FLAG_SETTING_KIMAWARI);
     CallCommon(CORO_SUBSCREEN_INIT);
+    switch ( message_Menu(MENU_STAFF_CREDITS4) ) { }
     $SPECIAL_EPISODE_TYPE = 32767;
     adventure_log = 1002;
     switch ( message_Menu(MENU_DUNGEON_TEAM_RETURNS_FROM_MAP) ) { }
@@ -7930,10 +7936,11 @@ coro EVENT_N06_39 {
     //supervision_ExecuteActingSub(LEVEL_P28P01A, 'N06A3907', 0);
     //supervision_ExecuteActingSub(LEVEL_D55P11A, 'N06A3908', 0);
     //supervision_ExecuteActingSub(LEVEL_S04P01A, 'N06A3909', 0);
-                            $SPECIAL_EPISODE_TYPE = 32767;
-                            adventure_log = 1003;
-                            switch ( message_Menu(MENU_SAVE_MENU) ) { }
-                            switch ( ProcessSpecial(24, 0, 0) ) { }
+    switch ( message_Menu(MENU_STAFF_CREDITS4) ) { }
+    $SPECIAL_EPISODE_TYPE = 32767;
+    adventure_log = 1003;
+    switch ( message_Menu(MENU_SAVE_MENU) ) { }
+    switch ( ProcessSpecial(24, 0, 0) ) { }
     end;
 }
 
@@ -8463,6 +8470,7 @@ coro EVENT_N09_22 {
     //supervision_ExecuteActingSub(LEVEL_V38P11A, 'N09A2210', 0);
     //supervision_ExecuteActingSub(LEVEL_D53P41C, 'N09A2211', 0);
     //supervision_ExecuteActingSub(LEVEL_S04P01A, 'N09A2212', 0);
+    switch ( message_Menu(MENU_STAFF_CREDITS4) ) { }
     $SPECIAL_EPISODE_TYPE = 32767;
     $SIDE08_BOSS2ND[0] = 0;
     adventure_log = 1004;

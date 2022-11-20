@@ -1,0 +1,259 @@
+
+def 0 {
+    if ( scn($SCENARIO_MAIN) >= [29, 94] || scn($SCENARIO_MAIN) >= [29, 93] || scn($SCENARIO_MAIN) >= [29, 92] ) {
+        WaitSubScreen();
+        screen2_FadeOut(1, 30);
+        if ( $SCENARIO_TALK_BIT_FLAG[41] ) {
+            WaitSubScreen();
+            screen2_FadeOut(1, 30);
+            with (actor ACTOR_TALK_MAIN) {
+                ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+            }
+            with (actor ACTOR_TALK_SUB) {
+                ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                SetAnimation(2);
+            }
+            WaitExecuteLives(ACTOR_ATTENDANT1);
+            with (actor ACTOR_PLAYER) {
+                Turn2DirectionLives(4, 10, ACTOR_NPC_KURESERIA);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                Turn2DirectionLives(4, 10, ACTOR_NPC_KURESERIA);
+            }
+            WaitExecuteLives(ACTOR_ATTENDANT1);
+            message_SetFace(ACTOR_NPC_KURESERIA, FACE_NORMAL, FACE_POS_STANDARD);
+            message_Talk({
+                english=" I would love to join your Team\n[team:]...",
+                french=" J\'adorerais intégrer votre\nEquipe [team:]...",
+                german=" Ich würde mich gerne eurem\nTeam [team:] anschließen.",
+                italian=" Sarebbe fantastico far parte del\nTeam [team:]...",
+                spanish=" Me encantaría unirme\nal [CS:X]Equipo[CR] [team:]...",
+            });
+            message_Talk({
+                english=" Will you have me?",
+                french=" M\'acceptez-vous?",
+                german=" Nehmt ihr mich?",
+                italian=" Mi volete con voi?",
+                spanish=" ¿Me aceptáis?",
+            });
+            CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+            switch ( ProcessSpecial(PROCESS_SPECIAL_PREPARE_MENU_ACCEPT_TEAM_MEMBER, 18, 0) ) { }
+            switch ( message_Menu(MENU_ACCEPT_TEAM_MEMBER) ) {
+                case 1:
+                default:
+                    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                    me_Play(5);
+                    message_ResetActor();
+                    message_Mail({
+                        english="[CN][c_name:NPC_NEW_FRIEND] joined the team!",
+                        french="[CN][c_name:NPC_NEW_FRIEND] a rejoint l\'équipe!",
+                        german="[CN][c_name:NPC_NEW_FRIEND] gehört nun zum Team.",
+                        italian="[CN][c_name:NPC_NEW_FRIEND] entra a far parte della squadra!",
+                        spanish="[CN]¡[c_name:NPC_NEW_FRIEND] se unió al equipo!",
+                    });
+                    WaitMe(5);
+                    message_Close();
+                    screen_FadeOut(1, 30);
+                    with (actor ACTOR_NPC_KURESERIA) {
+                        Destroy();
+                    }
+                    Wait(60);
+                    screen_FadeIn(1, 30);
+                    §label_130;
+                    JumpCommon(CORO_END_TALK);
+                case 2:
+                    message_Close();
+                    Wait(30);
+                    message_SetFace(ACTOR_NPC_KURESERIA, FACE_NORMAL, FACE_POS_STANDARD);
+                    message_Talk({
+                        english=" ...I see. That\'s disappointing.",
+                        french=" ... Je vois. Quelle déception!",
+                        german=" ...Verstehe. Das ist\nenttäuschend.",
+                        italian=" Capisco. Che delusione!",
+                        spanish=" Ya veo. Qué decepción.",
+                    });
+                    message_Talk({
+                        english=" If you have a change of heart,\nand you would let me join your team...",
+                        french=" Si d\'aventure vous changiez\nd\'avis et décidiez de m\'accepter dans votre\néquipe...",
+                        german=" Falls du es dir anders überlegen\nsolltest und mich in dein Team aufnehmen\nmöchtest...",
+                        italian=" Se doveste cambiare idea e\nmi voleste nella vostra squadra...",
+                        spanish=" Si cambiáis de opinión y queréis\nque me una al equipo...",
+                    });
+                    message_Talk({
+                        english=" Please tell me.",
+                        french=" ... faites-le-moi savoir.",
+                        german=" Lass es mich bitte wissen.",
+                        italian=" Ditemelo per favore.",
+                        spanish=" Hacédmelo saber.",
+                    });
+                    message_Close();
+                    jump @label_130;
+            }
+        } else {
+            $SCENARIO_TALK_BIT_FLAG[41] = 1;
+            with (actor ACTOR_TALK_MAIN) {
+                ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+            }
+            with (actor ACTOR_TALK_SUB) {
+                ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                SetAnimation(2);
+            }
+            WaitExecuteLives(ACTOR_ATTENDANT1);
+            with (actor ACTOR_NPC_KURESERIA) {
+                Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                Turn2DirectionLives(4, 10, ACTOR_PLAYER);
+            }
+            WaitExecuteLives(ACTOR_ATTENDANT1);
+            with (actor ACTOR_PLAYER) {
+                Turn2DirectionLives(4, 10, ACTOR_ATTENDANT1);
+            }
+            WaitExecuteLives(ACTOR_ATTENDANT1);
+            WaitExecuteLives(ACTOR_NPC_KURESERIA);
+            WaitExecuteLives(ACTOR_PLAYER);
+            switch ( ProcessSpecial(PROCESS_SPECIAL_PREPARE_MENU_ACCEPT_TEAM_MEMBER, 18, 0) ) { }
+            switch ( message_Menu(MENU_ACCEPT_TEAM_MEMBER) ) {
+                case 1:
+                default:
+                    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+                    me_Play(5);
+                    message_ResetActor();
+                    message_Mail({
+                        english="[CN][c_name:NPC_NEW_FRIEND] joined the team!",
+                        french="[CN][c_name:NPC_NEW_FRIEND] a rejoint l\'équipe!",
+                        german="[CN][c_name:NPC_NEW_FRIEND] gehört nun zum Team.",
+                        italian="[CN][c_name:NPC_NEW_FRIEND] entra a far parte della squadra!",
+                        spanish="[CN]¡[c_name:NPC_NEW_FRIEND] se unió al equipo!",
+                    });
+                    WaitMe(5);
+                    message_Close();
+                    screen_FadeOut(1, 30);
+                    with (actor ACTOR_NPC_KURESERIA) {
+                        Destroy();
+                    }
+                    Wait(60);
+                    screen_FadeIn(1, 30);
+                    jump @label_130;
+                case 2:
+                    message_Close();
+                    Wait(30);
+                    message_SetFace(ACTOR_NPC_KURESERIA, FACE_NORMAL, FACE_POS_STANDARD);
+                    message_Talk({
+                        english=" ...I see. That\'s disappointing.",
+                        french=" ... Je vois. Quelle déception!",
+                        german=" ...Verstehe. Das ist\nenttäuschend.",
+                        italian=" Capisco. Che delusione!",
+                        spanish=" Ya veo. Qué decepción.",
+                    });
+                    message_Talk({
+                        english=" If you have a change of heart,\nand you would let me join your team...",
+                        french=" Si d\'aventure vous changiez\nd\'avis et décidiez de m\'accepter dans votre\néquipe...",
+                        german=" Falls ihr es euch anders\nüberlegen solltet und mich in euer Team\naufnehmen möchtet...",
+                        italian=" Se doveste cambiare idea e\nmi voleste nella vostra squadra...",
+                        spanish=" Si cambiáis de opinión y queréis\nque me una al equipo...",
+                    });
+                    message_Talk({
+                        english=" Please tell me.",
+                        french=" ... faites-le-moi savoir.",
+                        german=" Lasst es mich bitte wissen.",
+                        italian=" Ditemelo per favore.",
+                        spanish=" Hacédmelo saber.",
+                    });
+                    message_Close();
+                    jump @label_130;
+            }
+        }
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 91] ) {
+        switch ( $GROUND_ENTER ) {
+            case 102:
+                with (actor ACTOR_TALK_MAIN) {
+                    ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+                }
+                with (actor ACTOR_TALK_SUB) {
+                    ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+                }
+                with (actor ACTOR_ATTENDANT1) {
+                    SetAnimation(2);
+                }
+                with (actor ACTOR_ATTENDANT1) {
+                    Turn2DirectionLives(4, 10, ACTOR_NPC_KURESERIA);
+                }
+                message_SetFace(ACTOR_NPC_KURESERIA, FACE_NORMAL, FACE_POS_STANDARD);
+                message_Talk({
+                    english=" I was driven to journey far and\nwide. I simply had to! I must stop [CS:N]Darkrai[CR]\'s\nvile scheme.",
+                    french=" J\'ai été poussée à voyager de\npar le monde. Je n\'ai pas eu le choix! Il faut\ndéjouer l\'infâme complot de [CS:N]Darkrai[CR].",
+                    german=" Ich spürte den Drang, überall\nherumzureisen. Ich musste einfach! Das fiese\nKomplott von [CS:N]Darkrai[CR] muss verhindert werden.",
+                    italian=" Ho sentito un impulso irrefrena-\nbile a viaggiare lontano. Dovevo farlo!\nBisogna fermare il vile piano di [CS:N]Darkrai[CR].",
+                    spanish=" Tuve que embarcarme en un\nviaje larguísimo. No tenía otra opción si\nquería detener el malvado plan de [CS:N]Darkrai[CR].",
+                });
+                message_Talk({
+                    english=" We don\'t have far to go.[K]\nThere\'s no giving up now!",
+                    french=" Ce n\'est plus très loin.[K]\nAccrochons-nous!",
+                    german=" Es ist nicht mehr weit.[K]\nJetzt nicht aufgeben!",
+                    italian=" Non ci manca più molto.[K]\nNon possiamo mollare adesso!",
+                    spanish=" Ya no queda mucho.[K] ¡No podemos\nrendirnos ahora!",
+                });
+                message_Close();
+                jump @label_130;
+            default:
+                §label_7;
+                supervision_ExecuteCommon(CORO_EVENT_S22_05);
+                jump @label_130;
+        }
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 90] ) {
+        switch ( $GROUND_ENTER ) {
+            case 102:
+                §label_5;
+                switch ( $GROUND_ENTER ) {
+                    case 102:
+                        with (actor ACTOR_TALK_MAIN) {
+                            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+                        }
+                        with (actor ACTOR_TALK_SUB) {
+                            ExecuteCommon(CORO_LIVES_REPLY_NORMAL, 0);
+                        }
+                        with (actor ACTOR_ATTENDANT1) {
+                            SetAnimation(2);
+                        }
+                        with (actor ACTOR_ATTENDANT1) {
+                            Turn2DirectionLives(4, 10, ACTOR_NPC_KURESERIA);
+                        }
+                        message_SetFace(ACTOR_NPC_KURESERIA, FACE_NORMAL, FACE_POS_STANDARD);
+                        message_Talk({
+                            english=" There\'s no telling when [CS:N]Darkrai[CR]\nwill strike.",
+                            french=" Il est impossible de prévoir\nquand [CS:N]Darkrai[CR] se décidera à frapper.",
+                            german=" Es kann nicht vorhergesagt\nwerden, wann [CS:N]Darkrai[CR] zuschlagen wird.",
+                            italian=" Non si sa quando [CS:N]Darkrai[CR]\ncolpirà.",
+                            spanish=" Es imposible saber cuándo\natacará [CS:N]Darkrai[CR].",
+                        });
+                        message_Talk({
+                            english=" Let\'s proceed with\nutmost caution.",
+                            french=" Procédons avec la plus extrême\nprudence.",
+                            german=" Gehen wir mit äußerster\nVorsicht vor.",
+                            italian=" Procediamo con la massima\ncautela.",
+                            spanish=" Obremos con cautela.",
+                        });
+                        message_Close();
+                        jump @label_130;
+                    default:
+                        jump @label_7;
+                }
+                break;
+            default:
+                jump @label_7;
+        }
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 89] ) {
+        jump @label_5;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 88] || scn($SCENARIO_MAIN) >= [29, 87] ) {
+        jump @label_7;
+    } elseif ( scn($SCENARIO_MAIN) >= [29, 85] || scn($SCENARIO_MAIN) >= [29, 84] || scn($SCENARIO_MAIN) >= [29, 83] || scn($SCENARIO_MAIN) >= [29, 82] || scn($SCENARIO_MAIN) >= [29, 81] || scn($SCENARIO_MAIN) >= [29, 80] || scn($SCENARIO_MAIN) >= [29, 78] || scn($SCENARIO_MAIN) >= [29, 76] || scn($SCENARIO_MAIN) >= [29, 75] || scn($SCENARIO_MAIN) >= [29, 73] || scn($SCENARIO_MAIN) >= [29, 72] || scn($SCENARIO_MAIN) >= [29, 71] || scn($SCENARIO_MAIN) >= [29, 70] || scn($SCENARIO_MAIN) >= [29, 69] || scn($SCENARIO_MAIN) >= [29, 67] || scn($SCENARIO_MAIN) >= [29, 56] || scn($SCENARIO_MAIN) >= [29, 55] || scn($SCENARIO_MAIN) >= [29, 54] || scn($SCENARIO_MAIN) >= [29, 53] || scn($SCENARIO_MAIN) >= [29, 52] || scn($SCENARIO_MAIN) >= [29, 50] || scn($SCENARIO_MAIN) >= [29, 49] || scn($SCENARIO_MAIN) >= [29, 48] || scn($SCENARIO_MAIN) >= [29, 47] || scn($SCENARIO_MAIN) >= [29, 46] || scn($SCENARIO_MAIN) >= [29, 45] || scn($SCENARIO_MAIN) >= [29, 44] || scn($SCENARIO_MAIN) >= [29, 43] || scn($SCENARIO_MAIN) >= [29, 42] || scn($SCENARIO_MAIN) >= [29, 41] || scn($SCENARIO_MAIN) >= [29, 40] || scn($SCENARIO_MAIN) >= [29, 39] || scn($SCENARIO_MAIN) >= [29, 33] || scn($SCENARIO_MAIN) >= [29, 32] || scn($SCENARIO_MAIN) >= [29, 31] || scn($SCENARIO_MAIN) >= [29, 30] || scn($SCENARIO_MAIN) >= [29, 29] || scn($SCENARIO_MAIN) >= [29, 28] || scn($SCENARIO_MAIN) >= [29, 27] || scn($SCENARIO_MAIN) >= [29, 26] || scn($SCENARIO_MAIN) >= [29, 25] || scn($SCENARIO_MAIN) >= [29, 24] || scn($SCENARIO_MAIN) >= [29, 23] || scn($SCENARIO_MAIN) >= [29, 22] || scn($SCENARIO_MAIN) >= [29, 21] || scn($SCENARIO_MAIN) >= [29, 20] || scn($SCENARIO_MAIN) >= [29, 19] || scn($SCENARIO_MAIN) >= [29, 18] || scn($SCENARIO_MAIN) >= [29, 17] || scn($SCENARIO_MAIN) >= [29, 16] || scn($SCENARIO_MAIN) >= [29, 15] || scn($SCENARIO_MAIN) >= [29, 14] || scn($SCENARIO_MAIN) >= [29, 13] || scn($SCENARIO_MAIN) >= [29, 12] || scn($SCENARIO_MAIN) >= [29, 11] || scn($SCENARIO_MAIN) >= [29, 10] || scn($SCENARIO_MAIN) >= [29, 8] || scn($SCENARIO_MAIN) >= [29, 6] || scn($SCENARIO_MAIN) >= [29, 5] || scn($SCENARIO_MAIN) >= [29, 4] || scn($SCENARIO_MAIN) >= [29, 3] || scn($SCENARIO_MAIN) >= [29, 2] || scn($SCENARIO_MAIN) >= [29, 1] || scn($SCENARIO_MAIN) >= [25, 4] || scn($SCENARIO_MAIN) >= [25, 3] || scn($SCENARIO_MAIN) >= [25, 2] || scn($SCENARIO_MAIN) >= [25, 2] || scn($SCENARIO_MAIN) >= [25, 1] || scn($SCENARIO_MAIN) >= [24, 1] || scn($SCENARIO_MAIN) >= [24, 1] || scn($SCENARIO_MAIN) >= [23, 3] || scn($SCENARIO_MAIN) >= [23, 2] || scn($SCENARIO_MAIN) >= [23, 1] || scn($SCENARIO_MAIN) >= [22, 3] || scn($SCENARIO_MAIN) >= [22, 2] || scn($SCENARIO_MAIN) >= [21, 2] || scn($SCENARIO_MAIN) >= [21, 1] || scn($SCENARIO_MAIN) >= [20, 4] || scn($SCENARIO_MAIN) >= [20, 3] || scn($SCENARIO_MAIN) >= [20, 2] || scn($SCENARIO_MAIN) >= [20, 1] || scn($SCENARIO_MAIN) >= [17, 3] || scn($SCENARIO_MAIN) >= [17, 1] || scn($SCENARIO_MAIN) >= [16, 2] || scn($SCENARIO_MAIN) >= [16, 0] || scn($SCENARIO_MAIN) >= [15, 4] || scn($SCENARIO_MAIN) >= [15, 1] || scn($SCENARIO_MAIN) >= [14, 5] || scn($SCENARIO_MAIN) >= [14, 4] || scn($SCENARIO_MAIN) >= [14, 2] || scn($SCENARIO_MAIN) >= [14, 1] || scn($SCENARIO_MAIN) >= [13, 2] || scn($SCENARIO_MAIN) >= [13, 1] || scn($SCENARIO_MAIN) >= [12, 4] || scn($SCENARIO_MAIN) >= [12, 3] || scn($SCENARIO_MAIN) >= [12, 1] || scn($SCENARIO_MAIN) >= [10, 2] || scn($SCENARIO_MAIN) >= [10, 1] || scn($SCENARIO_MAIN) >= [9, 5] || scn($SCENARIO_MAIN) >= [9, 4] || scn($SCENARIO_MAIN) >= [9, 2] || scn($SCENARIO_MAIN) >= [9, 1] || scn($SCENARIO_MAIN) >= [8, 7] || scn($SCENARIO_MAIN) >= [8, 6] || scn($SCENARIO_MAIN) >= [8, 5] || scn($SCENARIO_MAIN) >= [8, 3] || scn($SCENARIO_MAIN) >= [8, 2] || scn($SCENARIO_MAIN) >= [8, 1] || scn($SCENARIO_MAIN) >= [7, 6] || scn($SCENARIO_MAIN) >= [7, 3] || scn($SCENARIO_MAIN) >= [7, 2] || scn($SCENARIO_MAIN) >= [7, 1] || scn($SCENARIO_MAIN) >= [6, 5] || scn($SCENARIO_MAIN) >= [6, 1] || scn($SCENARIO_MAIN) >= [5, 5] || scn($SCENARIO_MAIN) >= [4, 7] || scn($SCENARIO_MAIN) >= [4, 5] || scn($SCENARIO_MAIN) >= [4, 3] || scn($SCENARIO_MAIN) >= [4, 2] || scn($SCENARIO_MAIN) >= [4, 1] || scn($SCENARIO_MAIN) >= [4, 0] || scn($SCENARIO_MAIN) >= [3, 1] ) {
+        jump @label_130;
+    } else {
+        jump @label_130;
+    }
+}

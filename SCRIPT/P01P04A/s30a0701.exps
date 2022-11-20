@@ -1,0 +1,596 @@
+
+def 0 {
+    supervision_Acting(0);
+    switch ( message_Menu(MENU_JUICE_BAR) ) { }
+    §label_35;
+    switch ( message_Menu(MENU_JUICE_BAR_PICK_ITEM) ) {
+        case 1:
+            §switch1_472;
+            §label_34;
+            JumpCommon(CORO_END_TALK);
+        case 2:
+            §label_1;
+            jump @label_35;
+        case 5:
+            screen_FadeOut(1, 30);
+            supervision_RemoveActing(3);
+            supervision_RemoveCommon(10);
+            supervision_RemoveCommon(11);
+            supervision_RemoveCommon(12);
+            supervision_RemoveCommon(13);
+            with (actor ACTOR_PLAYER) {
+                SetPositionMark(Position<'m14', 33, 22.5>);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                SetPositionMark(Position<'m15', 30, 22.5>);
+            }
+            with (actor ACTOR_PLAYER) {
+                SetDirection(DIR_UP);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                SetDirection(DIR_UP);
+            }
+            with (actor ACTOR_NPC_PATCHIIRU) {
+                SetDirection(DIR_DOWN);
+            }
+            supervision_StationCommon(10);
+            supervision_StationCommon(11);
+            supervision_StationCommon(12);
+            supervision_StationCommon(13);
+            camera_SetPositionMark(Position<'m16', 33, 22.5>);
+            Wait(15);
+            screen_FadeIn(1, 30);
+            Wait(10);
+            jump @label_35;
+        case 6:
+            jump @switch1_472;
+        case 7:
+            §switch1_473;
+            jump @label_35;
+        case 10:
+            with (actor ACTOR_NPC_PATCHIIRU) {
+                SetEffect(EFFECT_NONE, 0);
+            }
+            screen_FadeOut(1, 30);
+            supervision_Acting(1);
+            camera_SetPositionMark(Position<'m17', 33, 22.5>);
+            with (actor ACTOR_PLAYER) {
+                SetPositionMark(Position<'m18', 35.5, 22.5>);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                SetPositionMark(Position<'m19', 27.5, 22.5>);
+            }
+            with (actor ACTOR_EVENT_NPC_MAIN) {
+                SetPositionMark(Position<'m20', 31.5, 22.5>);
+            }
+            with (actor ACTOR_EVENT_NPC_MAIN) {
+                SetAnimation(2);
+            }
+            with (actor ACTOR_NPC_PATCHIIRU) {
+                SetDirection(DIR_DOWN);
+            }
+            with (actor ACTOR_PLAYER) {
+                SetDirection(DIR_UP);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                SetDirection(DIR_UP);
+            }
+            with (actor ACTOR_EVENT_NPC_MAIN) {
+                SetDirection(DIR_UP);
+            }
+            Wait(15);
+            screen_FadeIn(1, 30);
+            Wait(10);
+            jump @label_1;
+        case 14:
+            screen_FadeOut(1, 30);
+            with (actor ACTOR_PLAYER) {
+                SetPositionMark(Position<'m21', 33, 22.5>);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                SetPositionMark(Position<'m22', 30, 22.5>);
+            }
+            with (actor ACTOR_PLAYER) {
+                SetDirection(DIR_UP);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                SetDirection(DIR_UP);
+            }
+            supervision_RemoveCommon(10);
+            supervision_RemoveCommon(11);
+            supervision_RemoveCommon(12);
+            supervision_RemoveCommon(13);
+            supervision_StationCommon(10);
+            supervision_StationCommon(11);
+            supervision_StationCommon(12);
+            supervision_StationCommon(13);
+            Wait(15);
+            screen_FadeIn(1, 30);
+            jump @label_35;
+        case 15:
+            with (actor ACTOR_PLAYER) {
+                MovePositionMark(1, Position<'m23', 33, 22.5>);
+            }
+            Wait(4);
+            with (actor ACTOR_ATTENDANT1) {
+                MovePositionMark(1, Position<'m24', 30, 22.5>);
+            }
+            with (actor ACTOR_PLAYER) {
+                Turn2Direction(4, 10, DIR_UP);
+            }
+            Wait(4);
+            with (actor ACTOR_ATTENDANT1) {
+                Turn2Direction(4, 10, DIR_UP);
+            }
+            Wait(4);
+            with (actor ACTOR_NPC_PATCHIIRU) {
+                Turn2Direction(4, 10, DIR_DOWN);
+            }
+            WaitExecuteLives(ACTOR_NPC_PATCHIIRU);
+            Wait(10);
+            jump @label_1;
+        case 16:
+            with (actor ACTOR_PLAYER) {
+                MovePositionMark(1, Position<'m25', 33, 22.5>);
+            }
+            Wait(4);
+            with (actor ACTOR_ATTENDANT1) {
+                MovePositionMark(1, Position<'m26', 30, 22.5>);
+            }
+            with (actor ACTOR_PLAYER) {
+                Turn2Direction(4, 10, DIR_UP);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                Turn2Direction(4, 10, DIR_UP);
+            }
+            with (actor ACTOR_NPC_PATCHIIRU) {
+                Turn2Direction(4, 10, DIR_DOWN);
+            }
+            WaitExecuteLives(ACTOR_NPC_PATCHIIRU);
+            WaitExecutePerformer(0);
+            Wait(10);
+            jump @label_1;
+        case 17:
+        case 18:
+        case 19:
+            jump @switch1_473;
+        case 20:
+            screen_FadeOut(0, 15);
+            worldmap_SetMode(4);
+            back2_SetMode(3);
+            WaitSubScreen();
+            worldmap_SetCamera(88);
+            worldmap_SetArrow(88);
+            worldmap_BlinkMark(88);
+            me_Play(6);
+            message_Mail({
+                english="[CN]You can now go to\n[CN][CS:P]Serenity River[CR]!",
+                french="[CN]Désormais, vous pouvez accéder\n[CN]à la [CS:P]Rivière Sérénité[CR]!",
+                german="[CN]Du kannst nun zum\n[CN][CS:P]Fluss der Klarheit[CR] gelangen!",
+                italian="[CN]Ora potete andare\n[CN]al [CS:P]Fiume Serenità[CR]!",
+                spanish="[CN]¡Ahora ya puedes ir al\n[CN][CS:P]Río Sereno[CR]!",
+            });
+            WaitMe(6);
+            message_Close();
+            dungeon_mode(87) = DMODE_OPEN_AND_REQUEST;
+            §label_36;
+            screen2_FadeOut(0, 15);
+            back2_SetMode(0);
+            with (actor ACTOR_PLAYER) {
+                SetPositionMark(Position<'m27', 33, 22.5>);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                SetPositionMark(Position<'m28', 30, 22.5>);
+            }
+            with (actor ACTOR_PLAYER) {
+                SetDirection(DIR_UP);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                SetDirection(DIR_UP);
+            }
+            supervision_RemoveCommon(10);
+            supervision_RemoveCommon(11);
+            supervision_RemoveCommon(12);
+            supervision_RemoveCommon(13);
+            supervision_StationCommon(10);
+            supervision_StationCommon(11);
+            supervision_StationCommon(12);
+            supervision_StationCommon(13);
+            screen_FadeIn(1, 15);
+            jump @label_35;
+        case 22:
+            screen_FadeOut(0, 15);
+            worldmap_SetMode(4);
+            back2_SetMode(3);
+            WaitSubScreen();
+            worldmap_SetCamera(90);
+            worldmap_SetArrow(90);
+            worldmap_BlinkMark(90);
+            me_Play(6);
+            message_Mail({
+                english="[CN]You can now go to\n[CN]the [CS:P]Lush Prairie[CR]!",
+                french="[CN]Désormais, vous pouvez accéder\n[CN]à la [CS:P]Prairie Luxuriante[CR]!",
+                german="[CN]Du kannst nun zur\n[CN][CS:P]Üppigen Steppe[CR] gelangen!",
+                italian="[CN]Ora potete andare\n[CN]alle [CS:P]Piane Rigogliose[CR]!",
+                spanish="[CN]¡Ahora ya puedes ir a la\n[CN][CS:P]Pradera Exuberante[CR]!",
+            });
+            WaitMe(6);
+            message_Close();
+            dungeon_mode(89) = DMODE_OPEN_AND_REQUEST;
+            jump @label_36;
+        case 27:
+            screen_FadeOut(0, 15);
+            worldmap_SetMode(4);
+            back2_SetMode(3);
+            WaitSubScreen();
+            worldmap_SetCamera(95);
+            worldmap_SetArrow(95);
+            worldmap_BlinkMark(95);
+            me_Play(6);
+            message_Mail({
+                english="[CN]You can now go to\n[CN][CS:P]Happy Outlook[CR]!",
+                french="[CN]Désormais, vous pouvez accéder\n[CN]au [CS:P]Cap Enchanteur[CR]!",
+                german="[CN]Du kannst nun zum\n[CN][CS:P]Frohen Ausguck[CR] gelangen!",
+                italian="[CN]Ora potete andare\n[CN]al [CS:P]Promontorio Sereno[CR]!",
+                spanish="[CN]¡Ahora ya puedes ir al\n[CN][CS:P]Mirador Alegría[CR]!",
+            });
+            WaitMe(6);
+            message_Close();
+            dungeon_mode(94) = DMODE_OPEN_AND_REQUEST;
+            jump @label_36;
+        case 28:
+            screen_FadeOut(0, 15);
+            worldmap_SetMode(4);
+            back2_SetMode(3);
+            WaitSubScreen();
+            worldmap_SetCamera(96);
+            worldmap_SetArrow(96);
+            worldmap_BlinkMark(96);
+            me_Play(6);
+            message_Mail({
+                english="[CN]You can now go to\n[CN][CS:P]Mt. Mistral[CR]!",
+                french="[CN]Désormais, vous pouvez accéder\n[CN]au [CS:P]Mt Mistral[CR]!",
+                german="[CN]Du kannst nun zum\n[CN][CS:P]Mistralberg[CR] gelangen!",
+                italian="[CN]Ora potete andare\n[CN]al [CS:P]Monte Mistral[CR]!",
+                spanish="[CN]¡Ahora ya puedes ir al\n[CN][CS:P]Monte Mistral[CR]!",
+            });
+            WaitMe(6);
+            message_Close();
+            dungeon_mode(95) = DMODE_OPEN_AND_REQUEST;
+            jump @label_36;
+        case 30:
+            screen_FadeOut(0, 15);
+            worldmap_SetMode(4);
+            back2_SetMode(3);
+            WaitSubScreen();
+            worldmap_SetCamera(98);
+            worldmap_SetArrow(98);
+            worldmap_BlinkMark(98);
+            me_Play(6);
+            message_Mail({
+                english="[CN]You can now go to\n[CN][CS:P]Lost Wilderness[CR]!",
+                french="[CN]Désormais, vous pouvez accéder\n[CN]à la [CS:P]Contrée Inexplorée[CR]!",
+                german="[CN]Du kannst nun zur\n[CN][CS:P]Verlorenen Wildnis[CR] gelangen!",
+                italian="[CN]Ora potete andare\n[CN]alla [CS:P]Landa Perduta[CR]!",
+                spanish="[CN]¡Ahora ya puedes ir a la\n[CN][CS:P]Espesura Perdida[CR]!",
+            });
+            WaitMe(6);
+            message_Close();
+            dungeon_mode(97) = DMODE_OPEN_AND_REQUEST;
+            jump @label_36;
+        case 32:
+            screen_FadeOut(0, 15);
+            worldmap_SetMode(4);
+            back2_SetMode(3);
+            WaitSubScreen();
+            worldmap_SetCamera(105);
+            worldmap_SetArrow(105);
+            worldmap_BlinkMark(105);
+            me_Play(6);
+            message_Mail({
+                english="[CN]You can now go to\n[CN][CS:P]Destiny Tower[CR]!",
+                french="[CN]Désormais, vous pouvez accéder\n[CN]à la [CS:P]Tour du Destin[CR]!",
+                german="[CN]Du kannst nun zum\n[CN][CS:P]Verhängnisturm[CR] gelangen!",
+                italian="[CN]Ora potete andare\n[CN]alla [CS:P]Torre Destino[CR]!",
+                spanish="[CN]¡Ahora ya puedes ir a la\n[CN][CS:P]Torre Destino[CR]!",
+            });
+            WaitMe(6);
+            message_Close();
+            dungeon_mode(104) = DMODE_OPEN_AND_REQUEST;
+            jump @label_36;
+        case 40:
+            supervision_Acting(2);
+            se_Play(8978);
+            with (actor ACTOR_PLAYER) {
+                SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_RIGHT, 3);
+            }
+            camera_MoveDefault(1);
+            with (performer 0) {
+                camera_SetMyself();
+            }
+            with (performer 0) {
+                MovePositionMark(33152, Position<'m0', 33, 22.5>, Position<'m1', 52.5, 22.5>);
+            }
+            with (actor ACTOR_PLAYER) {
+                Turn2Direction(4, 10, DIR_RIGHT);
+            }
+            Wait(4);
+            with (actor ACTOR_ATTENDANT1) {
+                SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_RIGHT, 3);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                Turn2Direction(4, 10, DIR_RIGHT);
+            }
+            WaitExecutePerformer(0);
+            with (actor ACTOR_EVENT_NPC01) {
+                SetEffect(EFFECT_LAUGHING, 3);
+            }
+            with (actor ACTOR_EVENT_NPC01) {
+                ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+            }
+            WaitExecuteLives(ACTOR_EVENT_NPC01);
+            Wait(80);
+            with (performer 0) {
+                MovePositionMark(33152, Position<'m2', 33, 22.5>);
+            }
+            Wait(10);
+            with (actor ACTOR_EVENT_NPC01) {
+                SetEffect(EFFECT_NONE, 3);
+            }
+            WaitExecutePerformer(0);
+            with (actor ACTOR_PLAYER) {
+                Turn2Direction(4, 10, DIR_UP);
+            }
+            Wait(4);
+            with (actor ACTOR_ATTENDANT1) {
+                Turn2Direction(4, 10, DIR_UP);
+            }
+            supervision_RemoveActing(2);
+            jump @label_35;
+        case 41:
+            supervision_Acting(2);
+            se_Play(8978);
+            with (actor ACTOR_PLAYER) {
+                SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_RIGHT, 3);
+            }
+            camera_MoveDefault(1);
+            with (performer 0) {
+                camera_SetMyself();
+            }
+            with (performer 0) {
+                MovePositionMark(33152, Position<'m3', 33, 22.5>, Position<'m4', 52.5, 22.5>);
+            }
+            with (actor ACTOR_PLAYER) {
+                Turn2Direction(4, 10, DIR_RIGHT);
+            }
+            Wait(4);
+            with (actor ACTOR_EVENT_NPC_MAIN) {
+                SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_RIGHT, 3);
+            }
+            with (actor ACTOR_EVENT_NPC_MAIN) {
+                Turn2Direction(4, 10, DIR_RIGHT);
+            }
+            Wait(4);
+            with (actor ACTOR_ATTENDANT1) {
+                SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_RIGHT, 3);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                Turn2Direction(4, 10, DIR_RIGHT);
+            }
+            WaitExecutePerformer(0);
+            with (actor ACTOR_EVENT_NPC01) {
+                SetEffect(EFFECT_LAUGHING, 3);
+            }
+            with (actor ACTOR_EVENT_NPC01) {
+                ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+            }
+            WaitExecuteLives(ACTOR_EVENT_NPC01);
+            Wait(80);
+            with (performer 0) {
+                MovePositionMark(33152, Position<'m5', 33, 22.5>);
+            }
+            Wait(10);
+            with (actor ACTOR_EVENT_NPC01) {
+                SetEffect(EFFECT_NONE, 3);
+            }
+            WaitExecutePerformer(0);
+            with (actor ACTOR_PLAYER) {
+                Turn2Direction(4, 10, DIR_UP);
+            }
+            Wait(4);
+            with (actor ACTOR_ATTENDANT1) {
+                Turn2Direction(4, 10, DIR_UP);
+            }
+            Wait(4);
+            with (actor ACTOR_EVENT_NPC_MAIN) {
+                Turn2Direction(4, 10, DIR_UP);
+            }
+            supervision_RemoveActing(2);
+            jump @label_35;
+        case 45:
+            supervision_Acting(3);
+            camera_MoveDefault(1);
+            with (performer 0) {
+                camera_SetMyself();
+            }
+            with (actor ACTOR_NPC_PATCHIIRU) {
+                Turn2Direction(4, 10, DIR_DOWNRIGHT);
+            }
+            Wait(4);
+            se_Play(8978);
+            with (actor ACTOR_PLAYER) {
+                SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_RIGHT, 3);
+            }
+            with (performer 0) {
+                MovePositionMark(33152, Position<'m6', 33, 22.5>, Position<'m7', 52.5, 22.5>);
+            }
+            with (actor ACTOR_PLAYER) {
+                Turn2Direction(4, 10, DIR_RIGHT);
+            }
+            Wait(4);
+            with (actor ACTOR_ATTENDANT1) {
+                SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_RIGHT, 3);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                Turn2Direction(4, 10, DIR_RIGHT);
+            }
+            WaitExecutePerformer(0);
+            Wait(30);
+            with (actor ACTOR_EVENT_NPC02) {
+                MovePositionMark(1, Position<'m8', 40.5, 22.5>);
+            }
+            with (performer 0) {
+                MovePositionMark(1, Position<'m9', 33, 22.5>);
+            }
+            WaitExecutePerformer(0);
+            WaitExecuteLives(ACTOR_EVENT_NPC02);
+            Wait(10);
+            jump @label_35;
+        case 46:
+            supervision_Acting(3);
+            camera_MoveDefault(1);
+            with (performer 0) {
+                camera_SetMyself();
+            }
+            with (actor ACTOR_NPC_PATCHIIRU) {
+                Turn2Direction(4, 10, DIR_DOWNRIGHT);
+            }
+            Wait(4);
+            se_Play(8978);
+            with (actor ACTOR_PLAYER) {
+                SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_RIGHT, 3);
+            }
+            with (performer 0) {
+                MovePositionMark(33152, Position<'m10', 33, 22.5>, Position<'m11', 52.5, 22.5>);
+            }
+            with (actor ACTOR_PLAYER) {
+                Turn2Direction(4, 10, DIR_RIGHT);
+            }
+            Wait(4);
+            with (actor ACTOR_EVENT_NPC_MAIN) {
+                SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_RIGHT, 3);
+            }
+            with (actor ACTOR_EVENT_NPC_MAIN) {
+                Turn2Direction(4, 10, DIR_RIGHT);
+            }
+            Wait(4);
+            with (actor ACTOR_ATTENDANT1) {
+                SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_RIGHT, 3);
+            }
+            with (actor ACTOR_ATTENDANT1) {
+                Turn2Direction(4, 10, DIR_RIGHT);
+            }
+            WaitExecutePerformer(0);
+            Wait(30);
+            with (actor ACTOR_EVENT_NPC02) {
+                MovePositionMark(1, Position<'m12', 43.5, 22.5>);
+            }
+            with (performer 0) {
+                MovePositionMark(1, Position<'m13', 33, 22.5>);
+            }
+            WaitExecutePerformer(0);
+            WaitExecuteLives(ACTOR_EVENT_NPC02);
+            Wait(10);
+            jump @label_35;
+        case 50:
+            se_Play(531);
+            with (actor ACTOR_EVENT_NPC_MAIN) {
+                SetEffect(EFFECT_STATS_UP_EFFECT, 3);
+            }
+            with (actor ACTOR_EVENT_NPC_MAIN) {
+                WaitEffect();
+            }
+            WaitExecuteLives(ACTOR_EVENT_NPC_MAIN);
+            jump @label_35;
+        case 51:
+            se_Play(534);
+            with (actor ACTOR_EVENT_NPC_MAIN) {
+                SetEffect(EFFECT_STATS_DOWN_EFFECT, 3);
+            }
+            with (actor ACTOR_EVENT_NPC_MAIN) {
+                WaitEffect();
+            }
+            WaitExecuteLives(ACTOR_EVENT_NPC_MAIN);
+            jump @label_35;
+        case 60:
+            with (actor ACTOR_NPC_PATCHIIRU) {
+                SetDirection(DIR_DOWN);
+            }
+            with (actor ACTOR_NPC_PATCHIIRU) {
+                SetAnimation(1);
+            }
+            with (actor ACTOR_NPC_PATCHIIRU) {
+                ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+            }
+            WaitExecuteLives(ACTOR_NPC_PATCHIIRU);
+            with (actor ACTOR_NPC_PATCHIIRU) {
+                SetEffect(EFFECT_JOYOUS, 0);
+            }
+            jump @label_35;
+        case 61:
+            Wait(22);
+            se_Play(8978);
+            with (actor ACTOR_NPC_PATCHIIRU) {
+                SetEffect(EFFECT_EXCLAMATION_MARK, 0);
+            }
+            jump @label_35;
+        case 62:
+            se_Play(8968);
+            with (actor ACTOR_NPC_PATCHIIRU) {
+                SetEffect(EFFECT_SHOCKED, 0);
+            }
+            jump @label_35;
+        case 63:
+            with (actor ACTOR_NPC_PATCHIIRU) {
+                SetAnimation(26);
+            }
+            jump @label_35;
+        case 64:
+            with (actor ACTOR_NPC_PATCHIIRU) {
+                SetAnimation(2);
+            }
+            jump @label_35;
+        case 65:
+            se_Play(8968);
+            with (actor ACTOR_EVENT_NPC_MAIN) {
+                SetEffect(EFFECT_SHOCKED, 0);
+            }
+            WaitExecuteLives(ACTOR_EVENT_NPC_MAIN);
+            jump @label_35;
+        case 66:
+            with (actor ACTOR_NPC_PATCHIIRU) {
+                SetDirection(DIR_DOWNRIGHT);
+            }
+            with (actor ACTOR_NPC_PATCHIIRU) {
+                SetAnimation(2);
+            }
+            jump @label_35;
+        case 67:
+            with (actor ACTOR_NPC_PATCHIIRU) {
+                SetDirection(DIR_DOWN);
+            }
+            with (actor ACTOR_NPC_PATCHIIRU) {
+                SetAnimation(2);
+            }
+            jump @label_35;
+        case 68:
+            se_Play(8967);
+            with (actor ACTOR_EVENT_NPC_MAIN) {
+                SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+            }
+            with (actor ACTOR_EVENT_NPC_MAIN) {
+                WaitEffect();
+            }
+            WaitExecuteLives(ACTOR_EVENT_NPC_MAIN);
+            jump @label_35;
+        case 69:
+            se_Play(8969);
+            with (actor ACTOR_EVENT_NPC_MAIN) {
+                SetEffect(EFFECT_SHOCKED, 0);
+            }
+            WaitExecuteLives(ACTOR_EVENT_NPC_MAIN);
+            jump @label_35;
+        default:
+            jump @label_34;
+    }
+}

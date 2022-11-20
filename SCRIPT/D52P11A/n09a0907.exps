@@ -31,8 +31,6 @@ def 0 {
     //with (object OBJECT_D52P11A2_430) {
         //SetOutputAttribute(128);
     //}
-    screen_FadeIn(1, 30);
-
     //with (object OBJECT_D52P11A3_431) {
         //Destroy();
     //}
@@ -42,5 +40,7 @@ def 0 {
     //with (object OBJECT_D52P11A2_430) {
         //ResetOutputAttribute(128);
     //}
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_ICICLE_FOREST, 0, 256);
     end;
 }
