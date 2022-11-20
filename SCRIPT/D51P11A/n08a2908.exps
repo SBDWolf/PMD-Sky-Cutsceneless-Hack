@@ -1,0 +1,35 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_TEMPORAL_PINNACLE, 0, 256);
+    back_SetGround(LEVEL_D51P11A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        SetPositionInitial();
+    }
+    with (performer 0) {
+        SetPositionMark(Position<'m3', 39.5, 19.5>);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        SetPositionMark(Position<'m4', 34.5, 18.5>);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetPositionMark(Position<'m4', 39.5, 19.5>);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetDirection(DIR_RIGHT);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        SetDirection(DIR_RIGHT);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        SetAnimation(2);
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_DARK_ICE_MOUNTAIN, 0, 256);
+    $SCENARIO_SIDE = scn[48, 0];
+    end;
+}

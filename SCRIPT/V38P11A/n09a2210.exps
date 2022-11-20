@@ -1,0 +1,76 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_A_NEW_WORLD, 0, 256);
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V38P09A);
+    back_SetGround(LEVEL_V38P11A);
+    supervision_Acting(0);
+    supervision_Acting(1);
+    camera2_SetPositionMark(Position<'m0', 19, 15.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    back_SetBackScrollSpeed(-31744, 33408);
+    with (object OBJECT_V38P11A1_455) {
+        SetAnimation(17);
+    }
+    screen2_FadeIn(0, 30);
+    screen_FadeIn(1, 30);
+    message_SetFace(ACTOR_NPC_SEREBII, FACE_HAPPY, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Wow!",
+        french=" Waouh!",
+        german=" Wow!",
+        italian=" Wow!",
+        spanish=" ¡Vaya!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Th-the land...",
+        french=" La terre...",
+        german=" D-das Land...",
+        italian=" L-La terra...",
+        spanish=" Las plantas...",
+    });
+    message_Talk({
+        english=" The land...it turned green!",
+        french=" La terre devient verte!",
+        german=" Das Land... Es ist ergrünt!",
+        italian=" La terra... è diventata tutta\nverde!",
+        spanish=" Las plantas... ¡han vuelto a crecer!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SEREBII, FACE_HAPPY, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Such...[K]such a beautiful scene...",
+        french=" Quel...[K] spectacle magnifique...",
+        german=" Was...[K] Was für\nein schöner Anblick!",
+        italian=" Che...[K] Che scena meravigliosa...",
+        spanish=" Qué paisaje...[K] tan hermoso...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" This is [CS:N]Dialga[CR]\'s...",
+        french=" C\'est...",
+        german=" Das war [CS:N]Dialga[CR]...",
+        italian=" Questo è...",
+        spanish=" [CS:N]Dialga[CR]...",
+    });
+    message_Talk({
+        english=" This is [CS:N]Dialga[CR]\'s power!",
+        french=" ... le pouvoir de [CS:N]Dialga[CR]!",
+        german=" Die Kräfte von [CS:N]Dialga[CR]!",
+        italian=" Questo è il potere di [CS:N]Dialga[CR]!",
+        spanish=" ¡¿[CS:N]Dialga[CR] puede hacer todo esto?!",
+    });
+    message_Close();
+    se_Play(11539);
+    bgm_FadeOut(150);
+    screen2_WhiteOut(0, 30);
+    screen_WhiteOut(1, 30);
+    back_SetBackScrollSpeed(-32768, 32768);
+    back2_SetMode(0);
+    end;
+}

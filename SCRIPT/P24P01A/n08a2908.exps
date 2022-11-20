@@ -1,0 +1,305 @@
+
+def 0 {
+    sound_Stop();
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" All right![K] We made it through\nthe dungeon!",
+        french=" Parfait![K] Nous sommes\nsortis du donjon sains et saufs!",
+        german=" Alles klar![K] Wir haben es durch\nden Dungeon geschafft!",
+        italian=" Bene![K] Siamo riusciti a\nraggiungere la fine del dungeon!",
+        spanish=" ¡Menos mal![K] ¡Hemos atravesado\nel territorio!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    back_SetGround(LEVEL_P24P01A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    bgm_PlayFadeIn(BGM_IN_THE_FUTURE, 0, 256);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        MovePositionMark(1, Position<'m0', 31, 39.5>);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        MovePositionMark(1, Position<'m1', 26, 39.5>);
+    }
+    Wait(60);
+    se_Play(8968);
+    with (actor ACTOR_NPC_PORIGON2) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_PORIGON2) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_PORIGON) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_PORIGON) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_PORIGON);
+    with (actor ACTOR_NPC_PORIGON2) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    message_SetFace(ACTOR_NPC_PORIGON, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Waah!",
+        french=" Aaaah!",
+        german=" Waaah!",
+        italian=" Uaaah!",
+        spanish=" ¡Aaah!",
+    });
+    with (actor ACTOR_NPC_PORIGON) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_PORIGON);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PORIGON, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" M...[K]Master [CS:N]Dusknoir[CR]!",
+        french=" M...[K] Maître [CS:N]Noctunoir[CR]!",
+        german=" M-[K]meister [CS:N]Zwirrfinst[CR]!",
+        italian=" M-[K]Maestro [CS:N]Dusknoir[CR]!",
+        spanish=" ¿Eh?...[K] ¡[CS:N]Dusknoir[CR]!",
+    });
+    se_Play(8972);
+    with (actor ACTOR_NPC_PORIGON) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_PORIGON) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_PORIGON);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_FacePositionOffset(-1, 0);
+    message_Talk({
+        english=" It\'s been a while.",
+        french=" Cela faisait bien longtemps.",
+        german=" Es ist eine Weile her.",
+        italian=" Ne è passato di tempo.",
+        spanish=" Cuánto tiempo...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        MovePositionOffset(32896, 0, 8);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        MovePositionMark(32896, Position<'m2', 28.5, 43>);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    Wait(15);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_BOTTOM_L_CENTER);
+    message_FacePositionOffset(0, -4);
+    message_Talk({
+        english=" The reason I\'ve come here...",
+        french=" La raison de ma présence ici...",
+        german=" Weshalb ich\nhierhergekommen bin...",
+        italian=" Il motivo per cui sono qui...",
+        spanish=" La razón por la que he venido...",
+    });
+    message_Talk({
+        english=" I bet you can guess at what I\nam going to request?",
+        french=" ... vous la connaissez, n\'est-ce\npas? Vous savez ce que je m\'apprête\nà vous demander.",
+        german=" Ich nehme an, ihr könnt euch\ndenken, was ich von euch möchte?",
+        italian=" Credo che sappiate già cosa ho\nintenzione di chiedervi...",
+        spanish=" Bueno, supongo que ya\nsupondréis lo que voy a pediros.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PORIGON) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_PORIGON2) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_PORIGON);
+    se_Play(8972);
+    with (actor ACTOR_NPC_PORIGON) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_PORIGON2) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_PORIGON) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_PORIGON);
+    with (actor ACTOR_NPC_PORIGON) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_PORIGON2) {
+        Turn2Direction(4, 10, DIR_UP);
+    }
+    message_SetFace(ACTOR_NPC_PORIGON, FACE_PAIN, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Th-that\'s...[K]difficult.[K] We\'re\nbeing held back by [CS:N]Sableye[CR]...",
+        french=" C\'est...[K] compliqué.[K]\nLes [CS:N]Ténéfix[CR] nous entravent...",
+        german=" D-das ist...[K] schwierig.[K]\nDie [CS:N]Zobiris[CR] haben uns in ihrer Gewalt...",
+        italian=" N-Non...[K] possiamo.[K] I [CS:N]Sableye[CR]\nci hanno minacciati...",
+        spanish=" Eso es...[K] complicado.[K] Los\n[CS:N]Sableye[CR] nos han dicho que no...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_PORIGON, FACE_PAIN, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" And...[K] Behind you, Master\n[CS:N]Dusknoir[CR] is...",
+        french=" Et...[K] Maître [CS:N]Noctunoir[CR],\njuste derrière vous...",
+        german=" Und...[K] Hinter euch,\nMeister [CS:N]Zwirrfinst[CR]...",
+        italian=" E poi...[K] dietro di lei, maestro\n[CS:N]Dusknoir[CR], c\'è...",
+        spanish=" Y...[K] quien viene contigo,\n[CS:N]Dusknoir[CR], es...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        MovePositionOffset(32896, 0, 8);
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU_N8);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_BOTTOM_L_CENTER);
+    message_FacePositionOffset(0, -3);
+    message_Talk({
+        english=" Are you saying you won\'t listen\nto me?!",
+        french=" Quelle impudence! Oseriez-vous\ndésobéir?",
+        german=" Ihr wollt mir also tatsächlich\nden Gehorsam verweigern?!?",
+        italian=" Avete forse intenzione\ndi disobbedirmi?!",
+        spanish=" ¡¿Me estás diciendo que no vais\na hacerme caso?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8968);
+    with (actor ACTOR_NPC_PORIGON2) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_PORIGON2) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_PORIGON) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    message_SetFace(ACTOR_NPC_PORIGON, FACE_SURPRISED, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Wawawawawa!",
+        french=" Aaaaaaaah!",
+        german=" Wawawawawa!",
+        italian=" Uauauauaua!",
+        spanish=" ¡No, no, no, no!",
+    });
+    WaitExecuteLives(ACTOR_NPC_PORIGON2);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_PORIGON) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    message_SetFace(ACTOR_NPC_PORIGON, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" We\'ll do it! We\'ll do it![K]\nTh-this way, please!",
+        french=" A vos ordres! A vos ordres![K]\nPar ici, s\'il vous plaît!",
+        german=" Wir machen es! Wir machen es![K]\nH-hier entlang, bitte!",
+        italian=" D\'accordo! Lo faremo![K]\nD-Da questa parte, prego!",
+        spanish=" ¡Lo haremos! ¡Lo haremos![K]\n¡Venid por aquí!",
+    });
+    WaitExecuteLives(ACTOR_NPC_PORIGON);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_FadeOut(90);
+    with (actor ACTOR_NPC_PORIGON) {
+        MovePositionOffset(32972, 32, 0);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_PORIGON2) {
+        MovePositionOffset(32972, -32, 0);
+    }
+    with (actor ACTOR_NPC_PORIGON) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    with (actor ACTOR_NPC_PORIGON2) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_PORIGON2);
+    with (performer 0) {
+        MovePositionMark(32896, Position<'m3', 28.5, 47>);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        MovePositionMark(32972, Position<'m4', 26.5, 46>);
+    }
+    Wait(4);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        MovePositionMark(32972, Position<'m5', 31, 46>);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecutePerformer(0);
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    Wait(15);
+    message_SetFace(ACTOR_NPC_PORIGON, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Well then...[K] We\'ll transmit you\nto [CS:P]Frozen Island[CR].",
+        french=" Bien...[K] Nous allons vous\ntéléporter sur l\'[CS:P]Ile de Glace[CR].",
+        german=" Nun gut...[K] Wir werden euch zur\n[CS:P]Frostinsel[CR] transportieren.",
+        italian=" Bene...[K] Vi trasporteremo\nsull\'[CS:P]Isola Glaciale[CR].",
+        spanish=" Muy bien...[K] Os enviaremos\na la [CS:P]Isla Helada[CR].",
+    });
+    message_Talk({
+        english=" Don\'t move.",
+        french=" Ne bougez pas.",
+        german=" Nicht bewegen.",
+        italian=" Non muovetevi.",
+        spanish=" No os mováis.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(30);
+    se_Play(10501);
+    with (actor ACTOR_NPC_PORIGON) {
+        SetAnimation(18);
+    }
+    with (actor ACTOR_NPC_PORIGON2) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_P24P01A1_420) {
+        WaitAnimation();
+    }
+    Wait(30);
+    supervision_Acting(1);
+    with (object OBJECT_P24P01A1_420) {
+        SetOutputAttribute(1);
+    }
+    with (object OBJECT_P24P01A1_420) {
+        SetAnimation(17);
+    }
+    with (object OBJECT_P24P01A1_420) {
+        WaitAnimation();
+    }
+    Wait(30);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        Destroy();
+    }
+    Wait(10);
+    supervision_Acting(2);
+    with (object OBJECT_P24P01A1_421) {
+        SetOutputAttribute(1);
+    }
+    with (object OBJECT_P24P01A1_421) {
+        SetAnimation(18);
+    }
+    with (object OBJECT_P24P01A1_421) {
+        WaitAnimation();
+    }
+    Wait(30);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        Destroy();
+    }
+    Wait(30);
+    WaitExecuteObject(OBJECT_P24P01A1_420);
+    supervision_RemoveActing(1);
+    Wait(30);
+    WaitExecuteObject(OBJECT_P24P01A1_421);
+    supervision_RemoveActing(2);
+    Wait(60);
+    screen_FadeOut(1, 30);
+    Wait(60);
+    end;
+}

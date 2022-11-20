@@ -1,0 +1,90 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_SIDE = scn[48, 4];
+    back_SetGround(LEVEL_D51P41A);
+    supervision_Acting(0);
+    supervision_Acting(1);
+    supervision_Acting(2);
+    //supervision_Acting(3);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    Wait(1);
+    with (performer 0) {
+        SetPositionMark(Position<'m5', 31.5, 26.5>);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N9) {
+        SetPositionMark(Position<'m8', 33.5, 26.5>);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetPositionMark(Position<'m15', 29.5, 26>);
+    }
+    with (actor ACTOR_NPC_ONIGOORI) {
+        SetPositionMark(Position<'m16', 24.5, 22.5>);
+    }
+    with (actor ACTOR_NPC_ONIGOORI2) {
+        SetPositionMark(Position<'m17', 24.5, 28.5>);
+    }
+    with (actor ACTOR_NPC_ONIGOORI3) {
+        SetPositionMark(Position<'m18', 38.5, 22.5>);
+    }
+    with (actor ACTOR_NPC_ONIGOORI4) {
+        SetPositionMark(Position<'m19', 38.5, 28.5>);
+    }
+    with (actor ACTOR_NPC_MANMUU) {
+        SetPositionMark(Position<'m20', 31.5, 19.5>);
+    }
+    with (actor ACTOR_NPC_ONIGOORI) {
+        SetDirection(DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_ONIGOORI2) {
+        SetDirection(DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_ONIGOORI3) {
+        SetDirection(DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_ONIGOORI4) {
+        SetDirection(DIR_UPLEFT);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N9) {
+        SetDirection(DIR_UP);
+    }
+    with (object OBJECT_D51P41A2_423) {
+        SetAnimation(13);
+    }
+    //with (object OBJECT_D51P41A3_424) {
+        //SetAnimation(19);
+    //}
+    with (object OBJECT_D51P41A2_423) {
+        SetOutputAttribute(2);
+    }
+    with (actor ACTOR_NPC_MANMUU) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N9) {
+        SetAnimation(2);
+    }
+    screen_FadeIn(1, 30);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(5);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    WaitSe(5143);
+    CallCommon(CORO_BOSS_WIPE_FUNC);
+    main_EnterDungeon(144, 30);
+    main_EnterDungeon(-1, 30);
+    hold;
+    end;
+}

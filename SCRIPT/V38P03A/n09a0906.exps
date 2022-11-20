@@ -1,0 +1,480 @@
+
+def 0 {
+    back_SetGround(LEVEL_V38P03A);
+    supervision_Acting(1);
+    supervision_Acting(0);
+    supervision_RemoveActing(1);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    supervision_Acting(1);
+    with (object OBJECT_V38P03A1_451) {
+        SetAnimation(1);
+    }
+    se_Play(10763);
+    screen_FadeIn(1, 30);
+    Wait(10);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m0', 17.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m1', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m2', 50.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m3', 17.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m4', 17.5, 14.5>);
+    }
+    Wait(15);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m5', 17.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m6', 50.5, 14.5>);
+    }
+    Wait(2);
+    screen_WhiteOut(1, 2);
+    Wait(3);
+    screen_FadeIn(1, 2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m7', 83.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m8', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m9', 83.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m10', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m11', 50.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m12', 83.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m13', 17.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m14', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m15', 83.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m16', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m17', 83.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m18', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m19', 50.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m20', 83.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m21', 17.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m22', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m23', 83.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m24', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m25', 83.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m26', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m27', 50.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m28', 83.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m29', 17.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m30', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m31', 83.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m32', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m33', 83.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m34', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m35', 50.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m36', 83.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m37', 17.5, 14.5>);
+    }
+    Wait(15);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m38', 17.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m39', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m40', 50.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m41', 17.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m42', 17.5, 14.5>);
+    }
+    Wait(15);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m43', 17.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m44', 50.5, 14.5>);
+    }
+    Wait(2);
+    screen_WhiteOut(1, 2);
+    Wait(3);
+    screen_FadeIn(1, 2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m45', 83.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m46', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m47', 83.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m48', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m49', 50.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m50', 83.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m51', 17.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m52', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m53', 83.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m54', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m55', 83.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m56', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m57', 50.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m58', 83.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m59', 17.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m60', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m61', 83.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m62', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m63', 83.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m64', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m65', 50.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m66', 83.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m67', 17.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m68', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m69', 83.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m70', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m71', 83.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m72', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m73', 50.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m74', 83.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m75', 17.5, 14.5>);
+    }
+    Wait(15);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m76', 17.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m77', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m78', 50.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m79', 17.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m80', 17.5, 14.5>);
+    }
+    Wait(15);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m81', 17.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m82', 50.5, 14.5>);
+    }
+    Wait(2);
+    screen_WhiteOut(1, 2);
+    Wait(3);
+    screen_FadeIn(1, 2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m83', 83.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m84', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m85', 83.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m86', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m87', 50.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m88', 83.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m89', 17.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m90', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m91', 83.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m92', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m93', 83.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m94', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m95', 50.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m96', 83.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m97', 17.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m98', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m99', 83.5, 41.5>);
+    }
+    Wait(2);
+    se_FadeOut(10763, 90);
+    screen_FadeOut(0, 30);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m100', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m101', 83.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m102', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m103', 50.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m104', 83.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m105', 17.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m106', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m107', 83.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m108', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m109', 83.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m110', 50.5, 14.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m111', 50.5, 41.5>);
+    }
+    Wait(2);
+    with (performer 0) {
+        camera_SetPositionMark(Position<'m112', 83.5, 14.5>);
+    }
+    end;
+}

@@ -1,0 +1,958 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_D53P41B);
+    supervision_Acting(1);
+    supervision_Acting(2);
+    supervision_Acting(3);
+    supervision_Acting(4);
+    supervision_Acting(7);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (object OBJECT_D01P11B2_12) {
+        SetAnimation(9);
+    }
+    with (object OBJECT_D01P11B2_13) {
+        SetAnimation(9);
+    }
+    with (object OBJECT_D01P11B2_14) {
+        SetAnimation(9);
+    }
+    with (object OBJECT_D01P11B2_15) {
+        SetAnimation(9);
+    }
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SetOutputAttribute(2);
+    }
+    with (object OBJECT_D01P11B2_12) {
+        SetAnimation(1);
+    }
+    Wait(10);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetOutputAttribute(2);
+    }
+    with (object OBJECT_D01P11B2_13) {
+        SetAnimation(1);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_SEREBII) {
+        SetOutputAttribute(2);
+    }
+    with (object OBJECT_D01P11B2_14) {
+        SetAnimation(1);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_YONOWAARU_N9) {
+        SetOutputAttribute(2);
+    }
+    with (object OBJECT_D01P11B2_15) {
+        SetAnimation(1);
+    }
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SetAnimation(48);
+    }
+    bgm2_PlayFadeIn(BGM_HEAVY_WIND1, 0, 256);
+    screen_FadeIn(1, 30);
+    Wait(30);
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    message_SetFace(ACTOR_NPC_DARK_DIARUGA, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" GIGI![K] GIGIGIGIGIGIGIGIGIGI!",
+        french=" GRR![K] GRRRRRRRRRRRRRRRRRR!",
+        german=" GIGI![K] GIGIGIGIGIGIGIGIGIGI!",
+        italian=" GIGI![K] GIGIGIGIGIGIGIGIGIGI!",
+        spanish=" ¡GUIGUI![K] ¡GUIGUIGUIGUIGUIGUI!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(30);
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SetAnimation(29);
+    }
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_DARK_DIARUGA);
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SetAnimation(2);
+    }
+    Wait(30);
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SetAnimation(26);
+    }
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        WaitAnimation();
+    }
+    camera_SetEffect(2, 1, 33024);
+    se_Play(6930);
+    message_SetFace(ACTOR_NPC_DARK_DIARUGA, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" GRRR-OOOOOO...OOOOOH!",
+        french=" GRRROOOOOO... OOOOOH!",
+        german=" GRRR-OOOOOO...OOOOOH!",
+        italian=" GRRR-OOOOOO... OOOOOH!",
+        spanish=" ¡GRRRRRRRRRRRR!",
+    });
+    WaitExecuteLives(ACTOR_NPC_DARK_DIARUGA);
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SetDirection(DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SetAnimation(46);
+    }
+    WaitSe(6930);
+    camera_SetEffect(0, 0, 0);
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SetDirection(DIR_RIGHT);
+    }
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SetAnimation(26);
+    }
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_DARK_DIARUGA);
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SetAnimation(2);
+    }
+    message_CloseEnforce();
+    Wait(10);
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SetAnimation(23);
+    }
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        WaitAnimation();
+    }
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(10);
+    se_Play(5143);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    Wait(140);
+    se_Play(6918);
+    camera_SetEffect(2, 2, 33536);
+    Wait(20);
+    camera_SetEffect(0, 0, 0);
+    Wait(30);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetAnimation(40);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetDirection(DIR_LEFT);
+    }
+    Wait(10);
+    with (actor ACTOR_NPC_YONOWAARU_N9) {
+        SetAnimation(31);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N9) {
+        SetDirection(DIR_DOWN);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_SEREBII) {
+        SetAnimation(24);
+    }
+    with (actor ACTOR_NPC_SEREBII) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_SEREBII);
+    with (object OBJECT_D01P11B2_12) {
+        SetAnimation(5);
+    }
+    Wait(10);
+    with (object OBJECT_D01P11B2_13) {
+        SetAnimation(5);
+    }
+    Wait(10);
+    with (object OBJECT_D01P11B2_14) {
+        SetAnimation(5);
+    }
+    Wait(10);
+    with (object OBJECT_D01P11B2_15) {
+        SetAnimation(5);
+    }
+    se_Play(5121);
+    with (actor ACTOR_NPC_YONOWAARU_N9) {
+        SetEffect(EFFECT_SHOCKED, 0);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N9) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU_N9);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_PAIN, FACE_POS_STANDARD);
+    message_Talk({
+        english=" GUHGUHH!",
+        french=" GUHGUHH!",
+        german=" GUHGUH!",
+        italian=" GUHGUHH!",
+        spanish=" ¡Ay!",
+    });
+    message_Talk({
+        english=" M-my body...[K] My body\'s heavy!",
+        french=" Mon corps...[K] Il se fait lourd!",
+        german=" M-mein Körper...[K]\nMein Körper fühlt sich so schwer an!",
+        italian=" I-Il mio corpo...[K] Lo sento così\npesante!",
+        spanish=" El cuerpo...[K] ¡cómo me pesa!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SEREBII, FACE_PAIN, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" B-but...[K] We did it...",
+        french=" Mais...[K] nous avons réussi...",
+        german=" A-aber...[K]\nWir haben es geschafft...",
+        italian=" M-Ma...[K] ce l\'abbiamo fatta...",
+        spanish=" Pero...[K] lo hemos conseguido...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_PAIN, FACE_POS_BOTTOM_L_CENTER);
+    message_Talk({
+        english=" Yeah...",
+        french=" Ouais...",
+        german=" Ja, das haben wir...",
+        italian=" Sì...",
+        spanish=" Sí...",
+    });
+    message_Talk({
+        english=" We\'ve finally defeated\nPrimal [CS:N]Dialga[CR]...",
+        french=" Nous avons enfin vaincu\n[CS:N]Dialga[CR] Primal...",
+        german=" Wir haben [CS:N]Schatten-Dialga[CR]\nendlich besiegt.",
+        italian=" Finalmente abbiamo sconfitto\n[CS:N]Dialga[CR] Oscuro...",
+        spanish=" Al fin hemos derrotado al\n[CS:N]Dialga Primario[CR]...",
+    });
+    message_Talk({
+        english=" Daybreak is near...[K] Now...[K]\nNow we can only wait...",
+        french=" Le jour va bientôt se lever...[K]\nAdmirez la beauté du jour...",
+        german=" Der Tagesanbruch steht kurz\nbevor...[K] Jetzt...[K] Jetzt bleibt uns nichts anderes\nübrig, als zu warten...",
+        italian=" Il sole sta per sorgere...[K] Ora...[K]\nnon ci resta che aspettare...",
+        spanish=" Se acerca el amanecer.[K]\nAhora...[K] solo nos queda esperar...",
+    });
+    message_Talk({
+        english=" Here...[K]\nFor the end to come...",
+        french=" Il ne reste qu\'à attendre...[K]\nla fin...",
+        german=" Lasst uns einfach...[K]\nauf unser Verschwinden warten...",
+        italian=" ... la fine...",
+        spanish=" Aguardar aquí...[K] hasta que llegue\nel final.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8454);
+    with (object OBJECT_D01P11B2_12) {
+        SetAnimation(2);
+    }
+    Wait(10);
+    with (object OBJECT_D01P11B2_13) {
+        SetAnimation(2);
+    }
+    Wait(10);
+    with (object OBJECT_D01P11B2_14) {
+        SetAnimation(2);
+    }
+    Wait(10);
+    with (object OBJECT_D01P11B2_15) {
+        SetAnimation(2);
+    }
+    Wait(45);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_PAIN, FACE_POS_STANDARD);
+    message_Talk({
+        english=" The end is coming...[K]\nWe\'re fading...",
+        french=" Notre fin est proche...[K]\nNous disparaissons...",
+        german=" Unsere gemeinsame Reise geht\nzu Ende...[K] Wir werden blasser...",
+        italian=" La fine è vicina...[K] stiamo\nscomparendo...",
+        spanish=" Se acerca el final...[K]\nNos estamos desvaneciendo...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(11536);
+    with (object OBJECT_D01P11B2_12) {
+        SetAnimation(4);
+    }
+    Wait(60);
+    message_SetFace(ACTOR_NPC_DARK_DIARUGA, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" GARU...[K] GARURU...",
+        french=" GARU...[K] GARURU...",
+        german=" GARU...[K] GARURU...",
+        italian=" GARU...[K] GARURU...",
+        spanish=" GRUUU...[K] GRUGRUGRUUU...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_YONOWAARU_N9) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    Wait(2);
+    with (actor ACTOR_NPC_SEREBII) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_NPC_SEREBII) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_SEREBII);
+    with (object OBJECT_D01P11B2_12) {
+        SetAnimation(6);
+    }
+    Wait(30);
+    message_SetFace(ACTOR_NPC_DARK_DIARUGA, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" GROOH...[K] GROOOOOH...",
+        french=" GROOH...[K] GROOOOOH...",
+        german=" GROOH...[K] GROOOOOH...",
+        italian=" GROOH...[K] GROOOOOH...",
+        spanish=" GRRRR...[K] GRRRRRR...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_FadeOut(11536, 20);
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SetOutputAttribute(64);
+    }
+    back_SetEffect(12, 60);
+    Wait(20);
+    se_Play(8459);
+    with (object OBJECT_D01P11B2_12) {
+        SetAnimation(23);
+    }
+    with (object OBJECT_D01P11B2_12) {
+        WaitAnimation();
+    }
+    WaitBackEffect();
+    WaitExecuteLives(ACTOR_NPC_DARK_DIARUGA);
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        Destroy();
+    }
+    WaitExecuteObject(OBJECT_D01P11B2_12);
+    with (object OBJECT_D01P11B2_12) {
+        Destroy();
+    }
+    Wait(20);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_YONOWAARU_N9) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    Wait(2);
+    with (actor ACTOR_NPC_SEREBII) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_SEREBII) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_SEREBII);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_PAIN, FACE_POS_BOTTOM_L_CENTER);
+    message_Talk({
+        english=" [CS:N]D-[K]Dialga[CR]...!",
+        french=" [CS:N]D-[K]Dialga[CR]...!",
+        german=" [CS:N]D-[CR][K][CS:N]Dialga[CR]...",
+        italian=" [CS:N]D-[CR][K][CS:N]Dialga[CR]...!",
+        spanish=" [CS:N]Di[CR]...[K] ¡[CS:N]Dialga[CR]...!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5121);
+    with (actor ACTOR_NPC_YONOWAARU_N9) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N9) {
+        SetAnimation(37);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N9) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU_N9);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_PAIN, FACE_POS_STANDARD);
+    message_Talk({
+        english=" GWAH!",
+        french=" AAARGH!",
+        german=" GWAH!",
+        italian=" GUAH!",
+        spanish=" ¡¡Ah!!",
+    });
+    se_Play(11534);
+    with (object OBJECT_D01P11B2_15) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetAnimation(41);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetDirection(DIR_LEFT);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    Wait(45);
+    message_Close();
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_SURPRISED, FACE_POS_BOTTOM_C_FACEL);
+    message_Talk({
+        english=" [CS:N]Dusknoir[CR]!",
+        french=" [CS:N]Noctunoir[CR]!",
+        german=" [CS:N]Zwirrfinst[CR]!",
+        italian=" [CS:N]Dusknoir[CR]!",
+        spanish=" ¡[CS:N]Dusknoir[CR]!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SEREBII, FACE_PAIN, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Oooohh...",
+        french=" Oooohh...",
+        german=" Ooooh...",
+        italian=" Ooohhh...",
+        spanish=" Ooooh...",
+    });
+    with (actor ACTOR_NPC_SEREBII) {
+        SetAnimation(25);
+    }
+    with (actor ACTOR_NPC_SEREBII) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_SEREBII) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_SEREBII);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(11534);
+    with (object OBJECT_D01P11B2_14) {
+        SetAnimation(4);
+    }
+    Wait(45);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetDirection(DIR_RIGHT);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    Wait(20);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_SURPRISED, FACE_POS_BOTTOM_C_FACER);
+    message_Talk({
+        english=" [CS:N]C-Celebi[CR] too!",
+        french=" [CS:N]C-Celebi[CR] aussi!",
+        german=" Auch [CS:N]C-Celebi[CR]!",
+        italian=" [CS:N]C-Celebi[CR]! Anche tu!",
+        spanish=" [CS:N]Ce[CR]... ¡[CS:N]Celebi[CR] también!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_PAIN, FACE_POS_STANDARD);
+    message_Talk({
+        english=" GUUUuuuhhhh...[K] [CS:Y]Grovyle[CR]...",
+        french=" Aaaargh...[K] [CS:Y]Massko[CR]...",
+        german=" GUUUuuuh...[K] [CS:Y]Reptain[CR]...",
+        italian=" GUUUuuuhhhh...[K] [CS:Y]Grovyle[CR]...",
+        spanish=" Aaaaaah...[K] [CS:Y]Grovyle[CR]...",
+    });
+    bgm2_FadeOut(60);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8978);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetDirection(DIR_UP);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    bgm_PlayFadeIn(BGM_IN_THE_MORNING_SUN, 0, 256);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" [CS:Y]Grovyle[CR]...[K] Please tell me...",
+        french=" [CS:Y]Massko[CR]...[K] Dis-moi...",
+        german=" [CS:Y]Reptain[CR]...[K] Bitte sage mir...",
+        italian=" [CS:Y]Grovyle[CR]...[K] Per favore, dimmi...",
+        spanish=" [CS:Y]Grovyle[CR]...[K] Dime una cosa...",
+    });
+    message_Talk({
+        english=" My...[K]my life...",
+        french=" Ma...[K] ma vie...",
+        german=" Meine...[K] Meine Taten...",
+        italian=" La...[K] La mia esistenza...",
+        spanish=" Mi...[K] recuerdo...",
+    });
+    message_Talk({
+        english=" Did it shine...?",
+        french=" Se souviendra-t-on de moi...?",
+        german=" Sprechen sie für sich?",
+        italian=" ... ha avuto un valore...?",
+        spanish=" ¿Perdurará?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_NORMAL, FACE_POS_BOTTOM_C_FACEL);
+    message_Talk({
+        english=" Yes.[K] Extraordinarily.",
+        french=" Oui.[K] Pour toujours.",
+        german=" Ja.[K] Ohne Zweifel.",
+        italian=" Sì.[K] Senza dubbio.",
+        spanish=" Sí.[K] De una forma extraordinaria.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" ...[K]I am glad...",
+        french=" ...[K] Alors, je suis content...",
+        german=" ...[K]Dann war es mir das wert...",
+        italian=" ...[K] Ne sono lieto...",
+        spanish=" Ah...[K] Me alegro...",
+    });
+    message_Talk({
+        english=" I-I am...",
+        french=" Je suis...",
+        german=" I-ich bin...",
+        italian=" I-Io...",
+        spanish=" Estoy...",
+    });
+    message_Talk({
+        english=" I am, up to the very end...[K]not\nwavering...[K] Honestly...",
+        french=" Jusqu\'à la fin...[K] j\'ai tenu bon...[K]\nEn toute honnêteté...",
+        german=" Ich habe nicht gezaudert...[K]\nBis zum Schluss nicht...[K] Ganz ehrlich...",
+        italian=" Ora che è giunta la fine...[K] posso\ndirlo senza esitazioni...[K] e in tutta sincerità...",
+        spanish=" Aquí estoy, hasta el último minuto...[K]\nSin flaquear.[K] Sin volver la cara.",
+    });
+    message_Talk({
+        english=" I lived...",
+        french=" J\'ai vécu...",
+        german=" Ich habe einfach gehandelt.",
+        italian=" La vita è meravigliosa...",
+        spanish=" He vivido...",
+    });
+    message_Talk({
+        english=" Because of you, [CS:Y]Grovyle[CR]...[K]\nThanks to you...",
+        french=" Grâce à toi, [CS:Y]Massko[CR]...[K]\nGrâce à toi...",
+        german=" [CS:Y]Reptain[CR]...[K] Du hast mir gezeigt,\ndass Taten für sich sprechen...",
+        italian=" È merito tuo, [CS:Y]Grovyle[CR]...[K]\nGrazie a te...",
+        spanish=" Y ha sido por ti, [CS:Y]Grovyle[CR]...[K]\nGracias a ti...",
+    });
+    message_Talk({
+        english=" Thanks to you...[K]I...",
+        french=" Grâce à toi...[K] je...",
+        german=" Dank dir...[K] habe ich...",
+        italian=" Grazie a te...[K] io...",
+        spanish=" Gracias a ti...[K] yo...",
+    });
+    message_Talk({
+        english=" I have no regrets...",
+        french=" ... je n\'ai aucun regret...",
+        german=" Es gibt für mich nichts\nzu bedauern...",
+        italian=" Io non ho rimpianti...",
+        spanish=" No me arrepiento de nada...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(11536);
+    with (object OBJECT_D01P11B2_15) {
+        SetAnimation(6);
+    }
+    Wait(120);
+    se_FadeOut(11536, 20);
+    with (actor ACTOR_NPC_YONOWAARU_N9) {
+        SetOutputAttribute(64);
+    }
+    back_SetEffect(12, 60);
+    Wait(20);
+    se_Play(8459);
+    with (object OBJECT_D01P11B2_15) {
+        SetAnimation(23);
+    }
+    with (object OBJECT_D01P11B2_15) {
+        WaitAnimation();
+    }
+    WaitBackEffect();
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU_N9);
+    with (actor ACTOR_NPC_YONOWAARU_N9) {
+        Destroy();
+    }
+    WaitExecuteObject(OBJECT_D01P11B2_15);
+    with (object OBJECT_D01P11B2_15) {
+        Destroy();
+    }
+    Wait(90);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_NORMAL, FACE_POS_BOTTOM_C_FACEL);
+    message_Talk({
+        english=" [CS:N]Dusknoir[CR]...",
+        french=" [CS:N]Noctunoir[CR]...",
+        german=" [CS:N]Zwirrfinst[CR]...",
+        italian=" [CS:N]Dusknoir[CR]...",
+        spanish=" [CS:N]Dusknoir[CR]...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetAnimation(40);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetDirection(DIR_LEFT);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_PAIN, FACE_POS_BOTTOM_C_FACEL);
+    message_Talk({
+        english=" GUUuhh!",
+        french=" Aaargh!",
+        german=" GUUuh!",
+        italian=" GUUuhh!",
+        spanish=" ¡Aaaah!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(11534);
+    with (object OBJECT_D01P11B2_13) {
+        SetAnimation(4);
+    }
+    Wait(60);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetAnimation(41);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetDirection(DIR_LEFT);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_NORMAL, FACE_POS_BOTTOM_C_FACEL);
+    message_Talk({
+        english=" ...![K] The end...!",
+        french=" ...![K] C\'est la fin...!",
+        german=" ...[K]Vorbei...",
+        italian=" ...![K] È la fine...!",
+        spanish=" Esto...[K] ¡Esto es el fin!",
+    });
+    message_Talk({
+        english=" ...[K]Me too...[K] Me too... So slowly...",
+        french=" ...[K] Moi aussi...[K] Lentement...",
+        german=" ...[K]Auch ich...[K] Auch ich...\nSo langsam...",
+        italian=" ...[K] Anch\'io...[K] lentamente...\nAnch\'io...",
+        spanish=" Sí...[K] Yo también...[K] Lo estoy notando\nlentamente...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetDirection(DIR_RIGHT);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_PAIN, FACE_POS_BOTTOM_C_FACER);
+    message_Talk({
+        english=" [CS:N]C-[K]Celebi[CR]...",
+        french=" [CS:N]C-[K]Celebi[CR]...",
+        german=" [CS:N]C-[CR][K][CS:N]Celebi[CR]...",
+        italian=" [CS:N]C-[CR][K][CS:N]Celebi[CR]...",
+        spanish=" [CS:N]Ce[CR]...[K] [CS:N]Celebi[CR]...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_SEREBII) {
+        SetOutputAttribute(1);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetAnimation(43);
+    }
+    with (performer 0) {
+        MovePositionMark(32896, Position<'m0', 36.5, 28.5>);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SlidePositionMark(32896, Position<'m1', 37, 29.5>);
+    }
+    with (object OBJECT_D01P11B2_13) {
+        MovePositionMark(32896, Position<'m2', 37, 29.5>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    with (object OBJECT_D01P11B2_13) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetAnimation(23);
+    }
+    WaitExecutePerformer(0);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetAnimation(24);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    with (actor ACTOR_NPC_SEREBII) {
+        SetAnimation(26);
+    }
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_NORMAL, FACE_POS_BOTTOM_C_FACER);
+    message_Talk({
+        english=" [CS:N]Celebi[CR]...[K] Are you all right?",
+        french=" [CS:N]Celebi[CR]...[K] Tu vas bien?",
+        german=" [CS:N]Celebi[CR]...[K] Geht es dir gut?",
+        italian=" [CS:N]Celebi[CR]...[K] Va tutto bene?",
+        spanish=" [CS:N]Celebi[CR]...[K] ¿Estás bien?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SEREBII, FACE_STUNNED, FACE_POS_BOTTOM_RC_FACEOUTW);
+    message_Talk({
+        english=" Yes...[K] I\'m fine...",
+        french=" Oui...[K] Ça va...",
+        german=" Ja...[K] Ich bin in Ordnung...",
+        italian=" Sì...[K] Sto bene...",
+        spanish=" Sí...[K] Estoy bien...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    back_SetBackEffect(3);
+    Wait(90);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetAnimation(25);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    se_Play(8978);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_NORMAL, FACE_POS_BOTTOM_C_FACER);
+    message_Talk({
+        english=" Th-this is...",
+        french=" C\'est...",
+        german=" D-das ist...",
+        italian=" Q-Questa è...",
+        spanish=" Eso es...",
+    });
+    message_Talk({
+        english=" Oh...[K] It\'s the morning sun...[K]\nThe sun is up...",
+        french=" Oh...[K] Le soleil s\'est levé...",
+        german=" Oh...[K] Die Morgensonne...[K]\nSie ist aufgegangen...",
+        italian=" Oh...[K] È la luce del sole...[K]\nIl sole sta sorgendo...",
+        spanish=" Oh...[K] Es el sol del amanecer.[K]\nEl sol está saliendo...",
+    });
+    message_Close();
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V38P06A);
+    camera2_SetPositionMark(Position<'m3', 20, 18.5>);
+    back2_SetBackEffect(3);
+    supervision_Acting(5);
+    with (object OBJECT_V38P06A1_450) {
+        SetOutputAttribute(64);
+    }
+    with (object OBJECT_V38P06A1_450) {
+        SetAnimation(17);
+    }
+    back2_SetEffect(13, 0);
+    screen2_FadeIn(1, 30);
+    Wait(30);
+    with (object OBJECT_V38P06A1_450) {
+        WaitAnimation();
+    }
+    WaitExecuteObject(OBJECT_V38P06A1_450);
+    with (object OBJECT_V38P06A1_450) {
+        SetAnimation(2);
+    }
+    Wait(200);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_NORMAL, FACE_POS_BOTTOM_C_FACER);
+    message_Talk({
+        english=" Can you see it, [CS:N]Celebi[CR]?[K]\nIt\'s the morning sun.",
+        french=" Tu vois, [CS:N]Celebi[CR]?[K]\nLe soleil!",
+        german=" Siehst du sie, [CS:N]Celebi[CR]?[K]\nEs ist die Morgensonne.",
+        italian=" Riesci a vederlo, [CS:N]Celebi[CR]?[K]\nÈ il sole del mattino.",
+        spanish=" ¿Lo ves, [CS:N]Celebi[CR]?[K]\nEl sol del amanecer.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SEREBII, FACE_STUNNED, FACE_POS_BOTTOM_RC_FACEOUTW);
+    message_Talk({
+        english=" This...[K]this is...",
+        french=" C\'est...[K] ça...",
+        german=" Das...[K] Das ist...",
+        italian=" Questo...[K] Questo è...",
+        spanish=" Sí...[K] ¿Lo es?",
+    });
+    message_Talk({
+        english=" Is this...[K]the morning sun...?",
+        french=" C\'est ça...[K] le soleil?",
+        german=" Das ist also...[K] die Morgensonne?",
+        italian=" È il sole...[K] del mattino...?",
+        spanish=" ¿Lo es realmente...?[K] ¿Es el sol?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(60);
+    message_SetFace(ACTOR_NPC_SEREBII, FACE_STUNNED, FACE_POS_BOTTOM_RC_FACEOUTW);
+    message_Talk({
+        english=" I...[K]I had no idea...",
+        french=" Je n\'avais...[K] aucune idée...",
+        german=" Ich...[K] Ich hatte ja keine Ahnung...",
+        italian=" Non...[K] ne avevo idea...",
+        spanish=" Yo...[K] no tenía ni idea...",
+    });
+    message_Talk({
+        english=" A world in which the sun rises...[K]\nIt is so beautiful...",
+        french=" Un monde où le soleil se lève...[K]\nC\'est si beau...",
+        german=" Eine Welt, in der die Sonne\naufgeht...[K] Wie schön das ist...",
+        italian=" Un mondo in cui sorge il sole...[K]\nÈ meraviglioso...",
+        spanish=" Un mundo en el que sale el sol...[K]\nEs tan hermoso...",
+    });
+    message_Talk({
+        english=" The sun...[K] I had no idea that it\ncould be this warm.",
+        french=" Le soleil...[K] Il en émane\nune douce chaleur.",
+        german=" Die Sonne...[K] Ich wusste nicht,\ndass sie so warm sein würde.",
+        italian=" Il sole...[K] Non pensavo che\npotesse essere così caldo.",
+        spanish=" El sol...[K] No tenía ni idea de que podía\ncalentar así.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (object OBJECT_D01P11B2_15) {
+        SetAnimation(6);
+    }
+    Wait(60);
+    se_Play(5131);
+    camera2_SetEffect(2, 1, 33024);
+    camera_SetEffect(2, 1, 33024);
+    Wait(60);
+    message_SetFace(ACTOR_NPC_SEREBII, FACE_STUNNED, FACE_POS_BOTTOM_RC_FACEOUTW);
+    message_Talk({
+        english=" I...[K] Being able to see the sun\nbefore the end...",
+        french=" Je...[K] Assister à un lever\nde soleil avant de disparaître...",
+        german=" Ich...[K] Dass ich die Sonne noch\neinmal sehen darf...",
+        italian=" Riuscire...[K] a vedere il sole prima\ndi scomparire...",
+        spanish=" Poder...[K] Poder ver el sol antes\nde que todo acabe...",
+    });
+    message_SetFace(ACTOR_NPC_SEREBII, FACE_TEARY_EYED, FACE_POS_BOTTOM_RC_FACEOUTW);
+    message_Talk({
+        english=" And...[K] Being able to\nsee it with you...",
+        french=" Et...[K] y assister\nen ta compagnie...",
+        german=" Und...[K] Dass ich sie gemeinsam\nmit dir sehen darf...",
+        italian=" E...[K] vederlo insieme a te...",
+        spanish=" Y...[K] poder verlo contigo...",
+    });
+    message_Talk({
+        english=" I am really glad...",
+        french=" Rien que pour ça...",
+        german=" Das macht mich so froh...",
+        italian=" Sono davvero contenta...",
+        spanish=" Realmente me alegro...",
+    });
+    message_Talk({
+        english=" That I am alive...[K] I am\nreally glad...",
+        french=" ... la vie...[K] valait la peine d\'être\nvécue...",
+        german=" Dass ich mit dir hier sein\ndarf...[K] Das macht mich so froh...",
+        italian=" ... di poter vivere tutto questo...[K]\nSono veramente felice...",
+        spanish=" Me alegro...[K] de haber existido...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_NORMAL, FACE_POS_BOTTOM_C_FACER);
+    message_Talk({
+        english=" I am too.",
+        french=" Je suis bien d\'accord.",
+        german=" Oh, mich auch.",
+        italian=" Anch\'io lo sono.",
+        spanish=" Yo también.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_SEREBII, FACE_TEARY_EYED, FACE_POS_BOTTOM_RC_FACEOUTW);
+    message_Talk({
+        english=" Good-bye, [CS:Y]Grovyle[CR]...[K] I...",
+        french=" Au revoir, [CS:Y]Massko[CR]...[K] Je...",
+        german=" Auf Wiedersehen, [CS:Y]Reptain[CR].[K] Ich...",
+        italian=" Addio, [CS:Y]Grovyle[CR]...[K] Io...",
+        spanish=" Adiós, [CS:Y]Grovyle[CR]...[K] Yo...",
+    });
+    message_Talk({
+        english=" I...[K] (I am so happy...)",
+        french=" Je...[K] (Je suis comblée...)",
+        german=" Ich...[K] (Ich bin so froh...)",
+        italian=" Io...[K] (Io sono così felice...)",
+        spanish=" Yo...[K] (Estoy tan feliz...)",
+    });
+    message_Close();
+    with (object OBJECT_D01P11B2_13) {
+        SetAnimation(3);
+    }
+    Wait(30);
+    with (object OBJECT_D01P11B2_13) {
+        SetAnimation(4);
+    }
+    Wait(30);
+    with (object OBJECT_D01P11B2_13) {
+        SetAnimation(6);
+    }
+    bgm2_PlayFadeIn(BGM_EARTHQUAKE3, 30, 256);
+    camera_SetEffect(1, 1, 33024);
+    Wait(90);
+    bgm_FadeOut(210);
+    screen2_FadeOut(0, 30);
+    screen_FadeOut(1, 30);
+    back2_SetMode(0);
+    camera2_SetEffect(0, 0, 0);
+    camera_SetEffect(0, 0, 0);
+    end;
+}
+
+def 1 for_object(OBJECT_D52P32A7_463) {
+    SetOutputAttribute(4);
+    §label_0;
+    forever {
+        SetAnimation(3);
+        WaitAnimation();
+        WaitRandom(90, 180);
+        continue;  // may be redundant
+    }
+}

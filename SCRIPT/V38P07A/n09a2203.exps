@@ -1,0 +1,140 @@
+
+def 0 {
+    bgm2_PlayFadeIn(BGM_EARTHQUAKE3, 0, 256);
+    back_SetGround(LEVEL_V38P07A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    camera_SetEffect(1, 1, 33024);
+    with (object OBJECT_V38P07A1_488) {
+        SetOutputAttribute(1024);
+    }
+    with (object OBJECT_V38P07B1_489) {
+        SetOutputAttribute(1024);
+    }
+    with (object OBJECT_V38P07C1_490) {
+        SetOutputAttribute(1024);
+    }
+    with (object OBJECT_V38P07C2_491) {
+        SetOutputAttribute(1024);
+    }
+    with (object OBJECT_V38P07C3_492) {
+        SetOutputAttribute(1024);
+    }
+    with (object OBJECT_V38P07C4_493) {
+        SetOutputAttribute(1024);
+    }
+    with (object OBJECT_V38P07C5_494) {
+        SetOutputAttribute(1024);
+    }
+    with (object OBJECT_V38P07D1_495) {
+        SetOutputAttribute(1024);
+    }
+    with (object OBJECT_V38P07D2_496) {
+        SetOutputAttribute(1024);
+    }
+    with (object OBJECT_V38P07D3_497) {
+        SetOutputAttribute(1024);
+    }
+    with (object OBJECT_V38P07D4_498) {
+        SetOutputAttribute(1024);
+    }
+    with (object OBJECT_V38P07D5_499) {
+        SetOutputAttribute(1024);
+    }
+    with (object OBJECT_V38P07D6_500) {
+        SetOutputAttribute(1024);
+    }
+    screen_FadeIn(1, 30);
+    with (object OBJECT_V38P07A1_488) {
+        SetAnimation(2);
+    }
+    with (object OBJECT_V38P07B1_489) {
+        SetAnimation(2);
+    }
+    Wait(10);
+    with (object OBJECT_V38P07C1_490) {
+        SetAnimation(2);
+    }
+    with (object OBJECT_V38P07C2_491) {
+        SetAnimation(2);
+    }
+    with (object OBJECT_V38P07C3_492) {
+        SetAnimation(2);
+    }
+    Wait(10);
+    with (object OBJECT_V38P07C4_493) {
+        SetAnimation(2);
+    }
+    with (object OBJECT_V38P07C5_494) {
+        SetAnimation(2);
+    }
+    with (object OBJECT_V38P07D1_495) {
+        SetAnimation(2);
+    }
+    Wait(10);
+    with (object OBJECT_V38P07D2_496) {
+        SetAnimation(2);
+    }
+    with (object OBJECT_V38P07D3_497) {
+        SetAnimation(2);
+    }
+    with (object OBJECT_V38P07D4_498) {
+        SetAnimation(2);
+    }
+    Wait(10);
+    with (object OBJECT_V38P07D5_499) {
+        SetAnimation(2);
+    }
+    with (object OBJECT_V38P07D6_500) {
+        SetAnimation(2);
+    }
+    Wait(60);
+    with (object OBJECT_V38P07C1_490) {
+        MovePositionOffset(3, 0, 200);
+    }
+    with (object OBJECT_V38P07C2_491) {
+        MovePositionOffset(3, 0, 200);
+    }
+    with (object OBJECT_V38P07C3_492) {
+        MovePositionOffset(3, 0, 200);
+    }
+    with (object OBJECT_V38P07D4_498) {
+        MovePositionOffset(33152, 0, 200);
+    }
+    Wait(10);
+    with (object OBJECT_V38P07C4_493) {
+        MovePositionOffset(33408, 0, 200);
+    }
+    with (object OBJECT_V38P07C5_494) {
+        MovePositionOffset(33408, 0, 200);
+    }
+    with (object OBJECT_V38P07D1_495) {
+        MovePositionOffset(33408, 0, 200);
+    }
+    with (object OBJECT_V38P07B1_489) {
+        MovePositionOffset(4, 0, 200);
+    }
+    Wait(10);
+    with (object OBJECT_V38P07D2_496) {
+        MovePositionOffset(3, 0, 200);
+    }
+    with (object OBJECT_V38P07D3_497) {
+        MovePositionOffset(3, 0, 200);
+    }
+    Wait(5);
+    with (object OBJECT_V38P07A1_488) {
+        MovePositionOffset(6, 0, 200);
+    }
+    with (object OBJECT_V38P07D5_499) {
+        MovePositionOffset(3, 0, 200);
+    }
+    Wait(10);
+    with (object OBJECT_V38P07D6_500) {
+        MovePositionOffset(33408, 0, 200);
+    }
+    screen_FadeOut(1, 30);
+    camera_SetEffect(0, 0, 0);
+    end;
+}

@@ -1,0 +1,291 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_P23P01A);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_IN_THE_FUTURE, 0, 256);
+    Wait(30);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m0', 28, 34>);
+    }
+    WaitExecutePerformer(0);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        MovePositionMark(1, Position<'m1', 28, 35.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        ExecuteCommon(CORO_LOOK_AROUND_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    message_SetFace(ACTOR_NPC_YAMIRAMI, FACE_NORMAL, FACE_POS_BOTTOM_C_FACER);
+    message_Talk({
+        english=" Wheh-heh-heh![K]\nLooks like [CS:Y]Grovyle[CR] hasn\'t arrived yet...",
+        french=" Whé hé hé![K]\nOn dirait que [CS:Y]Massko[CR] n\'est pas encore là...",
+        german=" Wähähäh![K] Anscheinend\nist [CS:Y]Reptain[CR] noch nicht angekommen...",
+        italian=" Meh-eh-eh![K]\nSembra che [CS:Y]Grovyle[CR] non sia ancora arrivato...",
+        spanish=" ¡Je, je, je![K] Parece que [CS:Y]Grovyle[CR]\ntodavía no ha llegado...",
+    });
+    message_Talk({
+        english=" I\'ll run and report to\nMaster [CS:N]Dialga[CR].",
+        french=" Je cours le dire à Maître [CS:N]Dialga[CR].",
+        german=" Auf, auf! Das muss ich sofort\nMeister [CS:N]Dialga[CR] berichten.",
+        italian=" Andrò a fare rapporto\nal Maestro [CS:N]Dialga[CR].",
+        spanish=" Iré corriendo a informar a [CS:N]Dialga[CR].",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(7192);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        MovePositionOffset(32896, -8, 0);
+    }
+    supervision_Acting(1);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetAnimation(2);
+    }
+    with (performer 4) {
+        SetEffect(EFFECT_ROCKS_HITTING, 3);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetAnimation(28);
+    }
+    Wait(15);
+    se_Play(8974);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SlidePositionOffset(33408, 8, 0);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    with (performer 0) {
+        MovePositionOffset(33408, 8, 0);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetAnimation(2);
+    }
+    with (performer 4) {
+        SetEffect(EFFECT_NONE, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    Wait(12);
+    se_Play(8968);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    message_SetFace(ACTOR_NPC_YAMIRAMI, FACE_SURPRISED, FACE_POS_BOTTOM_C_FACEL);
+    message_Talk({
+        english=" [CS:Y]Gr-[K]Grovyle[CR]!",
+        french=" [CS:Y]Ma... [K]Massko[CR]!!",
+        german=" [CS:Y]R-[CR][K][CS:Y]Reptain[CR]!!!",
+        italian=" [CS:Y]Gr-[CR][K][CS:Y]Grovyle[CR]!!!",
+        spanish=" [CS:Y]Gro[CR]...[K] ¡¡[CS:Y]Grovyle[CR]!!",
+    });
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    message_KeyWait();
+    se_Play(8972);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    message_SetFace(ACTOR_NPC_YAMIRAMI, FACE_SURPRISED, FACE_POS_BOTTOM_C_FACEL);
+    message_Talk({
+        english=" Wheh-heh-heh!",
+        french=" Whé hé hé!",
+        german=" Wähähäh!",
+        italian=" Meh-eh-eh!",
+        spanish=" ¡Je, je, je!",
+    });
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SlidePositionOffset(32896, 16, 0);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    Wait(20);
+    message_CloseEnforce();
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        MovePositionMark(1, Position<'m2', 35.5, 35.5>);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        MovePositionMark(33152, Position<'m3', 35.5, 35.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    se_Play(8973);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SlidePositionOffset(32972, -48, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetAnimation(2);
+    }
+    Wait(5);
+    message_SetFace(ACTOR_NPC_YAMIRAMI, FACE_SURPRISED, FACE_POS_BOTTOM_C_FACER);
+    message_Talk({
+        english=" M-Master [CS:N]Dusknoir[CR]!",
+        french=" M-Maître [CS:N]Noctunoir[CR]!",
+        german=" M-meister [CS:N]Zwirrfinst[CR]!",
+        italian=" M-Maestro [CS:N]Dusknoir[CR]!",
+        spanish=" ¡[CS:N]Dusknoir[CR]!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        ExecuteCommon(CORO_LOOK_AROUND_FAST_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    se_Play(8972);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    Wait(30);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        MovePositionOffset(32896, 16, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        Turn2Direction(1, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SlidePositionOffset(32972, 8, 0);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetAnimation(2);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" There\'s something I want to ask.",
+        french=" J\'ai une question à te poser.",
+        german=" Ich habe da eine Frage.",
+        italian=" Ho una domanda da farti.",
+        spanish=" Me gustaría preguntarte algo.",
+    });
+    message_Talk({
+        english=" Sorry, but you have to come\nwith me.",
+        french=" Désolé, mais il va falloir\nme suivre.",
+        german=" Entschuldigung, aber du musst\njetzt mit mir kommen.",
+        italian=" Mi dispiace, ma devi venire\ncon noi.",
+        spanish=" Y para ello tienes que venir\ncon nosotros.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetAnimation(9);
+    }
+    se_Play(8972);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    message_SetFace(ACTOR_NPC_YAMIRAMI, FACE_STUNNED, FACE_POS_BOTTOM_C_FACEL);
+    message_Talk({
+        english=" Wheh-heh-heh!",
+        french=" Whé hé hé!",
+        german=" Wähähäh!",
+        italian=" Meh-eh-eh!",
+        spanish=" Je, je...",
+    });
+    with (actor ACTOR_PLAYER_FUTURE) {
+        MovePositionOffset(32896, 16, 0);
+    }
+    Wait(8);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        MovePositionOffset(32896, -16, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU_N8);
+    message_Close();
+    Wait(30);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        MovePositionOffset(32896, 180, 0);
+    }
+    Wait(12);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SlidePositionOffset(32972, 36, 0);
+    }
+    Wait(4);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        MovePositionOffset(32972, 24, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetAnimation(9);
+    }
+    Wait(20);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        MovePositionOffset(32972, 24, 0);
+    }
+    Wait(12);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SlidePositionOffset(32972, 20, 0);
+    }
+    Wait(15);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        MovePositionOffset(32972, 28, 0);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SlidePositionOffset(32972, 24, 0);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetAnimation(2);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    Wait(8);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        MovePositionOffset(32972, 180, 0);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        MovePositionOffset(32972, 180, 0);
+    }
+    Wait(30);
+    screen_FadeOut(1, 60);
+    end;
+}

@@ -1,0 +1,138 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_SIDE = scn[48, 9];
+    back_SetGround(LEVEL_D53P41A);
+    supervision_Acting(0);
+    supervision_Acting(1);
+    supervision_Acting(2);
+    supervision_Acting(3);
+    supervision_Acting(4);
+    //supervision_ActingInvisible(6);
+    supervision_Acting(7);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (object OBJECT_P09P01A1_141) {
+        SetAnimation(3);
+    }
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SetAnimation(4);
+    }
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SetOutputAttribute(2);
+    }
+    with (object OBJECT_D01P11B2_12) {
+        SetAnimation(1);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetOutputAttribute(2);
+    }
+    with (object OBJECT_D01P11B2_13) {
+        SetAnimation(1);
+    }
+    with (actor ACTOR_NPC_SEREBII) {
+        SetOutputAttribute(2);
+    }
+    with (object OBJECT_D01P11B2_14) {
+        SetAnimation(1);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N9) {
+        SetOutputAttribute(2);
+    }
+    with (object OBJECT_D01P11B2_15) {
+        SetAnimation(1);
+    }
+    Wait(1);
+    //with (actor ACTOR_PLAYER_FUTURE) {
+        //MovePositionOffset(1, 0, -16);
+    //}
+    //with (actor ACTOR_NPC_YONOWAARU_N9) {
+        //MovePositionOffset(1, 0, -32);
+    //}
+    //with (actor ACTOR_NPC_SEREBII) {
+        //MovePositionOffset(1, 0, -24);
+    //}
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_SEREBII) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N9) {
+        SetAnimation(2);
+    }
+    screen_FadeIn(1, 30);
+
+    //supervision_Acting(5);
+    //ith (performer 0) {
+        //MovePositionOffset(33408, 0, 8);
+    //}
+
+    //with (actor ACTOR_NPC_YONOWAARU_N9) {
+        //SlidePositionOffset(33408, 0, 8);
+    //}
+    //with (actor ACTOR_PLAYER_FUTURE) {
+        //SlidePositionOffset(33408, 0, 8);
+    //}
+    //with (actor ACTOR_NPC_SEREBII) {
+        //SlidePositionOffset(33408, 0, 8);
+    //}
+
+
+    //with (object OBJECT_D53P41A1_464) {
+        //SetupOutputAttributeAndAnimation(2, 128, 17);
+    //}
+    //with (object OBJECT_D53P41A1_464) {
+        //WaitAnimation();
+    //}
+    //WaitExecuteObject(OBJECT_D53P41A1_464);
+
+
+
+
+    bgm_PlayFadeIn(BGM_DIALGAS_FIGHT_TO_THE_FINISH, 0, 256);
+
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SetAnimation(26);
+    }
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        WaitAnimation();
+    }
+    camera_SetEffect(2, 1, 33024);
+    se_Play(6930);
+    message_SetFace(ACTOR_NPC_DARK_DIARUGA, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" GRRR-OOOOOO...OOOOOH!",
+        french=" GRRROOOOOO... OOOOOH!",
+        german=" GRRR-OOOOOO...OOOOOH!",
+        italian=" GRRR-OOOOOO... OOOOOH!",
+        spanish=" ¡¡GRRRRRRRRRR!!",
+    });
+    WaitExecuteLives(ACTOR_NPC_DARK_DIARUGA);
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SetDirection(DIR_DOWNRIGHT);
+    }
+    with (actor ACTOR_NPC_DARK_DIARUGA) {
+        SetAnimation(46);
+    }
+    WaitSe(6930);
+    camera_SetEffect(0, 0, 0);
+    message_CloseEnforce();
+    CallCommon(CORO_BOSS_WIPE_FUNC);
+    main_EnterDungeon(148, 30);
+    main_EnterDungeon(-1, 30);
+    hold;
+    end;
+}
+
+def 1 for_object(OBJECT_D52P32A7_463) {
+    SetOutputAttribute(4);
+    §label_0;
+    forever {
+        SetAnimation(3);
+        WaitAnimation();
+        WaitRandom(90, 180);
+        continue;  // may be redundant
+    }
+}

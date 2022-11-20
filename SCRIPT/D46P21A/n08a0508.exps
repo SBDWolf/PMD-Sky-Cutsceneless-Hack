@@ -1,0 +1,17 @@
+
+def 0 {
+    sound_Stop();
+    $SCENARIO_SIDE = scn[47, 2];
+    back_SetGround(LEVEL_D46P21A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetPositionMark(Position<'m0', 28.5, 36.5>);
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_BARREN_VALLEY, 0, 256);
+    end;
+}

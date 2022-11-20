@@ -1,0 +1,153 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_HIDDEN_HIGHLAND, 0, 256);
+    back_SetGround(LEVEL_D46P11A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    Wait(1);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        SetAnimation(36);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        MovePositionMark(33152, Position<'m0', 22, 28>);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetAnimation(27);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        WaitAnimation();
+    }
+    screen_FlushOut(1, 0, 8, 0, 0, 0);
+    screen_FadeIn(1, 30);
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetEffect(EFFECT_EXCLAMATION_MARK, 3);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_SURPRISED, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" [CS:N]S-[K]Sableye[CR]!",
+        french=" [CS:N]T-[K]Ténéfix[CR]!",
+        german=" [CS:N]Z-[CR][K][CS:N]Zobiris[CR]!",
+        italian=" [CS:N]S-[CR][K][CS:N]Sableye[CR]!",
+        spanish=" [CS:N]Sa[CR]...[K] ¡[CS:N]Sableye[CR]!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    message_SetFace(ACTOR_NPC_YAMIRAMI, FACE_SIGH, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" Wheh-heh-heh!?[K]\n[CS:Y]G-Grovyle[CR]?!",
+        french=" Whé hé hé!?[K]\n[CS:Y]M-Massko[CR]?!",
+        german=" Wähähäh?!?[K]\n[CS:Y]R-Reptain[CR]?!?",
+        italian=" Meh-eh-eh!?[K]\n[CS:Y]G-[CR][K][CS:Y]Grovyle[CR]?!",
+        spanish=" ¡Je, je![K] ¿Je?\n[CS:Y]Gro[CR]... ¡¿[CS:Y]Grovyle[CR]?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        MovePositionOffset(3, -160, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        Destroy();
+    }
+    Wait(30);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" ...[K]They\'ve found me already...",
+        french=" ...[K] Ils m\'ont déjà repéré...",
+        german=" ...[K]\nSie haben mich schon aufgespürt...",
+        italian=" ...[K] Mi hanno già trovato...",
+        spanish=" ¡No![K] Ya me han encontrado...",
+    });
+    message_Talk({
+        english=" I\'ve got to get out of here as\nfast as I can.\n",
+        french=" Je dois quitter cet endroit\nau plus vite.",
+        german=" Ich muss hier weg,\nso schnell wie möglich.",
+        italian=" Devo andarmene da qui\nil prima possibile.",
+        spanish=" Tengo que salir de aquí\nlo antes posible.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_Mail({
+        english="[CN]But [CS:N]Dusknoir[CR] was still unconscious then...",
+        french="[CN][CS:N]Noctunoir[CR] était toujours inconscient\n[CN]à ce moment-là...",
+        german="[CN]Aber [CS:N]Zwirrfinst[CR] war zu diesem\n[CN]Zeitpunkt noch bewusstlos...",
+        italian="[CN]Ma in quel momento [CS:N]Dusknoir[CR] era ancora\n[CN]privo di sensi...",
+        spanish="[CN]Pero [CS:N]Dusknoir[CR] seguía inconsciente...",
+    });
+    message_Mail({
+        english="[CN]I thought I was the first of\n[CN]us to wake up...",
+        french="[CN]Je croyais avoir repris connaissance\n[CN]le premier...",
+        german="[CN]Ich dachte, ich sei als Erster\n[CN]von uns beiden aufgewacht...",
+        italian="[CN]Pensavo di essermi risvegliato\n[CN]per primo...",
+        spanish="[CN]Yo creía que había sido\n[CN]el primero en despertar...",
+    });
+    message_Mail({
+        english="[CN]That was incorrect...",
+        french="[CN]J\'avais tort...",
+        german="[CN]Aber so war es nicht...",
+        italian="[CN]Ma mi sbagliavo...",
+        spanish="[CN]Pero no fue así...",
+    });
+    message_Mail({
+        english="[CN]It was the other way around!",
+        french="[CN]C\'était l\'inverse!",
+        german="[CN]Es war vielmehr andersherum!",
+        italian="[CN]In realtà è successo il contrario!",
+        spanish="[CN]¡Fue al revés!",
+    });
+    message_Mail({
+        english="[CN][CS:N]Dusknoir[CR] regained consciousness before I did.",
+        french="[CN][CS:N]Noctunoir[CR] s\'est réveillé avant moi.",
+        german="[CN][CS:N]Zwirrfinst[CR] hat vor mir das\n[CN]Bewusstsein wiedererlangt.",
+        italian="[CN][CS:N]Dusknoir[CR] ha ripreso i sensi prima di me.",
+        spanish="[CN][CS:N]Dusknoir[CR] recobró la consciencia antes que yo.",
+    });
+    message_Mail({
+        english="[CN]So he woke up first and talked to the [CS:N]Sableye[CR].",
+        french="[CN]Il en a profité pour parler aux [CS:N]Ténéfix[CR].",
+        german="[CN]Also stand er auf und sprach mit den [CS:N]Zobiris[CR].",
+        italian="[CN]Quindi si è svegliato prima di me\n[CN]e ha parlato con i [CS:N]Sableye[CR].",
+        spanish="[CN]Se despertó antes y habló con los [CS:N]Sableye[CR].",
+    });
+    message_Mail({
+        english="[CN]This...[K]plan of his...",
+        french="[CN]Son...[K] son plan...",
+        german="[CN]So ein...[K] perfider Plan...",
+        italian="[CN]Questo...[K] suo piano...",
+        spanish="[CN]Ese era...[K] su plan...",
+    });
+    message_Close();
+    screen_WhiteOut(1, 30);
+    screen_FlushIn(1, 0, 1, 0, 0, 0);
+    end;
+}

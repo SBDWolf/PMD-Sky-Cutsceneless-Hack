@@ -1,0 +1,86 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_A_NEW_WORLD, 0, 256);
+    back_SetGround(LEVEL_D52P11C);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 60);
+    Wait(30);
+    Wait(160);
+    screen_FadeOut(1, 60);
+    end;
+}
+
+def 1 for_actor(ACTOR_NPC_MIKARUGE) {
+    SetAnimation(2);
+    §label_0;
+    forever {
+        CallCommon(CORO_LOOK_AROUND_FUNC);
+        WaitRandom(15, 30);
+        MovePositionOffset(32896, 24, 0);
+        WaitRandom(15, 30);
+        CallCommon(CORO_LOOK_AROUND_FUNC);
+        WaitRandom(15, 30);
+        MovePositionOffset(32896, -24, 0);
+        WaitRandom(15, 30);
+        continue;  // may be redundant
+    }
+}
+
+def 2 for_actor(ACTOR_NPC_YUKIWARASHI) {
+    SetAnimation(2);
+    §label_1;
+    forever {
+        WaitRandom(5, 10);
+        MovePositionOffset(1, 24, 0, -24, 0);
+        WaitRandom(5, 10);
+        Turn2Direction(4, 2, DIR_DOWN);
+        SetEffect(EFFECT_LAUGHING, 3);
+        CallCommon(CORO_JUMP_ANGRY_FUNC);
+        WaitRandom(30, 40);
+        SetEffect(EFFECT_NONE, 3);
+        WaitRandom(5, 10);
+        continue;  // may be redundant
+    }
+}
+
+def 3 for_actor(ACTOR_NPC_YUKIWARASHI2) {
+    SetAnimation(2);
+    §label_2;
+    forever {
+        SetEffect(EFFECT_JOYOUS, 3);
+        CallCommon(CORO_JUMP_ANGRY_FUNC);
+        WaitRandom(45, 60);
+        SetEffect(EFFECT_NONE, 3);
+        WaitRandom(45, 60);
+        continue;  // may be redundant
+    }
+}
+
+def 4 for_actor(ACTOR_NPC_YUKIWARASHI3) {
+    SetAnimation(2);
+    §label_3;
+    forever {
+        SetEffect(EFFECT_LAUGHING, 3);
+        WaitRandom(30, 50);
+        SetEffect(EFFECT_NONE, 3);
+        WaitRandom(30, 50);
+        continue;  // may be redundant
+    }
+}
+
+def 5 for_actor(ACTOR_NPC_YUKIWARASHI4) {
+    SetAnimation(2);
+    §label_4;
+    forever {
+        SetEffect(EFFECT_JOYOUS, 3);
+        SetAnimation(4);
+        WaitRandom(60, 90);
+        SetAnimation(2);
+        SetEffect(EFFECT_NONE, 3);
+        WaitRandom(30, 50);
+        continue;  // may be redundant
+    }
+}

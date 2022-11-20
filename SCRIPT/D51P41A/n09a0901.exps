@@ -1,0 +1,303 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_D51P41A);
+    supervision_Acting(0);
+    supervision_Acting(1);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen_FadeIn(1, 30);
+    Wait(30);
+    message_SetFace(ACTOR_NPC_ONIGOORI, FACE_NORMAL, FACE_POS_TOP_L_FACEINW);
+    message_FacePositionOffset(0, -3);
+    message_Talk({
+        english=" GOGIGI...",
+        french=" GOGNIGNI...",
+        german=" GOGIGI...",
+        italian=" GOGIGI...",
+        spanish=" GOGUIGUÍ...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_MANMUU, FACE_NORMAL, FACE_POS_TOP_C_FACER);
+    message_Talk({
+        english=" BUAOOOOOOO...",
+        french=" ROAAAAA...",
+        german=" BUAOOOOOOO...",
+        italian=" BUAOOOOOOO...",
+        spanish=" BUAOOOOOOO...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_NPC_MANMUU) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_ONIGOORI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    Wait(2);
+    with (actor ACTOR_NPC_ONIGOORI3) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    Wait(7);
+    with (actor ACTOR_NPC_ONIGOORI2) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_ONIGOORI4) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_ONIGOORI4) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_ONIGOORI4);
+    se_Play(8963);
+    with (actor ACTOR_NPC_MANMUU) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_ONIGOORI) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    Wait(2);
+    with (actor ACTOR_NPC_ONIGOORI2) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_ONIGOORI3) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_ONIGOORI4) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    Wait(20);
+    with (actor ACTOR_NPC_MANMUU) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_ONIGOORI) {
+        Turn2Direction(4, 10, DIR_UPRIGHT);
+    }
+    Wait(2);
+    with (actor ACTOR_NPC_ONIGOORI2) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_ONIGOORI3) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    Wait(4);
+    with (actor ACTOR_NPC_ONIGOORI4) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    Wait(45);
+    with (actor ACTOR_NPC_MANMUU) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    se_Play(7430);
+    with (actor ACTOR_NPC_MANMUU) {
+        MovePositionMark(33408, Position<'m0', 15, 24.5>);
+    }
+    message_SetFace(ACTOR_NPC_MANMUU, FACE_NORMAL, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" BUAAAAAAAAAAAA!",
+        french=" RHAAAAAA!",
+        german=" BUAAAAAAAAAAAA!",
+        italian=" BUAAAAAAAAAAAA!",
+        spanish=" ¡BUAAO!",
+    });
+    with (actor ACTOR_NPC_ONIGOORI) {
+        Turn2Direction(8, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_ONIGOORI2) {
+        Turn2Direction(8, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_ONIGOORI3) {
+        Turn2Direction(8, 10, DIR_DOWNLEFT);
+    }
+    with (actor ACTOR_NPC_ONIGOORI4) {
+        Turn2Direction(8, 10, DIR_DOWNLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_MANMUU);
+    with (actor ACTOR_NPC_MANMUU) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_MANMUU) {
+        Slide2PositionMark(33408, Position<'m1', 5, 28.5>);
+    }
+    message_CloseEnforce();
+    WaitExecuteLives(ACTOR_NPC_MANMUU);
+    Wait(30);
+    with (actor ACTOR_NPC_ONIGOORI) {
+        Turn2Direction(8, 10, DIR_DOWN);
+    }
+    Wait(5);
+    with (actor ACTOR_NPC_ONIGOORI2) {
+        Turn2Direction(8, 10, DIR_DOWN);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_ONIGOORI3) {
+        Turn2Direction(8, 10, DIR_DOWN);
+    }
+    Wait(2);
+    with (actor ACTOR_NPC_ONIGOORI4) {
+        Turn2Direction(8, 10, DIR_DOWN);
+    }
+    Wait(30);
+    se_Play(7430);
+    with (actor ACTOR_NPC_ONIGOORI) {
+        MovePositionMark(33408, Position<'m2', 15, 24.5>);
+    }
+    with (actor ACTOR_NPC_ONIGOORI4) {
+        MovePositionMark(33408, Position<'m3', 50, 24.5>);
+    }
+    message_SetFace(ACTOR_NPC_ONIGOORI, FACE_NORMAL, FACE_POS_TOP_C_FACEL);
+    message_Talk({
+        english=" GOGIIII!!",
+        french=" GOGNIIII!!",
+        german=" GOGIIII!!!",
+        italian=" GOGIIII!!",
+        spanish=" ¡¡GOGUÍ!!",
+    });
+    Wait(15);
+    with (actor ACTOR_NPC_ONIGOORI2) {
+        MovePositionMark(33408, Position<'m4', 15, 24.5>);
+    }
+    with (actor ACTOR_NPC_ONIGOORI3) {
+        MovePositionMark(33408, Position<'m5', 50, 24.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_ONIGOORI);
+    with (actor ACTOR_NPC_ONIGOORI) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_ONIGOORI) {
+        Slide2PositionMark(33408, Position<'m6', 5, 28.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_ONIGOORI4);
+    with (actor ACTOR_NPC_ONIGOORI4) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_ONIGOORI4) {
+        Slide2PositionMark(33408, Position<'m7', 59, 28.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_ONIGOORI2);
+    with (actor ACTOR_NPC_ONIGOORI2) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_ONIGOORI2) {
+        Slide2PositionMark(33408, Position<'m8', 5, 28.5>);
+    }
+    WaitExecuteLives(ACTOR_NPC_ONIGOORI3);
+    with (actor ACTOR_NPC_ONIGOORI3) {
+        SetAnimation(5);
+    }
+    with (actor ACTOR_NPC_ONIGOORI3) {
+        Slide2PositionMark(33408, Position<'m9', 59, 28.5>);
+    }
+    message_CloseEnforce();
+    WaitExecuteLives(ACTOR_NPC_ONIGOORI3);
+    supervision_RemoveActing(1);
+    Wait(45);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        MovePositionMark(32972, Position<'m10', 28.5, 25>);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Looks like we\'ve driven\nthem away.",
+        french=" Bon débarras.",
+        german=" Sieht aus, als ob wir sie\nvertreiben konnten.",
+        italian=" A quanto pare, siamo riusciti\na liberarcene!",
+        spanish=" Parece que los hemos espantado.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(5121);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    with (actor ACTOR_NPC_YONOWAARU_N9) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N9) {
+        SetAnimation(25);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N9) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N9) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU_N9);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_PAIN, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Gah!",
+        french=" Argh!",
+        german=" Gah!",
+        italian=" Gah!",
+        spanish=" ¡Ay!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_YONOWAARU_N9);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_PAIN, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Oof...[K] I think I was injured\nby that chunk of ice...",
+        french=" Ouille...[K] J\'ai été touché par\nce bloc de glace.",
+        german=" Uff...[K] Ich glaube, ich wurde von\ndem Eisbrocken verletzt...",
+        italian=" Oooh...[K] Temo che quel pezzo\ndi ghiaccio mi abbia ferito più gravemente\ndi quel che pensassi...",
+        spanish=" Ay...[K] Creo que aquel trozo de hielo\nme ha herido...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" [CS:N]Dusknoir[CR]...",
+        french=" [CS:N]Noctunoir[CR]...",
+        german=" [CS:N]Zwirrfinst[CR]...",
+        italian=" [CS:N]Dusknoir[CR]...",
+        spanish=" [CS:N]Dusknoir[CR]...",
+    });
+    message_Talk({
+        english=" ...[K]I think it would be smart\nif we hid for now.",
+        french=" ...[K] Nous ferions mieux de nous\ncacher pour l\'instant.",
+        german=" ...[K]Ich glaube, es wäre schlau,\nwenn wir uns erst mal verstecken würden.",
+        italian=" ...[K] Forse è meglio se\nci nascondiamo per un po\'.",
+        spanish=" Creo que...[K] será mejor que nos\nescondamos por ahora.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    Wait(15);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        ExecuteCommon(CORO_LOOK_AROUND_LEFT_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    Wait(45);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_YONOWAARU_N9);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_NORMAL, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" There\'s a crack in that ridge\nover there.[K] Let\'s go.",
+        french=" Il y a une faille dans cette paroi.\n[K]Profitons-en.",
+        german=" Da ist ein Spalt in dem\nKamm.[K] Rein dort.",
+        italian=" C\'è una fessura in quella parete\nrocciosa laggiù.[K] Andiamo.",
+        spanish=" Hay una grieta en aquella\ncolina.[K] Vamos allá.",
+    });
+    message_Close();
+    screen_FadeOut(1, 90);
+    Wait(60);
+    $SCENARIO_MAIN_BIT_FLAG[8] = 1;
+    $COMPULSORY_SAVE_POINT_SIDE = 1;
+    CallCommon(CORO_HANYOU_SAVE_FUNC);
+    end;
+}

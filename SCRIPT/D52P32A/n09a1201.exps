@@ -1,0 +1,13 @@
+
+def 0 {
+    sound_Stop();
+    if ( $SCENARIO_MAIN_BIT_FLAG[8] ) {
+        §label_0;
+        $SCENARIO_MAIN_BIT_FLAG[8] = 0;
+        end;
+    } else {
+        $SCENARIO_MAIN_BIT_FLAG[8] = 1;
+        $COMPULSORY_SAVE_POINT_SIDE = 2;
+        jump @label_0;
+    }
+}

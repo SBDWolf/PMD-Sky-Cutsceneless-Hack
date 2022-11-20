@@ -1,0 +1,122 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_A_NEW_WORLD, 0, 256);
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V38P09A);
+    back_SetGround(LEVEL_V38P10A);
+    supervision_Acting(1);
+    supervision_Acting(0);
+    camera2_SetPositionMark(Position<'m0', 19, 39.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (object OBJECT_V38P10B1_525) {
+        SetOutputAttribute(128);
+    }
+    with (object OBJECT_V38P10B2_526) {
+        SetOutputAttribute(128);
+    }
+    with (object OBJECT_V38P10B3_527) {
+        SetOutputAttribute(128);
+    }
+    with (object OBJECT_V38P10B4_528) {
+        SetOutputAttribute(128);
+    }
+    with (object OBJECT_V38P10B5_529) {
+        SetOutputAttribute(128);
+    }
+    with (object OBJECT_V38P10B6_530) {
+        SetOutputAttribute(128);
+    }
+    with (object OBJECT_V38P10B1_525) {
+        SetAnimation(9);
+    }
+    with (object OBJECT_V38P10B2_526) {
+        SetAnimation(9);
+    }
+    with (object OBJECT_V38P10B3_527) {
+        SetAnimation(9);
+    }
+    with (object OBJECT_V38P10B4_528) {
+        SetAnimation(9);
+    }
+    with (object OBJECT_V38P10B5_529) {
+        SetAnimation(9);
+    }
+    with (object OBJECT_V38P10B6_530) {
+        SetAnimation(9);
+    }
+    with (object OBJECT_V38P10B6_530) {
+        SetOutputAttribute(1);
+    }
+    back_SetBackScrollSpeed(-31744, 33408);
+    screen2_FadeIn(0, 60);
+    screen_FadeIn(1, 60);
+    Wait(60);
+    message_SetWaitMode(180, 90);
+    message_SetFace(ACTOR_NPC_SEREBII, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Th-this is...?",
+        french=" Qu\'est-ce que...?",
+        german=" D-das ist...",
+        italian=" Q-Questa è...?",
+        spanish=" ¿Esto es...?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetWaitMode(210, 90);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Master [CS:N]Dialga[CR]\'s...[K]telepathy?",
+        french=" Maître [CS:N]Dialga[CR]...[K] use\nde la télépathie?",
+        german=" Sind das die telepathischen\nKräfte[K] von Meister [CS:N]Dialga[CR]?",
+        italian=" La telepatia...[K] del Maestro\n[CS:N]Dialga[CR]?",
+        spanish=" ¿La telepatía de [CS:N]Dialga[CR]?",
+    });
+    message_Close();
+    message_SetWaitMode(32767, 32767);
+    Wait(8);
+    se_Play(11538);
+    with (object OBJECT_V38P10B1_525) {
+        SetupOutputAttributeAndAnimation(1024, 128, 17);
+    }
+    with (object OBJECT_V38P10B2_526) {
+        SetupOutputAttributeAndAnimation(1024, 128, 17);
+    }
+    with (object OBJECT_V38P10B3_527) {
+        SetupOutputAttributeAndAnimation(1024, 128, 17);
+    }
+    with (object OBJECT_V38P10B4_528) {
+        SetupOutputAttributeAndAnimation(1024, 128, 17);
+    }
+    with (object OBJECT_V38P10B5_529) {
+        SetupOutputAttributeAndAnimation(1024, 128, 17);
+    }
+    with (object OBJECT_V38P10B6_530) {
+        SetupOutputAttributeAndAnimation(1024, 128, 17);
+    }
+    with (object OBJECT_V38P10B1_525) {
+        SlidePositionOffset(32832, -160, 0);
+    }
+    with (object OBJECT_V38P10B2_526) {
+        SlidePositionOffset(32832, -160, 0);
+    }
+    with (object OBJECT_V38P10B3_527) {
+        SlidePositionOffset(32832, -160, 0);
+    }
+    with (object OBJECT_V38P10B4_528) {
+        SlidePositionOffset(32832, -160, 0);
+    }
+    with (object OBJECT_V38P10B5_529) {
+        SlidePositionOffset(32832, -160, 0);
+    }
+    with (object OBJECT_V38P10B6_530) {
+        SlidePositionOffset(32832, -160, 0);
+    }
+    Wait(60);
+    Wait(23);
+    screen2_WhiteOut(0, 30);
+    screen_WhiteOut(1, 30);
+    back_SetBackScrollSpeed(-32768, 32768);
+    back2_SetMode(0);
+    end;
+}

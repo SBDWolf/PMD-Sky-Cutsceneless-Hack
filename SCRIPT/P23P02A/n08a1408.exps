@@ -1,0 +1,1106 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_IN_THE_FUTURE, 0, 256);
+    back2_SetMode(4);
+    back2_SetGround(LEVEL_V17P01A);
+    back_SetGround(LEVEL_P23P02A);
+    supervision_Acting(0);
+    camera2_SetPositionMark(Position<'m0', 21, 21.5>);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    screen2_FadeIn(0, 30);
+    screen_FadeIn(1, 30);
+    Wait(80);
+    with (performer 0) {
+        MovePositionMark(1, Position<'m1', 23.5, 37>);
+    }
+    WaitExecutePerformer(0);
+    Wait(15);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Hey.[K] Tell me.",
+        french=" Alors,[K] dis-moi.",
+        german=" Hey.[K] Sag mal.",
+        italian=" Ehi.[K] Dimmi un po\'.",
+        spanish=" Oye...[K] cuéntame.",
+    });
+    message_Talk({
+        english=" You\'re not after only\nme anymore...",
+        french=" Vous n\'en avez plus seulement\naprès moi...",
+        german=" Ihr seid nicht mehr nur\nhinter mir her...",
+        italian=" Voi non state più dando la caccia\nsolo a me...",
+        spanish=" Ahora no solo vais a por mí...",
+    });
+    message_Talk({
+        english=" You\'re also attacking [CS:N]Dusknoir[CR],\nright? What\'s the deal?",
+        french=" Vous attaquez aussi [CS:N]Noctunoir[CR],\nn\'est-ce pas? Comment ça se fait?",
+        german=" Ihr greift jetzt auch [CS:N]Zwirrfinst[CR]\nan, nicht wahr? Wie kommt das?",
+        italian=" Ce l\'avete anche con [CS:N]Dusknoir[CR],\ngiusto? Per quale motivo?",
+        spanish=" También atacáis a [CS:N]Dusknoir[CR], ¿no?\n¿Y eso a qué viene?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_YAMIRAMI, FACE_PAIN, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Wheh-heh...[K] Th-that\'s...",
+        french=" Whé hé...[K] C\'est que...",
+        german=" Wähäh...[K] W-weil...",
+        italian=" Meh-eh...[K] E-Ecco...",
+        spanish=" Je, je...[K] Eso no...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" You\'re a [CS:N]Sableye[CR].[K] Will\nyou not follow my orders?",
+        french=" Tu es un [CS:N]Ténéfix[CR].[K] Oserais-tu\nignorer mes ordres?",
+        german=" Du bist ein [CS:N]Zobiris[CR].[K] Folgst du\nmeinen Befehlen etwa nicht mehr?",
+        italian=" Tu sei un [CS:N]Sableye[CR].[K] Perché non\nobbedisci ai miei ordini?",
+        spanish=" Eres un [CS:N]Sableye[CR].[K]\n¿Por qué no sigues mis órdenes?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    message_SetFace(ACTOR_NPC_YAMIRAMI, FACE_PAIN, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Wheh-heh-heh...",
+        french=" Whé hé hé...",
+        german=" Wähähäh...",
+        italian=" Meh-eh-eh...",
+        spanish=" Je, je, je...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" Bring this to mind...",
+        french=" Réponds, et vite...",
+        german=" Erinnere dich...",
+        italian=" Ti consiglio di parlare...",
+        spanish=" Ten una cosa en cuenta...",
+    });
+    message_Talk({
+        english=" You know what happens when I\'m\ndispleased...",
+        french=" Tu sais ce qui se passe quand\nje suis mécontent...",
+        german=" Du weißt doch, was passiert,\nwenn ich nicht zufrieden bin...",
+        italian=" Lo sai cosa succede se perdo\nla pazienza...",
+        spanish=" Supongo que ya sabes lo que\npasa cuando algo me disgusta...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        MovePositionOffset(32896, -12, 0);
+    }
+    Wait(5);
+    se_Play(8974);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SlidePositionOffset(33408, -8, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    message_SetFace(ACTOR_NPC_YAMIRAMI, FACE_SIGH, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Wheh-heh-heh![K] I\'ll talk![K] I\'ll talk!",
+        french=" Whé hé hé![K] Je vais tout vous\ndire![K] Je vais tout vous dire!",
+        german=" Wähähäh![K] Ich rede ja schon![K]\nIch rede ja schon!",
+        italian=" Meh-eh-eh![K] Parlerò![K] Parlerò!",
+        spanish=" ¡Hablaré![K] En serio,[K] ¡os lo diré todo!",
+    });
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        ExecuteCommon(CORO_JUMP_ANGRY_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    message_SetFace(ACTOR_NPC_YAMIRAMI, FACE_PAIN, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" We don\'t want to do it either!\nHonestly!",
+        french=" On ne voulait pas! Ce n\'est pas\nnotre faute!",
+        german=" Wir wollen das doch gar nicht!\nEhrlich!",
+        italian=" Nemmeno noi volevamo farlo!\nLo giuro!",
+        spanish=" ¡Nosotros tampoco queríamos\nhacerlo, de verdad!",
+    });
+    message_Talk({
+        english=" To attack Master [CS:N]Dusknoir[CR]...[K]\nIt\'s just...",
+        french=" On ne voulait pas attaquer\nMaître [CS:N]Noctunoir[CR]...",
+        german=" Meister [CS:N]Zwirrfinst[CR] angreifen...[K]\nEs ist nur...",
+        italian=" Attaccare il maestro [CS:N]Dusknoir[CR]...[K]\nÈ...",
+        spanish=" Atacar a nuestro jefe, [CS:N]Dusknoir[CR]...[K]\nno fue agradable...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    Wait(30);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    Wait(45);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    se_Play(8972);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    message_SetFace(ACTOR_NPC_YAMIRAMI, FACE_SIGH, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" It\'s the truth!\nPlease believe me!",
+        french=" C\'est la vérité! Je le jure!",
+        german=" Ich sage die Wahrheit!\nBitte glaubt mir!",
+        italian=" È la verità!\nLa prego, mi creda!",
+        spanish=" ¡Te digo la verdad!\n¡Tienes que creerme!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Then why did you attack?",
+        french=" Alors pourquoi avoir attaqué?",
+        german=" Warum dann der Angriff?",
+        italian=" E allora perché ci avete\nattaccato?",
+        spanish=" ¿Y entonces por qué le atacasteis?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        Turn2Direction(4, 10, DIR_DOWNRIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    message_SetFace(ACTOR_NPC_YAMIRAMI, FACE_PAIN, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" We were ordered to...[K] We had\nno choice...",
+        french=" On devait suivre les ordres...[K]\nOn n\'avait pas le choix...",
+        german=" Es wurde uns befohlen...[K]\nWir hatten keine andere Wahl...",
+        italian=" Ci è stato ordinato...[K]\nNon avevamo scelta...",
+        spanish=" Nos lo ordenaron...[K] ¡No teníamos\nelección!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_FadeOut(90);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" By whom?!",
+        french=" Les ordres de qui?!",
+        german=" Und wer hat es euch befohlen?!?",
+        italian=" Da chi?!",
+        spanish=" ¿Quién dio la orden?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_YAMIRAMI, FACE_PAIN, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Master [CS:N]Dusknoir[CR]\'s replacement...[K]\nMaster [CS:N]Dialga[CR]\'s...[K]new henchman.",
+        french=" Du remplaçant de Maître\n[CS:N]Noctunoir[CR]...[K]\nLe nouveau [K]bras droit de Maître [CS:N]Dialga[CR]...",
+        german=" Die Ablösung für Meister\n[CS:N]Zwirrfinst[CR]...[K] Der neue Gehilfe von...[K]\nMeister [CS:N]Dialga[CR].",
+        italian=" Dal sostituto del maestro\n[CS:N]Dusknoir[CR]...[K] Il nuovo...[K] servitore\ndel Maestro [CS:N]Dialga[CR].",
+        spanish=" Fue el sustituto de [CS:N]Dusknoir[CR]...[K]\n[CS:N]Dialga[CR]...[K] tiene una nueva mano derecha.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8968);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    Wait(7);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    bgm_PlayFadeIn(BGM_TIME_GEAR_REMIX, 0, 256);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_R_FACEINW);
+    message_Talk({
+        english=" M-my...[K]replacement...[K] A new\nhenchman?!",
+        french=" Mon...[K] remplaçant...[K]\nUn nouveau bras droit?!",
+        german=" M-meine...[K] Ablösung...[K]\nEin neuer Gehilfe?!?",
+        italian=" I-Il mio...[K] sostituto...[K] Un nuovo\nservitore?!",
+        spanish=" Mi...[K] ¡Mi sustituto![K]\n¡¿Ya he sido reemplazado?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        Turn2Direction(4, 10, DIR_RIGHT);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    message_SetFace(ACTOR_NPC_YAMIRAMI, FACE_PAIN, FACE_POS_TOP_L_CENTER);
+    message_Talk({
+        english=" Y-yes...",
+        french=" Euh... oui...",
+        german=" J-ja...",
+        italian=" S-Sì...",
+        spanish=" Sí...",
+    });
+    message_Talk({
+        english=" That\'s Master [CS:N]Dialga[CR]\'s direct\nsubordinate now, instead of Master [CS:N]Dusknoir[CR]...",
+        french=" C\'est le second de Maître [CS:N]Dialga[CR]\nmaintenant, à la place de Maître [CS:N]Noctunoir[CR]...",
+        german=" Er ist jetzt der direkte\nUntergebene von Meister [CS:N]Dialga[CR], anstelle von\nMeister [CS:N]Zwirrfinst[CR]...",
+        italian=" Ha preso il posto del maestro\n[CS:N]Dusknoir[CR] come braccio destro\ndel Maestro [CS:N]Dialga[CR]...",
+        spanish=" [CS:N]Dialga[CR] cuenta ahora con un nuevo\nsubordinado que ocupa el lugar de [CS:N]Dusknoir[CR]...",
+    });
+    message_Talk({
+        english=" The Pokémon that was selected\nis very resourceful.",
+        french=" Il a été sélectionné pour\nses multiples talents.",
+        german=" Das ausgewählte Pokémon ist\nsehr einfallsreich.",
+        italian=" Il Pokémon che è stato scelto\nè molto potente.",
+        spanish=" Ha decidido recurrir a un Pokémon\nmuy competente y con muchos recursos.",
+    });
+    message_Talk({
+        english=" And that Pokémon will become\nthe final agent...",
+        french=" Et il sera le dernier agent...",
+        german=" Und dieses Pokémon wird als\nNächstes auf Zeitreise gehen...",
+        italian=" Ed è lui l\'agente a cui sarà\naffidato l\'incarico di...",
+        spanish=" Y ese Pokémon será el que haya\nelegido...",
+    });
+    message_Talk({
+        english=" To be sent back to the past.",
+        french=" ... à être envoyé dans le passé.",
+        german=" Es wird in die\nVergangenheit geschickt.",
+        italian=" ... ritornare nel passato.",
+        spanish=" Para enviar al pasado.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8968);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    Wait(7);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Resourceful...[K] A final agent sent\nto the past...",
+        french=" De multiples talents...[K]\nLe dernier agent à être envoyé dans le passé...",
+        german=" Einfallsreich...[K] Ein Zeitreisender,\nder in die Vergangenheit geschickt wird...",
+        italian=" Molto potente...[K] Un agente\nincaricato di ritornare nel passato...",
+        spanish=" Un Pokémon muy competente...[K]\nY también lo enviará al pasado...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        MovePositionOffset(33408, -16, 0);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        SetAnimation(12);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        WaitAnimation();
+    }
+    se_Play(5121);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    with (performer 0) {
+        MovePositionOffset(33408, -8, 0);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SlidePositionOffset(33408, -24, 0);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetAnimation(26);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        WaitAnimation();
+    }
+    message_SetFace(ACTOR_NPC_YAMIRAMI, FACE_SIGH, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" Ugh!",
+        french=" Argh!",
+        german=" Argh!",
+        italian=" Ugh!",
+        spanish=" ¡Ay!",
+    });
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        SetAnimation(2);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetEffect(EFFECT_SHOCKED, 3);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_SURPRISED, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" [CS:N]Dusknoir[CR]!",
+        french=" [CS:N]Noctunoir[CR]!",
+        german=" [CS:N]Zwirrfinst[CR]!",
+        italian=" [CS:N]Dusknoir[CR]!",
+        spanish=" ¡[CS:N]Dusknoir[CR]!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        MovePositionOffset(32896, -16, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU_N8);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetDirection(DIR_RIGHT);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetAnimation(2);
+    }
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" That was who ordered you,\nwasn\'t it?![K] The new henchman?!",
+        french=" Ainsi, c\'est de lui que vous\nrecevez vos ordres, désormais?![K]\nLe nouveau bras droit?!",
+        german=" Er hat euch also beauftragt,\nsagst du?!?[K] Dieser neue Gehilfe?!?",
+        italian=" Quindi è stato questo nuovo\nservitore a darvi l\'ordine, non è vero?!",
+        spanish=" Él fue quien lo ordenó, ¡¿verdad?![K]\n¡Mi sustituto!",
+    });
+    message_Talk({
+        english=" Ordered you to attack me!",
+        french=" Et il a osé donner l\'ordre de\ns\'en prendre à moi?!",
+        german=" Beauftragt, mich anzugreifen!",
+        italian=" L\'ordine di attaccarmi!",
+        spanish=" ¡Os dijo que me atacaseis!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_YAMIRAMI, FACE_PAIN, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" ...Y-yes...",
+        french=" Euh... oui...",
+        german=" ...J-ja...",
+        italian=" ... S-Sì...",
+        spanish=" Sí...",
+    });
+    message_Talk({
+        english=" Master [CS:N]Dusknoir[CR] failed and is no\nlonger needed.",
+        french=" Maître [CS:N]Noctunoir[CR] a échoué,\nnous n\'avons plus besoin de lui.",
+        german=" Meister [CS:N]Zwirrfinst[CR] hat versagt\nund wird nicht länger gebraucht.",
+        italian=" Il maestro [CS:N]Dusknoir[CR] ha fallito\ne deve essere punito.",
+        spanish=" Al parecer, [CS:N]Dusknoir[CR] ha fracasado\ny es absolutamente prescindible.",
+    });
+    message_Talk({
+        english=" So...we were told to\neliminate him.",
+        french=" Alors, on nous a dit de\nl\'éliminer.",
+        german=" Daher wurde uns aufgetragen,\nihn aus dem Weg zu räumen.",
+        italian=" Quindi... abbiamo ricevuto\nl\'ordine di eliminarla.",
+        spanish=" Así que... nos ordenaron que\nlo elimináramos.",
+    });
+    message_Talk({
+        english=" We all disagreed and said we\ncouldn\'t do that, but...",
+        french=" Nous avons eu beau protester...",
+        german=" Wir haben alle abgelehnt und\ngesagt, das könnten wir nicht tun, aber...",
+        italian=" Nessuno di noi era d\'accordo\ne non volevamo farlo, ma...",
+        spanish=" A nosotros no nos parecía bien\ny nos opusimos, pero...",
+    });
+    message_Talk({
+        english=" But that\'s what the henchman\ncommanded.",
+        french=" ... il a quand même fallu obéir\naux ordres du nouveau bras droit.",
+        german=" Der Gehilfe hat es\nuns befohlen.",
+        italian=" ... quel servitore ci ha\ncostretto.",
+        spanish=" Pero es que eso es lo que\nordenó nuestro nuevo jefe.",
+    });
+    message_Talk({
+        english=" The henchman said it wasn\'t\nhis decision.",
+        french=" Il a dit que ses ordres\nvenaient de plus haut.",
+        german=" Er sagte, es sei nicht seine\nEntscheidung.",
+        italian=" Dice che non è stata una sua\ndecisione.",
+        spanish=" Ese Pokémon dijo que no fue él\nquien tomó tal decisión.",
+    });
+    message_Talk({
+        english=" It was an order...[K]from Master\n[CS:N]Dialga[CR].",
+        french=" Qu\'il les avait reçus...[K]\nde Maître [CS:N]Dialga[CR].",
+        german=" Es war ein direkter Befehl von...[K]\nMeister [CS:N]Dialga[CR].",
+        italian=" È stato un ordine...[K] del Maestro\n[CS:N]Dialga[CR].",
+        spanish=" Fue una orden...[K] confirmada por\n[CS:N]Dialga[CR].",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        SetAnimation(13);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        WaitAnimation();
+    }
+    Wait(10);
+    se_Play(5121);
+    screen_WhiteOut(1, 2);
+    Wait(2);
+    screen_FadeIn(1, 2);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SlidePositionOffset(33408, -8, 0, 8, 0);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetAnimation(27);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetDirection(DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        WaitAnimation();
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        SetAnimation(2);
+    }
+    message_SetFace(ACTOR_NPC_YAMIRAMI, FACE_SIGH, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" Guwaaah!",
+        french=" Aaaaaah!",
+        german=" Guwaaah!",
+        italian=" Uaaah!",
+        spanish=" ¡¡Aaah!!",
+    });
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU_N8);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" That fool...",
+        french=" Sombre crétin...",
+        german=" Dieser Tölpel...",
+        italian=" Che follia...",
+        spanish=" Qué estupidez...",
+    });
+    message_Talk({
+        english=" Master [CS:N]Dialga[CR]...[K]eliminate me...",
+        french=" Maître [CS:N]Dialga[CR]...[K] m\'éliminer...",
+        german=" Meister [CS:N]Dialga[CR]...[K]\nMich aus dem Weg räumen...",
+        italian=" Il Maestro [CS:N]Dialga[CR]...[K] che vuole\neliminarmi...",
+        spanish=" [CS:N]Dialga[CR] quiere...[K] acabar conmigo...",
+    });
+    message_Talk({
+        english=" Can you believe it?!\nSomething like that?!",
+        french=" Je n\'y crois pas une seconde!\nCe ne sont que des balivernes!",
+        german=" Nicht zu glauben!\nWas für eine haarsträubende Geschichte!",
+        italian=" Come si fa a credere\na un\'assurdità simile?!",
+        spanish=" ¡¿Puedes creerlo?! ¡Así por\nlas buenas!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetDirection(DIR_RIGHT);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        Turn2DirectionLives(4, 10, ACTOR_NPC_YAMIRAMI);
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU_N8);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Tell me, [CS:N]Sableye[CR]!",
+        french=" Dis-moi, [CS:N]Ténéfix[CR]!",
+        german=" Sag mir, [CS:N]Zobiris[CR]!",
+        italian=" Dimmi, [CS:N]Sableye[CR]!",
+        spanish=" ¡Cuéntame, [CS:N]Sableye[CR]!",
+    });
+    message_Talk({
+        english=" That henchman...",
+        french=" Ce bras droit...",
+        german=" Dieser Gehilfe...",
+        italian=" Quel servitore...",
+        spanish=" El que dio las órdenes...",
+    });
+    message_Talk({
+        english=" The new henchman...[K]\nWho is it, anyway?!",
+        french=" Parlons-en...[K]\nQui est-ce?!",
+        german=" Dieser neue Gehilfe...[K]\nWer ist das überhaupt?!?",
+        italian=" Quel nuovo servitore...[K]\nChi è?!",
+        spanish=" Vuestro nuevo jefe...[K]\n¡¿De quién se trata?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8972);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    message_SetFace(ACTOR_NPC_YAMIRAMI, FACE_PAIN, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" Th-that is...",
+        french=" C\'est...",
+        german=" D-das ist...",
+        italian=" Q-Questo...",
+        spanish=" Eso... Eso es...",
+    });
+    message_Talk({
+        english=" That\'s something I can\'t say!\nForgive me!",
+        french=" Toutes mes excuses, je ne peux\npas vous le dire!\n",
+        german=" Das ist etwas, was ich nicht\nsagen darf! Entschuldigt, aber ich habe schon\nviel zu viel verraten!",
+        italian=" Questo non posso dirlo!\nMi dispiace!",
+        spanish=" ¡Es algo que no puedo decir!\n¡Perdóname!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" No way! Say it![K] Tell me!",
+        french=" Diantre, tu vas parler![K]\nParle, te dis-je!",
+        german=" Das hast du dir so gedacht!\nWird\'s bald![K] Raus mit der Sprache!",
+        italian=" Che cosa?! Devi dirmelo![K]\nDimmelo subito!",
+        spanish=" ¡De eso nada! ¡Dímelo![K] ¡Habla!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SlidePositionOffset(1, -1, 0);
+    }
+    Wait(3);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SlidePositionOffset(1, 1, 0);
+    }
+    message_SetFace(ACTOR_NPC_YAMIRAMI, FACE_TEARY_EYED, FACE_POS_TOP_L_FACEINW);
+    message_Talk({
+        english=" I-I\'m not telling!",
+        french=" Non, je ne dirai rien!",
+        german=" D-das geht wirklich nicht!",
+        italian=" N-Non posso!",
+        spanish=" No... ¡No puedo decirlo!",
+    });
+    message_Talk({
+        english=" If I told you...[K]I don\'t know what\nwould happen to us...",
+        french=" Si je vous le disais...[K] qui sait\nce qui nous arriverait?",
+        german=" Würde ich euch das verraten...[K]\nIch weiß nicht, was mit uns passieren würde...",
+        italian=" Se glielo dicessi...[K] non oso\nimmaginare cosa potrebbe accaderci...",
+        spanish=" Si te lo contase...[K] no sé lo que\npodrían hacer con nosotros...",
+    });
+    message_Talk({
+        english=" So please...[K]please don\'t make\nme tell you that!",
+        french=" Pitié...[K] ne m\'y obligez pas!",
+        german=" Darum bitte...[K] Bitte zwingt mich\nnicht, es euch zu verraten!",
+        italian=" Per favore...[K] la prego, non mi\ncostringa a parlare!",
+        spanish=" Por eso, te lo ruego...[K]\n¡no me obligues a decírtelo!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Blast!",
+        french=" Diantre!",
+        german=" So was aber auch!",
+        italian=" Basta!",
+        spanish=" ¡Rayos!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_FadeOut(30);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        SetAnimation(27);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        SetDirection(DIR_DOWN);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        WaitAnimation();
+    }
+    Wait(10);
+    se_Play(10500);
+    with (performer 0) {
+        MovePositionOffset(33408, -8, 0, 8, 0);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SlidePositionOffset(33408, 0, 24);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetAnimation(28);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetDirection(DIR_UPRIGHT);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetEffect(EFFECT_SHOCKED_MIRRORED, 3);
+    }
+    message_SetFace(ACTOR_NPC_YAMIRAMI, FACE_SIGH, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Uwaaaah!!!",
+        french=" Aaaaah!!!",
+        german=" Uwaaaah!!!",
+        italian=" Uaaah!!!",
+        spanish=" ¡¡¡Aaaaaah!!!",
+    });
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        ExecuteCommon(CORO_JUMP_SURPRISE_FUNC_SERIES, 0);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        SetEffect(EFFECT_SWEAT_DROPS_FROM_BOTH_SIDES_MEDIUM, 3);
+    }
+    message_SetFace(ACTOR_NPC_YAMIRAMI, FACE_SIGH, FACE_POS_STANDARD);
+    message_Talk({
+        english=" Wheh-heh!",
+        french=" Whé hé!",
+        german=" Wähäh!",
+        italian=" Meh-eh!",
+        spanish=" ¡Je, je!",
+    });
+    message_Talk({
+        english=" Wheh-heh-heh-heh-heh-heh!!",
+        french=" Whé hé hé hé hé!",
+        german=" Wähähähähähäh!!!",
+        italian=" Meh-eh-eh-eh-eh-eh!!!",
+        spanish=" ¡¡Je, je, je, je, je, je, je!!",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        Move2PositionMark(33408, Position<'m2', 13.5, 40.5>, Position<'m3', 1.5, 40.5>);
+    }
+    Wait(15);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        Turn2Direction(32, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_YAMIRAMI);
+    with (actor ACTOR_NPC_YAMIRAMI) {
+        Destroy();
+    }
+    Wait(90);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_C_FACEL);
+    message_FacePositionOffset(2, 0);
+    message_Talk({
+        english=" ...[K]Master [CS:N]Dialga[CR] wants me\neliminated?!",
+        french=" ...[K] Maître [CS:N]Dialga[CR] cherche\nà m\'éliminer?!",
+        german=" ...[K]Meister [CS:N]Dialga[CR] möchte mich\naus dem Weg räumen?!?",
+        italian=" ...[K] Il Maestro [CS:N]Dialga[CR] vorrebbe\neliminarmi?!",
+        spanish=" Entonces...[K] ¡¿[CS:N]Dialga[CR] quiere\nacabar conmigo?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        Turn2Direction(4, 10, DIR_UPLEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_C_FACEL);
+    message_FacePositionOffset(2, 0);
+    message_Talk({
+        english=" M...[K]Master [CS:N]Dialga[CR]...[K]\nMe...",
+        french=" M...[K] Maître [CS:N]Dialga[CR]...[K]\nMoi, votre plus fidèle serviteur...",
+        german=" M-[K]meister [CS:N]Dialga[CR]...[K]\nMich...",
+        italian=" M-[K]Maestro [CS:N]Dialga[CR]...[K]\nIo...",
+        spanish=" Pero...[K] ¿Cómo puede hacerme [CS:N]Dialga[CR]\nesto?...[K] ¡¿A mí?!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" [CS:N]Dusknoir[CR]...",
+        french=" [CS:N]Noctunoir[CR]...",
+        german=" [CS:N]Zwirrfinst[CR]...",
+        italian=" [CS:N]Dusknoir[CR]...",
+        spanish=" [CS:N]Dusknoir[CR]...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        SetDirection(DIR_LEFT);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        WaitAnimation();
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU_N8);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU_N8);
+    Wait(20);
+    bgm_PlayFadeIn(BGM_HIDDEN_HIGHLAND, 0, 256);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        MoveHeight(1, 2);
+    }
+    Wait(1);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        MoveHeight(1, 0);
+    }
+    Wait(2);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        MoveHeight(1, 2);
+    }
+    Wait(1);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        MoveHeight(1, 0);
+    }
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" .........",
+        french=" .........",
+        german=" .........",
+        italian=" .........",
+        spanish=" ...",
+    });
+    message_KeyWait();
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        MoveHeight(1, 2);
+    }
+    Wait(1);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        MoveHeight(1, 0);
+    }
+    Wait(2);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        MoveHeight(1, 2);
+    }
+    Wait(1);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        MoveHeight(1, 0);
+    }
+    message_Talk({
+        english=" Heh-heh-heh...[K] AHA-HA-HA-HA!",
+        french=" Ho ho ho...[K] HA HA HA!",
+        german=" Hehehe...[K] AHAHAHAHA!",
+        italian=" Eh eh eh...[K] AH AH AH AH!",
+        spanish=" Ja, ja, ja...[K] ¡Jua, jua, jua!",
+    });
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        MoveHeight(1, 2);
+    }
+    Wait(1);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        MoveHeight(1, 0);
+    }
+    Wait(2);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        MoveHeight(1, 2);
+    }
+    Wait(1);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        MoveHeight(1, 0);
+    }
+    message_Talk({
+        english=" [CS:Y]Grovyle[CR]...[K]I know what you\'re\nthinking right now.",
+        french=" [CS:Y]Massko[CR]...[K] Je devine ce que\nque tu penses en ce moment même.",
+        german=" [CS:Y]Reptain[CR]...[K] Ich weiß, was du\ngerade denkst.",
+        italian=" [CS:Y]Grovyle[CR]...[K] Lo so cosa stai\npensando adesso.",
+        spanish=" [CS:Y]Grovyle[CR]...[K] Ya sé lo que estás\npensando ahora mismo.",
+    });
+    message_Talk({
+        english=" You think me pathetic.[K]\nMe!",
+        french=" Tu dois me trouver pathétique.[K]\nMoi, le grand [CS:N]Noctunoir[CR]...",
+        german=" Du denkst,\nich sei erbärmlich.[K] Ich!",
+        italian=" Che sono patetico.[K]\nNon è vero?!",
+        spanish=" Pensarás que soy patético...[K]\nque doy pena...",
+    });
+    message_Talk({
+        english=" Laugh![K] Go ahead and laugh!",
+        french=" Ris![K] Ris, va!",
+        german=" Mach schon![K]\nTu dir keinen Zwang an und lach mich aus!",
+        italian=" Che aspetti?![K] Forza, ridi di me!",
+        spanish=" ¡Ríete de mí![K] ¡Venga, ríete!",
+    });
+    message_Talk({
+        english=" Betrayed...[K] Thrown aside...[K]\nAha-ha-ha-ha-ha-ha!",
+        french=" Trahi, bafoué...[K] Abandonné...[K]\nHumilié! Ha ha ha!",
+        german=" Betrogen...[K] Aussortiert...[K]\nAhahahahahaha!",
+        italian=" Tradito...[K] Messo da parte...[K]\nAh ah ah ah ah ah ah!",
+        spanish=" He sido traicionado...[K] y rechazado...[K]\n¡Ja, ja, ja, ja, ja, ja!",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" Humph!",
+        french=" Pfff!",
+        german=" Hmpf!",
+        italian=" Bah!",
+        spanish=" Bah...",
+    });
+    message_Talk({
+        english=" Laugh or do what you like,\nit doesn\'t matter to me, [CS:N]Dusknoir[CR].",
+        french=" Tu peux bien rire ou pleurer,\n[CS:N]Noctunoir[CR]. Je m\'en moque.",
+        german=" Ob du nun lachst oder was auch\nimmer du machst... Es ist mir egal, [CS:N]Zwirrfinst[CR]!",
+        italian=" Che tu rida o pianga\nnon m\'importa, [CS:N]Dusknoir[CR].",
+        spanish=" Ríete o reacciona como quieras.\nA mí lo mismo me da, [CS:N]Dusknoir[CR].",
+    });
+    message_Talk({
+        english=" What I\'m really concerned about\nis that new henchman...",
+        french=" Ce qui m\'inquiète, c\'est\nce nouveau bras droit...",
+        german=" Dieser neue Gehilfe bereitet mir\nwirklich Sorgen...",
+        italian=" Quello che mi preoccupa davvero\nè questo nuovo servitore...",
+        spanish=" Lo único que me preocupa es\nese sustituto...",
+    });
+    message_Talk({
+        english=" A resourceful Pokémon as a\nfinal agent...",
+        french=" Un dernier agent aux\nmultiples talents...",
+        german=" Ein einfallsreiches Pokémon\nals Zeitreisender...",
+        italian=" Un Pokémon molto potente scelto\ncome agente per tornare nel passato...",
+        spanish=" Un Pokémon muy competente\ny con muchos recursos...",
+    });
+    message_Talk({
+        english=" What kind of Pokémon is this\nhenchman anyway?",
+        french=" Quelle espèce de Pokémon cela\npeut-il bien être?",
+        german=" Was für ein Pokémon der\nGehilfe wohl ist?",
+        italian=" Che tipo di Pokémon può essere?",
+        spanish=" ¿Qué tipo de Pokémon será?",
+    });
+    message_Talk({
+        english=" ... (I\'ve got a bad feeling\nabout this.)",
+        french=" ... (J\'ai un mauvais\npressentiment.)",
+        german=" ...(Ich habe ein schlechtes\nGefühl bei dieser Sache.)",
+        italian=" ... (Ho una brutta sensazione.)",
+        spanish=" Uf... (Esto me da muy mala espina.)",
+    });
+    message_Talk({
+        english=" (We should really hurry to\n[CS:P]Temporal Tower[CR].)",
+        french=" (Il nous faut vite atteindre la\n[CS:P]Tour du Temps[CR].)",
+        german=" (Wir sollten uns wirklich\nbeeilen, zum [CS:P]Zeitturm[CR] zu kommen.)",
+        italian=" (Dobbiamo sbrigarci e\nraggiungere la [CS:P]Torre del Tempo[CR].)",
+        spanish=" (Tenemos que ir cuanto antes\na la [CS:P]Torre del Tiempo[CR].)",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" The only way left for me to\ngo is...",
+        french=" La seule chose qui me reste\nà faire...",
+        german=" Der einzige Weg,\nder mir bleibt, ist...",
+        italian=" Ormai non mi rimane altra\nscelta...",
+        spanish=" No me queda otra opción...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        Turn2Direction(4, 10, DIR_DOWN);
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU_N8);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" I\'ve got no choice but to\ngo...[K]to [CS:P]Temporal Tower[CR].",
+        french=" C\'est d\'aller à...[K] la [CS:P]Tour\ndu Temps[CR]. Je n\'ai guère le choix.",
+        german=" Ich habe keine andere Wahl,\nals...[K] mich zum [CS:P]Zeitturm[CR] zu begeben.",
+        italian=" Devo arrivare...[K]\nalla [CS:P]Torre del Tempo[CR].",
+        spanish=" Creo que lo único que puedo\nhacer es...[K] ir a la [CS:P]Torre del Tiempo[CR].",
+    });
+    message_Talk({
+        english=" Whether Master [CS:N]Dialga[CR]\nreally said to eliminate me or not...",
+        french=" En vérité, que Maître [CS:N]Dialga[CR] ait\nordonné de m\'éliminer ou non...",
+        german=" Herausfinden, ob Meister [CS:N]Dialga[CR]\nwirklich befohlen hat, mich\naus dem Weg zu räumen...",
+        italian=" Non so se il Maestro [CS:N]Dialga[CR]\nvoglia veramente eliminarmi o meno...",
+        spanish=" No tengo forma de saber si\n[CS:N]Dialga[CR] ordenó que me eliminasen...",
+    });
+    message_Talk({
+        english=" I can\'t be sure either way.",
+        french=" ... je n\'ai aucun moyen de\nm\'en assurer.",
+        german=" Ich muss Sicherheit erlangen.",
+        italian=" Non ne ho idea.",
+        spanish=" Al menos, no desde aquí.",
+    });
+    message_Talk({
+        english=" I have to go to\n[CS:P]Temporal Tower[CR] too.[K] I have to know...",
+        french=" Il me faut atteindre la [CS:P]Tour\ndu Temps[CR].[K] J\'ai besoin de connaître...",
+        german=" Ich muss auch zum [CS:P]Zeitturm[CR].[K]\nIch muss wissen...",
+        italian=" Devo raggiungere anch\'io\nla [CS:P]Torre del Tempo[CR].[K] Devo scoprire...",
+        spanish=" Voy a tener que ir también a la\n[CS:P]Torre del Tiempo[CR].[K] Tengo que descubrir...",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        Turn2Direction(4, 10, DIR_DOWNLEFT);
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU_N8);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_TOP_R_CENTER);
+    message_Talk({
+        english=" Master [CS:N]Dialga[CR]\'s true intentions...",
+        french=" ... les véritables intentions de\nMaître [CS:N]Dialga[CR].",
+        german=" Ich muss mehr über die Pläne\nvon Meister [CS:N]Dialga[CR] in Erfahrung bringen...",
+        italian=" ... le vere intenzioni del Maestro\n[CS:N]Dialga[CR]...",
+        spanish=" Qué pretendía realmente [CS:N]Dialga[CR]...",
+    });
+    message_Talk({
+        english=" Let\'s go.",
+        french=" Partons.",
+        german=" Auf geht\'s.",
+        italian=" Andiamo.",
+        spanish=" Vamos.",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (performer 0) {
+        MovePositionOffset(32896, 0, 24);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        Move2PositionMark(32896, Position<'m4', 18.5, 40.5>);
+    }
+    Wait(30);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        Turn2Direction(32, 10, DIR_LEFT);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" ... (For now, fighting alongside\nhim is reassuring...)",
+        french=" ... (Pour l\'instant, j\'ai tout à\ngagner à me battre à ses côtés...)",
+        german=" ...(Fürs Erste ist es eine gute\nIdee, an seiner Seite zu kämpfen...)",
+        italian=" ... (Per il momento, averlo\nal mio fianco è rassicurante...)",
+        spanish=" Vaya... (Por ahora, luchar\njunto a él me proporciona seguridad...)",
+    });
+    message_Talk({
+        english=" (However...)",
+        french=" (Cependant...)",
+        german=" (Aber...)",
+        italian=" (Comunque...)",
+        spanish=" (Sin embargo...)",
+    });
+    message_Talk({
+        english=" ([CS:N]Dusknoir[CR] still looks up to\n[CS:N]Dialga[CR]. That hasn\'t changed.)",
+        french=" ([CS:N]Noctunoir[CR] a toujours autant\nd\'admiration pour [CS:N]Dialga[CR]. Ça n\'a pas changé.)",
+        german=" ([CS:N]Zwirrfinst[CR] nennt [CS:N]Dialga[CR]\nnoch immer seinen Meister. Daran hat\nsich nichts geändert.)",
+        italian=" ([CS:N]Dusknoir[CR] è ancora molto devoto\na [CS:N]Dialga[CR]. In questo non è cambiato.)",
+        spanish=" ([CS:N]Dusknoir[CR] todavía admira a\n[CS:N]Dialga[CR]. Eso no ha cambiado.)",
+    });
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        Turn2Direction(4, 10, DIR_LEFT);
+    }
+    message_Talk({
+        english=" (Now when we meet [CS:N]Dialga[CR]\nat [CS:P]Temporal Tower[CR]...)",
+        french=" (Quand nous rencontrerons\n[CS:N]Dialga[CR] à la [CS:P]Tour du Temps[CR]...)",
+        german=" (Wenn wir nun im [CS:P]Zeitturm[CR] \nauf [CS:N]Dialga[CR] treffen...)",
+        italian=" (Quando incontreremo [CS:N]Dialga[CR]\nalla [CS:P]Torre del Tempo[CR]...)",
+        spanish=" (Por eso, cuando nos encontremos\ncon [CS:N]Dialga[CR] en la [CS:P]Torre del Tiempo[CR]...)",
+    });
+    message_Talk({
+        english=" ([CS:N]Dusknoir[CR] will probably side\nwith [CS:N]Dialga[CR]...)",
+        french=" ([CS:N]Noctunoir[CR] se rangera du côté\nde [CS:N]Dialga[CR]...)",
+        german=" ([CS:N]Zwirrfinst[CR] könnte eventuell\nwieder auf die Seite von [CS:N]Dialga[CR] wechseln...)",
+        italian=" (... molto probabilmente [CS:N]Dusknoir[CR]\nsi schiererà dalla sua parte...)",
+        spanish=" ([CS:N]Dusknoir[CR] probablemente\nse pondrá de parte de [CS:N]Dialga[CR]...)",
+    });
+    message_Talk({
+        english=" (Then I\'ll have to take on\n[CS:N]Dialga[CR] and [CS:N]Dusknoir[CR] by myself...)",
+        french=" (Et alors, je devrai affronter\n[CS:N]Dialga[CR] et [CS:N]Noctunoir[CR] tout seul...)",
+        german=" (Dann müsste ich es alleine mit\n[CS:N]Dialga[CR] und [CS:N]Zwirrfinst[CR] aufnehmen...)",
+        italian=" (A quel punto dovrò affrontare\nsia [CS:N]Dialga[CR] che [CS:N]Dusknoir[CR] da solo...)",
+        spanish=" (Y entonces tendré que ocuparme\nde [CS:N]Dialga[CR] y [CS:N]Dusknoir[CR] yo solo...)",
+    });
+    message_Talk({
+        english=" (Well, not just them.[K] There\'s\nalso [CS:N]Dialga[CR]\'s new henchman.)",
+        french=" (Et pas seulement.[K] Il y aura\naussi le nouveau bras droit de [CS:N]Dialga[CR].)",
+        german=" (Ach, nicht nur mit ihnen.[K] Da\nwäre dann noch der neue Gehilfe von [CS:N]Dialga[CR].)",
+        italian=" (Un attimo...[K] Dimenticavo\nil nuovo servitore di [CS:N]Dialga[CR].)",
+        spanish=" (Y no solo de ellos.[K] También está\nla nueva mano derecha de [CS:N]Dialga[CR].)",
+    });
+    message_Talk({
+        english=" (So I\'ll have to fight\nthree enemies!)",
+        french=" (Ce qui fera un contre trois!)",
+        german=" (Dann müsste ich drei\nGegner auf einmal bekämpfen!)",
+        italian=" (Quindi dovrò lottare contro\ntre nemici!)",
+        spanish=" (¡Voy a tener que luchar contra\ntres enemigos!)",
+    });
+    message_Talk({
+        english=" (Can I do that?[K] All those\nopponents...[K]by myself...)",
+        french=" (En suis-je capable?[K]\nA trois...[K] contre un...)",
+        german=" (Kann ich das schaffen?[K]\nAll diese Feinde...[K] Ganz alleine...)",
+        italian=" (Ci riuscirò?[K] Tutti questi\navversari...[K] da solo...)",
+        spanish=" (¿Seré capaz?[K] ¿Podré enfrentarme\na todos ellos...[K] yo solo?)",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    bgm_FadeOut(160);
+    Wait(60);
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        Turn2DirectionLives(4, 10, ACTOR_PLAYER_FUTURE);
+    }
+    WaitExecuteLives(ACTOR_NPC_YONOWAARU_N8);
+    message_SetFace(ACTOR_NPC_YONOWAARU, FACE_NORMAL, FACE_POS_STANDARD);
+    message_Talk({
+        english=" What\'s wrong?[K] Aren\'t you going?",
+        french=" Que se passe-t-il?[K]\nTu ne viens pas?",
+        german=" Was ist los mit dir?[K]\nHast du es dir anders überlegt?",
+        italian=" Che succede?[K] Non vieni?",
+        spanish=" ¿Qué pasa?[K] ¿No vienes?",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    se_Play(8978);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetEffect(EFFECT_TWO_ARROWS_AT_SIDE_LEFT, 3);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        WaitEffect();
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    Wait(15);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" ... (Humph![K] When that\ntime comes...!)",
+        french=" ... (Pfff![K] Le moment venu...!)",
+        german=" ...(Hmpf![K] Wenn die Zeit\ngekommen ist...)",
+        italian=" ... (Bah![K] Quando arriverà\nquel momento...)",
+        spanish=" Sí. (Hum...[K] Cuando llegue\nese momento...)",
+    });
+    message_Talk({
+        english=" (I\'ll be ready!)",
+        french=" (Je serai prêt!)",
+        german=" (Ich werde vorbereitet sein!)",
+        italian=" (... sarò pronto!)",
+        spanish=" (¡Estaré listo!)",
+    });
+    CallCommon(CORO_MESSAGE_CLOSE_WAIT_FUNC);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        MovePositionOffset(32896, -8, 0);
+    }
+    WaitExecuteLives(ACTOR_PLAYER_FUTURE);
+    message_SetFace(ACTOR_PLAYER_FUTURE, FACE_NORMAL, FACE_POS_BOTTOM_R_FACEINW);
+    message_Talk({
+        english=" I\'ve decided to go.[K]\nI\'m just getting myself psyched up.",
+        french=" J\'ai décidé de venir.[K]\nJ\'essaie juste de me préparer mentalement.",
+        german=" Ich habe mich entschieden...[K]\nIch musste mich nur noch kurz motivieren.",
+        italian=" Sì, eccomi.[K] Mi stavo solo\npreparando psicologicamente.",
+        spanish=" He decidido ir.[K]\nPero necesitaba reunir ánimos.",
+    });
+    message_Talk({
+        english=" Let\'s go!",
+        french=" En route!",
+        german=" Auf geht\'s!",
+        italian=" Andiamo!",
+        spanish=" ¡Vamos!",
+    });
+    message_Close();
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        MovePositionMark(1, Position<'m5', 13.5, 40.5>, Position<'m6', 1.5, 40.5>);
+    }
+    Wait(15);
+    with (actor ACTOR_PLAYER_FUTURE) {
+        MovePositionMark(1, Position<'m7', 13.5, 40.5>, Position<'m8', 1.5, 40.5>);
+    }
+    Wait(60);
+    screen2_FadeOut(0, 60);
+    screen_FadeOut(1, 60);
+    back2_SetMode(0);
+    Wait(60);
+    end;
+}

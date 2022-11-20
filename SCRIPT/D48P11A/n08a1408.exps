@@ -1,0 +1,31 @@
+
+def 0 {
+    sound_Stop();
+    back_SetGround(LEVEL_D48P11A);
+    supervision_StationCommon(0);
+    supervision_Acting(0);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        SetPositionInitial();
+    }
+    with (performer 0) {
+        SetPositionMark(Position<'m0', 37.5, 35>);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetPositionMark(Position<'m1', 35.5, 35.5>);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        SetPositionMark(Position<'m2', 39.5, 35.5>);
+    }
+    with (actor ACTOR_NPC_YONOWAARU_N8) {
+        SetAnimation(2);
+    }
+    with (actor ACTOR_PLAYER_FUTURE) {
+        SetAnimation(2);
+    }
+    screen_FadeIn(1, 30);
+    bgm_PlayFadeIn(BGM_TEMPORAL_TOWER, 0, 256);
+    end;
+}

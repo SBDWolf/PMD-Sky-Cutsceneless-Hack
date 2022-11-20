@@ -1,0 +1,86 @@
+
+def 0 {
+    bgm_PlayFadeIn(BGM_TEMPORAL_PINNACLE, 0, 256);
+    back_SetGround(LEVEL_V38P03A);
+    supervision_Acting(1);
+    supervision_Acting(0);
+    supervision_RemoveActing(1);
+    with (performer 0) {
+        camera_SetMyself();
+    }
+    supervision_Acting(1);
+    with (object OBJECT_V38P03A1_451) {
+        SetAnimation(1);
+    }
+    se_Play(10759);
+    screen_FadeIn(1, 30);
+    Wait(10);
+    with (object OBJECT_V38P03A1_451) {
+        Destroy();
+    }
+    supervision_Acting(1);
+    with (object OBJECT_V38P03A1_451) {
+        SetAnimation(1);
+    }
+    Wait(5);
+    with (object OBJECT_V38P03A1_451) {
+        Destroy();
+    }
+    Wait(10);
+    supervision_Acting(1);
+    with (object OBJECT_V38P03A1_451) {
+        SetAnimation(1);
+    }
+    Wait(40);
+    with (object OBJECT_V38P03A1_451) {
+        Destroy();
+    }
+    Wait(10);
+    supervision_Acting(1);
+    with (object OBJECT_V38P03A1_451) {
+        SetAnimation(1);
+    }
+    Wait(5);
+    with (object OBJECT_V38P03A1_451) {
+        Destroy();
+    }
+    Wait(10);
+    supervision_Acting(1);
+    with (object OBJECT_V38P03A1_451) {
+        SetAnimation(1);
+    }
+    Wait(15);
+    with (object OBJECT_V38P03A1_451) {
+        Destroy();
+    }
+    Wait(10);
+    supervision_Acting(1);
+    with (object OBJECT_V38P03A1_451) {
+        SetAnimation(1);
+    }
+    Wait(60);
+    with (object OBJECT_V38P03A1_451) {
+        Destroy();
+    }
+    Wait(10);
+    supervision_Acting(1);
+    with (object OBJECT_V38P03A1_451) {
+        SetAnimation(1);
+    }
+    Wait(5);
+    with (object OBJECT_V38P03A1_451) {
+        Destroy();
+    }
+    Wait(10);
+    supervision_Acting(1);
+    with (object OBJECT_V38P03A1_451) {
+        SetAnimation(1);
+    }
+    se_ChangeVolume(10759, 60, 128);
+    screen_FadeOut(1, 30);
+    Wait(30);
+    with (object OBJECT_V38P03A1_451) {
+        Destroy();
+    }
+    end;
+}
