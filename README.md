@@ -8,6 +8,7 @@ Known issues:
 - The "Did you play "Explorers of Time" or "Explorers of Darkness" question is assumed to be answered as No. This is fine for every speedrunning category except for Recruit 'em All. A workaround should be to generate the save file on vanilla.
 
 The source is just the files used by Skytemple.
+
 Credits to reserve_cat from the PMD Speedruns Discord for the BAHAMUT Header Fix Patches.
 
 ---
