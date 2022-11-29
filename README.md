@@ -2,20 +2,35 @@
 
 A Hack of Pokémon Mystery Dungeon: Explorers of Sky that removes cutscenes while keeping gameplay as intact as possible.
 
-At the moment, only the Any% portion, the post-game up to Darkrai, and Bidoof's Wish are finished.
-
 Known issues:
 
 - Some inconsistent music fades;
+- The "Did you play "Explorers of Time" or "Explorers of Darkness" question is assumed to be answered as No. This is fine for every speedrunning category except for Recruit 'em All. A workaround should be to generate the save file on vanilla.
 
 The source is just the files used by Skytemple.
 
+Credits to reserve_cat from the PMD Speedruns Discord for the BAHAMUT Header Fix Patches.
+
+---
+
 To install:
 
-- Acquire a clean European ROM of PMD Sky (note: roms labelled BAHAMUT won't work);
+- Acquire a clean European ROM of PMD Sky (note: roms labelled BAHAMUT need to have the BAHAMUT_Header_Fix patch applied first);
 - Use Flips or xdelta to apply the patch of your choosing to the ROM.
 
-If using xdeltaUI, you might get weird error messages trying to apply these out of the box. This is caused the version of xdeltaUI that you find online sometimes making use of an old version of the patcher. If you're having problem in trying to apply the patch, try following these steps:
+If using Flips:
+
+- Acquire a clean European ROM of PMD Sky;
+- Acquire Flips from here: https://www.smwcentral.net/?a=details&id=11474&p=section ;
+- Launch Flips and select Apply patch;
+- Select the patch that you want to apply, then the ROM to apply that to (**make sure you are viewing all file types**), and then the name of the newly generated ROM file.
+
+If using xdelta:
+
+- Acquire a European ROM of PMD Sky;
+- Use xdelta to apply the patch of your choosing to the ROM.
+
+If using xdeltaUI, you might get weird error messages trying to apply these out of the box. This is caused by the version of xdeltaUI that you find online sometimes making use of an old version of the patcher. If you're having problem in trying to apply the patch, try following these steps:
 
 - Delete xdelda.exe inside of the xdeltaUI folder;
 - Go to this github link, then download the version of xdelta appropriate to your CPU architecture: https://github.com/jmacd/xdelta-gpl/releases/tag/v3.0.11 ;
