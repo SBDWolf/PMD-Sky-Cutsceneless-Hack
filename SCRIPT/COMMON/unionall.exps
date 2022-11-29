@@ -5378,6 +5378,7 @@ coro EVENT_S03_03 {
     CallCommon(CORO_SUBSCREEN_INIT);
     supervision_ExecuteActingSub(LEVEL_H01P99A, 'C00A1001', 0);
     $SCENARIO_MAIN = scn[29, 42];
+    switch ( ProcessSpecial(PROCESS_SPECIAL_REMOVE_ITEMS_TYPE_IN_BAG, 178, 0) ) { }
     //supervision_ExecuteActingSub(LEVEL_H02P99A, 'S03P0301', 0);
     supervision_ExecuteActingSub(LEVEL_G01P04A, 'S03P0302', 0);
     CallCommon(CORO_EVENT_END_MAPIN);
