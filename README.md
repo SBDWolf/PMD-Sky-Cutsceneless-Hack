@@ -7,7 +7,7 @@ Known issues:
 - Some inconsistent music fades;
 - The "Did you play "Explorers of Time" or "Explorers of Darkness" question is assumed to be answered as No. This is fine for every speedrunning category except for Recruit 'em All. A workaround should be to generate the save file on vanilla.
 
-The source is just the files used by Skytemple.
+The source contains an automatic build environment. To see the changed scripts and map data, you can open the patched ROM with Skytemple.
 
 Credits to reserve_cat from the PMD Speedruns Discord for the BAHAMUT Header Fix Patches.
 
@@ -39,10 +39,8 @@ If using xdeltaUI, you might get weird error messages trying to apply these out 
 
 --------
 
-If you want to actually make use of the source code and/or the automatic patch maker:
-
-The source included here only includes the changes made to the scripts. It does not include changes made to things like NPC placements and header data.
-If you want to make use of the source to take a look at this hack in a complete sense, you should also apply the patches in the releases section, which contain those additional changes to the game data.
+The source code here only contains an automatic build environment. Past commits also include the skytemple source files, but I stopped including them for simplicity.
+If you want to  make use of automatic build environment:
 
 In the Build folder there is an environment to automatically create patches with flips and xdelta. To do so (on Windows):
 - Place the modified ROM in the Build/modified folder and name it "EU.nds";
