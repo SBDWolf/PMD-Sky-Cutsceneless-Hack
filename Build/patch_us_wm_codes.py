@@ -1,7 +1,7 @@
 import sys
 
 #This script makes the WM system on the EU ROM of PMD Sky utilize US passwords. All that is needed to do is replace an array of bytes.
-#This script is called from the command line as "patch_us_wm_codes.py {path_to_file}" and patches over the ROM itself
+#This script is called from the command line as "patch_us_wm_codes.py {path_to_file}" and patches over a copy of the ROM called "US.nds"
 
 if(len(sys.argv) != 2):
     print("Invalid number of parameters. Usage: patch_us_wm_codes.py {path_to_file}")
