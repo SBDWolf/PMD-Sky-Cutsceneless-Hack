@@ -1,5 +1,0 @@
-
-def 0 {
-    supervision_Station(0);
-    end;
-}

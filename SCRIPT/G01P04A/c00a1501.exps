@@ -1,9 +1,0 @@
-
-def 0 {
-    supervision_Acting(0);
-    with (actor ACTOR_NPC_PERAPPU) {
-        SetPositionInitial();
-    }
-    bgm_PlayFadeIn(BGM_WIGGLYTUFFS_GUILD, 0, 256);
-    end;
-}

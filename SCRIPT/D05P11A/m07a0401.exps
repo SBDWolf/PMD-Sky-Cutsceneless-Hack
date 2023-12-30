@@ -1,9 +1,0 @@
-
-def 0 {
-    $SCENARIO_MAIN = scn[8, 2];
-    main_EnterDungeon(7, 0);
-    switch ( message_Menu(MENU_DUNGEON_INITIALIZE_TEAM) ) { }
-    main_EnterDungeon(-1, 0);
-    hold;
-    end;
-}
